@@ -39,7 +39,8 @@
       "price_retail": "TO'LDIRING",
       "price_wholesale": "TO'LDIRING",
       "sizes": "TO'LDIRING",
-      "inStock": true
+      "inStock": true,
+      "media": { "photos": [], "videos": [] }
     },
     {
       "id": "bambuk-legging",
@@ -49,7 +50,8 @@
       "price_retail": "20000 so'm",
       "price_wholesale": "TO'LDIRING",
       "sizes": "TO'LDIRING",
-      "inStock": true
+      "inStock": true,
+      "media": { "photos": [], "videos": [] }
     },
     {
       "id": "kuzgi-dvoyka",
@@ -59,7 +61,8 @@
       "price_retail": "100000 so'm",
       "price_wholesale": "TO'LDIRING",
       "sizes": "48-52 gacha",
-      "inStock": true
+      "inStock": true,
+      "media": { "photos": [], "videos": [] }
     }
   ],
   "orderFlow": {

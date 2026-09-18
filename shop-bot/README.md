@@ -85,6 +85,39 @@ Yangi buyurtma kelganda sotuvchiga avtomatik xabar yuborish uchun:
 1. O'z Telegram chat ID'ingizni bilib oling (masalan `@userinfobot` ga yozib).
 2. `.env` faylidagi `STAFF_NOTIFY_CHAT_ID` ga shu ID'ni qo'ying.
 
+## 4.1. Mahsulotlarga haqiqiy rasm/video biriktirish
+
+Mijozlar ko'pincha "haqiqiy rasmini ko'rsating" yoki "video bormi" deb
+so'raydi. Bot bunga matn bilan emas, do'kon egasi yuborgan HAQIQIY rasm/video
+bilan javob bera oladi.
+
+**Sozlash:**
+
+1. O'z Telegram chat ID'ingizni bilib oling (`@userinfobot` ga yozib).
+2. `.env` faylidagi `OWNER_CHAT_ID` ga shu ID'ni qo'ying.
+3. Botni qayta ishga tushiring (`npm start`).
+
+**Foydalanish:**
+
+1. O'zingiz (do'kon egasi sifatida) botga mahsulot rasmi yoki videosini
+   yuboring.
+2. Rasmga **caption (izoh)** sifatida mahsulot nomini yozing, masalan
+   `Kuzgi Dvoyka` (aynan `data/knowledge.json` dagi `name` bilan mos yoki
+   unga yaqin bo'lishi kerak).
+3. Bot "Saqlandi: ..." deb tasdiqlaydi.
+4. Shundan keyin mijoz o'sha mahsulot haqida "rasmini yuboring" yoki
+   "video bormi" desa, bot avtomatik ravishda siz yuborgan haqiqiy
+   rasm/videoni mijozga jo'natadi.
+
+Bitta mahsulotga bir nechta rasm/video yuborsangiz, hammasi saqlanadi va
+mijoz so'raganda hammasi yuboriladi.
+
+## 4.2. Mijoz rasm yuborsa
+
+Agar mijoz (do'kon egasi emas) botga rasm yuborsa — masalan "shunga o'xshash
+narsa bormi?" deb rasm bilan savol bersa — bot AI orqali rasmni ko'rib,
+mos javob berishga harakat qiladi.
+
 ## 5. Yangi mijozga (boshqa do'konga) sotish
 
 Har bir yangi mijoz uchun butun loyihani qaytadan yozish SHART EMAS:

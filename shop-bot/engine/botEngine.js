@@ -37,6 +37,21 @@ const SUBMIT_ORDER_TOOL = {
   },
 };
 
+const SHOW_MEDIA_TOOL = {
+  name: "show_product_media",
+  description:
+    "Mijoz mahsulotning haqiqiy rasmi yoki videosini ko'rishni so'raganda chaqiriladi (masalan: 'rasmini yuboring', 'video bormi', 'real o'zini ko'rsating', 'o'zini ko'rsam bo'ladimi'). productId sifatida MAHSULOTLAR ro'yxatidagi mos keluvchi 'id' maydonini ber.",
+  input_schema: {
+    type: "object",
+    properties: {
+      productId: { type: "string", description: "products ro'yxatidagi mos mahsulotning 'id' qiymati" },
+    },
+    required: ["productId"],
+  },
+};
+
+const TOOLS = [SUBMIT_ORDER_TOOL, SHOW_MEDIA_TOOL];
+
 function buildSystemPrompt(knowledgeBase) {
   return `Sen "${knowledgeBase.business.name}" do'koni uchun ishlaydigan AI sotuv yordamchisisan.
 Vazifang: mijozlarning savollariga aniq va qisqa javob berish, mahsulot tanlashda yordam berish va buyurtma qabul qilish.
@@ -47,7 +62,7 @@ ${JSON.stringify(knowledgeBase.business, null, 2)}
 KO'P SO'RALADIGAN SAVOLLAR:
 ${knowledgeBase.faq.map((f) => `- ${f.question}\n  ${f.answer}`).join("\n")}
 
-MAHSULOTLAR:
+MAHSULOTLAR (har birining "media" maydonida haqiqiy rasm/video borligi ko'rsatilgan):
 ${JSON.stringify(knowledgeBase.products, null, 2)}
 
 QOIDALAR:
@@ -56,72 +71,115 @@ QOIDALAR:
 3. Yetkazib berish yoki do'kondan olib ketishni so'ra, telefon raqamini so'ra.
 4. Hammasi aniq bo'lgach, buyurtmani QISQA qilib qayta o'qib ber va "to'g'rimi?" deb tasdiqlat.
 5. Mijoz "ha", "tasdiqlayman" kabi javob berganidan KEYINGINA submit_order tool'ni chaqir. Undan oldin chaqirma.
-6. Har doim o'zbek tilida, do'stona va qisqa yoz. Ortiqcha uzun javob yozma.`;
+6. Mijoz mahsulotning haqiqiy rasmi/videosini so'rasa ("real ko'rsating", "rasmini yuboring", "video bormi" va h.k.) — show_product_media tool'ni chaqir. Agar o'sha mahsulotning media.photos va media.videos ikkalasi ham bo'sh bo'lsa, tool'ni chaqirmasdan, "hozircha rasm/video yuklanmagan, tez orada qo'shamiz" deb ayt.
+7. Har doim o'zbek tilida, do'stona va qisqa yoz. Ortiqcha uzun javob yozma.`;
 }
 
-async function handleMessage({ knowledgeBase, history, userMessage }) {
-  const messages = [...history, { role: "user", content: userMessage }];
+function buildUserContent({ userMessage, imageBase64, imageMediaType }) {
+  if (!imageBase64) {
+    return userMessage;
+  }
+  const content = [
+    {
+      type: "image",
+      source: { type: "base64", media_type: imageMediaType || "image/jpeg", data: imageBase64 },
+    },
+  ];
+  content.push({ type: "text", text: userMessage || "Mijoz rasm yubordi. Rasmni ko'rib, mos javob bering." });
+  return content;
+}
+
+async function handleMessage({ knowledgeBase, history, userMessage, imageBase64, imageMediaType }) {
+  const messages = [
+    ...history,
+    { role: "user", content: buildUserContent({ userMessage, imageBase64, imageMediaType }) },
+  ];
 
   const response = await anthropic.messages.create({
     model: MODEL,
     max_tokens: 1024,
     system: buildSystemPrompt(knowledgeBase),
-    tools: [SUBMIT_ORDER_TOOL],
+    tools: TOOLS,
     messages,
   });
 
-  let replyText = "";
-  let orderResult = null;
+  const toolUseBlocks = response.content.filter((b) => b.type === "tool_use");
 
-  for (const block of response.content) {
-    if (block.type === "text") {
-      replyText += block.text;
-    } else if (block.type === "tool_use" && block.name === "submit_order") {
-      const order = {
+  if (toolUseBlocks.length === 0) {
+    const replyText = response.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n");
+    messages.push({ role: "assistant", content: response.content });
+    return { replyText, order: null, mediaToSend: [], updatedHistory: messages };
+  }
+
+  let order = null;
+  const mediaToSend = [];
+  const toolResults = [];
+
+  for (const block of toolUseBlocks) {
+    if (block.name === "submit_order") {
+      order = {
         ...block.input,
         business: knowledgeBase.business.name,
         timestamp: new Date().toISOString(),
       };
-      orderResult = await logOrder(order);
-
-      const toolResultMessages = [
-        ...messages,
-        { role: "assistant", content: response.content },
-        {
-          role: "user",
-          content: [
-            {
-              type: "tool_result",
-              tool_use_id: block.id,
-              content: "Buyurtma muvaffaqiyatli qabul qilindi va yozib qo'yildi.",
-            },
-          ],
-        },
-      ];
-
-      const followUp = await anthropic.messages.create({
-        model: MODEL,
-        max_tokens: 512,
-        system: buildSystemPrompt(knowledgeBase),
-        tools: [SUBMIT_ORDER_TOOL],
-        messages: toolResultMessages,
+      await logOrder(order);
+      toolResults.push({
+        type: "tool_result",
+        tool_use_id: block.id,
+        content: "Buyurtma muvaffaqiyatli qabul qilindi va yozib qo'yildi.",
       });
+    } else if (block.name === "show_product_media") {
+      const product = knowledgeBase.products.find((p) => p.id === block.input.productId);
+      const media = product && product.media ? product.media : null;
+      const hasMedia = media && ((media.photos && media.photos.length) || (media.videos && media.videos.length));
 
-      replyText = followUp.content
-        .filter((b) => b.type === "text")
-        .map((b) => b.text)
-        .join("\n");
-
-      messages.push({ role: "assistant", content: response.content });
-      messages.push(toolResultMessages[toolResultMessages.length - 1]);
-      messages.push({ role: "assistant", content: followUp.content });
-
-      return { replyText, order, orderResult, updatedHistory: messages };
+      if (hasMedia) {
+        mediaToSend.push({
+          productId: block.input.productId,
+          productName: product.name,
+          photos: media.photos || [],
+          videos: media.videos || [],
+        });
+        toolResults.push({
+          type: "tool_result",
+          tool_use_id: block.id,
+          content: "Rasm/video mijozga yuborildi.",
+        });
+      } else {
+        toolResults.push({
+          type: "tool_result",
+          tool_use_id: block.id,
+          content: "Bu mahsulot uchun hali rasm/video yuklanmagan.",
+        });
+      }
     }
   }
 
-  messages.push({ role: "assistant", content: response.content });
-  return { replyText, order: null, orderResult: null, updatedHistory: messages };
+  const messagesWithToolResult = [
+    ...messages,
+    { role: "assistant", content: response.content },
+    { role: "user", content: toolResults },
+  ];
+
+  const followUp = await anthropic.messages.create({
+    model: MODEL,
+    max_tokens: 512,
+    system: buildSystemPrompt(knowledgeBase),
+    tools: TOOLS,
+    messages: messagesWithToolResult,
+  });
+
+  const replyText = followUp.content
+    .filter((b) => b.type === "text")
+    .map((b) => b.text)
+    .join("\n");
+
+  const updatedHistory = [...messagesWithToolResult, { role: "assistant", content: followUp.content }];
+
+  return { replyText, order, mediaToSend, updatedHistory };
 }
 
 module.exports = { handleMessage };

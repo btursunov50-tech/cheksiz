@@ -14,10 +14,27 @@ if (!process.env.ANTHROPIC_API_KEY) {
   process.exit(1);
 }
 
+const OWNER_CHAT_ID = process.env.OWNER_CHAT_ID ? String(process.env.OWNER_CHAT_ID) : null;
+
 const knowledgePath = process.env.KNOWLEDGE_FILE
   ? path.resolve(process.env.KNOWLEDGE_FILE)
   : path.join(__dirname, "data", "knowledge.json");
-const knowledgeBase = JSON.parse(fs.readFileSync(knowledgePath, "utf8"));
+let knowledgeBase = JSON.parse(fs.readFileSync(knowledgePath, "utf8"));
+
+function saveKnowledgeBase() {
+  fs.writeFileSync(knowledgePath, JSON.stringify(knowledgeBase, null, 2));
+}
+
+function findProductByCaption(caption) {
+  if (!caption) return null;
+  const normalized = caption.trim().toLowerCase();
+  return (
+    knowledgeBase.products.find((p) => p.id.toLowerCase() === normalized) ||
+    knowledgeBase.products.find((p) => p.name.toLowerCase() === normalized) ||
+    knowledgeBase.products.find((p) => p.name.toLowerCase().includes(normalized)) ||
+    null
+  );
+}
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
@@ -27,11 +44,65 @@ const bot = new TelegramBot(TOKEN, { polling: true });
 const conversations = new Map();
 
 console.log(`Bot ishga tushdi: ${knowledgeBase.business.name}`);
+if (OWNER_CHAT_ID) {
+  console.log(`Do'kon egasi rejimi yoqilgan (OWNER_CHAT_ID: ${OWNER_CHAT_ID}) - rasm/video biriktirish mumkin.`);
+} else {
+  console.log("Eslatma: OWNER_CHAT_ID sozlanmagan - mahsulotlarga rasm/video biriktirish o'chirilgan.");
+}
+
+async function downloadTelegramFileAsBase64(fileId) {
+  const fileUrl = await bot.getFileLink(fileId);
+  const response = await fetch(fileUrl);
+  const arrayBuffer = await response.arrayBuffer();
+  return Buffer.from(arrayBuffer).toString("base64");
+}
+
+async function sendProductMedia(chatId, mediaToSend) {
+  for (const item of mediaToSend) {
+    for (const photoFileId of item.photos) {
+      await bot.sendPhoto(chatId, photoFileId, { caption: item.productName });
+    }
+    for (const videoFileId of item.videos) {
+      await bot.sendVideo(chatId, videoFileId, { caption: item.productName });
+    }
+  }
+}
 
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
+  const isOwner = OWNER_CHAT_ID && String(chatId) === OWNER_CHAT_ID;
+
+  // Do'kon egasi rasm/video yuborsa va caption'da mahsulot nomi/ID bo'lsa -
+  // o'sha mediani mahsulotga biriktiramiz (mijozlarga ko'rsatish uchun).
+  if (isOwner && (msg.photo || msg.video)) {
+    const product = findProductByCaption(msg.caption);
+    if (!product) {
+      await bot.sendMessage(
+        chatId,
+        "Mahsulot topilmadi. Rasm/video yuborganda caption (izoh) sifatida mahsulot nomini yoki ID'sini yozing, masalan: \"Kuzgi Dvoyka\"."
+      );
+      return;
+    }
+
+    product.media = product.media || { photos: [], videos: [] };
+
+    if (msg.photo) {
+      const largest = msg.photo[msg.photo.length - 1];
+      product.media.photos.push(largest.file_id);
+    }
+    if (msg.video) {
+      product.media.videos.push(msg.video.file_id);
+    }
+
+    saveKnowledgeBase();
+    await bot.sendMessage(chatId, `Saqlandi: "${product.name}" mahsulotiga rasm/video biriktirildi.`);
+    return;
+  }
+
   const text = msg.text;
-  if (!text) return;
+  const hasCustomerPhoto = !isOwner && msg.photo && msg.photo.length > 0;
+
+  if (!text && !hasCustomerPhoto) return;
 
   if (text === "/start") {
     conversations.delete(chatId);
@@ -46,16 +117,29 @@ bot.on("message", async (msg) => {
 
   try {
     await bot.sendChatAction(chatId, "typing");
-    const { replyText, order, updatedHistory } = await handleMessage({
+
+    let imageBase64 = null;
+    if (hasCustomerPhoto) {
+      const largest = msg.photo[msg.photo.length - 1];
+      imageBase64 = await downloadTelegramFileAsBase64(largest.file_id);
+    }
+
+    const { replyText, order, mediaToSend, updatedHistory } = await handleMessage({
       knowledgeBase,
       history,
-      userMessage: text,
+      userMessage: text || msg.caption || "",
+      imageBase64,
+      imageMediaType: "image/jpeg",
     });
 
     conversations.set(chatId, updatedHistory);
 
     if (replyText) {
       await bot.sendMessage(chatId, replyText);
+    }
+
+    if (mediaToSend && mediaToSend.length > 0) {
+      await sendProductMedia(chatId, mediaToSend);
     }
 
     if (order) {
