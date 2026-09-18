@@ -1,0 +1,69 @@
+{
+  "business": {
+    "name": "Abu Sahiy Kiyimlar Do'koni",
+    "type": "Kiyim-kechak do'koni (ayollar va erkaklar trenirovkasi, kostyum, legging)",
+    "location": "TO'LDIRING: aniq shahar, mall/bozor nomi, qavat/blok raqami",
+    "workHours": "TO'LDIRING: masalan 09:00 - 20:00, har kuni",
+    "phone": "TO'LDIRING: aloqa uchun telefon raqam",
+    "salesType": "wholesale_and_retail",
+    "delivery": {
+      "available": true,
+      "coverage": "Butun O'zbekiston bo'ylab",
+      "note": "TO'LDIRING: yetkazish narxi va muddati (masalan: Toshkent ichida 1 kun, viloyatlarga 2-4 kun, narxi yetkazish xizmati tarofidan hisoblanadi)"
+    },
+    "payment": {
+      "methods": ["Plastik karta", "Click", "Payme"],
+      "note": "Naqd pul do'konda qabul qilinmaydi, faqat karta/onlayn to'lov"
+    }
+  },
+  "faq": [
+    {
+      "question": "Optom narx bormi?",
+      "answer": "Ha, optom va chakana ikkalasi ham bor. Optom miqdor va narxlar mahsulotga qarab farq qiladi, aniq optom narx uchun mahsulot va miqdorni ayting."
+    },
+    {
+      "question": "Yetkazib berish qancha turadi va qancha vaqt oladi?",
+      "answer": "TO'LDIRING: yetkazish narxi va muddati haqida aniq ma'lumot"
+    },
+    {
+      "question": "O'lchamlar qanday?",
+      "answer": "Har bir mahsulotning o'z o'lcham jadvali bor, mahsulot tavsifida ko'rsatilgan. Aniq o'lcham bo'yicha savol bo'lsa, mahsulot nomini ayting."
+    }
+  ],
+  "products": [
+    {
+      "id": "trenirovka-dvoyka-adidas",
+      "name": "Trenirovka kostyumi (dvoyka) - Adidas uslubida",
+      "category": "Ayollar/Erkaklar kiyimi",
+      "colors": ["qora", "oq", "bordo"],
+      "price_retail": "TO'LDIRING",
+      "price_wholesale": "TO'LDIRING",
+      "sizes": "TO'LDIRING",
+      "inStock": true
+    },
+    {
+      "id": "bambuk-legging",
+      "name": "Bambuk legging (ayollar)",
+      "category": "Ayollar kiyimi",
+      "colors": ["qora"],
+      "price_retail": "20000 so'm",
+      "price_wholesale": "TO'LDIRING",
+      "sizes": "TO'LDIRING",
+      "inStock": true
+    },
+    {
+      "id": "kuzgi-dvoyka",
+      "name": "Kuzgi Dvoyka (kofta + keng shim to'plami)",
+      "category": "Ayollar kiyimi",
+      "colors": ["oq kofta + qora shim"],
+      "price_retail": "100000 so'm",
+      "price_wholesale": "TO'LDIRING",
+      "sizes": "48-52 gacha",
+      "inStock": true
+    }
+  ],
+  "orderFlow": {
+    "requiredFields": ["mahsulot", "miqdor/rang/o'lcham", "yetkazish manzili yoki olib ketish", "aloqa telefon raqami"],
+    "confirmationMessage": "Buyurtmangizni tasdiqlayman: {items}. Yetkazish: {address}. Umumiy summa: {total}. To'g'rimi?"
+  }
+}

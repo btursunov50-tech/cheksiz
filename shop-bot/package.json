@@ -1,0 +1,17 @@
+{
+  "name": "shop-ai-bot",
+  "version": "1.0.0",
+  "description": "Universal AI savdo boti - Telegram orqali savol-javob va buyurtma qabul qilish. Kafe, bar, do'kon, fast-food - har qanday kichik biznesga moslashtiriladi (data/knowledge.json orqali).",
+  "main": "telegram-bot.js",
+  "scripts": {
+    "start": "node telegram-bot.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
