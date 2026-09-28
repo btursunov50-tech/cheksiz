@@ -35,6 +35,12 @@ Keyin hammasi birga chiqariladi va solishtiriladi.
 - Xususiy klinikalar uchun o'zbekcha ovozli tibbiy yozuv — Q
 - Suv navbati (mirob) — raqamli va ovozli buyurtma — A
 
+### 1-daraja sohalardan (2-tekshiruv, 2026-09-28)
+- Xitoydan import qiluvchilar uchun AI: tovar rasmi → 1688 narxi → yetkazish + boj + QQS → O'zbekistondagi sotuv narxi va foyda — G
+- AI-logoped: bolalar nutqini o'zbek tilida baholash va uyda mashq qildirish — P/Q
+- Qarz yuki maslahatchisi: barcha kredit/nasiyalarni bir joyda ko'rish, to'lov rejasi — K
+- (kuchsizroq) Laboratoriya tahlil natijalarini o'zbekcha tushuntirish (laboratoriyalar orqali) — Q
+
 ### 2-daraja sohalardan
 - Uy ta'miri: rasm/o'lchamdan smeta + material ro'yxati + mahalliy narxlar — F/S
 - Tikuv sexlari uchun buyurtma tannarxini hisoblash (eskiz → operatsiyalar → narx) — C
@@ -43,4 +49,5 @@ Keyin hammasi birga chiqariladi va solishtiriladi.
 ### Allaqachon qilingan (chetlab o'tilgan) yo'nalishlar
 Sotuv botlari, nasiya daftari, yuridik AI, soliq AI, IELTS AI, yuk birjalari, o'zbekcha STT/TTS,
 Smart Fermer, KT/MRT tahlili, salonlarga onlayn yozilish, turizm audio-gid, restoran POS+AI,
-rezyume saralash, ko'chmas mulk e'lonlari.
+rezyume saralash, ko'chmas mulk e'lonlari, tender AI (Tender24, Tenderzone),
+chegara elektron navbati (CarGoRuqsat, Do'stlik e-QMS), issiqxona sensor+AI (sinovda), autizm skriningi (Bolajonim).
