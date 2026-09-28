@@ -41,6 +41,11 @@ Keyin hammasi birga chiqariladi va solishtiriladi.
 - Qarz yuki maslahatchisi: barcha kredit/nasiyalarni bir joyda ko'rish, to'lov rejasi — K
 - (kuchsizroq) Laboratoriya tahlil natijalarini o'zbekcha tushuntirish (laboratoriyalar orqali) — Q
 
+### 1-daraja sohalardan (3-tekshiruv, 2026-09-28)
+- Mol bozori AI: mol/qo'y rasmidan vazn, go'sht chiqishi va adolatli narx (qurbonlik mavsumi) — A
+- "Mo'ljal → koordinata": o'zbekcha mo'ljalli manzilni aniq nuqtaga aylantiruvchi API (kuryer, 103, taksi) — H
+- Ishlatilgan telefon: model + rasm → adolatli narx, IMEI/originallik tekshiruvi; lombard va trade-in uchun — G/K
+
 ### 2-daraja sohalardan
 - Uy ta'miri: rasm/o'lchamdan smeta + material ro'yxati + mahalliy narxlar — F/S
 - Tikuv sexlari uchun buyurtma tannarxini hisoblash (eskiz → operatsiyalar → narx) — C
@@ -50,4 +55,5 @@ Keyin hammasi birga chiqariladi va solishtiriladi.
 Sotuv botlari, nasiya daftari, yuridik AI, soliq AI, IELTS AI, yuk birjalari, o'zbekcha STT/TTS,
 Smart Fermer, KT/MRT tahlili, salonlarga onlayn yozilish, turizm audio-gid, restoran POS+AI,
 rezyume saralash, ko'chmas mulk e'lonlari, tender AI (Tender24, Tenderzone),
-chegara elektron navbati (CarGoRuqsat, Do'stlik e-QMS), issiqxona sensor+AI (sinovda), autizm skriningi (Bolajonim).
+chegara elektron navbati (CarGoRuqsat, Do'stlik e-QMS), issiqxona sensor+AI (sinovda), autizm skriningi (Bolajonim),
+EPS-TOPIK ilovalari, firibgar havola tekshiruvi (ZIRH BOT), DTM ball kalkulyatori (dtmdata, infoedu).
