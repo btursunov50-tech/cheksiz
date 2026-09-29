@@ -108,6 +108,18 @@ def music(total_s):
     return np.stack([L, R], 1)
 
 
+MP3 = '/root/.claude/uploads/82f3e155-e852-5839-900d-40d183fb7b67/ca6424b8-SMART_wallpaper________________________________.mp3'
+
+
+def track_music(total_s, offset=2.0):
+    p = subprocess.run([FF, '-v', 'error', '-ss', str(offset), '-t', str(total_s), '-i', MP3, '-ac', '2', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True)
+    m = np.frombuffer(p.stdout, np.float32).reshape(-1, 2).astype(np.float64)
+    n = int(total_s * SR)
+    out = np.zeros((n, 2)); out[:min(n, len(m))] = m[:n]
+    fi = int(0.06 * SR); out[:fi] *= np.linspace(0, 1, fi)[:, None]
+    return out
+
+
 # ---------------- SFX ----------------
 def sfx(name):
     if name == 'pop':
@@ -146,7 +158,7 @@ def main():
     total = TOTAL / FPS + 0.3
     n = int(total * SR)
     v = voice_track(total)
-    m = music(total)
+    m = track_music(total)
     ev = json.load(open('events.json'))
     fx = np.zeros(n)
     for t, name in ev:
@@ -161,12 +173,12 @@ def main():
     w = int(0.05 * SR)
     e = np.sqrt(np.convolve(v ** 2, np.ones(w) / w, 'same'))
     e = np.convolve(e, np.ones(int(0.25 * SR)) / int(0.25 * SR), 'same')
-    duck = 1 - 0.5 * np.clip(e / 0.05, 0, 1)
-    mus_gain = np.full(n, db(-21))
+    duck = 1 - 0.6 * np.clip(e / 0.05, 0, 1)
+    mus_gain = np.full(n, db(-17))
     cta = int(CTA_START / FPS * SR) - int(0.3 * SR)
     ramp = int(0.4 * SR)
-    mus_gain[cta:cta + ramp] = np.linspace(db(-21), db(-15), ramp)
-    mus_gain[cta + ramp:] = db(-15)
+    mus_gain[cta:cta + ramp] = np.linspace(db(-17), db(-7), ramp)
+    mus_gain[cta + ramp:] = db(-7)
     tail = int((TOTAL / FPS - 0.8) * SR)
     mus_gain[tail:] *= np.linspace(1, 0, n - tail)
     mn = m / (np.sqrt(np.mean(m ** 2)) + 1e-9) * 0.1

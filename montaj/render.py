@@ -10,10 +10,25 @@ PREVIEW = '--preview' in sys.argv
 OUT = 'video_preview.mp4' if PREVIEW else 'video_noaudio.mp4'
 
 # ---------------- assets ----------------
-LOGO = Image.open('assets/logo.png')
-P_SEAL = Image.open('assets/part_seal.png')
-P_ORN = Image.open('assets/part_ornament.png')
-P_FAL = Image.open('assets/part_falcon.png')
+LOGO = Image.open('assets/logo2.png')
+P_SEAL = Image.open('assets/p2_seal.png')
+P_ORN = Image.open('assets/p2_orn.png')
+P_FAL = Image.open('assets/p2_fal.png')
+CLIENT = Image.open('../../images/4.webp').convert('RGBA')
+UP = '/root/.claude/uploads/82f3e155-e852-5839-900d-40d183fb7b67/'
+V1 = UP + '28370a0c-Entering_traditional_Uzbek_resta__20260929180400.mp4'
+V2 = UP + 'eee52136-Entering_traditional_restaurant___20260929180304.mp4'
+
+
+def load_clip(path, t0, dur, vf, size):
+    p = subprocess.run([FF, '-v', 'error', '-ss', str(t0), '-t', str(dur), '-i', path, '-vf', vf + ',fps=25', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], capture_output=True)
+    fs = size[0] * size[1] * 3
+    return [Image.frombuffer('RGB', size, p.stdout[i:i + fs]).convert('RGBA') for i in range(0, len(p.stdout) - fs + 1, fs)]
+
+
+REST_V = load_clip(V1, 0.0, 2.3, 'scale=1080:1920:flags=lanczos,unsharp=5:5:0.6', (1080, 1920))
+MEAT_V = load_clip(V1, 7.8, 2.1, 'scale=1080:1920:flags=lanczos,unsharp=5:5:0.6', (1080, 1920))
+INT_V = load_clip(V2, 0.2, 2.6, 'scale=-2:683:flags=lanczos,crop=894:683', (894, 683))
 _cache = {}
 
 
@@ -151,11 +166,10 @@ def split_text(cv, lines, t, gt, size=52):
 
 
 # ---------------- precomputed ----------------
-REST = restaurant_bg(LOGO)
 LANT = lantern(190)
-PLOV = plov_bg()
 STEAM = steam_sprite(420)
-BIZ = businessman()
+_cl = CLIENT.resize((1254, 1254))
+BIZ = _cl.crop((0, 40, 1254, 998)).resize((894, 683), Image.LANCZOS)
 GLOVE = glove(260)
 COIN = coin(140)
 CHECK = check_badge(90); CROSS = check_badge(90, cross=True)
@@ -196,6 +210,7 @@ def tag(text, ok=True):
 
 
 TAG_R, TAG_Z = tag('РЕСТОРАН', True), tag('ЗАЩИТА', False)
+LOGO_S420, _ = shadow(LOGO.resize((420, 420), Image.LANCZOS), blur=20, alpha=0.6, pad=40)
 
 
 def card_small(content, w, h, bg=CREAM, r=36):
@@ -214,8 +229,8 @@ SCARD_S, SCARD_PAD = shadow(SCARD)
 WCARD_S, WCARD_PAD = shadow(WCARD)
 
 # falcon head / beak offsets relative to logo centre (fraction of logo size)
-HEAD = (0.023, -0.143)
-BEAK = (0.10, -0.126)
+HEAD = (0.10, -0.20)
+BEAK = (0.156, -0.194)
 
 
 def draw_path(cv, pts, frac, width=12, col=MARK, off=(0, 0)):
@@ -234,7 +249,7 @@ def draw_path(cv, pts, frac, width=12, col=MARK, off=(0, 0)):
 
 
 CIRCLE_PTS = hand_ellipse(CX0 + 447, CY0 + 341, 312, 300, rot=-0.12)
-ULINE_PTS = hand_arc(CX0 + 447, CY0 + 341, 236, 28, 152)
+ULINE_PTS = hand_arc(CX0 + 447, CY0 + 341, 286, 32, 148)
 
 
 # ---------------- scenes ----------------
@@ -285,7 +300,7 @@ def render(fr, k, f):
             if t3 >= 0:
                 e = ease(t3 / 0.22)
                 bob = 8 * math.sin(max(0, t3 - 0.22) * 9) * math.exp(-max(0, t3 - 0.22) * 3)
-                tipx, tipy = CX0 + 447 + 40 + (1 - e) * 450 + bob, CY0 + 330 + (1 - e) * 120
+                tipx, tipy = CX0 + 447 + 36 + (1 - e) * 450 + bob, CY0 + 341 - 52 + (1 - e) * 120
                 paste_tl(cv, GLOVE, tipx - 10, tipy - 104)
                 fire('glove', 'click', gt - t3 + 0.2)
             if t4 >= 0:
@@ -302,7 +317,7 @@ def render(fr, k, f):
         s = 560 + (300 - 560) * e
         for i, part in enumerate((P_SEAL, P_FAL, P_ORN)):
             x = 540 + (xs[i] - 540) * e
-            m = 1 + 0.75 * e if i == 1 else 1
+            m = 1 + 0.35 * e if i == 1 else 1
             paste_c(cv, sized(part, ('p', i), s * m), x, 800)
         for i in range(3):
             tt = st - (0.6 + 0.4 * i)
@@ -324,45 +339,30 @@ def render(fr, k, f):
             for i, part in enumerate((P_SEAL, P_FAL, P_ORN)):
                 x = xs[i] + (540 - xs[i]) * e
                 y = 800 + (760 - 800) * e
-                m = 1 + 0.75 * (1 - e) if i == 1 else 1
+                m = 1 + 0.35 * (1 - e) if i == 1 else 1
                 paste_c(cv, sized(part, ('p', i), s * m), x, y)
         else:
             paste_c(cv, sized(LOGO, 'logo', 560), 540, 760)
         plate_at(cv, 'Вместе — это вывеска', 'y', Y_Y, st, gt)
         return cv
 
-    if sc == 6:  # restaurant
-        z = 1.0 + 0.06 * st / 2.12
-        bg = REST
-        cv = bg.resize((W, H), Image.BICUBIC, box=(540 - 540 / z, 760 - 760 / z, 540 + 540 / z, 760 + 1160 / z)) if z > 1.001 else bg.copy()
-        for i, x in enumerate((175, 905)):
-            fl = 0.75 + 0.25 * math.sin(gt * 13 + i * 2) * math.sin(gt * 7.3 + i)
-            glow = Image.new('L', (W, H), 0)
-            gx, gy = x, 1540
-            ImageDraw.Draw(glow).ellipse([gx - 110, gy - 110, gx + 110, gy + 110], fill=int(150 * fl))
-            glow = glow.filter(ImageFilter.GaussianBlur(40))
-            cv.paste(Image.new('RGBA', (W, H), (255, 180, 70, 255)), (0, 0), glow)
-            sw = 3 * math.sin(gt * 2.2 + i)
-            paste_c(cv, LANT, gx + sw, gy - 10, rot=sw)
-        # string light bulbs twinkle
-        d = ImageDraw.Draw(cv)
-        for j, x in enumerate(range(30, W, 70)):
-            y = 470 + 60 * math.sin(math.pi * x / W) + 10
-            b = 0.6 + 0.4 * math.sin(gt * 6 + j * 1.7)
-            d.ellipse([x - 9, y - 9, x + 9, y + 9], fill=(255, int(200 * b + 40), 90, 255))
+    if sc == 6:  # restaurant (real footage) + our crest as the sign
+        i = min(len(REST_V) - 1, f - O[7])
+        cv = REST_V[i].copy()
+        p = st / 2.12
+        ls = 330 + 120 * p
+        glow = Image.new('L', (W, H), 0)
+        gy = 330 - 60 * p
+        ImageDraw.Draw(glow).ellipse([540 - ls * 0.75, gy - ls * 0.75, 540 + ls * 0.75, gy + ls * 0.75], fill=170)
+        cv.paste(Image.new('RGBA', (W, H), (255, 190, 90, 255)), (0, 0), glow.filter(ImageFilter.GaussianBlur(45)))
+        paste_c(cv, sized(LOGO, 'logo', ls), 540, gy)
         plate_at(cv, 'Вместе — это вывеска', 'y', Y_Y, 1.0, gt)
         plate_at(cv, 'тематического ресторана', 'w', Y_W, st, gt)
         return cv
 
-    if sc == 7:  # plov
-        z = 1.0 + 0.07 * st / 1.92
-        cv = PLOV.resize((W, H), Image.BICUBIC, box=(540 - 540 / z, 800 - 800 / z, 540 + 540 / z, 800 + 1120 / z)) if z > 1.001 else PLOV.copy()
-        for i in range(6):
-            ph = (st * 0.55 + i / 6) % 1.0
-            x = 540 + 260 * math.sin(i * 2.1) + 40 * math.sin(st * 2 + i)
-            y = 900 - ph * 700
-            a = math.sin(ph * math.pi) * 0.45
-            paste_c(cv, STEAM, x, y, 0.8 + ph * 0.8, a)
+    if sc == 7:  # meat / shashlik footage
+        i = min(len(MEAT_V) - 1, f - O[8])
+        cv = MEAT_V[i].copy()
         plate_at(cv, 'где подают', 'w', Y_Y, st, gt)
         plate_at(cv, 'баранину по-восточному', 'y', Y_W, st - 0.5, gt)
         fire('ding', 'ding', O[8] / FPS + 1.2)
@@ -419,8 +419,9 @@ def render(fr, k, f):
 
     if sc == 12:  # split: logo + tags
         cv = split_base(fr)
-        content = CARD_BG.copy()
-        paste_c(content, sized(LOGO, 'logo', 540), 447, 296)
+        content = INT_V[min(len(INT_V) - 1, f - O[16])].copy()
+        content.alpha_composite(Image.new('RGBA', content.size, (0, 0, 0, 70)))
+        paste_c(content, LOGO_S420, 447, 290)
         tr = rel(16, f) - 0.9
         tz = rel(17, f) - 0.3
         s_, a = pop(tr)
