@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="uz" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B-Trend.MCHJ</title>
+<meta name="description" content="B-Trend.MCHJ — maishiy texnika, xo'jalik mollari va chinni idishlar katalogi.">
+<meta name="theme-color" content="#0e6e7e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f1;--surface:#fff;--ink:#14262b;--muted:#5c6f74;--line:#d4dedc;
+  --accent:#0e6e7e;--accent-ink:#fff;--tile:#f7f9f8;--shadow:0 6px 24px rgba(20,38,43,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1b1e;--surface:#172a2f;--ink:#e8f0ef;--muted:#92a8ac;--line:#264047;--accent:#4fb3c4;--accent-ink:#0f1b1e;--tile:#ffffff;--shadow:none}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Onest",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+[dir=rtl] body{font-family:"Vazirmatn","Onest",system-ui,sans-serif}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px;width:100%;min-width:0}
+main.wrap{flex:1 0 auto}
+#view{min-width:0}
+
+/* header */
+.topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{font-weight:800;font-size:1.2rem;letter-spacing:-.02em;color:var(--accent);text-decoration:none;white-space:nowrap;font-family:"Onest",sans-serif}
+.back{display:none;align-items:center;gap:6px;border:0;background:none;font-weight:700;color:var(--accent);font-size:1rem;padding:4px 0;min-width:0}
+.back span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.has-back .back{display:flex}.has-back .logo{display:none}
+.langs{display:flex;gap:4px;flex-shrink:0}
+.langs button{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:5px 8px;font-size:.82rem;font-weight:700;min-width:38px}
+.langs button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.langs .ar{font-family:"Vazirmatn",sans-serif}
+
+/* hero + search */
+.hero{padding:28px 0 8px}
+.hero h1{font-size:clamp(1.8rem,6vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.hero p{margin-top:10px;color:var(--muted);max-width:60ch}
+.search{position:relative;margin-top:18px;max-width:640px}
+.search input{width:100%;padding:15px 46px 15px 18px;font:inherit;font-size:1.02rem;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:12px}
+[dir=rtl] .search input{padding:15px 18px 15px 46px}
+.search input:focus{outline:none;border-color:var(--accent)}
+.search .clear{position:absolute;inset-inline-end:8px;top:50%;transform:translateY(-50%);border:0;background:none;font-size:1.4rem;color:var(--muted);width:34px;height:34px;display:none}
+.search.filled .clear{display:block}
+
+/* sections */
+h2.sec{font-size:1.15rem;margin:26px 0 12px;font-weight:800}
+.cats{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.cat{text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 8px;font-weight:600;font-size:.92rem;min-height:116px}
+.cat:hover{border-color:var(--accent)}
+.cat .ic{font-size:2rem;line-height:1}
+.cat .n{font-size:.78rem;color:var(--muted);font-weight:500}
+
+.chips{max-width:100%;display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:thin}
+.chips button{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 14px;font-weight:600;font-size:.9rem;white-space:nowrap}
+.chips button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.chips .n{opacity:.7;font-weight:500}
+
+.count{margin:10px 0 12px;color:var(--muted);font-weight:500}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.card{display:flex;flex-direction:column;text-align:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;padding:0}
+.card:hover{border-color:var(--accent)}
+.ph{aspect-ratio:1/1;background:var(--tile);display:flex;align-items:center;justify-content:center;padding:10px;width:100%}
+.ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.nophoto{text-align:center;color:#5c6f74;font-weight:800;font-size:1.05rem;font-family:"Onest",sans-serif}
+.nophoto small{display:block;font-weight:500;font-size:.75rem;margin-top:4px;font-family:"Onest","Vazirmatn",sans-serif}
+.info{padding:10px 12px 14px;border-top:1px solid var(--line);width:100%}
+.brand{font-size:.78rem;font-weight:800;color:var(--accent);font-family:"Onest",sans-serif;letter-spacing:.02em}
+.name{font-size:.95rem;font-weight:600;margin-top:2px;unicode-bidi:plaintext;word-break:break-word}
+.more{display:block;margin:20px auto 0;border:0;background:var(--accent);color:var(--accent-ink);border-radius:10px;padding:12px 22px;font-weight:700}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+
+/* product dialog */
+dialog{border:0;border-radius:16px;padding:0;width:min(560px,calc(100vw - 24px));max-height:calc(100vh - 24px);background:var(--surface);color:var(--ink);box-shadow:var(--shadow);margin:auto}
+dialog::backdrop{background:rgba(10,20,24,.6)}
+.dlg-img{background:var(--tile);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:16px}
+.dlg-img img{max-width:100%;max-height:100%;object-fit:contain}
+.dlg-body{padding:16px 18px 20px}
+.dlg-body h3{font-size:1.25rem;line-height:1.3;margin:4px 0 6px;unicode-bidi:plaintext;word-break:break-word}
+.dlg-body .meta{color:var(--muted);font-size:.9rem}
+.dlg-body .desc{margin-top:10px;font-size:.95rem;unicode-bidi:plaintext}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:10px;padding:12px;font-weight:700;background:var(--accent);color:var(--accent-ink);border:0}
+.btn.alt{background:#229ed9;color:#fff}
+.close{position:absolute;top:10px;inset-inline-end:10px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:1.2rem}
+
+footer{margin-top:auto;background:var(--surface);border-top:1px solid var(--line);padding:22px 0 calc(22px + env(safe-area-inset-bottom))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer .who strong{display:block;font-family:"Onest",sans-serif}
+footer .who span{color:var(--muted);font-size:.9rem}
+footer .contacts{display:flex;gap:10px;flex-wrap:wrap}
+footer .btn{padding:10px 16px}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+@media (max-width:520px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .cat{min-height:100px;font-size:.8rem;padding:12px 4px}
+  .cat .ic{font-size:1.6rem}
+  .name{font-size:.86rem}
+  .langs button{padding:5px 6px;min-width:34px;font-size:.78rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="topbar" id="top">
+  <div class="wrap">
+    <a class="logo" href="#">B-Trend.MCHJ</a>
+    <button class="back" id="back" type="button"><span aria-hidden="true" id="backArrow">←</span><span id="backLabel"></span></button>
+    <div class="langs" role="group" aria-label="Til / Language">
+      <button type="button" data-lang="uz">UZ</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="fa" class="ar">دری</button>
+      <button type="button" data-lang="ps" class="ar">پښتو</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <section class="hero" id="hero">
+    <h1 id="heroTitle"></h1>
+    <p id="heroText"></p>
+  </section>
+  <div class="search" id="searchBox">
+    <label class="sr-only" for="q" id="qLabel"></label>
+    <input id="q" type="search" autocomplete="off" enterkeyhint="search">
+    <button class="clear" id="qClear" type="button" aria-label="×">×</button>
+  </div>
+  <div id="view"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="who"><strong>B-Trend.MCHJ</strong><span id="footText"></span></div>
+    <div class="contacts">
+      <a class="btn" href="tel:+998333821111"><span aria-hidden="true">📞</span><span class="ltr">+998 33 382 11 11</span></a>
+      <a class="btn alt" href="https://t.me/Usmanovich111" target="_blank" rel="noopener"><span aria-hidden="true">✈️</span><span>Telegram</span></a>
+    </div>
+  </div>
+</footer>
+
+<dialog id="dlg"></dialog>
+
+<script src="products.js"></script>
+<script>
+"use strict";
+const PHONE = "+998333821111", PHONE_TXT = "+998 33 382 11 11", TG = "https://t.me/Usmanovich111";
+const LANGS = ["uz","en","fa","ps"];
+const UI = {
+  uz:{title:"Uy uchun texnika va mollar",text:"Konditsioner, gaz plita, muzlatkich, televizor, kir yuvish mashinasi, xo'jalik mollari va chinni idishlar. Modelni yozing — aynan o'sha chiqadi.",search:"Qidirish: model, brend yoki mahsulot (masalan: 12LVSPH)",cats:"Bo'limlar",brands:"Brendlar",all:"Hammasi",found:n=>`${n} ta mahsulot`,none:"Hech narsa topilmadi.",reset:"Tozalash",more:"Yana ko'rsatish",nophoto:"rasm tez orada",call:"Qo'ng'iroq",ask:"Telegramda so'rash",back:"Orqaga",home:"Bosh sahifa",foot:"Maishiy texnika va xo'jalik mollari",results:"Qidiruv natijalari",orig:"Asl nomi"},
+  en:{title:"Home appliances & goods",text:"Air conditioners, gas stoves, refrigerators, TVs, washing machines, household goods and porcelain. Type a model — you get exactly that one.",search:"Search: model, brand or product (e.g. 12LVSPH)",cats:"Categories",brands:"Brands",all:"All",found:n=>`${n} products`,none:"Nothing found.",reset:"Clear",more:"Show more",nophoto:"photo coming soon",call:"Call",ask:"Ask on Telegram",back:"Back",home:"Home",foot:"Home appliances and household goods",results:"Search results",orig:"Original name"},
+  fa:{title:"لوازم خانگی و اجناس",text:"ایرکاندیشنر، اجاق گاز، یخچال، تلویزیون، ماشین لباسشویی، لوازم پلاستیکی و ظروف چینی. نام مدل را بنویسید — دقیقاً همان مدل نمایش داده می‌شود.",search:"جستجو: مدل، برند یا محصول (مثلاً 12LVSPH)",cats:"بخش‌ها",brands:"برندها",all:"همه",found:n=>`${n} محصول`,none:"چیزی پیدا نشد.",reset:"پاک کردن",more:"نمایش بیشتر",nophoto:"عکس به زودی",call:"تماس",ask:"پرسش در تلگرام",back:"بازگشت",home:"صفحه اصلی",foot:"لوازم خانگی و اجناس خانه",results:"نتایج جستجو",orig:"نام اصلی"},
+  ps:{title:"د کور وسایل او توکي",text:"ایرکنډیشن، ګازي اجاق، یخچال، تلویزیون، د جامو مینځلو ماشین، د کور پلاستیکي توکي او چیني لوښي. د ماډل نوم ولیکئ — همغه ماډل به وښودل شي.",search:"لټون: ماډل، برانډ یا توکی (لکه 12LVSPH)",cats:"برخې",brands:"برانډونه",all:"ټول",found:n=>`${n} توکي`,none:"هیڅ ونه موندل شو.",reset:"پاکول",more:"نور وښایاست",nophoto:"انځور ژر راځي",call:"زنګ",ask:"په ټلګرام کې پوښتنه",back:"شاته",home:"کور پاڼه",foot:"د کور وسایل او توکي",results:"د لټون پایلې",orig:"اصلي نوم"}
+};
+const CATS = [
+  ["ac","❄️",["Konditsionerlar","Air conditioners","ایرکاندیشنرها","ایرکنډیشنونه"]],
+  ["gas","🔥",["Gaz plitalar","Gas stoves","اجاق‌های گاز","ګازي اجاقونه"]],
+  ["fridge","🧊",["Muzlatkichlar","Refrigerators","یخچال‌ها","یخچالونه"]],
+  ["freezer","🥶",["Morozilniklar","Freezers","فریزرها","فریزرونه"]],
+  ["showcase","🥤",["Vitrina sovutgichlar","Display coolers","یخچال‌های ویترینی","ویتریني یخچالونه"]],
+  ["tv","📺",["Televizorlar","TVs","تلویزیون‌ها","تلویزیونونه"]],
+  ["monitor","🖥️",["Monitorlar","Monitors","مانیتورها","مانیټرونه"]],
+  ["washer","🫧",["Kir yuvish mashinalari","Washing machines","ماشین‌های لباسشویی","د جامو مینځلو ماشینونه"]],
+  ["dishwasher","🍽️",["Idish yuvish mashinalari","Dishwashers","ماشین‌های ظرفشویی","د لوښو مینځلو ماشینونه"]],
+  ["microwave","📡",["Mikroto'lqinli pechlar","Microwaves","مایکروویف‌ها","مایکروویفونه"]],
+  ["minioven","🍞",["Mini pechlar","Mini ovens","فرهای کوچک","کوچني تنورونه"]],
+  ["oven","♨️",["O'rnatma duxovkalar","Built-in ovens","فرهای توکار","دننه تنورونه"]],
+  ["hob","🍳",["O'rnatma panellar","Built-in hobs","اجاق‌های توکار","دننه اجاقونه"]],
+  ["hood","🌬️",["Vityajkalar","Cooker hoods","هودهای آشپزخانه","د پخلنځي هودونه"]],
+  ["vacuum","🧹",["Changyutgichlar","Vacuum cleaners","جاروبرقی‌ها","برقي جاروګانې"]],
+  ["waterheater","🚿",["Suv isitgichlar","Water heaters","آبگرمکن‌ها","د اوبو ګرمونکي"]],
+  ["cooler","🚰",["Suv kulerlari","Water coolers","آبسردکن‌ها","د اوبو سړونکي"]],
+  ["heater","🌡️",["Isitgichlar","Heaters","بخاری‌های برقی","برقي بخارۍ"]],
+  ["fan","🌀",["Ventilyatorlar","Fans","پنکه‌ها","پکې"]],
+  ["kitchen","🥣",["Oshxona jihozlari","Kitchen appliances","لوازم برقی آشپزخانه","د پخلنځي برقي وسایل"]],
+  ["plastic","🪣",["Xo'jalik mollari (plastik)","Household plastics","لوازم پلاستیکی خانه","د کور پلاستیکي توکي"]],
+  ["kids","🧸",["Bolalar uchun va o'yinchoqlar","Kids & toys","کودکان و اسباب‌بازی","ماشومان او لوبې"]],
+  ["porcelain","🍵",["Chinni idishlar","Porcelain tableware","ظروف چینی","چیني لوښي"]],
+  ["sanitary","🚽",["Santexnika","Sanitary ware","لوازم بهداشتی","روغتیايي وسایل"]],
+  ["other","🔌",["Boshqa","Other","دیگر","نور"]]
+];
+const CAT = Object.fromEntries(CATS.map(c=>[c[0],{icon:c[1],t:c[2]}]));
+const BRAND_NAMES = {"MAK PLAST":"Mak Plast Biznes","ASL NAFIS":"Asl Nafis"};
+
+/* ---------- helpers ---------- */
+const LOOK_FROM="АВЕКМНОРСТХаеорсхкмнтвіІ", LOOK_TO="ABEKMHOPCTXaeopcxkmhtbii";
+const LOOK = new Map([...LOOK_FROM].map((c,i)=>[c,LOOK_TO[i]]));
+function norm(s){
+  s = String(s).replace(/[Ѐ-ӿ]/g, c => LOOK.get(c) || c).toLowerCase();
+  return s.replace(/[^0-9a-zа-ӿ؀-ۿ+]/g,"");
+}
+function lev(a,b){
+  if(Math.abs(a.length-b.length)>2) return 9;
+  const d=Array.from({length:a.length+1},(_,i)=>[i]);
+  for(let j=1;j<=b.length;j++) d[0][j]=j;
+  for(let i=1;i<=a.length;i++) for(let j=1;j<=b.length;j++)
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[a.length][b.length];
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null}}
+
+/* ---------- data ---------- */
+const P = window.PRODUCTS.map((p,id)=>{
+  const model = norm([p.n].concat(p.a||[]).join(" "));
+  const all = norm([p.b, BRAND_NAMES[p.b]||"", p.n].concat(p.a||[], p.t||[]).join(" "));
+  return Object.assign(p,{id, model, all});
+});
+const BRANDS = [...new Set(P.map(p=>norm(p.b)))].concat(["premier","shivaki","samsung","artel","avalon","ferre","kleo","vesta","royal","sonor","arctic"]);
+
+/* ---------- state ---------- */
+let lang = store("bt-lang") || (()=>{
+  const l=(navigator.language||"").toLowerCase();
+  if(l.startsWith("ps")) return "ps";
+  if(l.startsWith("fa")||l.startsWith("prs")) return "fa";
+  if(l.startsWith("en")) return "en";
+  return "uz";
+})();
+if(!LANGS.includes(lang)) lang="uz";
+const LI = ()=>LANGS.indexOf(lang);
+const T = ()=>UI[lang];
+let shown = 40;
+
+const $ = id=>document.getElementById(id);
+const view=$("view"), q=$("q"), dlg=$("dlg");
+
+function pname(p){ return p.t ? p.t[LI()] : p.n }
+function pdesc(p){ if(!p.d) return ""; return Array.isArray(p.d) ? p.d[LI()] : p.d }
+function catTitle(c){ return CAT[c] ? CAT[c].t[LI()] : c }
+function brandLabel(b){ return BRAND_NAMES[b] || b }
+
+/* ---------- routing (hash) ---------- */
+function route(){
+  const h = new URLSearchParams(location.hash.slice(1));
+  return {cat:h.get("c")||"", brand:h.get("b")||"", q:h.get("q")||"", p:h.get("p")};
+}
+function go(obj, replace){
+  const h = new URLSearchParams();
+  for(const k of ["c","b","q","p"]) if(obj[k]) h.set(k,obj[k]);
+  const s = "#"+h.toString();
+  if(replace) history.replaceState(null,"",s); else history.pushState(null,"",s);
+  render();
+}
+
+/* ---------- search ---------- */
+function search(query, list){
+  let toks = query.trim().split(/\s+/).map(norm).filter(Boolean);
+  if(!toks.length) return list;
+  toks = toks.map(t=>{
+    if(t.length>=4 && !P.some(p=>p.all.includes(t))){
+      const b = BRANDS.find(b=>lev(t,b)<=2);
+      if(b) return b;
+    }
+    return t;
+  });
+  const joined = toks.join("");
+  const scored=[];
+  for(const p of list){
+    let s=0;
+    if(p.model.includes(joined) || (toks.length>1 && toks.slice(1).join("").length>=3 && p.model.includes(toks.slice(1).join("")) && p.all.includes(toks[0]))) s=3;
+    else if(p.all.includes(joined)) s=2;
+    else if(toks.every(t=>p.all.includes(t))){
+      s=1;
+      for(let i=0;i+1<toks.length;i++) if(p.all.includes(toks[i]+toks[i+1])) {s=2;break}
+    }
+    if(s) scored.push([s,p]);
+  }
+  const top = scored.reduce((m,x)=>Math.max(m,x[0]),0);
+  return scored.filter(x=> top>=2 ? x[0]===top : true).map(x=>x[1]);
+}
+
+/* ---------- render ---------- */
+function setLang(l){
+  lang=l; store("bt-lang",l);
+  document.documentElement.lang = l==="fa"?"fa-AF":l;
+  document.documentElement.dir = (l==="fa"||l==="ps")?"rtl":"ltr";
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===l));
+  $("heroTitle").textContent=T().title; $("heroText").textContent=T().text;
+  q.placeholder=T().search; $("qLabel").textContent=T().search;
+  $("footText").textContent=T().foot;
+  $("backArrow").textContent = document.documentElement.dir==="rtl" ? "→" : "←";
+  render();
+  if(dlg.open && dlg.dataset.id) openProduct(+dlg.dataset.id, true);
+}
+
+function card(p){
+  const b=document.createElement("button");
+  b.type="button"; b.className="card";
+  b.innerHTML = `<div class="ph">${p.i?`<img loading="lazy" decoding="async" src="img/${esc(p.i)}" alt="">`:`<div class="nophoto">${esc(brandLabel(p.b))}<small>${esc(T().nophoto)}</small></div>`}</div>
+    <div class="info"><div class="brand">${esc(brandLabel(p.b))}</div><div class="name">${esc(pname(p))}</div></div>`;
+  b.addEventListener("click",()=>{ const r=route(); go({c:r.cat,b:r.brand,q:r.q,p:String(p.id)}); });
+  return b;
+}
+
+function chips(items, current, onPick){
+  const wrap=document.createElement("div"); wrap.className="chips";
+  for(const [key,label,n] of items){
+    const b=document.createElement("button"); b.type="button";
+    b.setAttribute("aria-pressed", key===current);
+    b.innerHTML = esc(label) + (n!=null?`<span class="n">${n}</span>`:"");
+    b.addEventListener("click",()=>onPick(key));
+    wrap.appendChild(b);
+  }
+  return wrap;
+}
+
+let lastKey="";
+function render(){
+  const r=route();
+  if(q.value!==r.q && document.activeElement!==q) q.value=r.q;
+  $("searchBox").classList.toggle("filled", !!q.value);
+  const inCat = !!r.cat, searching = !!r.q.trim(), byBrand = !!r.brand;
+  document.querySelector(".topbar").classList.toggle("has-back", inCat||searching||byBrand);
+  $("backLabel").textContent = inCat ? catTitle(r.cat) : (searching ? T().results : (byBrand ? brandLabel(r.brand) : ""));
+  $("hero").hidden = inCat||searching||byBrand;
+  const key = r.cat+"|"+r.brand+"|"+r.q;
+  if(key!==lastKey){ shown=40; lastKey=key; }
+  view.replaceChildren();
+
+  if(!inCat && !searching && !byBrand){
+    const h=document.createElement("h2"); h.className="sec"; h.textContent=T().cats; view.appendChild(h);
+    const g=document.createElement("div"); g.className="cats";
+    const counts={}; P.forEach(p=>counts[p.c]=(counts[p.c]||0)+1);
+    for(const [k] of CATS){
+      if(!counts[k]) continue;
+      const b=document.createElement("a"); b.className="cat"; b.href="#c="+k;
+      b.innerHTML=`<span class="ic" aria-hidden="true">${CAT[k].icon}</span><span>${esc(catTitle(k))}</span><span class="n">${counts[k]}</span>`;
+      g.appendChild(b);
+    }
+    view.appendChild(g);
+    const h2=document.createElement("h2"); h2.className="sec"; h2.textContent=T().brands; view.appendChild(h2);
+    const bc={}; P.forEach(p=>bc[p.b]=(bc[p.b]||0)+1);
+    view.appendChild(chips(Object.keys(bc).sort().map(b=>[b,brandLabel(b),bc[b]]),"",b=>go({b, q:""})));
+    if(r.p) openProduct(+r.p); else if(dlg.open) dlg.close();
+    return;
+  }
+
+  let list = P;
+  if(inCat) list = list.filter(p=>p.c===r.cat);
+  if(searching) list = search(r.q, list);
+  // filter chips: brands (and categories when searching)
+  const brandCounts={}; list.forEach(p=>brandCounts[p.b]=(brandCounts[p.b]||0)+1);
+  const brands=Object.keys(brandCounts).sort();
+  if((searching||byBrand) && !inCat){
+    const cc={}; list.forEach(p=>cc[p.c]=(cc[p.c]||0)+1);
+    const ck=CATS.map(c=>c[0]).filter(k=>cc[k]);
+    if(ck.length>1) view.appendChild(chips([["",T().all,list.length]].concat(ck.map(k=>[k,catTitle(k),cc[k]])),"",c=>go({c,b:r.brand,q:r.q})));
+  }
+  if(brands.length>1 || r.brand){
+    view.appendChild(chips([["",T().all,list.length]].concat(brands.map(b=>[b,brandLabel(b),brandCounts[b]])), r.brand, b=>go({c:r.cat,b,q:r.q},true)));
+  }
+  if(r.brand) list = list.filter(p=>p.b===r.brand);
+
+  const cnt=document.createElement("p"); cnt.className="count"; cnt.setAttribute("aria-live","polite");
+  cnt.textContent = list.length ? T().found(list.length) : ""; view.appendChild(cnt);
+  if(!list.length){
+    const e=document.createElement("div"); e.className="empty";
+    e.innerHTML=`<p>${esc(T().none)}</p><button class="more" type="button">${esc(T().reset)}</button>`;
+    e.querySelector("button").addEventListener("click",()=>{q.value="";go({c:r.cat})});
+    view.appendChild(e);
+  } else {
+    // products with photos first
+    list = list.slice().sort((a,b)=>(b.i?1:0)-(a.i?1:0));
+    const g=document.createElement("div"); g.className="grid";
+    list.slice(0,shown).forEach(p=>g.appendChild(card(p)));
+    view.appendChild(g);
+    if(list.length>shown){
+      const m=document.createElement("button"); m.type="button"; m.className="more"; m.textContent=T().more;
+      m.addEventListener("click",()=>{ shown+=60; const y=scrollY; render(); scrollTo(0,y); });
+      view.appendChild(m);
+    }
+  }
+  if(r.p) openProduct(+r.p); else if(dlg.open) dlg.close();
+}
+
+function openProduct(id, keep){
+  const p=P[id]; if(!p) return;
+  dlg.dataset.id=id;
+  const nm=pname(p), d=pdesc(p);
+  const msg = encodeURIComponent(`${p.n} (${brandLabel(p.b)})`);
+  dlg.innerHTML = `<button class="close" type="button" aria-label="×">×</button>
+    <div class="dlg-img">${p.i?`<img src="img/${esc(p.i)}" alt="${esc(nm)}">`:`<div class="nophoto">${esc(brandLabel(p.b))}<small>${esc(T().nophoto)}</small></div>`}</div>
+    <div class="dlg-body">
+      <div class="brand">${esc(brandLabel(p.b))}</div>
+      <h3>${esc(nm)}</h3>
+      <div class="meta">${esc(catTitle(p.c))}</div>
+      ${d?`<p class="desc">${esc(d)}</p>`:""}
+      <div class="actions">
+        <a class="btn" href="tel:${PHONE}">📞 ${esc(T().call)}</a>
+        <a class="btn alt" href="${TG}?text=${msg}" target="_blank" rel="noopener">✈️ ${esc(T().ask)}</a>
+      </div>
+    </div>`;
+  dlg.querySelector(".close").addEventListener("click",closeProduct);
+  if(!dlg.open){ try{dlg.showModal()}catch(e){dlg.setAttribute("open","")} }
+}
+function closeProduct(){
+  const r=route();
+  if(r.p){ history.back(); } else if(dlg.open) dlg.close();
+}
+dlg.addEventListener("cancel",e=>{e.preventDefault();closeProduct()});
+dlg.addEventListener("click",e=>{ if(e.target===dlg) closeProduct(); });
+
+/* ---------- events ---------- */
+document.querySelectorAll(".langs button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+let t;
+q.addEventListener("input",()=>{
+  $("searchBox").classList.toggle("filled", !!q.value);
+  clearTimeout(t);
+  t=setTimeout(()=>{ const r=route(); go({c:r.cat,q:q.value},true); },200);
+});
+q.addEventListener("keydown",e=>{ if(e.key==="Enter"){ q.blur(); } });
+$("qClear").addEventListener("click",()=>{ q.value=""; const r=route(); go({c:r.cat,b:r.brand},true); q.focus(); });
+$("back").addEventListener("click",()=>{ const r=route(); if(r.q&&r.cat) go({c:r.cat}); else go({}); });
+window.addEventListener("popstate",render);
+window.addEventListener("hashchange",render);
+
+setLang(lang);
+</script>
+</body>
+</html>
