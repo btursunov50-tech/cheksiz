@@ -46,7 +46,7 @@ Javobda `"ok": true` chiqsa — bot ulandi.
 
 ### 6. Sinov
 Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
-"menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 New customer" xabari kelishi kerak.
+"menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 Yangi mijoz" xabari kelishi kerak.
 
 ## Eslatmalar
 - AI modeli: `claude-opus-5-5` (o'zgartirish: `ANTHROPIC_MODEL`). Javob chuqurligi: `ANTHROPIC_EFFORT` (`low` — tez va arzon).

@@ -36,10 +36,10 @@ const LEAD_TOOL = {
     properties: {
       name: { type: "string", description: "Customer name" },
       contact: { type: "string", description: "Phone, WhatsApp or Telegram contact" },
-      business: { type: "string", description: "Business type, or empty string if unknown" },
-      location: { type: "string", description: "City and country, or empty string if unknown" },
-      needs: { type: "string", description: "Services the customer wants, in English" },
-      language: { type: "string", description: "Language the customer writes in" },
+      business: { type: "string", description: "Business type in Uzbek (Latin), or empty string if unknown" },
+      location: { type: "string", description: "City and country in Uzbek (Latin), or empty string if unknown" },
+      needs: { type: "string", description: "Services the customer wants, written in Uzbek (Latin) for the manager" },
+      language: { type: "string", description: "Language the customer writes in, named in Uzbek (e.g. dariy, pushtu, o'zbek)" },
     },
     required: ["name", "contact", "business", "location", "needs", "language"],
   },
@@ -96,14 +96,14 @@ async function notifyOwner(lead, from) {
   }
   const who = from.username ? `@${from.username}` : `${from.first_name || ""} ${from.last_name || ""}`.trim();
   const text = [
-    "🔔 New customer — Infinite AI & Me",
-    `Name: ${lead.name}`,
-    `Contact: ${lead.contact}`,
+    "🔔 Yangi mijoz — Infinite AI & Me",
+    `Ism: ${lead.name}`,
+    `Aloqa: ${lead.contact}`,
     `Telegram: ${who} (id ${from.id})`,
-    `Business: ${lead.business || "-"}`,
-    `Location: ${lead.location || "-"}`,
-    `Needs: ${lead.needs}`,
-    `Language: ${lead.language}`,
+    `Biznes: ${lead.business || "-"}`,
+    `Joylashuv: ${lead.location || "-"}`,
+    `Kerak: ${lead.needs}`,
+    `Mijoz tili: ${lead.language}`,
   ].join("\n");
   const res = await tg("sendMessage", { chat_id: OWNER_CHAT_ID, text });
   return Boolean(res.ok);
