@@ -1,0 +1,11 @@
+{
+  "name": "cheksiz-sites",
+  "private": true,
+  "description": "Static sites (btrend/, infinite/) and the Infinite AI & Me Telegram bot (api/infinite-bot.js) on Vercel.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
