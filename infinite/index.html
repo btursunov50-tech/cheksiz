@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Infinite AI &amp; Me — websites, QR catalogs and smart bots</title>
+<meta name="description" content="Infinite AI & Me: a human + AI team. Websites, QR catalogs and smart Telegram bots for your business, in your customers' language.">
+<meta name="theme-color" content="#04101e">
+<meta property="og:title" content="Infinite AI & Me">
+<meta property="og:description" content="Your business + AI = no limits. Websites, QR catalogs and smart Telegram bots.">
+<meta property="og:image" content="media/poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Vazirmatn:wght@400;600;800&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#04101e; --bg2:#0a1a33; --card:#0f2142; --line:rgba(240,200,110,.22);
+  --gold:#f0c86e; --gold2:#d9a441; --ink:#f3f6fb; --muted:#a9b6cc; --tg:#229ed9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
+[dir=rtl] body{font-family:"Vazirmatn","Montserrat",system-ui,sans-serif}
+html[lang=ur] body{font-family:"Noto Naskh Arabic","Vazirmatn",system-ui,sans-serif}
+html[lang=zh] body{font-family:"Noto Sans SC","Montserrat",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(4,16,30,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-family:"Montserrat",sans-serif;white-space:nowrap}
+.brand .inf{color:var(--gold);font-size:1.6rem;line-height:1}
+.lang{position:relative}
+.lang select{appearance:none;-webkit-appearance:none;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 34px 9px 12px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;max-width:170px}
+[dir=rtl] .lang select{padding:9px 12px 9px 34px}
+.lang::after{content:"▾";position:absolute;inset-inline-end:12px;top:50%;transform:translateY(-50%);color:var(--gold);pointer-events:none}
+
+/* hero */
+.hero{position:relative;text-align:center;padding:24px 0 56px;background:radial-gradient(ellipse at 50% 0%,#0d2a52 0%,var(--bg) 70%)}
+.hero-img{width:min(560px,92vw);margin:0 auto;display:block;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 55%,transparent 100%)}
+.hero h1{font-family:"Montserrat",sans-serif;font-size:clamp(2.2rem,8vw,4rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-top:-6px}
+.hero h1 .amp{color:var(--gold)}
+.tagline{margin-top:12px;font-size:clamp(1.05rem,3.6vw,1.4rem);font-weight:700;background:linear-gradient(90deg,var(--gold),#fff2c9,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro{max-width:640px;margin:16px auto 0;color:var(--muted);font-size:1.02rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:700;font-size:1rem;border:1px solid transparent;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1203;box-shadow:0 8px 28px rgba(240,200,110,.25)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.03)}
+.btn-tg{background:var(--tg);color:#fff;box-shadow:0 8px 28px rgba(34,158,217,.3)}
+.btn svg{width:22px;height:22px;flex-shrink:0}
+
+/* sections */
+section{padding:56px 0}
+h2{text-align:center;font-size:clamp(1.6rem,5vw,2.3rem);font-weight:800;margin-bottom:28px}
+h2::after{content:"";display:block;width:56px;height:3px;border-radius:3px;margin:14px auto 0;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:22px}
+.card .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;background:rgba(240,200,110,.12);border:1px solid var(--line);margin-bottom:14px}
+.card h3{font-size:1.15rem;font-weight:700;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.96rem}
+
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));counter-reset:s}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.step::before{counter-increment:s;content:counter(s);flex-shrink:0;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#1a1203;background:linear-gradient(135deg,var(--gold),var(--gold2));font-family:"Montserrat",sans-serif}
+.step p{font-weight:600;padding-top:7px}
+
+.video-box{max-width:380px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.5);background:#000}
+.video-box video{display:block;width:100%;height:auto;aspect-ratio:9/16}
+
+.contact{text-align:center;background:radial-gradient(ellipse at 50% 100%,#0d2a52 0%,var(--bg) 70%)}
+.contact p.lead{color:var(--muted);max-width:520px;margin:-8px auto 22px}
+.qr{display:inline-block;margin-top:26px;background:#fff;border-radius:20px;padding:14px}
+.qr img{display:block;width:200px;height:200px;image-rendering:pixelated}
+.scan{margin-top:10px;color:var(--muted);font-size:.92rem}
+.handle{margin-top:4px;font-weight:700;color:var(--gold);font-family:"Montserrat",sans-serif;direction:ltr;unicode-bidi:isolate}
+
+footer{border-top:1px solid var(--line);padding:22px 0 calc(22px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:.9rem}
+footer b{color:var(--ink)}
+
+@media (max-width:520px){
+  section{padding:44px 0}
+  .btn{width:100%}
+  .brand .txt{font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="inf" aria-hidden="true">∞</span><span class="txt">Infinite AI &amp; Me</span></a>
+    <label class="lang">
+      <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Language</span>
+      <select id="lang" aria-label="Language"></select>
+    </label>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <img class="hero-img" src="media/infinity.jpg" alt="" width="900" height="400">
+      <h1>Infinite AI <span class="amp">&amp;</span> Me</h1>
+      <p class="tagline" data-i="tagline"></p>
+      <p class="intro" data-i="intro"></p>
+      <div class="btns">
+        <a class="btn btn-gold" href="https://t.me/sahiychishopbot" target="_blank" rel="noopener" data-i="cta_bot"></a>
+        <a class="btn btn-ghost" href="#services" data-i="cta_services"></a>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 data-i="services_h"></h2>
+      <div class="grid">
+        <div class="card"><div class="ic" aria-hidden="true">📱</div><h3 data-i="s1t"></h3><p data-i="s1d"></p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🤖</div><h3 data-i="s2t"></h3><p data-i="s2d"></p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🌍</div><h3 data-i="s3t"></h3><p data-i="s3d"></p></div>
+        <div class="card"><div class="ic" aria-hidden="true">⚡</div><h3 data-i="s4t"></h3><p data-i="s4d"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 data-i="how_h"></h2>
+      <div class="steps">
+        <div class="step"><p data-i="st1"></p></div>
+        <div class="step"><p data-i="st2"></p></div>
+        <div class="step"><p data-i="st3"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <h2 data-i="video_h"></h2>
+      <div class="video-box">
+        <video src="media/infinite-ai-ad.mp4" poster="media/poster.jpg" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 data-i="contact_h"></h2>
+      <p class="lead" data-i="contact_p"></p>
+      <a class="btn btn-tg" href="https://t.me/sahiychishopbot" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.04 15.6 8.7 20.3c.48 0 .7-.2.95-.45l2.28-2.18 4.72 3.46c.87.48 1.48.23 1.72-.8l3.11-14.6c.28-1.29-.47-1.8-1.32-1.48L1.9 10.36c-1.25.49-1.23 1.19-.21 1.5l4.68 1.46L17.24 6.5c.51-.34.98-.15.6.19z"/></svg>
+        <span data-i="contact_btn"></span>
+      </a>
+      <div>
+        <div class="qr"><img src="media/qr-bot.png" alt="QR: t.me/sahiychishopbot" width="200" height="200"></div>
+        <p class="scan" data-i="scan"></p>
+        <p class="handle">@sahiychishopbot</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><b>∞ Infinite AI &amp; Me</b> · <span data-i="footer"></span> · © 2026</div>
+</footer>
+
+<script>
+"use strict";
+const RTL = ["prs","ps","fa","ur","ar"];
+const LANGS = [
+  ["uz","O'zbekcha"],["en","English"],["prs","دری"],["ps","پښتو"],["ru","Русский"],["tg","Тоҷикӣ"],
+  ["tk","Türkmençe"],["az","Azərbaycanca"],["fa","فارسی"],["ur","اردو"],["kk","Қазақша"],["ky","Кыргызча"],
+  ["kaa","Qaraqalpaqsha"],["ar","العربية"],["tr","Türkçe"],["zh","中文"]
+];
+const T = {
+en:{tagline:"Your business + AI = no limits",intro:"We are a human + AI team. We build websites, QR catalogs and smart Telegram bots for your business — in your customers' language.",cta_bot:"Message our bot",cta_services:"Our services",services_h:"What we do",s1t:"QR catalog website",s1d:"All your products on one page. Customers scan a QR code and see everything on their phone — no app needed.",s2t:"Smart Telegram bot",s2d:"Answers your customers 24/7, finds the right product and sends orders straight to you.",s3t:"Many languages",s3d:"Dari, Pashto, Uzbek, Russian, English and more — every customer reads in their own language.",s4t:"Fast and affordable",s4d:"Ready in a few days. You pay only for what you need.",how_h:"How it works",st1:"Send us your price list or catalog",st2:"We build your website and bot",st3:"Print the QR code and welcome new customers",video_h:"Watch our video",contact_h:"Order your website and bot",contact_p:"Write to our Telegram bot — it answers right away.",contact_btn:"Open Telegram bot",scan:"or scan the QR code",footer:"Websites · QR catalogs · Smart bots"},
+uz:{tagline:"Biznesingiz + AI = cheksiz imkoniyat",intro:"Biz inson va sun'iy intellekt jamoasimiz. Biznesingiz uchun sayt, QR katalog va aqlli Telegram bot yaratamiz — mijozlaringiz tilida.",cta_bot:"Botimizga yozing",cta_services:"Xizmatlarimiz",services_h:"Nima qilamiz",s1t:"QR katalog sayt",s1d:"Barcha mahsulotlaringiz bitta sahifada. Mijoz QR kodni skaner qiladi va hammasini telefonida ko'radi — ilova shart emas.",s2t:"Aqlli Telegram bot",s2d:"Mijozlarga 24/7 javob beradi, kerakli mahsulotni topadi va buyurtmani sizga yuboradi.",s3t:"Ko'p tillilik",s3d:"Dariy, pashto, o'zbek, rus, ingliz va boshqa tillar — har bir mijoz o'z tilida o'qiydi.",s4t:"Tez va arzon",s4d:"Bir necha kunda tayyor. Faqat keraklisi uchun to'laysiz.",how_h:"Qanday ishlaydi",st1:"Prays-list yoki katalogingizni yuborasiz",st2:"Biz sayt va bot yaratamiz",st3:"QR kodni chop etasiz va yangi mijozlarni kutib olasiz",video_h:"Videomizni ko'ring",contact_h:"Sayt va bot buyurtma qiling",contact_p:"Telegram botimizga yozing — darhol javob beradi.",contact_btn:"Telegram botni ochish",scan:"yoki QR kodni skaner qiling",footer:"Sayt · QR katalog · Aqlli bot"},
+prs:{tagline:"تجارت شما + هوش مصنوعی = امکانات بی‌پایان",intro:"ما یک تیم انسان و هوش مصنوعی هستیم. برای تجارت شما وب‌سایت، کتلاگ کیوآر و ربات هوشمند تلگرام می‌سازیم — به زبان مشتریان شما.",cta_bot:"به ربات ما پیام بدهید",cta_services:"خدمات ما",services_h:"چه کار می‌کنیم",s1t:"وب‌سایت کتلاگ با کیوآر کد",s1d:"همه اجناس شما در یک صفحه. مشتری کیوآر کد را اسکن می‌کند و همه چیز را در موبایل خود می‌بیند — بدون نصب برنامه.",s2t:"ربات هوشمند تلگرام",s2d:"شبانه‌روز به مشتریان جواب می‌دهد، جنس مناسب را پیدا می‌کند و سفارش را مستقیم به شما می‌فرستد.",s3t:"چند زبانه",s3d:"دری، پشتو، اوزبیکی، روسی، انگلیسی و زبان‌های دیگر — هر مشتری به زبان خودش می‌خواند.",s4t:"سریع و ارزان",s4d:"در چند روز آماده می‌شود. فقط برای آنچه لازم دارید پول می‌پردازید.",how_h:"چگونه کار می‌کند",st1:"لیست قیمت یا کتلاگ خود را برای ما بفرستید",st2:"ما وب‌سایت و ربات شما را می‌سازیم",st3:"کیوآر کد را چاپ کنید و از مشتریان جدید استقبال کنید",video_h:"ویدیوی ما را ببینید",contact_h:"وب‌سایت و ربات سفارش دهید",contact_p:"به ربات تلگرام ما پیام بدهید — فوراً جواب می‌دهد.",contact_btn:"باز کردن ربات تلگرام",scan:"یا کیوآر کد را اسکن کنید",footer:"وب‌سایت · کتلاگ کیوآر · ربات هوشمند"},
+ps:{tagline:"ستاسو سوداګري + مصنوعي ځیرکتیا = بې‌پایه امکانات",intro:"موږ د انسان او مصنوعي ځیرکتیا ټیم یو. ستاسو د سوداګرۍ لپاره ویب‌پاڼه، QR کتلاګ او هوښیار ټلګرام بوټ جوړوو — ستاسو د پیرودونکو په ژبه.",cta_bot:"زموږ بوټ ته ولیکئ",cta_services:"زموږ خدمتونه",services_h:"موږ څه کوو",s1t:"QR کتلاګ ویب‌پاڼه",s1d:"ستاسو ټول توکي په یوه پاڼه کې. پیرودونکی QR کوډ سکن کوي او هر څه په خپل موبایل کې ویني — اپ ته اړتیا نشته.",s2t:"هوښیار ټلګرام بوټ",s2d:"شپه او ورځ پیرودونکو ته ځواب ورکوي، سم توکی پیدا کوي او فرمایش مستقیم تاسو ته لیږي.",s3t:"ډېرې ژبې",s3d:"دري، پښتو، ازبکي، روسي، انګلیسي او نورې ژبې — هر پیرودونکی په خپله ژبه لولي.",s4t:"چټک او ارزانه",s4d:"په څو ورځو کې چمتو کېږي. یوازې د هغه څه پیسې ورکوئ چې ورته اړتیا لرئ.",how_h:"دا څنګه کار کوي",st1:"خپل د بیو لېست یا کتلاګ موږ ته ولېږئ",st2:"موږ ستاسو ویب‌پاڼه او بوټ جوړوو",st3:"QR کوډ چاپ کړئ او نوي پیرودونکي ښه راغلاست کړئ",video_h:"زموږ ویډیو وګورئ",contact_h:"ویب‌پاڼه او بوټ فرمایش کړئ",contact_p:"زموږ ټلګرام بوټ ته ولیکئ — سمدستي ځواب درکوي.",contact_btn:"ټلګرام بوټ پرانیزئ",scan:"یا QR کوډ سکن کړئ",footer:"ویب‌پاڼه · QR کتلاګ · هوښیار بوټ"},
+ru:{tagline:"Ваш бизнес + ИИ = без границ",intro:"Мы — команда человека и искусственного интеллекта. Создаём для вашего бизнеса сайты, QR-каталоги и умных Telegram-ботов — на языке ваших клиентов.",cta_bot:"Написать нашему боту",cta_services:"Наши услуги",services_h:"Что мы делаем",s1t:"Сайт-каталог с QR-кодом",s1d:"Все ваши товары на одной странице. Клиент сканирует QR-код и видит всё в телефоне — без приложений.",s2t:"Умный Telegram-бот",s2d:"Отвечает клиентам 24/7, находит нужный товар и отправляет заказы прямо вам.",s3t:"Много языков",s3d:"Дари, пушту, узбекский, русский, английский и другие — каждый клиент читает на своём языке.",s4t:"Быстро и недорого",s4d:"Готово за несколько дней. Платите только за то, что нужно.",how_h:"Как это работает",st1:"Пришлите нам прайс-лист или каталог",st2:"Мы создаём сайт и бота",st3:"Распечатайте QR-код и встречайте новых клиентов",video_h:"Смотрите наше видео",contact_h:"Закажите сайт и бота",contact_p:"Напишите нашему Telegram-боту — он ответит сразу.",contact_btn:"Открыть Telegram-бот",scan:"или отсканируйте QR-код",footer:"Сайты · QR-каталоги · Умные боты"},
+tg:{tagline:"Тиҷорати шумо + ЗС = имкониятҳои бепоён",intro:"Мо дастаи инсон ва зеҳни сунъӣ ҳастем. Барои тиҷорати шумо сомона, каталоги QR ва боти зираки Telegram месозем — бо забони мизоҷони шумо.",cta_bot:"Ба боти мо нависед",cta_services:"Хизматҳои мо",services_h:"Мо чӣ кор мекунем",s1t:"Сомонаи каталог бо QR",s1d:"Ҳамаи молҳои шумо дар як саҳифа. Мизоҷ рамзи QR-ро скан мекунад ва ҳамаашро дар телефон мебинад — барнома лозим нест.",s2t:"Боти зираки Telegram",s2d:"Шабонарӯз ба мизоҷон ҷавоб медиҳад, моли лозимиро меёбад ва фармоишро бевосита ба шумо мефиристад.",s3t:"Бисёрзабона",s3d:"Дарӣ, пашту, ӯзбекӣ, русӣ, англисӣ ва дигар забонҳо — ҳар мизоҷ бо забони худ мехонад.",s4t:"Тез ва арзон",s4d:"Дар чанд рӯз омода мешавад. Танҳо барои он чизе, ки лозим аст, пардохт мекунед.",how_h:"Чӣ тавр кор мекунад",st1:"Нархнома ё каталоги худро ба мо фиристед",st2:"Мо сомона ва боти шуморо месозем",st3:"Рамзи QR-ро чоп кунед ва мизоҷони навро пешвоз гиред",video_h:"Видеои моро тамошо кунед",contact_h:"Сомона ва бот фармоиш диҳед",contact_p:"Ба боти Telegram-и мо нависед — фавран ҷавоб медиҳад.",contact_btn:"Кушодани боти Telegram",scan:"ё рамзи QR-ро скан кунед",footer:"Сомона · Каталоги QR · Боти зирак"},
+tk:{tagline:"Siziň işiňiz + EA = çäksiz mümkinçilik",intro:"Biz adam we emeli aň toparydyrys. Siziň işiňiz üçin saýt, QR katalog we akylly Telegram bot döredýäris — müşderileriňiziň dilinde.",cta_bot:"Botumyza ýazyň",cta_services:"Hyzmatlarymyz",services_h:"Biz näme edýäris",s1t:"QR katalog saýty",s1d:"Ähli harytlaryňyz bir sahypada. Müşderi QR kody skanirleýär we hemmesini telefonynda görýär — programma gerek däl.",s2t:"Akylly Telegram bot",s2d:"Müşderilere gije-gündiz jogap berýär, gerekli harydy tapýar we sargydy göni size iberýär.",s3t:"Köp dilli",s3d:"Dari, puştu, özbek, rus, iňlis we beýleki diller — her müşderi öz dilinde okaýar.",s4t:"Çalt we arzan",s4d:"Birnäçe günde taýýar. Diňe gerek zadyňyz üçin töleýärsiňiz.",how_h:"Bu nähili işleýär",st1:"Baha sanawyňyzy ýa-da katalogyňyzy bize iberiň",st2:"Biz saýtyňyzy we botuňyzy döredýäris",st3:"QR kody çap ediň we täze müşderileri garşy alyň",video_h:"Wideomyza serediň",contact_h:"Saýt we bot sargyt ediň",contact_p:"Telegram botumyza ýazyň — derrew jogap berýär.",contact_btn:"Telegram boty açmak",scan:"ýa-da QR kody skanirläň",footer:"Saýtlar · QR kataloglar · Akylly botlar"},
+az:{tagline:"Biznesiniz + Sİ = sonsuz imkanlar",intro:"Biz insan və süni intellekt komandasıyıq. Biznesiniz üçün sayt, QR kataloq və ağıllı Telegram bot yaradırıq — müştərilərinizin dilində.",cta_bot:"Botumuza yazın",cta_services:"Xidmətlərimiz",services_h:"Nə edirik",s1t:"QR kataloq saytı",s1d:"Bütün məhsullarınız bir səhifədə. Müştəri QR kodu skan edir və hər şeyi telefonunda görür — tətbiq lazım deyil.",s2t:"Ağıllı Telegram bot",s2d:"Müştərilərə 24/7 cavab verir, lazımi məhsulu tapır və sifarişi birbaşa sizə göndərir.",s3t:"Çoxdilli",s3d:"Dari, puştu, özbək, rus, ingilis və digər dillər — hər müştəri öz dilində oxuyur.",s4t:"Sürətli və münasib",s4d:"Bir neçə günə hazır olur. Yalnız ehtiyacınız olan üçün ödəyirsiniz.",how_h:"Necə işləyir",st1:"Qiymət siyahınızı və ya kataloqunuzu bizə göndərin",st2:"Biz saytınızı və botunuzu yaradırıq",st3:"QR kodu çap edin və yeni müştəriləri qarşılayın",video_h:"Videomuza baxın",contact_h:"Sayt və bot sifariş edin",contact_p:"Telegram botumuza yazın — dərhal cavab verir.",contact_btn:"Telegram botu açın",scan:"və ya QR kodu skan edin",footer:"Saytlar · QR kataloqlar · Ağıllı botlar"},
+fa:{tagline:"کسب‌وکار شما + هوش مصنوعی = بی‌نهایت",intro:"ما یک تیم انسان و هوش مصنوعی هستیم. برای کسب‌وکار شما وب‌سایت، کاتالوگ QR و ربات هوشمند تلگرام می‌سازیم — به زبان مشتریان شما.",cta_bot:"به ربات ما پیام دهید",cta_services:"خدمات ما",services_h:"چه کاری انجام می‌دهیم",s1t:"وب‌سایت کاتالوگ QR",s1d:"همه محصولات شما در یک صفحه. مشتری کد QR را اسکن می‌کند و همه چیز را در گوشی خود می‌بیند — بدون نیاز به اپلیکیشن.",s2t:"ربات هوشمند تلگرام",s2d:"به‌صورت ۲۴ ساعته به مشتریان پاسخ می‌دهد، محصول مناسب را پیدا می‌کند و سفارش را مستقیم برای شما می‌فرستد.",s3t:"چندزبانه",s3d:"دری، پشتو، ازبکی، روسی، انگلیسی و زبان‌های دیگر — هر مشتری به زبان خودش می‌خواند.",s4t:"سریع و مقرون‌به‌صرفه",s4d:"ظرف چند روز آماده است. فقط برای آنچه نیاز دارید هزینه می‌کنید.",how_h:"چطور کار می‌کند",st1:"لیست قیمت یا کاتالوگ خود را برای ما بفرستید",st2:"ما وب‌سایت و ربات شما را می‌سازیم",st3:"کد QR را چاپ کنید و از مشتریان جدید استقبال کنید",video_h:"ویدیوی ما را ببینید",contact_h:"وب‌سایت و ربات سفارش دهید",contact_p:"به ربات تلگرام ما پیام دهید — فوراً پاسخ می‌دهد.",contact_btn:"باز کردن ربات تلگرام",scan:"یا کد QR را اسکن کنید",footer:"وب‌سایت · کاتالوگ QR · ربات هوشمند"},
+ur:{tagline:"آپ کا کاروبار + مصنوعی ذہانت = لامحدود امکانات",intro:"ہم انسان اور مصنوعی ذہانت کی ٹیم ہیں۔ ہم آپ کے کاروبار کے لیے ویب سائٹ، QR کیٹلاگ اور اسمارٹ ٹیلیگرام بوٹ بناتے ہیں — آپ کے گاہکوں کی زبان میں۔",cta_bot:"ہمارے بوٹ کو پیغام بھیجیں",cta_services:"ہماری خدمات",services_h:"ہم کیا کرتے ہیں",s1t:"QR کیٹلاگ ویب سائٹ",s1d:"آپ کی تمام مصنوعات ایک صفحے پر۔ گاہک QR کوڈ اسکین کرتا ہے اور سب کچھ اپنے فون پر دیکھتا ہے — کسی ایپ کی ضرورت نہیں۔",s2t:"اسمارٹ ٹیلیگرام بوٹ",s2d:"گاہکوں کو 24/7 جواب دیتا ہے، صحیح پروڈکٹ تلاش کرتا ہے اور آرڈر سیدھا آپ کو بھیجتا ہے۔",s3t:"کئی زبانیں",s3d:"دری، پشتو، ازبک، روسی، انگریزی اور دیگر زبانیں — ہر گاہک اپنی زبان میں پڑھتا ہے۔",s4t:"تیز اور سستا",s4d:"چند دنوں میں تیار۔ صرف اسی کی ادائیگی کریں جس کی آپ کو ضرورت ہے۔",how_h:"یہ کیسے کام کرتا ہے",st1:"اپنی قیمتوں کی فہرست یا کیٹلاگ ہمیں بھیجیں",st2:"ہم آپ کی ویب سائٹ اور بوٹ بناتے ہیں",st3:"QR کوڈ پرنٹ کریں اور نئے گاہکوں کا استقبال کریں",video_h:"ہماری ویڈیو دیکھیں",contact_h:"ویب سائٹ اور بوٹ کا آرڈر دیں",contact_p:"ہمارے ٹیلیگرام بوٹ کو لکھیں — وہ فوراً جواب دیتا ہے۔",contact_btn:"ٹیلیگرام بوٹ کھولیں",scan:"یا QR کوڈ اسکین کریں",footer:"ویب سائٹس · QR کیٹلاگ · اسمارٹ بوٹس"},
+kk:{tagline:"Сіздің бизнесіңіз + ЖИ = шексіз мүмкіндік",intro:"Біз — адам мен жасанды интеллект командасымыз. Бизнесіңіз үшін сайт, QR-каталог және ақылды Telegram-бот жасаймыз — клиенттеріңіздің тілінде.",cta_bot:"Ботымызға жазыңыз",cta_services:"Қызметтеріміз",services_h:"Біз не істейміз",s1t:"QR-каталог сайты",s1d:"Барлық тауарларыңыз бір бетте. Клиент QR-кодты сканерлеп, бәрін телефонынан көреді — қосымша қажет емес.",s2t:"Ақылды Telegram-бот",s2d:"Клиенттерге тәулік бойы жауап береді, керекті тауарды табады және тапсырысты тікелей сізге жібереді.",s3t:"Көптілді",s3d:"Дари, пушту, өзбек, орыс, ағылшын және басқа тілдер — әр клиент өз тілінде оқиды.",s4t:"Жылдам әрі арзан",s4d:"Бірнеше күнде дайын. Тек қажетіңіз үшін төлейсіз.",how_h:"Бұл қалай жұмыс істейді",st1:"Баға тізімін немесе каталогыңызды бізге жіберіңіз",st2:"Біз сайт пен бот жасаймыз",st3:"QR-кодты басып шығарып, жаңа клиенттерді қарсы алыңыз",video_h:"Бейнемізді көріңіз",contact_h:"Сайт пен ботқа тапсырыс беріңіз",contact_p:"Telegram-ботымызға жазыңыз — бірден жауап береді.",contact_btn:"Telegram-ботты ашу",scan:"немесе QR-кодты сканерлеңіз",footer:"Сайттар · QR-каталогтар · Ақылды боттар"},
+ky:{tagline:"Сиздин бизнес + ЖИ = чексиз мүмкүнчүлүк",intro:"Биз адам жана жасалма интеллект командасыбыз. Бизнесиңиз үчүн сайт, QR-каталог жана акылдуу Telegram-бот түзөбүз — кардарларыңыздын тилинде.",cta_bot:"Ботубузга жазыңыз",cta_services:"Кызматтарыбыз",services_h:"Биз эмне кылабыз",s1t:"QR-каталог сайты",s1d:"Бардык товарларыңыз бир бетте. Кардар QR-кодду сканерлеп, баарын телефонунан көрөт — тиркеме керек эмес.",s2t:"Акылдуу Telegram-бот",s2d:"Кардарларга күнү-түнү жооп берет, керектүү товарды табат жана буйрутманы түз сизге жөнөтөт.",s3t:"Көп тилдүү",s3d:"Дари, пушту, өзбек, орус, англис жана башка тилдер — ар бир кардар өз тилинде окуйт.",s4t:"Тез жана арзан",s4d:"Бир нече күндө даяр. Керектүүсү үчүн гана төлөйсүз.",how_h:"Бул кантип иштейт",st1:"Баа тизмеңизди же каталогуңузду бизге жөнөтүңүз",st2:"Биз сайт жана бот түзөбүз",st3:"QR-кодду басып чыгарып, жаңы кардарларды тосуп алыңыз",video_h:"Видеобузду көрүңүз",contact_h:"Сайт жана бот буйрутма кылыңыз",contact_p:"Telegram-ботубузга жазыңыз — дароо жооп берет.",contact_btn:"Telegram-ботту ачуу",scan:"же QR-кодду сканерлеңиз",footer:"Сайттар · QR-каталогдор · Акылдуу боттор"},
+kaa:{tagline:"Biznesińiz + JI = sheksiz múmkinshilik",intro:"Biz adam hám jasalma intellekt komandasımız. Biznesińiz ushın sayt, QR katalog hám aqıllı Telegram bot jaratamız — klientlerińizdiń tilinde.",cta_bot:"Botımızǵa jazıń",cta_services:"Xızmetlerimiz",services_h:"Biz ne isleymiz",s1t:"QR katalog sayt",s1d:"Barlıq ónimlerińiz bir bette. Klient QR kodtı skanerleydi hám hámmesin telefonında kóredi — qosımsha kerek emes.",s2t:"Aqıllı Telegram bot",s2d:"Klientlerge kún-tún juwap beredi, kerekli ónimdi tabadı hám buyırtpanı tikkeley sizge jiberedi.",s3t:"Kóp tilli",s3d:"Dari, pushtu, ózbek, orıs, inglis hám basqa tiller — hár bir klient óz tilinde oqıydı.",s4t:"Tez hám arzan",s4d:"Bir neshe kúnde tayın. Tek kereklisi ushın tóleysiz.",how_h:"Bul qalay isleydi",st1:"Baha dizimińizdi yamasa katalogıńızdı bizge jiberiń",st2:"Biz sayt hám bot jaratamız",st3:"QR kodtı basıp shıǵarıń hám jańa klientlerdi kútip alıń",video_h:"Videomızdı kóriń",contact_h:"Sayt hám bot buyırtpa beriń",contact_p:"Telegram botımızǵa jazıń — dárhal juwap beredi.",contact_btn:"Telegram bottı ashıw",scan:"yamasa QR kodtı skanerleń",footer:"Saytlar · QR kataloglar · Aqıllı botlar"},
+ar:{tagline:"عملك + الذكاء الاصطناعي = إمكانيات بلا حدود",intro:"نحن فريق من الإنسان والذكاء الاصطناعي. ننشئ لعملك مواقع إلكترونية وكتالوجات QR وبوتات تيليجرام ذكية — بلغة عملائك.",cta_bot:"راسل البوت الخاص بنا",cta_services:"خدماتنا",services_h:"ماذا نقدم",s1t:"موقع كتالوج بـ QR",s1d:"جميع منتجاتك في صفحة واحدة. يمسح العميل رمز QR ويرى كل شيء على هاتفه — دون الحاجة إلى تطبيق.",s2t:"بوت تيليجرام ذكي",s2d:"يرد على عملائك على مدار الساعة، ويجد المنتج المناسب ويرسل الطلبات إليك مباشرة.",s3t:"لغات متعددة",s3d:"الدارية والبشتو والأوزبكية والروسية والإنجليزية وغيرها — كل عميل يقرأ بلغته.",s4t:"سريع وبتكلفة مناسبة",s4d:"جاهز خلال أيام قليلة. تدفع فقط مقابل ما تحتاجه.",how_h:"كيف يعمل",st1:"أرسل لنا قائمة الأسعار أو الكتالوج",st2:"نحن ننشئ موقعك والبوت",st3:"اطبع رمز QR واستقبل عملاء جددًا",video_h:"شاهد الفيديو",contact_h:"اطلب موقعك والبوت",contact_p:"راسل بوت تيليجرام الخاص بنا — يرد فورًا.",contact_btn:"افتح بوت تيليجرام",scan:"أو امسح رمز QR",footer:"مواقع · كتالوجات QR · بوتات ذكية"},
+tr:{tagline:"İşiniz + Yapay Zekâ = sınırsız imkân",intro:"Biz insan ve yapay zekâdan oluşan bir ekibiz. İşletmeniz için web sitesi, QR katalog ve akıllı Telegram botu yapıyoruz — müşterilerinizin dilinde.",cta_bot:"Botumuza yazın",cta_services:"Hizmetlerimiz",services_h:"Ne yapıyoruz",s1t:"QR katalog web sitesi",s1d:"Tüm ürünleriniz tek sayfada. Müşteri QR kodu tarar ve her şeyi telefonunda görür — uygulama gerekmez.",s2t:"Akıllı Telegram botu",s2d:"Müşterilerinize 7/24 yanıt verir, doğru ürünü bulur ve siparişleri doğrudan size iletir.",s3t:"Çok dilli",s3d:"Darice, Peştuca, Özbekçe, Rusça, İngilizce ve diğer diller — her müşteri kendi dilinde okur.",s4t:"Hızlı ve uygun fiyatlı",s4d:"Birkaç günde hazır. Sadece ihtiyacınız olana ödeme yaparsınız.",how_h:"Nasıl çalışır",st1:"Fiyat listenizi veya kataloğunuzu bize gönderin",st2:"Web sitenizi ve botunuzu biz yapıyoruz",st3:"QR kodu yazdırın ve yeni müşterileri karşılayın",video_h:"Videomuzu izleyin",contact_h:"Web sitesi ve bot siparişi verin",contact_p:"Telegram botumuza yazın — hemen yanıt verir.",contact_btn:"Telegram botunu aç",scan:"veya QR kodu tarayın",footer:"Web siteleri · QR kataloglar · Akıllı botlar"},
+zh:{tagline:"您的生意 + AI = 无限可能",intro:"我们是一支由人与人工智能组成的团队。为您的生意打造网站、二维码目录和智能 Telegram 机器人——使用您客户的语言。",cta_bot:"给我们的机器人发消息",cta_services:"我们的服务",services_h:"我们做什么",s1t:"二维码目录网站",s1d:"您的所有商品都在一个页面上。客户扫描二维码即可在手机上查看全部内容——无需安装应用。",s2t:"智能 Telegram 机器人",s2d:"全天候回复客户，找到合适的商品，并把订单直接发送给您。",s3t:"多语言",s3d:"达里语、普什图语、乌兹别克语、俄语、英语等——每位客户都能用自己的语言阅读。",s4t:"快速且实惠",s4d:"几天内即可完成。只为您需要的部分付费。",how_h:"如何运作",st1:"把您的价目表或目录发给我们",st2:"我们为您制作网站和机器人",st3:"打印二维码，迎接新客户",video_h:"观看我们的视频",contact_h:"订购网站和机器人",contact_p:"给我们的 Telegram 机器人发消息——它会立即回复。",contact_btn:"打开 Telegram 机器人",scan:"或扫描二维码",footer:"网站 · 二维码目录 · 智能机器人"}
+};
+
+function store(v){ try{ if(v===undefined) return localStorage.getItem("iam-lang"); localStorage.setItem("iam-lang",v); }catch(e){ return null; } }
+
+function detect(){
+  const p = new URLSearchParams(location.search).get("lang");
+  if (p && T[p]) return p;
+  const s = store(); if (s && T[s]) return s;
+  for (const raw of (navigator.languages || [navigator.language || "en"])){
+    const l = raw.toLowerCase();
+    if (l.startsWith("fa-af") || l.startsWith("prs")) return "prs";
+    const base = l.split("-")[0];
+    if (T[base]) return base;
+  }
+  return "en";
+}
+
+function apply(lang){
+  const t = T[lang] || T.en;
+  const html = document.documentElement;
+  html.lang = lang === "prs" ? "fa-AF" : lang;
+  html.dir = RTL.includes(lang) ? "rtl" : "ltr";
+  if (lang === "ur") html.lang = "ur";
+  if (lang === "zh") html.lang = "zh";
+  document.querySelectorAll("[data-i]").forEach(el => { el.textContent = t[el.dataset.i] || T.en[el.dataset.i]; });
+  document.getElementById("lang").value = lang;
+}
+
+const sel = document.getElementById("lang");
+LANGS.forEach(([code, name]) => { const o = document.createElement("option"); o.value = code; o.textContent = name; sel.appendChild(o); });
+sel.addEventListener("change", () => { store(sel.value); apply(sel.value); });
+apply(detect());
+</script>
+</body>
+</html>
