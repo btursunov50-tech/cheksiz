@@ -48,8 +48,23 @@ Javobda `"ok": true` chiqsa — bot ulandi.
 Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
 "menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 Yangi mijoz" xabari kelishi kerak.
 
+### 7. Suhbat xotirasi (bepul)
+Vercel → **cheksiz** loyihasi → **Storage** → **Create Database** → **Upstash for Redis** →
+Free tarif → **Connect**. Vercel o'zi `KV_REST_API_URL` va `KV_REST_API_TOKEN` ni qo'shadi.
+So'ng **Redeploy**. Endi bot mijozni 30 kungacha eslab qoladi.
+
+### 8. Ovozli xabarlar
+1. https://console.groq.com → ro'yxatdan o'ting → **API Keys** → **Create API Key**.
+2. Vercel'ga qo'shing: `GROQ_API_KEY` = shu kalit (Production) → **Redeploy**.
+3. Botga o'zbek, dariy va pushtu tillarida ovozli xabar yuborib sinang.
+   Pushtu yomon tanilsa, Groq o'rniga ElevenLabs kalitini (`ELEVENLABS_API_KEY`) qo'ying.
+
+### 9. Xarajat chegarasi
+https://console.anthropic.com → **Settings → Limits** → oylik limit (masalan $10).
+Limitga yetganda bot "Sorry, something went wrong" deb javob beradi — balansni to'ldiring.
+
 ## Eslatmalar
 - AI modeli: `claude-opus-5-5` (o'zgartirish: `ANTHROPIC_MODEL`). Javob chuqurligi: `ANTHROPIC_EFFORT` (`low` — tez va arzon).
-- Suhbat xotirasi server "issiq" turganda saqlanadi; uzoq tanaffusdan keyin bot suhbatni yangidan boshlaydi.
-- Ovozli xabarlarni tushunish keyingi bosqichda qo'shiladi; hozircha bot matn bilan yozishni so'raydi.
+- Xotira (7-qadam) ulanmagan bo'lsa, suhbat faqat server "issiq" turganda saqlanadi.
+- Ovozli xabar matnga aylantiriladi, bot matn bilan javob beradi. 5 daqiqadan uzun ovoz qabul qilinmaydi.
 - Vercel bepul (Hobby) tarifi rasmiy jihatdan notijorat loyihalar uchun; mijozlar ko'paygach Pro tarifga o'ting.
