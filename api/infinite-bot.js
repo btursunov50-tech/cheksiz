@@ -194,7 +194,8 @@ function sttProvider() {
       name: "groq",
       url: "https://api.groq.com/openai/v1/audio/transcriptions",
       headers: { authorization: `Bearer ${process.env.GROQ_API_KEY}` },
-      fields: { model: process.env.STT_MODEL || "whisper-large-v3" },
+      fields: { model: process.env.STT_MODEL || "whisper-large-v3", response_format: "verbose_json" },
+      languageField: "language",
     };
   }
   if (process.env.ELEVENLABS_API_KEY) {
@@ -203,6 +204,7 @@ function sttProvider() {
       url: "https://api.elevenlabs.io/v1/speech-to-text",
       headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY },
       fields: { model_id: process.env.STT_MODEL || "scribe_v1" },
+      languageField: "language_code",
     };
   }
   if (process.env.OPENAI_API_KEY) {
@@ -216,32 +218,54 @@ function sttProvider() {
   return null;
 }
 
-// Downloads a Telegram voice/audio file and returns its transcript, or "" when
-// speech-to-text is not configured or fails.
-async function transcribe(media) {
+// Whisper often mistakes Uzbek speech for a related Turkic language. Our customers are
+// mostly Uzbek, so such results are re-run with Uzbek forced, unless the customer's
+// Telegram is set to that Turkic language.
+const TURKIC_MISHEARS = {
+  turkish: "tr", kazakh: "kk", azerbaijani: "az", tatar: "tt", bashkir: "ba", turkmen: "tk",
+  tr: "tr", kk: "kk", az: "az", tt: "tt", ba: "ba", tk: "tk",
+};
+
+async function sttRequest(provider, audio, name, mimeType, language) {
+  const form = new FormData();
+  form.append("file", new Blob([audio], { type: mimeType }), name);
+  for (const [k, v] of Object.entries(provider.fields)) form.append(k, v);
+  if (language) form.append(provider.name === "elevenlabs" ? "language_code" : "language", language);
+  const res = await fetch(provider.url, { method: "POST", headers: provider.headers, body: form });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(`${res.status} ${JSON.stringify(data).slice(0, 200)}`);
+  const detected = provider.languageField ? String(data[provider.languageField] || "").toLowerCase() : "";
+  return { text: (data.text || "").trim(), language: language || detected };
+}
+
+// Downloads a Telegram voice/audio file and returns { text, language }; text is ""
+// when speech-to-text is not configured or fails.
+async function transcribe(media, telegramLang) {
   const provider = sttProvider();
   if (!provider) {
     console.error("Transcription skipped: no GROQ_API_KEY / ELEVENLABS_API_KEY / OPENAI_API_KEY set");
-    return "";
+    return { text: "", language: "" };
   }
-  if ((media.duration || 0) > MAX_VOICE_SECONDS) return "";
+  if ((media.duration || 0) > MAX_VOICE_SECONDS) return { text: "", language: "" };
   try {
     const file = await tg("getFile", { file_id: media.file_id });
-    if (!file.ok) return "";
-    const audio = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file.result.file_path}`);
-    if (!audio.ok) throw new Error(`download ${audio.status}`);
-    const form = new FormData();
+    if (!file.ok) return { text: "", language: "" };
+    const dl = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file.result.file_path}`);
+    if (!dl.ok) throw new Error(`download ${dl.status}`);
+    const audio = await dl.arrayBuffer();
     // Telegram stores voice notes as .oga, which speech-to-text APIs reject by extension.
     const name = (file.result.file_path.split("/").pop() || "voice.ogg").replace(/\.oga$/i, ".ogg");
-    form.append("file", new Blob([await audio.arrayBuffer()], { type: media.mime_type || "audio/ogg" }), name);
-    for (const [k, v] of Object.entries(provider.fields)) form.append(k, v);
-    const res = await fetch(provider.url, { method: "POST", headers: provider.headers, body: form });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(`${res.status} ${JSON.stringify(data).slice(0, 200)}`);
-    return (data.text || "").trim();
+    const mimeType = media.mime_type || "audio/ogg";
+    let result = await sttRequest(provider, audio, name, mimeType);
+    const misheard = TURKIC_MISHEARS[result.language];
+    if (misheard && misheard !== telegramLang) {
+      result = await sttRequest(provider, audio, name, mimeType, provider.name === "elevenlabs" ? "uzb" : "uz");
+    }
+    console.log(`Voice (${provider.name}, ${result.language || "?"}): ${result.text.slice(0, 120)}`);
+    return result;
   } catch (err) {
     console.error(`Transcription failed (${provider.name}):`, err.message);
-    return "";
+    return { text: "", language: "" };
   }
 }
 
@@ -323,9 +347,10 @@ async function handleMessage(msg) {
     userText = text + langHint;
   } else if (msg.voice || msg.audio) {
     await tg("sendChatAction", { chat_id: chatId, action: "typing" });
-    const heard = await transcribe(msg.voice || msg.audio);
-    userText = heard
-      ? `[Voice message, automatically transcribed - may contain recognition errors]: ${heard}${langHint}`
+    const heard = await transcribe(msg.voice || msg.audio, from.language_code);
+    const guess = heard.language ? `; speech recognition guessed the language as "${heard.language}", which may be wrong` : "";
+    userText = heard.text
+      ? `[Voice message, automatically transcribed - may contain recognition errors${guess}]: ${heard.text}${langHint}`
       : `[The customer sent a voice message that could not be transcribed.]${langHint}`;
   } else if (msg.video_note) {
     userText = `[The customer sent a round video message, which you cannot watch.]${langHint}`;
