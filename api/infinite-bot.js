@@ -495,7 +495,9 @@ async function runProspectJob(job) {
     }
   } catch (err) {
     console.error("Prospect failed:", err && err.status, err && err.message);
-    const why = err instanceof RefusedError ? "AI bu so'rovni rad etdi" : "texnik xato";
+    // Only the owner sees this, so show the real error to make problems fixable.
+    const detail = String((err && err.message) || err).slice(0, 300);
+    const why = err instanceof RefusedError ? "AI bu so'rovni rad etdi" : `texnik xato: ${detail}`;
     await sendText(chatId, `⚠️ ${label} — ${items[index]}\nTayyorlab bo'lmadi (${why}).`);
   }
 
