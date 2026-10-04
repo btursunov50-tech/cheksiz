@@ -191,6 +191,7 @@ async function notifyOwner(lead, from) {
 function sttProvider() {
   if (process.env.GROQ_API_KEY) {
     return {
+      name: "groq",
       url: "https://api.groq.com/openai/v1/audio/transcriptions",
       headers: { authorization: `Bearer ${process.env.GROQ_API_KEY}` },
       fields: { model: process.env.STT_MODEL || "whisper-large-v3" },
@@ -198,6 +199,7 @@ function sttProvider() {
   }
   if (process.env.ELEVENLABS_API_KEY) {
     return {
+      name: "elevenlabs",
       url: "https://api.elevenlabs.io/v1/speech-to-text",
       headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY },
       fields: { model_id: process.env.STT_MODEL || "scribe_v1" },
@@ -205,6 +207,7 @@ function sttProvider() {
   }
   if (process.env.OPENAI_API_KEY) {
     return {
+      name: "openai",
       url: "https://api.openai.com/v1/audio/transcriptions",
       headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
       fields: { model: process.env.STT_MODEL || "gpt-4o-transcribe" },
@@ -217,7 +220,11 @@ function sttProvider() {
 // speech-to-text is not configured or fails.
 async function transcribe(media) {
   const provider = sttProvider();
-  if (!provider || (media.duration || 0) > MAX_VOICE_SECONDS) return "";
+  if (!provider) {
+    console.error("Transcription skipped: no GROQ_API_KEY / ELEVENLABS_API_KEY / OPENAI_API_KEY set");
+    return "";
+  }
+  if ((media.duration || 0) > MAX_VOICE_SECONDS) return "";
   try {
     const file = await tg("getFile", { file_id: media.file_id });
     if (!file.ok) return "";
@@ -233,7 +240,7 @@ async function transcribe(media) {
     if (!res.ok) throw new Error(`${res.status} ${JSON.stringify(data).slice(0, 200)}`);
     return (data.text || "").trim();
   } catch (err) {
-    console.error("Transcription failed:", err.message);
+    console.error(`Transcription failed (${provider.name}):`, err.message);
     return "";
   }
 }
@@ -340,6 +347,31 @@ async function handleMessage(msg) {
   if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons() : {});
 }
 
+// Read-only health check: which optional features are configured (no secrets shown).
+async function status(res) {
+  const provider = sttProvider();
+  let memory = "not configured";
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      memory = (await redis("PING")) === "PONG" ? "ok" : "unexpected reply";
+    } catch (err) {
+      memory = `error: ${err.message}`;
+    }
+  }
+  let voice = "not configured";
+  if (provider) {
+    try {
+      const r = await fetch(provider.name === "elevenlabs" ? "https://api.elevenlabs.io/v1/user" : provider.url.replace(/audio\/transcriptions$/, "models"), {
+        headers: provider.headers,
+      });
+      voice = r.ok ? `${provider.name}: key ok` : `${provider.name}: key rejected (${r.status})`;
+    } catch (err) {
+      voice = `${provider.name}: error ${err.message}`;
+    }
+  }
+  res.status(200).json({ memory, voice, owner_chat_id: Boolean(OWNER_CHAT_ID), model: MODEL });
+}
+
 async function setup(req, res) {
   const host = req.headers["x-forwarded-host"] || req.headers.host;
   const url = `https://${host}/api/infinite-bot`;
@@ -364,6 +396,7 @@ module.exports = async function handler(req, res) {
   if (req.method === "GET") {
     const q = req.query || {};
     if (SECRET && q.setup === SECRET) return setup(req, res);
+    if (SECRET && q.status === SECRET) return status(res);
     res.status(200).send("Infinite AI & Me bot is running.");
     return;
   }
