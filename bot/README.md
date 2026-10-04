@@ -50,7 +50,7 @@ Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
 
 ### 7. Suhbat xotirasi (bepul)
 Vercel → **cheksiz** loyihasi → **Storage** → **Create Database** → **Upstash for Redis** →
-Free tarif → **Connect**. Vercel o'zi `KV_REST_API_URL` va `KV_REST_API_TOKEN` ni qo'shadi.
+Free tarif → **Connect**. Prefix: `KV` (yoki istalgan lotin harfli nom). Vercel o'zi kerakli o'zgaruvchilarni qo'shadi.
 So'ng **Redeploy**. Endi bot mijozni 30 kungacha eslab qoladi.
 
 ### 8. Ovozli xabarlar
