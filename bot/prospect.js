@@ -52,7 +52,7 @@ ONLINE PRESENCE: each channel with its link and what you saw
 GAPS: what is missing, each with the evidence
 CONTACT: best public channel to write to, with the handle/number
 LANGUAGE: language and script it uses
-BEST OFFER: one or two services from our price list that fit best, and why
+BEST OFFER: one or two services from our price list that fit best, and why. Judge how many customer messages the business likely gets: a bot fits businesses with many repeated questions or orders (cafes, delivery, courses, clinics, beauty salons); for businesses with few, expensive orders where personal contact closes the sale (furniture, renovation, premium goods) prefer the catalog website, Google Maps listing or product photos over a bot
 UNVERIFIED: anything you could not confirm`;
 
 const WRITER_PROMPT = `You write the first message that "Infinite AI & Me" sends to a business in ${REGION}. The owner will read it, maybe edit it, and send it by hand on Instagram or Telegram.
@@ -63,6 +63,7 @@ Rules for the message:
 - Write in the language and script the business uses (default: Uzbek Latin). Natural, polite, like a real person - not an advert.
 - 50 to 90 words. Plain text, at most one emoji, no hashtags.
 - Start with a short greeting, then one or two concrete things you noticed about THIS business (from the research only), then how one service would help their customers, then one example link - the bot demo ${BOT_DEMO_URL} ("write to it and see how it answers") when the main offer is a bot, otherwise the catalog example ${DEMO_URL} - then one easy question (for example, whether they want to see how it would look for them).
+- Never suggest replacing the owner's or manager's personal contact with customers. Present a bot as a helper that answers routine questions and collects requests at night and on days off, then hands the customer to the manager, who closes the sale personally.
 - Offer one main service. A price is optional; if you give one, use the price list exactly and say "...dan" (starting from).
 - Never invent facts, results, discounts, deadlines or guarantees. Do not mention anything the research marks as unverified.
 - Mention gaps kindly as opportunities, never as criticism of the business. Leave out private-sounding details (staff names, days off, personal accounts).
