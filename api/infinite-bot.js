@@ -8,6 +8,11 @@
 //   OWNER_USERNAME       optional, e.g. @your_username - shown to customers as the manager
 //   ANTHROPIC_MODEL      optional, defaults to claude-opus-5-5
 //   ANTHROPIC_EFFORT     optional, defaults to low
+//   KV_REST_API_URL / KV_REST_API_TOKEN   optional, Upstash Redis (Vercel Storage);
+//                        keeps chat memory across restarts. Without it memory is in-process only.
+//   GROQ_API_KEY or ELEVENLABS_API_KEY or OPENAI_API_KEY
+//                        optional, speech-to-text for voice messages (first one set is used)
+//   STT_MODEL            optional, overrides the speech-to-text model
 //
 // One-time setup after deploying: open
 //   https://<your-domain>/api/infinite-bot?setup=<WEBHOOK_SECRET>
@@ -22,6 +27,11 @@ const OWNER_CHAT_ID = process.env.OWNER_CHAT_ID ? String(process.env.OWNER_CHAT_
 const OWNER_USERNAME = process.env.OWNER_USERNAME || "";
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
 const EFFORT = process.env.ANTHROPIC_EFFORT || "low";
+
+const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
+const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+const HISTORY_TTL_SECONDS = 30 * 24 * 3600;
+const MAX_VOICE_SECONDS = 300;
 
 const SYSTEM_PROMPT = buildSystemPrompt({ ownerUsername: OWNER_USERNAME });
 
@@ -45,8 +55,8 @@ const LEAD_TOOL = {
   },
 };
 
-// Conversation memory lives in the warm function instance. It is lost on a cold
-// start, which is acceptable for short sales chats.
+// Conversation memory is kept in Upstash Redis when configured, so a customer who
+// comes back days later continues the same chat. The in-process map is a fallback.
 const conversations = new Map();
 const seenUpdates = new Set();
 // History is append-only: editing or trimming earlier turns would invalidate the
@@ -57,6 +67,66 @@ let client;
 function anthropic() {
   if (!client) client = new Anthropic();
   return client;
+}
+
+async function redis(...command) {
+  const res = await fetch(REDIS_URL, {
+    method: "POST",
+    headers: { authorization: `Bearer ${REDIS_TOKEN}`, "content-type": "application/json" },
+    body: JSON.stringify(command),
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(`Redis ${command[0]}: ${data.error}`);
+  return data.result;
+}
+
+const historyKey = (chatId) => `iam:chat:${chatId}`;
+
+async function loadHistory(chatId) {
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      const raw = await redis("GET", historyKey(chatId));
+      return raw ? JSON.parse(raw) : [];
+    } catch (err) {
+      console.error("loadHistory failed:", err.message);
+    }
+  }
+  return conversations.get(chatId) || [];
+}
+
+async function saveHistory(chatId, history) {
+  conversations.set(chatId, history);
+  if (!REDIS_URL || !REDIS_TOKEN) return;
+  try {
+    await redis("SET", historyKey(chatId), JSON.stringify(history), "EX", HISTORY_TTL_SECONDS);
+  } catch (err) {
+    console.error("saveHistory failed:", err.message);
+  }
+}
+
+async function clearHistory(chatId) {
+  conversations.delete(chatId);
+  if (!REDIS_URL || !REDIS_TOKEN) return;
+  try {
+    await redis("DEL", historyKey(chatId));
+  } catch (err) {
+    console.error("clearHistory failed:", err.message);
+  }
+}
+
+// True the first time an update id is seen. Telegram retries on slow responses, and
+// separate function instances do not share memory, so Redis is the source of truth.
+async function firstDelivery(updateId) {
+  if (seenUpdates.has(updateId)) return false;
+  seenUpdates.add(updateId);
+  if (seenUpdates.size > 500) seenUpdates.delete(seenUpdates.values().next().value);
+  if (!REDIS_URL || !REDIS_TOKEN) return true;
+  try {
+    return (await redis("SET", `iam:update:${updateId}`, "1", "NX", "EX", 3600)) === "OK";
+  } catch (err) {
+    console.error("dedupe failed:", err.message);
+    return true;
+  }
 }
 
 async function tg(method, payload) {
@@ -109,12 +179,61 @@ async function notifyOwner(lead, from) {
   return Boolean(res.ok);
 }
 
+function sttProvider() {
+  if (process.env.GROQ_API_KEY) {
+    return {
+      url: "https://api.groq.com/openai/v1/audio/transcriptions",
+      headers: { authorization: `Bearer ${process.env.GROQ_API_KEY}` },
+      fields: { model: process.env.STT_MODEL || "whisper-large-v3" },
+    };
+  }
+  if (process.env.ELEVENLABS_API_KEY) {
+    return {
+      url: "https://api.elevenlabs.io/v1/speech-to-text",
+      headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY },
+      fields: { model_id: process.env.STT_MODEL || "scribe_v1" },
+    };
+  }
+  if (process.env.OPENAI_API_KEY) {
+    return {
+      url: "https://api.openai.com/v1/audio/transcriptions",
+      headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
+      fields: { model: process.env.STT_MODEL || "gpt-4o-transcribe" },
+    };
+  }
+  return null;
+}
+
+// Downloads a Telegram voice/audio file and returns its transcript, or "" when
+// speech-to-text is not configured or fails.
+async function transcribe(media) {
+  const provider = sttProvider();
+  if (!provider || (media.duration || 0) > MAX_VOICE_SECONDS) return "";
+  try {
+    const file = await tg("getFile", { file_id: media.file_id });
+    if (!file.ok) return "";
+    const audio = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file.result.file_path}`);
+    if (!audio.ok) throw new Error(`download ${audio.status}`);
+    const form = new FormData();
+    const name = file.result.file_path.split("/").pop() || "voice.ogg";
+    form.append("file", new Blob([await audio.arrayBuffer()], { type: media.mime_type || "audio/ogg" }), name);
+    for (const [k, v] of Object.entries(provider.fields)) form.append(k, v);
+    const res = await fetch(provider.url, { method: "POST", headers: provider.headers, body: form });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(`${res.status} ${JSON.stringify(data).slice(0, 200)}`);
+    return (data.text || "").trim();
+  } catch (err) {
+    console.error("Transcription failed:", err.message);
+    return "";
+  }
+}
+
 function textOf(content) {
   return content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
 }
 
 async function askClaude(chatId, userText, from) {
-  let history = conversations.get(chatId) || [];
+  let history = await loadHistory(chatId);
   if (history.length > MAX_HISTORY) history = [];
   const startLen = history.length;
   history.push({ role: "user", content: userText });
@@ -161,7 +280,7 @@ async function askClaude(chatId, userText, from) {
     history.push({ role: "user", content: results });
   }
 
-  conversations.set(chatId, history);
+  await saveHistory(chatId, history);
   return reply;
 }
 
@@ -181,12 +300,18 @@ async function handleMessage(msg) {
 
   let userText;
   if (text.startsWith("/start")) {
-    conversations.delete(chatId);
+    await clearHistory(chatId);
     userText = `The customer just opened the bot (/start).${langHint} Greet them in their language, say in 2-3 sentences what Infinite AI & Me does, and ask what business they have.`;
   } else if (text) {
     userText = text + langHint;
-  } else if (msg.voice || msg.audio || msg.video_note) {
-    userText = `[The customer sent a voice message, which you cannot listen to yet.]${langHint}`;
+  } else if (msg.voice || msg.audio) {
+    await tg("sendChatAction", { chat_id: chatId, action: "typing" });
+    const heard = await transcribe(msg.voice || msg.audio);
+    userText = heard
+      ? `[Voice message, automatically transcribed - may contain recognition errors]: ${heard}${langHint}`
+      : `[The customer sent a voice message that could not be transcribed.]${langHint}`;
+  } else if (msg.video_note) {
+    userText = `[The customer sent a round video message, which you cannot watch.]${langHint}`;
   } else if (msg.photo || msg.document || msg.video || msg.sticker) {
     userText = `[The customer sent a ${msg.photo ? "photo" : msg.sticker ? "sticker" : "file"}${msg.caption ? ` with caption: "${msg.caption}"` : ""}.]${langHint}`;
   } else {
@@ -199,7 +324,7 @@ async function handleMessage(msg) {
     reply = await askClaude(chatId, userText, from);
   } catch (err) {
     console.error("Claude error:", err && err.status, err && err.message);
-    conversations.delete(chatId); // a half-finished exchange would break the next request
+    await clearHistory(chatId); // a half-finished exchange would break the next request
     reply = "Sorry, something went wrong. Please try again in a minute.";
   }
   if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons() : {});
@@ -239,10 +364,8 @@ module.exports = async function handler(req, res) {
   }
 
   const update = req.body || {};
-  if (update.update_id != null) {
-    if (seenUpdates.has(update.update_id)) return res.status(200).send("ok");
-    seenUpdates.add(update.update_id);
-    if (seenUpdates.size > 500) seenUpdates.delete(seenUpdates.values().next().value);
+  if (update.update_id != null && !(await firstDelivery(update.update_id))) {
+    return res.status(200).send("ok");
   }
 
   try {
