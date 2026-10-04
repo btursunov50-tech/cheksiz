@@ -68,3 +68,23 @@ Limitga yetganda bot "Sorry, something went wrong" deb javob beradi — balansni
 - Xotira (7-qadam) ulanmagan bo'lsa, suhbat faqat server "issiq" turganda saqlanadi.
 - Ovozli xabar matnga aylantiriladi, bot matn bilan javob beradi. 5 daqiqadan uzun ovoz qabul qilinmaydi.
 - Vercel bepul (Hobby) tarifi rasmiy jihatdan notijorat loyihalar uchun; mijozlar ko'paygach Pro tarifga o'ting.
+
+### 10. Mijoz topish: /top (faqat siz uchun)
+Uch agent har bir biznes uchun shaxsiy taklif xatini tayyorlaydi:
+1. **Tadqiqotchi** internetdan biznesni o'rganadi: nima sotadi, sayti, katalogi, xaritada bormi.
+2. **Yozuvchi** shu ma'lumot asosida qisqa, shaxsiy xat yozadi.
+3. **Tekshiruvchi** xatni 10 ballik shkalada baholaydi. 8 dan past bo'lsa, xat qayta yoziladi (ko'pi bilan 2 marta).
+
+Botga shunday yozing (har qatorda bitta biznes, bir martada 15 tagacha):
+```
+/top
+Mebel Lux — instagram.com/mebellux
+Comfort Home, Chilonzor
+```
+Har biri 1-3 daqiqada tayyor bo'ladi. Xatni **bot yubormaydi**: siz o'qib, nusxalab,
+o'zingiz yuborasiz va "✅ Yubordim" ni bosasiz. Buyruq faqat `OWNER_CHAT_ID` dan ishlaydi.
+
+- Yangi deploy'dan keyin **4-qadamdagi webhook havolasini yana bir marta oching** (tugmalar ishlashi uchun).
+- Narxi: bitta biznes taxminan $0.20–0.50 (Anthropic hisobingizdan).
+- Agentlar Toshkent uchun sozlangan (`PROSPECT_REGION` bilan o'zgartirish mumkin).
+- Instagram/Telegram sahifalarini agent har doim ham ocha olmaydi — havola bersangiz natija yaxshiroq.
