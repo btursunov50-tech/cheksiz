@@ -8,10 +8,11 @@
 //   OWNER_USERNAME       optional, e.g. @your_username - shown to customers as the manager
 //   ANTHROPIC_MODEL      optional, defaults to claude-opus-5-5
 //   ANTHROPIC_EFFORT     optional, defaults to low
-//   GROQ_API_KEY         optional, key from console.groq.com - turns on voice message
-//                        understanding (speech-to-text with Whisper). Without it the bot
-//                        asks customers to type instead.
-//   STT_MODEL            optional, defaults to whisper-large-v3
+//   <PREFIX>_REST_API_URL / <PREFIX>_REST_API_TOKEN   optional, Upstash Redis (Vercel Storage);
+//                        keeps chat memory across restarts. Without it memory is in-process only.
+//   GROQ_API_KEY or ELEVENLABS_API_KEY or OPENAI_API_KEY
+//                        optional, speech-to-text for voice messages (first one set is used)
+//   STT_MODEL            optional, overrides the speech-to-text model
 //   PROSPECT_MODEL       optional, model for the /top lead-finding agents
 //                        (defaults to ANTHROPIC_MODEL, then claude-opus-5-5)
 //
@@ -35,9 +36,19 @@ const OWNER_CHAT_ID = process.env.OWNER_CHAT_ID ? String(process.env.OWNER_CHAT_
 const OWNER_USERNAME = process.env.OWNER_USERNAME || "";
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
 const EFFORT = process.env.ANTHROPIC_EFFORT || "low";
-const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
-const STT_MODEL = process.env.STT_MODEL || "whisper-large-v3";
-// Longer recordings are refused so one message cannot eat the function's time limit.
+
+// Vercel's Upstash integration names its variables <PREFIX>_REST_API_URL / _TOKEN,
+// where the prefix is chosen when connecting (KV by default), so match on the suffix.
+function envBySuffix(suffix) {
+  const key = Object.keys(process.env).sort().find((k) => k.endsWith(suffix) && !k.includes("READ_ONLY"));
+  return key ? process.env[key] : "";
+}
+const httpsOnly = (url) => (url && url.startsWith("https://") ? url : "");
+const REDIS_URL =
+  httpsOnly(process.env.KV_REST_API_URL) || httpsOnly(envBySuffix("_REST_API_URL")) || httpsOnly(process.env.UPSTASH_REDIS_REST_URL);
+const REDIS_TOKEN =
+  process.env.KV_REST_API_TOKEN || envBySuffix("_REST_API_TOKEN") || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+const HISTORY_TTL_SECONDS = 30 * 24 * 3600;
 const MAX_VOICE_SECONDS = 300;
 const MAX_PROSPECTS = 15;
 
@@ -63,8 +74,8 @@ const LEAD_TOOL = {
   },
 };
 
-// Conversation memory lives in the warm function instance. It is lost on a cold
-// start, which is acceptable for short sales chats.
+// Conversation memory is kept in Upstash Redis when configured, so a customer who
+// comes back days later continues the same chat. The in-process map is a fallback.
 const conversations = new Map();
 const seenUpdates = new Set();
 // History is append-only: editing or trimming earlier turns would invalidate the
@@ -75,6 +86,66 @@ let client;
 function anthropic() {
   if (!client) client = new Anthropic();
   return client;
+}
+
+async function redis(...command) {
+  const res = await fetch(REDIS_URL, {
+    method: "POST",
+    headers: { authorization: `Bearer ${REDIS_TOKEN}`, "content-type": "application/json" },
+    body: JSON.stringify(command),
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(`Redis ${command[0]}: ${data.error}`);
+  return data.result;
+}
+
+const historyKey = (chatId) => `iam:chat:${chatId}`;
+
+async function loadHistory(chatId) {
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      const raw = await redis("GET", historyKey(chatId));
+      return raw ? JSON.parse(raw) : [];
+    } catch (err) {
+      console.error("loadHistory failed:", err.message);
+    }
+  }
+  return conversations.get(chatId) || [];
+}
+
+async function saveHistory(chatId, history) {
+  conversations.set(chatId, history);
+  if (!REDIS_URL || !REDIS_TOKEN) return;
+  try {
+    await redis("SET", historyKey(chatId), JSON.stringify(history), "EX", HISTORY_TTL_SECONDS);
+  } catch (err) {
+    console.error("saveHistory failed:", err.message);
+  }
+}
+
+async function clearHistory(chatId) {
+  conversations.delete(chatId);
+  if (!REDIS_URL || !REDIS_TOKEN) return;
+  try {
+    await redis("DEL", historyKey(chatId));
+  } catch (err) {
+    console.error("clearHistory failed:", err.message);
+  }
+}
+
+// True the first time an update id is seen. Telegram retries on slow responses, and
+// separate function instances do not share memory, so Redis is the source of truth.
+async function firstDelivery(updateId) {
+  if (seenUpdates.has(updateId)) return false;
+  seenUpdates.add(updateId);
+  if (seenUpdates.size > 500) seenUpdates.delete(seenUpdates.values().next().value);
+  if (!REDIS_URL || !REDIS_TOKEN) return true;
+  try {
+    return (await redis("SET", `iam:update:${updateId}`, "1", "NX", "EX", 3600)) === "OK";
+  } catch (err) {
+    console.error("dedupe failed:", err.message);
+    return true;
+  }
 }
 
 async function tg(method, payload) {
@@ -94,44 +165,6 @@ async function sendText(chatId, text, extra = {}) {
   for (const part of parts) {
     await tg("sendMessage", { chat_id: chatId, text: part, disable_web_page_preview: true, ...extra });
   }
-}
-
-// Downloads a voice/audio/video-note file from Telegram and turns it into text.
-// Returns the transcript, or "" when it could not be produced.
-async function transcribe(media, kind) {
-  if (!GROQ_API_KEY) return "";
-  const info = await tg("getFile", { file_id: media.file_id });
-  const filePath = info.ok && info.result && info.result.file_path;
-  if (!filePath) return "";
-
-  const fileRes = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${filePath}`);
-  if (!fileRes.ok) {
-    console.error("Voice download failed:", fileRes.status);
-    return "";
-  }
-  const bytes = await fileRes.arrayBuffer();
-
-  // Telegram voice notes are Ogg/Opus with an .oga extension; Whisper wants a known one.
-  const ext = (filePath.split(".").pop() || "").toLowerCase();
-  const name = kind === "video_note" ? "note.mp4" : ext === "oga" || !ext ? "voice.ogg" : `audio.${ext}`;
-
-  const form = new FormData();
-  form.append("file", new Blob([bytes]), name);
-  form.append("model", STT_MODEL);
-  form.append("response_format", "json");
-  form.append("temperature", "0");
-
-  const sttRes = await fetch("https://api.groq.com/openai/v1/audio/transcriptions", {
-    method: "POST",
-    headers: { authorization: `Bearer ${GROQ_API_KEY}` },
-    body: form,
-  });
-  const data = await sttRes.json().catch(() => ({}));
-  if (!sttRes.ok) {
-    console.error("Transcription failed:", sttRes.status, JSON.stringify(data).slice(0, 300));
-    return "";
-  }
-  return String(data.text || "").trim();
 }
 
 function linkButtons() {
@@ -165,12 +198,93 @@ async function notifyOwner(lead, from) {
   return Boolean(res.ok);
 }
 
+function sttProvider() {
+  if (process.env.GROQ_API_KEY) {
+    return {
+      name: "groq",
+      url: "https://api.groq.com/openai/v1/audio/transcriptions",
+      headers: { authorization: `Bearer ${process.env.GROQ_API_KEY}` },
+      fields: { model: process.env.STT_MODEL || "whisper-large-v3", response_format: "verbose_json" },
+      languageField: "language",
+    };
+  }
+  if (process.env.ELEVENLABS_API_KEY) {
+    return {
+      name: "elevenlabs",
+      url: "https://api.elevenlabs.io/v1/speech-to-text",
+      headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY },
+      fields: { model_id: process.env.STT_MODEL || "scribe_v1" },
+      languageField: "language_code",
+    };
+  }
+  if (process.env.OPENAI_API_KEY) {
+    return {
+      name: "openai",
+      url: "https://api.openai.com/v1/audio/transcriptions",
+      headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
+      fields: { model: process.env.STT_MODEL || "gpt-4o-transcribe" },
+    };
+  }
+  return null;
+}
+
+// Whisper often mistakes Uzbek speech for a related Turkic language. Our customers are
+// mostly Uzbek, so such results are re-run with Uzbek forced, unless the customer's
+// Telegram is set to that Turkic language.
+const TURKIC_MISHEARS = {
+  turkish: "tr", kazakh: "kk", azerbaijani: "az", tatar: "tt", bashkir: "ba", turkmen: "tk",
+  tr: "tr", kk: "kk", az: "az", tt: "tt", ba: "ba", tk: "tk",
+};
+
+async function sttRequest(provider, audio, name, mimeType, language) {
+  const form = new FormData();
+  form.append("file", new Blob([audio], { type: mimeType }), name);
+  for (const [k, v] of Object.entries(provider.fields)) form.append(k, v);
+  if (language) form.append(provider.name === "elevenlabs" ? "language_code" : "language", language);
+  const res = await fetch(provider.url, { method: "POST", headers: provider.headers, body: form });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(`${res.status} ${JSON.stringify(data).slice(0, 200)}`);
+  const detected = provider.languageField ? String(data[provider.languageField] || "").toLowerCase() : "";
+  return { text: (data.text || "").trim(), language: language || detected };
+}
+
+// Downloads a Telegram voice/audio file and returns { text, language }; text is ""
+// when speech-to-text is not configured or fails.
+async function transcribe(media, telegramLang) {
+  const provider = sttProvider();
+  if (!provider) {
+    console.error("Transcription skipped: no GROQ_API_KEY / ELEVENLABS_API_KEY / OPENAI_API_KEY set");
+    return { text: "", language: "" };
+  }
+  if ((media.duration || 0) > MAX_VOICE_SECONDS) return { text: "", language: "" };
+  try {
+    const file = await tg("getFile", { file_id: media.file_id });
+    if (!file.ok) return { text: "", language: "" };
+    const dl = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file.result.file_path}`);
+    if (!dl.ok) throw new Error(`download ${dl.status}`);
+    const audio = await dl.arrayBuffer();
+    // Telegram stores voice notes as .oga, which speech-to-text APIs reject by extension.
+    const name = (file.result.file_path.split("/").pop() || "voice.ogg").replace(/\.oga$/i, ".ogg");
+    const mimeType = media.mime_type || "audio/ogg";
+    let result = await sttRequest(provider, audio, name, mimeType);
+    const misheard = TURKIC_MISHEARS[result.language];
+    if (misheard && misheard !== telegramLang) {
+      result = await sttRequest(provider, audio, name, mimeType, provider.name === "elevenlabs" ? "uzb" : "uz");
+    }
+    console.log(`Voice (${provider.name}, ${result.language || "?"}): ${result.text.slice(0, 120)}`);
+    return result;
+  } catch (err) {
+    console.error(`Transcription failed (${provider.name}):`, err.message);
+    return { text: "", language: "" };
+  }
+}
+
 function textOf(content) {
   return content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
 }
 
 async function askClaude(chatId, userText, from) {
-  let history = conversations.get(chatId) || [];
+  let history = await loadHistory(chatId);
   if (history.length > MAX_HISTORY) history = [];
   const startLen = history.length;
   history.push({ role: "user", content: userText });
@@ -217,7 +331,7 @@ async function askClaude(chatId, userText, from) {
     history.push({ role: "user", content: results });
   }
 
-  conversations.set(chatId, history);
+  await saveHistory(chatId, history);
   return reply;
 }
 
@@ -242,29 +356,19 @@ async function handleMessage(msg) {
 
   let userText;
   if (text.startsWith("/start")) {
-    conversations.delete(chatId);
+    await clearHistory(chatId);
     userText = `The customer just opened the bot (/start).${langHint} Greet them in their language, say in 2-3 sentences what Infinite AI & Me does, and ask what business they have.`;
   } else if (text) {
     userText = text + langHint;
-  } else if (msg.voice || msg.audio || msg.video_note) {
-    const kind = msg.voice ? "voice" : msg.audio ? "audio" : "video_note";
-    const media = msg[kind];
-    let transcript = "";
-    if (GROQ_API_KEY && (media.duration || 0) <= MAX_VOICE_SECONDS) {
-      await tg("sendChatAction", { chat_id: chatId, action: "typing" });
-      try {
-        transcript = await transcribe(media, kind);
-      } catch (err) {
-        console.error("Transcription error:", err && err.message);
-      }
-    }
-    if (transcript) {
-      userText = `[Voice message, transcribed automatically - names, numbers and phone numbers may contain mistakes; confirm them with the customer before sending a lead.]\n${transcript}${msg.caption ? `\n[Caption: "${msg.caption}"]` : ""}${langHint}`;
-    } else if (GROQ_API_KEY && (media.duration || 0) > MAX_VOICE_SECONDS) {
-      userText = `[The customer sent a voice message longer than ${MAX_VOICE_SECONDS / 60} minutes, which is too long to listen to. Ask them to send a shorter one or write.]${langHint}`;
-    } else {
-      userText = `[The customer sent a voice message, which you could not listen to.]${langHint}`;
-    }
+  } else if (msg.voice || msg.audio) {
+    await tg("sendChatAction", { chat_id: chatId, action: "typing" });
+    const heard = await transcribe(msg.voice || msg.audio, from.language_code);
+    const guess = heard.language ? `; speech recognition guessed the language as "${heard.language}", which may be wrong` : "";
+    userText = heard.text
+      ? `[Voice message, automatically transcribed - may contain recognition errors${guess}]: ${heard.text}${langHint}`
+      : `[The customer sent a voice message that could not be transcribed.]${langHint}`;
+  } else if (msg.video_note) {
+    userText = `[The customer sent a round video message, which you cannot watch.]${langHint}`;
   } else if (msg.photo || msg.document || msg.video || msg.sticker) {
     userText = `[The customer sent a ${msg.photo ? "photo" : msg.sticker ? "sticker" : "file"}${msg.caption ? ` with caption: "${msg.caption}"` : ""}.]${langHint}`;
   } else {
@@ -277,10 +381,35 @@ async function handleMessage(msg) {
     reply = await askClaude(chatId, userText, from);
   } catch (err) {
     console.error("Claude error:", err && err.status, err && err.message);
-    conversations.delete(chatId); // a half-finished exchange would break the next request
+    await clearHistory(chatId); // a half-finished exchange would break the next request
     reply = "Sorry, something went wrong. Please try again in a minute.";
   }
   if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons() : {});
+}
+
+// Read-only health check: which optional features are configured (no secrets shown).
+async function status(res) {
+  const provider = sttProvider();
+  let memory = "not configured";
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      memory = (await redis("PING")) === "PONG" ? "ok" : "unexpected reply";
+    } catch (err) {
+      memory = `error: ${err.message}`;
+    }
+  }
+  let voice = "not configured";
+  if (provider) {
+    try {
+      const r = await fetch(provider.name === "elevenlabs" ? "https://api.elevenlabs.io/v1/user" : provider.url.replace(/audio\/transcriptions$/, "models"), {
+        headers: provider.headers,
+      });
+      voice = r.ok ? `${provider.name}: key ok` : `${provider.name}: key rejected (${r.status})`;
+    } catch (err) {
+      voice = `${provider.name}: error ${err.message}`;
+    }
+  }
+  res.status(200).json({ memory, voice, owner_chat_id: Boolean(OWNER_CHAT_ID), model: MODEL });
 }
 
 // ---- /top: lead finding for the owner ----
@@ -419,6 +548,7 @@ module.exports = async function handler(req, res) {
   if (req.method === "GET") {
     const q = req.query || {};
     if (SECRET && q.setup === SECRET) return setup(req, res);
+    if (SECRET && q.status === SECRET) return status(res);
     res.status(200).send("Infinite AI & Me bot is running.");
     return;
   }
@@ -440,10 +570,8 @@ module.exports = async function handler(req, res) {
   }
 
   const update = req.body || {};
-  if (update.update_id != null) {
-    if (seenUpdates.has(update.update_id)) return res.status(200).send("ok");
-    seenUpdates.add(update.update_id);
-    if (seenUpdates.size > 500) seenUpdates.delete(seenUpdates.values().next().value);
+  if (update.update_id != null && !(await firstDelivery(update.update_id))) {
+    return res.status(200).send("ok");
   }
 
   try {

@@ -44,18 +44,32 @@ Javobda `"ok": true` chiqsa — bot ulandi.
 2. Vercel'da yana bitta o'zgaruvchi qo'shing: `OWNER_CHAT_ID` = shu raqam.
 3. Yana **Redeploy** qiling.
 
-### 6. Ovozli xabarlarni tushunish (ixtiyoriy, lekin tavsiya etiladi)
-Bot ovozli xabarni Groq'dagi Whisper modeli orqali matnga aylantiradi, keyin
-odatdagidek javob beradi. Groq'da bepul limit bor.
-1. https://console.groq.com → Google bilan kiring → **API Keys** → **Create API Key**.
-2. Vercel'da o'zgaruvchi qo'shing: `GROQ_API_KEY` = shu kalit.
-3. **Redeploy** qiling.
+### 6. Sinov
+Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
+"menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 Yangi mijoz" xabari kelishi kerak.
 
-Kalit qo'yilmasa, bot avvalgidek mijozdan yozib yuborishni so'raydi.
-5 daqiqadan uzun ovozli xabarlar qabul qilinmaydi. Ism va telefon raqamlarini
-bot mijozga qaytarib tasdiqlatadi, chunki ovozdan noto'g'ri eshitilishi mumkin.
+### 7. Suhbat xotirasi (bepul)
+Vercel → **cheksiz** loyihasi → **Storage** → **Create Database** → **Upstash for Redis** →
+Free tarif → **Connect**. Prefix: `KV` (yoki istalgan lotin harfli nom). Vercel o'zi kerakli o'zgaruvchilarni qo'shadi.
+So'ng **Redeploy**. Endi bot mijozni 30 kungacha eslab qoladi.
 
-### 7. Mijoz topish: /top (faqat siz uchun)
+### 8. Ovozli xabarlar
+1. https://console.groq.com → ro'yxatdan o'ting → **API Keys** → **Create API Key**.
+2. Vercel'ga qo'shing: `GROQ_API_KEY` = shu kalit (Production) → **Redeploy**.
+3. Botga o'zbek, dariy va pushtu tillarida ovozli xabar yuborib sinang.
+   Pushtu yomon tanilsa, Groq o'rniga ElevenLabs kalitini (`ELEVENLABS_API_KEY`) qo'ying.
+
+### 9. Xarajat chegarasi
+https://console.anthropic.com → **Settings → Limits** → oylik limit (masalan $10).
+Limitga yetganda bot "Sorry, something went wrong" deb javob beradi — balansni to'ldiring.
+
+## Eslatmalar
+- AI modeli: `claude-opus-5-5` (o'zgartirish: `ANTHROPIC_MODEL`). Javob chuqurligi: `ANTHROPIC_EFFORT` (`low` — tez va arzon).
+- Xotira (7-qadam) ulanmagan bo'lsa, suhbat faqat server "issiq" turganda saqlanadi.
+- Ovozli xabar matnga aylantiriladi, bot matn bilan javob beradi. 5 daqiqadan uzun ovoz qabul qilinmaydi.
+- Vercel bepul (Hobby) tarifi rasmiy jihatdan notijorat loyihalar uchun; mijozlar ko'paygach Pro tarifga o'ting.
+
+### 10. Mijoz topish: /top (faqat siz uchun)
 Uch agent har bir biznes uchun shaxsiy taklif xatini tayyorlaydi:
 1. **Tadqiqotchi** internetdan biznesni o'rganadi: nima sotadi, sayti, katalogi, xaritada bormi.
 2. **Yozuvchi** shu ma'lumot asosida qisqa, shaxsiy xat yozadi.
@@ -70,18 +84,7 @@ Comfort Home, Chilonzor
 Har biri 1-3 daqiqada tayyor bo'ladi. Xatni **bot yubormaydi**: siz o'qib, nusxalab,
 o'zingiz yuborasiz va "✅ Yubordim" ni bosasiz. Buyruq faqat `OWNER_CHAT_ID` dan ishlaydi.
 
-Ishga tushirish uchun:
 - Yangi deploy'dan keyin **4-qadamdagi webhook havolasini yana bir marta oching** (tugmalar ishlashi uchun).
-- Narxi: bitta biznes taxminan $0.20–0.50 (Anthropic hisobingizdan). Oylik limit qo'yilganini tekshiring.
-- Agentlar hozircha Toshkent uchun sozlangan (`PROSPECT_REGION` bilan o'zgartirish mumkin).
-- Instagram va Telegram sahifalarini agent har doim ham ocha olmaydi. Havola bersangiz, natija yaxshiroq bo'ladi.
-
-### 8. Sinov
-Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
-"menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 Yangi mijoz" xabari kelishi kerak.
-So'ng o'zbek va dariy tilida ovozli xabar yuboring — bot unga matn bilan javob berishi kerak.
-
-## Eslatmalar
-- AI modeli: `claude-opus-5-5` (o'zgartirish: `ANTHROPIC_MODEL`). Javob chuqurligi: `ANTHROPIC_EFFORT` (`low` — tez va arzon).
-- Suhbat xotirasi server "issiq" turganda saqlanadi; uzoq tanaffusdan keyin bot suhbatni yangidan boshlaydi.
-- Vercel bepul (Hobby) tarifi rasmiy jihatdan notijorat loyihalar uchun; mijozlar ko'paygach Pro tarifga o'ting.
+- Narxi: bitta biznes taxminan $0.20–0.50 (Anthropic hisobingizdan).
+- Agentlar Toshkent uchun sozlangan (`PROSPECT_REGION` bilan o'zgartirish mumkin).
+- Instagram/Telegram sahifalarini agent har doim ham ocha olmaydi — havola bersangiz natija yaxshiroq.

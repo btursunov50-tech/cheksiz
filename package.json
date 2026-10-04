@@ -7,6 +7,6 @@
     "@vercel/functions": "^3.9.11"
   },
   "engines": {
-    "node": ">=18"
+    "node": "22.x"
   }
 }
