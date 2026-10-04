@@ -139,7 +139,8 @@ async function research(business) {
       system: RESEARCHER_PROMPT,
       output_config: { effort: process.env.PROSPECT_RESEARCH_EFFORT || "medium" },
       tools: [
-        { type: "web_search_20260209", name: "web_search", max_uses: 6, user_location: { type: "approximate", country: "UZ", city: "Tashkent" } },
+        // No user_location: the API rejects country code UZ. The prompt keeps the search in Tashkent.
+        { type: "web_search_20260209", name: "web_search", max_uses: 6 },
         { type: "web_fetch_20260209", name: "web_fetch", max_uses: 4 },
       ],
       messages,
