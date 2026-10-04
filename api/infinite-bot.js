@@ -8,7 +8,7 @@
 //   OWNER_USERNAME       optional, e.g. @your_username - shown to customers as the manager
 //   ANTHROPIC_MODEL      optional, defaults to claude-opus-5-5
 //   ANTHROPIC_EFFORT     optional, defaults to low
-//   KV_REST_API_URL / KV_REST_API_TOKEN   optional, Upstash Redis (Vercel Storage);
+//   <PREFIX>_REST_API_URL / <PREFIX>_REST_API_TOKEN   optional, Upstash Redis (Vercel Storage);
 //                        keeps chat memory across restarts. Without it memory is in-process only.
 //   GROQ_API_KEY or ELEVENLABS_API_KEY or OPENAI_API_KEY
 //                        optional, speech-to-text for voice messages (first one set is used)
@@ -28,8 +28,17 @@ const OWNER_USERNAME = process.env.OWNER_USERNAME || "";
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
 const EFFORT = process.env.ANTHROPIC_EFFORT || "low";
 
-const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
-const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+// Vercel's Upstash integration names its variables <PREFIX>_REST_API_URL / _TOKEN,
+// where the prefix is chosen when connecting (KV by default), so match on the suffix.
+function envBySuffix(suffix) {
+  const key = Object.keys(process.env).sort().find((k) => k.endsWith(suffix) && !k.includes("READ_ONLY"));
+  return key ? process.env[key] : "";
+}
+const httpsOnly = (url) => (url && url.startsWith("https://") ? url : "");
+const REDIS_URL =
+  httpsOnly(process.env.KV_REST_API_URL) || httpsOnly(envBySuffix("_REST_API_URL")) || httpsOnly(process.env.UPSTASH_REDIS_REST_URL);
+const REDIS_TOKEN =
+  process.env.KV_REST_API_TOKEN || envBySuffix("_REST_API_TOKEN") || process.env.UPSTASH_REDIS_REST_TOKEN || "";
 const HISTORY_TTL_SECONDS = 30 * 24 * 3600;
 const MAX_VOICE_SECONDS = 300;
 
