@@ -11,7 +11,6 @@ const { SERVICES, SITE_URL } = require("./knowledge");
 
 const MODEL = process.env.PROSPECT_MODEL || process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
 const REGION = process.env.PROSPECT_REGION || "Tashkent, Uzbekistan";
-const DEMO_URL = SITE_URL.replace(/\/infinite\/?$/, "/btrend/");
 // Our own sales bot doubles as a live demo the business can try.
 const BOT_DEMO_URL = process.env.PROSPECT_BOT_DEMO_URL || "https://t.me/sahiychishopbot";
 const PASS_SCORE = 8;
@@ -26,9 +25,8 @@ function anthropic() {
 const PRICE_LIST = SERVICES.map((s) => `- ${s.name} (${s.details}): ${s.uzs}`).join("\n");
 
 const ABOUT_US = `"Infinite AI & Me" is a small human + AI team from Uzbekistan that builds QR catalog websites, AI Telegram bots, AI video ads and related services for small businesses.
-Live example of our work (a product catalog site for an appliance seller): ${DEMO_URL}
 Live demo of an AI Telegram bot (our own sales bot - anyone can open it and chat): ${BOT_DEMO_URL}
-Our website: ${SITE_URL}
+Our website (services, prices, video): ${SITE_URL}
 Price list for Uzbekistan (starting prices, in UZS):
 ${PRICE_LIST}`;
 
@@ -62,7 +60,7 @@ ${ABOUT_US}
 Rules for the message:
 - Write in the language and script the business uses (default: Uzbek Latin). Natural, polite, like a real person - not an advert.
 - 50 to 90 words. Plain text, at most one emoji, no hashtags.
-- Start with a short greeting, then one or two concrete things you noticed about THIS business (from the research only), then how one service would help their customers, then one example link - the bot demo ${BOT_DEMO_URL} ("write to it and see how it answers") when the main offer is a bot, otherwise the catalog example ${DEMO_URL} - then one easy question (for example, whether they want to see how it would look for them).
+- Start with a short greeting, then one or two concrete things you noticed about THIS business (from the research only), then how one service would help their customers, then both of our links - the bot demo ${BOT_DEMO_URL} (invite them to write to it and see how it answers) and our website ${SITE_URL} - then one easy question (for example, whether they want to see how it would look for them).
 - Never suggest replacing the owner's or manager's personal contact with customers. Present a bot as a helper that answers routine questions and collects requests at night and on days off, then hands the customer to the manager, who closes the sale personally.
 - Offer one main service. A price is optional; if you give one, use the price list exactly and say "...dan" (starting from).
 - Never invent facts, results, discounts, deadlines or guarantees. Do not mention anything the research marks as unverified.
@@ -81,7 +79,7 @@ Score it from 0 to 10. Check:
 2. Truth: every fact about the business comes from the research; nothing marked unverified is used.
 3. Prices and services match the price list exactly; no invented discounts, deadlines or guarantees.
 4. Language and script match what the business uses; grammar is natural.
-5. Length 50-90 words, gaps framed kindly (not as criticism), polite, not pushy, no spam phrases, one clear easy question at the end, example link included.
+5. Length 50-90 words, gaps framed kindly (not as criticism), polite, not pushy, no spam phrases, one clear easy question at the end, both the bot demo link and our website link included.
 
 Set pass to true only when the score is ${PASS_SCORE} or higher and nothing in checks 2-3 is broken. Write problems and instructions in English for the writer; keep instructions short and concrete.`;
 
