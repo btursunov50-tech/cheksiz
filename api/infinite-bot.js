@@ -8,6 +8,10 @@
 //   OWNER_USERNAME       optional, e.g. @your_username - shown to customers as the manager
 //   ANTHROPIC_MODEL      optional, defaults to claude-opus-5-5
 //   ANTHROPIC_EFFORT     optional, defaults to low
+//   GROQ_API_KEY         optional, key from console.groq.com - turns on voice message
+//                        understanding (speech-to-text with Whisper). Without it the bot
+//                        asks customers to type instead.
+//   STT_MODEL            optional, defaults to whisper-large-v3
 //
 // One-time setup after deploying: open
 //   https://<your-domain>/api/infinite-bot?setup=<WEBHOOK_SECRET>
@@ -22,6 +26,10 @@ const OWNER_CHAT_ID = process.env.OWNER_CHAT_ID ? String(process.env.OWNER_CHAT_
 const OWNER_USERNAME = process.env.OWNER_USERNAME || "";
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
 const EFFORT = process.env.ANTHROPIC_EFFORT || "low";
+const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
+const STT_MODEL = process.env.STT_MODEL || "whisper-large-v3";
+// Longer recordings are refused so one message cannot eat the function's time limit.
+const MAX_VOICE_SECONDS = 300;
 
 const SYSTEM_PROMPT = buildSystemPrompt({ ownerUsername: OWNER_USERNAME });
 
@@ -76,6 +84,44 @@ async function sendText(chatId, text, extra = {}) {
   for (const part of parts) {
     await tg("sendMessage", { chat_id: chatId, text: part, disable_web_page_preview: true, ...extra });
   }
+}
+
+// Downloads a voice/audio/video-note file from Telegram and turns it into text.
+// Returns the transcript, or "" when it could not be produced.
+async function transcribe(media, kind) {
+  if (!GROQ_API_KEY) return "";
+  const info = await tg("getFile", { file_id: media.file_id });
+  const filePath = info.ok && info.result && info.result.file_path;
+  if (!filePath) return "";
+
+  const fileRes = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${filePath}`);
+  if (!fileRes.ok) {
+    console.error("Voice download failed:", fileRes.status);
+    return "";
+  }
+  const bytes = await fileRes.arrayBuffer();
+
+  // Telegram voice notes are Ogg/Opus with an .oga extension; Whisper wants a known one.
+  const ext = (filePath.split(".").pop() || "").toLowerCase();
+  const name = kind === "video_note" ? "note.mp4" : ext === "oga" || !ext ? "voice.ogg" : `audio.${ext}`;
+
+  const form = new FormData();
+  form.append("file", new Blob([bytes]), name);
+  form.append("model", STT_MODEL);
+  form.append("response_format", "json");
+  form.append("temperature", "0");
+
+  const sttRes = await fetch("https://api.groq.com/openai/v1/audio/transcriptions", {
+    method: "POST",
+    headers: { authorization: `Bearer ${GROQ_API_KEY}` },
+    body: form,
+  });
+  const data = await sttRes.json().catch(() => ({}));
+  if (!sttRes.ok) {
+    console.error("Transcription failed:", sttRes.status, JSON.stringify(data).slice(0, 300));
+    return "";
+  }
+  return String(data.text || "").trim();
 }
 
 function linkButtons() {
@@ -186,7 +232,24 @@ async function handleMessage(msg) {
   } else if (text) {
     userText = text + langHint;
   } else if (msg.voice || msg.audio || msg.video_note) {
-    userText = `[The customer sent a voice message, which you cannot listen to yet.]${langHint}`;
+    const kind = msg.voice ? "voice" : msg.audio ? "audio" : "video_note";
+    const media = msg[kind];
+    let transcript = "";
+    if (GROQ_API_KEY && (media.duration || 0) <= MAX_VOICE_SECONDS) {
+      await tg("sendChatAction", { chat_id: chatId, action: "typing" });
+      try {
+        transcript = await transcribe(media, kind);
+      } catch (err) {
+        console.error("Transcription error:", err && err.message);
+      }
+    }
+    if (transcript) {
+      userText = `[Voice message, transcribed automatically - names, numbers and phone numbers may contain mistakes; confirm them with the customer before sending a lead.]\n${transcript}${msg.caption ? `\n[Caption: "${msg.caption}"]` : ""}${langHint}`;
+    } else if (GROQ_API_KEY && (media.duration || 0) > MAX_VOICE_SECONDS) {
+      userText = `[The customer sent a voice message longer than ${MAX_VOICE_SECONDS / 60} minutes, which is too long to listen to. Ask them to send a shorter one or write.]${langHint}`;
+    } else {
+      userText = `[The customer sent a voice message, which you could not listen to.]${langHint}`;
+    }
   } else if (msg.photo || msg.document || msg.video || msg.sticker) {
     userText = `[The customer sent a ${msg.photo ? "photo" : msg.sticker ? "sticker" : "file"}${msg.caption ? ` with caption: "${msg.caption}"` : ""}.]${langHint}`;
   } else {

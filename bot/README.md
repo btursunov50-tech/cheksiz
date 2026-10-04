@@ -44,12 +44,23 @@ Javobda `"ok": true` chiqsa — bot ulandi.
 2. Vercel'da yana bitta o'zgaruvchi qo'shing: `OWNER_CHAT_ID` = shu raqam.
 3. Yana **Redeploy** qiling.
 
-### 6. Sinov
+### 6. Ovozli xabarlarni tushunish (ixtiyoriy, lekin tavsiya etiladi)
+Bot ovozli xabarni Groq'dagi Whisper modeli orqali matnga aylantiradi, keyin
+odatdagidek javob beradi. Groq'da bepul limit bor.
+1. https://console.groq.com → Google bilan kiring → **API Keys** → **Create API Key**.
+2. Vercel'da o'zgaruvchi qo'shing: `GROQ_API_KEY` = shu kalit.
+3. **Redeploy** qiling.
+
+Kalit qo'yilmasa, bot avvalgidek mijozdan yozib yuborishni so'raydi.
+5 daqiqadan uzun ovozli xabarlar qabul qilinmaydi. Ism va telefon raqamlarini
+bot mijozga qaytarib tasdiqlatadi, chunki ovozdan noto'g'ri eshitilishi mumkin.
+
+### 7. Sinov
 Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
 "menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 Yangi mijoz" xabari kelishi kerak.
+So'ng o'zbek va dariy tilida ovozli xabar yuboring — bot unga matn bilan javob berishi kerak.
 
 ## Eslatmalar
 - AI modeli: `claude-opus-5-5` (o'zgartirish: `ANTHROPIC_MODEL`). Javob chuqurligi: `ANTHROPIC_EFFORT` (`low` — tez va arzon).
 - Suhbat xotirasi server "issiq" turganda saqlanadi; uzoq tanaffusdan keyin bot suhbatni yangidan boshlaydi.
-- Ovozli xabarlarni tushunish keyingi bosqichda qo'shiladi; hozircha bot matn bilan yozishni so'raydi.
 - Vercel bepul (Hobby) tarifi rasmiy jihatdan notijorat loyihalar uchun; mijozlar ko'paygach Pro tarifga o'ting.
