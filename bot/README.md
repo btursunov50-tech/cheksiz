@@ -55,7 +55,28 @@ Kalit qo'yilmasa, bot avvalgidek mijozdan yozib yuborishni so'raydi.
 5 daqiqadan uzun ovozli xabarlar qabul qilinmaydi. Ism va telefon raqamlarini
 bot mijozga qaytarib tasdiqlatadi, chunki ovozdan noto'g'ri eshitilishi mumkin.
 
-### 7. Sinov
+### 7. Mijoz topish: /top (faqat siz uchun)
+Uch agent har bir biznes uchun shaxsiy taklif xatini tayyorlaydi:
+1. **Tadqiqotchi** internetdan biznesni o'rganadi: nima sotadi, sayti, katalogi, xaritada bormi.
+2. **Yozuvchi** shu ma'lumot asosida qisqa, shaxsiy xat yozadi.
+3. **Tekshiruvchi** xatni 10 ballik shkalada baholaydi. 8 dan past bo'lsa, xat qayta yoziladi (ko'pi bilan 2 marta).
+
+Botga shunday yozing (har qatorda bitta biznes, bir martada 15 tagacha):
+```
+/top
+Mebel Lux — instagram.com/mebellux
+Comfort Home, Chilonzor
+```
+Har biri 1-3 daqiqada tayyor bo'ladi. Xatni **bot yubormaydi**: siz o'qib, nusxalab,
+o'zingiz yuborasiz va "✅ Yubordim" ni bosasiz. Buyruq faqat `OWNER_CHAT_ID` dan ishlaydi.
+
+Ishga tushirish uchun:
+- Yangi deploy'dan keyin **4-qadamdagi webhook havolasini yana bir marta oching** (tugmalar ishlashi uchun).
+- Narxi: bitta biznes taxminan $0.20–0.50 (Anthropic hisobingizdan). Oylik limit qo'yilganini tekshiring.
+- Agentlar hozircha Toshkent uchun sozlangan (`PROSPECT_REGION` bilan o'zgartirish mumkin).
+- Instagram va Telegram sahifalarini agent har doim ham ocha olmaydi. Havola bersangiz, natija yaxshiroq bo'ladi.
+
+### 8. Sinov
 Botga `/start` yozing, keyin dariy, o'zbek, rus tillarida savol bering va
 "menga sayt kerak" deb ism-telefon qoldiring — sizga "🔔 Yangi mijoz" xabari kelishi kerak.
 So'ng o'zbek va dariy tilida ovozli xabar yuboring — bot unga matn bilan javob berishi kerak.

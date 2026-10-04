@@ -12,13 +12,22 @@
 //                        understanding (speech-to-text with Whisper). Without it the bot
 //                        asks customers to type instead.
 //   STT_MODEL            optional, defaults to whisper-large-v3
+//   PROSPECT_MODEL       optional, model for the /top lead-finding agents
+//                        (defaults to ANTHROPIC_MODEL, then claude-opus-5-5)
 //
 // One-time setup after deploying: open
 //   https://<your-domain>/api/infinite-bot?setup=<WEBHOOK_SECRET>
 // in a browser. It registers this URL as the bot's webhook.
+//
+// Owner-only command /top: the owner sends a list of businesses (one per line)
+// and three agents (bot/prospect.js) prepare a personal offer for each one. Each
+// business runs in its own invocation of this function, which calls itself for
+// the next one, so a long list never hits the function time limit.
 
 const Anthropic = require("@anthropic-ai/sdk");
+const { waitUntil } = require("@vercel/functions");
 const { buildSystemPrompt, SITE_URL, VIDEO_URL } = require("../bot/knowledge");
+const { prepareOffer, RefusedError } = require("../bot/prospect");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const SECRET = process.env.WEBHOOK_SECRET || "";
@@ -30,6 +39,7 @@ const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
 const STT_MODEL = process.env.STT_MODEL || "whisper-large-v3";
 // Longer recordings are refused so one message cannot eat the function's time limit.
 const MAX_VOICE_SECONDS = 300;
+const MAX_PROSPECTS = 15;
 
 const SYSTEM_PROMPT = buildSystemPrompt({ ownerUsername: OWNER_USERNAME });
 
@@ -225,6 +235,11 @@ async function handleMessage(msg) {
     return;
   }
 
+  if (/^\/top(@\w+)?(\s|$)/.test(text) && OWNER_CHAT_ID && String(chatId) === OWNER_CHAT_ID) {
+    await startProspecting(chatId, text.replace(/^\/top(@\w+)?/, ""));
+    return;
+  }
+
   let userText;
   if (text.startsWith("/start")) {
     conversations.delete(chatId);
@@ -268,13 +283,122 @@ async function handleMessage(msg) {
   if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons() : {});
 }
 
+// ---- /top: lead finding for the owner ----
+
+const TOP_HELP = [
+  "🔍 Mijoz topish",
+  "",
+  "/top dan keyin har bir qatorga bitta biznes yozing: nomi, bo'lsa havola, telefon yoki tuman. Masalan:",
+  "",
+  "/top",
+  "Mebel Lux — instagram.com/mebellux",
+  "Comfort Home, Chilonzor",
+  "Shirin Tort qandolatxonasi, Yunusobod",
+  "",
+  `Bir martada ${MAX_PROSPECTS} tagacha. Har biriga 1-3 daqiqa ketadi. Xatlarni bot yubormaydi — siz o'qib, o'zingiz yuborasiz.`,
+].join("\n");
+
+async function startProspecting(chatId, body) {
+  const items = body
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .slice(0, MAX_PROSPECTS);
+  if (items.length === 0) {
+    await sendText(chatId, TOP_HELP);
+    return;
+  }
+  if (!SECRET || !selfUrl) {
+    await sendText(chatId, "WEBHOOK_SECRET sozlanmagan — /top ishlamaydi.");
+    return;
+  }
+  await sendText(chatId, `🔍 ${items.length} ta biznes navbatga qo'yildi. Tadqiqot boshlandi — har biri tayyor bo'lishi bilan yuboraman.`);
+  await queueNext({ chatId, items, index: 0, ready: 0 });
+}
+
+// The webhook's own URL, remembered from the first request so jobs can chain.
+let selfUrl = "";
+
+async function queueNext(job) {
+  try {
+    const res = await fetch(`${selfUrl}?job=1`, {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-job-secret": SECRET },
+      body: JSON.stringify(job),
+    });
+    if (!res.ok) throw new Error(`status ${res.status}`);
+  } catch (err) {
+    console.error("Could not queue prospect job:", err && err.message);
+    await sendText(job.chatId, `⚠️ Navbatni davom ettirib bo'lmadi (${job.index + 1}/${job.items.length} dan). Qolganlarini /top bilan qayta yuboring.`);
+  }
+}
+
+const leadButtons = {
+  reply_markup: {
+    inline_keyboard: [[
+      { text: "✅ Yubordim", callback_data: "lead:sent" },
+      { text: "⏭ O'tkazish", callback_data: "lead:skip" },
+    ]],
+  },
+};
+
+async function runProspectJob(job) {
+  const { chatId, items, index } = job;
+  const label = `${index + 1}/${items.length}`;
+  let ready = job.ready || 0;
+  try {
+    const result = await prepareOffer(items[index]);
+    if (result.skipped) {
+      await sendText(chatId, `⏭ ${label} — ${result.name}\nXat yozilmadi: ${result.reason}`);
+    } else {
+      const { draft, review, rounds } = result;
+      ready++;
+      await sendText(chatId, [
+        `✅ ${label} — ${draft.business_name}`,
+        `Baho: ${review.score}/10${review.pass ? "" : " ⚠️ talabga yetmadi, diqqat bilan tekshiring"}${rounds > 1 ? ` (${rounds}-variant)` : ""}`,
+        `Kimga: ${draft.contact}`,
+        `Taklif: ${draft.offer}`,
+        `Nega: ${draft.why_fit}`,
+        "",
+        "Xat pastda 👇 (bosib turib nusxalang)",
+      ].join("\n"));
+      await sendText(chatId, draft.message, leadButtons);
+    }
+  } catch (err) {
+    console.error("Prospect failed:", err && err.status, err && err.message);
+    const why = err instanceof RefusedError ? "AI bu so'rovni rad etdi" : "texnik xato";
+    await sendText(chatId, `⚠️ ${label} — ${items[index]}\nTayyorlab bo'lmadi (${why}).`);
+  }
+
+  if (index + 1 < items.length) {
+    await queueNext({ chatId, items, index: index + 1, ready });
+  } else {
+    await sendText(chatId, `🏁 Tayyor: ${items.length} ta biznesdan ${ready} ta xat. Yuborganingizdan keyin "✅ Yubordim" ni bosing.`);
+  }
+}
+
+async function handleCallback(cb) {
+  const chatId = cb.message && cb.message.chat && cb.message.chat.id;
+  if (!OWNER_CHAT_ID || String(chatId) !== OWNER_CHAT_ID || !String(cb.data || "").startsWith("lead:")) {
+    await tg("answerCallbackQuery", { callback_query_id: cb.id });
+    return;
+  }
+  const sent = cb.data === "lead:sent";
+  await tg("answerCallbackQuery", { callback_query_id: cb.id, text: sent ? "Belgilandi: yuborildi" : "O'tkazib yuborildi" });
+  await tg("editMessageReplyMarkup", {
+    chat_id: chatId,
+    message_id: cb.message.message_id,
+    reply_markup: { inline_keyboard: [[{ text: sent ? "✅ Yuborildi" : "⏭ O'tkazildi", callback_data: "lead:done" }]] },
+  });
+}
+
 async function setup(req, res) {
   const host = req.headers["x-forwarded-host"] || req.headers.host;
   const url = `https://${host}/api/infinite-bot`;
   const webhook = await tg("setWebhook", {
     url,
     secret_token: SECRET,
-    allowed_updates: ["message"],
+    allowed_updates: ["message", "callback_query"],
     drop_pending_updates: true,
   });
   const commands = await tg("setMyCommands", {
@@ -289,10 +413,24 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  const host = req.headers["x-forwarded-host"] || req.headers.host;
+  if (host && !selfUrl) selfUrl = `https://${host}/api/infinite-bot`;
+
   if (req.method === "GET") {
     const q = req.query || {};
     if (SECRET && q.setup === SECRET) return setup(req, res);
     res.status(200).send("Infinite AI & Me bot is running.");
+    return;
+  }
+
+  if ((req.query || {}).job) {
+    if (!SECRET || req.headers["x-job-secret"] !== SECRET) {
+      res.status(401).send("unauthorized");
+      return;
+    }
+    // Answer at once so the caller is free; the work continues in the background.
+    waitUntil(runProspectJob(req.body).catch((err) => console.error("Prospect job crashed:", err)));
+    res.status(202).send("queued");
     return;
   }
 
@@ -310,6 +448,7 @@ module.exports = async function handler(req, res) {
 
   try {
     if (update.message) await handleMessage(update.message);
+    else if (update.callback_query) await handleCallback(update.callback_query);
   } catch (err) {
     console.error("Update failed:", err);
   }
