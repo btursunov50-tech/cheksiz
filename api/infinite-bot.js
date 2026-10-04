@@ -224,7 +224,8 @@ async function transcribe(media) {
     const audio = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file.result.file_path}`);
     if (!audio.ok) throw new Error(`download ${audio.status}`);
     const form = new FormData();
-    const name = file.result.file_path.split("/").pop() || "voice.ogg";
+    // Telegram stores voice notes as .oga, which speech-to-text APIs reject by extension.
+    const name = (file.result.file_path.split("/").pop() || "voice.ogg").replace(/\.oga$/i, ".ogg");
     form.append("file", new Blob([await audio.arrayBuffer()], { type: media.mime_type || "audio/ogg" }), name);
     for (const [k, v] of Object.entries(provider.fields)) form.append(k, v);
     const res = await fetch(provider.url, { method: "POST", headers: provider.headers, body: form });
