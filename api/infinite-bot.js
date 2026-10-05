@@ -28,7 +28,7 @@
 const Anthropic = require("@anthropic-ai/sdk");
 const { toFile } = require("@anthropic-ai/sdk");
 const { waitUntil } = require("@vercel/functions");
-const { buildSystemPrompt, SITE_URL, VIDEO_URL } = require("../bot/knowledge");
+const { buildSystemPrompt, SITE_URL, videoFor } = require("../bot/knowledge");
 const { prepareOffer, RefusedError } = require("../bot/prospect");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -171,12 +171,12 @@ async function sendText(chatId, text, extra = {}) {
   }
 }
 
-function linkButtons() {
+function linkButtons(lang) {
   return {
     reply_markup: {
       inline_keyboard: [[
         { text: "🌐 Website", url: SITE_URL },
-        { text: "🎬 Video", url: VIDEO_URL },
+        { text: "🎬 Video", url: videoFor(lang) },
       ]],
     },
   };
@@ -435,7 +435,7 @@ async function handleMessage(msg) {
     await clearHistory(chatId); // a half-finished exchange would break the next request
     reply = "Sorry, something went wrong. Please try again in a minute.";
   }
-  if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons() : {});
+  if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons(from.language_code) : {});
 }
 
 // Read-only health check: which optional features are configured (no secrets shown).

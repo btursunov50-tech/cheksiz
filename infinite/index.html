@@ -146,7 +146,7 @@ footer b{color:var(--ink)}
     <div class="wrap">
       <h2 data-i="video_h"></h2>
       <div class="video-box">
-        <video src="media/infinite-ai-ad.mp4" poster="media/poster.jpg" controls playsinline preload="metadata"></video>
+        <video id="ad" src="media/infinite-ai-ad-en.mp4" poster="media/poster.jpg" controls playsinline preload="metadata"></video>
       </div>
     </div>
   </section>
@@ -214,6 +214,14 @@ function detect(){
   return "en";
 }
 
+// Same mapping as videoFor() in bot/knowledge.js.
+function videoFor(lang){
+  if (["uz","kaa"].includes(lang)) return "media/infinite-ai-ad-uz.mp4";
+  if (["ru","kk","ky","tk","az"].includes(lang)) return "media/infinite-ai-ad-ru.mp4";
+  if (["prs","ps","fa","tg"].includes(lang)) return "media/infinite-ai-ad.mp4";
+  return "media/infinite-ai-ad-en.mp4";
+}
+
 function apply(lang){
   const t = T[lang] || T.en;
   const html = document.documentElement;
@@ -223,6 +231,8 @@ function apply(lang){
   if (lang === "zh") html.lang = "zh";
   document.querySelectorAll("[data-i]").forEach(el => { el.textContent = t[el.dataset.i] || T.en[el.dataset.i]; });
   document.getElementById("lang").value = lang;
+  const ad = document.getElementById("ad"), src = videoFor(lang);
+  if (!ad.getAttribute("src").endsWith(src)) { ad.pause(); ad.setAttribute("src", src); ad.load(); }
 }
 
 const sel = document.getElementById("lang");
