@@ -398,7 +398,7 @@ async function handleMessage(msg) {
   let userText;
   if (text.startsWith("/start")) {
     await clearHistory(chatId);
-    userText = `The customer just opened the bot (/start).${langHint} Greet them in their language, say in 2-3 sentences what Infinite AI & Me does, and ask what business they have.`;
+    userText = `The customer just opened the bot (/start).${langHint} Greet them in their language, say in one sentence what Infinite AI & Me does, list our main services as a short list (catalog website, AI Telegram bot, website + bot package, QR menu, AI video ad, logo, Google Maps) with a few words on how each helps, and ask what business they have.`;
   } else if (text) {
     userText = text + langHint;
   } else if (msg.voice || msg.audio) {
