@@ -26,6 +26,7 @@
 // the next one, so a long list never hits the function time limit.
 
 const Anthropic = require("@anthropic-ai/sdk");
+const { toFile } = require("@anthropic-ai/sdk");
 const { waitUntil } = require("@vercel/functions");
 const { buildSystemPrompt, SITE_URL, VIDEO_URL } = require("../bot/knowledge");
 const { prepareOffer, RefusedError } = require("../bot/prospect");
@@ -51,6 +52,9 @@ const REDIS_TOKEN =
 const HISTORY_TTL_SECONDS = 30 * 24 * 3600;
 const MAX_VOICE_SECONDS = 300;
 const MAX_PROSPECTS = 15;
+// Claude accepts images up to 5 MB; Telegram photos are far smaller.
+const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+const IMAGE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp"];
 
 const SYSTEM_PROMPT = buildSystemPrompt({ ownerUsername: OWNER_USERNAME });
 
@@ -279,6 +283,43 @@ async function transcribe(media, telegramLang) {
   }
 }
 
+// Uploads a customer's photo (or an image sent as a file) to the Anthropic Files API
+// and returns its file id, or "" if it cannot be used. History keeps only the small
+// file reference, so stored chats stay small and are never rewritten.
+async function uploadImage(msg) {
+  let fileId, mimeType, size;
+  if (msg.photo && msg.photo.length) {
+    const largest = msg.photo[msg.photo.length - 1];
+    fileId = largest.file_id;
+    mimeType = "image/jpeg";
+    size = largest.file_size || 0;
+  } else if (msg.document && IMAGE_TYPES.includes(msg.document.mime_type)) {
+    fileId = msg.document.file_id;
+    mimeType = msg.document.mime_type;
+    size = msg.document.file_size || 0;
+  } else {
+    return "";
+  }
+  if (size > MAX_IMAGE_BYTES) return "";
+  try {
+    const file = await tg("getFile", { file_id: fileId });
+    if (!file.ok) return "";
+    const dl = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file.result.file_path}`);
+    if (!dl.ok) throw new Error(`download ${dl.status}`);
+    const bytes = Buffer.from(await dl.arrayBuffer());
+    if (bytes.length > MAX_IMAGE_BYTES) return "";
+    const name = file.result.file_path.split("/").pop() || "photo.jpg";
+    const uploaded = await anthropic().files.upload({
+      file: await toFile(bytes, name, { type: mimeType }),
+      expires_in_seconds: 90 * 24 * 3600, // longest allowed; chats older than this start fresh on error
+    });
+    return uploaded.id;
+  } catch (err) {
+    console.error("Image upload failed:", err && err.status, err && err.message);
+    return "";
+  }
+}
+
 function textOf(content) {
   return content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
 }
@@ -369,8 +410,18 @@ async function handleMessage(msg) {
       : `[The customer sent a voice message that could not be transcribed.]${langHint}`;
   } else if (msg.video_note) {
     userText = `[The customer sent a round video message, which you cannot watch.]${langHint}`;
-  } else if (msg.photo || msg.document || msg.video || msg.sticker) {
-    userText = `[The customer sent a ${msg.photo ? "photo" : msg.sticker ? "sticker" : "file"}${msg.caption ? ` with caption: "${msg.caption}"` : ""}.]${langHint}`;
+  } else if (msg.photo || (msg.document && IMAGE_TYPES.includes(msg.document.mime_type))) {
+    await tg("sendChatAction", { chat_id: chatId, action: "typing" });
+    const imageId = await uploadImage(msg);
+    const caption = msg.caption ? ` with caption: "${msg.caption}"` : " without a caption";
+    userText = imageId
+      ? [
+          { type: "image", source: { type: "file", file_id: imageId } },
+          { type: "text", text: `[The customer sent this image${caption}.]${langHint}` },
+        ]
+      : `[The customer sent an image${caption}, but it could not be opened.]${langHint}`;
+  } else if (msg.document || msg.video || msg.sticker) {
+    userText = `[The customer sent a ${msg.sticker ? "sticker" : msg.video ? "video" : "file"}${msg.caption ? ` with caption: "${msg.caption}"` : ""}.]${langHint}`;
   } else {
     return;
   }

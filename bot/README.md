@@ -88,3 +88,10 @@ o'zingiz yuborasiz va "✅ Yubordim" ni bosasiz. Buyruq faqat `OWNER_CHAT_ID` da
 - Narxi: bitta biznes taxminan $0.20–0.50 (Anthropic hisobingizdan).
 - Agentlar Toshkent uchun sozlangan (`PROSPECT_REGION` bilan o'zgartirish mumkin).
 - Instagram/Telegram sahifalarini agent har doim ham ocha olmaydi — havola bersangiz natija yaxshiroq.
+
+### 11. Rasmlarni tushunish
+Mijoz rasm yuborsa (menyu, do'kon, mahsulot, logotip, Instagram sahifasi skrinshoti),
+bot uni ko'rib tahlil qiladi va mos xizmatni taklif qiladi. Rasm ostidagi savolga ham javob beradi.
+Qo'shimcha sozlash kerak emas: rasm Anthropic Files API'ga yuklanadi (90 kun saqlanadi).
+5 MB dan katta rasmlar va video/PDF fayllar hozircha qabul qilinmaydi.
+
