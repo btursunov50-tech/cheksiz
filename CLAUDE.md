@@ -1,8 +1,8 @@
 # CLAUDE.md — Infinite AI & Me (cheksiz)
 
 ## Who you work with
-- Owner: Boxo (Telegram @Boxo_xxxx), 18, from Uzbekistan. Runs **Infinite AI & Me**, a small human + AI agency that sells QR catalog sites, AI Telegram bots, QR menus, AI video ads, logos, Google Maps listings and posts to small businesses in Uzbekistan (Tashkent first) and Afghanistan.
-- Answer in **Uzbek (Latin)**, simply, as you would explain to an 18-year-old. Use short sections and tables.
+- Owner: Boxo (Telegram @Boxo_xxxx), from Uzbekistan, turns 50 in December 2026 (not 18: an earlier note was wrong and it ended up in a public LinkedIn post). Never state the owner's age or personal details in public text without asking. Runs **Infinite AI & Me**, a small human + AI agency that sells QR catalog sites, AI Telegram bots, QR menus, AI video ads, logos, Google Maps listings and posts to small businesses in Uzbekistan (Tashkent first) and Afghanistan.
+- Answer in **Uzbek (Latin)**, simply and clearly, without jargon. Use short sections and tables.
 - Whenever you mention a website or settings page, **give the direct link** (Vercel, Anthropic Console, GitHub, the bot, the site).
 - The owner has said: **do everything you can without asking**. That includes opening a PR and merging it yourself (squash) once checks pass. Still ask before spending the owner's money or changing anything outside this repo.
 - Be honest about limits: say what you could not test or reach.

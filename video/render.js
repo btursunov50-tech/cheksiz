@@ -21,6 +21,8 @@ const { chromium } = require('playwright');
   await p.waitForTimeout(500);
   for (let i = 0; i < times.length; i++) {
     await p.evaluate(t => setT(t), times[i]);
+    // wait for images swapped in by the page (e.g. picture-in-picture frames)
+    await p.evaluate(() => Promise.all([...document.images].map(im => im.complete ? 0 : new Promise(r => { im.onload = im.onerror = r; }))));
     const name = (only ? 'prev' : 'f') + String(i).padStart(5, '0') + '.jpg';
     await p.screenshot({ path: path.join(outDir, name), type: 'jpeg', quality: 92 });
   }
