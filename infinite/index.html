@@ -6,6 +6,9 @@
 <title>Infinite AI &amp; Me — websites, QR catalogs and smart bots</title>
 <meta name="description" content="Infinite AI & Me: a human + AI team. Websites, QR catalogs and smart Telegram bots for your business, in your customers' language.">
 <meta name="theme-color" content="#04101e">
+<link rel="icon" type="image/png" sizes="64x64" href="media/favicon-64.png">
+<link rel="icon" type="image/png" sizes="192x192" href="media/icon-192.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <meta property="og:title" content="Infinite AI & Me">
 <meta property="og:description" content="Your business + AI = no limits. Websites, QR catalogs and smart Telegram bots.">
 <meta property="og:image" content="media/poster.jpg">
@@ -31,7 +34,7 @@ a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;z-index:20;background:rgba(4,16,30,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
 .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-family:"Montserrat",sans-serif;white-space:nowrap}
-.brand .inf{color:var(--gold);font-size:1.6rem;line-height:1}
+.brand .inf{display:block;width:48px;height:auto;flex:none}
 .lang{position:relative}
 .lang select{appearance:none;-webkit-appearance:none;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 34px 9px 12px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;max-width:170px}
 [dir=rtl] .lang select{padding:9px 12px 9px 34px}
@@ -84,6 +87,13 @@ footer b{color:var(--ink)}
   section{padding:44px 0}
   .btn{width:100%}
   .brand .txt{font-size:.95rem}
+  .brand{gap:6px}
+  .brand .inf{width:40px}
+  .lang select{max-width:130px}
+}
+@media (max-width:359px){
+  .brand .txt{font-size:.85rem}
+  .lang select{max-width:112px;padding-inline-start:10px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
@@ -91,7 +101,7 @@ footer b{color:var(--ink)}
 <body>
 <header>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="inf" aria-hidden="true">∞</span><span class="txt">Infinite AI &amp; Me</span></a>
+    <a class="brand" href="#top"><img class="inf" src="media/logo-mark.png" alt="" width="48" height="20"><span class="txt">Infinite AI &amp; Me</span></a>
     <label class="lang">
       <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Language</span>
       <select id="lang" aria-label="Language"></select>
