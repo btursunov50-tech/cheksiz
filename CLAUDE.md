@@ -28,7 +28,7 @@
 - Anthropic: Opus model for both the bot and `/top` (the owner chose to keep Opus). Auto-reload is on (top up to $15 below $5). A `/top` run costs about $0.45 per business.
 
 ## Social channels
-The owner posts AI-themed short videos (Uzbek voice) on YouTube Shorts, Instagram, Facebook and LinkedIn. First one: MrBeast in Tashkent, 2026-10-07 (https://youtube.com/shorts/pxNi5MwMMGs).
+The owner posts AI-themed short videos (Uzbek voice) on YouTube Shorts, Instagram, Facebook and LinkedIn. All published links, results and the posting checklist are in `video/PUBLISHED.md`; add each new video there.
 
 ## Lessons learned
 - `/top`: web search rejects `user_location` with country `UZ`, so leave it out. Offer bots to high-message businesses (cafes, salons, clinics, courses, chains). For low-volume, high-value shops (furniture) offer a catalog, Google Maps or photos. Never pitch a bot as a replacement for the manager. Drafts link the bot demo and the Infinite site, not B-Trend.
