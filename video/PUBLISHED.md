@@ -19,4 +19,4 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 ## Matn oxiri (har doim)
 - Bot: @sahiychishopbot
 - Sayt: https://cheksiz-one.vercel.app/infinite/
-- Egasining Telegram username'i: hali tasdiqlanmagan (CLAUDE.md da `@Boxo_xxxx`), egasidan so'rang.
+- Egasining Telegram'i: @Boxo_xxxx (https://t.me/Boxo_xxxx), egasi tasdiqlagan (2026-10-08).
