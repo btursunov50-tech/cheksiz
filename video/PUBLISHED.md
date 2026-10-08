@@ -5,7 +5,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 | # | Sana | Video | YouTube | Instagram | Facebook | LinkedIn |
 |---|---|---|---|---|---|---|
 | 1 | 2026-10-07 | MrBeast Toshkentga keladi (ro'yxatdan o'tish) | https://youtube.com/shorts/pxNi5MwMMGs | https://www.instagram.com/p/DeMlQgXJYJ8/ | https://www.facebook.com/reel/1419311133024974 | https://lnkd.in/p/dUKZf_uP |
-| 2 | 2026-10-08 | Kafe egasi uxlaydi, AI bot ishlaydi | https://youtube.com/shorts/6cUQWsu5Xb8 | https://www.instagram.com/p/DeOhATppuYD/ | — | — |
+| 2 | 2026-10-08 | Kafe egasi uxlaydi, AI bot ishlaydi | https://youtube.com/shorts/6cUQWsu5Xb8 | https://www.instagram.com/p/DeOhATppuYD/ | — | https://lnkd.in/p/eUQxeBYG |
 
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
