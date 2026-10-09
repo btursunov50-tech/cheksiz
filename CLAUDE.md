@@ -16,6 +16,7 @@
 | `api/infinite-bot.js` | Telegram bot webhook (Vercel function, `maxDuration` 300). Chat with Claude, voice messages (Groq/ElevenLabs/OpenAI STT), images (Anthropic Files API), leads sent to the owner, owner-only `/top`. |
 | `bot/knowledge.js` | Services, prices (UZS for Uzbekistan, USD elsewhere), languages, system prompt, `videoFor(lang)`. **Edit prices and services here.** |
 | `bot/prospect.js` | `/top`: researcher (web search), writer, reviewer agents that draft personal offers for Tashkent businesses. Drafts go only to the owner, who sends them by hand. |
+| `api/tong.js`, `bot/tong.js`, `infinite/media/tong/` | Daily 05:00 (Tashkent) "Xayrli tong" post to the channel via Vercel Cron: weekday flower video + motto + tip of the day. Free (tips pre-written). Preview: `/api/tong?key=<WEBHOOK_SECRET>&preview=1`. Videos made from the scratch canvas template (gold motto, green outline; "Xayrli tong" and the translation dark red). |
 | `bot/README.md` | Setup steps in Uzbek (env vars, webhook, Groq, Upstash, `/top`, images). |
 | `video/` | Shorts/Reels maker: `template.html` (scenes + subtitles), `render.js` (Playwright frames), `mark.png` (gold ∞), `README.md` (steps, ffmpeg mix). |
 | `infinite/media/logo-mark.png`, `favicon-64.png`, `icon-192.png`, `apple-touch-icon.png` | Gold ∞ logo (header) and site icons, cut from `infinity.jpg`. |

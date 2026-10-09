@@ -95,3 +95,18 @@ bot uni ko'rib tahlil qiladi va mos xizmatni taklif qiladi. Rasm ostidagi savolg
 Qo'shimcha sozlash kerak emas: rasm Anthropic Files API'ga yuklanadi (90 kun saqlanadi).
 5 MB dan katta rasmlar va video/PDF fayllar hozircha qabul qilinmaydi.
 
+
+### 12. Har kuni ertalabki post (kanal)
+Har kuni soat **05:00 da** (Toshkent) bot [kanalga](https://t.me/infinite_ai_and_me) "Xayrli tong"
+postini o'zi joylaydi: qimirlaydigan gulli video + shior + kun maslahati + bot havolasi.
+Pul sarflanmaydi (maslahatlar oldindan yozilgan, Claude ishlatilmaydi).
+
+- Bot kanalda **admin** bo'lishi va "Публикация сообщений" huquqi yoqilgan bo'lishi kerak.
+- Vaqt `vercel.json` dagi `crons` da (UTC 00:00 = Toshkent 05:00). Bepul Vercel tarifida
+  post 05:00–05:59 oralig'ida chiqadi.
+- Videolar: `infinite/media/tong/` (`dushanba.mp4` … `yakshanba.mp4`, maxsus kunlar `YYYY-MM-DD.mp4`).
+- Maslahatlar, tilaklar va maxsus kunlar: `bot/tong.js`.
+- Sinash (kanalga chiqmaydi, faqat sizga keladi):
+  `https://cheksiz-one.vercel.app/api/tong?key=<WEBHOOK_SECRET>&preview=1`
+- Cron o'tkazib yuborsa, qo'lda joylash: `...&post=1` (bir kunda faqat bir marta chiqadi).
+- Xato bo'lsa, bot sizga (OWNER_CHAT_ID) xabar yuboradi.
