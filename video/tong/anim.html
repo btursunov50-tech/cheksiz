@@ -19,7 +19,24 @@ const PAL=[ // [tip(light), base(dark), center]
  ['#e7b8ff','#7b1fa2','#ffd43b'],   // binafsha
  ['#ffffff','#c9d6e8','#f2b705'],   // oq
  ['#ff6b6b','#8b0000','#5c0b0b'],   // qizil atirgul
+ ['#ff4d4d','#7a0000','#3b0000'],   // 6 to'q qizil
+ ['#ffd400','#e67700','#3d2200'],   // 7 kungaboqar
+ ['#d0bfff','#5f3dc4','#ffe066'],   // 8 lavanda
+ ['#ffb8cf','#c2255c','#ffd43b'],   // 9 pion
+ ['#ffffff','#dfe7f2','#ffc107'],   // 10 oq moychechak
 ];
+// Har kun o'z guli: ?theme=pion va h.k. (aralash = birinchi namuna, o'zgarmaydi)
+const TH={
+ aralash:{seed:7,bg:['#fff3d6','#ffe0c2','#f7c6b5']},
+ pion:{seed:31,types:['rose'],pals:[9,0,9,4],bg:['#fff0f5','#ffd6e5','#f7b6cc'],falls:[9,0,4]},
+ atirgul:{seed:43,types:['rose'],pals:[6,5,6,0],bg:['#fff4ef','#ffdcd2','#f2b3a8'],falls:[6,5,9]},
+ kungaboqar:{seed:59,types:['sunflower','sunflower','daisy'],pals:[7,7,2],bg:['#fffbe6','#ffeeb0','#f9d27a'],falls:[7,2]},
+ lola:{seed:71,types:['tulip'],pals:[6,0,7,3,9],bg:['#f5fff0','#e2f4d6','#c3e3b5'],falls:[6,0,7]},
+ lavanda:{seed:83,types:['daisy','rose'],pals:[8,3,8,4],bg:['#f7f2ff','#e7dcff','#cfbcf2'],falls:[8,3]},
+ moychechak:{seed:97,types:['daisy'],pals:[10,10,1,10],bg:['#f2f9ff','#dceeff','#b9d9f2'],falls:[10,4]},
+};
+const TM=TH[P.get('theme')]||TH.aralash;seed=TM.seed;
+const FP=TM.falls||[0,1,4,3];
 
 function petal(len,wid,tip,base,cup){
   x.beginPath();x.moveTo(0,0);
@@ -51,7 +68,16 @@ function flowerRaw(f,t){
   x.rotate(ang);x.scale(br,br*f.tilt);
   if(f.blur)x.filter='blur('+f.blur+'px)';
   x.shadowColor='rgba(40,10,0,.38)';x.shadowBlur=f.r*.35;x.shadowOffsetY=f.r*.14;
-  const layers=f.type==='rose'?[[f.r,f.r*.42,9,1],[f.r*.8,f.r*.38,8,1.2],[f.r*.6,f.r*.32,7,1.4],[f.r*.42,f.r*.26,6,1.6],[f.r*.26,f.r*.2,5,1.8]]
+  if(f.type==='tulip'){ // yon tomondan ko'rinadigan lola
+    const r=f.r*1.3;x.translate(0,r*.5);
+    x.save();x.strokeStyle='#2e7d32';x.lineWidth=r*.12;x.lineCap='round';x.beginPath();x.moveTo(0,0);x.quadraticCurveTo(r*.08,r*.4,0,r*.9);x.stroke();x.restore();
+    [[-.32,1.05,.5],[.32,1.05,.5],[0,1.2,.46]].forEach(([a,l,w])=>{x.save();x.rotate(a);petal(r*l,r*w,tip,base,1.4);x.fillStyle='rgba(0,0,0,.12)';x.fill();x.restore();});
+    x.shadowBlur=r*.12;x.shadowOffsetY=r*.05;
+    x.save();x.rotate(-.12);petal(r*1.0,r*.42,tip,base,1.1);x.restore();
+    x.save();x.rotate(.14);petal(r*.95,r*.4,tip,base,1.1);x.restore();
+    x.restore();x.filter='none';return;
+  }
+  const layers=f.type==='sunflower'?[[f.r,f.r*.16,24,.6],[f.r*.86,f.r*.15,24,.8]]:f.type==='rose'?[[f.r,f.r*.42,9,1],[f.r*.8,f.r*.38,8,1.2],[f.r*.6,f.r*.32,7,1.4],[f.r*.42,f.r*.26,6,1.6],[f.r*.26,f.r*.2,5,1.8]]
                               :[[f.r,f.r*.30,12,.8],[f.r*.78,f.r*.27,12,1],[f.r*.55,f.r*.22,10,1.2]];
   layers.forEach((L,i)=>{
     for(let j=0;j<L[2];j++){
@@ -65,13 +91,15 @@ function flowerRaw(f,t){
   });
   x.shadowColor='rgba(0,0,0,0)';
   if(f.type!=='rose'){
-    const cr=f.r*.24,g=x.createRadialGradient(-cr*.35,-cr*.4,cr*.1,0,0,cr);
-    g.addColorStop(0,'#fff6c2');g.addColorStop(.35,cen);g.addColorStop(1,'#5a3200');
+    const sf=f.type==='sunflower',cr=f.r*(sf?.42:.24),g=x.createRadialGradient(-cr*.35,-cr*.4,cr*.1,0,0,cr);
+    if(sf){g.addColorStop(0,'#8a5a00');g.addColorStop(.45,cen);g.addColorStop(1,'#140a00');}
+    else{g.addColorStop(0,'#fff6c2');g.addColorStop(.35,cen);g.addColorStop(1,'#5a3200');}
     x.beginPath();x.arc(0,0,cr,0,TAU);x.fillStyle=g;
     x.shadowColor='rgba(0,0,0,.4)';x.shadowBlur=cr*.6;x.shadowOffsetY=cr*.2;x.fill();x.shadowColor='rgba(0,0,0,0)';
-    for(let k=0;k<26;k++){const a=k*2.4,rr=cr*.85*Math.sqrt(k/26);
-      x.beginPath();x.arc(Math.cos(a)*rr,Math.sin(a)*rr,cr*.07,0,TAU);
-      x.fillStyle='rgba(255,240,170,.85)';x.fill();}
+    const nk=sf?110:26;
+    for(let k=0;k<nk;k++){const a=k*2.4,rr=cr*.88*Math.sqrt(k/nk);
+      x.beginPath();x.arc(Math.cos(a)*rr,Math.sin(a)*rr,cr*(sf?.035:.07),0,TAU);
+      x.fillStyle=sf?'rgba(255,190,70,.55)':'rgba(255,240,170,.85)';x.fill();}
   }else{
     const g=x.createRadialGradient(0,0,1,0,0,f.r*.2);
     g.addColorStop(0,'rgba(50,0,10,.75)');g.addColorStop(1,'rgba(50,0,10,0)');
@@ -97,7 +125,13 @@ function leafStatic(l){
 
 // sahna: gullar burchaklarda, markaz bo'sh
 const back=[],front=[],leaves=[],falls=[],bokeh=[];
-function F(arr,X,Y,r,pal,type,blur){arr.push({x:X,y:Y,r,pal,type,blur:blur||0,rot:rnd()*TAU,ph:rnd()*TAU,k:1,k2:2,tilt:.82+rnd()*.18});}
+let fi=0;
+function F(arr,X,Y,r,pal,type,blur){
+  if(TM.pals){pal=TM.pals[fi%TM.pals.length];type=TM.types[fi%TM.types.length];
+    X+=(rnd()-.5)*60;Y+=(rnd()-.5)*40;r*=.9+rnd()*.25;}
+  fi++;
+  if(type==='tulip'){arr.push({x:X,y:Y,r,pal,type,blur:blur||0,rot:(rnd()-.5)*.5,ph:rnd()*TAU,k:1,k2:2,tilt:1});return;}
+  arr.push({x:X,y:Y,r,pal,type,blur:blur||0,rot:rnd()*TAU,ph:rnd()*TAU,k:1,k2:2,tilt:.82+rnd()*.18});}
 // orqa (xira, chuqurlik)
 F(back,60,330,70,4,'daisy',7);F(back,1030,360,75,0,'rose',7);F(back,250,1040,80,3,'daisy',6);F(back,840,1050,80,1,'daisy',6);
 F(back,420,40,55,0,'daisy',8);F(back,680,30,55,4,'daisy',8);
@@ -108,12 +142,12 @@ F(back,420,40,55,0,'daisy',8);F(back,680,30,55,4,'daisy',8);
 F(front,110,930,120,5,'rose');F(front,290,1000,95,1,'daisy');F(front,60,760,80,2,'daisy');
 F(front,970,920,125,0,'rose');F(front,800,1005,90,3,'daisy');F(front,1030,750,82,2,'daisy');
 F(front,70,90,105,2,'daisy');F(front,230,30,75,0,'rose');F(front,1005,85,108,3,'daisy');F(back,540,1075,60,2,'daisy',5);F(front,850,25,72,5,'rose');
-for(let i=0;i<14;i++)falls.push({x0:rnd()*W,p0:rnd(),n:1,m:rnd()<.5?1:-1,s:14+rnd()*14,pal:[0,1,4,3][i%4],ph:rnd()*TAU,amp:30+rnd()*50});
+for(let i=0;i<14;i++)falls.push({x0:rnd()*W,p0:rnd(),n:1,m:rnd()<.5?1:-1,s:14+rnd()*14,pal:FP[i%FP.length],ph:rnd()*TAU,amp:30+rnd()*50});
 for(let i=0;i<22;i++)bokeh.push({x:rnd()*W,y:rnd()*H,r:10+rnd()*40,ph:rnd()*TAU,a:.08+rnd()*.15});
 
 function bg(t){
   const g=x.createLinearGradient(0,0,0,H);
-  g.addColorStop(0,'#fff3d6');g.addColorStop(.45,'#ffe0c2');g.addColorStop(1,'#f7c6b5');
+  g.addColorStop(0,TM.bg[0]);g.addColorStop(.45,TM.bg[1]);g.addColorStop(1,TM.bg[2]);
   x.fillStyle=g;x.fillRect(0,0,W,H);
   // quyosh nuri
   const cx=540,cy=470;
@@ -132,7 +166,7 @@ function bg(t){
 function fallPetals(t){
   falls.forEach(f=>{const p=(f.p0+t/T*f.n)%1,y=-60+p*(H+120),X=f.x0+Math.sin(TAU*p*2+f.ph)*f.amp;
     x.save();x.translate(X,y);x.rotate(TAU*p*f.m+f.ph);x.scale(1,.55+.45*Math.cos(TAU*p*2+f.ph));
-    const k=f.s*1.6/45;x.scale(k,k);x.drawImage(SP.pet[[0,1,4,3].indexOf(f.pal)],-45,-70);x.restore();});
+    const k=f.s*1.6/45;x.scale(k,k);x.drawImage(SP.pet[FP.indexOf(f.pal)],-45,-70);x.restore();});
 }
 
 // oltin harf + yashil chiziq
@@ -185,12 +219,12 @@ function sprite(w,h,fn){const cv=document.createElement('canvas');cv.width=w;cv.
 let SP=null;
 function build(){
   SP={};
-  const fl=f=>{const R=Math.ceil(f.r*1.5+(f.blur||0)*3);
+  const fl=f=>{const R=Math.ceil(f.r*(f.type==='tulip'?2.2:1.5)+(f.blur||0)*3);
     const s0=sprite(R*2,R*2,()=>{const g={...f,blur:0,x:R,y:R-f.r*.1};g.k=0;g.k2=0;g.ph=0;flowerStatic(g);});
     f.spr=f.blur?sprite(R*2,R*2,()=>{x.filter='blur('+f.blur+'px)';x.drawImage(s0,0,0);x.filter='none';}):s0;f.R=R;};
   back.forEach(fl);front.forEach(fl);
   leaves.forEach(l=>{const R=Math.ceil(l.len+30);l.R=R;l.spr=sprite(R*2,R*2,()=>{x.translate(R,R);leafStatic(l);});});
-  SP.pet=[0,1,4,3].map(p=>sprite(90,90,()=>{x.translate(45,70);x.shadowColor='rgba(60,10,0,.3)';x.shadowBlur=8;x.shadowOffsetY=5;petal(45,20,PAL[p][0],PAL[p][1],1);}));
+  SP.pet=FP.map(p=>sprite(90,90,()=>{x.translate(45,70);x.shadowColor='rgba(60,10,0,.3)';x.shadowBlur=8;x.shadowOffsetY=5;petal(45,20,PAL[p][0],PAL[p][1],1);}));
 }
 function flowerStatic(f){const sv=f.rot;f.rot=0;x.save();x.translate(f.x,f.y);x.rotate(sv);x.scale(1,f.tilt);x.translate(-f.x,-f.y);
   const o={...f,tilt:1};flowerRaw(o,0);x.restore();f.rot=sv;}

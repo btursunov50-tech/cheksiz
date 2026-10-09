@@ -105,6 +105,8 @@ Pul sarflanmaydi (maslahatlar oldindan yozilgan, Claude ishlatilmaydi).
 - Vaqt `vercel.json` dagi `crons` da (UTC 00:00 = Toshkent 05:00). Bepul Vercel tarifida
   post 05:00–05:59 oralig'ida chiqadi.
 - Videolar: `infinite/media/tong/` (`dushanba.mp4` … `yakshanba.mp4`, maxsus kunlar `YYYY-MM-DD.mp4`).
+  Har kun o'z guli: dushanba qizil atirgul, seshanba kungaboqar, chorshanba lola, payshanba lavanda,
+  juma oq moychechak, shanba aralash, yakshanba pion (`video/tong/all.sh` dagi `theme=`).
 - Maslahatlar, tilaklar va maxsus kunlar: `bot/tong.js`.
 - Sinash (kanalga chiqmaydi, faqat sizga keladi):
   `https://cheksiz-one.vercel.app/api/tong?key=<WEBHOOK_SECRET>&preview=1`
