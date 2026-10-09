@@ -30,6 +30,7 @@ const { toFile } = require("@anthropic-ai/sdk");
 const { waitUntil } = require("@vercel/functions");
 const { buildSystemPrompt, SITE_URL, videoFor } = require("../bot/knowledge");
 const { prepareOffer, RefusedError } = require("../bot/prospect");
+const { SUBS_KEY: TONG_SUBS } = require("../bot/tong");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const SECRET = process.env.WEBHOOK_SECRET || "";
@@ -162,6 +163,25 @@ async function tg(method, payload) {
   if (!data.ok) console.error(`Telegram ${method} failed:`, JSON.stringify(data).slice(0, 300));
   return data;
 }
+
+// Morning post subscription (api/tong.js sends to everyone in the set). Returns true if it changed.
+async function setTongSub(chatId, on) {
+  if (!REDIS_URL || !REDIS_TOKEN) return false;
+  try {
+    return (await redis(on ? "SADD" : "SREM", TONG_SUBS, String(chatId))) === 1;
+  } catch (err) {
+    console.error("tong subscription failed:", err.message);
+    return false;
+  }
+}
+
+const tongButton = (on) => ({
+  reply_markup: {
+    inline_keyboard: [[on ? { text: "🔕 To'xtatish", callback_data: "tong:off" } : { text: "☀️ Qayta yoqish", callback_data: "tong:on" }]],
+  },
+});
+const TONG_ON_TEXT = "☀️ Siz har kungi ertalabki tabrikka obuna bo'ldingiz. Har kuni ertalab gulli video va kun maslahati keladi.\nTo'xtatish: /tong_off";
+const TONG_OFF_TEXT = "🔕 Ertalabki tabrik to'xtatildi. Qayta yoqish: /tong_on";
 
 async function sendText(chatId, text, extra = {}) {
   const parts = [];
@@ -390,6 +410,13 @@ async function handleMessage(msg) {
     return;
   }
 
+  if (/^\/tong_(on|off)(@\w+)?$/.test(text)) {
+    const on = text.startsWith("/tong_on");
+    await setTongSub(chatId, on);
+    await sendText(chatId, on ? TONG_ON_TEXT : TONG_OFF_TEXT, tongButton(on));
+    return;
+  }
+
   if (/^\/top(@\w+)?(\s|$)/.test(text) && OWNER_CHAT_ID && String(chatId) === OWNER_CHAT_ID) {
     await startProspecting(chatId, text.replace(/^\/top(@\w+)?/, ""));
     return;
@@ -436,6 +463,10 @@ async function handleMessage(msg) {
     reply = "Sorry, something went wrong. Please try again in a minute.";
   }
   if (reply) await sendText(chatId, reply, text.startsWith("/start") ? linkButtons(from.language_code) : {});
+  // /start also subscribes to the morning post; tell them once, with a stop button.
+  if (text.startsWith("/start") && (await setTongSub(chatId, true))) {
+    await sendText(chatId, TONG_ON_TEXT, tongButton(true));
+  }
 }
 
 // Read-only health check: which optional features are configured (no secrets shown).
@@ -561,6 +592,14 @@ async function runProspectJob(job) {
 
 async function handleCallback(cb) {
   const chatId = cb.message && cb.message.chat && cb.message.chat.id;
+  if (chatId && (cb.data === "tong:on" || cb.data === "tong:off")) {
+    const on = cb.data === "tong:on";
+    await setTongSub(chatId, on);
+    await tg("answerCallbackQuery", { callback_query_id: cb.id, text: on ? "Yoqildi" : "To'xtatildi" });
+    // The button may sit under a video post, so send a fresh note instead of editing it.
+    await sendText(chatId, on ? TONG_ON_TEXT : TONG_OFF_TEXT, tongButton(on));
+    return;
+  }
   if (!OWNER_CHAT_ID || String(chatId) !== OWNER_CHAT_ID || !String(cb.data || "").startsWith("lead:")) {
     await tg("answerCallbackQuery", { callback_query_id: cb.id });
     return;

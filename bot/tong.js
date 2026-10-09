@@ -83,4 +83,22 @@ function buildPost(now = new Date()) {
   return { date: t.iso, video: `${MEDIA_URL}${file}.mp4`, caption };
 }
 
-module.exports = { buildPost, CHANNEL, TIPS, DAYS };
+// Redis set of private chats that get the post too (joined with /start, left with /tong_off).
+const SUBS_KEY = "iam:tong:subs";
+
+// One-time clip post (owner opens /api/tong?key=<WEBHOOK_SECRET>&clip=1). Suno free plan: credit, no monetization.
+const CLIP = {
+  id: "yuragingni-qaytib-bermayman",
+  video: "https://cheksiz-one.vercel.app/infinite/media/klip/yuragingni-qaytib-bermayman.mp4",
+  caption: [
+    "🎵 «Yuragingni qaytib bermayman»",
+    "",
+    "Infinite AI & Me'dan sizga sovg'a: sun'iy intellekt yordamida yaratilgan qo'shiq va klip. Yoqsa, do'stlaringizga ulashing! ❤️",
+    "",
+    "🎧 Music: made with Suno",
+    "🤖 Bot: @sahiychishopbot",
+    "♾️ Infinite AI & Me",
+  ].join("\n"),
+};
+
+module.exports = { buildPost, CHANNEL, SUBS_KEY, CLIP, TIPS, DAYS };
