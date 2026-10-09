@@ -112,3 +112,12 @@ Pul sarflanmaydi (maslahatlar oldindan yozilgan, Claude ishlatilmaydi).
   `https://cheksiz-one.vercel.app/api/tong?key=<WEBHOOK_SECRET>&preview=1`
 - Cron o'tkazib yuborsa, qo'lda joylash: `...&post=1` (bir kunda faqat bir marta chiqadi).
 - Xato bo'lsa, bot sizga (OWNER_CHAT_ID) xabar yuboradi.
+
+**Bot obunachilari.** Botga /start bosgan har kim ertalabki postni shaxsiy chatida ham oladi
+(tagida "🔕 To'xtatish" tugmasi; /tong_off to'xtatadi, /tong_on qayta yoqadi). Botni bloklaganlar
+ro'yxatdan o'zi o'chadi. Telegram qoidasi: bot faqat o'zi /start bosganlarga yoza oladi.
+- Oldin botga yozganlarni (oxirgi 30 kun) ro'yxatga qo'shish, bir marta:
+  `https://cheksiz-one.vercel.app/api/tong?key=<WEBHOOK_SECRET>&import=1`
+- Obunachilar soni: `...&show=1` (`subscribers`).
+- Klipni kanal + obunachilarga bir marta yuborish: `...&clip=1` (klip va matn `bot/tong.js` dagi `CLIP`).
+  Suno bepul tarifi: matnda "Music: made with Suno", pul ishlab bo'lmaydi.

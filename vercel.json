@@ -1,6 +1,7 @@
 {
   "functions": {
-    "api/infinite-bot.js": { "maxDuration": 300 }
+    "api/infinite-bot.js": { "maxDuration": 300 },
+    "api/tong.js": { "maxDuration": 300 }
   },
   "crons": [
     { "path": "/api/tong", "schedule": "0 0 * * *" }
