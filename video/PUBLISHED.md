@@ -23,4 +23,5 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 ## Matn oxiri (har doim)
 - Bot: @sahiychishopbot
 - Sayt: https://cheksiz-one.vercel.app/infinite/
+- Telegram kanal: https://t.me/infinite_ai_and_me (o'zbekcha versiya shu yerga)
 - Egasining Telegram'i: @Boxo_xxxx (https://t.me/Boxo_xxxx), egasi tasdiqlagan (2026-10-08).

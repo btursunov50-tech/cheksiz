@@ -23,6 +23,7 @@
 ## Live services
 - Site: https://cheksiz-one.vercel.app/infinite/
 - Bot: https://t.me/sahiychishopbot
+- Telegram channel: https://t.me/infinite_ai_and_me (videos go here in the Uzbek version)
 - Vercel project: https://vercel.com/btursunov50-7332s-projects/cheksiz (env vars: `/settings/environment-variables`, logs: `/logs`)
 - After a deploy that changes `allowed_updates`, the owner must open `https://cheksiz-one.vercel.app/api/infinite-bot?setup=<WEBHOOK_SECRET>` once.
 - Anthropic: Opus model for both the bot and `/top` (the owner chose to keep Opus). Auto-reload is on (top up to $15 below $5). A `/top` run costs about $0.45 per business.
