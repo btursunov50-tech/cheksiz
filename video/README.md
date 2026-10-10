@@ -31,3 +31,12 @@ Birinchi marta MrBeast Toshkent videosi (2026-10-07) uchun ishlatilgan. Vertikal
 
 ## Har bir video oxirida
 Qizil **OBUNA BO'LING** tugmasi va uning tagida **oltin rangda** Telegram bot (`@sahiychishopbot`) va sayt (`cheksiz-one.vercel.app/infinite`).
+
+**Tartib (har bir video):** asosiy qism → **avatar 3 soniya** (`avatar.mp4`, egasining avatari) → **obuna kartochkasi 4 soniya**.
+- Avatar ustida pastda (y=1250) savol plashkasi: "Siz-chi? / <videoga mos savol> / Izohga yozing!" (ru/en versiyalarda tarjima).
+  ```
+  ffmpeg -i avatar.mp4 -i avq.png -filter_complex "[0:v]trim=0:3,setpts=PTS-STARTPTS,scale=1080:1920,fps=30,setsar=1[a];[a][1:v]overlay=0:1250:enable='gte(t,0.3)'[v]" ...
+  ```
+- Kartochka (vertikal, uz/ru/en): `end_uz.html`, `end_ru.html`, `end_en.html` (`mark.png` shu papkada bo'lishi kerak).
+  `NODE_PATH=/opt/node22/lib/node_modules node render_end.js end_uz.html fe_uz 4 30` → 120 kadr.
+- Musiqa avatar va kartochka davomida ham chaladi, oxirgi ~3 soniyada so'nadi.
