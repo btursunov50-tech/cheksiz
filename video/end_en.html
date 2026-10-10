@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:1080px;height:1920px;background:#05070b;font-family:Inter,sans-serif;color:#fff;overflow:hidden}
+.w{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.e{opacity:0}.btn{background:#ff2d4a;font:900 82px/1 Inter;padding:40px 80px;border-radius:30px;margin:50px 0 60px}
+.gold{display:flex;flex-direction:column;align-items:center;margin:16px 0}
+.lbl{font:600 32px Inter;color:#c9a65a;letter-spacing:4px;text-transform:uppercase}
+.val{font:800 60px/1.25 Inter;background:linear-gradient(180deg,#ffe7a3,#e0b04f);-webkit-background-clip:text;color:transparent}
+.src{position:absolute;bottom:90px;left:0;right:0;text-align:center;font:500 30px Inter;color:#8a93a3}
+</style></head><body><div class="w">
+<img class="e" data-d="0" src="mark.png" style="width:300px">
+<div class="e btn" data-d=".3">SUBSCRIBE</div>
+<div class="e gold" data-d=".6"><span class="lbl">Telegram bot</span><span class="val">@sahiychishopbot</span></div>
+<div class="e gold" data-d=".8"><span class="lbl">Website</span><span class="val">cheksiz-one.vercel.app/infinite</span></div>
+<div class="e gold" data-d="1.0"><span class="lbl">Contact the author</span><span class="val">@Boxo_xxxx</span></div>
+</div><script>
+const cl=x=>Math.max(0,Math.min(1,x));
+window.setT=t=>{document.querySelectorAll('.e').forEach(e=>{const k=cl((t-(+e.dataset.d))/.5);e.style.opacity=k;e.style.transform=`translateY(${(1-k)*30}px)`;});
+ document.querySelector('.btn').style.transform+=` scale(${1+.04*Math.sin(t*7)})`;};setT(0);
+</script></body></html>
