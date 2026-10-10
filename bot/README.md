@@ -121,3 +121,10 @@ ro'yxatdan o'zi o'chadi. Telegram qoidasi: bot faqat o'zi /start bosganlarga yoz
 - Obunachilar soni: `...&show=1` (`subscribers`).
 - Klipni kanal + obunachilarga bir marta yuborish: `...&clip=1` (klip va matn `bot/tong.js` dagi `CLIP`).
   Suno bepul tarifi: matnda "Music: made with Suno", pul ishlab bo'lmaydi.
+
+### 13. Demo rejim («Demo Kafe»)
+Botga `demo` yoki `/demo` deb yozilsa, bot namunaviy kafe bo'lib javob beradi: ish vaqti, manzil,
+menyu narxlari, yetkazib berish, buyurtma. Pastda tayyor tugmalar chiqadi. Mijozlarga "bot qanday ishlaydi?"
+deganda va videolarda ko'rsatish uchun. Kafe ma'lumotlari namuna (`bot/demo.js` da o'zgartiriladi).
+- Chiqish: "⬅️ Demo'dan chiqish" tugmasi yoki /start.
+- Demo buyurtmalar sizga yuborilmaydi.
