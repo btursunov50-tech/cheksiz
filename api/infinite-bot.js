@@ -31,6 +31,7 @@ const { waitUntil } = require("@vercel/functions");
 const { buildSystemPrompt, SITE_URL, videoFor } = require("../bot/knowledge");
 const { prepareOffer, RefusedError } = require("../bot/prospect");
 const { SUBS_KEY: TONG_SUBS } = require("../bot/tong");
+const { DEMO_PROMPT, DEMO_INTRO, DEMO_KEYBOARD, DEMO_EXIT } = require("../bot/demo");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const SECRET = process.env.WEBHOOK_SECRET || "";
@@ -182,6 +183,31 @@ const tongButton = (on) => ({
 });
 const TONG_ON_TEXT = "☀️ Siz har kungi ertalabki tabrikka obuna bo'ldingiz. Har kuni ertalab gulli video va kun maslahati keladi.\nTo'xtatish: /tong_off";
 const TONG_OFF_TEXT = "🔕 Ertalabki tabrik to'xtatildi. Qayta yoqish: /tong_on";
+
+// Demo mode ("Demo Kafe", bot/demo.js): kept per chat for a week.
+const demoChats = new Set();
+async function isDemo(chatId) {
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      return (await redis("GET", `iam:mode:${chatId}`)) === "demo";
+    } catch (err) {
+      console.error("isDemo failed:", err.message);
+    }
+  }
+  return demoChats.has(chatId);
+}
+async function setDemo(chatId, on) {
+  if (on) demoChats.add(chatId);
+  else demoChats.delete(chatId);
+  if (!REDIS_URL || !REDIS_TOKEN) return;
+  try {
+    if (on) await redis("SET", `iam:mode:${chatId}`, "demo", "EX", 7 * 24 * 3600);
+    else await redis("DEL", `iam:mode:${chatId}`);
+  } catch (err) {
+    console.error("setDemo failed:", err.message);
+  }
+}
+const DEMO_END_TEXT = "Demo tugadi. Endi yana Infinite AI & Me yordamchisiman: biznesingiz haqida yozing, sizga mos bot yoki sayt taklif qilaman.";
 
 async function sendText(chatId, text, extra = {}) {
   const parts = [];
@@ -344,7 +370,7 @@ function textOf(content) {
   return content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
 }
 
-async function askClaude(chatId, userText, from) {
+async function askClaude(chatId, userText, from, demo = false) {
   let history = await loadHistory(chatId);
   if (history.length > MAX_HISTORY) history = [];
   const startLen = history.length;
@@ -358,8 +384,8 @@ async function askClaude(chatId, userText, from) {
       betas: ["server-side-fallback-2026-07-01"],
       fallbacks: "default",
       output_config: { effort: EFFORT },
-      system: [{ type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } }],
-      tools: [LEAD_TOOL],
+      system: [{ type: "text", text: demo ? DEMO_PROMPT : SYSTEM_PROMPT, cache_control: { type: "ephemeral" } }],
+      ...(demo ? {} : { tools: [LEAD_TOOL] }), // demo orders never reach the owner
       messages: history,
     });
 
@@ -410,6 +436,19 @@ async function handleMessage(msg) {
     return;
   }
 
+  if (/^\/?demo(@\w+)?$/i.test(text)) {
+    await setDemo(chatId, true);
+    await clearHistory(chatId);
+    await sendText(chatId, DEMO_INTRO, DEMO_KEYBOARD);
+    return;
+  }
+  if (text === DEMO_EXIT) {
+    await setDemo(chatId, false);
+    await clearHistory(chatId);
+    await sendText(chatId, DEMO_END_TEXT, { reply_markup: { remove_keyboard: true } });
+    return;
+  }
+
   if (/^\/tong_(on|off)(@\w+)?$/.test(text)) {
     const on = text.startsWith("/tong_on");
     await setTongSub(chatId, on);
@@ -425,6 +464,10 @@ async function handleMessage(msg) {
   let userText;
   if (text.startsWith("/start")) {
     await clearHistory(chatId);
+    if (await isDemo(chatId)) {
+      await setDemo(chatId, false);
+      await sendText(chatId, "Demo tugadi.", { reply_markup: { remove_keyboard: true } });
+    }
     userText = `The customer just opened the bot (/start).${langHint} Greet them in their language, say in one sentence what Infinite AI & Me does, list our main services as a short list (catalog website, AI Telegram bot, website + bot package, QR menu, AI video ad, logo, Google Maps) with a few words on how each helps, and ask what business they have.`;
   } else if (text) {
     userText = text + langHint;
@@ -456,7 +499,7 @@ async function handleMessage(msg) {
   await tg("sendChatAction", { chat_id: chatId, action: "typing" });
   let reply;
   try {
-    reply = await askClaude(chatId, userText, from);
+    reply = await askClaude(chatId, userText, from, !text.startsWith("/start") && (await isDemo(chatId)));
   } catch (err) {
     console.error("Claude error:", err && err.status, err && err.message);
     await clearHistory(chatId); // a half-finished exchange would break the next request
