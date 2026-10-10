@@ -87,6 +87,7 @@ function buildPost(now = new Date()) {
         : []),
       `💡 Kun maslahati: ${tip}`,
       "",
+      "📤 Do'stlaringizga ulashing: t.me/infinite_ai_and_me",
       "🤖 Bot: @sahiychishopbot",
       "♾️ Infinite AI & Me",
     ].join("\n");
