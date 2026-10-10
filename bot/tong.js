@@ -13,7 +13,7 @@ const DAYS = [
   { file: "chorshanba", name: "chorshanba", wish: "Ishlaringizga omad!" },
   { file: "payshanba", name: "payshanba", wish: "Niyatlaringiz ijobat bo'lsin!" },
   { file: "juma", name: "juma", wish: "Juma muborak!" },
-  { file: "shanba", name: "shanba", wish: "Shanbangiz xayrli o'tsin!" },
+  { file: "shanba", name: "shanba", wish: "Kuningiz hamisha Alloh panohida o'tsin!" },
 ];
 
 const MONTHS = ["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentyabr", "oktyabr", "noyabr", "dekabr"];
@@ -61,6 +61,9 @@ function tashkentDate(now = new Date()) {
   return { iso, weekday: d.getUTCDay(), day: d.getUTCDate(), month: d.getUTCMonth() };
 }
 
+const BIRTHDAYS = require("./birthdays");
+const CAPTION_LIMIT = 1024; // Telegram media caption limit
+
 function buildPost(now = new Date()) {
   const t = tashkentDate(now);
   const day = DAYS[t.weekday];
@@ -68,18 +71,29 @@ function buildPost(now = new Date()) {
   const n = Math.round((Date.parse(t.iso) - Date.parse("2026-10-10")) / 86400000);
   const tip = TIPS[((n % TIPS.length) + TIPS.length) % TIPS.length];
   const file = SPECIAL.includes(t.iso) ? t.iso : day.file;
-  const caption = [
-    "🤲 Hasbunallohu va ni'mal vakil",
-    "Bizga Allohning O'zi yetarlidir...",
-    "",
-    "☀️ Xayrli tong, aziz obunachilar!",
-    `📅 Bugun ${day.name}, ${t.day}-${MONTHS[t.month]}. ${day.wish}`,
-    "",
-    `💡 Kun maslahati: ${tip}`,
-    "",
-    "🤖 Bot: @sahiychishopbot",
-    "♾️ Infinite AI & Me",
-  ].join("\n");
+  const born = BIRTHDAYS[t.iso.slice(5)] || [];
+  const make = (people) =>
+    [
+      "🌸 Assalomu alaykum, Alloh suygan bandalar!",
+      "",
+      "🤲 Hasbunallohu va ni'mal vakil",
+      "Bizga Allohning O'zi yetarlidir...",
+      "",
+      "☀️ Xayrli tong, aziz obunachilar!",
+      `📅 Bugun ${day.name}, ${t.day}-${MONTHS[t.month]}. ${day.wish}`,
+      "",
+      ...(people.length
+        ? ["🎂 Bugun tug'ilgan mashhurlar:", ...people.map((p) => `• ${p.flag} ${p.name} (${p.years}) — ${p.who}`), ""]
+        : []),
+      `💡 Kun maslahati: ${tip}`,
+      "",
+      "🤖 Bot: @sahiychishopbot",
+      "♾️ Infinite AI & Me",
+    ].join("\n");
+  // Drop names from the end until the caption fits.
+  let people = born;
+  let caption = make(people);
+  while (caption.length > CAPTION_LIMIT && people.length) caption = make((people = people.slice(0, -1)));
   return { date: t.iso, video: `${MEDIA_URL}${file}.mp4`, caption };
 }
 

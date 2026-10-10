@@ -108,6 +108,8 @@ Pul sarflanmaydi (maslahatlar oldindan yozilgan, Claude ishlatilmaydi).
   Har kun o'z guli: dushanba qizil atirgul, seshanba kungaboqar, chorshanba lola, payshanba lavanda,
   juma oq moychechak, shanba aralash, yakshanba pion (`video/tong/all.sh` dagi `theme=`).
 - Maslahatlar, tilaklar va maxsus kunlar: `bot/tong.js`.
+- "🎂 Bugun tug'ilgan mashhurlar": `bot/birthdays.js` (kun bo'yicha, avval o'zbek, keyin dunyo; hayotdagilar oldin).
+  Har bir sanani kamida 2 manbada tekshirib qo'shing. Ro'yxat bo'lmagan kuni bu bo'lim chiqmaydi.
 - Sinash (kanalga chiqmaydi, faqat sizga keladi):
   `https://cheksiz-one.vercel.app/api/tong?key=<WEBHOOK_SECRET>&preview=1`
 - Cron o'tkazib yuborsa, qo'lda joylash: `...&post=1` (bir kunda faqat bir marta chiqadi).
