@@ -130,3 +130,7 @@ menyu narxlari, yetkazib berish, buyurtma. Pastda tayyor tugmalar chiqadi. Mijoz
 deganda va videolarda ko'rsatish uchun. Kafe ma'lumotlari namuna (`bot/demo.js` da o'zgartiriladi).
 - Chiqish: "⬅️ Demo'dan chiqish" tugmasi yoki /start.
 - Demo buyurtmalar sizga yuborilmaydi.
+
+### 14. Egasiga eslatmalar
+`bot/reminders.js` ga sana va matn yozilsa, bot o'sha kuni soat 09:00–09:59 da (Toshkent) faqat sizga
+(OWNER_CHAT_ID) eslatma yuboradi. Bepul. Tekshirish: `/api/remind?key=<WEBHOOK_SECRET>&show=1`, darhol yuborish: `&send=1`.
