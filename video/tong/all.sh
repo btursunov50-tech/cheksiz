@@ -10,6 +10,6 @@ r seshanba "mode=day&day=Seshanba&wish=Kuningiz%20barakali%20o'tsin!&theme=kunga
 r chorshanba "mode=day&day=Chorshanba&wish=Ishlaringizga%20omad!&theme=lola"
 r payshanba "mode=day&day=Payshanba&wish=Niyatlaringiz%20ijobat%20bo'lsin!&theme=lavanda"
 r juma "mode=day&day=Juma&wish=Juma%20muborak!&theme=moychechak"
-r shanba "mode=day&day=Shanba&wish=Shanbangiz%20xayrli%20o'tsin!&theme=aralash"
+r shanba "mode=day&day=Shanba&wish=Kuningiz%20hamisha%20Alloh%20panohida%20o'tsin!&theme=aralash"
 r yakshanba "mode=day&day=Yakshanba&wish=Oilangiz%20bilan%20xayrli%20dam%20oling!&theme=pion"
 ls -la $OUT
