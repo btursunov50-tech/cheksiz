@@ -44,4 +44,12 @@ module.exports = {
       "4) LinkedIn: 2-youtube-linkedin-kalamushqir-en.mp4\n\n" +
       "Har bir postda: «Music: The Road To Mordor, Frodo's Quest – Ezra Lipp». Matnlarni Claude'dan so'rang (\"Kalamushqir matnlari\"), havolalarni unga yuboring ✅",
   ],
+  "2026-10-14": [
+    "📌 Eslatma: bugun «Dadamga AI o'rgatdim» videosini joylang!\n\n" +
+      "1) Telegram kanal: 1-telegram-dadam-uz.mp4\n" +
+      "2) YouTube Shorts: 2-youtube-linkedin-dadam-en.mp4 + dadam-uz.srt, dadam-ru.srt\n" +
+      "3) Instagram va Facebook: 3-instagram-facebook-dadam-ru.mp4\n" +
+      "4) LinkedIn: 2-youtube-linkedin-dadam-en.mp4\n\n" +
+      "Har bir postda: «Music: Dutar's Whisper». Matnlarni Claude'dan so'rang (\"Dadam matnlari\"), havolalarni unga yuboring ✅",
+  ],
 };
