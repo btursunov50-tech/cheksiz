@@ -12,6 +12,8 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Toshkent 2036» (6-video): tayyor, 2026-10-12 da joylanadi. 8 ta Veo klip (rasmdan videoga), egasining ovozi, musiqa: Duty Calls – Rod Kim (YouTube Аудиотека, 0:20.5 dan). Fayllar va skriptlar: `video/toshkent2036/`. 1-sahnadagi minora Shanxay Oriental Pearl'ga o'xshaydi, egasi shundayligicha qoldirdi.
 
+- «Kalamushqir» (7-video): tayyor 2026-10-11, joylanmagan. Fayllar va subtitrlar: `video/kalamushqir/`. Musiqa: The Road To Mordor + Frodo's Quest – Ezra Lipp.
+
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
 
