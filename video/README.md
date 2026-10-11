@@ -22,6 +22,12 @@ Birinchi marta MrBeast Toshkent videosi (2026-10-07) uchun ishlatilgan. Vertikal
    ffmpeg -framerate 30 -i frames/f%05d.jpg -i mix.m4a -c:v libx264 -crf 20 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
    ```
 
+## Sinematik uslub (har bir video, 2026-10-11 dan)
+Egasi tanlagan **yumshoq** variant. Subtitr va matnlar qo'shilishidan **oldin** asosiy videoga qo'llanadi, shunda ular tiniq qoladi.
+- `./cine.sh in.mp4 out.mp4 "4.8 6.6 12.4"`: har sahnada sekin yaqinlashish (1.02→, +1.2%/s, kesimda qaytadan), yumshoq ko'k-iliq rang, yengil vinyetka va donadorlik, tepa/pastda 96 px qora chiziq. Qo'shtirnoq ichida sahna kesimlari (soniya).
+- `./sfx.sh ovoz.wav chiqish.wav "4.8 6.6 12.4"`: har kesimdan oldin yumshoq "whoosh", kesimda past "bum". Tayyor aralashma (ovoz + musiqa) ga qo'shiladi. Claude eshita olmaydi, balandligini egasi tekshiradi.
+- Kliplar manbasi: Pexels/Pixabay kadrlari umumiy va ko'p ishlatilgan (egasi fikri), shuning uchun asosan AI kliplar (Kling, Veo, Hailuo, Claude prompt yozadi) va egasining o'zi suratga olgan kadrlar.
+
 ## Platformalar
 | Platforma | Video | Subtitr |
 |---|---|---|
