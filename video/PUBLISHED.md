@@ -8,7 +8,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 | 2 | 2026-10-08 | Kafe egasi uxlaydi, AI bot ishlaydi | https://youtube.com/shorts/6cUQWsu5Xb8 | https://www.instagram.com/p/DeOhATppuYD/ | https://www.facebook.com/share/r/1JeLcgDYN2/ | https://lnkd.in/p/eUQxeBYG |
 | 3 | 2026-10-09 | MrBeast Toshkentda: aeroport, Lamborghini, palov, 300 mln so'm (PRESSA kadrlari, o'zbekcha diktor) | https://youtube.com/shorts/WqJ6fl2rCbg | https://www.instagram.com/p/DeRw6Z6p_x_/ | https://www.facebook.com/share/v/1JpffLevWy/ | https://lnkd.in/p/dMRyfS9Q |
 | 4 | 2026-10-10 | Demo-bot: «Demo Kafe» 3 soniyada javob beradi (chizilgan telefon, avatar oxirida, musiqa: Pusu Legend Mix) | https://youtube.com/shorts/z8im5PnveCg | https://www.instagram.com/reel/DeTzuWlpF9U/ | https://www.facebook.com/share/v/19mMmdnGzR/ | https://lnkd.in/p/d6R9ky7i |
-| 5 | 2026-10-11 | 100 o'zbekistonlikdan 7 tasi AI ishlatadi (Microsoft, 8 ta AI klip, grafik, avatar; musiqa: Jamaican Bam Bam, YouTube'da Content ID da'vosi) | — | https://www.instagram.com/reel/DeV7uy9ptMJ/ | https://www.facebook.com/share/v/1BFBVv4tHJ/ | https://lnkd.in/p/dt9WrcmR |
+| 5 | 2026-10-11 | 100 o'zbekistonlikdan 7 tasi AI ishlatadi (Microsoft, 8 ta AI klip, grafik, avatar; musiqa: Jamaican Bam Bam, YouTube'da Content ID da'vosi) | https://youtube.com/shorts/xNtzeP3OBJY | https://www.instagram.com/reel/DeV7uy9ptMJ/ | https://www.facebook.com/share/v/1BFBVv4tHJ/ | https://lnkd.in/p/dt9WrcmR |
 
 - «Toshkent 2036» (6-video): tayyor, 2026-10-12 da joylanadi. 8 ta Veo klip (rasmdan videoga), egasining ovozi, musiqa: Duty Calls – Rod Kim (YouTube Аудиотека, 0:20.5 dan). Fayllar va skriptlar: `video/toshkent2036/`. 1-sahnadagi minora Shanxay Oriental Pearl'ga o'xshaydi, egasi shundayligicha qoldirdi.
 
