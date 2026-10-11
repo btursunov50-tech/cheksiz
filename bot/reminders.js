@@ -36,4 +36,12 @@ module.exports = {
       "Har bir postda: «Music: Duty Calls – Rod Kim». Matnlar Claude'dagi xabarda ✅\n" +
       "Keyingi video: «Dadamga AI o'rgatdim» — Claude'ga «5-g'oyani boshlaymiz» deb yozing.",
   ],
+  "2026-10-13": [
+    "📌 Eslatma: bugun «Kalamushqir» videosini joylang!\n\n" +
+      "1) Telegram kanal: 1-telegram-kalamushqir-uz.mp4\n" +
+      "2) YouTube Shorts: 2-youtube-linkedin-kalamushqir-en.mp4 + kalamushqir-uz.srt, kalamushqir-ru.srt\n" +
+      "3) Instagram va Facebook: 3-instagram-facebook-kalamushqir-ru.mp4\n" +
+      "4) LinkedIn: 2-youtube-linkedin-kalamushqir-en.mp4\n\n" +
+      "Har bir postda: «Music: The Road To Mordor, Frodo's Quest – Ezra Lipp». Matnlarni Claude'dan so'rang (\"Kalamushqir matnlari\"), havolalarni unga yuboring ✅",
+  ],
 };
