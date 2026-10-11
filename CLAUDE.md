@@ -45,6 +45,6 @@ The owner posts AI-themed short videos (Uzbek voice) on YouTube Shorts, Instagra
 - Posting guides: always put the full post texts (Telegram uz, YouTube title + description, Instagram/Facebook ru, LinkedIn en) inside the same message as the steps, links and file names, every time. Never refer back to texts in an earlier message; the owner asked for this.
 - YouTube versions get English subtitles burned in (owner's choice, the channel is set to the USA); uz/ru go in as `.srt`. Instagram/Facebook: Russian burned in. LinkedIn: English burned in.
 - Third-party footage (e.g. PRESSA news clips): keep their watermark, add "Manba/Video: PRESSA", cover their captions with our Uzbek ones, and remind the owner to ask the outlet for permission.
-- Suno songs made on the free plan are non-commercial: credit "Music: made with Suno", no monetization.
+- Suno songs made on the free plan are non-commercial: credit "Music: made with Suno", no monetization. suno.com is blocked here: ask the owner to paste the lyrics. Song subtitles: time the lines from vocal-band energy dips (`video/klip/lyrics.py`), then ask the owner what is sung at 2–3 checkpoints. Auto-transliterated lyrics can contain mistranslations ("ham" became "ветчина"); fix them.
 - Upload limit for sending files in chat is 30 MB: compress (HEVC 2-pass for long 1080p, H.264 2-pass for short) before sending.
 - Uzbek news sites (kun.uz, daryo.uz, spot.uz) are blocked here; search in Uzbek/Russian and cite the search results.

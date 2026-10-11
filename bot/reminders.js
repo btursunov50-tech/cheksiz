@@ -14,7 +14,7 @@ module.exports = {
       at: 20,
       text:
         "🎵 Eslatma: klipni joylash vaqti! «Yuragingni qaytib bermayman»\n\n" +
-        "1) YouTube (to'liq): 1-youtube-toliq-16x9.mp4, monetizatsiya o'chiq\n" +
+        "1) YouTube (to'liq): 1-youtube-toliq-16x9-en.mp4 + klip-uz.srt, klip-ru.srt, monetizatsiya o'chiq\n" +
         "2) YouTube Shorts: 2-shorts-telegram-uz.mp4, «Связанное видео» = to'liq klip\n" +
         "3) Instagram va Facebook: 3-instagram-facebook-ru.mp4\n" +
         "4) LinkedIn: 4-linkedin-en.mp4\n\n" +
