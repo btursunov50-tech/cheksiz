@@ -14,6 +14,8 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Kalamushqir» (7-video): tayyor 2026-10-11, 2026-10-13 da joylanadi. Fayllar va subtitrlar: `video/kalamushqir/`. Musiqa: The Road To Mordor + Frodo's Quest – Ezra Lipp.
 
+- «Dadamga AI o'rgatdim» (8-video): tayyor 2026-10-11, 2026-10-14 da joylanadi. Fayllar va subtitrlar: `video/dadam/`. Musiqa: Dutar's Whisper.
+
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
 
