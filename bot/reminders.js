@@ -27,4 +27,13 @@ module.exports = {
         "Joylagan bo'lsangiz, havolalarni Claude'ga yuboring: u PUBLISHED.md ga yozib qo'yadi ✅",
     },
   ],
+  "2026-10-12": [
+    "📌 Eslatma: bugun «Toshkent 2036» videosini joylang!\n\n" +
+      "1) Telegram kanal: 1-telegram-toshkent2036-uz.mp4\n" +
+      "2) YouTube Shorts: 2-youtube-linkedin-toshkent2036-en.mp4 + toshkent2036-uz.srt, toshkent2036-ru.srt\n" +
+      "3) Instagram va Facebook: 3-instagram-facebook-toshkent2036-ru.mp4\n" +
+      "4) LinkedIn: 2-youtube-linkedin-toshkent2036-en.mp4\n\n" +
+      "Har bir postda: «Music: Duty Calls – Rod Kim». Matnlar Claude'dagi xabarda ✅\n" +
+      "Keyingi video: «Dadamga AI o'rgatdim» — Claude'ga «5-g'oyani boshlaymiz» deb yozing.",
+  ],
 };

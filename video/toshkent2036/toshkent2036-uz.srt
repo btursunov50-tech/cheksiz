@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:05,150
+2036-yil. Toshkent.
+
+2
+00:00:06,500 --> 00:00:12,660
+Ertalab soat yetti. Uchar taksi sizni Chilonzordan olib ketadi.
+
+3
+00:00:12,920 --> 00:00:18,980
+Choyxonada palovni robot damlaydi, lekin retsept hali ham buvijonniki.
+
+4
+00:00:19,400 --> 00:00:24,130
+Bozorda narx so'rash shart emas: ko'zoynak o'zi ko'rsatadi.
+
+5
+00:00:24,540 --> 00:00:29,110
+Maktabda har bir bolaning o'z AI ustozi bor.
+
+6
+00:00:29,320 --> 00:00:33,610
+Shifokor kasallikni u boshlanmasdan oldin topadi.
+
+7
+00:00:34,610 --> 00:00:41,630
+Fantastikami? Yo'q. Bularning hammasi bugun boshlanmoqda.
+
+8
+00:00:42,340 --> 00:00:46,990
+Siz 2036-yilga tayyormisiz?
+

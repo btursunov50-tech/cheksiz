@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:05,150
+2036. Tashkent.
+
+2
+00:00:06,500 --> 00:00:12,660
+7 a.m. A flying taxi picks you up in Chilonzor.
+
+3
+00:00:12,920 --> 00:00:18,980
+In the choyxona a robot cooks the plov, but the recipe is still grandma's.
+
+4
+00:00:19,400 --> 00:00:24,130
+At the bazaar you don't ask the price: your glasses show it.
+
+5
+00:00:24,540 --> 00:00:29,110
+At school every child has their own AI tutor.
+
+6
+00:00:29,320 --> 00:00:33,610
+Doctors find an illness before it even starts.
+
+7
+00:00:34,610 --> 00:00:41,630
+Science fiction? No. All of this is starting today.
+
+8
+00:00:42,340 --> 00:00:46,990
+Are you ready for 2036?
+
