@@ -132,5 +132,6 @@ deganda va videolarda ko'rsatish uchun. Kafe ma'lumotlari namuna (`bot/demo.js` 
 - Demo buyurtmalar sizga yuborilmaydi.
 
 ### 14. Egasiga eslatmalar
-`bot/reminders.js` ga sana va matn yozilsa, bot o'sha kuni soat 09:00–09:59 da (Toshkent) faqat sizga
-(OWNER_CHAT_ID) eslatma yuboradi. Bepul. Tekshirish: `/api/remind?key=<WEBHOOK_SECRET>&show=1`, darhol yuborish: `&send=1`.
+`bot/reminders.js` ga sana va matn yozilsa, bot o'sha kuni faqat sizga (OWNER_CHAT_ID) eslatma yuboradi. Bepul.
+Oddiy matn soat 09:00–09:59 da, `{ at: 20, text }` 20:00–20:59 da, `{ at: 21, text }` 21:00–21:59 da (Toshkent) keladi.
+Tekshirish: `/api/remind?key=<WEBHOOK_SECRET>&show=1`, darhol yuborish: `&send=1` (kechkisi uchun `&send=1&at=20`).
