@@ -30,7 +30,8 @@ const { toFile } = require("@anthropic-ai/sdk");
 const { waitUntil } = require("@vercel/functions");
 const { buildSystemPrompt, SITE_URL, videoFor } = require("../bot/knowledge");
 const { prepareOffer, RefusedError } = require("../bot/prospect");
-const { SUBS_KEY: TONG_SUBS } = require("../bot/tong");
+const { SUBS_KEY: TONG_SUBS, CHANNEL } = require("../bot/tong");
+const { GROUPS_KEY, forwardToGroups } = require("../bot/groups");
 const { DEMO_PROMPT, DEMO_INTRO, DEMO_KEYBOARD, DEMO_EXIT } = require("../bot/demo");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -656,13 +657,50 @@ async function handleCallback(cb) {
   });
 }
 
+// ---- Channel posts → owner's groups (bot/groups.js) ----
+
+// The bot was added to or removed from a group. Only groups the owner added are kept.
+async function handleMembership(update) {
+  const chat = update.chat || {};
+  if (chat.type !== "group" && chat.type !== "supergroup") return;
+  if (!REDIS_URL || !REDIS_TOKEN) return;
+  const status = (update.new_chat_member || {}).status;
+  const by = update.from || {};
+  const title = chat.title || chat.id;
+  if (status === "left" || status === "kicked") {
+    if ((await redis("SREM", GROUPS_KEY, String(chat.id)).catch(() => 0)) && OWNER_CHAT_ID) {
+      await sendText(OWNER_CHAT_ID, `👥 Bot «${title}» guruhidan chiqarildi. Kanal postlari u yerga endi bormaydi.`);
+    }
+    return;
+  }
+  if (status !== "member" && status !== "administrator") return;
+  if (!OWNER_CHAT_ID || String(by.id) !== OWNER_CHAT_ID) {
+    if (OWNER_CHAT_ID) {
+      const who = by.username ? `@${by.username}` : by.first_name || by.id;
+      await sendText(OWNER_CHAT_ID, `👥 ${who} botni «${title}» guruhiga qo'shdi. Siz qo'shmaganingiz uchun kanal postlari u yerga yuborilmaydi.`);
+    }
+    return;
+  }
+  await redis("SADD", GROUPS_KEY, String(chat.id));
+  await sendText(OWNER_CHAT_ID, `✅ «${title}» guruhi qo'shildi. Kanaldagi yangi postlar u yerga ham boradi.`);
+}
+
+const isOurChannel = (chat) =>
+  chat && (chat.username === CHANNEL.replace(/^@/, "") || (process.env.TONG_CHAT_ID && String(chat.id) === process.env.TONG_CHAT_ID));
+
+async function handleChannelPost(post) {
+  if (!isOurChannel(post.chat) || !REDIS_URL || !REDIS_TOKEN) return;
+  const r = await forwardToGroups({ tg, redis, fromChatId: post.chat.id, messageId: post.message_id });
+  if (r.sent || r.failed || r.removed) console.log("channel post → groups:", JSON.stringify(r));
+}
+
 async function setup(req, res) {
   const host = req.headers["x-forwarded-host"] || req.headers.host;
   const url = `https://${host}/api/infinite-bot`;
   const webhook = await tg("setWebhook", {
     url,
     secret_token: SECRET,
-    allowed_updates: ["message", "callback_query"],
+    allowed_updates: ["message", "callback_query", "my_chat_member", "channel_post"],
     drop_pending_updates: true,
   });
   const commands = await tg("setMyCommands", {
@@ -712,6 +750,8 @@ module.exports = async function handler(req, res) {
   try {
     if (update.message) await handleMessage(update.message);
     else if (update.callback_query) await handleCallback(update.callback_query);
+    else if (update.my_chat_member) await handleMembership(update.my_chat_member);
+    else if (update.channel_post) await handleChannelPost(update.channel_post);
   } catch (err) {
     console.error("Update failed:", err);
   }

@@ -4,7 +4,8 @@
 // "Post messages". Content (video, tips, wishes) comes from bot/tong.js.
 // After the channel, the same post goes to every private chat in SUBS_KEY (people who
 // pressed /start in the bot; /tong_off or the stop button removes them). Chats that
-// blocked the bot are dropped from the list.
+// blocked the bot are dropped from the list. The channel post is also forwarded to the
+// owner's groups (bot/groups.js).
 //
 // Manual use, with WEBHOOK_SECRET as key:
 //   /api/tong?key=<WEBHOOK_SECRET>&show=1      today's post and the subscriber count, sends nothing
@@ -14,6 +15,7 @@
 //   /api/tong?key=<WEBHOOK_SECRET>&clip=1      sends CLIP from bot/tong.js to the channel + subscribers (once)
 
 const { buildPost, CHANNEL, SUBS_KEY, CLIP } = require("../bot/tong");
+const { forwardToGroups } = require("../bot/groups");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const SECRET = process.env.WEBHOOK_SECRET || "";
@@ -91,7 +93,9 @@ async function broadcast(post) {
       await sleep(50); // stay well under Telegram's ~30 messages per second
     }
   }
-  return { channel, subscribers };
+  // The bot gets no channel_post update for its own posts, so forward here.
+  const groups = msg && hasRedis() ? await forwardToGroups({ tg, redis, fromChatId: msg.chat.id, messageId: msg.message_id }) : null;
+  return { channel, subscribers, groups };
 }
 
 // Adds every private chat that still has bot memory (iam:chat:<id>, kept 30 days).
