@@ -35,6 +35,20 @@ module.exports = {
       "4) LinkedIn: 2-youtube-linkedin-toshkent2036-en.mp4\n\n" +
       "Har bir postda: «Music: Duty Calls – Rod Kim». Matnlar Claude'dagi xabarda ✅\n" +
       "Keyingi video: «Dadamga AI o'rgatdim» — Claude'ga «5-g'oyani boshlaymiz» deb yozing.",
+    {
+      at: 20,
+      text:
+        "🎵 Eslatma: bugun kechqurun «Yuragingni qaytib bermayman» klipini joylang!\n\n" +
+        "1) YouTube (to'liq): 1-youtube-toliq-16x9-en.mp4 + klip-uz.srt, klip-ru.srt, monetizatsiya o'chiq\n" +
+        "2) YouTube Shorts: 2-shorts-telegram-uz.mp4\n" +
+        "3) Instagram va Facebook: 3-instagram-facebook-ru.mp4\n" +
+        "4) LinkedIn: 4-linkedin-en.mp4\n\n" +
+        "Har bir postda: «Music: made with Suno». Matnlar Claude'dagi xabarda ✅",
+    },
+    {
+      at: 21,
+      text: "⏰ Klip joylandimi? Havolalarni Claude'ga yuboring ✅",
+    },
   ],
   "2026-10-13": [
     "📌 Eslatma: bugun «Kalamushqir» videosini joylang!\n\n" +
