@@ -135,3 +135,11 @@ deganda va videolarda ko'rsatish uchun. Kafe ma'lumotlari namuna (`bot/demo.js` 
 `bot/reminders.js` ga sana va matn yozilsa, bot o'sha kuni faqat sizga (OWNER_CHAT_ID) eslatma yuboradi. Bepul.
 Oddiy matn soat 09:00–09:59 da, `{ at: 20, text }` 20:00–20:59 da, `{ at: 21, text }` 21:00–21:59 da (Toshkent) keladi.
 Tekshirish: `/api/remind?key=<WEBHOOK_SECRET>&show=1`, darhol yuborish: `&send=1` (kechkisi uchun `&send=1&at=20`).
+
+### 15. Kanal postlari guruhlarga (bepul)
+Kanalga chiqqan har bir yangi post (va ertalabki «Xayrli tong») siz qo'shgan Telegram guruhlarga «Forwarded from Infinite AI & Me» bilan avtomatik boradi (`bot/groups.js`).
+1. Deploydan keyin bir marta oching: `https://cheksiz-one.vercel.app/api/infinite-bot?setup=<WEBHOOK_SECRET>` (bot `my_chat_member` va `channel_post` xabarlarini olishi uchun).
+2. Bot kanalda admin bo'lishi kerak (ertalabki post uchun allaqachon admin).
+3. Guruhga botni **o'zingiz** qo'shing (@sahiychishopbot), xabar yozish huquqi bilan. Bot sizga «✅ guruh qo'shildi» deb yozadi.
+4. Boshqa odam qo'shgan guruhga post yuborilmaydi (sizga xabar keladi). Botni guruhdan chiqarsangiz, ro'yxatdan o'chadi.
+5. Faqat o'zingiz yoki admin roziligi bor guruhlarga qo'shing: begona guruhlarga reklama spam hisoblanadi.
