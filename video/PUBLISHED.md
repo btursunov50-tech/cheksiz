@@ -18,6 +18,8 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Dadamga AI o'rgatdim» (8-video): tayyor 2026-10-11, 2026-10-14 da joylanadi. Fayllar va subtitrlar: `video/dadam/`. Musiqa: Dutar's Whisper.
 
+- «MrBeast, uzr… Samarqandda sharmanda bo'ldik» (9-video): tayyor 2026-10-12. Zamin.uz kadrlari (yuzlar xiralashtirilgan), Buxoro viloyati IIB xodimining murojaati, Vidu AI samolyot, egasining ovozi, avatar. Musiqa: Parampara (Dilara'nın Öfkesi) + Baxtiyor Mavlonov «Meni izlab topolmaysiz» (Content ID da'vosi bo'lishi mumkin). Egasi Zamin.uz dan ruxsat so'rashi kerak. Fayllar: `video/mrbeast/`.
+
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
 

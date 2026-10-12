@@ -7,5 +7,5 @@ Yangilik videosi: 10-oktabr, Registondagi olomon.
 - Yuzlar: YuNet + SFace (OpenCV), MrBeastdan boshqa yaqin yuzlar xiralashtirilgan (bolalar).
 - Manba yozuvlari: «Video: Zamin.uz», «Video: Buxoro viloyati IIB / Zamin.uz». Egasi Zamin.uz dan ruxsat so'rashi kerak.
 - Faktlar: tashkilotchilar ketish rejalangan deydi, shuning uchun «qochdi/erta ketdi» deyilmagan; Buxoro haqidagi gap IIB xodimiga tayanadi.
-- Musiqa: Dutar's Whisper 0:09.5 dan (ovoz ostida), samolyotda Baxtiyor Mavlonov «Meni izlab topolmaysiz» (boshidan 0.5 s kesilgan, oxirgi so'zsiz, 20% sekin).
-- Oxiri: avatar 3 s («Siz-chi? Mehmonni qanday kutish kerak? Izohga yozing!») + obuna kartochkasi 4 s. Jami 73.6 s.
+- Musiqa: Parampara (Dilara'nın Öfkesi), 0–25 s qayta-qayta (ovoz ostida), samolyotda Baxtiyor Mavlonov «Meni izlab topolmaysiz» (boshidan 0.5 s kesilgan, oxirgi so'zsiz, 20% sekin).
+- Oxiri: avatar 3 s («Siz-chi? Mehmonni qanday kutish kerak? Izohga yozing!») + obuna kartochkasi 4 s. MrBeast qo'l silkitgan kadr (Zamin, 21 s) 2 s, keyin samolyot. Jami 73.6 s.
