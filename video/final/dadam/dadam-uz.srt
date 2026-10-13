@@ -1,0 +1,88 @@
+1
+00:00:00,000 --> 00:00:04,120
+Dadam telefonni faqat qo'ng'iroq qilish uchun ishlatardi.
+
+2
+00:00:04,320 --> 00:00:05,650
+Bir kuni aytdim:
+
+3
+00:00:05,750 --> 00:00:09,770
+«Dada, sun'iy intellektdan biror narsa so'rab ko'ring.»
+
+4
+00:00:10,180 --> 00:00:11,820
+U kulib qo'ydi:
+
+5
+00:00:11,820 --> 00:00:14,380
+«Men bunaqa narsalarga qarib qoldim.»
+
+6
+00:00:15,210 --> 00:00:18,170
+Men unga faqat bitta narsani o'rgatdim:
+
+7
+00:00:18,230 --> 00:00:19,840
+gapirib so'rashni.
+
+8
+00:00:20,790 --> 00:00:22,620
+Birinchi savoli:
+
+9
+00:00:22,620 --> 00:00:25,250
+«Pomidor bargi nega sarg'ayyapti?»
+
+10
+00:00:26,000 --> 00:00:28,100
+AI javob berdi.
+
+11
+00:00:28,550 --> 00:00:31,810
+Dadam ko'zoynagini taqib, diqqat bilan o'qidi.
+
+12
+00:00:32,540 --> 00:00:35,670
+Bir haftadan keyin o'zi qo'ng'iroq qildi:
+
+13
+00:00:35,670 --> 00:00:39,260
+«O'g'lim, AI'dan nevaramga ertak so'radim!»
+
+14
+00:00:39,870 --> 00:00:42,950
+Endi u har kuni yangi narsa o'rganadi.
+
+15
+00:00:43,140 --> 00:00:46,010
+Kecha esa menga o'zi dars berdi.
+
+16
+00:00:47,010 --> 00:00:48,280
+Texnologiya
+
+17
+00:00:48,280 --> 00:00:50,000
+yoshni so'ramaydi.
+
+18
+00:00:50,120 --> 00:00:50,880
+Faqat
+
+19
+00:00:50,880 --> 00:00:52,780
+birinchi qadamni kutadi.
+
+20
+00:00:53,860 --> 00:00:54,700
+Siz
+
+21
+00:00:54,700 --> 00:00:56,040
+ota-onangizga
+
+22
+00:00:56,040 --> 00:00:58,450
+nimani o'rgatgan bo'lardingiz?
+
