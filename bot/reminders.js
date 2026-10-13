@@ -74,4 +74,12 @@ module.exports = {
       "4) LinkedIn: 2-youtube-linkedin-manus-en.mp4\n\n" +
       "Har bir postda: «Music: Duty Calls – Rod Kim» va https://manus.im havolasi. Matnlarni Claude'dan so'rang (\"Manus matnlari\"), havolalarni unga yuboring ✅",
   ],
+  "2026-10-16": [
+    "📌 Eslatma: bugun «Nusxa» videosini joylang!\n\n" +
+      "1) Telegram kanal: 1-telegram-nusxa-uz.mp4\n" +
+      "2) YouTube Shorts: 2-youtube-linkedin-nusxa-en.mp4 + nusxa-uz.srt, nusxa-ru.srt\n" +
+      "3) Instagram va Facebook: 3-instagram-facebook-nusxa-ru.mp4\n" +
+      "4) LinkedIn: 2-youtube-linkedin-nusxa-en.mp4\n\n" +
+      "Musiqa: YouTube/LinkedIn – «The Road To Mordor – Ezra Lipp, Piano Dreams – Michael Yanis»; Telegram/Instagram/Facebook – «Piano Dreams – Michael Yanis, Vodiy Yulduzlari – Tohir Mahkamov». Matnlarni Claude'dan so'rang (\"Nusxa matnlari\"), havolalarni unga yuboring ✅",
+  ],
 };
