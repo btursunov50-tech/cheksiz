@@ -82,4 +82,9 @@ module.exports = {
       "4) LinkedIn: 2-youtube-linkedin-nusxa-en.mp4\n\n" +
       "Musiqa: YouTube/LinkedIn – «The Road To Mordor – Ezra Lipp, Piano Dreams – Michael Yanis»; Telegram/Instagram/Facebook – «Piano Dreams – Michael Yanis, Vodiy Yulduzlari – Tohir Mahkamov». Matnlarni Claude'dan so'rang (\"Nusxa matnlari\"), havolalarni unga yuboring ✅",
   ],
+  "2026-10-17": [
+    "💡 Eslatma: navbatdagi video g'oyasi «Aytilmagan gaplar» – AI ota va o'g'ilning qo'pol gaplari ortidagi mehrni tarjima qiladi («Nusxa»ning juftligi).\n\n" +
+      "Ssenariy, hook va o'zgartirishlar saqlangan: ideas/aytilmagan-gaplar.md\n" +
+      "Boshlash uchun Claude'ga yozing: \"Aytilmagan gaplar videosini boshlaymiz\" ✅",
+  ],
 };
