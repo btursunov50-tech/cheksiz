@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:04,930
+Meta offered 2 billion dollars for this AI.
+
+2
+00:00:05,220 --> 00:00:08,130
+And you can try it for free.
+
+3
+00:00:08,300 --> 00:00:14,030
+This is Manus. Not a regular chatbot, an AI agent.
+
+4
+00:00:14,150 --> 00:00:24,590
+You give it a task, it opens a browser, finds the information and finishes the job: a report, slides, even a website.
+
+5
+00:00:24,750 --> 00:00:28,420
+Last December, Meta tried to buy it.
+
+6
+00:00:28,660 --> 00:00:31,970
+But in April, China blocked the deal.
+
+7
+00:00:32,310 --> 00:00:38,570
+Manus stayed independent and this October raised over half a billion dollars.
+
+8
+00:00:38,900 --> 00:00:44,700
+The free plan gives you credits every day, but a complex task burns through them fast.
+
+9
+00:00:45,020 --> 00:00:51,330
+Tip: start with a small task. For example, have it list your competitors.
+
+10
+00:00:51,490 --> 00:00:56,220
+In the future we won't chat with AI. We'll give it work.
+
