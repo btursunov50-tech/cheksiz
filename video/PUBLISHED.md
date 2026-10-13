@@ -24,6 +24,8 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Manus: Meta 2 milliard taklif qilgan AI» (10-video): tayyor 2026-10-13, 2026-10-15 da joylanadi. Egasining ekran yozuvi + robot kliplari + grafikalar. Fayllar: `video/manus/`.
 
+- «Nusxa» (11-video): tayyor 2026-10-13, 2026-10-16 da joylanadi. Neon chiziqli mini-drama: AI o'g'ilning yuzi va ovozini nusxalab onadan pul so'raydi, ona maxfiy savol beradi. Musiqa: YouTube/LinkedIn – The Road To Mordor + Michael Yanis «Piano Dreams» (36.7 s dan); Telegram/Instagram/Facebook – «Piano Dreams» + Tohir Mahkamov «Vodiy Yulduzlari» (36.7 s dan, qo'shiqning 0:16 dan). Fayllar: `video/nusxa/`, `video/final/nusxa/`.
+
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
 
