@@ -22,7 +22,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «MrBeast, uzr… Samarqandda sharmanda bo'ldik» (9-video): tayyor 2026-10-12. Zamin.uz kadrlari (yuzlar xiralashtirilgan), Buxoro viloyati IIB xodimining murojaati, Vidu AI samolyot, egasining ovozi, avatar. Musiqa: Parampara (Dilara'nın Öfkesi) + Baxtiyor Mavlonov «Meni izlab topolmaysiz» (Content ID da'vosi bo'lishi mumkin). Egasi Zamin.uz dan ruxsat so'rashi kerak. Fayllar: `video/mrbeast/`.
 
-- «Manus: Meta 2 milliard taklif qilgan AI» (10-video): tayyor 2026-10-13. Egasining ekran yozuvi + robot kliplari + grafikalar. Fayllar: `video/manus/`.
+- «Manus: Meta 2 milliard taklif qilgan AI» (10-video): tayyor 2026-10-13, 2026-10-15 da joylanadi. Egasining ekran yozuvi + robot kliplari + grafikalar. Fayllar: `video/manus/`.
 
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
