@@ -1,2 +1,6 @@
-# Finished videos waiting to be posted (kept in git so they survive the cloud session). Not part of the site.
-video/final/
+# Not part of the site. Every deployment stores its files and the free plan has 10 GB of deployment storage,
+# so keep videos, notes and Claude files out of the upload.
+video/
+ideas/
+.claude/
+CLAUDE.md
