@@ -29,7 +29,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
 
-- 3-video: PRESSA kadrlari ishlatildi; egasi PRESSA'dan ruxsat so'rashi kerak (xat matni tayyorlangan).
+- 3-video: PRESSA kadrlari ishlatildi; PRESSA yozma ruxsat bergan (egasi, 2026-10-14).
 - "Yuragingni qaytib bermayman" klipi (3:31, 16:9, Suno bepul tarif): 2026-10-11 kechqurun joylanadi. To'liq 16:9 (YouTube, inglizcha subtitr yozilgan + uz/ru `.srt`), 59 s vertikal qisqa versiyalar (uz/ru/en subtitr). Subtitrlar va matn: `video/klip/` (vaqtlarni egasi 0:21, 2:06, 2:21, 2:42 da tasdiqlagan). Monetizatsiya yo'q, "Music: made with Suno".
 
 ## Joylash tartibi
