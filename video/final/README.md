@@ -4,7 +4,6 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 
 | Papka | Video | Joylash kuni |
 |---|---|---|
-| `dadam/` | «Dadamga AI o'rgatdim» | 2026-10-14 |
 | `manus/` | «Manus: Meta 2 milliard taklif qilgan AI» | 2026-10-15 |
 | `nusxa/` | «Nusxa»: AI o'g'ilning ovozini nusxalaydi (maxfiy so'z) | 2026-10-16 |
 

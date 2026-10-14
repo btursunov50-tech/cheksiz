@@ -13,13 +13,13 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 | 7 | 2026-10-12 | «Yuragingni qaytib bermayman» qo'shig'i va klipi (Suno, AI klip, subtitr uz/ru/en; monetizatsiya yo'q) | https://youtu.be/LWfzpe7FNrc (to'liq klip) | yopildi (egasi, 2026-10-13) | yopildi | yopildi |
 | 8 | 2026-10-12 | MrBeast, uzr… Samarqandda sharmanda bo'ldik (Zamin.uz kadrlari, yuzlar xiralashtirilgan, IIB murojaati, AI samolyot, avatar; musiqa: Parampara + «Meni izlab topolmaysiz») | https://youtube.com/shorts/Vx3vxNXBU24 | https://www.instagram.com/reel/DeZKw_sJZgP/ | https://www.facebook.com/share/r/18CTQchxuA/ | https://lnkd.in/p/dfECm5q6 |
 | 9 | 2026-10-13 | Kalamushqir: quduqdagi kalamushlar masali (12 ta Veo klip, egasining ovozi, avatar; YouTube sarlavhasi «Stop fighting your coworkers. You are in someone's well.», hook 81.4; musiqa: Ezra Lipp) | joylandi (havola berilmagan) | joylandi | joylandi | joylandi |
-| 10 | 2026-10-14 | Dadamga AI o'rgatdim (9 ta rasm → Veo, egasining ovozi, avatar; musiqa: Dutar's Whisper; YouTube sarlavhasi «My dad only used his phone for calls. Then I taught him one thing.», hook 72.1) | https://youtube.com/shorts/3JBtgPyVXPU | https://www.instagram.com/reel/Dee959dJUfS/ | https://www.facebook.com/share/r/19YSeS9wRr/ | https://lnkd.in/p/d2jr3eDA |
+| 10 | 2026-10-14 | Dadamga AI o'rgatdim (9 ta rasm → Veo, egasining ovozi, avatar; musiqa: Dutar's Whisper; YouTube sarlavhasi «My dad only used his phone for calls. Then I taught him one thing.», hook 72.1; Telegram: https://t.me/infinite_ai_and_me/16) | https://youtube.com/shorts/3JBtgPyVXPU | https://www.instagram.com/reel/Dee959dJUfS/ | https://www.facebook.com/share/r/19YSeS9wRr/ | https://lnkd.in/p/d2jr3eDA |
 
 - «Toshkent 2036» (6-video): 2026-10-12 da joylandi. 8 ta Veo klip (rasmdan videoga), egasining ovozi, musiqa: Duty Calls – Rod Kim (YouTube Аудиотека, 0:20.5 dan). Fayllar va skriptlar: `video/toshkent2036/`. 1-sahnadagi minora Shanxay Oriental Pearl'ga o'xshaydi, egasi shundayligicha qoldirdi.
 
 - «Kalamushqir»: 2026-10-13 da joylandi (jadvalda 9-qator; havolalarni egasi yuborsa qo'shiladi). Fayllar va subtitrlar: `video/kalamushqir/`. Musiqa: The Road To Mordor + Frodo's Quest – Ezra Lipp.
 
-- «Dadamga AI o'rgatdim» (8-video): tayyor 2026-10-11, 2026-10-14 da joylanadi. Fayllar va subtitrlar: `video/dadam/`. Musiqa: Dutar's Whisper.
+- «Dadamga AI o'rgatdim» (8-video): tayyor 2026-10-11, 2026-10-14 da joylandi (jadvalda 10-qator). Fayllar va subtitrlar: `video/dadam/`. Musiqa: Dutar's Whisper.
 
 - «MrBeast, uzr… Samarqandda sharmanda bo'ldik» (9-video): tayyor 2026-10-12. Zamin.uz kadrlari (yuzlar xiralashtirilgan), Buxoro viloyati IIB xodimining murojaati, Vidu AI samolyot, egasining ovozi, avatar. Musiqa: Parampara (Dilara'nın Öfkesi) + Baxtiyor Mavlonov «Meni izlab topolmaysiz» (Content ID da'vosi bo'lishi mumkin). Egasi Zamin.uz dan ruxsat so'rashi kerak. Fayllar: `video/mrbeast/`.
 
