@@ -56,9 +56,10 @@ async function tg(method, payload) {
 
 const STOP_BUTTON = { inline_keyboard: [[{ text: "🔕 To'xtatish", callback_data: "tong:off" }]] };
 
-// post = { kind: "animation" | "video", media, caption }. If Telegram cannot fetch the
+// post = { kind: "animation" | "video" | "text", media, caption }. If Telegram cannot fetch the
 // media, the text still goes out.
 async function send(chatId, post, extra = {}) {
+  if (post.kind === "text") return tg("sendMessage", { chat_id: chatId, text: post.caption, ...extra });
   const field = post.kind === "video" ? "video" : "animation";
   const method = post.kind === "video" ? "sendVideo" : "sendAnimation";
   const r = await tg(method, { chat_id: chatId, [field]: post.media, caption: post.caption, supports_streaming: true, ...extra });
@@ -149,7 +150,7 @@ module.exports = async function handler(req, res) {
   }
   if (byOwner && q.clip) {
     if (!(await once(`iam:clip:${CLIP.id}`))) return res.status(200).json({ skipped: "clip already sent" });
-    const result = await broadcast({ kind: "video", media: CLIP.video, caption: CLIP.caption });
+    const result = await broadcast({ kind: "text", caption: CLIP.caption });
     if (!result.channel.ok) await tellOwner(`⚠️ Klip kanalga chiqmadi: ${result.channel.description || "noma'lum xato"}`);
     return res.status(200).json(result);
   }
