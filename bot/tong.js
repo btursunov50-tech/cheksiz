@@ -102,11 +102,12 @@ function buildPost(now = new Date()) {
 const SUBS_KEY = "iam:tong:subs";
 
 // One-time clip post (owner opens /api/tong?key=<WEBHOOK_SECRET>&clip=1). Suno free plan: credit, no monetization.
+// The clip lives on YouTube (not in the site, to keep Vercel deployments small), so this goes out as a text post with the link.
 const CLIP = {
   id: "yuragingni-qaytib-bermayman",
-  video: "https://cheksiz-one.vercel.app/infinite/media/klip/yuragingni-qaytib-bermayman.mp4",
   caption: [
     "🎵 «Yuragingni qaytib bermayman»",
+    "▶️ To'liq klip: https://youtu.be/LWfzpe7FNrc",
     "",
     "Infinite AI & Me'dan sizga sovg'a: sun'iy intellekt yordamida yaratilgan qo'shiq va klip. Yoqsa, do'stlaringizga ulashing! ❤️",
     "",
