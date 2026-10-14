@@ -83,8 +83,11 @@ module.exports = {
       "Musiqa: YouTube/LinkedIn – «The Road To Mordor – Ezra Lipp, Piano Dreams – Michael Yanis»; Telegram/Instagram/Facebook – «Piano Dreams – Michael Yanis, Vodiy Yulduzlari – Tohir Mahkamov». Matnlarni Claude'dan so'rang (\"Nusxa matnlari\"), havolalarni unga yuboring ✅",
   ],
   "2026-10-17": [
-    "💡 Eslatma: navbatdagi video g'oyasi «Aytilmagan gaplar» – AI ota va o'g'ilning qo'pol gaplari ortidagi mehrni tarjima qiladi («Nusxa»ning juftligi).\n\n" +
-      "Ssenariy, hook va o'zgartirishlar saqlangan: ideas/aytilmagan-gaplar.md\n" +
-      "Boshlash uchun Claude'ga yozing: \"Aytilmagan gaplar videosini boshlaymiz\" ✅",
+    "📌 Eslatma: bugun «Aytilmagan gaplar» videosini joylang!\n\n" +
+      "1) Telegram kanal: 1-telegram-aytilmagan-uz.mp4\n" +
+      "2) YouTube Shorts: 2-youtube-linkedin-aytilmagan-en.mp4 + aytilmagan-uz.srt, aytilmagan-ru.srt\n" +
+      "3) Instagram va Facebook: 3-instagram-facebook-aytilmagan-ru.mp4\n" +
+      "4) LinkedIn: 2-youtube-linkedin-aytilmagan-en.mp4\n\n" +
+      "Musiqa: Reviver – The Grey Room / Density & Time, Cutscene Crush – Blue Deer Studio. Matnlarni Claude'dan so'rang (\"Aytilmagan matnlari\"), havolalarni unga yuboring ✅",
   ],
 };
