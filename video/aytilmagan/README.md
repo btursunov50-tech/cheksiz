@@ -7,3 +7,4 @@ Mini-drama, «Nusxa» bilan bir seriya: ota va o'g'il janjallashadi, AI har bir 
 - Subtitr ranglari: diktor oq, «Asl ma'nosi» moviy, ota to'q sariq, o'g'il och sariq. Qog'oz yozuvlar: «Dadaga. Birinchi oyligimdan», «Uy uchun»; oltin plashka «Bugun «yaxshi ko'raman» deng».
 - Musiqa (egasi yuborgan YouTube Аудиотека treklari, Claude tanlagan, egasi tasdiqlagan): 0–38.7 s «Reviver» – The Grey Room / Density & Time, 38.7 s dan «Cutscene Crush» – Blue Deer Studio.
 - Hook: «“Ishlagan pulingni stolga qo'y!” Dadam buni nazarda tutmagan edi.» (EN 83.0). Avatar: «Siz-chi? Dadangizga oxirgi marta qachon «yaxshi ko'raman» degansiz? Izohga yozing!». Jami 62.3 s.
+- Chiroqlar olovi moviy neon (egasining g'oyasi, 2026-10-15): `bluelamps.py` + `lamps.py` har bir sahnadagi chiroqlarni (old va orqa, ba'zan 2–3 ta) kadrma-kadr kuzatib moviy qiladi.
