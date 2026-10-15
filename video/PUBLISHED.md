@@ -14,6 +14,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 | 8 | 2026-10-12 | MrBeast, uzr… Samarqandda sharmanda bo'ldik (Zamin.uz kadrlari, yuzlar xiralashtirilgan, IIB murojaati, AI samolyot, avatar; musiqa: Parampara + «Meni izlab topolmaysiz») | https://youtube.com/shorts/Vx3vxNXBU24 | https://www.instagram.com/reel/DeZKw_sJZgP/ | https://www.facebook.com/share/r/18CTQchxuA/ | https://lnkd.in/p/dfECm5q6 |
 | 9 | 2026-10-13 | Kalamushqir: quduqdagi kalamushlar masali (12 ta Veo klip, egasining ovozi, avatar; YouTube sarlavhasi «Stop fighting your coworkers. You are in someone's well.», hook 81.4; musiqa: Ezra Lipp) | joylandi (havola berilmagan) | joylandi | joylandi | joylandi |
 | 10 | 2026-10-14 | Dadamga AI o'rgatdim (9 ta rasm → Veo, egasining ovozi, avatar; musiqa: Dutar's Whisper; YouTube sarlavhasi «My dad only used his phone for calls. Then I taught him one thing.», hook 72.1; Telegram: https://t.me/infinite_ai_and_me/16) | https://youtube.com/shorts/3JBtgPyVXPU | https://www.instagram.com/reel/Dee959dJUfS/ | https://www.facebook.com/share/r/19YSeS9wRr/ | https://lnkd.in/p/d2jr3eDA |
+| 11 | 2026-10-15 | Manus: Meta 2 milliard taklif qilgan AI (egasining ekran yozuvi, Veo robot kliplari, grafikalar, avatar; musiqa: Duty Calls – Rod Kim; YouTube sarlavhasi «Meta offered $2 billion for this AI. You can try it for free.», hook 88.0; Telegram: https://t.me/infinite_ai_and_me/18) | https://youtube.com/shorts/yLtOxMd-Ahg | https://www.instagram.com/reel/DehHHf1JBUk/ | https://www.facebook.com/share/r/18FccCTaUB/ | https://www.linkedin.com/feed/update/urn:li:activity:7516495065771556864/ |
 
 - «Toshkent 2036» (6-video): 2026-10-12 da joylandi. 8 ta Veo klip (rasmdan videoga), egasining ovozi, musiqa: Duty Calls – Rod Kim (YouTube Аудиотека, 0:20.5 dan). Fayllar va skriptlar: `video/toshkent2036/`. 1-sahnadagi minora Shanxay Oriental Pearl'ga o'xshaydi, egasi shundayligicha qoldirdi.
 
@@ -23,7 +24,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «MrBeast, uzr… Samarqandda sharmanda bo'ldik» (9-video): tayyor 2026-10-12. Zamin.uz kadrlari (yuzlar xiralashtirilgan), Buxoro viloyati IIB xodimining murojaati, Vidu AI samolyot, egasining ovozi, avatar. Musiqa: Parampara (Dilara'nın Öfkesi) + Baxtiyor Mavlonov «Meni izlab topolmaysiz» (Content ID da'vosi bo'lishi mumkin). Egasi Zamin.uz dan ruxsat so'rashi kerak. Fayllar: `video/mrbeast/`.
 
-- «Manus: Meta 2 milliard taklif qilgan AI» (10-video): tayyor 2026-10-13, 2026-10-15 da joylanadi. Egasining ekran yozuvi + robot kliplari + grafikalar. Fayllar: `video/manus/`.
+- «Manus: Meta 2 milliard taklif qilgan AI» (10-video): tayyor 2026-10-13, 2026-10-15 da joylandi (jadvalda 11-qator). Egasining ekran yozuvi + robot kliplari + grafikalar. Fayllar: `video/manus/`.
 
 - «Nusxa» (11-video): tayyor 2026-10-13, 2026-10-16 da joylanadi. Neon chiziqli mini-drama: AI o'g'ilning yuzi va ovozini nusxalab onadan pul so'raydi, ona maxfiy savol beradi. Musiqa: YouTube/LinkedIn – The Road To Mordor + Michael Yanis «Piano Dreams» (36.7 s dan); Telegram/Instagram/Facebook – «Piano Dreams» + Tohir Mahkamov «Vodiy Yulduzlari» (36.7 s dan, qo'shiqning 0:16 dan). Fayllar: `video/nusxa/`, `video/final/nusxa/`.
 
