@@ -26,3 +26,15 @@ Lavash tayyorlash stoli ustiga kamera qo'yiladi. AI har bir lavashda retseptdagi
 - Egasi: lavashxona topish, kelishuv, kamera o'rnatish (yoki usta), joyida sinov, pul sarflari haqida qaror.
 
 Holat: 🟡 egasi qaror qiladi (pilot uchun lavashxona va sinov video kerak).
+
+## Soddaroq variant (egasining fikri, 2026-10-15)
+Egasi: 200–300 ming so'mlik Wi-Fi kamera yetmaydimi? Avval telefon video bilan sinab ko'rish.
+
+Xulosa: **video emas, rasm**. Har bir lavash o'ralishidan oldingi bitta kadr yetadi. Rasm Claude'ga (bizning bot/Vercel) yuboriladi, u retsept bilan solishtiradi, natija menejerning Telegramiga.
+
+Uch daraja (sodda → murakkab):
+1. **Foto-bot (uskunasiz)**: oshpaz yoki kassir ochiq lavashni telefonda suratga olib botga yuboradi (bot rasmni allaqachon tushunadi). Hammasini emas, har 10 tadan birini yoki smena boshida. Narx: faqat API.
+2. **Eski telefon = kamera**: eski Android telefon ushlagichda stol ustida, bizning kichik veb-sahifa har necha soniyada yoki harakat bo'lganda rasm oladi va yuboradi. Qo'shimcha kompyuter kerak emas.
+3. **Arzon Wi-Fi kamera (200–300 ming)**: faqat **RTSP** qo'llasa ishlaydi (masalan, Tapo, Imou'ning ko'p modellari; Xiaomi'ning ko'pchiligi faqat o'z ilovasida ko'rsatadi). Kamerani o'qib, rasm yuboradigan qurilma (eski telefon yoki noutbuk) baribir kerak.
+
+Telefon video sinovi: egasi stol ustidan 10–15 daqiqa video oladi → Claude kadrlarni o'zi ko'rib, ingredientlar ko'rinadimi tekshiradi → ishlasa 1-darajadan boshlaymiz.
