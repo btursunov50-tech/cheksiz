@@ -89,6 +89,13 @@ module.exports = {
         "Lavash menyusini (retsept va ingredientlar ro'yxati) ham yozing.\n\n" +
         "Ikkalasini Claude'ga yuboring: u AI ingredientlarni ajrata oladimi, tekshiradi ✅",
     },
+    {
+      at: 12,
+      text:
+        "🤖 Eslatma: «Robot bilan bir piyola choy» videosi!\n\n" +
+        "ChatGPT'da 22 ta rasm promptidan avval 1-rasmni (robot) qiling va Claude'ga yuboring. Yoqsa, qolganlarini shu suhbatda davom ettiring.\n" +
+        "Promptlar: Claude'dan \"Robot promptlari\" deb so'rang ✅",
+    },
   ],
   "2026-10-17": [
     "📌 Eslatma: bugun «Aytilmagan gaplar» videosini joylang!\n\n" +
