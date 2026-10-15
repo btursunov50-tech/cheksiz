@@ -1,41 +1,49 @@
-# «Robot bilan bir piyola choy» — ssenariy (2026-10-15)
+# «Robot bilan bir piyola choy» — ssenariy v2 (2026-10-15)
 
-Format manbasi: egasi yuborgan rus videosi (kostyumli odam + robot cho'lda stol atrofida suhbatlashadi, mavzu AI tarixi, shifokor, yurist, buxgalter, ~2 daqiqa, so'zma-so'z subtitr).
+Format manbasi: egasi yuborgan rus videosi (kostyumli odam + robot cho'lda stol atrofida suhbatlashadi: AI tarixi 1956, shifokorni o'qitish qimmat, AI yurist/shifokor ishini arzonlashtiradi, lekin mutaxassis tekshirishi kerak; ~2 daqiqa, so'zma-so'z subtitr).
 Biz formatni olamiz, matn va obrazlar o'zimizniki. Terminator dizaynini olmaymiz (franshiza). Bizning robot: xrom robot, ko'kragida oltin ∞, boshida do'ppi, piyoladan choy ichadi. Joy: kechki choyxona supasi.
 
-Hook (EN tarjimasi, hookscore): "Money leaks out of your shop every day. And you never see it." = 59.4 (OK).
-Eski hooklar: "AI endi lavash ham tayyorlaydimi?" = 30, "Will AI replace the cook?" = 30.
+v2 (egasi): lavashdan keyin videodagidek yurist va shifokorni ham tushuntirish.
 
-Qahramonlar: ODAM (kichik do'kon/lavashxona egasi, ~35 yosh, kostyum emas, oddiy ko'ylak), ROBOT (sokin, kinoyali, mehribon).
+Hook (EN, hookscore): "Money leaks out of your shop every day. And you never see it." = 59.4 (OK). Eski: "AI endi lavash ham tayyorlaydimi?" = 30.
+
+Qahramonlar: ODAM (kichik do'kon/lavashxona egasi, ~35 yosh, oddiy ko'ylak), ROBOT (sokin, kinoyali, mehribon).
 
 | # | Vaqt | Kadr | Kim | Matn |
 |---|---|---|---|---|
 | 1 | 0–5 | Robot yaqin, choy ho'playdi | ROBOT | Do'koningdan har kuni pul oqib ketyapti. Sen esa buni ko'rmaysan. |
 | 2 | 5–10 | Odam telefonda | ODAM | Qanaqa pul? Men seni faqat rasm va video uchun ishlataman. |
-| 3 | 10–16 | Robot | ROBOT | Rasm yaxshi. Lekin meni rasm uchun o'ylab topishmagan. |
-| 4 | 16–24 | Qora-oq: 1950-yillar olimlari | ROBOT | 1956-yili olimlar savol berishdi: mashina odamdek o'ylay oladimi? |
-| 5 | 24–30 | Odam kuladi | ODAM | Xo'sh, o'ylay oladimi? |
-| 6 | 30–38 | Robot | ROBOT | O'ylashni bilmadim. Lekin ko'rishni o'rgandim. Sendan yaxshiroq. |
-| 7 | 38–46 | Odam jahli chiqib | ODAM | Mendan? Men do'konimda kun bo'yi turaman! |
-| 8 | 46–54 | Odam kassada, telefon, mijozlar, navbat | ROBOT | Kun bo'yi turasan. Telefonga qaraysan. Kassaga qaraysan. Mijozga qaraysan. |
-| 9 | 54–60 | Oshxona stoli yaqin | ROBOT | Stolga esa hech kim qaramaydi. |
-| 10 | 60–68 | Oshpaz lavash o'raydi, sous yo'q | ROBOT | Bitta lavash sousiz ketdi. Mijoz indamadi. Lekin qaytib kelmadi. |
-| 11 | 68–74 | Odam o'ylanib | ODAM | Nazoratchi yollaymanmi? Unga oylik kerak. |
-| 12 | 74–82 | Robot piyolani ko'rsatadi | ROBOT | Yaxshi nazoratchi oylik oladi, charchaydi, telefon o'ynaydi. Men esa bir piyola choyga ham rozi. |
-| 13 | 82–90 | Kamera stol tepasida, ekranda ro'yxat: yashil/sariq/qizil | ROBOT | Bitta kichik kamera. U faqat stolni ko'radi. Go'sht, sabzavot, sous. |
-| 14 | 90–95 | Qizil belgi | ROBOT | To'xtang. Sous hali qo'shilmadi. |
-| 15 | 95–103 | Dunyo xaritasi, pitsa | ROBOT | Dunyoda bu allaqachon bor. Avstraliyada Domino's har bir pitsani kamera bilan tekshiradi. |
-| 16 | 103–109 | Odam ehtiyotkor | ODAM | Kamera... Telefonimga, pullarimga kirib olmaysanmi? |
-| 17 | 109–116 | Robot qo'lini ko'kragiga qo'yadi | ROBOT | Men faqat stolni ko'raman. Parolingni so'ragan "AI"dan qoch. U AI emas, firibgar. |
-| 18 | 116–122 | Odam | ODAM | Unda oshpazni bo'shatamanmi? |
-| 19 | 122–130 | Robot kuladi | ROBOT | Yo'q. Men lavash o'ray olmayman. Oshpaz qo'l, men ko'z. |
-| 20 | 130–136 | Ikkalasi supada, keng kadr | ODAM | Qo'l va ko'z... Qachon boshlaymiz? |
-| 21 | 136–142 | Robot kameraga qaraydi | ROBOT | Sizda ham do'kon bormi? Izohga «LAVASH AI» deb yozing. |
-| + | 3 s | Avatar | | "Siz-chi? Do'koningizni kim kuzatadi? Izohga yozing!" |
+| 3 | 10–15 | Robot | ROBOT | Rasm yaxshi. Lekin meni rasm uchun o'ylab topishmagan. |
+| 4 | 15–21 | Qora-oq: 1950-yillar olimlari | ROBOT | 1956-yili olimlar so'rashdi: mashina odamning aqliy ishini qila oladimi? |
+| 5 | 21–26 | Odam kassada, navbat, telefon | ROBOT | Sen kun bo'yi kassaga, telefonga, mijozga qaraysan. Oshpaz stoliga esa hech kim qaramaydi. |
+| 6 | 26–32 | Lavash sousiz o'raladi | ROBOT | Bitta lavash sousiz ketdi. Mijoz indamadi. Lekin qaytib kelmadi. |
+| 7 | 32–36 | Odam o'ylanib | ODAM | Nazoratchi yollaymanmi? Unga oylik kerak. |
+| 8 | 36–44 | Kamera stol tepasida, ro'yxat yashil/sariq/qizil | ROBOT | Bitta kichik kamera. U faqat stolni ko'radi. Go'sht, sabzavot, sous. |
+| 9 | 44–47 | Qizil belgi | ROBOT | To'xtang. Sous hali qo'shilmadi. |
+| 10 | 47–51 | Odam | ODAM | Faqat lavash uchunmi? |
+| 11 | 51–57 | Robot piyolani qo'yadi | ROBOT | Yo'q. Eng qimmat ish qo'l bilan emas, bosh bilan qilinadi. Shifokor, yurist. |
+| 12 | 57–63 | Robot | ROBOT | Bitta yaxshi shifokorni tayyorlash qancha turadi? |
+| 13 | 63–71 | Montaj: chaqaloq, maktab, kitoblar, amaliyot, soat | ROBOT | Avval tug'ilishi kerak. Keyin maktab. Keyin institut. Keyin yillar davomida amaliyot. |
+| 14 | 71–77 | Shifokor qabulida, soat 20 daqiqa | ROBOT | Sen esa uning oldiga yigirma daqiqaga kirasan. Va o'sha yillarning hammasi uchun to'laysan. |
+| 15 | 77–80 | Odam | ODAM | AI-shifokor arzonroqmi? |
+| 16 | 80–88 | Robot oq xalatda, telefon ekranida tahlillar | ROBOT | Men tahlilingni oddiy tilda tushuntiraman. Shifokorga qanday savol berishni aytaman. Kechasi soat uchda ham. |
+| 17 | 88–92 | Odam | ODAM | Yurist-chi? |
+| 18 | 92–100 | Shartnoma, ruchka, qum ustida qog'oz | ROBOT | Shartnoma qoralamasi. Qiyin so'zlarni tushuntirish. Ijara shartnomasida yashirin jarimani topish. Bir necha daqiqada. |
+| 19 | 100–104 | Odam hayron | ODAM | Unda shifokor bilan yurist kerak emasmi? |
+| 20 | 104–110 | Robot jiddiy | ROBOT | Kerak. Mening javoblarimni kimdir tekshirishi kerak. |
+| 21 | 110–116 | Robot | ROBOT | Ayniqsa ish murakkab bo'lsa. Yoki xato juda qimmat bo'lsa. |
+| 22 | 116–123 | Odam ehtiyotkor | ODAM | Kamera, tahlillar, shartnomalar... Telefonimga, pullarimga kirib olmaysanmi? |
+| 23 | 123–130 | Robot qo'lini ko'kragiga qo'yadi | ROBOT | Men parol so'ramayman. Parolingni so'ragan "AI"dan qoch. U AI emas, firibgar. |
+| 24 | 130–136 | Odam | ODAM | Unda oshpazni bo'shatamanmi? |
+| 25 | 136–142 | Robot kuladi | ROBOT | Yo'q. Men lavash o'ray olmayman. Oshpaz qo'l, men ko'z. |
+| 26 | 142–148 | Robot kameraga | ROBOT | Sizda ham do'kon bormi? Izohga «LAVASH AI» deb yozing. |
+| + | 3 s | Avatar | | "Siz-chi? AIga nimani ishonasiz? Izohga yozing!" |
 | + | 4 s | End card | | |
 
+Jami ~2:35 (YouTube Shorts/Reels 3 daqiqagacha).
+
 Eslatmalar:
-- Faktlar: 1956 (Dartmut uchrashuvi, "sun'iy intellekt" atamasi) va Domino's DOM Pizza Checker (Avstraliya/Yangi Zelandiya, 2019) haqiqiy. Raqamlar (184 lavash, 7 xato) qo'yilmadi, chunki bizda hali haqiqiy sinov yo'q.
-- 17-sahna firibgarlikdan himoya mavzusini qo'shadi (odamlar AIdan qo'rqadi, kanal uchun foydali).
-- 13–14-sahnalarga egasining 2026-10-16 dagi haqiqiy lavash videosidan kadr qo'yish mumkin.
-- Qisqa versiya (~50 s): 1, 8–10, 13–14, 18–19, 21.
+- Faktlar: 1956 (Dartmut uchrashuvi) va AI shifokor/yurist ishida yordamchi, lekin mutaxassis tekshiradi. To'qima raqamlar (184 lavash, 7 xato, X yil o'qish) qo'yilmadi.
+- 23-sahna firibgarlikdan himoya mavzusi (odamlar AIdan qo'rqadi).
+- 8–9-sahnalarga egasining 2026-10-16 dagi haqiqiy lavash videosidan kadr qo'yish mumkin.
+- Qisqa versiya (~55 s): 1, 5–6, 8–9, 11–14, 20–21, 25–26.
