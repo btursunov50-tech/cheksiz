@@ -81,6 +81,14 @@ module.exports = {
       "3) Instagram va Facebook: 3-instagram-facebook-nusxa-ru.mp4\n" +
       "4) LinkedIn: 2-youtube-linkedin-nusxa-en.mp4\n\n" +
       "Musiqa: YouTube/LinkedIn – «The Road To Mordor – Ezra Lipp, Piano Dreams – Michael Yanis»; Telegram/Instagram/Facebook – «Piano Dreams – Michael Yanis, Vodiy Yulduzlari – Tohir Mahkamov». Matnlarni Claude'dan so'rang (\"Nusxa matnlari\"), havolalarni unga yuboring ✅",
+    {
+      at: 20,
+      text:
+        "🌯 Eslatma: «Lavash AI» sinovi!\n\n" +
+        "Uyda kamerada (yoki telefonda) lavash tayyorlanishini tepadan 10–15 daqiqa video oling: stol ustida, yorug' joyda, bir nechta lavash.\n" +
+        "Lavash menyusini (retsept va ingredientlar ro'yxati) ham yozing.\n\n" +
+        "Ikkalasini Claude'ga yuboring: u AI ingredientlarni ajrata oladimi, tekshiradi ✅",
+    },
   ],
   "2026-10-17": [
     "📌 Eslatma: bugun «Aytilmagan gaplar» videosini joylang!\n\n" +

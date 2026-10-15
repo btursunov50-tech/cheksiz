@@ -38,3 +38,4 @@ Uch daraja (sodda → murakkab):
 3. **Arzon Wi-Fi kamera (200–300 ming)**: faqat **RTSP** qo'llasa ishlaydi (masalan, Tapo, Imou'ning ko'p modellari; Xiaomi'ning ko'pchiligi faqat o'z ilovasida ko'rsatadi). Kamerani o'qib, rasm yuboradigan qurilma (eski telefon yoki noutbuk) baribir kerak.
 
 Telefon video sinovi: egasi stol ustidan 10–15 daqiqa video oladi → Claude kadrlarni o'zi ko'rib, ingredientlar ko'rinadimi tekshiradi → ishlasa 1-darajadan boshlaymiz.
+- 2026-10-15: egasi 2026-10-16 da uyda kamerada lavash videosini va lavash menyusini beradi. Bot 2026-10-16 soat 20:00 da eslatadi.
