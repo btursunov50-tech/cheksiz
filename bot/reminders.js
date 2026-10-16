@@ -104,5 +104,12 @@ module.exports = {
       "3) Instagram va Facebook: 3-instagram-facebook-aytilmagan-ru.mp4\n" +
       "4) LinkedIn: 2-youtube-linkedin-aytilmagan-en.mp4\n\n" +
       "Musiqa: Reviver – The Grey Room / Density & Time, Cutscene Crush – Blue Deer Studio. Matnlarni Claude'dan so'rang (\"Aytilmagan matnlari\"), havolalarni unga yuboring ✅",
+    {
+      at: 12,
+      text:
+        "🎬 Eslatma: «Ikki mehmon» videosi!\n\n" +
+        "Veo'da qolgan 6 ta sahnani qiling: 11 (Ketsin), 12 (Dono), 13 (Ismi), 14 (Xato ketadi), 15 (Xabar), 16 (Tong). Promptlar rasm yonida: https://claude.ai/artifact/2BBW4uJKNfKxXmXNtQd9Zs\n" +
+        "Musiqani tanlang: A, B, C, D yoki E. Keyin hammasini Claude'ga yuboring, u videoni yig'adi ✅",
+    },
   ],
 };
