@@ -2,7 +2,7 @@
 
 Ovoz: Manus `suhbat_umumiy.wav` + `alohida_qatorlar.zip` (24 qator). L = ovoz qatori raqami.
 
-Egasi tanlovi (2026-10-16): ovoz 1.1x tezlikda (2:05). 1-rasm (eski o'zbek uyi uslubi) qoladi. Keyingi promptlarda chiroq olovi neon moviy rangda. Qolgan promptlar egasi so'raganda beriladi. Yigit (`img/ref_yigit.webp`) tasdiqlandi. Dono = Yigitning ichki ovozi, ingichka, xira, nafis neon chiziqlar (yorqin emas) + atrofida mayda ko'k zarrachalar, chetlari biroz shaffof; videoda neon "nafas oladi" (montajda) (do'ppi kashtasi, kamzul kashtasi, ko'z qorachig'i ko'k neon). Soya obrazi tasdiqlandi (`img/ref_soya.webp`). Xato odamga o'xshab qolgani uchun neon qog'oz "xato" obraziga almashtirildi.
+Egasi tanlovi (2026-10-16): ovoz 1.1x tezlikda (2:05). 1-rasm (eski o'zbek uyi uslubi) qoladi. Keyingi promptlarda chiroq olovi neon moviy rangda. Qolgan promptlar egasi so'raganda beriladi. Yigit (`img/ref_yigit.webp`) tasdiqlandi. Dono (`img/ref_dono.webp`, tasdiqlangan: zarrachalar + kuchliroq kashta neoni, kamzul ko'k) = Yigitning ichki ovozi, ingichka, xira, nafis neon chiziqlar (yorqin emas) + atrofida mayda ko'k zarrachalar, chetlari biroz shaffof; videoda neon "nafas oladi" (montajda) (do'ppi kashtasi, kamzul kashtasi, ko'z qorachig'i ko'k neon). Soya obrazi tasdiqlandi (`img/ref_soya.webp`). Xato odamga o'xshab qolgani uchun neon qog'oz "xato" obraziga almashtirildi.
 
 ## 1. Eshik (L1)
 Ovoz: Bugun kechasi eshigingni ikki mehmon taqillatadi.
