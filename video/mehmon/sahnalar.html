@@ -1,0 +1,169 @@
+<title>Ikki mehmon sahnalari</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column of scene cards, image beside its prompt on wide screens, stacked on phones. Single dark "night room" look. */
+:root{--bg:#14110f;--card:#1e1915;--line:#3a2f26;--fg:#efe6da;--muted:#b3a593;--neon:#5fd4f0;--ember:#ff7a5c;
+--display:"Spectral",Georgia,serif;--body:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding-block:28px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,5vw,40px);margin:0;text-wrap:balance}
+.intro{color:var(--muted);margin:0;max-width:62ch}
+.card{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.media img{width:100%;border-radius:6px;display:block}
+.noimg{aspect-ratio:9/16;border:1px dashed var(--line);border-radius:6px;display:grid;place-items:center;color:var(--muted)}
+.txt{min-width:0;display:flex;flex-direction:column;gap:10px}
+header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.num{font-family:var(--mono);color:var(--neon);font-size:14px}
+h2{font-family:var(--display);font-weight:600;font-size:24px;margin:0}
+.dur{font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.dur.todo{color:var(--ember);border-color:var(--ember)}
+.lbl{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.voice{margin:0;font-style:italic}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;user-select:all}
+.copy{align-self:flex-start;font:600 15px var(--body);color:var(--bg);background:var(--neon);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.copy.done{background:var(--fg)}
+.copy:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+@media (max-width:640px){.card{grid-template-columns:1fr}.media img{max-height:70vh;object-fit:contain}}
+</style>
+<div class="wrap">
+<h1>«Ikki mehmon» sahnalari</h1>
+<p class="intro">Har bir sahna: rasm, ovoz qatori va Kling/Veo uchun video prompti. «Nusxa olish» tugmasini bosing va promptni rasm bilan birga Kling'ga qo'ying. 14-sahnaning rasmi hali yo'q, unda ChatGPT uchun rasm prompti turibdi.</p>
+<article class="card" id="s1">
+<div class="media"><img src="img/01_eshik.webp" alt="1-sahna: Eshik" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">1</span><h2>Eshik</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Bugun kechasi eshigingni ikki mehmon taqillatadi.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p1">Static camera with a very slow push-in toward the carved wooden double door. Three slow, heavy knocks on the door from outside: with each knock the door panels tremble slightly and fine dust floats in the warm lamp light. Under the door, in the bright strip of light, the small pair of feet and the large pair of feet shift slightly and their long shadows on the floor move a little. The oil lamp flame flickers gently, the steam from the piyola rises slowly. The door stays closed, nobody enters. Quiet, mysterious evening mood, realistic motion, no camera shake, no text.</pre>
+<button type="button" class="copy" data-t="p1">Nusxa olish</button>
+</div></article><article class="card" id="s2">
+<div class="media"><img src="img/ref_yigit.webp" alt="2-sahna: Yigit" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">2</span><h2>Yigit</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Ikkitami? Kim ekan?</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p2">The tired young man, resting his head on his hand, suddenly lifts his head and turns toward the door with surprise, as if he just heard a knock, his eyebrows rise and he lowers his hand from his head. The blue lamp flame flickers gently, thin steam rises from the piyola. Static camera, realistic natural motion, no text.</pre>
+<button type="button" class="copy" data-t="p2">Nusxa olish</button>
+</div></article><article class="card" id="s3">
+<div class="media"><img src="img/ref_xato.webp" alt="3-sahna: Xato" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">3</span><h2>Xato</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Birinchisi kichkina. Boshini egib turibdi. Qo&#x27;lida qog&#x27;oz.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p3">The small paper figure stands shyly in the middle of the room, slowly lifts its head a little and looks up with sad human eyes, then lowers it again, holding the glowing blue neon paper with both hands. Its thin red neon outlines flicker gently like a glitch once or twice, its red glow reflects softly on the carpet. The blue lamp flame flickers. Very slow push-in, calm realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p3">Nusxa olish</button>
+</div></article><article class="card" id="s4">
+<div class="media"><img src="img/04_kirsin.webp" alt="4-sahna: Kirsin" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">4</span><h2>Kirsin</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Kirsin. Mehmon otangdek ulug&#x27;.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p4">The young man smiles warmly, keeps his right hand on his chest and makes a gentle inviting gesture with his left hand toward the small glowing paper figure. The small figure slowly looks up at him shyly, then takes two small careful steps forward over the threshold into the room, holding the blue neon paper with both hands. Its thin red neon outlines flicker softly, the blue lamp flame flickers gently, the lanterns in the night courtyard twinkle behind. Static camera, slow gentle realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p4">Nusxa olish</button>
+</div></article><article class="card" id="s5">
+<div class="media"><img src="img/05_qogoz.webp" alt="5-sahna: Qog&#x27;oz" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">5</span><h2>Qog&#x27;oz</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Qog&#x27;ozda yozilgan: mijozga noto&#x27;g&#x27;ri fayl yubording.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p5">Very slow push-in on the glowing blue neon sheet of paper. The lines of light on the paper shimmer softly, and the one short broken line in the middle glitches and flickers like a digital error two or three times. The small red-glowing paper hands tremble slightly, the thin red neon edges flicker. The blue lamp flame in the background flickers gently, steam rises from the teapot. Shallow depth of field, calm realistic motion, no readable text, no text.</pre>
+<button type="button" class="copy" data-t="p5">Nusxa olish</button>
+</div></article><article class="card" id="s6">
+<div class="media"><img src="img/06_xijolat.webp" alt="6-sahna: Xijolat" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">6</span><h2>Xijolat</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Ha... bo&#x27;ladi-da. Ertaga tuzataman.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p6">The young man rubs the back of his neck with an embarrassed small smile, glances down for a moment, then shrugs one shoulder slightly and looks back up with a light careless smile, as if saying &quot;it happens&quot;. The blue lamp flame flickers gently, thin steam rises from the teapot. Static camera, subtle natural realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p6">Nusxa olish</button>
+</div></article><article class="card" id="s7">
+<div class="media"><img src="img/ref_soya.webp" alt="7-sahna: Soya ostonada" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">7</span><h2>Soya ostonada</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Uning orqasidan ikkinchisi keldi. Katta. Sovuq. Faqat ostonada turmoqchi. / Tursin. Nima bo&#x27;pti?</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p7">The tall dark smoky figure stands motionless in front of the carved door, its edges slowly drifting like smoke, thin smoke creeping across the floor toward the camera. A cold blue rim light breathes faintly around it. The blue lamp flame trembles and dims for a moment, then recovers. Very slow push-in, mysterious but not scary, realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p7">Nusxa olish</button>
+</div></article><article class="card" id="s8">
+<div class="media"><img src="img/08_pichirlash.webp" alt="8-sahna: Pichirlash" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">8</span><h2>Pichirlash</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Endi senga pichirlayapti: «Sen doim shunaqasan.» / Balki rostdir...</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p8">The dark smoky shadow figure slowly leans closer to the young man&#x27;s ear as if whispering, its smoke drifting and curling around his head and shoulder, its dark hand resting on his shoulder. The young man slowly lowers his eyes, his brows tighten and his face becomes sad and heavy. The warm light on his face dims a little, the blue lamp flame flickers. Very slow push-in, no sudden movements, mysterious but not scary, realistic, no text.</pre>
+<button type="button" class="copy" data-t="p8">Nusxa olish</button>
+</div></article><article class="card" id="s9">
+<div class="media"><img src="img/09_torda.webp" alt="9-sahna: To&#x27;rda" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">9</span><h2>To&#x27;rda</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Endi to&#x27;rga o&#x27;tib oldi: «Seni ishdan bo&#x27;shatishadi.» / Bo&#x27;shatishsa-chi? Uydagilarga nima deyman?</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p9">The dark smoky shadow figure sits motionless at the head of the low table like the master of the house, smoke slowly drifting from its body and creeping across the table toward the young man. The young man sits small at the far edge, shifts uneasily, rubs his hands and looks down. The light of the hanging lantern and the blue oil lamp slowly dims a little. Static wide camera with a very slow push-in, quiet heavy mood, realistic, no text.</pre>
+<button type="button" class="copy" data-t="p9">Nusxa olish</button>
+</div></article><article class="card" id="s10">
+<div class="media"><img src="img/10_tun.webp" alt="10-sahna: Tun" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">10</span><h2>Tun</h2><span class="dur">10 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Tun. Birinchi mehmon allaqachon uxlab qoldi. Ikkinchisi esa yostig&#x27;ing yonida.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p10">Moonlit night. The young man lies awake with open eyes, staring up, blinks slowly and sighs heavily. The small paper figure sleeps peacefully in the corner, its red neon glow pulsing softly like slow breathing, the blue paper glowing in its arms. The dark smoky shadow sits beside his pillow, its smoke slowly drifting toward his face. The moon in the window, the tiny blue lamp flame flickers. Static camera with a very slow push-in, quiet heavy mood, no text.</pre>
+<button type="button" class="copy" data-t="p10">Nusxa olish</button>
+</div></article><article class="card" id="s11">
+<div class="media"><img src="img/11_ketsin.webp" alt="11-sahna: Ketsin!" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">11</span><h2>Ketsin!</h2><span class="dur">5 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Hoy, bu mening uyim-ku! Ketsin!</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p11">The young man angrily points at the open door and shouts, his arm firm, his face tense, leaning toward the dark figure. The dark smoky shadow figure does not move at all, only its smoke slowly curls and rises, calm and heavy. The blue lamp flame trembles. Static camera, realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p11">Nusxa olish</button>
+</div></article><article class="card" id="s12">
+<div class="media"><img src="img/ref_dono.webp" alt="12-sahna: Dono" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">12</span><h2>Dono</h2><span class="dur">10 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Ketmaydi. Uni o&#x27;zing choyga taklif qilding. Endi u mehmon emas, xo&#x27;jayin. / U o&#x27;zi kim?</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p12">The man sits calmly and slowly raises the piyola, takes one small sip of tea and lowers it, then looks at the camera with a kind, knowing half-smile. Tiny, sparse blue-cyan light particles appear around him and drift slowly upward like fireflies, a few at a time, softly fading in and out. The thin blue-cyan neon lines on his doppi embroidery and waistcoat trim slowly breathe: they glow a little brighter, then dim, in a calm rhythm like slow breathing, always subtle and hair-thin, never bright. His eyes stay human and kind. The blue neon flame of the oil lamp flickers gently, steam rises from the teapot. Static camera with a very slow push-in, realistic natural motion, no sudden movements, no text.</pre>
+<button type="button" class="copy" data-t="p12">Nusxa olish</button>
+</div></article><article class="card" id="s13">
+<div class="media"><img src="img/13_ismi.webp" alt="13-sahna: Ismi" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">13</span><h2>Ismi</h2><span class="dur">10 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Uning ismi «Men yaramasman». U doim xatoning orqasidan keladi. / Birinchisi-chi? Xato?</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p13">The wise man in the foreground slowly raises his finger a little higher with a calm, knowing look at the camera, tiny blue light particles drifting around him, the thin neon embroidery on his doppi and waistcoat softly breathing brighter and dimmer. In the background the dark smoky figure in the corner is slowly revealed as a cold blue light grows around it, its smoke swirling. Slow rack focus from the wise man to the shadow figure and back. Realistic calm motion, no text.</pre>
+<button type="button" class="copy" data-t="p13">Nusxa olish</button>
+</div></article><article class="card" id="s14">
+<div class="media"><div class="noimg">Rasm hali yo'q</div></div>
+<div class="txt">
+<header><span class="num">14</span><h2>Xato ketadi</h2><span class="dur todo">rasm kerak</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Xato haqiqiy mehmon. Uni kutib ol: tan ol, uzr so&#x27;ra, tuzat. Ertalab o&#x27;zi ketadi. / Ikkinchisi-chi?</p>
+<p class="lbl">Rasm prompti (ChatGPT)</p>
+<pre id="p14">Early morning: XATO bows politely and walks out through the open carved door into a sunlit Uzbek courtyard with a grapevine trellis and a blue sky, golden morning light. PLACE: the main room of a traditional Uzbek house, now in the bright morning: a carved wooden double door, white plastered walls with niches holding folded blankets and ceramic plates, a low wooden table (dastarxon) with a teapot, piyola bowls and round non bread, colorful kurpacha mattresses on the floor, an old brass oil lamp whose flame glows bright blue-cyan neon instead of orange. XATO: a small, child-sized, clearly non-human figure made of crumpled translucent paper, glowing from inside with soft red and orange neon light, thin neon-red outlines along its edges that flicker and glitch like a digital error, a plain chest with no symbols, no cross, no marks, no signs anywhere on its body, a gentle face with real human eyes (natural brown eyes with eyelashes, not glowing, not empty), head bowed, holding with both hands a single glowing neon sheet of paper that is made of light, its edges and faint lines shining bright blue-cyan neon, harmless, shy and a little sad, cute rather than scary. Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm tungsten lamp light with soft shadows, slightly desaturated nostalgic color grade with amber and deep teal, fine film grain, warm hopeful morning mood. No text, no letters, no logos, no watermark, no subtitles.</pre>
+<button type="button" class="copy" data-t="p14">Nusxa olish</button>
+</div></article><article class="card" id="s15">
+<div class="media"><img src="img/15_xabar.webp" alt="15-sahna: Xabar" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">15</span><h2>Xabar</h2><span class="dur">10 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Unga uchta savol ber... / Rahbarim faqat «faylni qayta yubor» degan edi... / Ana. Fakt shu. Qolgani mehmonning gapi.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p15">The young man types a short message on the laptop with a calm, focused face, then presses one key firmly to send it and exhales with relief. The wise man beside him sips tea and nods with a quiet smile, tiny blue particles drifting around him. Behind them the dark smoky figure slowly breaks apart into thin smoke and dark specks and fades away completely. The blue lamp flame becomes steady and calm. Static camera, slow realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p15">Nusxa olish</button>
+</div></article><article class="card" id="s16">
+<div class="media"><img src="img/16_tong.webp" alt="16-sahna: Tong" loading="lazy"></div>
+<div class="txt">
+<header><span class="num">16</span><h2>Tong</h2><span class="dur">10 s</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Xato hammaning eshigini taqillatadi. Uning sherigini ichkariga kiritish-kiritmaslikni esa o&#x27;zing tanlaysan.</p>
+<p class="lbl">Video prompti (Kling / Veo)</p>
+<pre id="p16">Bright morning. The young man and the wise man drink tea together and smile at each other, the young man laughs softly with relief. Sunlight streams through the open carved door, grapevine leaves move in a light breeze outside, dust sparkles in the sunbeams, a few tiny blue particles drift around the wise man. Very slow camera pull-back, warm peaceful ending, realistic motion, no text.</pre>
+<button type="button" class="copy" data-t="p16">Nusxa olish</button>
+</div></article>
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+ const pre=document.getElementById(b.dataset.t);const t=pre.textContent;
+ const ok=()=>{b.textContent='Nusxa olindi';b.classList.add('done');setTimeout(()=>{b.textContent='Nusxa olish';b.classList.remove('done')},1800)};
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Belgilandi, nusxa oling'};
+ try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+}));
+</script>
