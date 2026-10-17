@@ -7,4 +7,6 @@ Yig'ish: `build.py` (sahnalarni ovozga moslaydi, uz subtitr), keyin `video/cine.
 
 Musiqa (egasi tanlagan, I varianti): 0–1:25 «Foggy» – Nat Keefe, 1:25 dan «Dutar's Whisper» (egasining o'z treki, 3:10 dan).
 
+Tuzatish (2026-10-17): 7-sahna oxiri va uchta savol joyi avval rasm bilan to'ldirilgan edi; egasi Vidu'da 2 ta klip qildi (`clips/s07b.mp4`, `clips/s14b_savollar.mp4`, xitoycha yozuv va suv belgisi `clean_vidu.py` bilan olib tashlangan). Qisqa klip qolgan joylar rasm emas, klipni sekinlashtirish (minterpolate) bilan to'ldirildi. Qoida: videoda hech qachon rasm bilan to'ldirilgan joy qoldirmaslik.
+
 Tayyor: `video/final/mehmon/1-telegram-ikki-mehmon-uz.mp4` (2:14). Qoldi: ru/en versiyalar, post matnlari.
