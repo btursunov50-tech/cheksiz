@@ -21,9 +21,9 @@ STYLE = ("Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shal
 KEEP = {"ref_odam + 06_sousiz": "Keep THE MAN exactly as in the first attached reference image (same face, same age about 35, same slim face shape, same neat slightly wavy hair, beard, light-blue shirt and trousers; do not make him older or heavier) and THE COOK exactly as in the second attached image (same face, white cap, white T-shirt, white apron, black gloves).",
  "11_maktab": "The student is the same boy as in the attached image, now grown up: same face shape, eyes and black hair.",
  "06_sousiz": "Keep THE COOK and the kitchen exactly as in the attached image: same face, cap, T-shirt, apron, black gloves, steel table and food containers.",
- "ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi.",
+ "ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor with only two smooth blue eye arcs and no mouth, orange ear rings, gold infinity symbol and doppi.",
  "ref_odam": "Keep THE MAN exactly as in the attached reference image: same face, hair, beard, light-blue shirt and trousers.",
- "ref_robot + ref_odam": "Keep THE ROBOT and THE MAN exactly as in the two attached reference images: the robot's chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi; the man's face, hair, beard, light-blue shirt and trousers."}
+ "ref_robot + ref_odam": "Keep THE ROBOT and THE MAN exactly as in the two attached reference images: the robot's chrome body, visor with only two smooth blue eye arcs and no mouth, orange ear rings, gold infinity symbol and doppi; the man's face, hair, beard, light-blue shirt and trousers."}
 END = "No text, no letters, no logos, no watermark, no subtitles."
 
 R, M, B = "ref_robot", "ref_odam", "ref_robot + ref_odam"
