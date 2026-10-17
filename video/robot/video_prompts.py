@@ -28,7 +28,7 @@ V = [
  ("09_xato", 9, "Xato ushlandi", "4 s", "To'xtang. Sous hali qo'shilmadi.",
   "Animate this image. Fixed top-down security-camera view, the camera does not move. THE COOK's gloved hands start to fold the lavash, then stop and freeze in place just before wrapping it, as if he suddenly noticed something; the white sauce bottle stays on the counter. Slight wide-angle security-camera look. Keep THE COOK, the lavash and the food exactly as in the image for the whole clip; the lavash has no sauce on it."),
  ("10_ikkalasi", 10, "Ikkalasi supada", "10 s", "Faqat lavash uchunmi? / Yo'q. Eng qimmat ish qo'l bilan emas, bosh bilan qilinadi.",
-  "Animate this image. Slow gentle push-in on both characters. THE ROBOT puts its piyola down on the low table, then raises one chrome finger as if starting an important explanation, its blue eye arcs blink once. THE MAN leans a little forward with a curious smile and listens. Leaves and string lights move gently, steam rises from the piyolas. " + KEEP_M + " " + KEEP_R),
+  "Animate this image. Slow gentle push-in on both characters. THE ROBOT keeps its raised chrome index finger up and moves it slightly as if starting an important explanation, its other hand rests near the piyola on the table, its blue eye arcs blink once. THE MAN leans a little forward with a curious smile and listens. Leaves and string lights move gently, steam rises from the piyolas. " + KEEP_M + " " + KEEP_R),
 ]
 def full(p): return p + " " + END
 if __name__ == "__main__":
