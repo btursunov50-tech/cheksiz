@@ -29,7 +29,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Nusxa» (11-video): tayyor 2026-10-13, 2026-10-17 da joylandi (jadvalda 12-qator). Neon chiziqli mini-drama: AI o'g'ilning yuzi va ovozini nusxalab onadan pul so'raydi, ona maxfiy savol beradi. Musiqa: YouTube/LinkedIn – The Road To Mordor + Michael Yanis «Piano Dreams» (36.7 s dan); Telegram/Instagram/Facebook – «Piano Dreams» + Tohir Mahkamov «Vodiy Yulduzlari» (36.7 s dan, qo'shiqning 0:16 dan). Fayllar: `video/nusxa/`.
 
-- «Aytilmagan gaplar» (12-video): tayyor 2026-10-14, 2026-10-17 da joylanadi. Ota, o'g'il va diktor ovozlari, AI «Asl ma'nosi» neon tarjimasi. Musiqa: Reviver – The Grey Room / Density & Time + Cutscene Crush – Blue Deer Studio. Fayllar: `video/aytilmagan/`, `video/final/aytilmagan/`.
+- «Aytilmagan gaplar» (12-video): tayyor 2026-10-14, 2026-10-18 da joylanadi. Ota, o'g'il va diktor ovozlari, AI «Asl ma'nosi» neon tarjimasi. Musiqa: Reviver – The Grey Room / Density & Time + Cutscene Crush – Blue Deer Studio. Fayllar: `video/aytilmagan/`, `video/final/aytilmagan/`.
 
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
