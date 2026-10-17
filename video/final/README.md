@@ -4,8 +4,8 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 
 | Papka | Video | Joylash kuni |
 |---|---|---|
-| `nusxa/` | «Nusxa»: AI o'g'ilning ovozini nusxalaydi (maxfiy so'z) | 2026-10-16 |
 | `aytilmagan/` | «Aytilmagan gaplar»: AI ota-o'g'il gaplarining asl ma'nosini ko'rsatadi | 2026-10-17 |
+| `mehmon/` | «Ikki mehmon»: Xato va Soya eshik qoqadi, Dono ichki ovoz | navbatda |
 
 Fayllar: `1-telegram-*-uz.mp4` (Telegram), `2-youtube-linkedin-*-en.mp4` (YouTube + LinkedIn), `3-instagram-facebook-*-ru.mp4` (Instagram + Facebook), `*-uz.srt`, `*-ru.srt`, `*-en.srt` (YouTube subtitrlari).
 GitHub'dan yuklab olish: fayl ustiga bosing → «Download raw file».
