@@ -18,7 +18,9 @@ KITCHEN = ("PLACE: the kitchen table of the same small lavash shop, stainless st
 COOK = "THE COOK: a young Uzbek cook about 22 in a white apron and white cap, thin black gloves."
 STYLE = ("Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm golden light, gentle teal-and-amber "
  "color grade, natural skin texture, realistic chrome reflections.")
-KEEP = "Keep THE ROBOT and THE MAN exactly as in the attached reference images: same face, hair, beard, clothes, chrome body, visor, eyes, ear rings and doppi."
+KEEP = {"ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi.",
+ "ref_odam": "Keep THE MAN exactly as in the attached reference image: same face, hair, beard, light-blue shirt and trousers.",
+ "ref_robot + ref_odam": "Keep THE ROBOT and THE MAN exactly as in the two attached reference images: the robot's chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi; the man's face, hair, beard, light-blue shirt and trousers."}
 END = "No text, no letters, no logos, no watermark, no subtitles."
 
 R, M, B = "ref_robot", "ref_odam", "ref_robot + ref_odam"
@@ -70,7 +72,7 @@ S = [
 ]
 def prompt(s):
     name, t, voice, ref, act, parts = s
-    keep = [KEEP] if ref.startswith("ref") else []
+    keep = [KEEP[ref]] if ref in KEEP else []
     return " ".join([act] + parts + [STYLE] + keep + [END])
 if __name__ == "__main__":
     out = ["# «Robot bilan bir piyola choy» — 22 ta rasm prompti (ChatGPT, 9:16)", "",
