@@ -1,0 +1,61 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: S,Inter ExtraBold,64,&H00FFFFFF,&H00FFFFFF,&H00201008,&H90000000,-1,0,0,0,100,100,0,0,1,5,3,2,70,70,300,1
+Style: C,Inter ExtraBold,64,&H00FFE600,&H00FFFFFF,&H00301000,&H90000000,-1,0,0,0,100,100,0,0,1,5,3,2,70,70,300,1
+Style: F,Inter ExtraBold,64,&H0047B3FF,&H00FFFFFF,&H00001030,&H90000000,-1,-1,0,0,100,100,0,0,1,5,3,2,70,70,300,1
+Style: Q,Inter ExtraBold,58,&H00FFE600,&H00FFFFFF,&H00301000,&H90000000,-1,0,0,0,100,100,0,0,1,4,3,8,80,80,190,1
+Style: O,Inter ExtraBold,64,&H00A0E6FF,&H00FFFFFF,&H00102030,&H90000000,-1,-1,0,0,100,100,0,0,1,5,3,2,70,70,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.00,0:00:06.33,C,,0,0,0,,{\fad(120,120)}Bugun kechasi eshigingni ikki mehmon taqillatadi.
+Dialogue: 0,0:00:06.68,0:00:08.69,S,,0,0,0,,{\fad(120,120)}Ikkitami? Kim ekan?
+Dialogue: 0,0:00:09.04,0:00:10.98,C,,0,0,0,,{\fad(120,120)}Birinchisi kichkina.
+Dialogue: 0,0:00:11.03,0:00:13.06,C,,0,0,0,,{\fad(120,120)}Boshini egib turibdi.
+Dialogue: 0,0:00:13.11,0:00:14.55,C,,0,0,0,,{\fad(120,120)}Qo'lida qog'oz.
+Dialogue: 0,0:00:14.90,0:00:17.77,S,,0,0,0,,{\fad(120,120)}Kirsin. Mehmon otangdek ulug'.
+Dialogue: 0,0:00:18.12,0:00:22.69,C,,0,0,0,,{\fad(120,120)}Qog'ozda yozilgan: mijozga noto'g'ri fayl yubording.
+Dialogue: 0,0:00:23.04,0:00:24.66,S,,0,0,0,,{\fad(120,120)}Ha... bo'ladi-da.
+Dialogue: 0,0:00:24.71,0:00:26.34,S,,0,0,0,,{\fad(120,120)}Ertaga tuzataman.
+Dialogue: 0,0:00:26.69,0:00:30.60,C,,0,0,0,,{\fad(120,120)}Uning orqasidan ikkinchisi keldi.
+Dialogue: 0,0:00:30.65,0:00:32.16,C,,0,0,0,,{\fad(120,120)}Katta. Sovuq.
+Dialogue: 0,0:00:32.21,0:00:35.16,C,,0,0,0,,{\fad(120,120)}Faqat ostonada turmoqchi.
+Dialogue: 0,0:00:35.51,0:00:37.02,S,,0,0,0,,{\fad(120,120)}Tursin. Nima bo'pti?
+Dialogue: 0,0:00:37.37,0:00:41.86,C,,0,0,0,,{\fad(120,120)}Endi senga pichirlayapti: «Sen doim shunaqasan.»
+Dialogue: 0,0:00:42.21,0:00:44.69,S,,0,0,0,,{\fad(120,120)}Balki rostdir...
+Dialogue: 0,0:00:45.04,0:00:50.35,C,,0,0,0,,{\fad(120,120)}Endi to'rga o'tib oldi: «Seni ishdan bo'shatishadi.»
+Dialogue: 0,0:00:50.70,0:00:51.56,S,,0,0,0,,{\fad(120,120)}Bo'shatishsa-chi?
+Dialogue: 0,0:00:51.61,0:00:52.84,S,,0,0,0,,{\fad(120,120)}Uydagilarga nima deyman?
+Dialogue: 0,0:00:53.19,0:00:53.59,C,,0,0,0,,{\fad(120,120)}Tun.
+Dialogue: 0,0:00:53.64,0:00:58.03,C,,0,0,0,,{\fad(120,120)}Birinchi mehmon allaqachon uxlab qoldi.
+Dialogue: 0,0:00:58.08,0:01:01.78,C,,0,0,0,,{\fad(120,120)}Ikkinchisi esa yostig'ing yonida.
+Dialogue: 0,0:01:02.13,0:01:04.94,S,,0,0,0,,{\fad(120,120)}Hoy, bu mening uyim-ku! Ketsin!
+Dialogue: 0,0:01:05.29,0:01:06.14,C,,0,0,0,,{\fad(120,120)}Ketmaydi.
+Dialogue: 0,0:01:06.19,0:01:09.44,C,,0,0,0,,{\fad(120,120)}Uni o'zing choyga taklif qilding.
+Dialogue: 0,0:01:09.49,0:01:12.34,C,,0,0,0,,{\fad(120,120)}Endi u mehmon emas, xo'jayin.
+Dialogue: 0,0:01:12.69,0:01:14.21,S,,0,0,0,,{\fad(120,120)}U o'zi kim?
+Dialogue: 0,0:01:14.56,0:01:18.35,C,,0,0,0,,{\fad(120,120)}Uning ismi «Men yaramasman».
+Dialogue: 0,0:01:18.40,0:01:22.88,C,,0,0,0,,{\fad(120,120)}U doim xatoning orqasidan keladi.
+Dialogue: 0,0:01:23.23,0:01:25.16,S,,0,0,0,,{\fad(120,120)}Birinchisi-chi? Xato?
+Dialogue: 0,0:01:25.51,0:01:27.56,C,,0,0,0,,{\fad(120,120)}Xato haqiqiy mehmon.
+Dialogue: 0,0:01:27.61,0:01:31.64,C,,0,0,0,,{\fad(120,120)}Uni kutib ol: tan ol, uzr so'ra, tuzat.
+Dialogue: 0,0:01:31.69,0:01:33.74,C,,0,0,0,,{\fad(120,120)}Ertalab o'zi ketadi.
+Dialogue: 0,0:01:34.09,0:01:35.20,S,,0,0,0,,{\fad(120,120)}Ikkinchisi-chi?
+Dialogue: 0,0:01:35.55,0:01:37.25,C,,0,0,0,,{\fad(120,120)}Unga uchta savol ber.
+Dialogue: 0,0:01:37.30,0:01:38.67,C,,0,0,0,,{\fad(120,120)}Aniq nima bo'ldi?
+Dialogue: 0,0:01:38.72,0:01:41.18,C,,0,0,0,,{\fad(120,120)}Nimani o'zim o'ylab topyapman?
+Dialogue: 0,0:01:41.23,0:01:44.27,C,,0,0,0,,{\fad(120,120)}Hozir qanday bitta qadam qila olaman?
+Dialogue: 0,0:01:44.62,0:01:49.56,S,,0,0,0,,{\fad(120,120)}Rahbarim faqat «faylni qayta yubor» degan edi...
+Dialogue: 0,0:01:49.91,0:01:52.08,C,,0,0,0,,{\fad(120,120)}Ana. Fakt shu.
+Dialogue: 0,0:01:52.13,0:01:55.88,C,,0,0,0,,{\fad(120,120)}Qolgani mehmonning gapi.
+Dialogue: 0,0:01:56.23,0:01:59.25,C,,0,0,0,,{\fad(120,120)}Xato hammaning eshigini taqillatadi.
+Dialogue: 0,0:01:59.30,0:02:05.21,C,,0,0,0,,{\fad(120,120)}Uning sherigini ichkariga kiritish-kiritmaslikni esa o'zing tanlaysan.
+Dialogue: 1,0:01:37.92,0:01:39.94,Q,,0,0,0,,{\fad(200,0)}1. Aniq nima bo'ldi?
+Dialogue: 1,0:01:39.94,0:01:42.39,Q,,0,0,0,,{\fad(200,0)}1. Aniq nima bo'ldi?\N2. Nimani o'zim o'ylab topyapman?
+Dialogue: 1,0:01:42.39,0:01:55.93,Q,,0,0,0,,{\fad(200,150)}1. Aniq nima bo'ldi?\N2. Nimani o'zim o'ylab topyapman?\N3. Hozir qanday bitta qadam qila olaman?
