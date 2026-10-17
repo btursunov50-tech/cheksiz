@@ -97,7 +97,7 @@ module.exports = {
         "Promptlar: Claude'dan \"Robot promptlari\" deb so'rang ✅",
     },
   ],
-  "2026-10-17": [
+  "2026-10-18": [
     "📌 Eslatma: bugun «Aytilmagan gaplar» videosini joylang!\n\n" +
       "1) Telegram kanal: 1-telegram-aytilmagan-uz.mp4\n" +
       "2) YouTube Shorts: 2-youtube-linkedin-aytilmagan-en.mp4 + aytilmagan-uz.srt, aytilmagan-ru.srt\n" +
