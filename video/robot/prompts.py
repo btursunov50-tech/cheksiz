@@ -18,7 +18,8 @@ KITCHEN = ("PLACE: the kitchen table of the same small lavash shop, stainless st
 COOK = "THE COOK: a young Uzbek cook about 20 with short black hair, a white cotton cap, a plain white T-shirt under a white apron, thin black nitrile gloves."
 STYLE = ("Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm golden light, gentle teal-and-amber "
  "color grade, natural skin texture, realistic chrome reflections.")
-KEEP = {"06_sousiz": "Keep THE COOK and the kitchen exactly as in the attached image: same face, cap, T-shirt, apron, black gloves, steel table and food containers.",
+KEEP = {"11_maktab": "The student is the same boy as in the attached image, now grown up: same face shape, eyes and black hair.",
+ "06_sousiz": "Keep THE COOK and the kitchen exactly as in the attached image: same face, cap, T-shirt, apron, black gloves, steel table and food containers.",
  "ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi.",
  "ref_odam": "Keep THE MAN exactly as in the attached reference image: same face, hair, beard, light-blue shirt and trousers.",
  "ref_robot + ref_odam": "Keep THE ROBOT and THE MAN exactly as in the two attached reference images: the robot's chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi; the man's face, hair, beard, light-blue shirt and trousers."}
@@ -48,8 +49,8 @@ S = [
   "Two-shot on the supa: THE MAN on the left leaning forward curiously, THE ROBOT on the right putting its piyola down on the low table and raising one finger as if starting an important explanation. Both the same human size.", [MAN, ROBOT, CHOY]),
  ("Shifokor yo'li: maktab", "71–80 s", "Avval tug'ilishi kerak. Keyin maktab.", "namuna kerak emas",
   "Warm nostalgic scene: an Uzbek schoolboy about 9 years old in a white shirt sitting at a wooden school desk in a sunny classroom, reading a large illustrated book about the human body, a toy stethoscope next to him.", []),
- ("Shifokor yo'li: institut", "80–85 s", "Keyin institut. Keyin yillar davomida amaliyot.", "namuna kerak emas",
-  "A young Uzbek medical student about 24 years old in a white coat studying late at night at a desk with tall stacks of thick medical books and an anatomy model, a desk lamp glowing, a wall clock showing a late hour, tired but determined.", []),
+ ("Shifokor yo'li: institut", "80–85 s", "Keyin institut. Keyin yillar davomida amaliyot.", "11_maktab",
+  "A young Uzbek medical student about 21 years old, clean-shaven with no beard and no stubble, short neat black hair, slim youthful face, in a white coat, studying late at night at a desk with tall stacks of thick medical books and an anatomy model, a desk lamp glowing, a wall clock showing a late hour, tired but determined. Through the window: a quiet Uzbek city at night with low apartment blocks and a few lit windows, no skyscrapers.", []),
  ("Qabulda", "85–96 s", "Sen esa uning oldiga yigirma daqiqaga kirasan. Va o'sha yillarning hammasi uchun to'laysan.", "namuna kerak emas",
   "A modest doctor's office: an experienced Uzbek doctor about 55 in a white coat listening to a patient across a desk, a large round wall clock clearly visible between them, a feeling of limited time.", []),
  ("Odam so'raydi", "97–99 s", "AI-shifokor arzonroqmi?", M,

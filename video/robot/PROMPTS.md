@@ -92,10 +92,10 @@ Warm nostalgic scene: an Uzbek schoolboy about 9 years old in a white shirt sitt
 
 ## 12. Shifokor yo'li: institut — 9:16 (tik), 80–85 s
 Ovoz: Keyin institut. Keyin yillar davomida amaliyot.
-Biriktiring: namuna kerak emas
+Biriktiring: 11_maktab
 
 ```
-A young Uzbek medical student about 24 years old in a white coat studying late at night at a desk with tall stacks of thick medical books and an anatomy model, a desk lamp glowing, a wall clock showing a late hour, tired but determined. Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm golden light, gentle teal-and-amber color grade, natural skin texture, realistic chrome reflections. No text, no letters, no logos, no watermark, no subtitles.
+A young Uzbek medical student about 21 years old, clean-shaven with no beard and no stubble, short neat black hair, slim youthful face, in a white coat, studying late at night at a desk with tall stacks of thick medical books and an anatomy model, a desk lamp glowing, a wall clock showing a late hour, tired but determined. Through the window: a quiet Uzbek city at night with low apartment blocks and a few lit windows, no skyscrapers. Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm golden light, gentle teal-and-amber color grade, natural skin texture, realistic chrome reflections. The student is the same boy as in the attached image, now grown up: same face shape, eyes and black hair. No text, no letters, no logos, no watermark, no subtitles.
 ```
 
 ## 13. Qabulda — 9:16 (tik), 85–96 s
