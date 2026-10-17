@@ -15,10 +15,11 @@ SHOP = ("PLACE: a small busy lavash fast-food shop in an Uzbek city in the eveni
  "warm light.")
 KITCHEN = ("PLACE: the kitchen table of the same small lavash shop, stainless steel surface, containers of sliced meat, tomatoes, cucumbers and "
  "a squeeze bottle of white garlic sauce.")
-COOK = "THE COOK: a young Uzbek cook about 22 in a white apron and white cap, thin black gloves."
+COOK = "THE COOK: a young Uzbek cook about 20 with short black hair, a white cotton cap, a plain white T-shirt under a white apron, thin black nitrile gloves."
 STYLE = ("Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm golden light, gentle teal-and-amber "
  "color grade, natural skin texture, realistic chrome reflections.")
-KEEP = {"ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi.",
+KEEP = {"06_sousiz": "Keep THE COOK and the kitchen exactly as in the attached image: same face, cap, T-shirt, apron, black gloves, steel table and food containers.",
+ "ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi.",
  "ref_odam": "Keep THE MAN exactly as in the attached reference image: same face, hair, beard, light-blue shirt and trousers.",
  "ref_robot + ref_odam": "Keep THE ROBOT and THE MAN exactly as in the two attached reference images: the robot's chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi; the man's face, hair, beard, light-blue shirt and trousers."}
 END = "No text, no letters, no logos, no watermark, no subtitles."
@@ -34,14 +35,14 @@ S = [
  ("1956 olimlar", "16–27 s", "1956-yili olimlar so'rashdi: mashina odamning aqliy ishini qila oladimi?", "namuna kerak emas",
   "Black-and-white 1950s documentary-style photo: a group of scientists in suits and thin ties standing around a large early room-sized computer with reels of magnetic tape and blinking panels, one of them writing equations on a chalkboard.", "BW"),
  ("Do'konda kassa", "28–35 s", "Sen kun bo'yi kassaga, telefonga, mijozga qaraysan. Oshpaz stoliga esa hech kim qaramaydi.", M,
-  "THE MAN stands at the cash register taking money from a customer while holding his phone to his ear and looking at a short queue, in the blurred background THE COOK wraps lavash at a kitchen table that nobody is watching.", [MAN, COOK, SHOP]),
+  "THE MAN stands behind the counter, busy and distracted, holding his phone to his ear with one hand and with the other hand holding a small card payment terminal toward a customer who taps a bank card, his eyes on the short queue, not looking at the camera, no cash and no banknotes anywhere, in the blurred background THE COOK wraps lavash at a kitchen table that nobody is watching.", [MAN, COOK, SHOP]),
  ("Sousiz lavash", "35–41 s", "Bitta lavash sousiz ketdi. Mijoz indamadi. Lekin qaytib kelmadi.", "namuna kerak emas",
   "Close-up of THE COOK's gloved hands wrapping a lavash with meat and vegetables but no sauce, the squeeze bottle of white garlic sauce standing untouched, in the soft background a customer walking out of the door with a paper-wrapped lavash.", [COOK, KITCHEN]),
  ("Odam o'ylanadi", "42–48 s", "Nazoratchi yollaymanmi? Unga oylik kerak.", M,
   "Close-up of THE MAN on the supa rubbing his beard with one hand, thinking hard, worried eyes, a piyola of tea in front of him.", [MAN, CHOY]),
- ("Kamera", "48–55 s", "Bitta kichik kamera. U faqat stolni ko'radi. Go'sht, sabzavot, sous.", "namuna kerak emas",
-  "A small white security camera mounted on the wall above the kitchen table, pointing straight down at the work surface with meat, vegetables and the sauce bottle, THE COOK's gloved hands working below, clean simple composition with empty space at the top for overlays.", [COOK, KITCHEN]),
- ("Xato ushlandi", "55–59 s", "To'xtang. Sous hali qo'shilmadi.", "namuna kerak emas",
+ ("Kamera", "48–55 s", "Bitta kichik kamera. U faqat stolni ko'radi. Go'sht, sabzavot, sous.", "06_sousiz",
+  "Low-angle close-up looking up at a small white dome camera mounted on a short steel bracket on the ceiling directly above the kitchen table, its lens pointing straight down at the table, the camera sharp in the upper half of the frame; below it, out of focus, the steel table with meat, vegetables, the sauce bottle and THE COOK's gloved hands working. A clearly different angle from a normal view of the cook, the camera is the hero of the shot, empty space at the top for overlays.", [COOK, KITCHEN]),
+ ("Xato ushlandi", "55–59 s", "To'xtang. Sous hali qo'shilmadi.", "06_sousiz",
   "Top-down view from the ceiling camera onto the stainless steel table: an open lavash with meat, tomatoes and cucumbers but no sauce, THE COOK's gloved hands frozen just before wrapping it, the squeeze bottle of white garlic sauce beside it, slight wide-angle security-camera look.", [COOK, KITCHEN]),
  ("Ikkalasi supada", "60–70 s", "Faqat lavash uchunmi? / Yo'q. Eng qimmat ish qo'l bilan emas, bosh bilan qilinadi.", B,
   "Two-shot on the supa: THE MAN on the left leaning forward curiously, THE ROBOT on the right putting its piyola down on the low table and raising one finger as if starting an important explanation. Both the same human size.", [MAN, ROBOT, CHOY]),
