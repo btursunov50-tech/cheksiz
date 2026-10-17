@@ -16,3 +16,7 @@ Reference portrait of THE MAN, vertical 9:16. THE MAN sits on a wooden supa faci
 - `img/ref_robot.jpg`: xrom tana, qora oyna niqob, ko'k «tabassum» ko'zlar (yoy shaklida), quloqlarida to'q sariq yorug' halqa, ko'kragida oltin ∞, qora-oq do'ppi (oq yoy naqshli, dumaloq), qo'lida ko'k-oq piyola. Har sahnada aynan shunday qolishi kerak.
 - `img/ref_odam.jpg`: ~35 yosh, qisqa qora soch, kalta qora soqol, och ko'k ko'ylak (yengi tirsakkacha), to'q kulrang shim, mehribon tabassum.
 - Fon (ikkalasida bir xil): ayvon, chiroq gulchambari, osma fonar, chinor, quyosh botishi, orqada ko'k gumbazli madrasa va minora (Buxoroga o'xshaydi), qizil naqshli gilam, ko'k-oq choynak, patir non.
+
+## To'liq tekshiruv (2026-10-17, 22 rasm)
+- Yigit yuzi ikki xil chiqdi: 05, 07, 10 namunaga mos (tartibli soch, to'liqroq soqol); 02, 14, 17, 19, 21, 22 da sochi to'zg'igan, soqoli siyrak (echki soqol). Bu 6 ta rasm ChatGPT'da tahrirlanadi (faqat yuz, soch, soqol namunadagidek).
+- Kichik farqlar (qoldi): 14–22 fonida 3 ta minora va tog'lar (1–10 da bitta minora); oshpaz 5–6 da futbolka, 8–9 da oshpaz ko'ylagi; 05 va 13 kichik o'lchamda (572×1024).
