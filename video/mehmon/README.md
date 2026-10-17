@@ -9,4 +9,6 @@ Musiqa (egasi tanlagan, I varianti): 0–1:25 «Foggy» – Nat Keefe, 1:25 dan 
 
 Tuzatish (2026-10-17): 7-sahna oxiri va uchta savol joyi avval rasm bilan to'ldirilgan edi; egasi Vidu'da 2 ta klip qildi (`clips/s07b.mp4`, `clips/s14b_savollar.mp4`, xitoycha yozuv va suv belgisi `clean_vidu.py` bilan olib tashlangan). Qisqa klip qolgan joylar rasm emas, klipni sekinlashtirish (minterpolate) bilan to'ldirildi. Qoida: videoda hech qachon rasm bilan to'ldirilgan joy qoldirmaslik.
 
-Tayyor: `video/final/mehmon/1-telegram-ikki-mehmon-uz.mp4` (2:14). Qoldi: ru/en versiyalar, post matnlari.
+Tartib tuzatildi (2026-10-17): "Xato haqiqiy mehmon... ertalab o'zi ketadi" gapida tungi kadrlar (s03, s04, s05 qoldiqlari); Xatoning ketishi (yangi Veo s14, Yigit kameraga burilishidan oldin 7,1 s da kesilgan) oxirgi gapga, s16 dan oldin ko'chirildi.
+
+Tayyor (`video/final/mehmon/`): 1-telegram-…-uz.mp4, 2-youtube-linkedin-…-en.mp4, 3-instagram-facebook-…-ru.mp4 + uz/ru/en .srt. Post matnlari: `POSTS.md`.
