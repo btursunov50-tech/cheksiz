@@ -4,6 +4,8 @@ from PIL import Image
 KEEP_R = ("Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue "
  "eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. "
  "Do not change its shape or colors.")
+KEEP_M = ("Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. "
+ "He does not speak, his mouth stays closed.")
 END = ("Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, "
  "no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.")
 V = [
@@ -17,13 +19,23 @@ V = [
   "Animate this image. Slight handheld camera. THE MAN listens to his phone with a tired, busy look, holding the card terminal while the customer taps the bank card, then he glances at the queue. In the background THE COOK keeps wrapping lavash and nobody watches him. Keep THE MAN exactly as in the image for the whole clip: same face, neat black hair, short black beard and light-blue shirt; keep THE COOK the same. The man does not speak, his mouth stays closed."),
  ("06_sousiz", 6, "Sousiz lavash", "6 s", "Bitta lavash sousiz ketdi. Mijoz indamadi. Lekin qaytib kelmadi.",
   "Animate this image. Steady camera with a slight push-in on the hands. THE COOK wraps the lavash with meat and vegetables without adding any sauce; the white sauce bottle stays untouched on the counter. In the background the customer walks out of the door with the paper-wrapped lavash. Keep THE COOK exactly as in the image for the whole clip: same face, white cap, white T-shirt, white apron and black gloves."),
+ ("02_telefon", 2, "Yigit telefonda", "5 s", "Qanaqa pul? Men seni faqat rasm va video uchun ishlataman.",
+  "Animate this image. Almost static camera with a very slight drift. THE MAN scrolls his phone with his thumb and keeps a careless half-smile. In the blurred foreground THE ROBOT slowly turns its head a little toward the man and its blue eye arcs blink once. Leaves and string lights move gently, steam rises from the piyolas. " + KEEP_M + " " + KEEP_R),
+ ("07_oylanadi", 7, "Yigit o'ylanadi", "6 s", "Nazoratchi yollaymanmi? Unga oylik kerak.",
+  "Animate this image. Very slow push-in toward THE MAN's face. He slowly rubs his chin and beard with his hand, thinking hard, his worried eyes move slightly to the side and back, he exhales calmly. Steam rises from the piyola, leaves and string lights move gently, the sunset stays unchanged. " + KEEP_M),
+ ("08_kamera", 8, "Kamera", "7 s", "Bitta kichik kamera. U faqat stolni ko'radi. Go'sht, sabzavot, sous.",
+  "Animate this image. Slow push-in toward the white dome camera on the ceiling. A tiny red light on the camera body blinks steadily, the lens inside the dome turns slightly and points straight down at the table. Below, out of focus, THE COOK keeps arranging meat, tomatoes and cucumbers on the lavash with his gloved hands; the sauce bottle stays untouched. Keep THE COOK, the camera and the kitchen exactly as in the image for the whole clip."),
+ ("09_xato", 9, "Xato ushlandi", "4 s", "To'xtang. Sous hali qo'shilmadi.",
+  "Animate this image. Fixed top-down security-camera view, the camera does not move. THE COOK's gloved hands start to fold the lavash, then stop and freeze in place just before wrapping it, as if he suddenly noticed something; the white sauce bottle stays on the counter. Slight wide-angle security-camera look. Keep THE COOK, the lavash and the food exactly as in the image for the whole clip; the lavash has no sauce on it."),
+ ("10_ikkalasi", 10, "Ikkalasi supada", "10 s", "Faqat lavash uchunmi? / Yo'q. Eng qimmat ish qo'l bilan emas, bosh bilan qilinadi.",
+  "Animate this image. Slow gentle push-in on both characters. THE ROBOT keeps its raised chrome index finger up and moves it slightly as if starting an important explanation, its other hand rests near the piyola on the table, its blue eye arcs blink once. THE MAN leans a little forward with a curious smile and listens. Leaves and string lights move gently, steam rises from the piyolas. " + KEEP_M + " " + KEEP_R),
 ]
 def full(p): return p + " " + END
 if __name__ == "__main__":
     md = ["# «Robot bilan bir piyola choy» — video promptlari (rasm → video, Veo / Kling / Vidu)", "",
           "Har bir klip 9:16, 8 s. Sahna vaqti qisqaroq bo'lsa, klipning bir qismi olinadi; uzunroq bo'lsa (4-sahna, 11 s) minterpolate bilan sekinlashtiriladi.", ""]
     cards = []
-    for f, n, name, dur, voice, p in V:
+    for f, n, name, dur, voice, p in sorted(V, key=lambda v: v[1]):
         im = Image.open(f"video/robot/img/{f}.jpg"); im.thumbnail((600, 1100)); im.save(f"video/robot/web/{f}.webp", quality=82)
         md += [f"## {n}. {name} — 9:16 (tik), 8 s (sahna {dur})", f"Rasm: `img/{f}.jpg`", f"Ovoz: {voice}", "", "```", full(p), "```", ""]
         e = html.escape
