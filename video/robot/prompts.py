@@ -32,7 +32,7 @@ S = [
  ("Robot kinoya bilan", "13–16 s", "Rasm yaxshi. Lekin meni rasm uchun o'ylab topishmagan.", R,
   "Medium close-up of THE ROBOT tilting its head slightly to one side, holding the piyola on its knee, a gentle ironic friendly look.", [ROBOT, CHOY]),
  ("1956 olimlar", "16–27 s", "1956-yili olimlar so'rashdi: mashina odamning aqliy ishini qila oladimi?", "namuna kerak emas",
-  "Black-and-white 1950s documentary-style photo: a group of scientists in suits and thin ties standing around a large early room-sized computer with reels of magnetic tape and blinking panels, one of them writing equations on a chalkboard, film grain, vintage look.", []),
+  "Black-and-white 1950s documentary-style photo: a group of scientists in suits and thin ties standing around a large early room-sized computer with reels of magnetic tape and blinking panels, one of them writing equations on a chalkboard.", "BW"),
  ("Do'konda kassa", "28–35 s", "Sen kun bo'yi kassaga, telefonga, mijozga qaraysan. Oshpaz stoliga esa hech kim qaramaydi.", M,
   "THE MAN stands at the cash register taking money from a customer while holding his phone to his ear and looking at a short queue, in the blurred background THE COOK wraps lavash at a kitchen table that nobody is watching.", [MAN, COOK, SHOP]),
  ("Sousiz lavash", "35–41 s", "Bitta lavash sousiz ketdi. Mijoz indamadi. Lekin qaytib kelmadi.", "namuna kerak emas",
@@ -60,7 +60,7 @@ S = [
  ("Odam hayron", "118–122 s", "Unda shifokor bilan yurist kerak emasmi?", M,
   "Medium shot of THE MAN on the supa leaning back in surprise, open palms raised, puzzled expression.", [MAN, CHOY]),
  ("Robot jiddiy", "122–133 s", "Kerak. Mening javoblarimni kimdir tekshirishi kerak...", R,
-  "Close-up of THE ROBOT, serious and honest, its blue eye arcs flat and slightly dimmed instead of smiling, one chrome hand resting on the table next to the teapot.", [ROBOT, CHOY]),
+  "Close-up of THE ROBOT, serious and honest, for this shot only its blue eye arcs are flat straight lines, slightly dimmed, not smiling, one chrome hand resting on the table next to the teapot.", [ROBOT, CHOY]),
  ("Odam ehtiyot", "134–138 s", "Telefonimga, pullarimga kirib olmaysanmi?", B,
   "Close-up of THE MAN on the supa pulling his smartphone toward his chest with both hands, giving a suspicious cautious look toward THE ROBOT, who is out of focus at the edge of the frame.", [MAN, ROBOT, CHOY]),
  ("Robot va'da", "138–144 s", "Men parol so'ramayman. Parolingni so'ragan «AI»dan qoch. U AI emas, firibgar.", R,
@@ -73,6 +73,8 @@ S = [
 def prompt(s):
     name, t, voice, ref, act, parts = s
     keep = [KEEP[ref]] if ref in KEEP else []
+    if parts == "BW":
+        return " ".join([act, "Authentic black-and-white archival photograph, vertical 9:16, heavy film grain, soft focus edges, 1950s vintage look, no color.", END])
     return " ".join([act] + parts + [STYLE] + keep + [END])
 if __name__ == "__main__":
     out = ["# «Robot bilan bir piyola choy» — 22 ta rasm prompti (ChatGPT, 9:16)", "",
