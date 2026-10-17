@@ -18,7 +18,8 @@ KITCHEN = ("PLACE: the kitchen table of the same small lavash shop, stainless st
 COOK = "THE COOK: a young Uzbek cook about 20 with short black hair, a white cotton cap, a plain white T-shirt under a white apron, thin black nitrile gloves."
 STYLE = ("Photorealistic cinematic film still, vertical 9:16, shot on 35mm, shallow depth of field, warm golden light, gentle teal-and-amber "
  "color grade, natural skin texture, realistic chrome reflections.")
-KEEP = {"11_maktab": "The student is the same boy as in the attached image, now grown up: same face shape, eyes and black hair.",
+KEEP = {"ref_odam + 06_sousiz": "Keep THE MAN exactly as in the first attached reference image (same face, hair, beard, light-blue shirt and trousers) and THE COOK exactly as in the second attached image (same face, white cap, white T-shirt, white apron, black gloves).",
+ "11_maktab": "The student is the same boy as in the attached image, now grown up: same face shape, eyes and black hair.",
  "06_sousiz": "Keep THE COOK and the kitchen exactly as in the attached image: same face, cap, T-shirt, apron, black gloves, steel table and food containers.",
  "ref_robot": "Keep THE ROBOT exactly as in the attached reference image: same chrome body, visor, blue eye arcs, orange ear rings, gold infinity symbol and doppi.",
  "ref_odam": "Keep THE MAN exactly as in the attached reference image: same face, hair, beard, light-blue shirt and trousers.",
@@ -35,7 +36,7 @@ S = [
   "Medium close-up of THE ROBOT tilting its head slightly to one side, holding the piyola on its knee, a gentle ironic friendly look.", [ROBOT, CHOY]),
  ("1956 olimlar", "16–27 s", "1956-yili olimlar so'rashdi: mashina odamning aqliy ishini qila oladimi?", "namuna kerak emas",
   "Black-and-white 1950s documentary-style photo: a group of scientists in suits and thin ties standing around a large early room-sized computer with reels of magnetic tape and blinking panels, one of them writing equations on a chalkboard.", "BW"),
- ("Do'konda kassa", "28–35 s", "Sen kun bo'yi kassaga, telefonga, mijozga qaraysan. Oshpaz stoliga esa hech kim qaramaydi.", M,
+ ("Do'konda kassa", "28–35 s", "Sen kun bo'yi kassaga, telefonga, mijozga qaraysan. Oshpaz stoliga esa hech kim qaramaydi.", "ref_odam + 06_sousiz",
   "THE MAN stands behind the counter, busy and distracted, holding his phone to his ear with one hand and with the other hand holding a small card payment terminal toward a customer who taps a bank card, his eyes on the short queue, not looking at the camera, no cash and no banknotes anywhere, in the blurred background THE COOK wraps lavash at a kitchen table that nobody is watching.", [MAN, COOK, SHOP]),
  ("Sousiz lavash", "35–41 s", "Bitta lavash sousiz ketdi. Mijoz indamadi. Lekin qaytib kelmadi.", "namuna kerak emas",
   "Close-up of THE COOK's gloved hands wrapping a lavash with meat and vegetables but no sauce, the squeeze bottle of white garlic sauce standing untouched, in the soft background a customer walking out of the door with a paper-wrapped lavash.", [COOK, KITCHEN]),
