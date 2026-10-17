@@ -1,0 +1,13 @@
+# «Robot bilan bir piyola choy» — qaror va namuna rasmlar (2026-10-17)
+
+Egasi: uslub sinematik (haqiqiy kino), format **gorizontal 16:9**, hamma kadrlar AI video (egasi o'zi suratga olmaydi). Avval Robot va Odamning namuna rasmlari (`img/ref_robot`, `img/ref_odam`), keyin 22 sahna shu namunalar bilan 16:9 da qayta yoziladi (`PROMPTS.md` hozircha 9:16).
+
+## ref_robot — 16:9 (gorizontal)
+```
+Reference portrait of THE ROBOT, horizontal 16:9. THE ROBOT sits cross-legged on a wooden supa, facing the camera at a slight three-quarter angle, upper body and head clearly visible, calm friendly pose, holding a white-and-blue Uzbek piyola of tea in both hands at chest height. THE ROBOT: a friendly humanoid robot with a polished silver chrome body and smooth rounded shapes, a dark smoked-glass face visor with two soft glowing blue eyes, a small engraved gold infinity symbol on the center of its chest, wearing a traditional black-and-white Uzbek doppi skullcap. It is NOT a skeleton and NOT a Terminator: no skull face, no red eyes, no leather jacket, no clothes except the doppi. PLACE: a Tashkent choyxona terrace at dusk, the supa covered with a red patterned Uzbek carpet and cushions, a low wooden table with a blue-and-white Uzbek teapot and round non bread, warm string lights and plane trees in soft bokeh. Photorealistic cinematic film still, horizontal 16:9 widescreen, shot on 35mm, shallow depth of field, soft warm evening light, gentle teal-and-amber color grade, realistic chrome reflections. No text, no letters, no logos, no watermark, no subtitles.
+```
+
+## ref_odam — 16:9 (gorizontal)
+```
+Reference portrait of THE MAN, horizontal 16:9. THE MAN sits on a wooden supa facing the camera at a slight three-quarter angle, upper body and face clearly visible, relaxed natural pose, one hand resting on his knee, a piyola of tea on the low table in front of him. THE MAN: a fictional Uzbek man about 35 years old, short black hair, short neatly trimmed black beard, kind tired brown eyes, wearing a simple light-blue cotton shirt with sleeves rolled up to the elbows and dark trousers, a small lavash shop owner, ordinary everyday look, not a celebrity. PLACE: a Tashkent choyxona terrace at dusk, the supa covered with a red patterned Uzbek carpet and cushions, a low wooden table with a blue-and-white Uzbek teapot and round non bread, warm string lights and plane trees in soft bokeh. Photorealistic cinematic film still, horizontal 16:9 widescreen, shot on 35mm, shallow depth of field, soft warm evening light, gentle teal-and-amber color grade, natural skin texture with pores, realistic fabric. No text, no letters, no logos, no watermark, no subtitles.
+```
