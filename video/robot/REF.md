@@ -20,3 +20,4 @@ Reference portrait of THE MAN, vertical 9:16. THE MAN sits on a wooden supa faci
 ## To'liq tekshiruv (2026-10-17, 22 rasm)
 - Yigit yuzi ikki xil chiqdi: 05, 07, 10 namunaga mos (tartibli soch, to'liqroq soqol); 02, 14, 17, 19, 21, 22 da sochi to'zg'igan, soqoli siyrak (echki soqol). Bu 6 ta rasm ChatGPT'da tahrirlanadi (faqat yuz, soch, soqol namunadagidek).
 - Kichik farqlar (qoldi): 14–22 fonida 3 ta minora va tog'lar (1–10 da bitta minora); oshpaz 5–6 da futbolka, 8–9 da oshpaz ko'ylagi; 05 va 13 kichik o'lchamda (572×1024).
+- 2026-10-17 kech: egasi 2, 14, 17, 19, 21, 22 ni qayta chizdi (6 ta yangi rasm). Yuz yana siyrak soqolli (B) chiqdi, 5 tasida robot va fon aynan bir xil (takroriy kadr). Faqat 21 (choyni robotning piyolasiga quyadi, ssenariyga aniqroq) olindi; qolganlari eski rasmlar. Taklif: B yuz asosiy bo'ladi, 5, 7, 10 cho'tka bilan tahrirlanadi.
