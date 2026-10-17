@@ -1,6 +1,6 @@
 # 22 ta rasm prompti (9:16), namunalar: img/ref_robot.jpg, img/ref_odam.jpg
 ROBOT = ("THE ROBOT: a friendly humanoid robot with a polished silver chrome body and smooth rounded shapes, a rounded helmet-like head "
- "with a large glossy black face visor showing two glowing blue curved eye arcs like a gentle smile, round ear discs with warm orange "
+ "with a large glossy black face visor showing ONLY two smooth glowing blue curved eye arcs like a gentle smile and no mouth, no other lights on the visor, round ear discs with warm orange "
  "glowing rings on both sides of the head, a small gold infinity symbol on the center of its chest, wearing a round black velvet doppi "
  "skullcap with a band of white embroidered arch patterns. It is NOT a skeleton and NOT a Terminator: no skull face, no red eyes, "
  "no other clothes unless this prompt says so.")
