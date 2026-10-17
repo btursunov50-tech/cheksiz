@@ -1,0 +1,9 @@
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+ const pre=document.getElementById(b.dataset.t);const t=pre.textContent;
+ const ok=()=>{b.textContent='Nusxa olindi';b.classList.add('done');setTimeout(()=>{b.textContent='Nusxa olish';b.classList.remove('done')},1800)};
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Belgilandi, nusxa oling'};
+ try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+}));
+</script>
