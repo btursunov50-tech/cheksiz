@@ -78,7 +78,11 @@ def prompt(s):
     keep = [KEEP[ref]] if ref in KEEP else []
     if parts == "BW":
         return " ".join([act, "Authentic black-and-white archival photograph, vertical 9:16, heavy film grain, soft focus edges, 1950s vintage look, no color.", END])
-    return " ".join([act] + parts + [STYLE] + keep + [END])
+    out = " ".join([act] + parts + [STYLE] + keep + [END])
+    if name == "Robot jiddiy":
+        out = out.replace("two smooth glowing blue curved eye arcs like a gentle smile", "two glowing blue eyes")
+        out = out.replace("visor with only two smooth blue eye arcs and no mouth", "visor with only two blue eyes and no mouth")
+    return out
 if __name__ == "__main__":
     out = ["# «Robot bilan bir piyola choy» — 22 ta rasm prompti (ChatGPT, 9:16)", "",
            "Namunalar: `img/ref_robot.jpg`, `img/ref_odam.jpg` (har promptda qaysini biriktirish yozilgan). Ovoz: `dialog.flac` (157.5 s), vaqtlar taxminiy.", ""]
