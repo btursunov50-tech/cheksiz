@@ -38,3 +38,10 @@ CUT = [0, 8.0, 13.3, 19.5, 27.8, 37.3, 44.5, 48.1, 56.2, 59.5, 71.3,
 CLIP = [f"s{i:02}" for i in range(1, 23)]
 START = {9: 1.4}   # klipning qayeridan boshlanadi (sahna raqami: soniya)
 STOP = (56.45, 59.4)  # 9-sahnada qizil STOP
+# Musiqa (egasining Suno treklari, bepul tarif: tijoratsiz, «Music: made with Suno»).
+# (fayl, trekdagi boshlanish s, videodagi boshlanish s, videodagi oxiri s) — qismlar orasida 2 s o'tish.
+MUSIC = [
+ ("curious_unease.mp3", 0.0, 0.0, 72.3),            # sir, xavotir: pul oqib ketyapti, lavash xatosi
+ ("kafeda_inson_va_robot.mp3", 8.0, 70.3, 147.8),   # tinch suhbat: shifokor, yurist, tekshiruv
+ ("doira_and_the_robot.mp3", 41.0, 145.8, 175.0),   # quvnoq doira: kulgu, chaqiriq, avatar, yakuniy karta
+]
