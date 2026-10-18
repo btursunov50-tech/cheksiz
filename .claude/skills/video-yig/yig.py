@@ -2,7 +2,7 @@
 """Loyiha kliplarini ovoz vaqtiga moslab bitta video qiladi.
 
 python3 .claude/skills/video-yig/yig.py --dir video/robot --work <scratchpad>/robot_build [--n 13] \
-    [--music fayl.mp3:boshlanish_s] [--avq "Siz-chi?|Savol matni|Izohga yozing!"] [--lang uz] [--send]
+    [--music fayl.mp3:boshlanish_s] [--avq "Siz-chi?|Savol matni|Izohga yozing!"] [--lang uz] [--tl en] [--send]
 
 Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP, TEXT — ekrandagi katta yozuvlar, BOOM — qo'shimcha zarba soniyalari, MUSIC_END — musiqa to'xtaydigan soniya, MUSIC_FADE — musiqa avatar/karta ustida davom etib shuncha soniyada so'nadi), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
 Natija: <work>/final_<lang>.mp4 (+ --send bo'lsa 30 MB dan kichik nusxa) va tekshiruv jadvali.
@@ -54,10 +54,16 @@ def main():
     p.add_argument("--music"); p.add_argument("--music-vol", type=float, default=0.5)
     p.add_argument("--avq"); p.add_argument("--lang", default="uz"); p.add_argument("--send", action="store_true")
     p.add_argument("--reuse", action="store_true", help="tayyor cine.mp4 ni qayta ishlatish")
+    p.add_argument("--tl", help="tarjima: timeline_<tl>.py dagi SUB/TEXT timeline.py ustidan yoziladi (masalan en, ru)")
     a = p.parse_args()
     B = os.path.abspath(a.work); os.makedirs(B, exist_ok=True)
     spec = importlib.util.spec_from_file_location("tl", os.path.join(a.dir, "timeline.py"))
     tl = importlib.util.module_from_spec(spec); spec.loader.exec_module(tl)
+    if a.tl:
+        sp2 = importlib.util.spec_from_file_location("tl2", os.path.join(a.dir, f"timeline_{a.tl}.py"))
+        t2 = importlib.util.module_from_spec(sp2); sp2.loader.exec_module(t2)
+        for k in ("SUB", "TEXT", "STOP"):
+            if hasattr(t2, k): setattr(tl, k, getattr(t2, k))
     N = a.n or len(tl.CLIP); CUT = tl.CUT[:N + 1]; T = CUT[-1]; START = getattr(tl, "START", {})
     cuts = " ".join(str(x) for x in CUT[1:-1])
 
