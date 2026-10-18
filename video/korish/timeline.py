@@ -10,4 +10,4 @@ VOICE = [
  ("07_yigit2", 0.6, "Y2", "Operator shart emas. Katta kamera shart emas. Bitta surat. To'g'ri gap. Tamom."),
  ("08_yigit2", 1.2, "Y2", "Shovqin qilma. Ishingni ko'rsat."),            # musiqa to'xtaydi, keyin BOOM
 ]
-# Qator uzunliklari (s): 1.88, 3.60, 7.20, 15.12, 12.14, 18.02, 8.34, 3.24 = 69.5; pauzalar bilan ~78 s + avatar 3 + karta 4.
+# Qator uzunliklari (s): 2.04, 3.60, 7.20, 15.12, 12.14, 18.02, 9.02, 3.24 = 70.4. 01 yangi (adeclip + ohang 0.92: 211 -> 192 Hz, asli 01_yigit1_asl.flac); 07 yangi (chegaraga tegmaydi); pauzalar bilan ~78 s + avatar 3 + karta 4.
