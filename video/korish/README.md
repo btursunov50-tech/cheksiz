@@ -27,3 +27,4 @@ Hamma kliplar tayyor. Yig'ish: `python3 video/korish/ovoz.py` (ovoz.flac + SUB v
 - Egasi YouTube Audio Library'dan 2 ta trek berdi (`music/`). Tanlandi: **Whitefish Salad «LATASH»** (bass 73%, ~92 BPM), trekning 5.5 s dan: bass tushishi (13.5 s) videoning 8.0 s dagi BOOM ga tushadi, 31–35 s (ofitsiant) tinchroq joy, 67.3 s da to'xtaydi.
 - Zaxira: Yo Picasso «Verified Picasso» (bass 77%, ~99 BPM).
 - Yig'ish: `--voice ovoz.flac --music "video/korish/music/Whitefish_Salad_-_LATASH.mp3:5.5"`.
+- Egasi Suno'da 2 ta trek qildi (bepul tarif: «Music: made with Suno», monetizatsiyasiz): **Nocturnal Tension** (bass 81%, birinchi zarba 8.5 s) va Nocturnal Pressure (bass 80%, zarba 6.5 s). 4-versiyada Tension 0.5 s dan: zarba 8.0 s dagi BOOM ga tushadi. `--music "video/korish/music/Nocturnal_Tension.mp3:0.5"`.
