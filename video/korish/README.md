@@ -19,4 +19,5 @@ Ovoz: `voice/`, vaqtlar `timeline.py`. Rasmlar: `img/01..11` (hammasi tayyor).
 | s08 tikuvchi | Veo | 4 s | ✅ chokni tortib ko'rsatadi, qo'llar to'g'ri; klip 4 s, sahna ~6 s -> 1.5x sekinlashadi (minterpolate) |
 | s09 gulchi | Veo | 6 s | ✅ guldasta uzatiladi, oxirida xaridor qo'lida; qo'llar soni to'g'ri |
 | s10 bitta surat | Veo | 8 s | ✅ kameraga jilmayadi, keyin telefonga o'girilib suratga oladi; ekranda faqat non va kamera tugmasi, yozuv yo'q; sahna ~9 s -> 1.13x |
-Qoldi: 11.
+| s11 yakun | ? (756×1344) | 6 s | ✅ uzoqlashib ko'tariladi, keng kadrda tugaydi; yuzlar va kiyim namunadek, krossovkada belgi yo'q; START 1.4 |
+Hamma kliplar tayyor. Yig'ish: `python3 video/korish/ovoz.py` (ovoz.flac + SUB vaqtlari), keyin `/video-yig --voice ovoz.flac` (timeline.py: SUB, CUT, CLIP, START, BOOM, TEXT).

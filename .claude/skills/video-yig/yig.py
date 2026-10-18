@@ -4,7 +4,7 @@
 python3 .claude/skills/video-yig/yig.py --dir video/robot --work <scratchpad>/robot_build [--n 13] \
     [--music fayl.mp3:boshlanish_s] [--avq "Siz-chi?|Savol matni|Izohga yozing!"] [--lang uz] [--send]
 
-Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
+Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP, TEXT — ekrandagi katta yozuvlar, BOOM — qo'shimcha zarba soniyalari), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
 Natija: <work>/final_<lang>.mp4 (+ --send bo'lsa 30 MB dan kichik nusxa) va tekshiruv jadvali.
 """
 import argparse, importlib.util, os, re, subprocess, sys
@@ -81,7 +81,8 @@ def main():
 
     run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(a.dir, a.voice), "-af",
          f"atrim=0:{T},afade=t=out:st={T-0.4}:d=0.4,aresample=48000", "-ac", "2", f"{B}/voice.wav"])
-    run(["bash", f"{ROOT}/video/sfx.sh", f"{B}/voice.wav", f"{B}/voice_sfx.wav", cuts])
+    boom = " ".join(str(x) for x in getattr(tl, "BOOM", []) if x < T)
+    run(["bash", f"{ROOT}/video/sfx.sh", f"{B}/voice.wav", f"{B}/voice_sfx.wav", (cuts + " " + boom).strip()])
     if a.music:
         mf, ms = a.music.rsplit(":", 1)
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/voice_sfx.wav", "-ss", ms, "-i", mf, "-filter_complex",
@@ -96,6 +97,9 @@ def main():
     stop = getattr(tl, "STOP", None)
     if stop and stop[0] < T:
         ev += f"Dialogue: 1,{tt(stop[0])},{tt(stop[1])},X,,0,0,0,,{{\\pos(540,1060)\\fad(80,200)\\fscx140\\fscy140\\t(0,180,\\fscx100\\fscy100)}}STOP\n"
+    for s0, e0, x, sz in getattr(tl, "TEXT", []):  # ekrandagi katta yozuvlar: (boshi, oxiri, matn, o'lcham)
+        if s0 < T:
+            ev += f"Dialogue: 1,{tt(s0)},{tt(e0)},X,,0,0,0,,{{\\pos(540,1250)\\fs{sz}\\fad(80,200)\\fscx130\\fscy130\\t(0,180,\\fscx100\\fscy100)}}{x}\n"
     open(f"{B}/sub.ass", "w").write(HDR + ev)
     run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/cine.mp4", "-vf", f"ass={B}/sub.ass,format=yuv420p",
          "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-r", "30", "-an", f"{B}/main_v.mp4"])
