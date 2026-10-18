@@ -38,7 +38,9 @@ CUT = [0, 8.0, 13.3, 19.5, 27.8, 37.3, 44.5, 48.1, 56.2, 59.5, 71.3,
 CLIP = [f"s{i:02}" for i in range(1, 23)]
 START = {9: 1.4}   # klipning qayeridan boshlanadi (sahna raqami: soniya)
 STOP = (56.45, 59.4)  # 9-sahnada qizil STOP
-# Musiqa (egasining Suno treklari, bepul tarif: tijoratsiz, «Music: made with Suno»).
+# Musiqa VAQTINCHA (egasi 2026-10-18: boshi — Curious Unease — yaxshi; 1:10 dan Kafeda o'xshamadi, aralash bo'lib ketdi.
+# Yakuniy musiqa butun video tayyor bo'lib, matn o'zgarishlari tugagach tanlanadi.)
+# (egasining Suno treklari, bepul tarif: tijoratsiz, «Music: made with Suno»).
 # (fayl, trekdagi boshlanish s, videodagi boshlanish s, videodagi oxiri s) — qismlar orasida 2 s o'tish.
 MUSIC = [
  ("curious_unease.mp3", 0.0, 0.0, 72.3),            # sir, xavotir: pul oqib ketyapti, lavash xatosi
