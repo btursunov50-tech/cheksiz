@@ -43,6 +43,8 @@ run(["ffmpeg","-v","error","-y","-i",f"{B}/voice_sfx.wav","-ss","197","-i",M,"-f
 def tt(x): return f"0:{int(x//60):02}:{x%60:05.2f}"
 hdr = open("/tmp/claude-0/-home-user-cheksiz/2a2cb10c-3170-5137-84c1-a19971a38055/scratchpad/aytilmagan/sub_uz.ass").read().split("[Events]")[0]
 ev = "".join(f"Dialogue: 0,{tt(a)},{tt(b)},{'C' if w=='R' else 'S'},,0,0,0,,{{\\fad(150,150)}}{t}\n" for a, b, w, t in SUB)
+hdr = hdr.replace("[Events]", "") + "Style: X,Inter ExtraBold,190,&H002020FF,&H00FFFFFF,&H00000040,&H80000000,-1,0,0,0,100,100,6,0,1,9,4,5,40,40,0,1\n\n"
+ev += "Dialogue: 1,0:00:56.45,0:00:59.40,X,,0,0,0,,{\\pos(540,1060)\\fad(80,200)\\fscx140\\fscy140\\t(0,180,\\fscx100\\fscy100)}STOP\n"
 open(f"{B}/sub_uz.ass","w").write(hdr + "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n" + ev)
 run(["ffmpeg","-v","error","-y","-i",f"{B}/cine.mp4","-i",f"{B}/mix.wav","-vf",f"subtitles={B}/sub_uz.ass",
      "-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","160k","-shortest","-movflags","+faststart",f"{B}/robot_1-10_korib_chiqish.mp4"])
