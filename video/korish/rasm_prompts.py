@@ -84,7 +84,7 @@ if __name__ == "__main__":
     for n, name, t, voice, refs, p in S:
         thumbs = "".join(f'<figure><img src="web/{r}.webp" alt="{e(NAMES[r])}"><figcaption>{e(NAMES[r])}</figcaption></figure>' for r in refs) \
                  or '<p class="none">Namuna kerak emas</p>'
-        done = f'<p class="lbl">✅ Tayyor rasm</p><div class="refs"><figure><img src="web/{DONE[n]}.webp" alt="tayyor"></figure></div>' if n in DONE else ""
+        done = (f'<p class="lbl">🎬 Videoga faqat shu 1 ta rasmni yuklang (bosib saqlang)</p><div class="refs one"><figure><img src="web/{DONE[n]}.webp" alt="tayyor rasm"></figure></div>') if n in DONE else ""
         imgp = (f'<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p><pre id="p{n}">{e(p)}</pre>'
                 f'<button type="button" class="copy" data-t="p{n}">Nusxa olish</button>') if p else ""
         vids = "".join(
@@ -92,17 +92,19 @@ if __name__ == "__main__":
             f'<pre id="v{n}{i}">{e(cmd + " " + txt + " " + vend(sec))}</pre>'
             f'<button type="button" class="copy" data-t="v{n}{i}">Nusxa olish</button>'
             for i, (lab, sec, cmd, txt) in enumerate(VID.get(n, [])))
+        part = f'<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs">{thumbs}</div>{imgp}'
+        old = (f'<details class="old"><summary>Rasm qilish uchun (rasm tayyor, endi kerak emas)</summary>{part}</details>') if n in DONE else part
         cards.append(f'''<article class="card" id="s{n}">
-<header><span class="num">{n}</span><h2>{e(name)}</h2><span class="dur">9:16 · rasm</span><span class="dur">{t}</span></header>
+<header><span class="num">{n}</span><h2>{e(name)}</h2><span class="dur">9:16 · {"video" if n in DONE else "rasm"}</span><span class="dur">{t}</span></header>
 <p class="voice"><span class="lbl">Ovoz</span>{e(voice)}</p>
-<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs">{thumbs}</div>
-{done}{imgp}{vids}
+{done}{vids}
+{old}
 </article>''')
     head = open("video/robot/page_head.html").read()
     head = head.replace("<title>Robot bilan choy sahnalari</title>", "<title>Ko'rish bor sahnalari</title>")
-    head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Ko'rish bor. Pul yo'q.» — sahnalar")
+    head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Ko'rish bor. Pul yo'q.» — video promptlari")
     head = head.replace(head[head.index('<p class="intro">'):head.index('</p>', head.index('<p class="intro">')) + 4],
-        '<p class="intro">Har bir sahna: biriktiriladigan namuna rasmlar (rasmni bosib saqlang), ovoz qatori, rasm prompti va 🎬 video prompti. Video uchun shu sahnaning ✅ tayyor rasmini yuklang, formatni 9:16 qiling va video promptini qo\'ying. Hailuo\'da [Push in] kabi buyruq promptning boshida turadi; Kling\'da xuddi shu harakatni «Camera movement» tugmasidan tanlang, boshqa vositalarda buyruqni o\'chirsangiz ham bo\'ladi.</p>')
+        '<p class="intro">Har bir sahna: ovoz qatori, videoga yuklanadigan <b>bitta</b> tayyor rasm va 🎬 video prompti. Veo/Hailuo/Kling\'ga faqat shu bitta rasmni yuklang, formatni 9:16 qiling, «Nusxa olish» bilan promptni qo\'ying. Hailuo\'da [Push in] kabi buyruq promptning boshida ishlaydi; Veo\'da u shunchaki matn bo\'lib qoladi, zarari yo\'q. Rasm yaratishdagi namunalar pastdagi yopiq bo\'limda.</p>')
     head = head.replace("</style>", ".refs{display:flex;gap:10px;flex-wrap:wrap}.refs figure{margin:0;width:120px}.refs img{width:120px;border-radius:6px;display:block}"
-                        ".refs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.none{color:var(--muted);margin:0}.vid{margin-top:18px;color:var(--accent,#e8b04b)}</style>")
+                        ".refs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.none{color:var(--muted);margin:0}.vid{margin-top:18px;color:var(--accent,#e8b04b)}.refs.one figure,.refs.one img{width:200px}details.old{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-top:10px}details.old summary{cursor:pointer;color:var(--muted);font-size:14px}</style>")
     open("video/korish/rasmlar.html", "w").write(head + "\n".join(cards) + open("video/robot/page_tail.html").read())
