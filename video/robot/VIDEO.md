@@ -81,3 +81,11 @@ Ovoz: Faqat lavash uchunmi? / Yo'q. Eng qimmat ish qo'l bilan emas, bosh bilan q
 ```
 Animate this image. Slow gentle push-in on both characters. THE ROBOT keeps its raised chrome index finger up and moves it slightly as if starting an important explanation, its other hand rests near the piyola on the table, its blue eye arcs blink once. THE MAN leans a little forward with a curious smile and listens. Leaves and string lights move gently. No steam, no smoke and no fog anywhere in the frame; both faces stay sharp and fully visible for the whole clip. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
 ```
+
+## 11. Shifokor yo'li: maktab — 9:16 (tik), 8 s (sahna 9 s)
+Rasm: `img/11_maktab.jpg`
+Ovoz: Avval tug'ilishi kerak. Keyin maktab.
+
+```
+Animate this image. Slow gentle push-in toward the boy. The boy, resting his cheek on his hand, slowly moves his finger across the illustration of the heart in the big anatomy book and smiles a little with curiosity, then turns his eyes to the next picture. Warm sunbeams come through the window and tiny dust particles float in the light; the classmates in the blurred background move slightly at their desks. Keep the boy exactly as in the image for the whole clip: same face, black hair and white school shirt. The book pages stay as pictures with no readable letters. The boy does not speak. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
