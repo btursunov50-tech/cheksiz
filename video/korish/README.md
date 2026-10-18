@@ -12,4 +12,6 @@ Ovoz: `voice/`, vaqtlar `timeline.py`. Rasmlar: `img/01..11` (hammasi tayyor).
 | s04 «Shovqin» | Veo | 6 s | ✅ statik, lampochka tebranadi, havoda mayda chang; sahna ~7.2 s -> 1.2x sekinlashadi |
 | s05a trend (yonga) | Veo | 8 s | ✅ ekranlarda ilova tugmalari ko'rinadi (o'qiladigan yozuv yo'q), ekranlar orasida bitta lampochka |
 | s05b trend (ichkariga) | Veo | 8 s | ✅ birinchi kadr rasmdan boshlanmaydi (Veo rasmni boshlang'ich kadr qilmagan), lekin s05a oxiriga mos ko'k-qora uslub |
-Qoldi: 5b ofitsiant, 6a, 6b, 7, 8, 9, 10, 11.
+| s05w ofitsiant (5b) | Veo | 6 s | ✅ qiz o'tadi, ikkala yigit unga qaraydi; oxirida orqaga o'girilmaydi (qiz ketgan tomonga qarab qoladi) — keyingi 6a kesimi buni yopadi; qizning yuzi, do'ppi, ko'ylak namunadek |
+| s06a suhbat | Veo | 6 s | ✅ 2-yigit gapiradi (lab harakati ruxsat), 1-yigit iyagini ushlab tinglaydi; derazadagi osmon oxiriga borib biroz yorishadi — cine.sh bilan qoraytiriladi |
+Qoldi: 6b, 7, 8, 9, 10, 11.
