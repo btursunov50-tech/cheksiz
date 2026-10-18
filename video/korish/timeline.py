@@ -37,7 +37,7 @@ CUT = [0, 4.0, 6.55, 11.0, 17.6, 25.0, 31.4, 35.0, 40.0, 46.4, 51.0, 54.2, 58.9,
 CLIP = ["s01", "s02", "s03", "s04", "s05a", "s05b", "s05w", "s06a", "s06b", "s07", "s08", "s09", "s10", "s11"]
 START = {7: 1.5, 14: 1.4}
 BOOM = [8.0]
-MUSIC_END = 67.3   # musiqa oxirgi gapdan oldin to'xtaydi (shu kesimda zarba bor)
+MUSIC_FADE = 5     # egasi (2026-10-18): musiqa oxirigacha davom etib, yakuniy kartada sekin so'nsin
 # Ekrandagi katta yozuvlar (ovozda yo'q): (boshi, oxiri, matn, o'lcham)
 TEXT = [(0.4, 3.4, "100 000 KO'RISH", 120), (16.3, 17.6, "SHOVQIN", 170),
         (46.7, 49.4, "KO'RSAT", 170), (49.5, 51.0, "AYT", 190), (51.2, 54.1, "ISBOTLA", 170)]

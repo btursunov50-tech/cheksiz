@@ -4,7 +4,7 @@
 python3 .claude/skills/video-yig/yig.py --dir video/robot --work <scratchpad>/robot_build [--n 13] \
     [--music fayl.mp3:boshlanish_s] [--avq "Siz-chi?|Savol matni|Izohga yozing!"] [--lang uz] [--send]
 
-Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP, TEXT — ekrandagi katta yozuvlar, BOOM — qo'shimcha zarba soniyalari, MUSIC_END — musiqa to'xtaydigan soniya), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
+Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP, TEXT — ekrandagi katta yozuvlar, BOOM — qo'shimcha zarba soniyalari, MUSIC_END — musiqa to'xtaydigan soniya, MUSIC_FADE — musiqa avatar/karta ustida davom etib shuncha soniyada so'nadi), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
 Natija: <work>/final_<lang>.mp4 (+ --send bo'lsa 30 MB dan kichik nusxa) va tekshiruv jadvali.
 """
 import argparse, importlib.util, os, re, subprocess, sys
@@ -85,9 +85,11 @@ def main():
     run(["bash", f"{ROOT}/video/sfx.sh", f"{B}/voice.wav", f"{B}/voice_sfx.wav", (cuts + " " + boom).strip()])
     if a.music:
         mf, ms = a.music.rsplit(":", 1); ME = min(T, getattr(tl, "MUSIC_END", T)); fo = 0.3 if ME < T else 2
+        TT = T  # MUSIC_FADE: musiqa avatar va yakuniy karta ustida davom etib, oxirgi shuncha soniyada sekin so'nadi
+        if ME == T and getattr(tl, "MUSIC_FADE", 0) and a.avq: TT = T + 7; ME = TT; fo = tl.MUSIC_FADE
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/voice_sfx.wav", "-ss", ms, "-i", mf, "-filter_complex",
-             f"[1:a]atrim=0:{ME},asetpts=PTS-STARTPTS,afade=t=in:d=1.5,afade=t=out:st={ME-fo}:d={fo},apad=whole_dur={T},volume={a.music_vol},aresample=48000,aformat=channel_layouts=stereo[m];"
-             "[0:a]asplit[v][sc];[m][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];"
+             f"[1:a]atrim=0:{ME},asetpts=PTS-STARTPTS,afade=t=in:d=1.5,afade=t=out:st={ME-fo}:d={fo},apad=whole_dur={TT},volume={a.music_vol},aresample=48000,aformat=channel_layouts=stereo[m];"
+             f"[0:a]apad=whole_dur={TT},asplit[v][sc];[m][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];"
              "[v][md]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[a]", "-map", "[a]", "-ar", "48000", f"{B}/mix.wav"])
     else:
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/voice_sfx.wav", "-af", "loudnorm=I=-15:TP=-1.5:LRA=11", "-ar", "48000", f"{B}/mix.wav"])

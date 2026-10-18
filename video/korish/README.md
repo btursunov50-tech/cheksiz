@@ -28,3 +28,4 @@ Hamma kliplar tayyor. Yig'ish: `python3 video/korish/ovoz.py` (ovoz.flac + SUB v
 - Zaxira: Yo Picasso «Verified Picasso» (bass 77%, ~99 BPM).
 - Yig'ish: `--voice ovoz.flac --music "video/korish/music/Whitefish_Salad_-_LATASH.mp3:5.5"`.
 - Egasi Suno'da 2 ta trek qildi (bepul tarif: «Music: made with Suno», monetizatsiyasiz): **Nocturnal Tension** (bass 81%, birinchi zarba 8.5 s) va Nocturnal Pressure (bass 80%, zarba 6.5 s). 4-versiyada Tension 0.5 s dan: zarba 8.0 s dagi BOOM ga tushadi. `--music "video/korish/music/Nocturnal_Tension.mp3:0.5"`.
+- 5-versiya (egasi ma'qulladi): Nocturnal Tension oxirigacha davom etadi, avatar va yakuniy karta ustida 5 s da sekin so'nadi (`MUSIC_FADE = 5`). Tayyor uz video: `video/final/korish/korish_uz.mp4`.
