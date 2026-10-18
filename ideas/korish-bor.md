@@ -17,3 +17,7 @@ Ekrandagi yozuvlar (ovozda yo'q): 100 000 ko'rish, SHOVQIN, KO'RSAT / AYT / ISBO
 
 ## Ovoz (2026-10-18)
 `video/korish/dialog.flac` (58.0 s, mono 24 kHz). Qator vaqtlari: `video/korish/timeline.py`. Ovoz balandligi: 1-yigit ~195 Hz (aniq farq qiladi); 2-yigit ~96–124 Hz va diktor ~95–104 Hz bir-biriga yaqin. 19 ta namuna 0 dB ga tegadi (juda oz).
+
+## Qo'shimcha sahna (egasi, 2026-10-18): ofitsiant qiz
+Choyxona qismi boshida (~24.6–27 s, diktor qatori tugab, 2-yigit gapirmasidan oldingi pauza): o'zbek do'ppili chiroyli ofitsiant qiz patnis bilan stol yonidan o'tib ketadi, ikkala yigit bir lahza unga qaraydi, keyin yana bir-biriga o'giriladi va 2-yigit «Odamni yig'ish oson. Ushlab qolish qiyin...» deydi. Ma'nosi: e'tiborni tortish oson, ushlab qolish qiyin. Odobli, qisqa nigoh, kulgisiz.
+Namuna: `ref_qiz`; sahna rasmi: `05b_ofitsiant` (biriktiriladi: ref_y1, ref_y2, ref_qiz, joy_choyxona).
