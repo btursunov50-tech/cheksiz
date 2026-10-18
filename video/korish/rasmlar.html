@@ -1,0 +1,76 @@
+<title>Ko'rish bor sahnalari</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column of scene cards, image above its prompt; a single dusk-choyxona look (deliberately dark). */
+:root{--bg:#17110d;--card:#211812;--line:#3d2c20;--fg:#f3e8da;--muted:#c0a98f;--sun:#f0a14a;--chrome:#9fd3ef;
+--display:"Lora",Georgia,serif;--body:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,5vw,40px);margin:0;text-wrap:balance}
+.intro{color:var(--muted);margin:0;max-width:62ch}
+.card{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.media img{width:100%;max-width:420px;border-radius:6px;display:block;margin:0 auto}
+.txt{min-width:0;display:flex;flex-direction:column;gap:10px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num{font-family:var(--mono);color:var(--sun);font-size:14px}
+h2{font-family:var(--display);font-weight:600;font-size:24px;margin:0;text-wrap:balance}
+.dur{font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.lbl{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.voice{margin:0;font-style:italic}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;user-select:all}
+.copy{align-self:flex-start;font:600 15px var(--body);color:var(--bg);background:var(--sun);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.copy.done{background:var(--chrome)}
+.copy:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.refs{display:flex;gap:10px;flex-wrap:wrap}.refs figure{margin:0;width:120px}.refs img{width:120px;border-radius:6px;display:block}.refs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.none{color:var(--muted);margin:0}</style>
+<div class="wrap">
+<h1>«Ko'rish bor. Pul yo'q.» — sahna rasmlari</h1>
+<p class="intro">Har bir sahna: biriktiriladigan namuna rasmlar (rasmni bosib saqlang), ovoz qatori va rasm prompti. ChatGPT'da formatni 9:16 qiling, namunalarni biriktiring, «Nusxa olish» bilan promptni qo'ying.</p>
+<article class="card" id="s1">
+<header><span class="num">1</span><h2>Telefon nuri</h2><span class="dur">9:16 · rasm</span><span class="dur">0:00–0:03</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Yuz ming ko&#x27;rish, brat!</p>
+<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs"><figure><img src="web/ref_y1.webp" alt="1-yigit (belgisiz)"><figcaption>1-yigit (belgisiz)</figcaption></figure><figure><img src="web/joy_garaj.webp" alt="Garaj"><figcaption>Garaj</figcaption></figure></div>
+<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p>
+<pre id="p1">Close-up portrait, vertical 9:16. Almost total darkness in an old garage at night. THE FIRST GUY holds his smartphone close to his face and looks at the screen with a proud, cocky half-smile; the only light is the cold blue-white glow of the phone screen lighting his face from below, everything around him falls into deep black shadow, the screen itself faces him and is not visible to the camera. THE FIRST GUY: a fictional Uzbek young man about 22, slim, short black hair with a clean fade on the sides, light black stubble, sharp dark eyes, plain black hoodie. Cinematic film still, vertical 9:16, shot on 35mm, extreme low-key lighting, cold blue-grey color grade with deep blacks, fine film grain, realistic skin texture. Keep THE FIRST GUY exactly as in the attached reference image: same face, hair, stubble and black hoodie. No text, no letters, no logos, no watermark, no subtitles.</pre>
+<button type="button" class="copy" data-t="p1">Nusxa olish</button>
+</article>
+<article class="card" id="s2">
+<header><span class="num">2</span><h2>2-yigit soyadan chiqadi</h2><span class="dur">9:16 · rasm</span><span class="dur">0:03–0:07</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Yuz ming ko&#x27;rish. Nechta odam sotib oldi?</p>
+<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs"><figure><img src="web/ref_y2.webp" alt="2-yigit"><figcaption>2-yigit</figcaption></figure><figure><img src="web/joy_garaj.webp" alt="Garaj"><figcaption>Garaj</figcaption></figure></div>
+<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p>
+<pre id="p2">Medium shot, vertical 9:16, slightly low angle. In a dark old garage at night, THE SECOND GUY steps out of deep shadow into the edge of the light from a single bare bulb hanging above: half of his face and body still in darkness, the other half lit warm from above, one foot forward mid-step, calm heavy serious gaze straight ahead, no smile. Behind him the rusty metal shutter door fades into black. THE SECOND GUY: a fictional Uzbek man about 30, broad-shouldered strong build, short neat black hair, short well-groomed black beard, long black wool coat over a plain black crew-neck sweater. Black trousers, black boots. Cinematic film still, vertical 9:16, shot on 35mm, low-key lighting, cold blue-grey color grade with deep blacks, one warm light source, light haze, fine film grain, realistic skin texture. Keep THE SECOND GUY exactly as in the attached reference image: same face, beard, hair, coat and sweater. No text, no letters, no logos, no watermark, no subtitles.</pre>
+<button type="button" class="copy" data-t="p2">Nusxa olish</button>
+</article>
+<article class="card" id="s3">
+<header><span class="num">3</span><h2>Telefonni tushiradi</h2><span class="dur">9:16 · rasm</span><span class="dur">0:07–0:09</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>(BOOM, jimlik)</p>
+<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs"><figure><img src="web/ref_y1.webp" alt="1-yigit (belgisiz)"><figcaption>1-yigit (belgisiz)</figcaption></figure><figure><img src="web/joy_garaj.webp" alt="Garaj"><figcaption>Garaj</figcaption></figure></div>
+<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p>
+<pre id="p3">Medium close-up, vertical 9:16. In a dark old garage at night, THE FIRST GUY slowly lowers his smartphone to chest height; his proud smile is gone, his face is serious and a little lost, he looks ahead at someone off-camera. The phone screen glow now lights only his hands and the bottom of his chin, a single bare bulb far behind him makes a soft warm rim light on his hair and shoulders, deep shadows around. THE FIRST GUY: a fictional Uzbek young man about 22, slim, short black hair with a clean fade on the sides, light black stubble, sharp dark eyes, plain black hoodie. Cinematic film still, vertical 9:16, shot on 35mm, low-key lighting, cold blue-grey color grade with deep blacks, one warm light source, light haze, fine film grain, realistic skin texture. Keep THE FIRST GUY exactly as in the attached reference image: same face, hair, stubble and black hoodie. No text, no letters, no logos, no watermark, no subtitles.</pre>
+<button type="button" class="copy" data-t="p3">Nusxa olish</button>
+</article>
+<article class="card" id="s4">
+<header><span class="num">4</span><h2>«Shovqin»</h2><span class="dur">9:16 · rasm</span><span class="dur">0:09–0:16</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Nol. Demak, bu savdo emas. Shovqin.</p>
+<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs"><figure><img src="web/ref_y2.webp" alt="2-yigit"><figcaption>2-yigit</figcaption></figure><figure><img src="web/joy_garaj.webp" alt="Garaj"><figcaption>Garaj</figcaption></figure></div>
+<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p>
+<pre id="p4">Close-up, vertical 9:16, low angle looking slightly up at THE SECOND GUY&#x27;s face, which gives him quiet power. He looks straight into the camera, calm and cold, no smile, eyes steady, jaw relaxed; a single bare bulb above and behind him makes a warm rim light on his hair and the edge of his beard, the front of his face lit softly, the background is the dark ceiling and rusty beams of an old garage fading into black. THE SECOND GUY: a fictional Uzbek man about 30, broad-shouldered strong build, short neat black hair, short well-groomed black beard, long black wool coat over a plain black crew-neck sweater. Cinematic film still, vertical 9:16, shot on 35mm, low-key lighting, cold blue-grey color grade with deep blacks, one warm light source, light haze, fine film grain, realistic skin texture. Keep THE SECOND GUY exactly as in the attached reference image: same face, beard, hair, coat and sweater. Leave the lower third of the frame darker and simple for on-screen text. No text, no letters, no logos, no watermark, no subtitles.</pre>
+<button type="button" class="copy" data-t="p4">Nusxa olish</button>
+</article>
+<article class="card" id="s5">
+<header><span class="num">5</span><h2>Trend ekranlar</h2><span class="dur">9:16 · rasm</span><span class="dur">0:16–0:32</span></header>
+<p class="voice"><span class="lbl">Ovoz</span>Trend seni ko&#x27;rsatadi. Lekin sotmaydi...</p>
+<p class="lbl">Shu rasmlarni biriktiring</p><div class="refs"><p class="none">Namuna kerak emas</p></div>
+<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p>
+<pre id="p5">Vertical 9:16. A dark room filled with a wall of many glowing smartphone screens floating in black space at different distances, each screen showing a different blurred short vertical video: young people dancing, a person laughing, a cat jumping, colorful lights, fast motion blur on every screen; the faces on the screens are tiny, blurred and unrecognizable. Bright saturated screen colors stand out against the cold dark background, the screens are slightly tilted in different directions like a chaotic social media feed. Cinematic film still, vertical 9:16, shot on 35mm, low-key lighting, cold blue-grey color grade with deep blacks, glow and light bloom from the screens, fine film grain. No readable text, no letters, no app logos, no icons, no watermark, no subtitles.</pre>
+<button type="button" class="copy" data-t="p5">Nusxa olish</button>
+</article></div>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+ const pre=document.getElementById(b.dataset.t);const t=pre.textContent;
+ const ok=()=>{b.textContent='Nusxa olindi';b.classList.add('done');setTimeout(()=>{b.textContent='Nusxa olish';b.classList.remove('done')},1800)};
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Belgilandi, nusxa oling'};
+ try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+}));
+</script>
