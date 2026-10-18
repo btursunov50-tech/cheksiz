@@ -25,6 +25,7 @@ S = [
   + Y2 + " " + STYLE + " " + K2 + " Leave the lower third of the frame darker and simple for on-screen text. " + END),
  (5, "Trend ekranlar", "0:16–0:32", "Trend seni ko'rsatadi. Lekin sotmaydi...", [],
   "Vertical 9:16. A dark room filled with a wall of many glowing smartphone screens floating in black space at different distances, each screen showing a different blurred short vertical video: young people dancing, a person laughing, a cat jumping, colorful lights, fast motion blur on every screen; the faces on the screens are tiny, blurred and unrecognizable. Bright saturated screen colors stand out against the cold dark background, the screens are slightly tilted in different directions like a chaotic social media feed. Cinematic film still, vertical 9:16, shot on 35mm, low-key lighting, cold blue-grey color grade with deep blacks, glow and light bloom from the screens, fine film grain. No readable text, no letters, no app logos, no icons, no watermark, no subtitles."),
+ ("5b", "Ofitsiant qiz", "0:31–0:34", "(pauza: ovoz yo'q, faqat choyxona shovqini)", ["ref_y1", "ref_y2", "ref_qiz", "joy_choyxona"], ""),
  ("6a", "Choyxonada suhbat", "0:34–0:40", "Odamni yig'ish oson. Ushlab qolish qiyin.", ["ref_y1", "ref_y2", "joy_choyxona", "05b_ofitsiant"],
   "Medium two-shot, vertical 9:16, eye level across a low wooden choyxona table at night. THE FIRST GUY and THE SECOND GUY sit facing each other at the table, seen in three-quarter view; THE SECOND GUY leans slightly forward with his forearms on the table and talks calmly and seriously, THE FIRST GUY listens with a doubtful, thoughtful look. On the table: a white teapot with a blue cotton-boll pattern, two piyola tea bowls and a round non bread. A single warm lamp hanging above the table lights them, the rest of the dim choyxona fades into blue-grey darkness with soft blurred carved wooden pillars and empty tapchan, no other people. "
   + Y1 + " " + Y2 + " " + STYLE + " " + K1 + " " + K2 + " Same choyxona, table and lamp as in the attached choyxona images. " + END),
@@ -50,7 +51,32 @@ S = [
 NAMES = {"ref_y1": "1-yigit (belgisiz)", "ref_y2": "2-yigit", "ref_qiz": "Ofitsiant qiz", "joy_garaj": "Garaj", "joy_choyxona": "Choyxona",
          "05b_ofitsiant": "5b-sahna (stol)"}
 # Tayyor rasmlar: sahna -> img/ fayli (sahifada «Tayyor» belgisi bilan ko'rsatiladi).
-DONE = {1: "01_telefon", 2: "02_yigit2", 3: "03_tushiradi", 4: "04_shovqin", 5: "05_trend", "6a": "06a_suhbat", "6b": "06b_piyola", 7: "07_non", 8: "08_tikuvchi", 9: "09_gulchi", 10: "10_surat"}
+DONE = {"5b": "05b_ofitsiant", 1: "01_telefon", 2: "02_yigit2", 3: "03_tushiradi", 4: "04_shovqin", 5: "05_trend", "6a": "06a_suhbat", "6b": "06b_piyola", 7: "07_non", 8: "08_tikuvchi", 9: "09_gulchi", 10: "10_surat", 11: "11_ishingni"}
+# Video promptlari (rasm -> video, 9:16). Har biri bitta kamera harakati bilan boshlanadi (/kamera), qahramonlar rasmdagidek qoladi.
+KV1 = "Keep THE YOUNG MAN in the black hoodie exactly as in the image for the whole clip: same face, short black hair with a fade, light stubble and black hoodie."
+KV2 = "Keep THE BEARDED MAN in the black coat exactly as in the image for the whole clip: same face, short black hair, short black beard, black coat and black sweater."
+MUTE = "Nobody speaks, mouths stay closed."
+def vend(sec):
+    return (f"Vertical 9:16, {sec} seconds, realistic cinematic motion, the motion fills all {sec} seconds. Dark cinematic look as in the image: "
+            "cold blue-grey shadows, one warm light source, fine film grain. No text, no captions, no subtitles, no watermark, no logos, "
+            "no new objects or people. No music, ambient sound only.")
+VID = {
+ 1: [("", 6, "[Push in]", "Slow push-in toward his face, ending in a tight close-up of his eyes and smile. THE YOUNG MAN scrolls his phone with his thumb, the cold blue light of the screen flickers on his face, his proud cocky half-smile grows a little wider and he raises his eyebrows as if he can't believe the number. " + KV1 + " " + MUTE)],
+ 2: [("", 6, "[Tracking shot]", "Low-angle tracking shot: the camera slowly moves backward as THE BEARDED MAN takes two slow heavy steps forward out of the shadow into the warm light of the bare bulb, then he stops and looks straight ahead with a calm cold stare; his coat moves with his steps, the bulb sways slightly. Keep his face in frame for the whole clip. " + KV2 + " " + MUTE)],
+ 3: [("", 6, "[Zoom in]", "Static camera for the first second, then a fast snap zoom-in (crash zoom) on his face at the moment his smile disappears, then hold still. THE YOUNG MAN slowly lowers his phone to chest height, his proud smile fades, his face becomes serious and a little lost, he swallows and looks ahead at someone off-camera. " + KV1 + " " + MUTE)],
+ 4: [("", 6, "[Static shot]", "Locked-off static low-angle camera, it does not move. THE BEARDED MAN looks straight into the camera, calm and cold, he blinks once slowly and slightly lifts his chin; the bare bulb above him sways a little and its warm rim light moves gently across his hair and beard, faint dust floats in the light. " + KV2 + " " + MUTE)],
+ 5: [("5a", 8, "[Truck left]", "Slow lateral dolly (truck) to the left across the wall of floating smartphone screens, with gentle parallax between near and far screens. Every screen plays its own short blurred vertical video: dancing, laughing, a cat jumping, colorful flashing lights; the screens drift and turn slightly. Faces on the screens stay small and blurred, no readable text or app icons appear."),
+     ("5b", 8, "[Push in]", "Slow forward dolly through the floating smartphone screens: the camera glides between them, near screens pass by on both sides and out of frame, deeper screens come closer, all of them keep playing short blurred videos with bright colors. Faces on the screens stay small and blurred, no readable text or app icons appear.")],
+ "5b": [("", 6, "[Truck right]", "Smooth slow lateral dolly (truck) to the right following THE WAITRESS as she walks past the low table with the tray of teapot and piyolas, polite and graceful; THE YOUNG MAN and THE BEARDED MAN briefly turn their heads to glance at her for a moment, then turn back to each other and continue their quiet talk. Keep THE WAITRESS exactly as in the image for the whole clip: same face, long black braid, embroidered doppi and red ikat dress with white apron. " + KV1 + " " + KV2 + " " + MUTE)],
+ "6a": [("", 6, "[Truck right,Pan left]", "Slow arc of about 20 degrees around the table from left to right, the camera stays at eye level and keeps both men in frame. THE BEARDED MAN explains something calmly with small open-hand gestures, speaking quietly with small natural lip movement; THE YOUNG MAN listens with his hand on his chin and nods once slowly with doubt. The hanging lamp glows warm, the steam from the piyolas is very thin. " + KV1 + " " + KV2)],
+ "6b": [("", 6, "[Static shot]", "Rack focus: the shot starts focused on the blue-and-white teapot in the foreground, then the focus slowly shifts to THE BEARDED MAN's face and stays there; the camera itself does not move. He slowly puts his piyola down on the table and looks ahead with a calm heavy look, no smile. A thin wisp of steam rises from the tea below his chin and never covers his face. " + KV2 + " " + MUTE)],
+ 7: [("", 6, "[Truck left,Pan right]", "Macro close-up, slow arc around the bread from right to left. The baker's hands lift the hot round non bread out of the glowing tandir with the cloth and hold it toward the camera; steam rises from the golden crust, sesame seeds glisten, the fire inside the tandir flickers. Only hands and forearms, no face. Keep the bread's stamped pattern exactly as in the image.")],
+ 8: [("", 6, "[Push in]", "Slow push-in toward the hands and the stitching. The tailor's hands pull the seam of the dark blue jacket tight once, then smooth the fabric with the thumb along the even stitches; the small lamp of the sewing machine glows warm, the yellow measuring tape sways slightly. Only hands and forearms, no face.")],
+ 9: [("", 6, "[Pull out]", "Slow dolly out (pull back) from the bouquet, revealing more of the counter and the dark flower shop. The florist's hands pass the bouquet of red roses and white chrysanthemums into the customer's hands; the customer takes it carefully and draws it a little closer; tiny water drops shine on the petals, the lamp above glows warm. Only hands and forearms, no faces.")],
+ 10: [("", 10, "[Shake]", "Handheld camera with subtle natural shake, over his shoulder, keeping his face, the phone and the bread in frame. THE YOUNG MAN looks at the camera with a small satisfied smile, then turns back to his phone and taps the shutter button once; the screen blinks white for a moment and shows the photo of the bread; he nods slightly to himself. The bare bulb glows, the wet floor reflects the light. The phone screen shows only the bread, no text and no icons. " + KV1 + " " + MUTE)],
+ 11: [("", 6, "[Pull out]", "Slow dolly out and crane up, ending in a wide shot of the whole garage. THE YOUNG MAN and THE BEARDED MAN stand still side by side and keep looking straight into the camera, calm and confident; the bare bulb above them sways slightly and their long shadows move on the wet floor. Plain white sneakers with no logos. " + KV1 + " " + KV2 + " " + MUTE)],
+}
+
 if __name__ == "__main__":
     for r in list(NAMES) + list(DONE.values()):
         im = Image.open(f"video/korish/img/{r}.jpg"); im.thumbnail((360, 640)); im.save(f"video/korish/web/{r}.webp", quality=80)
@@ -59,19 +85,24 @@ if __name__ == "__main__":
         thumbs = "".join(f'<figure><img src="web/{r}.webp" alt="{e(NAMES[r])}"><figcaption>{e(NAMES[r])}</figcaption></figure>' for r in refs) \
                  or '<p class="none">Namuna kerak emas</p>'
         done = f'<p class="lbl">✅ Tayyor rasm</p><div class="refs"><figure><img src="web/{DONE[n]}.webp" alt="tayyor"></figure></div>' if n in DONE else ""
+        imgp = (f'<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p><pre id="p{n}">{e(p)}</pre>'
+                f'<button type="button" class="copy" data-t="p{n}">Nusxa olish</button>') if p else ""
+        vids = "".join(
+            f'<p class="lbl vid">🎬 Video prompti{" " + lab if lab else ""} — 9:16 (tik), {sec} s · Hailuo: {e(cmd)}</p>'
+            f'<pre id="v{n}{i}">{e(cmd + " " + txt + " " + vend(sec))}</pre>'
+            f'<button type="button" class="copy" data-t="v{n}{i}">Nusxa olish</button>'
+            for i, (lab, sec, cmd, txt) in enumerate(VID.get(n, [])))
         cards.append(f'''<article class="card" id="s{n}">
 <header><span class="num">{n}</span><h2>{e(name)}</h2><span class="dur">9:16 · rasm</span><span class="dur">{t}</span></header>
 <p class="voice"><span class="lbl">Ovoz</span>{e(voice)}</p>
 <p class="lbl">Shu rasmlarni biriktiring</p><div class="refs">{thumbs}</div>
-{done}<p class="lbl">Rasm prompti (ChatGPT, 9:16)</p>
-<pre id="p{n}">{e(p)}</pre>
-<button type="button" class="copy" data-t="p{n}">Nusxa olish</button>
+{done}{imgp}{vids}
 </article>''')
     head = open("video/robot/page_head.html").read()
     head = head.replace("<title>Robot bilan choy sahnalari</title>", "<title>Ko'rish bor sahnalari</title>")
-    head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Ko'rish bor. Pul yo'q.» — sahna rasmlari")
+    head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Ko'rish bor. Pul yo'q.» — sahnalar")
     head = head.replace(head[head.index('<p class="intro">'):head.index('</p>', head.index('<p class="intro">')) + 4],
-        '<p class="intro">Har bir sahna: biriktiriladigan namuna rasmlar (rasmni bosib saqlang), ovoz qatori va rasm prompti. ChatGPT\'da formatni 9:16 qiling, namunalarni biriktiring, «Nusxa olish» bilan promptni qo\'ying.</p>')
+        '<p class="intro">Har bir sahna: biriktiriladigan namuna rasmlar (rasmni bosib saqlang), ovoz qatori, rasm prompti va 🎬 video prompti. Video uchun shu sahnaning ✅ tayyor rasmini yuklang, formatni 9:16 qiling va video promptini qo\'ying. Hailuo\'da [Push in] kabi buyruq promptning boshida turadi; Kling\'da xuddi shu harakatni «Camera movement» tugmasidan tanlang, boshqa vositalarda buyruqni o\'chirsangiz ham bo\'ladi.</p>')
     head = head.replace("</style>", ".refs{display:flex;gap:10px;flex-wrap:wrap}.refs figure{margin:0;width:120px}.refs img{width:120px;border-radius:6px;display:block}"
-                        ".refs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.none{color:var(--muted);margin:0}</style>")
+                        ".refs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.none{color:var(--muted);margin:0}.vid{margin-top:18px;color:var(--accent,#e8b04b)}</style>")
     open("video/korish/rasmlar.html", "w").write(head + "\n".join(cards) + open("video/robot/page_tail.html").read())
