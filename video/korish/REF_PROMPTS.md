@@ -17,3 +17,9 @@ Empty location reference, vertical 9:16, no people. An old garage at night in an
 ```
 Empty location reference, vertical 9:16, no people. A quiet old Uzbek choyxona late at night: a low wooden table on a raised supa with a dark red carpet, a blue-and-white teapot and two empty piyola tea bowls on the table, one dim hanging lamp with a warm yellow glow above the table, the rest of the room in deep shadow, dark wooden pillars, steam rising slowly from the teapot. Cinematic film still, vertical 9:16, shot on 35mm, low-key lighting, cold blue-grey color grade with deep blacks, one warm light source, light haze. No text, no letters, no logos, no watermark, no subtitles.
 ```
+
+## ref_qiz — 9:16 (tik)
+(chatda berilgan prompt)
+
+## 05b_ofitsiant — 9:16 (tik)
+(chatda berilgan prompt)
