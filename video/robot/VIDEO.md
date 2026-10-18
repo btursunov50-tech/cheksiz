@@ -89,3 +89,43 @@ Ovoz: Avval tug'ilishi kerak. Keyin maktab.
 ```
 Animate this image. Slow gentle push-in toward the boy. The boy, resting his cheek on his hand, slowly moves his finger across the illustration of the heart in the big anatomy book and smiles a little with curiosity, then turns his eyes to the next picture. Warm sunbeams come through the window and tiny dust particles float in the light; the classmates in the blurred background move slightly at their desks. Keep the boy exactly as in the image for the whole clip: same face, black hair and white school shirt. The book pages stay as pictures with no readable letters. The boy does not speak. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
 ```
+
+## 12. Shifokor yo'li: institut — 9:16 (tik), 8 s (sahna 5 s)
+Rasm: `img/12_institut.jpg`
+Ovoz: Keyin institut. Keyin yillar davomida amaliyot.
+
+```
+Animate this image. Slow push-in toward the student. The tired young medical student keeps writing notes with his pen, then rubs his eyes with one hand and turns a page of the thick medical book, still determined. The desk lamp glow flickers very slightly, the wall clock's minute hand moves a little, the night city lights twinkle outside the window. Keep the student exactly as in the image for the whole clip: same young clean-shaven face, short black hair and white coat. The book pages stay as pictures with no readable letters. He does not speak. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 13. Qabulda — 9:16 (tik), 8 s (sahna 11 s)
+Rasm: `img/13_qabul.jpg`
+Ovoz: Sen esa uning oldiga yigirma daqiqaga kirasan. Va o'sha yillarning hammasi uchun to'laysan.
+
+```
+Animate this image. Slow push-in toward the doctor. The experienced doctor listens carefully to the elderly patient, nods slowly and writes a few words on the clipboard; the patient seen from behind moves his hands a little while talking. The minute hand of the large wall clock moves forward noticeably, a feeling of limited time. Keep the doctor and the patient exactly as in the image for the whole clip: same faces, grey hair and beard, white coat and clothes. Nobody's lips move. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 14. Yigit so'raydi — 9:16 (tik), 8 s (sahna 3 s)
+Rasm: `img/14_soraydi.jpg`
+Ovoz: AI-shifokor arzonroqmi?
+
+```
+Animate this image. Very slow push-in toward THE MAN. He holds the piyola near his mouth, raises his eyebrows with a curious hopeful look toward the robot off-screen, then lowers the piyola a little and waits for an answer. Leaves and string lights move gently, the sunset stays unchanged. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 15. Robot-shifokor — 9:16 (tik), 8 s (sahna 10 s)
+Rasm: `img/15_robot_shifokor.jpg`
+Ovoz: Men tahlilingni oddiy tilda tushuntiraman. Shifokorga qanday savol berishni aytaman. Kechasi soat uchda ham.
+
+```
+Animate this image. Slow push-in toward THE ROBOT. THE ROBOT in its white doctor's coat holds the smartphone with the lab charts toward the man and gently gestures with its open other hand as if explaining step by step, its blue eye arcs blink once. In the foreground THE MAN, seen from behind, listens and slowly nods with his hand on his chin. The wall clock stays at 3 o'clock, the night city lights twinkle in the window, the lamp glows warmly. The phone screen shows only blurred charts with no readable text. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. The white coat and stethoscope stay the same. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 16. Shartnoma — 9:16 (tik), 8 s (sahna 8 s)
+Rasm: `img/16_shartnoma.jpg`
+Ovoz: Shartnoma qoralamasi. Qiyin so'zlarni tushuntirish. Ijara shartnomasida yashirin jarimani topish. Bir necha daqiqada.
+
+```
+Animate this image. Slow push-in toward the contract. THE ROBOT's chrome finger slowly slides along the highlighted paragraph and stops on it, the yellow highlight glows a little brighter. THE MAN leans closer with his hand on his chin and nods slowly as he understands. Steam rises gently from the piyola, the sunset stays unchanged. The printed lines stay blurred and unreadable, no letters. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
