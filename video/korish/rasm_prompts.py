@@ -50,7 +50,7 @@ S = [
 NAMES = {"ref_y1": "1-yigit (belgisiz)", "ref_y2": "2-yigit", "ref_qiz": "Ofitsiant qiz", "joy_garaj": "Garaj", "joy_choyxona": "Choyxona",
          "05b_ofitsiant": "5b-sahna (stol)"}
 # Tayyor rasmlar: sahna -> img/ fayli (sahifada «Tayyor» belgisi bilan ko'rsatiladi).
-DONE = {1: "01_telefon", 2: "02_yigit2", 3: "03_tushiradi", 4: "04_shovqin", 5: "05_trend"}
+DONE = {1: "01_telefon", 2: "02_yigit2", 3: "03_tushiradi", 4: "04_shovqin", 5: "05_trend", "6a": "06a_suhbat", "6b": "06b_piyola"}
 if __name__ == "__main__":
     for r in list(NAMES) + list(DONE.values()):
         im = Image.open(f"video/korish/img/{r}.jpg"); im.thumbnail((360, 640)); im.save(f"video/korish/web/{r}.webp", quality=80)
