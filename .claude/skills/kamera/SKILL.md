@@ -31,3 +31,10 @@ description: Rasm→video promptlari uchun kamera harakati tanlash — har bir s
 - **Kling** (klingai.com): "Camera movement / Camera control" tugmalari (Horizontal, Vertical, Zoom, Pan, Tilt, Roll, Master shots) — bepul tarifda ham bor; matndagi ibora + shu tugma.
 - **Veo / Dreamina / Vidu**: tugma yo'q (yoki cheklangan) — faqat matndagi ibora; iborani promptning birinchi gapiga qo'ying.
 - Egasiga har promptda qaysi tugmani bosishni ham yozing (Kling/Hailuo uchun).
+
+## Claude'ning o'z yordamchisi (bepul, shu yerda ishlaydi): `harakat.py`
+AI klip harakatsiz yoki zaif chiqsa, montajda kamera harakatini o'zim qo'shaman (faqat VIDEO klipga; harakatsiz rasmga emas):
+```
+python3 .claude/skills/kamera/harakat.py KIRISH.mp4 CHIQISH.mp4 --move pushin --ease
+```
+`pushin`, `pullout`, `panleft`, `panright`, `tiltup`, `tiltdown`, `shake` (qo'lda olingandek), `crash` (oxirida keskin yaqinlashish), `whipout` (oxirida "qamchi" o'tish), `rack` (xiradan aniqqa). `--amount` kuchini, `--ease` silliqligini boshqaradi. `/video-yig` dan oldin kerakli kliplarga qo'llang va `/klip-tekshir` varag'ida natijani ko'ring (yuz kadrdan chiqmasin).
