@@ -21,3 +21,9 @@ Ovoz: `voice/`, vaqtlar `timeline.py`. Rasmlar: `img/01..11` (hammasi tayyor).
 | s10 bitta surat | Veo | 8 s | ✅ kameraga jilmayadi, keyin telefonga o'girilib suratga oladi; ekranda faqat non va kamera tugmasi, yozuv yo'q; sahna ~9 s -> 1.13x |
 | s11 yakun | ? (756×1344) | 6 s | ✅ uzoqlashib ko'tariladi, keng kadrda tugaydi; yuzlar va kiyim namunadek, krossovkada belgi yo'q; START 1.4 |
 Hamma kliplar tayyor. Yig'ish: `python3 video/korish/ovoz.py` (ovoz.flac + SUB vaqtlari), keyin `/video-yig --voice ovoz.flac` (timeline.py: SUB, CUT, CLIP, START, BOOM, TEXT).
+
+## Musiqa (2026-10-18)
+- Curious Unease (Suno) — egasiga yoqmadi: bass yo'q.
+- Egasi YouTube Audio Library'dan 2 ta trek berdi (`music/`). Tanlandi: **Whitefish Salad «LATASH»** (bass 73%, ~92 BPM), trekning 5.5 s dan: bass tushishi (13.5 s) videoning 8.0 s dagi BOOM ga tushadi, 31–35 s (ofitsiant) tinchroq joy, 67.3 s da to'xtaydi.
+- Zaxira: Yo Picasso «Verified Picasso» (bass 77%, ~99 BPM).
+- Yig'ish: `--voice ovoz.flac --music "video/korish/music/Whitefish_Salad_-_LATASH.mp3:5.5"`.
