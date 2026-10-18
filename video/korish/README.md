@@ -16,4 +16,7 @@ Ovoz: `voice/`, vaqtlar `timeline.py`. Rasmlar: `img/01..11` (hammasi tayyor).
 | s06a suhbat | Veo | 6 s | ✅ 2-yigit gapiradi (lab harakati ruxsat), 1-yigit iyagini ushlab tinglaydi; derazadagi osmon oxiriga borib biroz yorishadi — cine.sh bilan qoraytiriladi |
 | s06b piyola | Veo | 6 s | ✅ fokus choynakdan yuzga ko'chadi (~1.2 s xira, keyin aniq); bug' iyakkacha, yuzni to'smaydi; piyolani qo'ymaydi, ushlab turadi |
 | s07 non | Veo | 6 s | ✅ non atrofida aylanadi, naqsh o'zgarmaydi; 2 s dan keyin tepada qalin bug' (nonni to'smaydi) |
-Qoldi: 8, 9, 10, 11.
+| s08 tikuvchi | Veo | 4 s | ✅ chokni tortib ko'rsatadi, qo'llar to'g'ri; klip 4 s, sahna ~6 s -> 1.5x sekinlashadi (minterpolate) |
+| s09 gulchi | Veo | 6 s | ✅ guldasta uzatiladi, oxirida xaridor qo'lida; qo'llar soni to'g'ri |
+| s10 bitta surat | Veo | 8 s | ✅ kameraga jilmayadi, keyin telefonga o'girilib suratga oladi; ekranda faqat non va kamera tugmasi, yozuv yo'q; sahna ~9 s -> 1.13x |
+Qoldi: 11.
