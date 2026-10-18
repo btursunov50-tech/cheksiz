@@ -14,3 +14,6 @@ Ekrandagi yozuvlar (ovozda yo'q): 100 000 ko'rish, SHOVQIN, KO'RSAT / AYT / ISBO
 | 6 | DIKTOR | Mahsulotni ko'rsat. Foydasini ayt. ... Ishonch buyurtmaga. | 28–40 |
 | 7 | 2-YIGIT | Operator shart emas. ... Tamom. | 40–49 |
 | 8 | 2-YIGIT | Shovqin qilma. Ishingni ko'rsat. | 49–55 |
+
+## Ovoz (2026-10-18)
+`video/korish/dialog.flac` (58.0 s, mono 24 kHz). Qator vaqtlari: `video/korish/timeline.py`. Ovoz balandligi: 1-yigit ~195 Hz (aniq farq qiladi); 2-yigit ~96–124 Hz va diktor ~95–104 Hz bir-biriga yaqin. 19 ta namuna 0 dB ga tegadi (juda oz).
