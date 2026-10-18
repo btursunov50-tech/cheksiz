@@ -1,24 +1,12 @@
-# 1–10-sahna ko'rib chiqish versiyasi: kliplar ovoz vaqtiga moslanadi, ovoz + Dutar's Whisper + uz subtitr.
+# Ko'rib chiqish versiyasi: kliplar ovoz vaqtiga moslanadi (timeline.py), ovoz + musiqa + uz subtitr + STOP.
 import subprocess, os, sys
-B = sys.argv[1]  # ish papkasi
+B = sys.argv[1]  # ish papkasi; 2-argument: nechta sahna (standart 22)
 os.makedirs(B, exist_ok=True)
-CUT = [0, 8.0, 13.3, 19.5, 27.8, 37.3, 44.5, 48.1, 56.2, 59.5, 71.3]
-CLIP = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"]
-START = [0, 0, 0, 0, 0, 0, 0, 0, 1.4, 0]   # klipning qayeridan boshlanadi
-R = 0  # robot / odam subtitr rangi
-SUB = [  # (boshi, oxiri, kim, matn)  R=robot, O=odam
- (0.1, 4.5, "R", "Do'koningdan har kuni pul oqib ketyapti."), (5.0, 7.8, "R", "Sen esa buni ko'rmaysan."),
- (8.3, 12.8, "O", "Qanaqa pul? Men seni faqat rasm va video uchun ishlataman."),
- (13.5, 18.9, "R", "Rasm yaxshi. Lekin meni rasm uchun o'ylab topishmagan."),
- (19.8, 27.4, "R", "1956-yili olimlar so'rashdi: mashina odamning aqliy ishini qila oladimi?"),
- (28.1, 32.9, "R", "Sen kun bo'yi kassaga, telefonga, mijozga qaraysan."), (33.5, 36.5, "R", "Oshpaz stoliga esa hech kim qaramaydi."),
- (37.5, 39.9, "R", "Bitta lavash sousiz ketdi."), (40.5, 41.9, "R", "Mijoz indamadi."), (42.1, 44.2, "R", "Lekin qaytib kelmadi."),
- (44.8, 47.7, "O", "Nazoratchi yollaymanmi? Unga oylik kerak."),
- (48.4, 51.9, "R", "Bitta kichik kamera. U faqat stolni ko'radi."), (52.4, 55.7, "R", "Go'sht, sabzavot, sous."),
- (56.5, 57.5, "R", "To'xtang."), (57.6, 59.0, "R", "Sous hali qo'shilmadi."),
- (59.8, 61.2, "O", "Faqat lavash uchunmi?"), (61.4, 62.7, "R", "Yo'q."),
- (62.9, 67.5, "R", "Eng qimmat ish qo'l bilan emas, bosh bilan qilinadi."), (68.2, 71.0, "R", "Shifokor, yurist."),
-]
+sys.path.insert(0, "video/robot")
+from timeline import SUB, CUT as CUTALL, CLIP as CLIPALL, START as ST
+N = int(sys.argv[2]) if len(sys.argv) > 2 else 22   # nechta sahna
+CUT = CUTALL[:N+1]; CLIP = CLIPALL[:N]; START = [ST.get(i+1, 0) for i in range(N)]
+SUB = [x for x in SUB if x[0] < CUT[-1]]
 def run(c): subprocess.run(c, check=True)
 parts = []
 for i, c in enumerate(CLIP):
@@ -47,4 +35,4 @@ hdr = hdr.replace("[Events]", "") + "Style: X,Inter ExtraBold,190,&H002020FF,&H0
 ev += "Dialogue: 1,0:00:56.45,0:00:59.40,X,,0,0,0,,{\\pos(540,1060)\\fad(80,200)\\fscx140\\fscy140\\t(0,180,\\fscx100\\fscy100)}STOP\n"
 open(f"{B}/sub_uz.ass","w").write(hdr + "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n" + ev)
 run(["ffmpeg","-v","error","-y","-i",f"{B}/cine.mp4","-i",f"{B}/mix.wav","-vf",f"subtitles={B}/sub_uz.ass",
-     "-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","160k","-shortest","-movflags","+faststart",f"{B}/robot_1-10_korib_chiqish.mp4"])
+     "-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","160k","-shortest","-movflags","+faststart",f"{B}/robot_korib_chiqish.mp4"])
