@@ -3,7 +3,7 @@ import subprocess, os, sys
 B = sys.argv[1]  # ish papkasi
 os.makedirs(B, exist_ok=True)
 CUT = [0, 8.0, 13.3, 19.5, 27.8, 37.3, 44.5, 48.1, 56.2, 59.5, 71.3]
-CLIP = ["s01", "s02", "s03", "s04_v1_eskiz", "s05", "s06", "s07", "s08", "s09", "s10"]
+CLIP = ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"]
 START = [0, 0, 0, 0, 0, 0, 0, 0, 1.4, 0]   # klipning qayeridan boshlanadi
 R = 0  # robot / odam subtitr rangi
 SUB = [  # (boshi, oxiri, kim, matn)  R=robot, O=odam
