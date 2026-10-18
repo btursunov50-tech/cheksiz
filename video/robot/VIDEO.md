@@ -129,3 +129,51 @@ Ovoz: Shartnoma qoralamasi. Qiyin so'zlarni tushuntirish. Ijara shartnomasida ya
 ```
 Animate this image. Slow push-in toward the contract. THE ROBOT's chrome finger slowly slides along the highlighted paragraph and stops on it, the yellow highlight glows a little brighter. THE MAN leans closer with his hand on his chin and nods slowly as he understands. Steam rises gently from the piyola, the sunset stays unchanged. The printed lines stay blurred and unreadable, no letters. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
 ```
+
+## 17. Yigit hayron — 9:16 (tik), 8 s (sahna 2 s)
+Rasm: `img/17_hayron.jpg`
+Ovoz: Unda shifokor bilan yurist kerak emasmi?
+
+```
+Animate this image. Almost static camera. THE MAN leans back in surprise with his open palms raised, shrugs a little and looks at the robot with a puzzled expression. In the blurred foreground the robot's chrome arm moves slightly. Leaves and string lights move gently. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 18. Robot jiddiy — 9:16 (tik), 8 s (sahna 11 s)
+Rasm: `img/18_jiddiy.jpg`
+Ovoz: Kerak. Mening javoblarimni kimdir tekshirishi kerak. Ayniqsa ish murakkab bo'lsa. Yoki xato juda qimmat bo'lsa.
+
+```
+Animate this image. Very slow push-in toward THE ROBOT's face. THE ROBOT sits still and serious, its flat blue eye lines glow steadily and dim slightly once, it nods slowly one time, its chrome hand stays resting on the table next to the teapot. Steam rises gently from the piyola, string lights and leaves move softly, the sunset stays unchanged. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two flat blue eye lines and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 19. Yigit ehtiyot — 9:16 (tik), 8 s (sahna 7 s)
+Rasm: `img/19_ehtiyot.jpg`
+Ovoz: Kamera, tahlillar, shartnomalar... Telefonimga, pullarimga kirib olmaysanmi?
+
+```
+Animate this image. Slow push-in toward THE MAN. He holds his smartphone tighter against his chest with both hands, glances suspiciously at the robot and narrows his eyes a little. In the blurred foreground the robot's head stays still and its orange ear ring glows softly. Leaves and string lights move gently. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 20. Robot va'da — 9:16 (tik), 8 s (sahna 6 s)
+Rasm: `img/20_vada.jpg`
+Ovoz: Men parol so'ramayman. Parolingni so'ragan «AI»dan qoch. U AI emas, firibgar.
+
+```
+Animate this image. Slow push-in toward THE ROBOT. THE ROBOT keeps its right chrome hand flat on its chest just below the gold infinity symbol, tilts its head slightly forward in a sincere promise, its blue eye arcs blink once. The gold infinity symbol stays fully visible, clean and not bent for the whole clip. THE MAN's shoulder in the blurred foreground moves slightly. Leaves and string lights move gently. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 21. Kulgu — 9:16 (tik), 8 s (sahna 7 s)
+Rasm: `img/21_kulgu.jpg`
+Ovoz: Unda oshpazni bo'shatamanmi? / Yo'q. Men lavash o'ray olmayman. Oshpaz qo'l, men ko'z.
+
+```
+Animate this image. Slow gentle push-in on both characters. THE MAN laughs warmly while pouring tea from the blue-and-white teapot into the piyola that THE ROBOT holds out; the tea stream flows naturally into the bowl. THE ROBOT raises its other open hand as if saying it cannot cook, its blue eye arcs blink happily. Leaves and string lights move gently, the sunset glows. Keep THE MAN exactly as in the image for the whole clip: same face, hair, beard, light-blue shirt and dark trousers. He does not speak, his mouth stays closed. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
+
+## 22. Kameraga — 9:16 (tik), 8 s (sahna 4 s)
+Rasm: `img/22_kameraga.jpg`
+Ovoz: Sizda ham do'kon bormi? Izohga «LAVASH AI» deb yozing.
+
+```
+Animate this image. Slow push-in toward THE ROBOT. THE ROBOT looks straight into the camera and moves its open chrome hand toward the viewer in a friendly inviting gesture, its blue eye arcs blink once. THE MAN in the blurred background smiles and lifts his piyola a little. Leaves and string lights move gently, the sunset glows. Keep the empty space at the bottom of the frame clear. Keep THE ROBOT exactly as in the image for the whole clip: same polished chrome body, black visor with only two blue eye arcs and no mouth, orange glowing ear rings, gold infinity symbol on the chest and black doppi with white arch embroidery. Do not change its shape or colors. Vertical 9:16, 8 seconds, realistic cinematic motion, calm natural pace, the motion fills all 8 seconds. No text, no captions, no subtitles, no watermark, no logos, no new objects or people. No speech, no lip movement, no music, ambient sound only.
+```
