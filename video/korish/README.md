@@ -14,4 +14,6 @@ Ovoz: `voice/`, vaqtlar `timeline.py`. Rasmlar: `img/01..11` (hammasi tayyor).
 | s05b trend (ichkariga) | Veo | 8 s | ✅ birinchi kadr rasmdan boshlanmaydi (Veo rasmni boshlang'ich kadr qilmagan), lekin s05a oxiriga mos ko'k-qora uslub |
 | s05w ofitsiant (5b) | Veo | 6 s | ✅ qiz o'tadi, ikkala yigit unga qaraydi; oxirida orqaga o'girilmaydi (qiz ketgan tomonga qarab qoladi) — keyingi 6a kesimi buni yopadi; qizning yuzi, do'ppi, ko'ylak namunadek |
 | s06a suhbat | Veo | 6 s | ✅ 2-yigit gapiradi (lab harakati ruxsat), 1-yigit iyagini ushlab tinglaydi; derazadagi osmon oxiriga borib biroz yorishadi — cine.sh bilan qoraytiriladi |
-Qoldi: 6b, 7, 8, 9, 10, 11.
+| s06b piyola | Veo | 6 s | ✅ fokus choynakdan yuzga ko'chadi (~1.2 s xira, keyin aniq); bug' iyakkacha, yuzni to'smaydi; piyolani qo'ymaydi, ushlab turadi |
+| s07 non | Veo | 6 s | ✅ non atrofida aylanadi, naqsh o'zgarmaydi; 2 s dan keyin tepada qalin bug' (nonni to'smaydi) |
+Qoldi: 8, 9, 10, 11.
