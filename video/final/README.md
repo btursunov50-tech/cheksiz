@@ -4,7 +4,6 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 
 | Papka | Video | Joylash kuni |
 |---|---|---|
-| `aytilmagan/` | «Aytilmagan gaplar»: AI ota-o'g'il gaplarining asl ma'nosini ko'rsatadi | 2026-10-18 |
 | `mehmon/` | «Ikki mehmon»: Xato va Soya eshik qoqadi, Dono ichki ovoz | navbatda |
 | `korish/` | «Ko'rish bor. Pul yo'q.»: 100 000 ko'rish, 0 buyurtma; KO'RSAT / AYT / ISBOTLA (fayllar: `korish_uz.mp4` Telegram, `korish_en.mp4` YouTube + LinkedIn, `korish_ru.mp4` Instagram + Facebook; musiqa: Nocturnal Tension, Suno) | navbatda |
 
