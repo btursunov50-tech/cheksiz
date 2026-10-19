@@ -7,11 +7,13 @@ html,body{margin:0;background:#000}canvas{display:block}
 </style></head><body>
 <canvas id="c" width="1080" height="1920"></canvas>
 <script>
-// «Sabr qil — zafar yaqin» neon uslubida, 3 variant: #A (neon tun), #B (neon tong), #C (neon chiziq).
+// «Sabr qil — zafar yaqin» neon uslubida: #A (neon tun), #B (neon tong), #C (neon chiziq), #D/#E (Kalamushqir uslubi: jigarrang, ko'k neon, sariqlar).
 // setT(t) bir kadrni chizadi (video/render.js shunday chaqiradi). Harakatlar sekin, miltillash yo'q.
 const V = (location.hash || '#A').slice(1);
 const c = document.getElementById('c'), x = c.getContext('2d'), W = 1080, H = 1920;
-const COL = ['#ff5c8a', '#4fd1ff', '#b98cff', '#ffb547', '#3ef0a5', '#ff6b6b', '#5ab8ff', '#d68cff', '#2fe0c8'];
+const BROWN = V === 'D' || V === 'E';
+const COL = BROWN ? ['#e8b04b', '#f4d27a', '#c98a3a', '#ffe7a3', '#4fc3ff', '#d9a441', '#f0c060', '#b8863b', '#ffd98a']
+  : ['#ff5c8a', '#4fd1ff', '#b98cff', '#ffb547', '#3ef0a5', '#ff6b6b', '#5ab8ff', '#d68cff', '#2fe0c8'];
 const cl = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 const ease = v => { v = cl(v); return v * v * (3 - 2 * v); };
 let R = 1; const rnd = () => (R = (R * 16807) % 2147483647) / 2147483647;
@@ -24,17 +26,26 @@ function sky(t) {
   let g = x.createLinearGradient(0, 0, 0, H);
   if (V === 'B') { g.addColorStop(0, '#2b2d6e'); g.addColorStop(0.45, '#6a5aa8'); g.addColorStop(0.72, '#f0a5a0'); g.addColorStop(1, '#ffd9a8'); }
   else if (V === 'C') { g.addColorStop(0, '#05060d'); g.addColorStop(1, '#0b0e1c'); }
+  else if (V === 'D') { g.addColorStop(0, '#120b07'); g.addColorStop(0.55, '#2a1a10'); g.addColorStop(1, '#3a2414'); }
+  else if (V === 'E') { g.addColorStop(0, '#0a0705'); g.addColorStop(0.6, '#1c120b'); g.addColorStop(1, '#2b1b10'); }
   else { g.addColorStop(0, '#070b24'); g.addColorStop(0.6, '#141a4a'); g.addColorStop(1, '#1d1240'); }
   x.fillStyle = g; x.fillRect(0, 0, W, H);
   if (V !== 'B') for (const [sx, sy, r, p] of STARS) {
-    x.globalAlpha = 0.35 + 0.35 * Math.sin(t * 0.8 + p); x.fillStyle = '#cfe3ff';
+    x.globalAlpha = (BROWN ? 0.2 : 0.35) + 0.3 * Math.sin(t * 0.8 + p); x.fillStyle = BROWN ? '#ffe2a0' : '#cfe3ff';
     x.beginPath(); x.arc(sx, sy, r, 0, 6.28); x.fill();
   }
   x.globalAlpha = 1;
+  if (BROWN) { // qo'lda chizilgan qog'oz donadorligi va qorong'i chet (vinyetka)
+    let R2 = 7 + Math.floor(t * 12) % 3; const r2 = () => (R2 = (R2 * 16807) % 2147483647) / 2147483647;
+    x.fillStyle = 'rgba(255,220,160,.035)';
+    for (let k = 0; k < 900; k++) x.fillRect(r2() * W, r2() * H, 2, 2);
+    const v = x.createRadialGradient(W / 2, H * 0.55, H * 0.25, W / 2, H * 0.55, H * 0.75);
+    v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.6)'); x.fillStyle = v; x.fillRect(0, 0, W, H);
+  }
 }
 
 function ribbons(t) { // sekin oqayotgan neon chiziqlar
-  const cols = V === 'B' ? ['#ffffff', '#ffe08a', '#ffb3d1'] : ['#4fd1ff', '#b98cff', '#3ef0a5'];
+  const cols = V === 'B' ? ['#ffffff', '#ffe08a', '#ffb3d1'] : BROWN ? ['#4fc3ff', '#f4c95d', '#2f9bff'] : ['#4fd1ff', '#b98cff', '#3ef0a5'];
   x.lineWidth = 3; x.lineCap = 'round';
   cols.forEach((col, k) => {
     glow(col, 22); x.strokeStyle = col; x.globalAlpha = V === 'B' ? 0.45 : 0.55;
@@ -56,10 +67,10 @@ function moonOrSun(t) {
     x.fillStyle = g; x.fillRect(0, sy - 300, W, 600);
     glow('#ffd27a', 40); x.fillStyle = '#ffe7a8'; x.beginPath(); x.arc(W / 2, sy, 95, 0, 6.28); x.fill(); noGlow();
   } else { // neon hilol
-    const mx = 860, my = 210; glow('#ffe58a', V === 'C' ? 30 : 45);
+    const mx = 860, my = 210; glow('#ffe58a', V === 'C' || V === 'E' ? 30 : 45);
     x.strokeStyle = '#ffe58a'; x.lineWidth = 7; x.beginPath();
     x.arc(mx, my, 80, 0.9, 5.4); x.arc(mx + 38, my - 12, 66, 5.15, 1.15, true); x.closePath();
-    if (V === 'C') x.stroke(); else { x.fillStyle = 'rgba(255,229,138,.9)'; x.fill(); }
+    if (V === 'C' || V === 'E') x.stroke(); else { x.fillStyle = 'rgba(255,229,138,.9)'; x.fill(); }
     noGlow();
   }
 }
@@ -67,13 +78,14 @@ function moonOrSun(t) {
 function ground(t) {
   const gy = 1500;
   if (V === 'B') { const g = x.createLinearGradient(0, gy, 0, H); g.addColorStop(0, '#3b8c6e'); g.addColorStop(1, '#1d4d43'); x.fillStyle = g; x.fillRect(0, gy, W, H - gy); }
+  else if (BROWN) { const g = x.createLinearGradient(0, gy, 0, H); g.addColorStop(0, '#4a2e18'); g.addColorStop(1, '#1a0f08'); x.fillStyle = g; x.fillRect(0, gy, W, H - gy); }
   else if (V === 'A') { const g = x.createLinearGradient(0, gy, 0, H); g.addColorStop(0, '#0f2a3a'); g.addColorStop(1, '#070b18'); x.fillStyle = g; x.fillRect(0, gy, W, H - gy); }
-  glow('#3ef0a5', 25); x.strokeStyle = '#3ef0a5'; x.lineWidth = 4; x.beginPath();
+  const hz = BROWN ? '#4fc3ff' : '#3ef0a5'; glow(hz, 25); x.strokeStyle = hz; x.lineWidth = 4; x.beginPath();
   for (let px = 0; px <= W; px += 10) { const y = gy + Math.sin(px / 60 + t) * 4; px ? x.lineTo(px, y) : x.moveTo(px, y); }
   x.stroke(); noGlow();
   // perspektiv neon to'r (faqat A va C)
   if (V !== 'B') {
-    x.strokeStyle = 'rgba(79,209,255,.18)'; x.lineWidth = 2;
+    x.strokeStyle = BROWN ? 'rgba(244,201,93,.12)' : 'rgba(79,209,255,.18)'; x.lineWidth = 2;
     for (let i = -8; i <= 8; i++) { x.beginPath(); x.moveTo(W / 2 + i * 40, gy); x.lineTo(W / 2 + i * 260, H); x.stroke(); }
     for (let k = 1; k < 8; k++) { const y = gy + (H - gy) * Math.pow(k / 8, 1.8) + ((t * 30) % 20); x.beginPath(); x.moveTo(0, y); x.lineTo(W, y); x.stroke(); }
   }
@@ -87,7 +99,7 @@ function doppi(cx, top, col) { // o'zbek do'ppisi
 }
 
 function flower(fx, fy, t, s) {
-  const pet = ['#ff7eb6', '#ffd166', '#b98cff', '#4fd1ff'];
+  const pet = BROWN ? ['#ffd166', '#e8a93c', '#ffe9a8', '#4fc3ff'] : ['#ff7eb6', '#ffd166', '#b98cff', '#4fd1ff'];
   for (let k = 0; k < 5; k++) {
     const a = k * 1.256 + t * 0.4; x.fillStyle = pet[k % 4]; glow(pet[k % 4], 12);
     x.beginPath(); x.arc(fx + Math.cos(a) * 9 * s, fy + Math.sin(a) * 9 * s, 6.5 * s, 0, 6.28); x.fill();
@@ -99,7 +111,8 @@ function person(i, t, draw) { // neon odamcha; draw 0..1 — chiziq chizilish ul
   const n = 9, cx = 90 + i * ((W - 180) / (n - 1)), base = 1495, col = COL[i];
   const bob = Math.sin(t * 2 + i) * 4, wave = Math.sin(t * 2.2 + i * 0.8);
   const hy = base - 205 + bob;
-  x.lineCap = 'round'; x.lineJoin = 'round'; x.strokeStyle = col; x.lineWidth = 7; glow(col, V === 'B' ? 14 : 24);
+  x.lineCap = 'round'; x.lineJoin = 'round'; x.strokeStyle = col; x.lineWidth = 7;
+  glow(col, V === 'B' ? 14 : BROWN ? (col === '#4fc3ff' ? 34 : (V === 'E' ? 6 : 14)) : 24);
   const segs = [
     [[cx, hy + 28], [cx, hy + 120]], // tana
     [[cx, hy + 120], [cx - 28, base + bob * 0.2]], [[cx, hy + 120], [cx + 28, base + bob * 0.2]], // oyoqlar
@@ -113,7 +126,12 @@ function person(i, t, draw) { // neon odamcha; draw 0..1 — chiziq chizilish ul
   }
   segs.forEach(([a, b], k) => {
     const f = cl(shown - 1 - k); if (f <= 0) return;
-    x.beginPath(); x.moveTo(a[0], a[1]); x.lineTo(a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f); x.stroke();
+    const ex = a[0] + (b[0] - a[0]) * f, ey = a[1] + (b[1] - a[1]) * f;
+    x.beginPath(); x.moveTo(a[0], a[1]); x.lineTo(ex, ey); x.stroke();
+    if (BROWN) { // ikkinchi, biroz siljigan chiziq: qo'lda chizilgandek
+      const j = Math.sin(t * 3 + i + k) * 2.2; x.save(); x.globalAlpha *= 0.45; x.lineWidth = 3;
+      x.beginPath(); x.moveTo(a[0] + j, a[1] - j); x.lineTo(ex - j, ey + j); x.stroke(); x.restore(); x.lineWidth = 7;
+    }
   });
   noGlow();
   if (draw >= 1) {
@@ -127,10 +145,10 @@ function title(t) {
   if (a <= 0) return;
   x.globalAlpha = a;
   const bw = 920, bh = 520, bx = (W - bw) / 2, by = y - 230;
-  x.fillStyle = V === 'B' ? 'rgba(25,20,60,.55)' : 'rgba(8,12,35,.68)';
+  x.fillStyle = V === 'B' ? 'rgba(25,20,60,.55)' : BROWN ? 'rgba(30,18,10,.78)' : 'rgba(8,12,35,.68)';
   x.beginPath(); x.roundRect(bx, by, bw, bh, 40); x.fill();
   glow('#ffd166', 26); x.strokeStyle = '#ffd166'; x.lineWidth = 4; x.stroke();
-  glow('#4fd1ff', 18); x.strokeStyle = 'rgba(79,209,255,.75)'; x.lineWidth = 2;
+  glow('#4fc3ff', 18); x.strokeStyle = BROWN ? 'rgba(79,195,255,.85)' : 'rgba(79,209,255,.75)'; x.lineWidth = 2;
   x.beginPath(); x.roundRect(bx + 18, by + 18, bw - 36, bh - 36, 28); x.stroke(); noGlow();
   // sarlavha 2 qatorda, harfma-harf paydo bo'ladi
   const L = ['SABR QIL —', 'ZAFAR YAQIN'], all = L.join(''), k = Math.floor(cl((t - 1.5) / 1.8) * all.length);
@@ -152,8 +170,8 @@ window.setT = function (t) {
   x.clearRect(0, 0, W, H);
   sky(t); moonOrSun(t); ribbons(t); ground(t);
   for (let i = 0; i < 9; i++) {
-    const d = V === 'C' ? cl((t - 0.2 - i * 0.18) / 0.9) : 1;
-    const a = V === 'C' ? 1 : ease((t - i * 0.08) / 0.6);
+    const d = V === 'C' || V === 'E' ? cl((t - 0.2 - i * 0.18) / 0.9) : 1;
+    const a = V === 'C' || V === 'E' ? 1 : ease((t - i * 0.08) / 0.6);
     x.globalAlpha = a; person(i, t, d); x.globalAlpha = 1;
   }
   title(t);
