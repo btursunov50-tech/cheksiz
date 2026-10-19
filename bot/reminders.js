@@ -112,4 +112,18 @@ module.exports = {
         "Musiqani tanlang: A, B, C, D yoki E. Keyin hammasini Claude'ga yuboring, u videoni yig'adi ✅",
     },
   ],
+  "2026-10-20": [
+    "📌 Eslatma: bugun «Ikki mehmon» videosini joylang!\n\n" +
+      "1) Telegram kanal: 1-telegram-ikki-mehmon-uz.mp4\n" +
+      "2) YouTube Shorts: 2-youtube-linkedin-ikki-mehmon-en.mp4 + ikki-mehmon-uz.srt, ikki-mehmon-ru.srt\n" +
+      "3) Instagram va Facebook: 3-instagram-facebook-ikki-mehmon-ru.mp4\n" +
+      "4) LinkedIn: 2-youtube-linkedin-ikki-mehmon-en.mp4\n\n" +
+      "Musiqa: «Foggy» – Nat Keefe, «Dutar's Whisper». Fayllar va matnlarni Claude'dan so'rang (\"Ikki mehmon matnlari\"), havolalarni unga yuboring ✅",
+    {
+      at: 21,
+      text:
+        "⏰ «Ikki mehmon» joylandimi? Hozir (21:00–22:00) odamlar eng faol vaqt.\n\n" +
+        "Joylagan bo'lsangiz, havolalarni Claude'ga yuboring: u PUBLISHED.md ga yozib qo'yadi ✅",
+    },
+  ],
 };
