@@ -34,7 +34,7 @@ Aziz bir lahza turadi, sekin eshikni yopadi.
 
 **3. VAQT KELADI (0:20–0:35)**
 Shamol yo'q, lekin sham alangasi egilib o'chadi. Eshik tirqishidan ko'k nur sizib kiradi, eshik o'zi ochiladi. Neon chiziqlardan to'qilgan Vaqt kiradi; har qadamida polda bir lahza yorug' iz qoladi.
-Boyning qo'lidan tanga tushib, polda aylanadi... aylanadi...
+Boyning qo'lidan tilla tanga tushadi. **Sekinlashuv:** tanga havoda juda sekin aylanib, sham nurida yaltirab tushadi; polga tekkan lahzada aniq «jiring» ovozi va mayda oltin uchqunlar, keyin oddiy tezlik: tanga polda aylanadi... aylanadi... (egasi, 2026-10-20; `kamera/ramp.py`)
 VAQT: «Qo'rqma, Hoji boy. Men hech narsani olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.»
 
 **4. SAVDO (0:35–0:45)**
@@ -99,7 +99,7 @@ Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
 |---|---|---|---|
 | 1 | 0:00–0:04 | Qorong'ilik, tik-tik, ko'k chiziq qum soatini chizadi | Diktor: «Vaqtni sotib olib bo'lmaydi. Lekin sen uni har kuni sotasan.» |
 | 2 | 0:04–0:12 | Karvonsaroy, boy tanga sanaydi; Aziz eshikda | Aziz: «Bobo, osh tayyor.» Boy: «Keyin, bolam. Keyin.» |
-| 3 | 0:12–0:22 | Sham o'chadi, neon Vaqt kiradi, tanga polda aylanadi | Vaqt: «Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.» |
+| 3 | 0:12–0:22 | Sham o'chadi, neon Vaqt kiradi; tanga sekinlashib tushadi, polga tekkanda «jiring», keyin aylanadi | Vaqt: «Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.» |
 | 4 | 0:22–0:30 | Boy sandiqni suradi | Boy: «O'tgan yillarimni qaytar, hamma oltinimni ol!» |
 | 5 | 0:30–0:38 | Tangalar qumga aylanib to'kiladi | Vaqt: «O'tgan vaqt sotilmaydi. Umr faqat Allohning qo'lida. Men faqat ko'rsataman.» |
 | 6 | 0:38–0:58 | Oltin neon xotiralar: qizcha qo'g'irchoq ko'rsatadi; qizining to'yida bo'sh o'rin; Aziz birinchi qadam, yiqiladi; rasm polga tushadi; «Keyin, bolam» | (faqat musiqa; oxirida Vaqt: «O'ttiz yil.») |

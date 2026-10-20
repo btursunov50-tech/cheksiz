@@ -38,3 +38,8 @@ AI klip harakatsiz yoki zaif chiqsa, montajda kamera harakatini o'zim qo'shaman 
 python3 .claude/skills/kamera/harakat.py KIRISH.mp4 CHIQISH.mp4 --move pushin --ease
 ```
 `pushin`, `pullout`, `panleft`, `panright`, `tiltup`, `tiltdown`, `shake` (qo'lda olingandek), `crash` (oxirida keskin yaqinlashish), `whipout` (oxirida "qamchi" o'tish), `rack` (xiradan aniqqa). `--amount` kuchini, `--ease` silliqligini boshqaradi. `/video-yig` dan oldin kerakli kliplarga qo'llang va `/klip-tekshir` varag'ida natijani ko'ring (yuz kadrdan chiqmasin).
+
+## Sekinlashuv + zarba ovozi (egasi, 2026-10-20: «effekt chiroyli chiqadi»)
+Biror narsa yerga tushadigan joyda (tilla tanga, uzuk, kalit, stakan, rasm, ko'z yoshi): tushayotganda kadr **juda sekinlashadi**, yerga tekkan lahzada **ovoz chiqadi** (tanga: jiring), keyin oddiy tezlik qaytadi. Muhim lahzani ajratib ko'rsatish kerak bo'lgan joyda ishlating, har sahnada emas (bir videoda 1–2 marta).
+- **Promptga** (Veo/Kling/Hailuo), inglizcha: `speed ramp: the gold coin slips from his fingers and time slows into extreme slow motion as it falls, turning and catching the candlelight; it hits the stone floor with a crisp impact and a few tiny golden sparks, then normal speed resumes as it spins on the floor.` Kamera: `slow push-in following the coin down to floor level, ending on a low close-up of the floor`.
+- **Montajda o'zim** (AI sekinlashtirmasa yoki ovoz bermasa): `python3 .claude/skills/kamera/ramp.py KIRISH.mp4 CHIQISH.mp4 --a <tushish boshi> --b <yerga tekkan payt> --slow 0.3 --sound tanga` (`zarba` = og'ir narsa, `yoq` = ovozsiz). a..b oralig'i minterpolate bilan silliq sekinlashadi, ovoz b nuqtaga tushadi. Natijani `/klip-tekshir` bilan ko'ring.
