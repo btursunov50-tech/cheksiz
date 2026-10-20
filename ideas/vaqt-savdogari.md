@@ -96,7 +96,7 @@ Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
 | 3 | 0:12–0:22 | Sham o'chadi, neon Vaqt kiradi, tanga polda aylanadi | Vaqt: «Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.» |
 | 4 | 0:22–0:30 | Boy sandiqni suradi | Boy: «O'tgan yillarimni qaytar, hamma oltinimni ol!» |
 | 5 | 0:30–0:38 | Tangalar qumga aylanib to'kiladi | Vaqt: «O'tgan vaqt sotilmaydi. Umr faqat Allohning qo'lida. Men faqat ko'rsataman.» |
-| 6 | 0:38–0:58 | Oltin neon xotiralar: qizining to'yida bo'sh o'rin; o'g'lining birinchi qadami; o'chgan chiroqli darvoza; «Keyin, bolam» | (faqat musiqa; oxirida Vaqt: «O'ttiz yil.») |
+| 6 | 0:38–0:58 | Oltin neon xotiralar: qizining to'yida bo'sh o'rin; o'g'lining birinchi qadami; o'chgan chiroqli darvoza; «Keyin, bolam» | (faqat musiqa; oxirida Vaqt: «Yetti yil.») |
 | 7 | 0:58–1:06 | Boy yig'laydi; Vaqt qum soatini ko'rsatadi, yuqorisi qorong'i | Boy: «Bittasini qaytar...» Vaqt: «O'tganini hech kim qaytarolmaydi. Qancha qolganini faqat Alloh biladi. Lekin bugun va hozir hali seniki.» |
 | 8 | 1:06–1:14 | Sham qayta yonadi, tanga to'xtaydi | Aziz: «Bobo, osh sovib qoldi.» Boy: «Hozir, bolam! Hozir!» |
 | 9 | 1:14–1:24 | Hovli, dasturxon, Aziz tizzada; ayvon soyasida Vaqt oltinga aylanib so'nadi | — |
@@ -109,3 +109,13 @@ Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
 Haqiqatga mos: kanal har kuni 05:00 da AI bo'yicha «Kun maslahati» chiqaradi (`bot/tong.js`), bot savollarga bepul javob beradi. Havolalar: t.me/infinite_ai_and_me, @sahiychishopbot.
 
 ## Ovoz (90 s versiya + epilog): 14 qator, 4 ovoz (DIKTOR, VAQT, HOJI BOY, AZIZ), har qator alohida WAV — matni chatda berildi (2026-10-20).
+
+## Xotiralar faqat Aziz haqida (egasi, 2026-10-20) — 7-sahna va 90 s dagi 6-sahna o'rniga
+Qizi, o'g'li, onasi xotiralari olib tashlandi. Oltin neon chiziqlarda, har biri tugaganda qumdek to'kiladi:
+1. Chaqaloq Aziz beshikda; hamma uni ko'rgani kelgan, bobo esa qorong'i xonada tanga sanaydi.
+2. Aziz birinchi qadamlarini bobosi tomon tashlaydi, qo'llarini cho'zadi; bobo daftarga engashgan, qaramaydi. Aziz yiqiladi.
+3. Aziz bobosiga o'zi chizgan rasmini olib keladi (bobo va nabira qo'l ushlashgan); bobo qaramay qo'l siltaydi, rasm polga tushadi.
+4. Aziz qo'lida varrak, eshik oldida kutadi; quyosh botadi, varrak uchmay qoladi.
+5. Bugun kechqurun: «Keyin, bolam. Keyin.» — Aziz eshikni yopayotgan lahza.
+Vaqtning gapi «O'ttiz yil» → «Yetti yil.» (Aziz 7 yoshda).
+11-sahna (hovli): boy endi faqat Azizga qaraydi — kulgisi, kichkina barmoqlari; Aziz chizgan rasm devorga ilingan.
