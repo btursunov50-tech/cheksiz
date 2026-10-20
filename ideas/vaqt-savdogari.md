@@ -26,3 +26,13 @@ Ranglar: jigarrang, oltin, ko'k neon; qizil kam.
 
 Avatar: «Siz-chi? Bugun kimga vaqt ajratdingiz? Izohga yozing!»
 Diniy jihat: o'limni «Vaqt» deb nomladik (Azroil emas), ilohiy shaxs tasvirlanmaydi.
+
+## 2-variant (egasi yuborgan kuchaytirilgan ssenariy, 2026-10-20) — 2,5–3 daqiqa, 12 sahna
+Qo'shilgan: nabira Aziz («Keyin, bolam. Keyin.» → xotirada qaytadi → oxirida yelkada), boy narxni o'zi tushiradi (10 → 5 → 1 yil), oltinning qumidan bitta don soatga solinadi, ona xotirasi o'chgan chiroq bilan tugaydi, daftar oxirida «Bugun — bir kun. Foyda — hammasi.», neon sovuq ko'kdan iliq oltinga o'tadi, final: ikkalasi chiziqlarga yoyilib yulduzdek tarqaladi, Aziz yulduzga qo'l silkitadi; yakuniy so'z «Pulni vaqtga sotamiz. Lekin vaqtni hech qanday pulga qaytarib ololmaymiz.»
+
+Claude tuzatishlari:
+- 1-sahna 10 s qora ekran — juda sekin: birinchi 2 s da harakat bo'lsin (ko'k chiziq qum soatini tez chizadi + diktor gapi darhol), 5 s gacha qisqartirish.
+- Vaqt ajalni o'zi bermasin: «Senga yana bitta kun berildi» (majhul nisbat), «Men beraman» emas.
+- Final «odam yulduzga aylanadi» — ruh yulduzga aylanadi degan ma'noda o'qilmasligi uchun: boy va Vaqt oltin nur ichida birga ketadi, osmonda faqat chiziqlar uchqun bo'lib so'nadi; Aziz qo'l silkitadi.
+- Daftardagi va final «VAQT» yozuvlari AI'da emas, montajda qo'yiladi (AI o'zbekcha harfni buzadi).
+- 2,5–3 daqiqa = ~20–22 klip (8 s); Reels/Shorts 3 daqiqagacha ruxsat, lekin 90 s qisqa versiyasi ham kerak (2, 4, 6, 9, 11-sahnalarni qisqartirib).
