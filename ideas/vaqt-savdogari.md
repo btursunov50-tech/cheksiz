@@ -11,7 +11,10 @@ O'tgan vaqt qaytmaydi; qolgani qancha, uni faqat Alloh biladi. Saboq: «bugun va
 ## Qahramonlar (o'ylab topilgan)
 - **VAQT.** Odam bo'yidan baland, to'liq gavda. Butun tanasi minglab ingichka ko'k neon chiziqlardan to'qilgan: yelkalari, chopon burmalari, yuz konturi (ko'z, og'iz chizilmagan). Chiziqlar ichida oltin uchqunlar, ko'kragida yorug' qum soati. Yurganda chiziqlar tolalardek havoda uchadi. Ovozi past, shoshilmaydi. Jazolamaydi, olib ketmaydi, faqat ko'rsatadi.
 - **HOJI BOY.** 70 yoshlar, Buxoroning eng boy savdogari. Oq soqol, salla, zarbof chopon, barmoqlarida uzuklar, yonida doim hisob daftari. Ko'zlari charchagan, faqat tangalarga qaraganda yonadi.
-- **AZIZ.** Nabirasi, 6–7 yosh, qiziquvchan. Filmning yuragi.
+- **AZIZ.** Hoji boyning **nabirasi** (o'g'lining o'g'li), 7 yosh, qiziquvchan. Filmning yuragi. Boyni «Bobo» deydi.
+- «Oyim» = Azizning onasi (boyning kelini). Ekranda ko'rinmaydi, faqat tilga olinadi.
+
+Oila jadvali: Hoji boy (bobo, ~70) → o'g'li (Azizning otasi, ko'rinmaydi) → **Aziz (nabira, 7)**. Filmdagi xotiralar faqat Aziz haqida.
 
 Vizual qoida: Vaqt ko'rsatgan xotiralar havoda **oltin neon chiziqlar** bilan chiziladi. Boshida neon sovuq ko'k, oxirida iliq oltin. Ranglar: jigarrang, oltin, ko'k neon; qizil yo'q.
 
@@ -25,7 +28,7 @@ Chiqillash birdan to'xtaydi.
 **2. BOYNING DUNYOSI (0:05–0:20)**
 Buxoro, kechki karvonsaroy. Minoralar ortida quyosh botyapti. Hoji boy sham yonida oltin tangalarni sanaydi, har birini daftarga yozadi. Tangalarning jiringlashi soat chiqillashi ritmida.
 Eshik g'ichirlaydi. Aziz bosh suqadi:
-AZIZ: «Bobo... oyim chaqiryapti. Osh tayyor.»
+AZIZ: «Bobo... osh tayyor. Oyim chaqiryapti.»
 HOJI BOY (boshini ko'tarmay): «Keyin, bolam. Keyin.»
 Aziz bir lahza turadi, sekin eshikni yopadi.
 
@@ -45,14 +48,16 @@ VAQT: «O'tgan vaqt sotilmaydi, sotib ham olinmaydi. Umrni qo'shish ham, kamayti
 
 **6. QAYERGA KETDI (0:55–1:05)**
 Vaqt boyning ko'kragiga qo'lini qo'yadi. U yerdan yupqa oltin iplar chiqib, qum uyumi va hisob daftari tomon oqadi, ularga singib ketadi.
-VAQT: «Mana ular. O'ttiz yil. Hammasi shu daftarda.»
+VAQT: «Yetti yil.» (ya'ni: nabirang Aziz tug'ilganidan beri o'tgan 7 yil; hammasi shu daftarga ketdi. Buni keyingi sahnadagi xotiralar ko'rsatadi: beshikdan bugungacha.)
 
 **7. XOTIRALAR (1:05–1:30)** (eng kuchli sahna)
 Havoda oltin neon chiziqlar bilan xotiralar birin-ketin chiziladi; har biri tugaganda chiziqlar qumdek to'kiladi:
-- Qizining to'yi. Hamma bor, faqat otaning o'rni bo'sh. Kelin eshik tomon qayta-qayta qaraydi.
-- O'g'lining birinchi qadamlari. Bola qo'llarini ota tomon cho'zadi, ota stol ortida tangalarga engashgan. Bolani onasi ko'taradi.
-- Darvoza oldida chiroq ushlab yo'lga tikilgan keksa ona. Keyingi kadr: o'sha darvoza, ona yo'q, chiroq o'chgan.
-- Bugun kechqurun: «Keyin, bolam. Keyin.» Aziz eshikni yopayotgan lahza.
+Hammasi faqat **Aziz** haqida (egasi, 2026-10-20):
+1. Chaqaloq Aziz beshikda; hamma uni ko'rgani kelgan, bobo esa qorong'i xonada tanga sanaydi.
+2. Aziz birinchi qadamlarini bobosi tomon tashlaydi, qo'llarini cho'zadi; bobo daftarga engashgan, qaramaydi. Aziz yiqiladi.
+3. Aziz bobosiga o'zi chizgan rasmini olib keladi (bobo va nabira qo'l ushlashgan); bobo qaramay qo'l siltaydi, rasm polga tushadi.
+4. Aziz qo'lida varrak, eshik oldida kutadi; quyosh botadi, varrak uchmay qoladi.
+5. Bugun kechqurun: «Keyin, bolam. Keyin.» Aziz eshikni yopayotgan lahza.
 
 **8. TAVBA (1:30–1:40)**
 Boy yig'laydi, endi savdolashmaydi.
@@ -71,7 +76,7 @@ Boy daftarni yopadi, o'rnidan turadi.
 HOJI BOY: «Hozir, bolam! Hozir!»
 
 **11. HOZIR (2:05–2:20)**
-Hovli, chiroqlar, dasturxon. Boy oilasi bilan osh yeydi, Aziz uning tizzasida. U ilk bor bolalarining yuziga uzoq qaraydi: qizining kulgisi, o'g'lining qo'li, nabirasining kichkina barmoqlari.
+Hovli, chiroqlar, dasturxon. Boy oilasi bilan osh yeydi, Aziz uning tizzasida. U ilk bor nabirasining yuziga uzoq qaraydi: Azizning kulgisi, kichkina barmoqlari. Devorda Aziz chizgan rasm ilingan (bobo va nabira qo'l ushlashgan).
 Bir chetda, ayvon soyasida Vaqt jim kuzatib turadi. Uning chiziqlari sovuq ko'kdan iliq oltinga o'tadi, keyin sekin uchqun bo'lib so'nadi.
 
 **12. FINAL (2:20–2:30)**
@@ -96,10 +101,10 @@ Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
 | 3 | 0:12–0:22 | Sham o'chadi, neon Vaqt kiradi, tanga polda aylanadi | Vaqt: «Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.» |
 | 4 | 0:22–0:30 | Boy sandiqni suradi | Boy: «O'tgan yillarimni qaytar, hamma oltinimni ol!» |
 | 5 | 0:30–0:38 | Tangalar qumga aylanib to'kiladi | Vaqt: «O'tgan vaqt sotilmaydi. Umr faqat Allohning qo'lida. Men faqat ko'rsataman.» |
-| 6 | 0:38–0:58 | Oltin neon xotiralar: qizining to'yida bo'sh o'rin; o'g'lining birinchi qadami; o'chgan chiroqli darvoza; «Keyin, bolam» | (faqat musiqa; oxirida Vaqt: «Yetti yil.») |
+| 6 | 0:38–0:58 | Oltin neon xotiralar (faqat Aziz): beshik; birinchi qadamlar, bobo qaramaydi; rasm polga tushadi; varrak uchmaydi; «Keyin, bolam» | (faqat musiqa; oxirida Vaqt: «Yetti yil.») |
 | 7 | 0:58–1:06 | Boy yig'laydi; Vaqt qum soatini ko'rsatadi, yuqorisi qorong'i | Boy: «Bittasini qaytar...» Vaqt: «O'tganini hech kim qaytarolmaydi. Qancha qolganini faqat Alloh biladi. Lekin bugun va hozir hali seniki.» |
 | 8 | 1:06–1:14 | Sham qayta yonadi, tanga to'xtaydi | Aziz: «Bobo, osh sovib qoldi.» Boy: «Hozir, bolam! Hozir!» |
-| 9 | 1:14–1:24 | Hovli, dasturxon, Aziz tizzada; ayvon soyasida Vaqt oltinga aylanib so'nadi | — |
+| 9 | 1:14–1:24 | Hovli, dasturxon, Aziz tizzada, devorda Azizning rasmi; ayvon soyasida Vaqt oltinga aylanib so'nadi | — |
 | 10 | 1:24–1:30 | Daftar: «Foyda — bugun va hozir.» Qora ekran: VAQT | Diktor: «O'tgan vaqt qaytmaydi. Shuning uchun — bugun va hozir.» |
 
 ## 13-sahna: EPILOG — AI targ'iboti (egasi ma'qulladi, 2026-10-20)
@@ -110,12 +115,5 @@ Haqiqatga mos: kanal har kuni 05:00 da AI bo'yicha «Kun maslahati» chiqaradi (
 
 ## Ovoz (90 s versiya + epilog): 14 qator, 4 ovoz (DIKTOR, VAQT, HOJI BOY, AZIZ), har qator alohida WAV — matni chatda berildi (2026-10-20).
 
-## Xotiralar faqat Aziz haqida (egasi, 2026-10-20) — 7-sahna va 90 s dagi 6-sahna o'rniga
-Qizi, o'g'li, onasi xotiralari olib tashlandi. Oltin neon chiziqlarda, har biri tugaganda qumdek to'kiladi:
-1. Chaqaloq Aziz beshikda; hamma uni ko'rgani kelgan, bobo esa qorong'i xonada tanga sanaydi.
-2. Aziz birinchi qadamlarini bobosi tomon tashlaydi, qo'llarini cho'zadi; bobo daftarga engashgan, qaramaydi. Aziz yiqiladi.
-3. Aziz bobosiga o'zi chizgan rasmini olib keladi (bobo va nabira qo'l ushlashgan); bobo qaramay qo'l siltaydi, rasm polga tushadi.
-4. Aziz qo'lida varrak, eshik oldida kutadi; quyosh botadi, varrak uchmay qoladi.
-5. Bugun kechqurun: «Keyin, bolam. Keyin.» — Aziz eshikni yopayotgan lahza.
-Vaqtning gapi «O'ttiz yil» → «Yetti yil.» (Aziz 7 yoshda).
-11-sahna (hovli): boy endi faqat Azizga qaraydi — kulgisi, kichkina barmoqlari; Aziz chizgan rasm devorga ilingan.
+## O'zgarishlar tarixi
+- 2026-10-20: xotiralar faqat Aziz haqida (qizi, o'g'li, onasi olib tashlandi); «O'ttiz yil» → «Yetti yil» (Azizning yoshi); 11-sahnada faqat Aziz. Matn bir xil qilib tuzatildi.
