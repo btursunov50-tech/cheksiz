@@ -6,7 +6,7 @@ Hook (EN): «You can't buy time. But you sell it every day.» 81.4 STRONG.
 
 Asosiy qoida (egasi, 2026-10-20): umrni Allohdan boshqa hech kim qo'sha ham, kamaytira ham olmaydi.
 Shuning uchun Vaqt umr bermaydi, olmaydi ham, ajal haqida gapirmaydi. U faqat **o'tgan vaqtning hisobini ko'rsatadi**.
-O'tgan vaqt qaytmaydi; qolgani qancha, uni faqat Alloh biladi. Saboq: «hozir».
+O'tgan vaqt qaytmaydi; qolgani qancha, uni faqat Alloh biladi. Saboq: «bugun va hozir» (egasi, 2026-10-20). Boyning javobi «Hozir, bolam! Hozir!» o'zgarmaydi: u «Keyin» ga javob.
 
 ## Qahramonlar (o'ylab topilgan)
 - **VAQT.** Odam bo'yidan baland, to'liq gavda. Butun tanasi minglab ingichka ko'k neon chiziqlardan to'qilgan: yelkalari, chopon burmalari, yuz konturi (ko'z, og'iz chizilmagan). Chiziqlar ichida oltin uchqunlar, ko'kragida yorug' qum soati. Yurganda chiziqlar tolalardek havoda uchadi. Ovozi past, shoshilmaydi. Jazolamaydi, olib ketmaydi, faqat ko'rsatadi.
@@ -61,7 +61,7 @@ VAQT: «O'tganini hech kim qaytarolmaydi.»
 
 **9. QUM SOATI (1:40–1:55)**
 Vaqt ko'kragidagi qum soatini boyga ko'rsatadi. Yuqori qismi qorong'i, ichidagi qumni ko'rib bo'lmaydi; faqat yorug' donalar sekin tushib turibdi.
-VAQT: «Qancha qolganini men ham bilmayman. Uni faqat Alloh biladi. Lekin hozir... hozir hali seniki.»
+VAQT: «Qancha qolganini men ham bilmayman. Uni faqat Alloh biladi. Lekin bugun va hozir... hali seniki.»
 Vaqt orqaga chekinadi, chiziqlari tolalarga yoyilib, eshik tirqishidan chiqib ketadi.
 
 **10. UYG'ONISH (1:55–2:05)**
@@ -75,9 +75,9 @@ Hovli, chiroqlar, dasturxon. Boy oilasi bilan osh yeydi, Aziz uning tizzasida. U
 Bir chetda, ayvon soyasida Vaqt jim kuzatib turadi. Uning chiziqlari sovuq ko'kdan iliq oltinga o'tadi, keyin sekin uchqun bo'lib so'nadi.
 
 **12. FINAL (2:20–2:30)**
-Kechasi, karvonsaroy. Boy daftarining oxirgi sahifasiga yozadi: «Foyda — hozir.» Daftarni yopib, shamni o'chiradi.
+Kechasi, karvonsaroy. Boy daftarining oxirgi sahifasiga yozadi: «Foyda — bugun va hozir.» Daftarni yopib, shamni o'chiradi.
 Soat chiqillashi qaytadi: tik... tik...
-DIKTOR: «O'tgan vaqtni hech qanday pulga qaytarib bo'lmaydi. Qolgani qancha, uni faqat Alloh biladi. Shuning uchun — hozir.»
+DIKTOR: «O'tgan vaqtni hech qanday pulga qaytarib bo'lmaydi. Qolgani qancha, uni faqat Alloh biladi. Shuning uchun — bugun va hozir.»
 Qora ekran. Oltin harflarda: **VAQT** (montajda yoziladi).
 
 Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
@@ -97,7 +97,7 @@ Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
 | 4 | 0:22–0:30 | Boy sandiqni suradi | Boy: «O'tgan yillarimni qaytar, hamma oltinimni ol!» |
 | 5 | 0:30–0:38 | Tangalar qumga aylanib to'kiladi | Vaqt: «O'tgan vaqt sotilmaydi. Umr faqat Allohning qo'lida. Men faqat ko'rsataman.» |
 | 6 | 0:38–0:58 | Oltin neon xotiralar: qizining to'yida bo'sh o'rin; o'g'lining birinchi qadami; o'chgan chiroqli darvoza; «Keyin, bolam» | (faqat musiqa; oxirida Vaqt: «O'ttiz yil.») |
-| 7 | 0:58–1:06 | Boy yig'laydi; Vaqt qum soatini ko'rsatadi, yuqorisi qorong'i | Boy: «Bittasini qaytar...» Vaqt: «O'tganini hech kim qaytarolmaydi. Qancha qolganini faqat Alloh biladi. Lekin hozir hali seniki.» |
+| 7 | 0:58–1:06 | Boy yig'laydi; Vaqt qum soatini ko'rsatadi, yuqorisi qorong'i | Boy: «Bittasini qaytar...» Vaqt: «O'tganini hech kim qaytarolmaydi. Qancha qolganini faqat Alloh biladi. Lekin bugun va hozir hali seniki.» |
 | 8 | 1:06–1:14 | Sham qayta yonadi, tanga to'xtaydi | Aziz: «Bobo, osh sovib qoldi.» Boy: «Hozir, bolam! Hozir!» |
 | 9 | 1:14–1:24 | Hovli, dasturxon, Aziz tizzada; ayvon soyasida Vaqt oltinga aylanib so'nadi | — |
-| 10 | 1:24–1:30 | Daftar: «Foyda — hozir.» Qora ekran: VAQT | Diktor: «O'tgan vaqt qaytmaydi. Shuning uchun — hozir.» |
+| 10 | 1:24–1:30 | Daftar: «Foyda — bugun va hozir.» Qora ekran: VAQT | Diktor: «O'tgan vaqt qaytmaydi. Shuning uchun — bugun va hozir.» |
