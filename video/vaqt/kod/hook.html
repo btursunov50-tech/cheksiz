@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#140c07}canvas{display:block}</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+// «VAQT» hook, Veo'siz: ko'k neon chiziq tik-tik bilan qum soatini chizadi, oltin qum oqadi,
+// soat qumga sochiladi, qum «VAQT» yozuviga yig'iladi. setT(t) bir kadrni chizadi.
+const c=document.getElementById('c'),x=c.getContext('2d'),W=1080,H=1920,CX=540,CY=900;
+let s=7;const R=()=>(s=(s*16807)%2147483647)/2147483647;
+// qum soati konturi
+function glass(){const p=[],w=300,h=560,n=34;
+  const side=(sg)=>{const a=[];for(let i=0;i<=n;i++){const u=i/n,y=-h+2*h*u,k=Math.abs(y)/h;a.push([CX+sg*(28+(w-28)*Math.pow(k,0.75)),CY+y]);}return a;};
+  p.push([CX-w-30,CY-h]);p.push([CX+w+30,CY-h]);p.push(...side(1));p.push([CX+w+30,CY+h]);p.push([CX-w-30,CY+h]);p.push(...side(-1).reverse());p.push([CX-w-30,CY-h]);
+  const o=[];for(let i=0;i<p.length-1;i++){const[a,b]=[p[i],p[i+1]],L=Math.hypot(b[0]-a[0],b[1]-a[1]),m=Math.max(1,Math.round(L/6));for(let j=0;j<m;j++)o.push([a[0]+(b[0]-a[0])*j/m,a[1]+(b[1]-a[1])*j/m]);}return o;}
+const G=glass();
+// «VAQT» harflari nuqtalari
+const tc=document.createElement('canvas');tc.width=W;tc.height=H;const tx=tc.getContext('2d');
+tx.fillStyle='#fff';tx.font='900 330px Georgia, serif';tx.textAlign='center';tx.textBaseline='middle';tx.fillText('VAQT',CX,CY);
+const d=tx.getImageData(0,0,W,H).data,T=[];for(let y=0;y<H;y+=7)for(let xx=0;xx<W;xx+=7)if(d[(y*W+xx)*4+3]>128)T.push([xx,y]);
+const N=3200,P=[];for(let i=0;i<N;i++){const g=G[Math.floor(R()*G.length)],t=T[Math.floor(R()*T.length)];P.push({sx:g[0]+(R()-.5)*8,sy:g[1]+(R()-.5)*8,tx:t[0]+(R()-.5)*3,ty:t[1]+(R()-.5)*3,v:.5+R(),ph:R()*6.28,dl:R()*.9,sz:1.6+R()*2.2});}
+const grain=[];for(let i=0;i<1600;i++)grain.push([R()*W,R()*H,R()]);
+const E=u=>u<0?0:u>1?1:u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+const TICK=.45,TK=8;
+function bg(){x.fillStyle='#140c07';x.fillRect(0,0,W,H);
+  const g=x.createRadialGradient(CX,CY,100,CX,CY,1150);g.addColorStop(0,'#3a2414');g.addColorStop(1,'#0d0704');x.fillStyle=g;x.fillRect(0,0,W,H);
+  x.fillStyle='rgba(255,220,170,.035)';for(const[a,b,r]of grain)x.fillRect(a,b,1+r*2,1+r*2);}
+function line(pts,col,w,glow){if(pts.length<2)return;x.save();x.lineJoin=x.lineCap='round';
+  for(const[ww,al,bl]of[[w*5,.18,40],[w*2.2,.45,18],[w,1,6]]){x.strokeStyle=col;x.globalAlpha=al*glow;x.lineWidth=ww;x.shadowColor=col;x.shadowBlur=bl;x.beginPath();x.moveTo(pts[0][0],pts[0][1]);for(const p of pts)x.lineTo(p[0],p[1]);x.stroke();}
+  x.restore();}
+window.setT=function(t){s=7;bg();
+  const draw=Math.min(1,(Math.floor(t/TICK)+E(Math.min(1,(t%TICK)/.18)))/TK);
+  const blue='#5fd4ff',gold='#ffc34d';
+  if(t<3.6){const k=Math.floor(G.length*draw);const fade=t<3.4?1:1-(t-3.4)/.2;line(G.slice(0,k),blue,4,fade);
+    // pulsing tip
+    if(k>0&&k<G.length){const p=G[k-1];x.save();x.fillStyle='#e8f8ff';x.shadowColor=blue;x.shadowBlur=30;x.beginPath();x.arc(p[0],p[1],7,0,7);x.fill();x.restore();}
+    // qum oqimi
+    if(t>1.6){const a=Math.min(1,(t-1.6)/.4);x.save();x.fillStyle=gold;x.shadowColor=gold;x.shadowBlur=12;
+      const top=Math.max(0,1-(t-1.6)/2.2);x.globalAlpha=.55*a;x.beginPath();x.moveTo(CX-220*top,CY-120-300*top);x.lineTo(CX+220*top,CY-120-300*top);x.lineTo(CX,CY-30);x.fill();
+      x.globalAlpha=.6*a;const bot=(t-1.6)/2.2;x.beginPath();x.moveTo(CX-260*bot,CY+545);x.lineTo(CX+260*bot,CY+545);x.lineTo(CX,CY+545-170*bot);x.fill();
+      x.globalAlpha=a;for(let i=0;i<40;i++){const y=CY-20+((i*14+t*900)%560);x.beginPath();x.arc(CX+Math.sin(i*3+t*9)*2,y,2.4,0,7);x.fill();}x.restore();}}
+  if(t>=3.4){x.save();x.globalCompositeOperation='lighter';
+    for(const p of P){let px,py,col;
+      const u=Math.max(0,t-3.4);const fall=Math.min(u,2.6);
+      const fx=p.sx+Math.sin(p.ph+fall*1.3)*30*fall*p.v,fy=p.sy+120*fall*fall*p.v*.35+40*fall;
+      const m=E((t-5.6-p.dl)/1.9);px=fx+(p.tx-fx)*m;py=fy+(p.ty-fy)*m;
+      const al=t<3.6?(t-3.4)/.2:1;
+      x.globalAlpha=.85*al;x.fillStyle=m>.9?'#ffd77a':gold;x.fillRect(px-p.sz/2,py-p.sz/2,p.sz,p.sz);}
+    x.restore();
+    if(t>7.8){const a=Math.min(1,(t-7.8)/.8)*(.85+.15*Math.sin(t*2));x.save();x.globalAlpha=a*.5;x.shadowColor=gold;x.shadowBlur=60;x.fillStyle='rgba(255,195,77,.25)';x.font='900 330px Georgia, serif';x.textAlign='center';x.textBaseline='middle';x.fillText('VAQT',CX,CY);x.restore();
+      const w=Math.min(1,(t-8.2)/.8)*360;if(w>0)line([[CX-w,CY+230],[CX+w,CY+230]],blue,3,1);}}
+  // vinyetka
+  const v=x.createRadialGradient(CX,H/2,500,CX,H/2,1250);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.6)');x.fillStyle=v;x.fillRect(0,0,W,H);};
+setT(2);
+</script></body></html>
