@@ -7,3 +7,4 @@ Rasmlar: `img/ref_hoji.jpg`, `img/ref_qizi.jpg`, `img/ref_aziz.jpg` (tasdiqlanga
 Sahnalar (2026-10-20): `s03_tanga.jpg` (asosiy; `_b` zaxira), `s04_sandiq.jpg`, `s05_qum.jpg`, `s07_tavba.jpg` — boyning yuzi namunaga mos.
 `s08_uygonish`, `s09_hovli` (Azizning doppisi naqshi namunadan biroz boshqa), `s10_daftar`, `x1_qogirchoq`, `x2_toy` (2026-10-20).
 `x5_rasm` ✅; `x3_chaqaloq_eski`, `x4_qadam_eski`: qizi o'smirdek yosh chiqqan, qayta qilinadi (yangi prompt X3/X4). Epilog bugungi kunda (13b).
+`s13_bugun` (epilog, bugungi kun), `x3_chaqaloq`, `x4_qadam` (qizi hali ham yoshroq ko'rinadi, lekin oltin chiziqqa aylanganda yosh sezilmaydi). Barcha rasmlar tayyor.
