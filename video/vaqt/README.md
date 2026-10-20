@@ -6,3 +6,4 @@ Fayllar rejadan ~2 baravar uzun (0.9x tezlik + oxirida ~1 s jimlik); montajda pa
 Rasmlar: `img/ref_hoji.jpg`, `img/ref_qizi.jpg`, `img/ref_aziz.jpg` (tasdiqlangan namunalar; Azizning ikkinchi varianti yuzi boshqa, olib tashlandi), `img/s02_boy_aziz.jpg` (2-sahna, namunalarga mos).
 Sahnalar (2026-10-20): `s03_tanga.jpg` (asosiy; `_b` zaxira), `s04_sandiq.jpg`, `s05_qum.jpg`, `s07_tavba.jpg` — boyning yuzi namunaga mos.
 `s08_uygonish`, `s09_hovli` (Azizning doppisi naqshi namunadan biroz boshqa), `s10_daftar`, `x1_qogirchoq`, `x2_toy` (2026-10-20).
+`x5_rasm` ✅; `x3_chaqaloq_eski`, `x4_qadam_eski`: qizi o'smirdek yosh chiqqan, qayta qilinadi (yangi prompt X3/X4). Epilog bugungi kunda (13b).
