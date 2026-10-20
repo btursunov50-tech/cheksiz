@@ -1,38 +1,89 @@
-# «Vaqt savdogari» — neon chiziqli masal (2026-10-20, ssenariy, 60–90 s)
+# «VAQT» — ssenariy (3-variant, 2026-10-20)
 
-Andoza: egasi yuborgan rus Shorts (Yayati masali: o'lim podshohga keladi, o'g'li yoshligini beradi, «istak hech qachon to'ymaydi»; 104 s, saroy, oltin, so'zma-so'z subtitr). O'zi emas, o'xshash: masal + yangi neon qahramon.
+Janr: sinematik AI qisqa film · ~2–2,5 daqiqa (90 s qisqa versiyasi ham bo'ladi) · 9:16
+Ohang: sirli boshlanish → og'ir burilish → iliq yakun
 Hook (EN): «You can't buy time. But you sell it every day.» 81.4 STRONG.
 
-Qahramonlar (o'ylab topilgan):
-- HOJI BOY: Buxorolik keksa boy savdogar, oq soqol, zarbof chopon, salla.
-- VAQT: odam bo'yidan baland, minglab ingichka neon chiziqlardan to'qilgan to'liq gavda (tayoqcha-odam emas): yelkalar, chopon burmalari, yuz konturi chiziqlardan; ko'k neon, ichida oltin uchqunlar; ko'kragida yorug' qum soati. Yurganda chiziqlar tolalardek uchadi.
-- Xotiralar: Vaqt ko'rsatgan o'tmish sahnalari faqat oltin neon chiziqlar bilan chiziladi.
-Ranglar: jigarrang, oltin, ko'k neon; qizil kam.
+Asosiy qoida (egasi, 2026-10-20): umrni Allohdan boshqa hech kim qo'sha ham, kamaytira ham olmaydi.
+Shuning uchun Vaqt umr bermaydi, olmaydi ham, ajal haqida gapirmaydi. U faqat **o'tgan vaqtning hisobini ko'rsatadi**.
+O'tgan vaqt qaytmaydi; qolgani qancha, uni faqat Alloh biladi. Saboq: «hozir».
 
-| # | Sahna | Ovoz / matn |
-|---|---|---|
-| 1 | Qora ekran, soat chiqillashi; bitta ko'k chiziq paydo bo'ladi | Diktor: «Vaqtni sotib olib bo'lmaydi. Lekin sen uni har kuni sotasan.» |
-| 2 | Buxoro, kechki karvonsaroy. Hoji boy sham yonida oltin tangalarni sanaydi | — |
-| 3 | Sham o'chadi. Eshikdan minglab neon chiziqdan to'qilgan baland qomat kiradi, ko'kragida qum soati | Vaqt: «Hoji boy. Sening vaqting tugadi.» |
-| 4 | Boy tiz cho'kib, oltin to'la sandiqni suradi | Boy: «Hamma oltinimni ol. Menga o'n yil ber.» |
-| 5 | Vaqt sandiqqa tegadi, tangalar qumga aylanib to'kiladi | Vaqt: «Men oltin olmayman. Men faqat vaqt bilan hisoblashaman. Senda vaqt bor edi.» |
-| 6 | Vaqt qo'lini yoyadi; boyning ko'kragidan oltin iplar chiqib, tangalar, hisob daftari, savdo tomon oqib ketadi | Vaqt: «Mana u. O'ttiz yil. Sen uni sotding.» |
-| 7 | Havoda oltin neon chiziqlarda xotiralar chiziladi: qizining to'yi (boy yo'q, o'rni bo'sh), o'g'lining birinchi qadamlari (ota qaramaydi), onasi darvoza oldida kutadi | Vaqt: «Qizingning to'yi. O'g'lingning birinchi qadami. Onangning so'nggi kuni.» |
-| 8 | Boy yig'laydi, chiziq-xotiralar so'nadi | Boy: «Bitta kun... Faqat bitta kun ber.» |
-| 9 | Vaqt qum soatini aylantiradi, bitta yorug' qum donasi tushadi | Vaqt: «Bitta kun.» |
-| 10 | Tong. Boy hovlida oilasi bilan dasturxonda; nevaralar yelkasida; u tangalarni emas, ularni ko'radi. Neon chiziqlar endi iliq oltin rangda | — |
-| 11 | Kechqurun. Vaqt jimgina turibdi; boy jilmayib unga qo'lini beradi | Boy: «Rahmat. Bu umrimning eng boy kuni bo'ldi.» |
-| 12 | Neon chiziqlar osmonga yulduzdek tarqaladi | Diktor: «Vaqtni pulga sotib bo'lmaydi. Pulni esa vaqtga sotamiz. Bugun kimga vaqt ajratdingiz?» |
+## Qahramonlar (o'ylab topilgan)
+- **VAQT.** Odam bo'yidan baland, to'liq gavda. Butun tanasi minglab ingichka ko'k neon chiziqlardan to'qilgan: yelkalari, chopon burmalari, yuz konturi (ko'z, og'iz chizilmagan). Chiziqlar ichida oltin uchqunlar, ko'kragida yorug' qum soati. Yurganda chiziqlar tolalardek havoda uchadi. Ovozi past, shoshilmaydi. Jazolamaydi, olib ketmaydi, faqat ko'rsatadi.
+- **HOJI BOY.** 70 yoshlar, Buxoroning eng boy savdogari. Oq soqol, salla, zarbof chopon, barmoqlarida uzuklar, yonida doim hisob daftari. Ko'zlari charchagan, faqat tangalarga qaraganda yonadi.
+- **AZIZ.** Nabirasi, 6–7 yosh, qiziquvchan. Filmning yuragi.
 
-Avatar: «Siz-chi? Bugun kimga vaqt ajratdingiz? Izohga yozing!»
-Diniy jihat: o'limni «Vaqt» deb nomladik (Azroil emas), ilohiy shaxs tasvirlanmaydi.
+Vizual qoida: Vaqt ko'rsatgan xotiralar havoda **oltin neon chiziqlar** bilan chiziladi. Boshida neon sovuq ko'k, oxirida iliq oltin. Ranglar: jigarrang, oltin, ko'k neon; qizil yo'q.
 
-## 2-variant (egasi yuborgan kuchaytirilgan ssenariy, 2026-10-20) — 2,5–3 daqiqa, 12 sahna
-Qo'shilgan: nabira Aziz («Keyin, bolam. Keyin.» → xotirada qaytadi → oxirida yelkada), boy narxni o'zi tushiradi (10 → 5 → 1 yil), oltinning qumidan bitta don soatga solinadi, ona xotirasi o'chgan chiroq bilan tugaydi, daftar oxirida «Bugun — bir kun. Foyda — hammasi.», neon sovuq ko'kdan iliq oltinga o'tadi, final: ikkalasi chiziqlarga yoyilib yulduzdek tarqaladi, Aziz yulduzga qo'l silkitadi; yakuniy so'z «Pulni vaqtga sotamiz. Lekin vaqtni hech qanday pulga qaytarib ololmaymiz.»
+## Sahnalar
 
-Claude tuzatishlari:
-- 1-sahna 10 s qora ekran — juda sekin: birinchi 2 s da harakat bo'lsin (ko'k chiziq qum soatini tez chizadi + diktor gapi darhol), 5 s gacha qisqartirish.
-- Vaqt ajalni o'zi bermasin: «Senga yana bitta kun berildi» (majhul nisbat), «Men beraman» emas.
-- Final «odam yulduzga aylanadi» — ruh yulduzga aylanadi degan ma'noda o'qilmasligi uchun: boy va Vaqt oltin nur ichida birga ketadi, osmonda faqat chiziqlar uchqun bo'lib so'nadi; Aziz qo'l silkitadi.
-- Daftardagi va final «VAQT» yozuvlari AI'da emas, montajda qo'yiladi (AI o'zbekcha harfni buzadi).
-- 2,5–3 daqiqa = ~20–22 klip (8 s); Reels/Shorts 3 daqiqagacha ruxsat, lekin 90 s qisqa versiyasi ham kerak (2, 4, 6, 9, 11-sahnalarni qisqartirib).
+**1. HOOK (0:00–0:05)**
+Qorong'ilik. Soat chiqillaydi: tik... tik... Har zarbada ko'k neon chiziq tez yugurib, qum soatini chizadi.
+DIKTOR: «Vaqtni sotib olib bo'lmaydi. Lekin sen uni har kuni sotasan.»
+Chiqillash birdan to'xtaydi.
+
+**2. BOYNING DUNYOSI (0:05–0:20)**
+Buxoro, kechki karvonsaroy. Minoralar ortida quyosh botyapti. Hoji boy sham yonida oltin tangalarni sanaydi, har birini daftarga yozadi. Tangalarning jiringlashi soat chiqillashi ritmida.
+Eshik g'ichirlaydi. Aziz bosh suqadi:
+AZIZ: «Bobo... oyim chaqiryapti. Osh tayyor.»
+HOJI BOY (boshini ko'tarmay): «Keyin, bolam. Keyin.»
+Aziz bir lahza turadi, sekin eshikni yopadi.
+
+**3. VAQT KELADI (0:20–0:35)**
+Shamol yo'q, lekin sham alangasi egilib o'chadi. Eshik tirqishidan ko'k nur sizib kiradi, eshik o'zi ochiladi. Neon chiziqlardan to'qilgan Vaqt kiradi; har qadamida polda bir lahza yorug' iz qoladi.
+Boyning qo'lidan tanga tushib, polda aylanadi... aylanadi...
+VAQT: «Qo'rqma, Hoji boy. Men hech narsani olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.»
+
+**4. SAVDO (0:35–0:45)**
+Boy darrov o'ziga keladi, savdogar odati uyg'onadi. Oltin to'la sandiqni Vaqt tomon suradi:
+HOJI BOY: «Hisob bo'lsa, savdo ham bor. O'tgan yillarimni qaytar, hamma oltinimni ol! O'n yil... yo'q, besh yil... bitta yil!»
+(Narxni o'zi tushiradi, bir umr savdolashib kelgan.)
+
+**5. OLTIN QUMGA AYLANADI (0:45–0:55)**
+Vaqt sandiqqa barmog'ini tekkizadi. Tangalar birin-ketin qumga aylanib, sharshara kabi polga to'kiladi.
+VAQT: «O'tgan vaqt sotilmaydi, sotib ham olinmaydi. Umrni qo'shish ham, kamaytirish ham faqat Allohning qo'lida. Men faqat ko'rsataman.»
+
+**6. QAYERGA KETDI (0:55–1:05)**
+Vaqt boyning ko'kragiga qo'lini qo'yadi. U yerdan yupqa oltin iplar chiqib, qum uyumi va hisob daftari tomon oqadi, ularga singib ketadi.
+VAQT: «Mana ular. O'ttiz yil. Hammasi shu daftarda.»
+
+**7. XOTIRALAR (1:05–1:30)** (eng kuchli sahna)
+Havoda oltin neon chiziqlar bilan xotiralar birin-ketin chiziladi; har biri tugaganda chiziqlar qumdek to'kiladi:
+- Qizining to'yi. Hamma bor, faqat otaning o'rni bo'sh. Kelin eshik tomon qayta-qayta qaraydi.
+- O'g'lining birinchi qadamlari. Bola qo'llarini ota tomon cho'zadi, ota stol ortida tangalarga engashgan. Bolani onasi ko'taradi.
+- Darvoza oldida chiroq ushlab yo'lga tikilgan keksa ona. Keyingi kadr: o'sha darvoza, ona yo'q, chiroq o'chgan.
+- Bugun kechqurun: «Keyin, bolam. Keyin.» Aziz eshikni yopayotgan lahza.
+
+**8. TAVBA (1:30–1:40)**
+Boy yig'laydi, endi savdolashmaydi.
+HOJI BOY: «Bittasini qaytar... faqat bittasini...»
+VAQT: «O'tganini hech kim qaytarolmaydi.»
+
+**9. QUM SOATI (1:40–1:55)**
+Vaqt ko'kragidagi qum soatini boyga ko'rsatadi. Yuqori qismi qorong'i, ichidagi qumni ko'rib bo'lmaydi; faqat yorug' donalar sekin tushib turibdi.
+VAQT: «Qancha qolganini men ham bilmayman. Uni faqat Alloh biladi. Lekin hozir... hozir hali seniki.»
+Vaqt orqaga chekinadi, chiziqlari tolalarga yoyilib, eshik tirqishidan chiqib ketadi.
+
+**10. UYG'ONISH (1:55–2:05)**
+Sham o'z-o'zidan qayta yonadi. Hammasi joyida: sandiqda oltin, stolda daftar, polda haligi tanga hali ham aylanib turibdi... va to'xtaydi. Tush edimi? Eshik ortidan:
+AZIZ: «Bobo... osh sovib qoldi.»
+Boy daftarni yopadi, o'rnidan turadi.
+HOJI BOY: «Hozir, bolam! Hozir!»
+
+**11. HOZIR (2:05–2:20)**
+Hovli, chiroqlar, dasturxon. Boy oilasi bilan osh yeydi, Aziz uning tizzasida. U ilk bor bolalarining yuziga uzoq qaraydi: qizining kulgisi, o'g'lining qo'li, nabirasining kichkina barmoqlari.
+Bir chetda, ayvon soyasida Vaqt jim kuzatib turadi. Uning chiziqlari sovuq ko'kdan iliq oltinga o'tadi, keyin sekin uchqun bo'lib so'nadi.
+
+**12. FINAL (2:20–2:30)**
+Kechasi, karvonsaroy. Boy daftarining oxirgi sahifasiga yozadi: «Foyda — hozir.» Daftarni yopib, shamni o'chiradi.
+Soat chiqillashi qaytadi: tik... tik...
+DIKTOR: «O'tgan vaqtni hech qanday pulga qaytarib bo'lmaydi. Qolgani qancha, uni faqat Alloh biladi. Shuning uchun — hozir.»
+Qora ekran. Oltin harflarda: **VAQT** (montajda yoziladi).
+
+Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
+
+## Eslatmalar
+- «Keyin, bolam» → xotira → «Hozir, bolam!»: film boshlangan joyida yopiladi.
+- Vaqt hech kimga umr bermaydi va olmaydi; faqat o'tgan vaqtni ko'rsatadi. Qolgan umr haqida: «faqat Alloh biladi».
+- Daftar yozuvi va «VAQT» montajda qo'yiladi (AI o'zbekcha harfni buzadi).
+- 90 s versiya uchun 2, 4, 6, 9, 11-sahnalar qisqartiriladi.
