@@ -101,3 +101,11 @@ Avatar: «Siz-chi? Bugun kimga «keyin» dedingiz? Izohga yozing!»
 | 8 | 1:06–1:14 | Sham qayta yonadi, tanga to'xtaydi | Aziz: «Bobo, osh sovib qoldi.» Boy: «Hozir, bolam! Hozir!» |
 | 9 | 1:14–1:24 | Hovli, dasturxon, Aziz tizzada; ayvon soyasida Vaqt oltinga aylanib so'nadi | — |
 | 10 | 1:24–1:30 | Daftar: «Foyda — bugun va hozir.» Qora ekran: VAQT | Diktor: «O'tgan vaqt qaytmaydi. Shuning uchun — bugun va hozir.» |
+
+## 13-sahna: EPILOG — AI targ'iboti (egasi ma'qulladi, 2026-10-20)
+«VAQT» yozuvidan keyin, avatar va yakuniy kartadan oldin (~10 s). Qissaning o'zi alohida qoladi.
+- Ertasi kuni ertalab, hovli, choy. Aziz bobosiga telefon ko'rsatadi; ekrandagi «Kun maslahati» ko'k neon chiziq bo'lib havoga ko'tariladi, oltin uchqunga aylanadi. Aziz: «Bobo, bugungi AI maslahati!»
+- Telefon ekrani yaqin (kanal va bot montajda yoziladi). Diktor: «Vaqtingizni bekorga ketkazmang. Har kuni bitta yangi narsa o'rganing. Har tong kanalimizda bepul AI maslahati, savolingizni esa botimizga yozing.»
+Haqiqatga mos: kanal har kuni 05:00 da AI bo'yicha «Kun maslahati» chiqaradi (`bot/tong.js`), bot savollarga bepul javob beradi. Havolalar: t.me/infinite_ai_and_me, @sahiychishopbot.
+
+## Ovoz (90 s versiya + epilog): 14 qator, 4 ovoz (DIKTOR, VAQT, HOJI BOY, AZIZ), har qator alohida WAV — matni chatda berildi (2026-10-20).
