@@ -39,3 +39,4 @@ Qolgan: s09 (VAQT bilan rasm → Veo).
 - Yig'ish: `python3 .claude/skills/video-yig/yig.py --dir video/vaqt --work <scratch> --voice ovoz.flac --music <Dutar>:0 --avq "Siz-chi?|Bugun kimga «keyin» dedingiz?|Izohga yozing!" --send`
 - v2 (2026-10-21): xotiralar 5/3 marta sekin (jami 37 s), musiqa «In Battery» (Density & Time), 2:27. v1 da «Dutar's Whisper» edi.
 - v3 (2026-10-21): musiqa «Nocturnal Tension» (egasi, Suno), ikki marta yumshoq ulangan (`music/nocturnal_x2_past.mp3`, −15.8 dB), ovozdan ~8 dB past; ovoz balandligi o'zgartirilmadi (`--no-norm`, butun video ~−20 LUFS).
+- **Egasi ma'qulladi (2026-10-21): v3 → `video/final/vaqt/vaqt_uz.mp4`.** Keyingisi: ru/en subtitr versiyalari va joylash matnlari.
