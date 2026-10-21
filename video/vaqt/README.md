@@ -29,3 +29,11 @@ Tuzatish: 3, 7 (va 9) uchun VAQT bilan yangi boshlang'ich rasm (`ref_vaqt` birik
 | s13 | ✅ Aziz telefon ko'rsatadi, ekran toza ko'k |
 Qolgan: s09 (VAQT bilan rasm → Veo).
 | s09b_vaqt (rasm) | ✅ VAQT namunaga mos (soqolsiz shisha yuz), bitta lagan osh, qizi choy uzatadi. Veo prompti sahifada |
+
+## Yig'ish (2026-10-21)
+- `ovoz_kes.py`: qatorlarning jimligi kesiladi, pauzalar ≤0.45 s, VAQTga aks-sado → `voice_cut/NN.wav` + `segs.json`.
+- `timeline.py`: LINES (qator vaqtlari), CUT/CLIP (17 sahna, 125.6 s), CLINK, SAND, TEXT; SUB avtomatik (gaplar katta pauzalarga bo'linadi).
+- `ovoz.py` → `ovoz.flac` (qatorlar + hook tik-tik/zarba + tanga jiringi + qum shitirlashi).
+- Effektli kliplar: `h01`/`t11` (kod/hook.mp4), `s03r` (ramp 2.8–3.75 s, 0.5x), `xg1–5` (`kod/xotira_video.py`), `k14` (`kod/epilog.html`).
+- Musiqa: «Dutar's Whisper» (egasi o'zi yasagan, Content ID yo'q), 0:00 dan, oxirida 5 s so'nadi.
+- Yig'ish: `python3 .claude/skills/video-yig/yig.py --dir video/vaqt --work <scratch> --voice ovoz.flac --music <Dutar>:0 --avq "Siz-chi?|Bugun kimga «keyin» dedingiz?|Izohga yozing!" --send`
