@@ -24,7 +24,7 @@ CLIP = ["h01", "s02", "s03r", "s04", "s05", "xg1", "xg2", "xg3", "xg4", "xg5", "
 START = {}
 BOOM = []
 MUSIC_FADE = 5
-TEXT = [(99.0, 104.6, "Foyda — bugun va hozir.", 66), (107.5, 109.6, "BUGUN", 120)]
+TEXT = [(99.0, 104.6, "Foyda —\\Nbugun va hozir.", 64, "FFC34D", (560, 820)), (107.5, 109.6, "BUGUN", 120, "FFC34D", (540, 330))]
 import json, os, re
 _segs = json.load(open(os.path.join(os.path.dirname(__file__), "voice_cut", "segs.json")))
 def _subs():

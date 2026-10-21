@@ -105,9 +105,11 @@ def main():
     stop = getattr(tl, "STOP", None)
     if stop and stop[0] < T:
         ev += f"Dialogue: 1,{tt(stop[0])},{tt(stop[1])},X,,0,0,0,,{{\\pos(540,1060)\\fad(80,200)\\fscx140\\fscy140\\t(0,180,\\fscx100\\fscy100)}}STOP\n"
-    for s0, e0, x, sz in getattr(tl, "TEXT", []):  # ekrandagi katta yozuvlar: (boshi, oxiri, matn, o'lcham)
+    for tx in getattr(tl, "TEXT", []):  # ekrandagi katta yozuvlar: (boshi, oxiri, matn, o'lcham[, rang "RRGGBB"[, (x, y)]])
+        s0, e0, x, sz = tx[:4]; col = tx[4] if len(tx) > 4 else None; pos = tx[5] if len(tx) > 5 else (540, 1250)
+        c = f"\\1c&H{col[4:6]}{col[2:4]}{col[0:2]}&\\3c&H0A1420&" if col else ""  # rang berilsa kontur to'q jigarrang
         if s0 < T:
-            ev += f"Dialogue: 1,{tt(s0)},{tt(e0)},X,,0,0,0,,{{\\pos(540,1250)\\fs{sz}\\fad(80,200)\\fscx130\\fscy130\\t(0,180,\\fscx100\\fscy100)}}{x}\n"
+            ev += f"Dialogue: 1,{tt(s0)},{tt(e0)},X,,0,0,0,,{{\\pos({pos[0]},{pos[1]})\\fs{sz}{c}\\fad(80,200)\\fscx130\\fscy130\\t(0,180,\\fscx100\\fscy100)}}{x}\n"
     open(f"{B}/sub.ass", "w").write(HDR + ev)
     run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/cine.mp4", "-vf", f"ass={B}/sub.ass,format=yuv420p",
          "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-r", "30", "-an", f"{B}/main_v.mp4"])
