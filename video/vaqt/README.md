@@ -9,3 +9,4 @@ Sahnalar (2026-10-20): `s03_tanga.jpg` (asosiy; `_b` zaxira), `s04_sandiq.jpg`, 
 `x5_rasm` ✅; `x3_chaqaloq_eski`, `x4_qadam_eski`: qizi o'smirdek yosh chiqqan, qayta qilinadi (yangi prompt X3/X4). Epilog bugungi kunda (13b).
 `s13_bugun` (epilog, bugungi kun), `x3_chaqaloq`, `x4_qadam` (qizi hali ham yoshroq ko'rinadi, lekin oltin chiziqqa aylanganda yosh sezilmaydi). Barcha rasmlar tayyor.
 Veo promptlari sahifasi: `sahnalar.py` → `sahnalar.html`, https://claude.ai/artifact/6KB4HumUpbVbKfmyke8SxJ (14 klip: 2–5, 5 xotira, 7–10, 13). Xotiralar ham Veo bilan, keyin `kod/xotira.py` uslubida oltin rang + qum.
+VAQT yangi qiyofa (egasi, 2026-10-21: neon aralash odam): shisha teri, ostida ko'k neon tomirlar, ichida oltin qum oqadi, ko'zlari oltin, ko'kragida qum soati, neon tolali qalpoqli chopon, etagi qumga aylanadi. Veo'da 3, 4, 5, 7, 9-sahnalarda. Kodli `kod/vaqt.html` zaxira.
