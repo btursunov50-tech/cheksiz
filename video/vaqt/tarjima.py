@@ -32,7 +32,7 @@ for lang, tr in (("uz", None), ("en", EN), ("ru", RU)):
             f.write("SUB = [\n" + "".join(f" {s!r},\n" for s in subs) + "]\n")
             f.write(f"TEXT = {txt!r}\nCLIP = {clip!r}\n")
     os.makedirs("video/final/vaqt", exist_ok=True)
-    with open(f"video/final/vaqt/vaqt_{lang}.srt", "w") as f:
+    with open(f"video/final/vaqt/vaqt-{lang}.srt", "w") as f:
         for i, (s, e, w, x) in enumerate(subs, 1):
             f.write(f"{i}\n{tc(s)} --> {tc(e)}\n{x}\n\n")
 print("ok")
