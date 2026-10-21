@@ -50,8 +50,8 @@ S = [
  ("8", "Sham qayta yonadi, tanga polda", "1:06–1:14", "Aziz: «Bobo, osh sovib qoldi.» Boy: «Hozir, bolam! Hozir!»", "s08_uygonish",
   ("Rack focus from the gold coin on the floor in the foreground to the old merchant in the background. The coin wobbles slightly and settles flat on the stone floor; the candle flame steadies and grows warm; the merchant closes his ledger, stands up, turns toward the door and calls out a short warm line with natural lip movement, with a soft new smile. " + KB, 8),
   "Tanga to'xtaganda yengil jiring."),
- ("9", "Hovli, osh, oila", "1:14–1:24", "(musiqa)", "s09_hovli",
-  ("Slow dolly out and crane up, ending wide over the evening courtyard. The grandfather laughs softly and strokes his grandson's head, the boy laughs back; the daughter serves him a plate of osh with happy tears in her eyes; lanterns glow, steam rises from the osh. In the shadow of the porch corner TIME stands silently and watches them with a soft smile; his blue neon lines slowly turn warm gold, then he dissolves into floating golden sparks and disappears. " + VQ + " " + KV + " " + KB + " " + KA + " " + KQ + " " + MUTE, 8),
+ ("9", "Hovli, osh, oila", "1:14–1:24", "(musiqa)", "s09b_vaqt",
+  ("Slow dolly out and crane up, ending wide over the evening courtyard. The grandfather laughs softly and strokes his grandson's head, the boy laughs back; the daughter offers her father a piyola of tea with both hands and he takes it with a grateful smile; happy tears shine in her eyes; the lanterns glow, steam rises from the big plate of osh on the table, which stays the only dish of osh. On the right, TIME stands silently by the pillar and watches them with a soft smile; his blue neon lines slowly turn warm gold, then he dissolves into floating golden sparks and disappears. " + VQ + " " + KV + " " + KB + " " + KA + " " + KQ + " " + MUTE, 8),
   "Oltin uchqunlarni kuchaytiraman."),
  ("10", "Daftarning oxirgi sahifasi", "1:24–1:30", "Diktor: «O'tgan vaqt qaytmaydi. Shuning uchun — bugun va hozir.»", "s10_daftar",
   ("Locked-off static top-down camera, it does not move. The old merchant's hand dips the pen into the ink pot, lifts it and holds it still over the blank page for a few seconds, then slowly closes the ledger; the candle flame flickers. The page stays completely blank, no letters or lines are drawn. " + MUTE, 8),
@@ -61,7 +61,7 @@ S = [
    "Keep the grandfather exactly as in the image (black doppi, white beard, dark quilted chopon, light shirt) and the boy exactly as in the image (doppi, light shirt, jeans, sneakers) for the whole clip.", 8),
   "Oldin o'tish: eski kadr qumga aylanadi → «Bugun». Telefon ekranida «Kun maslahati», ko'k neon chiziq bo'lib ko'tariladi (kod); kanal va bot havolasi."),
 ]
-WAIT = {"9"}
+WAIT = set()
 os.makedirs("video/vaqt/web", exist_ok=True)
 e = html.escape; cards = []
 for n, name, t, voice, img, vid, mine in S:
