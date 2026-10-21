@@ -1,3 +1,4 @@
+# Egasi (2026-10-21): Beruniy qalam chizmasi (xunuk) va ko'k belbog'li karatechi olib tashlandi.
 # Qoralama: tanlangan lavhalar reja tartibida + Veo o'rinlari (yozuvli kadr). 720x1280, tepada manba va vaqt yozuvi.
 import subprocess, os, sys
 R = "video/ref/2026-10-21/"; W = sys.argv[1]; os.makedirs(W, exist_ok=True)
@@ -9,7 +10,7 @@ PLAN = [
  ("armiya.mp4", 6, 5, A, "1-band — Armiya: zirhli mashinalar"),
  ("veo", "VEO: Amir Temurning otliq haykali", 4, "2-band 0:20 «Asrlar guvoh bizga»"),
  ("ibn_sino.mp4", 0, 6, B, "2-band — Ibn Sino portreti"),
- ("beruniy.mp4", 24, 6, B, "2-band — Beruniy va globus"),
+ ("ibn_sino.mp4", 32, 6, B, "2-band — Ibn Sino: Kitob ash-Shifo"),
  ("veo", "VEO: Ulug'bek rasadxonasi, yulduzli osmon", 4, "2-band «qonimizda olov bor»"),
  ("beruniy.mp4", 120, 5, B, "Ko'tarilish 0:30 — osmon sferasi"),
  ("shoxruxxon_baxtiyorov.mp4", 18, 6, A, "Naqorat 0:39 «Birlik – qudratimiz» — Shoxruxxon: tashlash"),
@@ -33,12 +34,9 @@ PLAN = [
  ("armiya.mp4", 10, 6, A, "Zaxira — raketa uchadi"),
  ("armiya.mp4", 18, 6, A, "Zaxira — tungi otish"),
  ("armiya.mp4", 54, 6, A, "Zaxira — zirhli kolonna"),
- ("ibn_sino.mp4", 32, 6, B, "Zaxira — Ibn Sino: Kitob ash-Shifo"),
- ("beruniy.mp4", 12, 6, B, "Zaxira — Beruniy chizmasi"),
  ("beruniy.mp4", 504, 6, B, "Zaxira — tog' balandligi chizmasi"),
  ("jalolov_dacres.mp4", 3, 5, B, "Zaxira — Jalolov ringga chiqadi"),
  ("shoxruxxon_baxtiyorov.mp4", 0, 6, A, "Zaxira — Shoxruxxon: 1-tashlash"),
- ("karate_leshan_67kg.mp4", 0, 5, A, "Zaxira — karate: chiqish"),
 ]
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 def esc(t): return t.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’")
