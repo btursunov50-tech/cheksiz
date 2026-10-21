@@ -12,6 +12,9 @@ const SP=[];for(let i=0;i<70;i++)SP.push([R(),R(),.3+R()*.7]);
 function rr(x0,y0,w,h,r){x.beginPath();x.moveTo(x0+r,y0);x.arcTo(x0+w,y0,x0+w,y0+h,r);x.arcTo(x0+w,y0+h,x0,y0+h,r);x.arcTo(x0,y0+h,x0,y0,r);x.arcTo(x0,y0,x0+w,y0,r);x.closePath();}
 function neon(col,w,a){for(const[lw,al,bl]of[[w*5,.15,30],[w*2,.4,14],[w,1,4]]){x.strokeStyle=col;x.globalAlpha=al*a;x.lineWidth=lw;x.shadowColor=col;x.shadowBlur=bl;x.stroke();}x.globalAlpha=1;x.shadowBlur=0;}
 function txt(t,y,size,col,a,glow){x.globalAlpha=a;x.font=`800 ${size}px Manrope, Arial, sans-serif`;x.textAlign='center';x.fillStyle=col;x.shadowColor=glow||col;x.shadowBlur=24;x.fillText(t,CX,y);x.shadowBlur=0;x.globalAlpha=1;}
+const L={uz:['KUN MASLAHATI','Har tong bepul AI maslahati',"Savolingiz bo'lsa:"],
+ en:['TIP OF THE DAY','A free AI tip every morning','Got a question?'],
+ ru:['СОВЕТ ДНЯ','Каждое утро бесплатный совет по ИИ','Есть вопрос?']}[location.hash.slice(1)||'uz'];
 window.setT=function(t){
  x.fillStyle='#140c07';x.fillRect(0,0,W,H);
  const g=x.createRadialGradient(CX,760,80,CX,760,1100);g.addColorStop(0,'#3a2414');g.addColorStop(1,'#0d0704');x.fillStyle=g;x.fillRect(0,0,W,H);
@@ -20,7 +23,7 @@ window.setT=function(t){
  const d=E(t/1.4);x.setLineDash([2400*d,3000]);rr(330,230,420,780,56);neon('#5fd4ff',4,1);x.setLineDash([]);
  // ekran ichi
  const a1=E((t-1.2)/.6);
- txt('KUN MASLAHATI',420,46,'#ffc34d',a1);
+ txt(L[0],420,46,'#ffc34d',a1);
  x.globalAlpha=a1;x.strokeStyle='#5fd4ff';x.lineWidth=3;x.shadowColor='#5fd4ff';x.shadowBlur=14;
  for(let i=0;i<4;i++){const w=[300,260,280,200][i]*E((t-1.5-i*.15)/.5);x.beginPath();x.moveTo(CX-150,520+i*70);x.lineTo(CX-150+w,520+i*70);x.stroke();}
  x.shadowBlur=0;x.globalAlpha=1;
@@ -29,9 +32,9 @@ window.setT=function(t){
  for(const[u,v,sp]of SP){const p=((v+t*.12*sp)%1);const y=980-p*700,xx=360+u*360;x.globalAlpha=E((t-1)/1)*(1-p)*.9;x.fillStyle='#ffc34d';x.shadowColor='#ffc34d';x.shadowBlur=10;x.beginPath();x.arc(xx,y,2.4,0,7);x.fill();}
  x.globalAlpha=1;x.shadowBlur=0;
  // havolalar
- txt('Har tong bepul AI maslahati',1150,52,'#f3e8da',E((t-2.6)/.6),'#000');
+ txt(L[1],1150,52,'#f3e8da',E((t-2.6)/.6),'#000');
  txt('t.me/infinite_ai_and_me',1235,58,'#5fd4ff',E((t-3)/.6));
- txt('Savolingiz bo\'lsa:',1345,44,'#c0a98f',E((t-4.6)/.6),'#000');
+ txt(L[2],1345,44,'#c0a98f',E((t-4.6)/.6),'#000');
  txt('@sahiychishopbot',1420,62,'#ffc34d',E((t-4.9)/.6));
 };
 setT(6);
