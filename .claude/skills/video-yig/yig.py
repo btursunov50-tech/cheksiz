@@ -54,6 +54,7 @@ def main():
     p.add_argument("--music"); p.add_argument("--music-vol", type=float, default=0.5)
     p.add_argument("--avq"); p.add_argument("--lang", default="uz"); p.add_argument("--send", action="store_true")
     p.add_argument("--reuse", action="store_true", help="tayyor cine.mp4 ni qayta ishlatish")
+    p.add_argument("--no-norm", action="store_true", help="ovoz balandligini o'zgartirmaslik (loudnorm o'rniga faqat limiter)")
     p.add_argument("--tl", help="tarjima: timeline_<tl>.py dagi SUB/TEXT timeline.py ustidan yoziladi (masalan en, ru)")
     a = p.parse_args()
     B = os.path.abspath(a.work); os.makedirs(B, exist_ok=True)
@@ -96,7 +97,7 @@ def main():
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/voice_sfx.wav", "-ss", ms, "-i", mf, "-filter_complex",
              f"[1:a]atrim=0:{ME},asetpts=PTS-STARTPTS,afade=t=in:d=1.5,afade=t=out:st={ME-fo}:d={fo},apad=whole_dur={TT},volume={a.music_vol},aresample=48000,aformat=channel_layouts=stereo[m];"
              f"[0:a]apad=whole_dur={TT},asplit[v][sc];[m][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];"
-             "[v][md]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[a]", "-map", "[a]", "-ar", "48000", f"{B}/mix.wav"])
+             "[v][md]amix=inputs=2:normalize=0," + ("alimiter=limit=0.95" if a.no_norm else "loudnorm=I=-15:TP=-1.5:LRA=11") + "[a]", "-map", "[a]", "-ar", "48000", f"{B}/mix.wav"])
     else:
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/voice_sfx.wav", "-af", "loudnorm=I=-15:TP=-1.5:LRA=11", "-ar", "48000", f"{B}/mix.wav"])
 
