@@ -8,23 +8,23 @@ LINES = [  # (fayl voice_cut/NN.wav, boshlanishi s, kim: D diktor / V vaqt / B b
  ("04", 22.4, "V", "Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim."),
  ("05", 28.6, "B", "O'tgan yillarimni qaytar, hamma oltinimni ol!"),
  ("06", 36.6, "V", "O'tgan vaqt sotilmaydi. Umr faqat Allohning qo'lida. Men faqat ko'rsataman."),
- ("07", 65.4, "V", "O'ttiz yil."),
- ("08", 67.9, "B", "Bittasini qaytar..."),
- ("09", 70.1, "V", "O'tganini hech kim qaytarolmaydi. Qancha qolganini faqat Alloh biladi. Lekin bugun va hozir hali seniki."),
- ("10", 81.4, "A", "Bobo, osh sovib qoldi."),
- ("11", 84.5, "B", "Hozir, bolam! Hozir!"),
- ("12", 97.4, "D", "O'tgan vaqt qaytmaydi. Shuning uchun — bugun va hozir."),
- ("13", 107.9, "A", "Bobo, bugungi AI maslahati!"),
- ("14", 111.0, "D", "Vaqtingizni bekorga ketkazmang. Har kuni bitta yangi narsa o'rganing. Har tong kanalimizda bepul AI maslahati, savolingizni esa botimizga yozing."),
+ ("07", 80.3, "V", "O'ttiz yil."),
+ ("08", 82.8, "B", "Bittasini qaytar..."),
+ ("09", 85.0, "V", "O'tganini hech kim qaytarolmaydi. Qancha qolganini faqat Alloh biladi. Lekin bugun va hozir hali seniki."),
+ ("10", 96.3, "A", "Bobo, osh sovib qoldi."),
+ ("11", 99.4, "B", "Hozir, bolam! Hozir!"),
+ ("12", 112.3, "D", "O'tgan vaqt qaytmaydi. Shuning uchun — bugun va hozir."),
+ ("13", 122.8, "A", "Bobo, bugungi AI maslahati!"),
+ ("14", 125.9, "D", "Vaqtingizni bekorga ketkazmang. Har kuni bitta yangi narsa o'rganing. Har tong kanalimizda bepul AI maslahati, savolingizni esa botimizga yozing."),
 ]
 CLINK = [22.23]                                  # tanga polga tegadi (s03r 4.70 s × 1.41)
-SAND = [48.0, 52.0, 56.0, 60.4, 66.2]            # xotira qumga aylanadi (har biri 1.2 s)
-CUT = [0, 7.6, 15.6, 28.0, 36.0, 45.0, 49.2, 53.2, 57.2, 61.6, 67.4, 80.8, 88.8, 96.8, 104.8, 107.4, 117.8, 125.6]
+SAND = [50.0, 56.7, 63.4, 70.7, 80.3]            # xotira qumga aylanadi (egasi: xotiralar 5/3 marta sekin, qum ~2 s)
+CUT = [0, 7.6, 15.6, 28.0, 36.0, 45.0, 52.0, 58.7, 65.4, 72.7, 82.3, 95.7, 103.7, 111.7, 119.7, 122.3, 132.7, 140.5]
 CLIP = ["h01", "s02", "s03r", "s04", "s05", "xg1", "xg2", "xg3", "xg4", "xg5", "s07b", "s08", "s09", "s10", "t11", "s13", "k14"]
 START = {}
 BOOM = []
 MUSIC_FADE = 5
-TEXT = [(99.0, 104.6, "Foyda —\\Nbugun va hozir.", 64, "FFC34D", (560, 820)), (107.5, 109.6, "BUGUN", 120, "FFC34D", (540, 330))]
+TEXT = [(113.9, 119.5, "Foyda —\\Nbugun va hozir.", 64, "FFC34D", (560, 820)), (122.4, 124.5, "BUGUN", 120, "FFC34D", (540, 330))]
 import json, os, re
 _segs = json.load(open(os.path.join(os.path.dirname(__file__), "voice_cut", "segs.json")))
 def _subs():

@@ -15,7 +15,7 @@ for j, c in enumerate(tl.CLINK):
     ms = int(c * 1000); fc += f"aevalsrc='{clink}':s=48000:d=2.5,adelay={ms}|{ms}[c{j}];"; lab.append(f"[c{j}]")
 for j, s in enumerate(tl.SAND):
     ms = int(s * 1000)
-    fc += (f"anoisesrc=d=1.6:c=pink:a=0.25:r=48000,bandpass=f=4000:w=3000,afade=t=in:d=0.3,afade=t=out:st=0.9:d=0.7,"
+    fc += (f"anoisesrc=d=2.6:c=pink:a=0.25:r=48000,bandpass=f=4000:w=3000,afade=t=in:d=0.4,afade=t=out:st=1.6:d=1.0,"
            f"adelay={ms}|{ms}[s{j}];"); lab.append(f"[s{j}]")
 fc += "".join(lab) + f"amix=inputs={len(lab)}:normalize=0,atrim=0:{T}[o]"
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inp, "-filter_complex", fc, "-map", "[o]", "-ac", "1", "video/vaqt/ovoz.flac"], check=True)
