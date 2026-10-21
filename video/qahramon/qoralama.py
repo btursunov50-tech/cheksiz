@@ -4,12 +4,12 @@ import subprocess, os, sys
 R = "video/ref/2026-10-21/"; W = sys.argv[1]; os.makedirs(W, exist_ok=True)
 A, B = "A", "B"   # A: o'rtasidan kesish, B: to'liq kadr + xira fon
 PLAN = [  # egasi (2026-10-21): MP3 2:35; takrorlanuvchi kadr yo'q; sifati past videolar (ibn_sino, beruniy 360p, davlat_bobonov 480p) olib tashlandi → allomalar Veo'da
- ("jaloliddin.mp4", 2, 5, A, "Kirish 0:00 — Jaloliddin Manguberdi (ustida sarlavha)"),
- ("jaloliddin.mp4", 30, 5, A, "Kirish 0:05 — ot ustida, ortida qo'shin"),
- ("jaloliddin.mp4", 20, 5, A, "1-band 0:10 «Tog'lar yo'l berar bizga» — qilich ko'tarib hujum"),
- ("jaloliddin.mp4", 42, 6, A, "1-band 0:15 «to'siqni yorib, zafar quchib» — ot jardan sakraydi"),
- ("veo", "VEO: Amir Temurning otliq haykali", 6, "2-band 0:20 «Asrlar guvoh bizga»"),
- ("veo", "VEO: Ulug'bek rasadxonasi, yulduzli osmon", 5, "2-band 0:26 «qonimizda olov bor»"),
+ ("veo", "VEO: tog'lar ortidan quyosh chiqadi (oxirida sarlavha)", 10, "Kirish 0:00–0:10 (egasi: qolsin)"),
+ ("jaloliddin.mp4", 20, 5, A, "1-band 0:10 «Tog'lar yo'l berar bizga» — Jaloliddin qilich ko'tarib hujumga"),
+ ("jaloliddin.mp4", 42, 5, A, "1-band 0:15 «zafar quchib… doston bo'lur» — ot jardan sakraydi"),
+ ("jaloliddin.mp4", 2, 5, A, "2-band 0:20 «Asrlar guvoh bizga» — Jaloliddin yuzi"),
+ ("veo", "VEO: Amir Temurning otliq haykali", 5, "2-band 0:25 «qonimizda olov bor»"),
+ ("veo", "VEO: Ulug'bek rasadxonasi, yulduzli osmon", 4, "2-band 0:28 «Birlashib odimlasak»"),
  ("veo", "VEO: Ibn Sino, «Tib qonuni» kitobi", 4, "2-band 0:31 «Birlashib odimlasak»"),
  ("veo", "VEO: Beruniy, astrolab va osmon", 4, "Ko'tarilish 0:35"),
  ("shoxruxxon_baxtiyorov.mp4", 18, 6, A, "Naqorat 0:39 «Birlik – qudratimiz» — Shoxruxxon: tashlash"),
