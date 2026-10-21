@@ -24,3 +24,7 @@ Tuzatish: 3, 7 (va 9) uchun VAQT bilan yangi boshlang'ich rasm (`ref_vaqt` birik
 `s03b_vaqt`, `s07b_vaqt`: VAQT tushgan yangi boshlang'ich rasmlar (ref_vaqt ga mos). Sahifada 3, 7 yangilandi; 9 rasm kutilmoqda.
 | s03b | ✅ VAQT namunaga mos (ko'zlari yumshoq oltin, tinch yuz), tanga sekin tushadi (3.2 s yaqin kadr), boy qotib qoladi. s03 o'rniga |
 | s07b | ✅ VAQT kaftida qum soati, boy yig'laydi. Qum soati tepasi tiniq — montajda qoraytiriladi. s07 o'rniga |
+| s08 | ✅ tanga polda, boy sandiqni yopib turadi, jilmayadi |
+| s10 | ✅ toza sahifa; qalam kichik nuqta qo'ygan (yozuv ostida qoladi) |
+| s13 | ✅ Aziz telefon ko'rsatadi, ekran toza ko'k |
+Qolgan: s09 (VAQT bilan rasm → Veo).
