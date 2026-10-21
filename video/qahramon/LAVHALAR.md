@@ -42,3 +42,8 @@ Qo'shiq matni (vaqtlar egasidan): 0:10 «Tog'lar yo'l berar bizga…», 0:20 2-b
 | | 18–24 | tashlash, g'olib |
 Yotiq (16:9) kadrlar tik 9:16 ga: o'rtasidan kesiladi yoki orqa fon xiralashtiriladi (egasi tanlaydi).
 Yetishmaydi → Veo: Amir Temur (otliq haykal, Registon/Gur-Amir), Ulug'bek rasadxonasi, tong va tog'lar, bayroq.
+| jaloliddin.mp4 (9:16, AI film, 1.7 Mbit) | 2–7 | yuzi yaqindan |
+| | 20–25 | oq otda qilich ko'tarib hujum |
+| | 30–35 | ot ustida, ortida qo'shin |
+| | 42–48 | **ot jardan daryoga sakraydi** |
+| | 50–56 | quyosh botishida daryo bo'yida |

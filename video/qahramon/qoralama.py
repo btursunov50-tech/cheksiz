@@ -1,13 +1,13 @@
-# Egasi (2026-10-21): Beruniy qalam chizmasi (xunuk) va ko'k belbog'li karatechi olib tashlandi.
+# Egasi (2026-10-21): boshida Jaloliddin Manguberdi (yuzi, qo'shin, hujum, otning jardan sakrashi), oxirida quyosh botishi. Beruniy qalam chizmasi (xunuk) va ko'k belbog'li karatechi olib tashlandi.
 # Qoralama: tanlangan lavhalar reja tartibida + Veo o'rinlari (yozuvli kadr). 720x1280, tepada manba va vaqt yozuvi.
 import subprocess, os, sys
 R = "video/ref/2026-10-21/"; W = sys.argv[1]; os.makedirs(W, exist_ok=True)
 A, B = "A", "B"   # A: o'rtasidan kesish, B: to'liq kadr + xira fon
 PLAN = [  # egasi (2026-10-21): MP3 2:35; takrorlanuvchi kadr yo'q; sifati past videolar (ibn_sino, beruniy 360p, davlat_bobonov 480p) olib tashlandi → allomalar Veo'da
- ("veo", "VEO: tong, tog'lar ortidan quyosh chiqadi", 5, "Kirish 0:00"),
- ("veo", "VEO: Registon, ustida oltin sarlavha", 5, "Kirish 0:05"),
- ("armiya.mp4", 0, 5, A, "1-band 0:10 «Tog'lar yo'l berar bizga» — parad"),
- ("armiya.mp4", 6, 5, A, "1-band 0:15 «zafar quchib o'tamiz» — zirhli mashinalar"),
+ ("jaloliddin.mp4", 2, 5, A, "Kirish 0:00 — Jaloliddin Manguberdi (ustida sarlavha)"),
+ ("jaloliddin.mp4", 30, 5, A, "Kirish 0:05 — ot ustida, ortida qo'shin"),
+ ("jaloliddin.mp4", 20, 5, A, "1-band 0:10 «Tog'lar yo'l berar bizga» — qilich ko'tarib hujum"),
+ ("jaloliddin.mp4", 42, 6, A, "1-band 0:15 «to'siqni yorib, zafar quchib» — ot jardan sakraydi"),
  ("veo", "VEO: Amir Temurning otliq haykali", 6, "2-band 0:20 «Asrlar guvoh bizga»"),
  ("veo", "VEO: Ulug'bek rasadxonasi, yulduzli osmon", 5, "2-band 0:26 «qonimizda olov bor»"),
  ("veo", "VEO: Ibn Sino, «Tib qonuni» kitobi", 4, "2-band 0:31 «Birlashib odimlasak»"),
@@ -24,13 +24,13 @@ PLAN = [  # egasi (2026-10-21): MP3 2:35; takrorlanuvchi kadr yo'q; sifati past 
  ("armiya.mp4", 18, 6, A, "Outro — tungi otish"),
  ("shoxruxxon_baxtiyorov.mp4", 0, 6, A, "Outro — Shoxruxxon: tashlash"),
  ("karate_leshan_67kg.mp4", 18, 6, A, "Outro — karate g'olibi"),
- ("armiya.mp4", 54, 6, A, "Outro — zirhli kolonna"),
+ ("armiya.mp4", 0, 5, A, "Outro — parad"),
+ ("armiya.mp4", 6, 5, A, "Outro — zirhli mashinalar"),
  ("jalolov_dacres.mp4", 3, 5, B, "Outro — Jalolov ringga chiqadi"),
  ("shoxruxxon_baxtiyorov.mp4", 38, 4, A, "Outro — chempion kamari"),
- ("armiya.mp4", 42, 5, A, "Outro — dron"),
  ("armiya.mp4", 88, 6, A, "Outro — samolyotlar"),
- ("armiya.mp4", 100, 2, A, "Outro — samolyotlar safi"),
  ("armiya.mp4", 103, 6, A, "Outro — portlashlar qatori"),
+ ("jaloliddin.mp4", 50, 6, A, "Outro — Jaloliddin quyosh botishida daryo bo'yida"),
  ("veo", "VEO: hilpirab turgan O'zbekiston bayrog'i", 6, "Outro oxiri"),
  ("veo", "Yakun: «O'zbekning jasur o'g'li — hech qachon yengilmas!» (kodda)", 5, "Oxirgi zarba 2:30"),
 ]
