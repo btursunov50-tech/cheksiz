@@ -37,7 +37,7 @@ Qo'shiq matni (vaqtlar egasidan): 0:10 «Tog'lar yo'l berar bizga…», 0:20 2-b
 | davlat_bobonov.mp4 (16:9, 854×480) | 0–6 | yaqin kadr, ko'k kimono |
 | | 16–22, 200–206, 248–254 | tashlashlar (aniq soniyasi montajda) |
 | | 496–504 | medal bilan tabassum |
-| karate_leshan_67kg.mp4 (9:16) | 0–5 | ringga chiqish |
+| karate_leshan_67kg.mp4 (9:16) | ~~0–5~~ | ringga chiqish — ko'k belbog'li karatechi kerak emas |
 | | 10–16 | yuqori tepish zarbasi |
 | | 18–24 | tashlash, g'olib |
 Yotiq (16:9) kadrlar tik 9:16 ga: o'rtasidan kesiladi yoki orqa fon xiralashtiriladi (egasi tanlaydi).
