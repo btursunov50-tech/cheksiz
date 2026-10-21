@@ -28,3 +28,4 @@ Tuzatish: 3, 7 (va 9) uchun VAQT bilan yangi boshlang'ich rasm (`ref_vaqt` birik
 | s10 | ✅ toza sahifa; qalam kichik nuqta qo'ygan (yozuv ostida qoladi) |
 | s13 | ✅ Aziz telefon ko'rsatadi, ekran toza ko'k |
 Qolgan: s09 (VAQT bilan rasm → Veo).
+| s09b_vaqt (rasm) | ✅ VAQT namunaga mos (soqolsiz shisha yuz), bitta lagan osh, qizi choy uzatadi. Veo prompti sahifada |
