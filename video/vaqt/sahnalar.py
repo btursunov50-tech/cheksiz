@@ -20,9 +20,9 @@ S = [
    "The merchant keeps stacking coins and writing in his ledger and never looks up. The grandson smiles hopefully and says a short line with small natural lip movement; the merchant answers with a short line without raising his head and waves his hand once; the boy's smile fades, he lowers his eyes and slowly steps back behind the door. The candle flame flickers gently, the sunset in the window slowly darkens. "
    + KB + " " + KA, 8),
   "Rang (cine), ovoz qatorlari, tanga jiringlashi soat tik-tikiga mos."),
- ("3", "Sham o'chdi, tanga tushadi", "0:12–0:22", "Vaqt: «Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.»", "s03_tanga",
-  ("Slow push-in that follows the falling coin down to floor level, ending on a low shot with the doorway in the background. Speed ramp: the gold coin slips from the merchant's fingers and time slows into extreme slow motion as it falls, turning and catching the cold blue light; it hits the stone floor with a crisp impact and a few tiny golden sparks, then normal speed resumes and the coin spins. Meanwhile, in the open doorway, blue neon threads and golden sand swirl together and form TIME, who steps calmly into the room. " + VQ + " The merchant stays frozen, staring at TIME in shock; the smoke from the blown-out candle curls upward. " + KV + " " + KB + " " + MUTE, 8),
-  "Sekinlashuv ramp.py bilan, tanga tekkanda «jiring», neon porlashini kuchaytiraman, xonani qoraytiraman."),
+ ("3", "Sham o'chdi, tanga tushadi", "0:12–0:22", "Vaqt: «Qo'rqma. Olib ketgani kelmadim. Hisobingni ko'rsatgani keldim.»", "s03b_vaqt",
+  ("Slow push-in toward the merchant's face, ending in a medium close-up with TIME still in frame on the right. Speed ramp: a gold coin slips from the merchant's fingers and time slows into extreme slow motion as it falls past the desk, turning and catching the blue light; it hits the stone floor with a crisp impact and a few tiny golden sparks, then normal speed resumes. At the sound the merchant slowly raises his head, sees TIME standing beside him and freezes in shock, his pen stops. TIME stands still and looks at him calmly with a gentle face; the neon dots on his robe twinkle softly and golden sand drifts from its hem. The smoke from the blown-out candle curls upward. " + VQ + " " + KV + " " + KB + " " + MUTE, 8),
+  "Sekinlashuv ramp.py bilan, tanga tekkanda «jiring»; VAQTning neon porlashini kuchaytiraman."),
  ("4", "Boy sandiqni suradi", "0:22–0:30", "Boy: «O'tgan yillarimni qaytar, hamma oltinimni ol!»", "s04_sandiq",
   ("Smooth slow lateral dolly (truck) to the right, from the merchant's pleading face to TIME standing on the right, ending with both in frame. The old merchant pushes the heavy open chest of gold coins toward TIME with both hands, pleading, and speaks a short desperate line with natural lip movement. TIME looks down at him calmly with soft pity and slowly shakes his head once; golden sand drifts from the hem of his robe. " + VQ + " " + KV + " " + KB, 8),
   "Neon porlashini kuchaytiraman, ovoz qatori."),
@@ -44,9 +44,9 @@ S = [
  ("6e", "5-xotira: rasm polga tushadi", "0:54–0:58", "(musiqa; oxirida Vaqt: «O'ttiz yil.»)", "x5_rasm",
   ("High angle, slow crane down that follows the drawing to the floor. Speed ramp: the grandson holds up his crayon drawing with a big smile, the grandfather keeps counting coins and does not look; the paper slips from the boy's fingers and drifts down in slow motion, swaying side to side, and lands softly on the floor; the boy's smile fades. " + KA + " " + KB + " " + MUTE, 8),
   "Oltin xotira rangi + qum, rasm tushganda sekinlashuv (ramp.py, ovoz: yumshoq)."),
- ("7", "Tavba, boy yig'laydi", "0:58–1:06", "Boy: «Bittasini qaytar...» Vaqt: «O'tganini hech kim qaytarolmaydi...»", "s07_tavba",
-  ("Slow push-in toward the merchant's tearful face, ending in a close-up with TIME's hand in the soft-focus foreground. The old merchant kneels and cries quietly, a tear runs down his cheek, golden sand slips through his fingers, he whispers a short line with small lip movement. On the right TIME holds out the glowing golden hourglass from his chest in his open palm; its top half is dark so nobody can see how much sand is left, only a few bright grains keep falling. " + VQ + " " + KV + " " + KB, 8),
-  "Qum soatining yorug'ini kuchaytiraman."),
+ ("7", "Tavba, boy yig'laydi", "0:58–1:06", "Boy: «Bittasini qaytar...» Vaqt: «O'tganini hech kim qaytarolmaydi...»", "s07b_vaqt",
+  ("Slow push-in toward the merchant's tearful face, ending in a close-up with the hourglass in the soft-focus foreground. The old merchant kneels and cries quietly, a tear runs down his cheek, golden sand slips through his fingers, he looks up at TIME and whispers a short line with small lip movement. TIME holds the small golden hourglass on his open glass palm and looks down at him with calm pity; inside the hourglass the top half slowly fills with soft dark shadow so nobody can see how much sand is left, only a few bright grains keep falling into the lower half. " + VQ + " " + KV + " " + KB, 8),
+  "Qum soatining yuqori qismini montajda qoraytiraman, yorug' donalarni kuchaytiraman."),
  ("8", "Sham qayta yonadi, tanga polda", "1:06–1:14", "Aziz: «Bobo, osh sovib qoldi.» Boy: «Hozir, bolam! Hozir!»", "s08_uygonish",
   ("Rack focus from the gold coin on the floor in the foreground to the old merchant in the background. The coin wobbles slightly and settles flat on the stone floor; the candle flame steadies and grows warm; the merchant closes his ledger, stands up, turns toward the door and calls out a short warm line with natural lip movement, with a soft new smile. " + KB, 8),
   "Tanga to'xtaganda yengil jiring."),
@@ -61,6 +61,7 @@ S = [
    "Keep the grandfather exactly as in the image (black doppi, white beard, dark quilted chopon, light shirt) and the boy exactly as in the image (doppi, light shirt, jeans, sneakers) for the whole clip.", 8),
   "Oldin o'tish: eski kadr qumga aylanadi → «Bugun». Telefon ekranida «Kun maslahati», ko'k neon chiziq bo'lib ko'tariladi (kod); kanal va bot havolasi."),
 ]
+WAIT = {"9"}
 os.makedirs("video/vaqt/web", exist_ok=True)
 e = html.escape; cards = []
 for n, name, t, voice, img, vid, mine in S:
@@ -69,7 +70,9 @@ for n, name, t, voice, img, vid, mine in S:
         im = Image.open(f"video/vaqt/img/{img}.jpg"); im.thumbnail((420, 746)); im.save(f"video/vaqt/web/{img}.webp", quality=80)
         media = f'<div class="media"><img src="web/{img}.webp" alt="{e(name)}"></div>'
     pr = ""
-    if vid:
+    if n in WAIT:
+        pr = '<p class="wait">⏸ Hozircha qilmang: avval VAQT tushgan yangi rasm (ref_vaqt bilan), keyin shu prompt yangilanadi.</p>'
+    elif vid:
         txt, sec = vid
         pr = (f'<p class="lbl vid">🎬 Veo prompti — 9:16 (tik), {sec} s · shu rasmni yuklang</p>'
               f'<pre id="v{n}">{e(txt + " " + end(sec))}</pre>'
@@ -85,6 +88,6 @@ head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«VAQT» — V
 i = head.index('<p class="intro">'); j = head.index('</p>', i) + 4
 head = head[:i] + ('<p class="intro">Har sahnada: rasm, ovoz qatori, Veo prompti va men montajda qo\'shadigan narsa. Veo\'ga faqat shu rasmni yuklang, formatni 9:16 qiling, «Nusxa olish» bilan promptni qo\'ying. '
                    'VAQT (shisha teri, neon tomirlar, oltin qum) Veo\'da paydo bo\'ladi: 3, 4, 5, 7, 9-sahnalar promptida uning to\'liq tavsifi bor. Ovozni o\'zimiz qo\'yamiz, Veo ovoziga e\'tibor bermang.</p>') + head[j:]
-head = head.replace("</style>", ".mine{margin:0;color:var(--muted);font-size:14px}.vid{color:var(--sun)}</style>")
+head = head.replace("</style>", ".wait{margin:0;padding:10px 12px;border:1px dashed var(--sun);border-radius:6px;color:var(--sun)}.mine{margin:0;color:var(--muted);font-size:14px}.vid{color:var(--sun)}</style>")
 open("video/vaqt/sahnalar.html", "w").write(head + "\n".join(cards) + open("video/robot/page_tail.html").read())
 print(len(S), "sahna")
