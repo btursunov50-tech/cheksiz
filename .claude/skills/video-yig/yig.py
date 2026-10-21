@@ -55,7 +55,7 @@ def main():
     p.add_argument("--avq"); p.add_argument("--lang", default="uz"); p.add_argument("--send", action="store_true")
     p.add_argument("--reuse", action="store_true", help="tayyor cine.mp4 ni qayta ishlatish")
     p.add_argument("--no-norm", action="store_true", help="ovoz balandligini o'zgartirmaslik (loudnorm o'rniga faqat limiter)")
-    p.add_argument("--tl", help="tarjima: timeline_<tl>.py dagi SUB/TEXT timeline.py ustidan yoziladi (masalan en, ru)")
+    p.add_argument("--tl", help="tarjima: timeline_<tl>.py dagi SUB/TEXT/STOP/CLIP timeline.py ustidan yoziladi (masalan en, ru)")
     a = p.parse_args()
     B = os.path.abspath(a.work); os.makedirs(B, exist_ok=True)
     spec = importlib.util.spec_from_file_location("tl", os.path.join(a.dir, "timeline.py"))
@@ -63,7 +63,7 @@ def main():
     if a.tl:
         sp2 = importlib.util.spec_from_file_location("tl2", os.path.join(a.dir, f"timeline_{a.tl}.py"))
         t2 = importlib.util.module_from_spec(sp2); sp2.loader.exec_module(t2)
-        for k in ("SUB", "TEXT", "STOP"):
+        for k in ("SUB", "TEXT", "STOP", "CLIP"):
             if hasattr(t2, k): setattr(tl, k, getattr(t2, k))
     N = a.n or len(tl.CLIP); CUT = tl.CUT[:N + 1]; T = CUT[-1]; START = getattr(tl, "START", {})
     cuts = " ".join(str(x) for x in CUT[1:-1])

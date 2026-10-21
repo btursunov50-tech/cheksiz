@@ -1,0 +1,32 @@
+# «VAQT» en: vaqtlar timeline.py dan (tarjima.py yasaydi), --tl en
+SUB = [
+ (0.46, 3.32, 'R', "You can't buy time."),
+ (3.76, 7.12, 'R', 'But you sell it every day.'),
+ (8.46, 10.89, 'O', 'Grandpa, the plov is ready.'),
+ (11.46, 13.2, 'O', 'Later, my boy.'),
+ (13.64, 14.26, 'O', 'Later.'),
+ (22.46, 23.34, 'O', "Don't be afraid."),
+ (23.78, 25.41, 'O', "I didn't come to take anything."),
+ (25.85, 28.1, 'O', 'I came to show you your account.'),
+ (28.66, 32.13, 'O', 'Give me back my past years, take all my gold!'),
+ (36.66, 39.2, 'O', "Time that has passed can't be sold."),
+ (39.64, 42.61, 'O', "Life is in Allah's hands alone."),
+ (43.05, 44.7, 'O', 'I only show.'),
+ (80.36, 82.02, 'O', 'Thirty years.'),
+ (82.86, 84.54, 'O', 'Give back just one...'),
+ (85.06, 87.46, 'O', 'No one can bring back the past.'),
+ (87.9, 90.69, 'O', 'Only Allah knows how much is left.'),
+ (91.13, 95.14, 'O', 'But today and now are still yours.'),
+ (96.36, 98.8, 'O', 'Grandpa, the plov is getting cold.'),
+ (99.46, 100.51, 'O', 'Right now, my boy!'),
+ (100.57, 101.3, 'O', 'Right now!'),
+ (112.36, 114.4, 'R', "Time that's gone never returns."),
+ (114.84, 118.03, 'R', "That's why: today and now."),
+ (122.86, 125.48, 'O', "Grandpa, today's AI tip!"),
+ (125.96, 129.0, 'R', "Don't waste your time."),
+ (129.44, 132.56, 'R', 'Learn one new thing every day.'),
+ (133.0, 137.02, 'R', 'A free AI tip on our channel every morning,'),
+ (137.39, 140.33, 'R', 'and send your questions to our bot.'),
+]
+TEXT = [(113.9, 119.5, 'Profit —\\Ntoday and now.', 64, 'FFC34D', (560, 820)), (122.4, 124.5, 'TODAY', 120, 'FFC34D', (540, 330))]
+CLIP = ['h01_en', 's02', 's03r', 's04', 's05', 'xg1', 'xg2', 'xg3', 'xg4', 'xg5', 's07b', 's08', 's09', 's10', 't11_en', 's13', 'k14_en']

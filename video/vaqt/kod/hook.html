@@ -11,9 +11,10 @@ function glass(){const p=[],w=300,h=560,n=34;
   p.push([CX-w-30,CY-h]);p.push([CX+w+30,CY-h]);p.push(...side(1));p.push([CX+w+30,CY+h]);p.push([CX-w-30,CY+h]);p.push(...side(-1).reverse());p.push([CX-w-30,CY-h]);
   const o=[];for(let i=0;i<p.length-1;i++){const[a,b]=[p[i],p[i+1]],L=Math.hypot(b[0]-a[0],b[1]-a[1]),m=Math.max(1,Math.round(L/6));for(let j=0;j<m;j++)o.push([a[0]+(b[0]-a[0])*j/m,a[1]+(b[1]-a[1])*j/m]);}return o;}
 const G=glass();
-// «VAQT» harflari nuqtalari
+// «VAQT» harflari nuqtalari (boshqa til: hook.html#TIME, hook.html#ВРЕМЯ)
+const WORD=decodeURIComponent(location.hash.slice(1))||'VAQT',FS=WORD.length>4?270:330;
 const tc=document.createElement('canvas');tc.width=W;tc.height=H;const tx=tc.getContext('2d');
-tx.fillStyle='#fff';tx.font='900 330px Georgia, serif';tx.textAlign='center';tx.textBaseline='middle';tx.fillText('VAQT',CX,CY);
+tx.fillStyle='#fff';tx.font=`900 ${FS}px Georgia, serif`;tx.textAlign='center';tx.textBaseline='middle';tx.fillText(WORD,CX,CY);
 const d=tx.getImageData(0,0,W,H).data,T=[];for(let y=0;y<H;y+=7)for(let xx=0;xx<W;xx+=7)if(d[(y*W+xx)*4+3]>128)T.push([xx,y]);
 const N=3200,P=[];for(let i=0;i<N;i++){const g=G[Math.floor(R()*G.length)],t=T[Math.floor(R()*T.length)];P.push({sx:g[0]+(R()-.5)*8,sy:g[1]+(R()-.5)*8,tx:t[0]+(R()-.5)*3,ty:t[1]+(R()-.5)*3,v:.5+R(),ph:R()*6.28,dl:R()*.9,sz:1.6+R()*2.2});}
 const grain=[];for(let i=0;i<1600;i++)grain.push([R()*W,R()*H,R()]);
@@ -44,7 +45,7 @@ window.setT=function(t){s=7;bg();
       const al=t<3.6?(t-3.4)/.2:1;
       x.globalAlpha=.85*al;x.fillStyle=m>.9?'#ffd77a':gold;x.fillRect(px-p.sz/2,py-p.sz/2,p.sz,p.sz);}
     x.restore();
-    if(t>7.8){const a=Math.min(1,(t-7.8)/.8)*(.85+.15*Math.sin(t*2));x.save();x.globalAlpha=a*.5;x.shadowColor=gold;x.shadowBlur=60;x.fillStyle='rgba(255,195,77,.25)';x.font='900 330px Georgia, serif';x.textAlign='center';x.textBaseline='middle';x.fillText('VAQT',CX,CY);x.restore();
+    if(t>7.8){const a=Math.min(1,(t-7.8)/.8)*(.85+.15*Math.sin(t*2));x.save();x.globalAlpha=a*.5;x.shadowColor=gold;x.shadowBlur=60;x.fillStyle='rgba(255,195,77,.25)';x.font=`900 ${FS}px Georgia, serif`;x.textAlign='center';x.textBaseline='middle';x.fillText(WORD,CX,CY);x.restore();
       const w=Math.min(1,(t-8.2)/.8)*360;if(w>0)line([[CX-w,CY+230],[CX+w,CY+230]],blue,3,1);}}
   // vinyetka
   const v=x.createRadialGradient(CX,H/2,500,CX,H/2,1250);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.6)');x.fillStyle=v;x.fillRect(0,0,W,H);};
