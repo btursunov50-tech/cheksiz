@@ -37,3 +37,4 @@ Qolgan: s09 (VAQT bilan rasm → Veo).
 - Effektli kliplar: `h01`/`t11` (kod/hook.mp4), `s03r` (ramp 2.8–3.75 s, 0.5x), `xg1–5` (`kod/xotira_video.py`), `k14` (`kod/epilog.html`).
 - Musiqa: «Dutar's Whisper» (egasi o'zi yasagan, Content ID yo'q), 0:00 dan, oxirida 5 s so'nadi.
 - Yig'ish: `python3 .claude/skills/video-yig/yig.py --dir video/vaqt --work <scratch> --voice ovoz.flac --music <Dutar>:0 --avq "Siz-chi?|Bugun kimga «keyin» dedingiz?|Izohga yozing!" --send`
+- v2 (2026-10-21): xotiralar 5/3 marta sekin (jami 37 s), musiqa «In Battery» (Density & Time), 2:27. v1 da «Dutar's Whisper» edi.
