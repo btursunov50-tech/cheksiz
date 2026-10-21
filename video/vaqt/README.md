@@ -21,3 +21,4 @@ VAQT yangi qiyofa (egasi, 2026-10-21: neon aralash odam): shisha teri, ostida ko
 | s07 | ❌ VAQT yuzi qo'rqinchli (sariq ko'zlar); qum soatining yuqorisi qorong'i emas. Boy to'g'ri |
 | x1–x5 | ✅ xotiralar (qo'g'irchoq, to'y, chaqaloq, birinchi qadam, rasm sekin tushadi) |
 Tuzatish: 3, 7 (va 9) uchun VAQT bilan yangi boshlang'ich rasm (`ref_vaqt` biriktiriladi), keyin Veo.
+`s03b_vaqt`, `s07b_vaqt`: VAQT tushgan yangi boshlang'ich rasmlar (ref_vaqt ga mos). Sahifada 3, 7 yangilandi; 9 rasm kutilmoqda.
