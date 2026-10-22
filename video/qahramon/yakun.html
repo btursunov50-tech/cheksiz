@@ -1,0 +1,60 @@
+<title>Birlik yakuni rasmlari</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column of scene cards, image above its prompt; a single dusk-choyxona look (deliberately dark). */
+:root{--bg:#17110d;--card:#211812;--line:#3d2c20;--fg:#f3e8da;--muted:#c0a98f;--sun:#f0a14a;--chrome:#9fd3ef;
+--display:"Lora",Georgia,serif;--body:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,5vw,40px);margin:0;text-wrap:balance}
+.intro{color:var(--muted);margin:0;max-width:62ch}
+.card{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.media img{width:100%;max-width:420px;border-radius:6px;display:block;margin:0 auto}
+.txt{min-width:0;display:flex;flex-direction:column;gap:10px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num{font-family:var(--mono);color:var(--sun);font-size:14px}
+h2{font-family:var(--display);font-weight:600;font-size:24px;margin:0;text-wrap:balance}
+.dur{font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.lbl{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.voice{margin:0;font-style:italic}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;user-select:all}
+.copy{align-self:flex-start;font:600 15px var(--body);color:var(--bg);background:var(--sun);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.copy.done{background:var(--chrome)}
+.copy:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.refs{display:flex;gap:10px;flex-wrap:wrap}.refs figure{margin:0;width:150px}.refs img{width:150px;border-radius:6px;display:block}.refs figcaption{font-size:12px;color:var(--muted);margin-top:4px}.ph{width:150px;height:266px;border:2px dashed var(--sun);border-radius:6px;display:grid;place-items:center;font:600 40px var(--display);color:var(--sun)}</style>
+<div class="wrap">
+<h1>«Birlik» yakuni — rasmlar</h1>
+<p class="intro">Tartib: Ibn Sino → Beruniy → Jaloliddin → Amir Temur (1 s ko&#x27;proq) → Ulug&#x27;bek → Bahodir (haqiqiy kadr). Avval F (fon) rasmini qiling. Keyin har kartadagi rasmlarni (fon + qahramon) ChatGPT&#x27;ga biriktirib, promptni qo&#x27;ying: yuz o&#x27;zgarmasligi uchun qahramon rasmi albatta biriktiriladi. Rasmni bosib turib saqlab oling.</p>
+<article class="card" id="F">
+<header><span class="num">F</span><h2>Fon (birinchi shuni qiling)</h2><span class="dur">9:16 (tik)</span></header>
+<p class="lbl">📎 Rasm biriktirish shart emas</p><div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="pF">Wide cinematic landscape, no people: a calm river at sunrise in old Uzbekistan, on the far bank an old village of clay paxsa houses with flat roofs, poplar trees and blooming apricot orchards, soft morning mist over the water, the golden sun rising above distant mountains. The middle of the frame stays open, like a stage for a person to stand in front of it. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark.</pre>
+<button type="button" class="copy" data-t="pF">Nusxa olish</button></div></article>
+<article class="card" id="Q1">
+<header><span class="num">Q1</span><h2>Ibn Sino fon oldida</h2><span class="dur">9:16 (tik)</span></header>
+<p class='lbl'>📎 ChatGPT'ga shu 2 ta rasmni biriktiring</p><div class='refs'><figure><div class="ph">F</div><figcaption>F — fon (avval qiling)</figcaption></figure><figure><img src="web/s08_ibnsino_portret_ref.webp" alt="Ibn Sino"><figcaption>Ibn Sino</figcaption></figure></div><div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="pQ1">Attach the background image and the Ibn Sina reference image. Place Ibn Sina in the center of the background image, standing on the river bank, chest-up to waist-up, holding his book, looking straight into the camera with a calm kind look. Keep his face exactly as in the reference image, the same person: dark black beard, white turban, dark blue robe with gold border. Keep the background exactly as in the background image: the river, the sunrise, the old paxsa village and the orchards. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark.</pre>
+<button type="button" class="copy" data-t="pQ1">Nusxa olish</button></div></article>
+<article class="card" id="Q2">
+<header><span class="num">Q2</span><h2>Beruniy fon oldida</h2><span class="dur">9:16 (tik)</span></header>
+<p class='lbl'>📎 ChatGPT'ga shu 2 ta rasmni biriktiring</p><div class='refs'><figure><div class="ph">F</div><figcaption>F — fon (avval qiling)</figcaption></figure><figure><img src="web/s09_beruniy_portret_ref.webp" alt="Beruniy"><figcaption>Beruniy</figcaption></figure></div><div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="pQ2">Attach the background image and the Al-Biruni reference image. Place Al-Biruni in the center of the background image, standing on the river bank, chest-up to waist-up, holding his brass astrolabe, looking straight into the camera with a wise calm look. Keep his face exactly as in the reference image, the same person: grey beard, grey turban, brown robe with scarf. Keep the background exactly as in the background image: the river, the sunrise, the old paxsa village and the orchards. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark.</pre>
+<button type="button" class="copy" data-t="pQ2">Nusxa olish</button></div></article>
+<article class="card" id="Q3">
+<header><span class="num">Q3</span><h2>Jaloliddin fon oldida</h2><span class="dur">9:16 (tik)</span></header>
+<p class='lbl'>📎 ChatGPT'ga shu 2 ta rasmni biriktiring</p><div class='refs'><figure><div class="ph">F</div><figcaption>F — fon (avval qiling)</figcaption></figure><figure><img src="web/q_jaloliddin_ref.webp" alt="Jaloliddin"><figcaption>Jaloliddin</figcaption></figure></div><div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="pQ3">Attach the background image and the Jaloliddin Manguberdi reference image. Place Jaloliddin Manguberdi in the center of the background image, standing on the river bank, chest-up to waist-up, looking straight into the camera with a brave proud look. Keep his face exactly as in the reference image, the same person: short dark beard, steel helmet with plume, scale armour and blue cloak. Keep the background exactly as in the background image: the river, the sunrise, the old paxsa village and the orchards. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark.</pre>
+<button type="button" class="copy" data-t="pQ3">Nusxa olish</button></div></article>
+<article class="card" id="Q4">
+<header><span class="num">Q4</span><h2>Amir Temur fon oldida</h2><span class="dur">9:16 (tik)</span></header>
+<p class='lbl'>📎 ChatGPT'ga shu 2 ta rasmni biriktiring</p><div class='refs'><figure><div class="ph">F</div><figcaption>F — fon (avval qiling)</figcaption></figure><figure><img src="web/q_temur_ref.webp" alt="Amir Temur"><figcaption>Amir Temur</figcaption></figure></div><div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="pQ4">Attach the background image and the Amir Temur reference image. Place Amir Temur in the center of the background image, standing on the river bank, chest-up to waist-up, looking straight into the camera with a strong calm look. Keep his face exactly as in the reference image, the same person: dark beard, golden crown, golden breastplate with red and green jewels, blue robe. Keep the background exactly as in the background image: the river, the sunrise, the old paxsa village and the orchards. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark.</pre>
+<button type="button" class="copy" data-t="pQ4">Nusxa olish</button></div></article>
+<article class="card" id="Q5">
+<header><span class="num">Q5</span><h2>Ulug&#x27;bek fon oldida</h2><span class="dur">9:16 (tik)</span></header>
+<p class='lbl'>📎 ChatGPT'ga shu 2 ta rasmni biriktiring</p><div class='refs'><figure><div class="ph">F</div><figcaption>F — fon (avval qiling)</figcaption></figure><figure><img src="web/s02_ulugbek_rasadxona_ref.webp" alt="Ulug&#x27;bek (yangi yuz)"><figcaption>Ulug&#x27;bek (yangi yuz)</figcaption></figure></div><div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="pQ5">Attach the background image and the Ulugh Beg reference image. Place Ulugh Beg in the center of the background image, standing on the river bank, chest-up to waist-up, looking straight into the camera with a calm wise look. Keep his face exactly as in the reference image, the same person: young narrow face, thin upturned black moustache, small pointed black beard, white turban with the green jewel, green and gold robe. Keep the background exactly as in the background image: the river, the sunrise, the old paxsa village and the orchards. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark.</pre>
+<button type="button" class="copy" data-t="pQ5">Nusxa olish</button></div></article></div>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+ const pre=document.getElementById(b.dataset.t);const t=pre.textContent;
+ const ok=()=>{b.textContent='Nusxa olindi';b.classList.add('done');setTimeout(()=>{b.textContent='Nusxa olish';b.classList.remove('done')},1800)};
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Belgilandi, nusxa oling'};
+ try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+}));
+</script>
