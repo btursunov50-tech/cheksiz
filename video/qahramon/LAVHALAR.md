@@ -68,3 +68,9 @@ Veo promptlari (11 ta, matn→video): `veo_promptlar.py` → `veo.html`, https:/
 | v01 | tog'lar ortidan quyosh ✅ (kamera biroz ko'tariladi, burgut uchib ketadi) |
 
 Yakun rasmlari sahifasi: `yakun_rasmlar.py` → `yakun.html`, https://claude.ai/artifact/D6dYVV67T4iEWmiLBBJGrZ (tartib: Ibn Sino → Beruniy → Jaloliddin → Temur (+1 s) → Ulug'bek → Bahodir).
+
+## Yakun (qir tepasi zanjiri) kliplari — 2026-10-22
+| Klip | Holat | Ishlatiladigan qism | Izoh |
+|---|---|---|---|
+| y1 Ibn Sino (Veo) | ✅ | 0–5.9 s | Yuz rasm va namunaga mos; 4.5 s boshini o'ngga buradi, kamera o'ngga ketadi. 6.5 s dan keyin kamera orqasiga aylanib o'tadi (ishlatilmaydi) |
+| y2 Beruniy (Veo) | ⚠️ qisman | 0–4.4 s + o'zimiz whip pan (4.4–4.8 s, blur) | 5.0–5.4 s da kadrga ikkinchi kichik Beruniy kirib qoladi (kulgili) — Veo xatosi, rasm to'g'ri. Boshini o'ngga burmaydi |
