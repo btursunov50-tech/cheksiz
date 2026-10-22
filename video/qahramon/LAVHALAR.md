@@ -65,3 +65,4 @@ Veo promptlari (11 ta, matn→video): `veo_promptlar.py` → `veo.html`, https:/
 | v07 | yoshlar cho'qqida ✅ |
 | v11 | bayroq ✅ |
 | vT | Temur qum — egasi: qum kerak emas, yangi yakun (qahramonlar bosh burib almashadi) |
+| v01 | tog'lar ortidan quyosh ✅ (kamera biroz ko'tariladi, burgut uchib ketadi) |
