@@ -81,4 +81,4 @@ Yakun rasmlari sahifasi: `yakun_rasmlar.py` → `yakun.html`, https://claude.ai/
 
 Yakun yig'ish: `python3 video/qahramon/yakun_zanjir.py OUT` (128.2–155.4 s: qahramonlar 15.3 s, Bahodir 3.8 s, bayroq 8.1 s).
 
-Yangilash (2026-10-22, egasi): hamma qahramon bosh burilgach kesiladi (Ibn Sino 5.4, Beruniy 4.3, Jaloliddin 5.0, Temur 5.8, Ulug'bek 6.0 s), o'tish oxirgi kadrdan yasaladi. Bahodir kadridagi siljuvchi «@OPER_UZ» belgisi o'chirildi → `clips/bahodir_toza.mp4`; pastda «Manba: DAZN, @OPER_UZ» qoladi.
+Yangilash (2026-10-22, egasi): hamma qahramon bosh burilgach kesiladi (Ibn Sino 5.4, Beruniy 4.3, Jaloliddin 5.0, Temur 5.8, Ulug'bek 6.0 s), o'tish oxirgi kadrdan yasaladi. Bahodir kadridagi siljuvchi «@OPER_UZ» belgisi o'chirildi → `clips/bahodir_toza.mp4` (bahodir_toza.py: belgi joyi 22 kadr narigi kadrdan tekislab olinadi). Pastdagi manba yozuvi ham olib tashlandi (egasi): manba post matnida yoziladi.

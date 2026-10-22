@@ -33,11 +33,11 @@ for i, (k, end, own, nm, rel) in enumerate(HER):
              f"fps=30,scale=1008:1792,crop=720:1280:x='144+144*t/{WHIP}':y=256,avgblur=sizeX=55:sizeY=1,eq=brightness=0.04", *enc, q]); parts.append(q)
 # Bahodir: haqiqiy kadr (qora chopon, sekin), Veo'dagi kabi o'ngdan xiralik bilan kiradi, keyin bayroqqa o'tadi
 db = TF - TB; k = 1.8
-# bahodir_toza.mp4 = jalolov_dacres.mp4 3.9–6.3 s, siljib yuruvchi «@OPER_UZ» belgisi har kadrda topilib o'chirilgan (egasi, 2026-10-22)
+# bahodir_toza.mp4 = jalolov_dacres.mp4 3.9–6.3 s, «@OPER_UZ» belgisi bahodir_toza.py bilan o'chirilgan (egasi, 2026-10-22)
 run(["ffmpeg", "-v", "error", "-y", "-ss", "0.1", "-t", f"{db / k + 0.1:.3f}", "-i", C + "bahodir_toza.mp4", "-filter_complex",
      "split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=720:-2[fg];[bg][fg]overlay=0:(H-h)/2,"
      f"setpts={k}*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1,trim=duration={db:.3f},setpts=PTS-STARTPTS,"
-     f"{name('BAHODIR JALOLOV', db)},drawtext=fontfile={FONT}:text='Manba\\: DAZN, @OPER_UZ':fontcolor=white@0.75:fontsize=18:x=(w-text_w)/2:y=h-46",
+     f"{name('BAHODIR JALOLOV', db)}",  # egasi: Bahodir kadrida yozuv qolmasin (manba post matnida)
      *enc, f"{W}/bah.mp4"]); parts.append(f"{W}/bah.mp4")
 df = END - TF
 run(["ffmpeg", "-v", "error", "-y", "-i", C + "v11.mp4", "-vf", f"fps=30,tpad=stop_mode=clone:stop_duration=2,trim=duration={df:.3f},fade=t=in:d=0.5,fade=t=out:st={df - 1.2:.2f}:d=1.2",
