@@ -12,8 +12,10 @@ def snap(t): return float(beats[np.abs(beats - t).argmin()])
 T0, TB, TF, END = snap(128.4), snap(143.4), snap(147.4), 155.4   # klip.py dagi o'rinlar
 WHIP = 0.3
 # (klip, oxiri s, Veo'ning o'z whip pani bormi, ism, nisbiy uzunlik)
-HER = [("y1", 5.9, True, "IBN SINO", 1.0), ("y2", 4.4, False, "ABU RAYHON BERUNIY", 1.0), ("y3", 5.0, False, "JALOLIDDIN MANGUBERDI", 1.0),
-       ("y4", 5.8, False, "AMIR TEMUR", 1.4), ("y5", 6.6, True, "MIRZO ULUG'BEK", 1.0)]
+# Oxirlari kadrma-kadr tekshirilgan (egasi: "keraksiz kadr qolmasin"): Veo'ning o'z whip panida orqa tomon / begona manzara chiqadi,
+# shuning uchun hammasi bosh burilgach kesiladi va o'tish oxirgi kadrdan yasaladi (kadr o'ralmaydi, ikkinchi odam ko'rinmaydi).
+HER = [("y1", 5.4, False, "IBN SINO", 1.0), ("y2", 4.3, False, "ABU RAYHON BERUNIY", 1.0), ("y3", 5.0, False, "JALOLIDDIN MANGUBERDI", 1.0),
+       ("y4", 5.8, False, "AMIR TEMUR", 1.4), ("y5", 6.0, False, "MIRZO ULUG'BEK", 1.0)]
 def run(c): subprocess.run(c, check=True)
 def esc(t): return t.replace(":", "\\:").replace("'", "’")
 def name(t, d): return (f"drawtext=fontfile={FONT}:text='{esc(t)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12"
@@ -24,13 +26,15 @@ for i, (k, end, own, nm, rel) in enumerate(HER):
     d = unit * rel; body = d if own else d - WHIP; a = end - body
     p = f"{W}/h{i}.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{body:.3f}", "-i", C + k + ".mp4", "-vf", f"fps=30,{name(nm, body)}", *enc, p]); parts.append(p)
-    if not own:   # o'zimizning whip pan: kadr o'ngga siljiydi va gorizontal xiralashadi
-        q = f"{W}/h{i}w.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{end:.3f}", "-t", f"{WHIP:.3f}", "-i", C + k + ".mp4", "-vf",
-             "fps=30,scroll=horizontal=0.07,avgblur=sizeX=50:sizeY=1", *enc, q]); parts.append(q)
+    if not own:   # o'zimizning whip pan: oxirgi kadr kattalashib o'ngga suriladi va gorizontal xiralashadi
+        q = f"{W}/h{i}w.mp4"; fr = f"{W}/h{i}.png"
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{end - 0.04:.3f}", "-i", C + k + ".mp4", "-frames:v", "1", fr])
+        run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-t", f"{WHIP:.3f}", "-i", fr, "-vf",
+             f"fps=30,scale=1008:1792,crop=720:1280:x='144+144*t/{WHIP}':y=256,avgblur=sizeX=55:sizeY=1,eq=brightness=0.04", *enc, q]); parts.append(q)
 # Bahodir: haqiqiy kadr (qora chopon, sekin), Veo'dagi kabi o'ngdan xiralik bilan kiradi, keyin bayroqqa o'tadi
 db = TF - TB; k = 1.8
-run(["ffmpeg", "-v", "error", "-y", "-ss", "4.0", "-t", f"{db / k + 0.1:.3f}", "-i", R + "jalolov_dacres.mp4", "-filter_complex",
+# bahodir_toza.mp4 = jalolov_dacres.mp4 3.9–6.3 s, siljib yuruvchi «@OPER_UZ» belgisi har kadrda topilib o'chirilgan (egasi, 2026-10-22)
+run(["ffmpeg", "-v", "error", "-y", "-ss", "0.1", "-t", f"{db / k + 0.1:.3f}", "-i", C + "bahodir_toza.mp4", "-filter_complex",
      "split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=720:-2[fg];[bg][fg]overlay=0:(H-h)/2,"
      f"setpts={k}*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1,trim=duration={db:.3f},setpts=PTS-STARTPTS,"
      f"{name('BAHODIR JALOLOV', db)},drawtext=fontfile={FONT}:text='Manba\\: DAZN, @OPER_UZ':fontcolor=white@0.75:fontsize=18:x=(w-text_w)/2:y=h-46",
