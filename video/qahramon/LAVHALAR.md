@@ -77,3 +77,6 @@ Yakun rasmlari sahifasi: `yakun_rasmlar.py` → `yakun.html`, https://claude.ai/
 | y4 Amir Temur (Veo) | ✅ | 0–5.8 s + o'zimiz whip pan | Yuz va kiyim rasm/namunaga mos; 4.6–5.6 s boshini o'ngga buradi. 6 s dan keyin o'girilib uzoqqa yurib ketadi, toji dubulg'aga aylanadi (ishlatilmaydi) |
 | (Beruniy 2-marta) | — | — | 89ee4482 fayli be14d6ac bilan bir xil (o'sha klip) |
 | y3 Jaloliddin (Veo) | ✅ | 0–5.0 s + o'zimiz whip pan | Yuz, dubulg'a, mo'yna, sovut rasm/namunaga mos; 4.0–4.8 s boshini o'ngga buradi. 5.4 s dan keyin o'girilib yurib ketadi (ishlatilmaydi) |
+| y5 Ulug'bek (Veo) | ✅ | 3.9–6.6 s (Veo'ning o'z whip pani bilan) | Yuz, salla (yashil tosh), yashil to'n, oltin usturlob rasm/namunaga mos; 4.8–6.0 s boshini o'ngga buradi. 6.8 s dan keyin boshqa manzara (ishlatilmaydi) |
+
+Yakun yig'ish: `python3 video/qahramon/yakun_zanjir.py OUT` (128.2–155.4 s: qahramonlar 15.3 s, Bahodir 3.8 s, bayroq 8.1 s).
