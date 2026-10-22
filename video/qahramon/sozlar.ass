@@ -1,0 +1,16 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: G,DejaVu Sans,64,&H004DC3FF,&H00FFFFFF,&H000A1420,&H80000000,-1,0,0,0,100,100,2,0,1,5,3,8,40,40,170,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:39.20,0:00:41.20,G,,0,0,0,,{\fad(60,200)\fscx160\fscy160\t(0,180,\fscx100\fscy100)}BIRLIK
+Dialogue: 0,0:00:41.30,0:00:43.90,G,,0,0,0,,{\fad(60,200)\fs52\fscx140\fscy140\t(0,180,\fscx100\fscy100)}YENGILMASDIR\NHAR QADAMIMIZ!
+Dialogue: 0,0:00:44.40,0:00:46.80,G,,0,0,0,,{\fad(60,200)\fs52\fscx140\fscy140\t(0,180,\fscx100\fscy100)}O'N JANGGA\NKIRSAK HAMKI
+Dialogue: 0,0:00:46.90,0:00:49.00,G,,0,0,0,,{\fad(60,200)\fs52\fscx140\fscy140\t(0,180,\fscx100\fscy100)}KUCHAYUR\NHAR DAM YURTIMIZ!
+Dialogue: 0,0:01:07.50,0:01:11.50,G,,0,0,0,,{\fad(60,300)\fs58\fscx170\fscy170\t(0,220,\fscx100\fscy100)}HECH QACHON\NYENGILMAS!

@@ -13,7 +13,7 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (10.0,  "clip", ("jaloliddin.mp4", 20, A), "«Tog'lar yo'l berar bizga» — Jaloliddin hujumga"),
  (15.0,  "clip", ("jaloliddin.mp4", 42, A), "«to'siqni yorib, zafar quchib» — ot sakraydi"),
  (20.2,  "clip", ("temur_taxt.mp4", 57, B), "«Asrlar guvoh bizga» — Ko'ragoniy tamgasi"),
- (25.2,  "clip", ("temur_taxt.mp4", 82.5, A, 1.3), "«qonimizda olov bor» — Amir Temur"),
+ (25.2,  "clip", ("temur_taxt.mp4", 82.7, A, 1.3), "«qonimizda olov bor» — Amir Temur"),
  (30.2,  "veo", "ulugbek", "VEO: Ulug'bek rasadxonasi"),
  (34.4,  "veo", "ibnsino", "VEO: Ibn Sino kitob ustida"),
  (36.9,  "veo", "beruniy", "VEO: Beruniy astrolab bilan"),
@@ -22,19 +22,19 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (49.2,  "clip", ("shoxruxxon_baxtiyorov.mp4", 33, A), "«Kuchayur har dam yurtimiz» — medal"),
  (54.2,  "veo", "qollar", "VEO: birlik — qo'llar ustma-ust"),
  (58.0,  "clip", ("armiya.mp4", 72, A), "«Bir tan-u bir jon» — askarlar"),
- (62.3,  "multi", [("jalolov_dacres.mp4", 0.0, 1.9), ("jalolov_dacres.mp4", 3.4, 0.9)], "«Mag'rur boshimiz egilmas» — Bahodir qora choponda"),
+ (62.3,  "clip", ("jalolov_dacres.mp4", 0.0, B, 2.6), "«Mag'rur boshimiz egilmas» — Bahodir qora choponda sahnadan chiqadi (sekin)"),
  (67.3,  "clip", ("jalolov_dacres.mp4", 13.8, B, 2.0), "«hech qachon yengilmas!» — zarba, yiqiladi, yotadi (2x sekin)"),
  (77.3,  "clip", ("armiya.mp4", 80, A), "tog'da askarlar"),
  (82.3,  "clip", ("jaloliddin.mp4", 2, A), "Jaloliddin Manguberdi"),
  (87.3,  "veo", "registon", "VEO: Registon, mushaklar"),
  (93.1,  "clip", ("shoxruxxon_baxtiyorov.mp4", 0, A), "Shoxruxxon: tashlash"),
- (98.1,  "clip", ("karate_leshan_67kg.mp4", 16.5, A), "karate g'olibi"),
+ (98.1,  "clip", ("karate_leshan_67kg.mp4", 22.4, A, 2.6), "karate g'olibi qo'lini ko'taradi (sekin)"),
  (103.9, "multi", [("sohibqiron_treyler.mp4", 4.0, 1.8), ("sohibqiron_treyler.mp4", 7.4, 1.5), ("sohibqiron_treyler.mp4", 25.0, 1.8)], "Jang 1: bayroqli qo'shin, gulxanlar"),
  (109.7, "multi", [("sohibqiron_treyler.mp4", 27.6, 1.4), ("sohibqiron_treyler.mp4", 33.0, 2.0), ("sohibqiron_treyler.mp4", 35.0, 1.9), ("sohibqiron_treyler.mp4", 42.0, 1.0)], "Jang 2: fillar, otliqlar, olov"),
  (114.7, "clip", ("armiya.mp4", 54, A), "zirhli kolonna"),
  (120.5, "veo", "yoshlar", "VEO: yoshlar cho'qqida bayroq ko'taradi"),
  (125.5, "clip", ("armiya.mp4", 88, A), "samolyotlar"),
- (128.4, "hist", [("temur_taxt.mp4", 79.5, "AMIR TEMUR", 1.35), ("jaloliddin.mp4", 62.0, "JALOLIDDIN MANGUBERDI", 1.0),
+ (128.4, "hist", [("temur_taxt.mp4", 79.8, "AMIR TEMUR", 1.4), ("jaloliddin.mp4", 62.0, "JALOLIDDIN MANGUBERDI", 1.0),
                   ("veo", 0, "IBN SINO"), ("veo", 0, "ABU RAYHON BERUNIY"), ("veo", 0, "MIRZO ULUG'BEK")], "Tarix qahramonlari: 3 s turadi, qumga aylanadi"),
  (143.4, "alive", ("jalolov_dacres.mp4", 4.3, "BAHODIR JALOLOV", 1.8), "Bahodir: qora choponda, qo'li tepada (tirik — qum emas, qorong'ilashadi)"),
  (147.4, "final", None, "VEO: bayroq + yakuniy yozuv"),
@@ -45,14 +45,17 @@ beats = np.load("video/qahramon/music/beats.npy")
 st = [0.0] + [float(beats[np.abs(beats - p[0]).argmin()]) for p in PLAN[1:]]
 used = {}
 def note(src, a, b): used.setdefault(src, []).append((a, b))
-def tag(s0, lab): return f"drawtext=fontfile={FONT}:text='{esc(f'{int(s0//60)}:{s0%60:04.1f}  {lab}')}':fontcolor=white:fontsize=20:x=16:y=40:box=1:boxcolor=black@0.6:boxborderw=8"
+def tag(s0, lab):
+    if os.environ.get("TAG") != "1": return "null"
+    return f"drawtext=fontfile={FONT}:text='{esc(f'{int(s0//60)}:{s0%60:04.1f}  {lab}')}':fontcolor=white:fontsize=20:x=16:y=40:box=1:boxcolor=black@0.6:boxborderw=8"
 def card(o, d, txt, s0, lab):
     run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=c=0x1a120c:s=720x1280:d={d:.3f}:r=30", "-vf",
          f"drawtext=fontfile={FONT}:text='{esc(txt)}':fontcolor=0xFFC34D:fontsize=30:x=(w-text_w)/2:y=(h-text_h)/2," + tag(s0, lab),
          "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", o])
 def piece(src, cs, d, m, o, k=1.0, extra=""):
     srcd = d / k; note(src, cs, cs + srcd)
-    base = ("scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" if m == A else
+    dl = "delogo=x=440:y=505:w=410:h=80," if "temur_taxt" in src else ""
+    base = dl + ("scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" if m == A else
             "split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=720:-2[fg];[bg][fg]overlay=0:(H-h)/2")
     slow = f",setpts={k}*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1" if k > 1 else ""
     run(["ffmpeg", "-v", "error", "-y", "-ss", str(cs), "-t", f"{srcd + 0.1:.3f}", "-i", R + src, "-filter_complex",
