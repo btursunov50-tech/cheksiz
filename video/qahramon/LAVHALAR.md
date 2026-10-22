@@ -66,3 +66,5 @@ Veo promptlari (11 ta, matn→video): `veo_promptlar.py` → `veo.html`, https:/
 | v11 | bayroq ✅ |
 | vT | Temur qum — egasi: qum kerak emas, yangi yakun (qahramonlar bosh burib almashadi) |
 | v01 | tog'lar ortidan quyosh ✅ (kamera biroz ko'tariladi, burgut uchib ketadi) |
+
+Yakun rasmlari sahifasi: `yakun_rasmlar.py` → `yakun.html`, https://claude.ai/artifact/D6dYVV67T4iEWmiLBBJGrZ (tartib: Ibn Sino → Beruniy → Jaloliddin → Temur (+1 s) → Ulug'bek → Bahodir).
