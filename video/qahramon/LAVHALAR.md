@@ -58,3 +58,10 @@ Yetishmaydi → Veo: Amir Temur (otliq haykal, Registon/Gur-Amir), Ulug'bek rasa
 Egasi: treylerda Amir Temurning yuzi o'xshamagan kadrlar olinmaydi (14–15, 17–21, 38–39, 43–45). Treyler kadrlari qisqa (1–2 s), shuning uchun ular ikkita tez montajli 5 s bo'lakka yig'iladi.
 
 Veo promptlari (11 ta, matn→video): `veo_promptlar.py` → `veo.html`, https://claude.ai/artifact/RqQDw3VyjatshpQduhf3Pu
+
+## Veo kliplari (2026-10-22)
+| v05 | qo'llar: 0–4.5 s yaxshi, 4.8 s dan bolaning qo'li yo'qoladi → faqat 0–4.5 s |
+| v06 | Registon, mushaklar ✅ |
+| v07 | yoshlar cho'qqida ✅ |
+| v11 | bayroq ✅ |
+| vT | Temur qum — egasi: qum kerak emas, yangi yakun (qahramonlar bosh burib almashadi) |
