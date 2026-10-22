@@ -1,5 +1,6 @@
 # «VAQT» — post matnlari
 
+Har postda platformaning AI belgisini yoqing (YouTube «Altered or synthetic content» = Yes; Instagram «AI info»).
 Musiqa: «Nocturnal Tension» (egasi Suno'da yasagan, bepul tarif) → har postda «Music: made with Suno», monetizatsiya yoqilmaydi.
 
 ## Telegram (uz) — fayl: 1-telegram-vaqt-uz.mp4
@@ -18,6 +19,8 @@ Siz bugun kimga «keyin» dedingiz? Izohga yozing 👇
 🌐 https://cheksiz-one.vercel.app/infinite/
 
 🎵 Music: made with Suno
+
+Video sun'iy intellekt yordamida yaratilgan. Qahramonlar o'ylab topilgan, haqiqiy shaxslarga o'xshashlik tasodifiy.
 ```
 
 ## YouTube Shorts (en) — fayl: 2-youtube-linkedin-vaqt-en.mp4 + vaqt-uz.srt, vaqt-ru.srt
@@ -39,11 +42,12 @@ A free AI tip every morning: https://t.me/infinite_ai_and_me
 Telegram bot: https://t.me/sahiychishopbot
 Website: https://cheksiz-one.vercel.app/infinite/
 Music: made with Suno
+Made with AI. The characters are fictional; any resemblance to real people is coincidental.
 
 #shorts #time #parable #family #ai #uzbekistan #bukhara
 ```
 
-## Instagram / Facebook (ru) — fayl: 3-instagram-facebook-vaqt-ru.mp4
+## Instagram (ru) — fayl: 3-instagram-facebook-vaqt-ru.mp4 (Facebook'ga Instagram'dan ulashiladi, alohida joylanmaydi)
 ```
 Время нельзя купить. Но мы продаём его каждый день ⏳
 
@@ -58,6 +62,8 @@ Music: made with Suno
 🤖 Telegram-бот: https://t.me/sahiychishopbot
 🌐 https://cheksiz-one.vercel.app/infinite/
 🎵 Music: made with Suno
+
+Видео создано с помощью искусственного интеллекта. Персонажи вымышлены, любое сходство с реальными людьми случайно.
 
 #время #притча #семья #ии #узбекистан #бухара
 ```
@@ -79,6 +85,8 @@ How I made it with AI:
 • Music: made with Suno
 
 Who did you tell "later" today?
+
+Made with AI. The characters are fictional; any resemblance to real people is coincidental.
 
 #AI #storytelling #videoproduction #family #Uzbekistan
 ```
