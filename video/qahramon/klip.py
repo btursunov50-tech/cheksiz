@@ -13,7 +13,7 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (10.0,  "clip", ("jaloliddin.mp4", 20, A), "«Tog'lar yo'l berar bizga» — Jaloliddin hujumga"),
  (15.0,  "clip", ("jaloliddin.mp4", 42, A), "«to'siqni yorib, zafar quchib» — ot sakraydi"),
  (20.2,  "clip", ("temur_taxt.mp4", 57, B), "«Asrlar guvoh bizga» — Ko'ragoniy tamgasi"),
- (25.2,  "clip", ("temur_taxt.mp4", 79.5, A), "«qonimizda olov bor» — Amir Temur"),
+ (25.2,  "clip", ("temur_taxt.mp4", 82.5, A, 1.3), "«qonimizda olov bor» — Amir Temur"),
  (30.2,  "veo", "ulugbek", "VEO: Ulug'bek rasadxonasi"),
  (34.4,  "veo", "ibnsino", "VEO: Ibn Sino kitob ustida"),
  (36.9,  "veo", "beruniy", "VEO: Beruniy astrolab bilan"),
@@ -22,8 +22,8 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (49.2,  "clip", ("shoxruxxon_baxtiyorov.mp4", 33, A), "«Kuchayur har dam yurtimiz» — medal"),
  (54.2,  "veo", "qollar", "VEO: birlik — qo'llar ustma-ust"),
  (58.0,  "clip", ("armiya.mp4", 72, A), "«Bir tan-u bir jon» — askarlar"),
- (62.3,  "clip", ("jalolov_dacres.mp4", 3, B), "«Mag'rur boshimiz egilmas» — Bahodir qora choponda"),
- (67.3,  "clip", ("jalolov_dacres.mp4", 23, B, 2.0), "«hech qachon yengilmas!» — NOKAUT (2x sekin)"),
+ (62.3,  "multi", [("jalolov_dacres.mp4", 0.0, 1.9), ("jalolov_dacres.mp4", 3.4, 0.9)], "«Mag'rur boshimiz egilmas» — Bahodir qora choponda"),
+ (67.3,  "clip", ("jalolov_dacres.mp4", 13.8, B, 2.0), "«hech qachon yengilmas!» — zarba, yiqiladi, yotadi (2x sekin)"),
  (77.3,  "clip", ("armiya.mp4", 80, A), "tog'da askarlar"),
  (82.3,  "clip", ("jaloliddin.mp4", 2, A), "Jaloliddin Manguberdi"),
  (87.3,  "veo", "registon", "VEO: Registon, mushaklar"),
@@ -34,12 +34,10 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (114.7, "clip", ("armiya.mp4", 54, A), "zirhli kolonna"),
  (120.5, "veo", "yoshlar", "VEO: yoshlar cho'qqida bayroq ko'taradi"),
  (125.5, "clip", ("armiya.mp4", 88, A), "samolyotlar"),
- (130.0, "clip", ("shoxruxxon_baxtiyorov.mp4", 38.4, A), "chempion kamari"),
- (133.5, "veo", "bolalar", "VEO: bolalar bayroq bilan yuguradi"),
- (137.0, "gallery", [("temur_taxt.mp4", 109.9, "AMIR TEMUR", 2.2), ("jaloliddin.mp4", 62, "JALOLIDDIN"), ("veo", "ibnsino_p", "IBN SINO"),
-                     ("veo", "beruniy_p", "BERUNIY"), ("veo", "ulugbek_p", "ULUG'BEK")], "Tarix qahramonlari"),
- (142.0, "heroes", [("jalolov_dacres.mp4", 50, "BAHODIR JALOLOV"), ("karate_leshan_67kg.mp4", 22.6, "KARATE", 2.0), ("shoxruxxon_baxtiyorov.mp4", 25, "SHOXRUXXON BAXTIYOROV")], "Bugungi qahramonlar"),
- (147.0, "final", None, "VEO: bayroq + yakuniy yozuv"),
+ (128.4, "hist", [("temur_taxt.mp4", 79.5, "AMIR TEMUR", 1.35), ("jaloliddin.mp4", 62.0, "JALOLIDDIN MANGUBERDI", 1.0),
+                  ("veo", 0, "IBN SINO"), ("veo", 0, "ABU RAYHON BERUNIY"), ("veo", 0, "MIRZO ULUG'BEK")], "Tarix qahramonlari: 3 s turadi, qumga aylanadi"),
+ (143.4, "alive", ("jalolov_dacres.mp4", 4.3, "BAHODIR JALOLOV", 1.8), "Bahodir: qora choponda, qo'li tepada (tirik — qum emas, qorong'ilashadi)"),
+ (147.4, "final", None, "VEO: bayroq + yakuniy yozuv"),
 ]
 def esc(t): return t.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’")
 def run(c): subprocess.run(c, check=True)
@@ -89,7 +87,7 @@ for i, p in enumerate(PLAN):
     elif kind == "multi":
         tot = sum(x[2] for x in data); parts = []
         for j, (src, cs, dd) in enumerate(data):
-            pj = f"{W}/{i:02}_{j}.mp4"; piece(src, cs, d * dd / tot, A, pj, 1.0, "," + tag(s0, lab)); parts.append(pj)
+            pj = f"{W}/{i:02}_{j}.mp4"; piece(src, cs, d * dd / tot, B if "jalolov" in src else A, pj, d / tot, "," + tag(s0, lab)); parts.append(pj)
         open(f"{W}/m{i}.txt", "w").write("".join(f"file '{os.path.abspath(x)}'\n" for x in parts))
         run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/m{i}.txt", "-c", "copy", o])
     elif kind == "gallery":
@@ -99,6 +97,25 @@ for i, p in enumerate(PLAN):
     elif kind == "heroes":
         cells = [(cell, (60, 70 + j * 390, 600, 360)) for j, cell in enumerate(data)]
         frames(o, d, cells, s0, lab, 0.8)
+    elif kind == "hist":
+        hs = []
+        for j, cell in enumerate(data):
+            hj = f"{W}/{i:02}_h{j}.mp4"; src, cs, name = cell[:3]; k = cell[3] if len(cell) > 3 else 1.0
+            nm = f",drawtext=fontfile={FONT}:text='{esc(name)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12"
+            if src == "veo":
+                run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=0x2a1c12:s=720x1280:d=3.9:r=30", "-vf",
+                     f"drawtext=fontfile={FONT}:text='VEO portret':fontcolor=0xFFC34D:fontsize=34:x=(w-text_w)/2:y=(h-text_h)/2" + nm,
+                     "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", hj])
+            else:
+                piece(src, cs, 3.9, A, hj, k, nm)
+            hs.append(hj)
+        run(["python3", "video/qahramon/qum_ketma.py", f"{W}/{i:02}_hist.mp4", *hs])
+        run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/{i:02}_hist.mp4", "-vf", f"trim=duration={d:.3f},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=1," + tag(s0, lab) + f",trim=duration={d:.3f}",
+             "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", o])
+    elif kind == "alive":
+        src, cs, name, k = data
+        nm = f",drawtext=fontfile={FONT}:text='{esc(name)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12"
+        piece(src, cs, d, B, o, k, nm + f",fade=t=out:st={d - 0.7:.2f}:d=0.7," + tag(s0, lab))
     elif kind == "final":
         card(o, d, "O'zbekning jasur o'g'li —\\nhech qachon yengilmas!", s0, lab)
     lst.append(o)
@@ -109,7 +126,7 @@ for src, r in used.items():
         if a2 < b1 - 0.05: bad.append((src, (round(a1, 1), round(b1, 1)), (round(a2, 1), round(b2, 1))))
 print("TAKROR:", bad if bad else "yo'q")
 open(f"{W}/list.txt", "w").write("".join(f"file '{os.path.abspath(x)}'\n" for x in lst))
-run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/list.txt", "-i", MUSIC, "-map", "0:v", "-map", "1:a",
+run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/list.txt", "-i", MUSIC, "-map", "0:v", "-map", "1:a", "-af", "bass=g=3:f=90:w=0.7,extrastereo=m=1.25,alimiter=limit=0.95",
      "-c:v", "libx264", "-crf", "25", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", f"{W}/klip_qoralama.mp4"])
 json.dump([(round(a, 2), p[1], p[3]) for a, p in zip(st, PLAN)], open(f"{W}/kesimlar.json", "w"), ensure_ascii=False, indent=0)
 print("ok")
