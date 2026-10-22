@@ -7,7 +7,7 @@ cap = cv2.VideoCapture(src); F = cap.get(cv2.CAP_PROP_FPS); W, H = 720, 1280; N 
 PUNCH = [39.2, 41.3, 44.4, 46.9, 49.1, 52.0, 54.1, 98.1, 101.9, 103.9, 105.7, 109.5, 111.9, 115.1, 118.7, 121.9]  # kuchli zarblar
 SHAKE = [(67.4, 69.6, 14), (109.5, 114.6, 6)]          # nokaut (zarba, yiqilish), jang 2
 FLASH = [108.6, 67.8]                                   # eng kuchli zarb, nokaut zarbasi
-SPARK = [(10.1, 20.4), (103.9, 114.6)]                  # Jaloliddin hujumi, jang kadrlari
+SPARK = []   # egasi (2026-10-22): qorga o'xshagan uchqunlar kerak emas
 rng = np.random.default_rng(3); NP = 160
 P = np.c_[rng.random(NP) * W, rng.random(NP) * H, rng.random(NP) * 0.6 + 0.4, rng.random(NP) * 6.28, rng.random(NP)]
 def env(t, t0, a=0.03, r=0.22): return 0 if t < t0 - a else (min(1, (t - t0 + a) / a) if t < t0 else np.exp(-(t - t0) / r))
