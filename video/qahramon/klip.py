@@ -5,7 +5,9 @@ import subprocess, os, sys, json
 import numpy as np
 R = "video/ref/2026-10-21/"; W = sys.argv[1]; os.makedirs(W, exist_ok=True)
 MUSIC = "video/qahramon/music/birlik.mp3"; END = 155.4
-VEO = {"tong": ("v01", 0, 8.0), "qollar": ("v05", 0, 4.5), "registon": ("v06", 0, 8.0), "yoshlar": ("v07", 0, 8.0)}   # tayyor Veo kliplari: kalit -> (fayl, boshi, oxiri)
+VEO = {"tong": ("v01", 0, 8.0), "qollar": ("v05", 0, 4.5), "registon": ("v06", 0, 8.0), "yoshlar": ("v07", 0, 8.0),
+       # yakundagi qir tepasi kliplarining ishlatilmagan boshlari (yakun_zanjir.py ular 3.47/2.87/1.77 s dan keyinini oladi — kadr takrorlanmaydi)
+       "ulugbek": ("y5", 0, 3.4), "ibnsino": ("y1", 0, 2.8), "beruniy": ("y2", 0, 1.7)}   # tayyor Veo kliplari: kalit -> (fayl, boshi, oxiri)
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 A, B = "A", "B"
 PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
