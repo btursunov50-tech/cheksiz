@@ -24,11 +24,11 @@ S = [
   "Drone shot: a slow orbit around the summit, ending with the climbers in the center against the sunrise. A young man and a young woman in modern mountain jackets reach a snowy mountain summit at sunrise and raise together " + UZ_FLAG + " on a pole; the flag unfurls in the strong wind, clouds below them."),
  ("T", "Amir Temur (qumga aylanadi)", "2:08–2:11", "Yakun: tarix qahramonlari. Rasm — Temur videosidan kesilgan kadr.", ""),
  ("J", "Jaloliddin (qumga aylanadi)", "2:11–2:14", "Rasm — Jaloliddin videosidan kesilgan kadr.", ""),
- ("8", "Ibn Sino portreti (qumga aylanadi)", "2:11–2:14", "Yakundagi tarix qahramonlari: 3 s turadi, qolganini o'zim qilaman.",
+ ("8", "Ibn Sino portreti (qumga aylanadi)", "2:14–2:17", "Yakundagi tarix qahramonlari: 3 s turadi, qolganini o'zim qilaman.",
   "Locked-off static camera with a very slow push-in, full figure, centered, the person stands still facing the camera. " + IBN + " stands in the arched doorway of a medieval Bukhara library, holding a closed book to his chest; he breathes calmly, blinks and slowly lifts his eyes to the camera; a light wind moves his robe. Soft golden light from the side, dark background."),
- ("9", "Beruniy portreti (qumga aylanadi)", "2:14–2:17", "Xuddi 8-sahna uslubida.",
+ ("9", "Beruniy portreti (qumga aylanadi)", "2:17–2:20", "Xuddi 8-sahna uslubida.",
   "Locked-off static camera with a very slow push-in, full figure, centered, the person stands still facing the camera. " + BER + " stands on a rocky hilltop at dusk holding a brass astrolabe at his side; he breathes calmly, blinks and slowly lifts his eyes to the camera; the wind moves his robe. Warm sunset light from the side."),
- ("10", "Ulug'bek portreti (qumga aylanadi)", "2:17–2:20", "Xuddi 8-sahna uslubida.",
+ ("10", "Ulug'bek portreti (qumga aylanadi)", "2:20–2:23", "Xuddi 8-sahna uslubida.",
   "Locked-off static camera with a very slow push-in, full figure, centered, the person stands still facing the camera. " + ULU + " stands in front of the turquoise tiled portal of a Samarkand madrasa at night under a starry sky; he breathes calmly, blinks and slowly lifts his eyes to the camera; a light wind moves his robe. Soft golden lamp light."),
  ("11", "Bayroq (yakun)", "2:27–2:35", "Ustiga «O'zbekning jasur o'g'li — hech qachon yengilmas!» yozuvini o'zim qo'yaman.",
   "Slow push-in toward the flag, ending with the flag filling most of the frame, slight slow motion. " + UZ_FLAG[0].upper() + UZ_FLAG[1:] + " waves proudly on a tall flagpole in the strong wind against a golden sunrise sky, the domes of the Registan are silhouetted far below. The flag must be exactly correct: light blue, white and green stripes, thin red lines, crescent and twelve stars."),
@@ -51,19 +51,30 @@ I2V = {  # rasm tayyor bo'lgan sahnalar: rasm -> video prompti
  "9": ("s09_beruniy_portret", "Locked-off static camera with a very slow push-in toward him, full figure always in frame. Al-Biruni stands calmly on the hilltop holding the astrolabe; he breathes slowly, blinks and looks into the camera with a wise calm look; the wind gently moves his robe and scarf, the sun sets slowly behind the mountains.  " + SAND + "" + STILL + " " + "Keep AL-BIRUNI exactly as in the image for the whole clip: same face, grey beard, grey turban, brown robe."),
 }
 from PIL import Image
+# Holat (egasi: «rasmlarni kasha qilding» — har kartada aniq holat va kerakli rasm prompti)
+RASMP = {
+ "4": ("⏳ Rasm yo'q — avval ChatGPT'da shu rasmni qiling (Beruniy namunasini biriktiring)",
+       "Attach the AL-BIRUNI reference image and keep him exactly as in it (face, grey beard, grey turban, brown robe). Evening on a rocky mountain top above a wide valley: Al-Biruni holds up a large brass astrolabe and looks through it at the horizon, the wind moves his robe, the sky is orange and purple with the setting sun. Low angle. Cinematic photorealistic film still, vertical 9:16 format, warm golden light, deep soft shadows, gentle film grain, no text, no letters, no watermark."),
+ "10": ("⚠️ Rasm bor, lekin yuzi Ibn Sinoniki — Veo'ga hali bermang. ChatGPT: shu rasmni oching → Edit → faqat yuzini bo'yang → 2-sahnadagi (rasadxona) Ulug'bek rasmini biriktiring",
+       "In the selected area only, replace the face with the face of the man in the attached observatory image exactly: same young narrow face, same thin upturned black moustache and small pointed black beard, same eyes and cheekbones. Keep the turban, the robe, the pose, the hands and the background exactly the same. Do not change anything outside the selected area. Vertical 9:16, no text, no watermark."),
+}
 e = html.escape; cards = []
 for n, name, t, note, p in S:
-    img = ""
+    img = ""; rp = ""
+    if n in RASMP:
+        st, ip = RASMP[n]
+        rp = (f'<p class="wait">{e(st)}</p><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="r{n}">{e(ip)}</pre>'
+              f'<button type="button" class="copy" data-t="r{n}">Nusxa olish</button>')
     if n in I2V:
         f, p = I2V[n]
         im = Image.open(f"video/qahramon/img/{f}.jpg"); im.thumbnail((420, 746)); im.save(f"video/qahramon/web/{f}.webp", quality=80)
-        img = f'<div class="media"><img src="web/{f}.webp" alt="{e(name)}"></div><p class="lbl">✅ Rasm tayyor — Veo\'ga shu rasmni yuklang</p>'
-    else:
-        img = '<p class="wait">⏳ Rasm hali yo\'q (rasm prompti chatda). Rasm kelgach, prompt «rasm → video» ga almashadi.</p>'
+        ok = n not in RASMP
+        img = (f'<div class="media"><img src="web/{f}.webp" alt="{e(name)}"></div>'
+               + ('<p class="ok">✅ Tayyor — shu rasmni Veo\'ga yuklang va pastdagi promptni qo\'ying</p>' if ok else ''))
     full = p + " " + END
     cards.append(f'''<article class="card" id="s{n}">
 <header><span class="num">{n}</span><h2>{e(name)}</h2><span class="dur">9:16 (tik), 8 s</span><span class="dur">{t}</span></header>
-{img}<div class="txt"><p class="voice"><span class="lbl">Klipdagi joyi</span>{e(note)}</p>
+{img}{rp}<div class="txt"><p class="voice"><span class="lbl">Klipdagi joyi</span>{e(note)}</p>
 <p class="lbl vid">🎬 Veo prompti — 9:16 (tik), 8 s</p><pre id="v{n}">{e(full)}</pre>
 <button type="button" class="copy" data-t="v{n}">Nusxa olish</button></div>
 </article>''')
@@ -73,6 +84,6 @@ head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Birlik» kli
 i = head.index('<p class="intro">'); j = head.index('</p>', i) + 4
 head = head[:i] + ('<p class="intro">Avval ChatGPT\'da rasm, keyin shu rasmdan Veo\'da video. Rasmi tayyor sahnalarda rasm va «rasm → video» prompti turibdi. Veo\'da formatni 9:16, uzunlikni 8 s qiling va «Nusxa olish» bilan promptni qo\'ying. '
                    'Yozuvlar, sarlavha, ismlar va qum effektini o\'zim qo\'shaman. 8–10 portretlar bir xil uslubda: odam qimirlamay turadi, faqat nafas oladi va kameraga qaraydi.</p>') + head[j:]
-head = head.replace("</style>", ".vid{color:var(--sun)}.wait{margin:0;padding:10px 12px;border:1px dashed var(--sun);border-radius:6px;color:var(--sun)}</style>")
+head = head.replace("</style>", ".vid{color:var(--sun)}.ok{margin:0;padding:10px 12px;border:1px solid #6fbf73;border-radius:6px;color:#9fe0a2}.wait{margin:0;padding:10px 12px;border:1px dashed var(--sun);border-radius:6px;color:var(--sun)}</style>")
 open("video/qahramon/veo.html", "w").write(head + "\n".join(cards) + open("video/robot/page_tail.html").read())
 print(len(S))
