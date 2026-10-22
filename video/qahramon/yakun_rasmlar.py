@@ -6,23 +6,27 @@ STY = "Cinematic photorealistic film still, vertical 9:16 format, warm golden li
 BG = ("Use the landscape image as the place: the same river with morning mist, the old clay paxsa village, the blooming apricot orchards, the poplars, "
       "the mountains and the rising sun, but seen from high above, from the top of a hill, so the whole valley spreads wide and deep behind him.")
 def hero(name, ref, look, keep):
-    # Egasi (2026-10-22): odam qir tepasida, kamera pastroqdan — orqa fon (vodiy, qishloq, tog', quyosh) ko'p ko'rinsin.
-    return (f"Attach the landscape image and the {name} reference image. {name} stands on the grassy top of a high hill above the valley, "
-            f"seen waist-up from a slightly low camera angle, placed in the lower third of the vertical frame, {look}. "
-            f"Below and behind him the valley opens wide: the river winding through it, the village and orchards far down, the mountains and the golden sunrise at the top of the frame, soft morning haze between the layers. "
-            f"Keep his face exactly as in the reference image, the same person: {keep}. {BG} {STY}")
+    # Egasi (2026-10-22): GPT'dagi Ibn Sino qir tepasida (y1_ibnsino_qir_gpt) yoqdi — hamma qahramon aynan shu joyda, shu kadrda turadi
+    # (whip pan zanjiri uchun fon bir xil bo'lishi kerak).
+    return (f"Attach the Ibn Sina hilltop image and the {name} reference image. Use the Ibn Sina hilltop image only for the place and the framing: "
+            f"the same grassy hill, the same valley below with the winding river, the clay village, the blooming orchards and poplars, the same mountains, "
+            f"the same golden sunrise and morning haze, the same camera height and angle. Ibn Sina is not in this picture: in his place stands {name}, "
+            f"seen from the knees up, in the same spot and the same size in the frame, {look}. "
+            f"Keep his face exactly as in the {name} reference image, the same person: {keep}. {STY}")
+FIX1 = ("Attach the Ibn Sina hilltop image and the Ibn Sina portrait reference image. Keep the hilltop image exactly the same: the hill, the valley, the river, "
+        "the village, the sunrise, his pose, the book, the white turban and the dark blue robe with gold border, the light and the framing. "
+        "Change only his face so it is exactly the face from the portrait reference image, the same person: a fuller dark black beard and moustache, "
+        "a slightly broader face, a serious calm look, no smile. " + STY)
 P = [
- ("F", "Fon (kerak emas: siz yuborgan manzara ishlatiladi)", [], "Wide cinematic landscape, no people: a calm river at sunrise in old Uzbekistan, on the far bank an old village of clay paxsa houses with flat roofs, poplar trees and blooming apricot orchards, soft morning mist over the water, the golden sun rising above distant mountains. The middle of the frame stays open, like a stage for a person to stand in front of it. " + STY),
- ("Q1", "Ibn Sino qir tepasida ✅ tayyor", ["fon", "s08_ibnsino_portret"], hero("Ibn Sina", "s08", "holding his book, looking straight into the camera with a calm kind look", "dark black beard, white turban, dark blue robe with gold border")),
- ("Q2", "Beruniy qir tepasida", ["fon", "s09_beruniy_portret"], hero("Al-Biruni", "s09", "holding his brass astrolabe, looking straight into the camera with a wise calm look", "grey beard, grey turban, brown robe with scarf")),
- ("Q3", "Jaloliddin qir tepasida", ["fon", "q_jaloliddin"], hero("Jaloliddin Manguberdi", "q", "looking straight into the camera with a brave proud look", "short dark beard, steel helmet with plume, scale armour and blue cloak")),
- ("Q4", "Amir Temur qir tepasida", ["fon", "q_temur"], hero("Amir Temur", "q", "looking straight into the camera with a strong calm look", "dark beard, golden crown, golden breastplate with red and green jewels, blue robe")),
- ("Q5", "Ulug'bek qir tepasida", ["fon", "s02_ulugbek_rasadxona"], hero("Ulugh Beg", "s02", "looking straight into the camera with a calm wise look", "young narrow face, thin upturned black moustache, small pointed black beard, white turban with the green jewel, green and gold robe")),
+ ("Q1", "Ibn Sino — faqat yuzini tuzatish", ["y1_ibnsino_qir_gpt", "s08_ibnsino_portret"], FIX1),
+ ("Q2", "Beruniy qir tepasida", ["y1_ibnsino_qir_gpt", "s09_beruniy_portret"], hero("Al-Biruni", "s09", "holding his brass astrolabe, looking straight into the camera with a wise calm look", "grey beard, grey turban, brown robe with scarf")),
+ ("Q3", "Jaloliddin qir tepasida", ["y1_ibnsino_qir_gpt", "q_jaloliddin"], hero("Jaloliddin Manguberdi", "q", "looking straight into the camera with a brave proud look", "short dark beard, steel helmet with plume, scale armour and blue cloak")),
+ ("Q4", "Amir Temur qir tepasida", ["y1_ibnsino_qir_gpt", "q_temur"], hero("Amir Temur", "q", "looking straight into the camera with a strong calm look", "dark beard, golden crown, golden breastplate with red and green jewels, blue robe")),
+ ("Q5", "Ulug'bek qir tepasida", ["y1_ibnsino_qir_gpt", "s02_ulugbek_rasadxona"], hero("Ulugh Beg", "s02", "looking straight into the camera with a calm wise look", "young narrow face, thin upturned black moustache, small pointed black beard, white turban with the green jewel, green and gold robe")),
 ]
-NAMES = {"fon": "F — fon rasmi (siz qilasiz)", "s08_ibnsino_portret": "Ibn Sino", "s09_beruniy_portret": "Beruniy", "q_jaloliddin": "Jaloliddin",
+NAMES = {"y1_ibnsino_qir_gpt": "Ibn Sino qir tepasida (GPT, sizga yoqqan)", "fon": "F — fon rasmi (siz qilasiz)", "s08_ibnsino_portret": "Ibn Sino", "s09_beruniy_portret": "Beruniy", "q_jaloliddin": "Jaloliddin",
          "q_temur": "Amir Temur", "s02_ulugbek_rasadxona": "Ulug'bek (yangi yuz)"}
 os.makedirs("video/qahramon/web", exist_ok=True); e = html.escape; cards = []
-P = [x for x in P if x[0] != "F"]  # fon kerak emas: egasining manzarasi (fon_vodiy.jpg); Q1 sinovi ma'qul (y1_ibnsino_qir.png)
 for n, name, refs, p in P:
     th = ""
     for r in refs:
@@ -32,18 +36,18 @@ for n, name, refs, p in P:
         else:
             im = Image.open(f"video/qahramon/img/{r}.jpg"); im.thumbnail((360, 640)); im.save(f"video/qahramon/web/{r}_ref.webp", quality=82)
             th += f'<figure><img src="web/{r}_ref.webp" alt="{e(NAMES[r])}"><figcaption>{e(NAMES[r])}</figcaption></figure>'
-    att = (f"<p class='lbl'>📎 Veo'ga shu {len(refs)} ta rasmni biriktiring</p><div class='refs'>{th}</div>" if refs
+    att = (f"<p class='lbl'>📎 ChatGPT'ga shu {len(refs)} ta rasmni biriktiring</p><div class='refs'>{th}</div>" if refs
            else '<p class="lbl">📎 Rasm biriktirish shart emas</p>')
     cards.append(f'''<article class="card" id="{n}">
 <header><span class="num">{n}</span><h2>{e(name)}</h2><span class="dur">9:16 (tik)</span></header>
-{att}<div class="txt"><p class="lbl">🖼 Rasm prompti (Veo)</p><pre id="p{n}">{e(p)}</pre>
+{att}<div class="txt"><p class="lbl">🖼 Rasm prompti (ChatGPT)</p><pre id="p{n}">{e(p)}</pre>
 <button type="button" class="copy" data-t="p{n}">Nusxa olish</button></div></article>''')
 head = open("video/robot/page_head.html").read()
 head = head.replace("<title>Robot bilan choy sahnalari</title>", "<title>Birlik yakuni rasmlari</title>")
 head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Birlik» yakuni — rasmlar")
 i = head.index('<p class="intro">'); j = head.index('</p>', i) + 4
 INTRO = ("Tartib: Ibn Sino → Beruniy → Jaloliddin → Amir Temur (1 s ko'proq) → Ulug'bek → Bahodir (haqiqiy kadr). "
-         "Ibn Sino sinovi o'xshadi. Har kartadagi 2 rasmni (manzara + qahramon) Veo'ga biriktirib, o'lchamni 9:16 qilib, promptni qo'ying: "
+         "Joy: GPT'dagi Ibn Sino qir tepasida (sizga yoqqan) — hamma qahramon aynan shu joyda turadi. Har kartadagi 2 rasmni ChatGPT'ga biriktirib, promptni qo'ying: "
          "yuz o'zgarmasligi uchun qahramon rasmi albatta biriktiriladi. Rasmni bosib turib saqlab oling.")
 head = head[:i] + f'<p class="intro">{e(INTRO)}</p>' + head[j:]
 head = head.replace("</style>", ".refs{display:flex;gap:10px;flex-wrap:wrap}.refs figure{margin:0;width:auto}.refs img{width:150px;border-radius:6px;display:block}"
