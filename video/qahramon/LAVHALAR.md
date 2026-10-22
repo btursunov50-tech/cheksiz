@@ -76,3 +76,4 @@ Yakun rasmlari sahifasi: `yakun_rasmlar.py` → `yakun.html`, https://claude.ai/
 | y2 Beruniy (Veo) | ⚠️ qisman | 0–4.4 s + o'zimiz whip pan (4.4–4.8 s, blur) | 5.0–5.4 s da kadrga ikkinchi kichik Beruniy kirib qoladi (kulgili) — Veo xatosi, rasm to'g'ri. Boshini o'ngga burmaydi |
 | y4 Amir Temur (Veo) | ✅ | 0–5.8 s + o'zimiz whip pan | Yuz va kiyim rasm/namunaga mos; 4.6–5.6 s boshini o'ngga buradi. 6 s dan keyin o'girilib uzoqqa yurib ketadi, toji dubulg'aga aylanadi (ishlatilmaydi) |
 | (Beruniy 2-marta) | — | — | 89ee4482 fayli be14d6ac bilan bir xil (o'sha klip) |
+| y3 Jaloliddin (Veo) | ✅ | 0–5.0 s + o'zimiz whip pan | Yuz, dubulg'a, mo'yna, sovut rasm/namunaga mos; 4.0–4.8 s boshini o'ngga buradi. 5.4 s dan keyin o'girilib yurib ketadi (ishlatilmaydi) |
