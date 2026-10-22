@@ -74,3 +74,5 @@ Yakun rasmlari sahifasi: `yakun_rasmlar.py` → `yakun.html`, https://claude.ai/
 |---|---|---|---|
 | y1 Ibn Sino (Veo) | ✅ | 0–5.9 s | Yuz rasm va namunaga mos; 4.5 s boshini o'ngga buradi, kamera o'ngga ketadi. 6.5 s dan keyin kamera orqasiga aylanib o'tadi (ishlatilmaydi) |
 | y2 Beruniy (Veo) | ⚠️ qisman | 0–4.4 s + o'zimiz whip pan (4.4–4.8 s, blur) | 5.0–5.4 s da kadrga ikkinchi kichik Beruniy kirib qoladi (kulgili) — Veo xatosi, rasm to'g'ri. Boshini o'ngga burmaydi |
+| y4 Amir Temur (Veo) | ✅ | 0–5.8 s + o'zimiz whip pan | Yuz va kiyim rasm/namunaga mos; 4.6–5.6 s boshini o'ngga buradi. 6 s dan keyin o'girilib uzoqqa yurib ketadi, toji dubulg'aga aylanadi (ishlatilmaydi) |
+| (Beruniy 2-marta) | — | — | 89ee4482 fayli be14d6ac bilan bir xil (o'sha klip) |
