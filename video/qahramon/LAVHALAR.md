@@ -56,3 +56,5 @@ Yetishmaydi → Veo: Amir Temur (otliq haykal, Registon/Gur-Amir), Ulug'bek rasa
 | | 35.0–36.9 | qal'a hujumi, olov |
 | | 42.0–43.0 | yonayotgan shahar |
 Egasi: treylerda Amir Temurning yuzi o'xshamagan kadrlar olinmaydi (14–15, 17–21, 38–39, 43–45). Treyler kadrlari qisqa (1–2 s), shuning uchun ular ikkita tez montajli 5 s bo'lakka yig'iladi.
+
+Veo promptlari (11 ta, matn→video): `veo_promptlar.py` → `veo.html`, https://claude.ai/artifact/RqQDw3VyjatshpQduhf3Pu
