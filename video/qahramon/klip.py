@@ -52,8 +52,13 @@ def card(o, d, txt, s0, lab):
     run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=c=0x1a120c:s=720x1280:d={d:.3f}:r=30", "-vf",
          f"drawtext=fontfile={FONT}:text='{esc(txt)}':fontcolor=0xFFC34D:fontsize=30:x=(w-text_w)/2:y=(h-text_h)/2," + tag(s0, lab),
          "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", o])
+CREDIT = {"jalolov_dacres.mp4": "Manba: DAZN, @OPER_UZ", "shoxruxxon_baxtiyorov.mp4": "Manba: Kamronbek Soatov",
+          "karate_leshan_67kg.mp4": "Manba: Karate 1 Premier League, Leshan 2026", "armiya.mp4": "Manba: «O'zbekiston milliy armiyasi» videosi",
+          "temur_taxt.mp4": "Manba: @historyofuzb", "sohibqiron_treyler.mp4": "Manba: «Men kim? Sohibqiron» treyleri",
+          "jaloliddin.mp4": "Manba: «Jaloliddin Manguberdi» AI filmi"}
+def credit(src): return f",drawtext=fontfile={FONT}:text='{esc(CREDIT.get(src, ''))}':fontcolor=white@0.75:fontsize=18:x=(w-text_w)/2:y=h-46:shadowcolor=black:shadowx=1:shadowy=1" if src in CREDIT else ""
 def piece(src, cs, d, m, o, k=1.0, extra=""):
-    srcd = d / k; note(src, cs, cs + srcd)
+    srcd = d / k; note(src, cs, cs + srcd); extra = credit(src) + extra
     dl = "delogo=x=440:y=505:w=410:h=80," if "temur_taxt" in src else ""
     base = dl + ("scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" if m == A else
             "split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=720:-2[fg];[bg][fg]overlay=0:(H-h)/2")
@@ -104,7 +109,7 @@ for i, p in enumerate(PLAN):
         hs = []
         for j, cell in enumerate(data):
             hj = f"{W}/{i:02}_h{j}.mp4"; src, cs, name = cell[:3]; k = cell[3] if len(cell) > 3 else 1.0
-            nm = f",drawtext=fontfile={FONT}:text='{esc(name)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12"
+            nm = f",drawtext=fontfile={FONT}:text='{esc(name)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12:enable='between(t,0.4,2.0)'"
             if src == "veo":
                 run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=0x2a1c12:s=720x1280:d=3.9:r=30", "-vf",
                      f"drawtext=fontfile={FONT}:text='VEO portret':fontcolor=0xFFC34D:fontsize=34:x=(w-text_w)/2:y=(h-text_h)/2" + nm,
