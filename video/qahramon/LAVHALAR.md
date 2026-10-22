@@ -47,3 +47,12 @@ Yetishmaydi → Veo: Amir Temur (otliq haykal, Registon/Gur-Amir), Ulug'bek rasa
 | | 30–35 | ot ustida, ortida qo'shin |
 | | 42–48 | **ot jardan daryoga sakraydi** |
 | | 50–56 | quyosh botishida daryo bo'yida |
+| temur_taxt.mp4 (16:9, @historyofuzb belgisi) | 57–62 | **Ko'ragoniy tamgasi** (oltin muhr «KO'RAGON») |
+| | 80–85 | **Amir Temur tik turibdi** (saroyda, keyin osmon fonida) |
+| sohibqiron_treyler.mp4 (16:9, «Men kim? Sohibqiron» treyleri) | 4.0–5.8, 7.0–8.9 | qor ichida bayroqli qo'shin (6 s dagi «Katta premyera» yozuvi tashlab ketiladi) |
+| | 25.0–26.8 | tungi gulxanlar, qo'shin lageri |
+| | 27.6–29.0 | jang changida fillar |
+| | 33.0–35.0 | otliqlar changda chopib kelyapti |
+| | 35.0–36.9 | qal'a hujumi, olov |
+| | 42.0–43.0 | yonayotgan shahar |
+Egasi: treylerda Amir Temurning yuzi o'xshamagan kadrlar olinmaydi (14–15, 17–21, 38–39, 43–45). Treyler kadrlari qisqa (1–2 s), shuning uchun ular ikkita tez montajli 5 s bo'lakka yig'iladi.
