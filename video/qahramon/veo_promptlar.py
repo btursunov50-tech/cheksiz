@@ -31,12 +31,28 @@ S = [
  ("11", "Bayroq (yakun)", "2:27–2:35", "Ustiga «O'zbekning jasur o'g'li — hech qachon yengilmas!» yozuvini o'zim qo'yaman.",
   "Slow push-in toward the flag, ending with the flag filling most of the frame, slight slow motion. " + UZ_FLAG[0].upper() + UZ_FLAG[1:] + " waves proudly on a tall flagpole in the strong wind against a golden sunrise sky, the domes of the Registan are silhouetted far below. The flag must be exactly correct: light blue, white and green stripes, thin red lines, crescent and twelve stars."),
 ]
+KEEP = "Keep every person exactly as in the image for the whole clip: same face, beard, turban and clothes."
+STILL = "He keeps standing still on the same spot for the whole clip, does not walk and does not leave the frame, full figure always visible."
+I2V = {  # rasm tayyor bo'lgan sahnalar: rasm -> video prompti
+ "6": ("s06_registon", "Slow crane up from the crowd over the waving flags toward the madrasas, ending wide on the fireworks above the domes. Fireworks keep bursting in many colours and sparkle down slowly, the crowd cheers and waves the flags of Uzbekistan in the wind, the madrasa lights glow. Keep the flags exactly as in the image: light blue, white and green stripes with thin red lines, white crescent and twelve stars."),
+ "7": ("s07_yoshlar", "Slow drone orbit around the summit from left to right, ending with the two climbers centered against the rising sun. The young man and woman hold the flagpole together, the flag of Uzbekistan unfurls and waves strongly in the wind, they smile and look up at it, clouds drift slowly below. Keep the flag exactly as in the image. Keep both people exactly as in the image for the whole clip."),
+ "8": ("s08_ibnsino_portret", "Locked-off static camera with a very slow push-in toward him, full figure always in frame. Ibn Sina stands calmly in the doorway of the library holding the book to his chest; he breathes slowly, blinks, and lifts his eyes to the camera with a calm proud look; the lamp flames flicker softly behind him. " + STILL + " " + "Keep IBN SINA exactly as in the image for the whole clip: same face, dark beard, white turban, dark blue robe."),
+ "9": ("s09_beruniy_portret", "Locked-off static camera with a very slow push-in toward him, full figure always in frame. Al-Biruni stands calmly on the hilltop holding the astrolabe; he breathes slowly, blinks and looks into the camera with a wise calm look; the wind gently moves his robe and scarf, the sun sets slowly behind the mountains. " + STILL + " " + "Keep AL-BIRUNI exactly as in the image for the whole clip: same face, grey beard, grey turban, brown robe."),
+}
+from PIL import Image
 e = html.escape; cards = []
 for n, name, t, note, p in S:
+    img = ""
+    if n in I2V:
+        f, p = I2V[n]
+        im = Image.open(f"video/qahramon/img/{f}.jpg"); im.thumbnail((420, 746)); im.save(f"video/qahramon/web/{f}.webp", quality=80)
+        img = f'<div class="media"><img src="web/{f}.webp" alt="{e(name)}"></div><p class="lbl">✅ Rasm tayyor — Veo\'ga shu rasmni yuklang</p>'
+    else:
+        img = '<p class="wait">⏳ Rasm hali yo\'q (rasm prompti chatda). Rasm kelgach, prompt «rasm → video» ga almashadi.</p>'
     full = p + " " + END
     cards.append(f'''<article class="card" id="s{n}">
 <header><span class="num">{n}</span><h2>{e(name)}</h2><span class="dur">9:16 (tik), 8 s</span><span class="dur">{t}</span></header>
-<div class="txt"><p class="voice"><span class="lbl">Klipdagi joyi</span>{e(note)}</p>
+{img}<div class="txt"><p class="voice"><span class="lbl">Klipdagi joyi</span>{e(note)}</p>
 <p class="lbl vid">🎬 Veo prompti — 9:16 (tik), 8 s</p><pre id="v{n}">{e(full)}</pre>
 <button type="button" class="copy" data-t="v{n}">Nusxa olish</button></div>
 </article>''')
@@ -44,8 +60,8 @@ head = open("video/robot/page_head.html").read()
 head = head.replace("<title>Robot bilan choy sahnalari</title>", "<title>Birlik klipi Veo</title>")
 head = head.replace("«Robot bilan bir piyola choy» sahnalari", "«Birlik» klipi — Veo promptlari")
 i = head.index('<p class="intro">'); j = head.index('</p>', i) + 4
-head = head[:i] + ('<p class="intro">11 ta klip, hammasi matndan video (rasm kerak emas). Veo\'da formatni 9:16, uzunlikni 8 s qiling va «Nusxa olish» bilan promptni qo\'ying. '
+head = head[:i] + ('<p class="intro">Avval ChatGPT\'da rasm, keyin shu rasmdan Veo\'da video. Rasmi tayyor sahnalarda rasm va «rasm → video» prompti turibdi. Veo\'da formatni 9:16, uzunlikni 8 s qiling va «Nusxa olish» bilan promptni qo\'ying. '
                    'Yozuvlar, sarlavha, ismlar va qum effektini o\'zim qo\'shaman. 8–10 portretlar bir xil uslubda: odam qimirlamay turadi, faqat nafas oladi va kameraga qaraydi.</p>') + head[j:]
-head = head.replace("</style>", ".vid{color:var(--sun)}</style>")
+head = head.replace("</style>", ".vid{color:var(--sun)}.wait{margin:0;padding:10px 12px;border:1px dashed var(--sun);border-radius:6px;color:var(--sun)}</style>")
 open("video/qahramon/veo.html", "w").write(head + "\n".join(cards) + open("video/robot/page_tail.html").read())
 print(len(S))
