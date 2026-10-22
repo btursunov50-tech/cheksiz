@@ -5,7 +5,7 @@ import subprocess, os, sys, json
 import numpy as np
 R = "video/ref/2026-10-21/"; W = sys.argv[1]; os.makedirs(W, exist_ok=True)
 MUSIC = "video/qahramon/music/birlik.mp3"; END = 155.4
-VEO = {}   # tayyor Veo kliplari: kalit -> fayl
+VEO = {"tong": ("v01", 0, 8.0), "qollar": ("v05", 0, 4.5), "registon": ("v06", 0, 8.0), "yoshlar": ("v07", 0, 8.0)}   # tayyor Veo kliplari: kalit -> (fayl, boshi, oxiri)
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 A, B = "A", "B"
 PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
@@ -34,10 +34,7 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (114.7, "clip", ("armiya.mp4", 54, A), "zirhli kolonna"),
  (120.5, "veo", "yoshlar", "VEO: yoshlar cho'qqida bayroq ko'taradi"),
  (125.5, "clip", ("armiya.mp4", 88, A), "samolyotlar"),
- (128.4, "hist", [("temur_taxt.mp4", 79.8, "AMIR TEMUR", 1.4), ("jaloliddin.mp4", 62.0, "JALOLIDDIN MANGUBERDI", 1.0),
-                  ("veo", 0, "IBN SINO"), ("veo", 0, "ABU RAYHON BERUNIY"), ("veo", 0, "MIRZO ULUG'BEK")], "Tarix qahramonlari: 3 s turadi, qumga aylanadi"),
- (143.4, "alive", ("jalolov_dacres.mp4", 4.3, "BAHODIR JALOLOV", 1.8), "Bahodir: qora choponda, qo'li tepada (tirik — qum emas, qorong'ilashadi)"),
- (147.4, "final", None, "VEO: bayroq + yakuniy yozuv"),
+ (128.4, "yakun", None, "Yakun: qir tepasi — 5 qahramon (whip pan) → Bahodir → bayroq (yakun_zanjir.py)"),
 ]
 def esc(t): return t.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’")
 def run(c): subprocess.run(c, check=True)
@@ -59,11 +56,12 @@ CREDIT = {"jalolov_dacres.mp4": "Manba: DAZN, @OPER_UZ", "shoxruxxon_baxtiyorov.
 def credit(src): return f",drawtext=fontfile={FONT}:text='{esc(CREDIT.get(src, ''))}':fontcolor=white@0.75:fontsize=18:x=(w-text_w)/2:y=h-46:shadowcolor=black:shadowx=1:shadowy=1" if src in CREDIT else ""
 def piece(src, cs, d, m, o, k=1.0, extra=""):
     srcd = d / k; note(src, cs, cs + srcd); extra = credit(src) + extra
+    path = src if src.startswith("video/") else R + src
     dl = "delogo=x=440:y=505:w=410:h=80," if "temur_taxt" in src else ""
     base = dl + ("scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" if m == A else
             "split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=720:-2[fg];[bg][fg]overlay=0:(H-h)/2")
     slow = f",setpts={k}*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1" if k > 1 else ""
-    run(["ffmpeg", "-v", "error", "-y", "-ss", str(cs), "-t", f"{srcd + 0.1:.3f}", "-i", R + src, "-filter_complex",
+    run(["ffmpeg", "-v", "error", "-y", "-ss", str(cs), "-t", f"{srcd + 0.1:.3f}", "-i", path, "-filter_complex",
          base + slow + f",fps=30,trim=duration={d:.3f},setpts=PTS-STARTPTS" + extra, "-an", "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", o])
 def frames(o, d, cells, s0, lab, step):
     # oltin ramkali kataklar; har biri step s keyin paydo bo'ladi; ichida jonli kadr (yoki Veo o'rni)
@@ -88,7 +86,10 @@ lst = []
 for i, p in enumerate(PLAN):
     s0 = st[i]; d = (st[i + 1] if i + 1 < len(PLAN) else END) - s0; o = f"{W}/{i:02}.mp4"; kind, data, lab = p[1], p[2], p[3]
     if kind == "veo":
-        card(o, d, lab, s0, lab) if data not in VEO else None
+        if data in VEO:   # tayyor klip: ovoz o'rniga to'g'ri keladi, qisqa bo'lsa sekinlashadi (≤1.8x)
+            f, a, b = VEO[data]; piece(f"video/qahramon/clips/{f}.mp4", a, d, A, o, max(1.0, d / (b - a)), "," + tag(s0, lab))
+        else:
+            card(o, d, lab, s0, lab)
     elif kind == "clip":
         src, cs, m = data[:3]; k = data[3] if len(data) > 3 else 1.0
         piece(src, cs, d, m, o, k, "," + tag(s0, lab))
@@ -124,6 +125,10 @@ for i, p in enumerate(PLAN):
         src, cs, name, k = data
         nm = f",drawtext=fontfile={FONT}:text='{esc(name)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12"
         piece(src, cs, d, B, o, k, nm + f",fade=t=out:st={d - 0.7:.2f}:d=0.7," + tag(s0, lab))
+    elif kind == "yakun":   # 128.2–155.4 s: alohida yig'iladi, ovozsiz qismi olinadi
+        run(["python3", "video/qahramon/yakun_zanjir.py", f"{W}/yakun"])
+        run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/yakun/yakun_v.mp4", "-vf", f"trim=duration={d:.3f},setpts=PTS-STARTPTS," + tag(s0, lab),
+             "-an", "-c:v", "libx264", "-crf", "22", "-pix_fmt", "yuv420p", "-r", "30", o])
     elif kind == "final":
         card(o, d, "O'zbekning jasur o'g'li —\\nhech qachon yengilmas!", s0, lab)
     lst.append(o)
