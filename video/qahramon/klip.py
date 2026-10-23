@@ -1,5 +1,6 @@
 # «Birlik» klipi qoralamasi: music/birlik.mp3 (2:35, 143.5 BPM) zarblariga moslangan.
 # Egasi (2026-10-22): bir kadr ikki marta qo'yilmaydi; Bahodir: qora chopon (1:02), nokaut (1:07), yakunda g'alaba portreti;
+# treylerdagi «TEZ KUNDA» (3.0–4.4 s) va «KATTA PREMYERA» (5.7–6.8 s) yozuvlari olinmaydi.
 # yakunda 2 sahna: tarix qahramonlari (5 ramka) va bugungi qahramonlar (3 ramka); Veo o'rinlari hozircha yozuvli kadr.
 import subprocess, os, sys, json
 import numpy as np
@@ -30,12 +31,12 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (82.3,  "clip", ("jaloliddin.mp4", 2, A), "Jaloliddin Manguberdi"),
  (87.3,  "veo", "registon", "VEO: Registon, mushaklar"),
  (93.1,  "clip", ("shoxruxxon_baxtiyorov.mp4", 0, A), "Shoxruxxon: tashlash"),
- (98.1,  "clip", ("karate_leshan_67kg.mp4", 22.4, A, 2.6), "karate g'olibi qo'lini ko'taradi (sekin)"),
- (103.9, "multi", [("sohibqiron_treyler.mp4", 4.0, 1.8), ("sohibqiron_treyler.mp4", 7.4, 1.5), ("sohibqiron_treyler.mp4", 25.0, 1.8)], "Jang 1: bayroqli qo'shin, gulxanlar"),
- (109.7, "multi", [("sohibqiron_treyler.mp4", 27.6, 1.4), ("sohibqiron_treyler.mp4", 33.0, 2.0), ("sohibqiron_treyler.mp4", 35.0, 1.9), ("sohibqiron_treyler.mp4", 42.0, 1.0)], "Jang 2: fillar, otliqlar, olov"),
- (114.7, "clip", ("armiya.mp4", 54, A), "zirhli kolonna"),
+ (98.1,  "multi", [("karate_leshan_67kg.mp4", 21.9, 0.85), ("karate_leshan_67kg.mp4", 22.78, 1.6)], "karate: zarba → g'olib qo'lini ko'taradi (sekin; 24.4 dan keyingi quchoqlashish kadri kesildi)"),
+ (103.9, "multi", [("sohibqiron_treyler.mp4", 4.45, 1.15), ("sohibqiron_treyler.mp4", 7.4, 1.2), ("sohibqiron_treyler.mp4", 25.0, 1.2)], "Jang 1: bayroqli qo'shin, gulxanlar"),
+ (109.7, "multi", [("sohibqiron_treyler.mp4", 27.6, 1.4), ("sohibqiron_treyler.mp4", 33.0, 2.0), ("sohibqiron_treyler.mp4", 35.0, 1.5), ("sohibqiron_treyler.mp4", 42.0, 1.0)], "Jang 2: fillar, otliqlar, olov"),
+ (114.7, "clip", ("armiya.mp4", 4.0, A), "vertolyotlar, zirhli kolonna, raketa qurilmalari (54 s dagi dron ekranida raqamlar bor edi)"),
  (120.5, "veo", "yoshlar", "VEO: yoshlar cho'qqida bayroq ko'taradi"),
- (125.5, "clip", ("armiya.mp4", 88, A), "samolyotlar"),
+ (125.5, "clip", ("armiya.mp4", 89, A), "samolyotlar (88 s da bo'sh osmon)"),
  (128.4, "yakun", None, "Yakun: qir tepasi — 5 qahramon (whip pan) → Bahodir → bayroq (yakun_zanjir.py)"),
 ]
 def esc(t): return t.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’")
