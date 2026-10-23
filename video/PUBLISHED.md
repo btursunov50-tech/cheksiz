@@ -33,6 +33,8 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Aytilmagan gaplar» (12-video): tayyor 2026-10-14, 2026-10-18 da joylanadi. Ota, o'g'il va diktor ovozlari, AI «Asl ma'nosi» neon tarjimasi. Musiqa: Reviver – The Grey Room / Density & Time + Cutscene Crush – Blue Deer Studio. Fayllar: `video/aytilmagan/`, `video/final/aytilmagan/`.
 
+- «Birlik» musiqiy klipi (15-video): tayyor 2026-10-23, 2026-10-24 da joylanadi. Egasining Suno qo'shig'i (143.5 BPM), tarixiy qahramonlar qir tepasida (ChatGPT rasm → Veo, whip pan zanjiri), Bahodir Jalolov va boshqa haqiqiy kadrlar (DAZN, armiya, karate, kurash, treyler — har birida «Manba»), naqorat so'zlari uz/ru/en, avatar + yakuniy karta. Content ID xavfi yuqori. Matnlar `video/qahramon/POSTS.md`, fayllar `video/final/birlik/`.
+
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
 
