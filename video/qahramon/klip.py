@@ -1,11 +1,14 @@
 # «Birlik» klipi qoralamasi: music/birlik.mp3 (2:35, 143.5 BPM) zarblariga moslangan.
 # Egasi (2026-10-22): bir kadr ikki marta qo'yilmaydi; Bahodir: qora chopon (1:02), nokaut (1:07), yakunda g'alaba portreti;
+# treylerdagi «TEZ KUNDA» (3.0–4.4 s) va «KATTA PREMYERA» (5.7–6.8 s) yozuvlari olinmaydi.
 # yakunda 2 sahna: tarix qahramonlari (5 ramka) va bugungi qahramonlar (3 ramka); Veo o'rinlari hozircha yozuvli kadr.
 import subprocess, os, sys, json
 import numpy as np
 R = "video/ref/2026-10-21/"; W = sys.argv[1]; os.makedirs(W, exist_ok=True)
 MUSIC = "video/qahramon/music/birlik.mp3"; END = 155.4
-VEO = {}   # tayyor Veo kliplari: kalit -> fayl
+VEO = {"tong": ("v01", 0, 8.0), "qollar": ("v05", 0, 4.5), "registon": ("v06", 0, 8.0), "yoshlar": ("v07", 0, 8.0),
+       # yakundagi qir tepasi kliplarining ishlatilmagan boshlari (yakun_zanjir.py ular 3.47/2.87/1.77 s dan keyinini oladi — kadr takrorlanmaydi)
+       "ulugbek": ("y5", 0, 3.4), "ibnsino": ("y1", 0, 2.8), "beruniy": ("y2", 0, 1.7)}   # tayyor Veo kliplari: kalit -> (fayl, boshi, oxiri)
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 A, B = "A", "B"
 PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
@@ -28,16 +31,13 @@ PLAN = [  # (boshlanish s, tur, ma'lumot, yozuv)
  (82.3,  "clip", ("jaloliddin.mp4", 2, A), "Jaloliddin Manguberdi"),
  (87.3,  "veo", "registon", "VEO: Registon, mushaklar"),
  (93.1,  "clip", ("shoxruxxon_baxtiyorov.mp4", 0, A), "Shoxruxxon: tashlash"),
- (98.1,  "clip", ("karate_leshan_67kg.mp4", 22.4, A, 2.6), "karate g'olibi qo'lini ko'taradi (sekin)"),
- (103.9, "multi", [("sohibqiron_treyler.mp4", 4.0, 1.8), ("sohibqiron_treyler.mp4", 7.4, 1.5), ("sohibqiron_treyler.mp4", 25.0, 1.8)], "Jang 1: bayroqli qo'shin, gulxanlar"),
- (109.7, "multi", [("sohibqiron_treyler.mp4", 27.6, 1.4), ("sohibqiron_treyler.mp4", 33.0, 2.0), ("sohibqiron_treyler.mp4", 35.0, 1.9), ("sohibqiron_treyler.mp4", 42.0, 1.0)], "Jang 2: fillar, otliqlar, olov"),
- (114.7, "clip", ("armiya.mp4", 54, A), "zirhli kolonna"),
+ (98.1,  "multi", [("karate_leshan_67kg.mp4", 21.9, 0.85), ("karate_leshan_67kg.mp4", 22.78, 1.6)], "karate: zarba → g'olib qo'lini ko'taradi (sekin; 24.4 dan keyingi quchoqlashish kadri kesildi)"),
+ (103.9, "multi", [("sohibqiron_treyler.mp4", 4.45, 1.15), ("sohibqiron_treyler.mp4", 7.4, 1.2), ("sohibqiron_treyler.mp4", 25.0, 1.2)], "Jang 1: bayroqli qo'shin, gulxanlar"),
+ (109.7, "multi", [("sohibqiron_treyler.mp4", 27.6, 1.4), ("sohibqiron_treyler.mp4", 33.0, 2.0), ("sohibqiron_treyler.mp4", 35.0, 1.5), ("sohibqiron_treyler.mp4", 42.0, 1.0)], "Jang 2: fillar, otliqlar, olov"),
+ (114.7, "clip", ("armiya.mp4", 4.0, A), "vertolyotlar, zirhli kolonna, raketa qurilmalari (54 s dagi dron ekranida raqamlar bor edi)"),
  (120.5, "veo", "yoshlar", "VEO: yoshlar cho'qqida bayroq ko'taradi"),
- (125.5, "clip", ("armiya.mp4", 88, A), "samolyotlar"),
- (128.4, "hist", [("temur_taxt.mp4", 79.8, "AMIR TEMUR", 1.4), ("jaloliddin.mp4", 62.0, "JALOLIDDIN MANGUBERDI", 1.0),
-                  ("veo", 0, "IBN SINO"), ("veo", 0, "ABU RAYHON BERUNIY"), ("veo", 0, "MIRZO ULUG'BEK")], "Tarix qahramonlari: 3 s turadi, qumga aylanadi"),
- (143.4, "alive", ("jalolov_dacres.mp4", 4.3, "BAHODIR JALOLOV", 1.8), "Bahodir: qora choponda, qo'li tepada (tirik — qum emas, qorong'ilashadi)"),
- (147.4, "final", None, "VEO: bayroq + yakuniy yozuv"),
+ (125.5, "clip", ("armiya.mp4", 89, A), "samolyotlar (88 s da bo'sh osmon)"),
+ (128.4, "yakun", None, "Yakun: qir tepasi — 5 qahramon (whip pan) → Bahodir → bayroq (yakun_zanjir.py)"),
 ]
 def esc(t): return t.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’")
 def run(c): subprocess.run(c, check=True)
@@ -59,11 +59,12 @@ CREDIT = {"jalolov_dacres.mp4": "Manba: DAZN, @OPER_UZ", "shoxruxxon_baxtiyorov.
 def credit(src): return f",drawtext=fontfile={FONT}:text='{esc(CREDIT.get(src, ''))}':fontcolor=white@0.75:fontsize=18:x=(w-text_w)/2:y=h-46:shadowcolor=black:shadowx=1:shadowy=1" if src in CREDIT else ""
 def piece(src, cs, d, m, o, k=1.0, extra=""):
     srcd = d / k; note(src, cs, cs + srcd); extra = credit(src) + extra
+    path = src if src.startswith("video/") else R + src
     dl = "delogo=x=440:y=505:w=410:h=80," if "temur_taxt" in src else ""
     base = dl + ("scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" if m == A else
             "split[a][b];[a]scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,boxblur=20:2,eq=brightness=-0.15[bg];[b]scale=720:-2[fg];[bg][fg]overlay=0:(H-h)/2")
     slow = f",setpts={k}*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1" if k > 1 else ""
-    run(["ffmpeg", "-v", "error", "-y", "-ss", str(cs), "-t", f"{srcd + 0.1:.3f}", "-i", R + src, "-filter_complex",
+    run(["ffmpeg", "-v", "error", "-y", "-ss", str(cs), "-t", f"{srcd + 0.1:.3f}", "-i", path, "-filter_complex",
          base + slow + f",fps=30,trim=duration={d:.3f},setpts=PTS-STARTPTS" + extra, "-an", "-c:v", "libx264", "-crf", "24", "-pix_fmt", "yuv420p", o])
 def frames(o, d, cells, s0, lab, step):
     # oltin ramkali kataklar; har biri step s keyin paydo bo'ladi; ichida jonli kadr (yoki Veo o'rni)
@@ -88,7 +89,10 @@ lst = []
 for i, p in enumerate(PLAN):
     s0 = st[i]; d = (st[i + 1] if i + 1 < len(PLAN) else END) - s0; o = f"{W}/{i:02}.mp4"; kind, data, lab = p[1], p[2], p[3]
     if kind == "veo":
-        card(o, d, lab, s0, lab) if data not in VEO else None
+        if data in VEO:   # tayyor klip: ovoz o'rniga to'g'ri keladi, qisqa bo'lsa sekinlashadi (≤1.8x)
+            f, a, b = VEO[data]; piece(f"video/qahramon/clips/{f}.mp4", a, d, A, o, max(1.0, d / (b - a)), "," + tag(s0, lab))
+        else:
+            card(o, d, lab, s0, lab)
     elif kind == "clip":
         src, cs, m = data[:3]; k = data[3] if len(data) > 3 else 1.0
         piece(src, cs, d, m, o, k, "," + tag(s0, lab))
@@ -124,6 +128,10 @@ for i, p in enumerate(PLAN):
         src, cs, name, k = data
         nm = f",drawtext=fontfile={FONT}:text='{esc(name)}':fontcolor=0xFFC34D:fontsize=40:x=(w-text_w)/2:y=h-200:box=1:boxcolor=black@0.45:boxborderw=12"
         piece(src, cs, d, B, o, k, nm + f",fade=t=out:st={d - 0.7:.2f}:d=0.7," + tag(s0, lab))
+    elif kind == "yakun":   # 128.2–155.4 s: alohida yig'iladi, ovozsiz qismi olinadi
+        run(["python3", "video/qahramon/yakun_zanjir.py", f"{W}/yakun"])
+        run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/yakun/yakun_v.mp4", "-vf", f"trim=duration={d:.3f},setpts=PTS-STARTPTS," + tag(s0, lab),
+             "-an", "-c:v", "libx264", "-crf", "22", "-pix_fmt", "yuv420p", "-r", "30", o])
     elif kind == "final":
         card(o, d, "O'zbekning jasur o'g'li —\\nhech qachon yengilmas!", s0, lab)
     lst.append(o)
