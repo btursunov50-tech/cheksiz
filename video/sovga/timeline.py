@@ -20,6 +20,7 @@ VOICE_END = 95.68  # keyin avatar 3 s + yakuniy karta 4 s
 
 # Kliplarning ishlatiladigan qismi (klip ichidagi soniyalar): xato chiqqan joydan oldin kesiladi.
 CLIP_USE = {
+    1: [(0.0, 1.2), (5.0, 8.0)],   # 1.2 s dan oq «komiks» chiziqlar, chiroqdan olov chiqadi (1.6–4.6 s) → ikki bo'lak: keng kadr + kalit va Tulki ko'zlari yaqin plani, ~1.3x
     2: (0.0, 3.0),
     3: (0.0, 8.0),   # v2: Tulki ko'zlari qizil va hiylakor oxirigacha; Diyor 4.8 s dan xavotirli → ~1.2x   # v2: 3 s dan keyin qum soatda qum tepaga to'planadi (teskari), sovg'a qimirlab ketadi → ~1.8x sekinlashadi
     4: (0.0, 6.0),   # Diyor 5 s dan keyin kadrdan chiqadi, oxiri Ustada

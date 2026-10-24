@@ -110,7 +110,7 @@ S = [
 # Veo (rasm → video) promptlari: boshlang'ich kadr = tasdiqlangan sahna rasmi. Har birida bitta kamera harakati, qo'shni sahnalarda takrorlanmaydi.
 KEEP = ("Keep every character exactly as in the image for the whole clip: the same face, age, hair, clothes, colours and props, "
         "the same number of arms and hands. Keep the background and the dark hand-drawn illustration style exactly as in the image. "
-        "No new people, no extra objects, no text, no letters, no captions, no subtitles, no watermark. No dialogue and no lip-sync: "
+        "No new people, no extra objects, no fire or flames (the lantern flame stays small inside its glass), no comic speed lines, no lightning, no flashes or explosions of light, no smoke, no text, no letters, no captions, no subtitles, no watermark. No dialogue and no lip-sync: "
         "mouths stay closed or move only slightly; only quiet ambient sound.")
 V = {
  1: ("fast snap zoom-in (crash zoom) from the two faces down to the golden key above the phone, ending in a close-up of the key and the red eyes",
