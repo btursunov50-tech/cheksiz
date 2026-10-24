@@ -12,8 +12,14 @@ IMG = {
  6: [("s06", "✅ tasdiqlandi")],
  7: [("s07", "✅ tasdiqlandi")],
  8: [("s08", "✅ tasdiqlandi")],
+ 9: [("s09", "✅ tasdiqlandi")],
+ 11: [("s11", "✅ tasdiqlandi")],
+ 12: [("s12", "✅ tasdiqlandi")],
 }
 NOTE = {
+ 9: "Diyor ekranni bosadi, Tulki qizil girdob bilan telefonga tortiladi, uy ustida moviy qulf-gumbaz; kalit stolda qoldi. Kichik farq: uy 6-sahnadagidan boshqacha (panjara, boshqa tom) — fonda, qoldi.",
+ 11: "Usta chiroqni ko'tarib kameraga qaraydi, yuzi namunadek, ikkinchi qo'li pastda.",
+ 12: "Usta o'ng qo'lida telefon, chap qo'li Diyorning yelkasida, chiroq devordagi ilgakda; Diyor bosh barmog'ini ko'taradi. Ekran tepasida mayda ma'nosiz yozuv bor — montajda ekran ustiga bot suhbatini (@sahiychishopbot) qo'yamiz. Tepada sarlavha uchun bo'sh joy bor.",
  8: "Uch hiyla tepadan pastga: ochiq bo'sh sovg'a qutisi, qum soat, Tulkining cho'zilgan panjasi (Tulkining o'zi ham ko'rinadi). Usta chiroqni ko'targan, yuzi namunadek. Belgilarni montajda yozamiz.",
  7: "Tepada Tulki kalitni buraydi (bir qo'lida sovg'a), derazalar qizil; pastda Ona qizil telefonga qarab, sumkasidan karta oladi. Ona namunadek (xavotirdan biroz kattaroq ko'rinadi). Kartada yozuv yo'q.",
  4: "Usta chiroqni ko'taradi, yuzi namunadek. Kichik farq: Diyor telefonni qo'lida ushlab turibdi (3 va 5-sahnada telefon stolda) — 3–4 soniyalik kadrda sezilmaydi, qoldi.",
