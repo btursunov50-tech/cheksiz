@@ -57,3 +57,7 @@ Edit the attached image, horizontal 16:9. Change ONLY the first character from t
 - Tulki: qizil ko'zlar, to'q uch qismli kostyum, qizil galstuk, sovg'a qutisi (qizil lenta), cho'zilgan panja, katta dum.
 - Ona: krem gulli ro'mol, to'qilgan jilet, gulli ko'ylak, telefon ko'kragida.
 - Oltin kalit. Har sahna rasmida shu varaq biriktiriladi. Sahna promptlari: `rasm_promptlar.py` → `rasmlar.html`.
+
+## 1-sahna tekshiruvi (2026-10-24)
+- Egasi topdi: Ustaning qo'llari qari (ajin, bo'rtgan tomirlar, A dagi ushlagan qo'l va B dagi qo'llar), u esa ~30 yosh. Men birinchi tekshiruvda yuzlarga qaradim, qo'llarni ko'rmadim — keyingi tekshiruvlarda qo'llar ham namuna yoshiga solishtiriladi.
+- Hamma sahna promptlarida Usta tavsifiga «young strong hands of a 30-year-old man, smooth skin, no wrinkles, no swollen veins» qo'shildi.

@@ -7,7 +7,7 @@ IMG = {
  1: [("s01a", "A: yuzlar bilan (hook uchun kuchli)"), ("s01b", "B: faqat qo'llar, kalit va telefon")],
 }
 NOTE = {
- 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab olib yuboring.",
+ 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Xato: Ustaning qo'llari qari (ajin, bo'rtgan tomirlar), u esa ~30 yosh — tahrir prompti chatda. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab oling.",
 }
 
 ATT = ("Attach the character sheet image. Keep every character who appears exactly as in the character sheet: "
@@ -17,7 +17,7 @@ STY = ("Style: dark hand-drawn illustration exactly like the character sheet, ro
        "lantern light of Usta, the red eyes of the fox and the gold of the key. Moody fable atmosphere, like an old illustrated "
        "parable. Vertical 9:16. No text, no letters, no numbers, no logos, no watermark, no subtitles.")
 U = ("USTA (the calm craftsman about 30 years old with a short jet-black beard, black-and-white Uzbek doppi, dark embroidered "
-     "chapan robe with a red sash, holding his warm amber oil lantern)")
+     "chapan robe with a red sash, holding his warm amber oil lantern; his hands are the young strong hands of a 30-year-old man, smooth skin, no wrinkles, no swollen veins, not old hands)")
 D = ("DIYOR (the naive guy about 20 years old with messy black hair, big innocent eyes, dark blue hoodie, jeans and sneakers, "
      "outlined with a soft cyan-blue glow)")
 F = ("THE FOX (the tall fox standing like a man in a dark three-piece suit with a red tie, big bushy tail, glowing red eyes)")
