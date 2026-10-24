@@ -1,6 +1,6 @@
 # «Sovg'a yutdingiz!» — kuchaytirilgan ssenariy (2026-10-24)
 
-Asos: `ideas/diyor-usta.md`, 6-ssenariy. Format: tik 9:16, ~75 s, mini-drama. Qahramonlar: **Diyor** (yigit) va **Usta** (keksa, sokin, ko'p ko'rgan). Ikkalasi o'ylab topilgan.
+Asos: `ideas/diyor-usta.md`, 6-ssenariy. Format: tik 9:16, ~81 s, mini-drama. Qahramonlar: **Diyor** (yigit) va **Usta** (keksa, sokin, ko'p ko'rgan). Ikkalasi o'ylab topilgan.
 
 O'zgarishlar (asl matnga nisbatan):
 - Hook boshida: oxirgi soniyadan boshlanadi (Usta qo'lni ushlaydi), keyin «5 daqiqa oldin». EN hook ball **84.2** (asl birinchi qator 35.4).
@@ -8,7 +8,7 @@ O'zgarishlar (asl matnga nisbatan):
 - Asosiy burilish: kod sovg'aniki emas, **Telegram'ga kirish kodi** ekan. SMSda «bu kodni hech kimga bermang» deb yozilgan.
 - «Agar bergan bo'lsa» sahnasi: akkaunt egallanadi, onasiga Diyor nomidan pul so'rab xabar boradi («Nusxa» bilan bog'lanadi).
 - Oxirida aniq foyda: 3 belgi + bulutli parol (ikki bosqichli tekshiruv). Taymer 0:00 ga yetadi, hech narsa bo'lmaydi.
-- Bot faqat yakuniy kartada. Raqamlar (2 mln, 5 daqiqa) misol, fakt emas.
+- 12-sahna: botga chaqiriq, shu video mavzusiga moslab (egasi, 2026-10-24). Bot shubhali xabar skrinshotini tushuntiradi va bulutli parolni o'rgatadi (`bot/knowledge.js`, «VIEWERS FROM OUR VIDEOS»). Raqamlar (2 mln, 5 daqiqa) misol, fakt emas.
 
 ## Sahnalar
 
@@ -25,6 +25,7 @@ O'zgarishlar (asl matnga nisbatan):
 | 9 | 60–68 s | Diyor qo'ng'iroqni o'chiradi, sozlamalarda bulutli parolni yoqadi | **Usta:** «Go'shakni qo'y. Bankka o'zing rasmiy raqamdan qo'ng'iroq qil. Telegram'da bulutli parolni yoq: kodni bilib olishsa ham, kira olmaydi.» |
 | 10 | 68–72 s | Taymer 0:00 ga yetadi. Hech narsa bo'lmaydi. Diyor jilmayadi | **Diyor:** «Besh daqiqa tugadi. Men esa hech narsa yo'qotmadim.» |
 | 11 | 72–75 s | Usta kameraga qaraydi | **Usta:** «Haqiqiy sovg'a senga hech qachon kod so'ratmaydi.» |
+| 12 | 75–81 s | Usta telefonni ko'rsatadi: shubhali xabar skrinshoti botga yuboriladi, bot javob beradi. Ekranda katta yozuv **@sahiychishopbot** | **Usta:** «Shubhali xabar keldimi? Skrinshotini botimizga yuboring: @sahiychishopbot. Firibgarlikmi yo'qmi — tushuntiradi, bulutli parolni qanday yoqishni bosqichma-bosqich o'rgatadi.» |
 | — | +3 s | Avatar, plashka: «Sizga ham shunaqa xabar kelganmi? Izohga yozing!» | — |
 | — | +4 s | Yakuniy karta (OBUNA BO'LING, bot, sayt, @Boxo_xxxx) | — |
 
