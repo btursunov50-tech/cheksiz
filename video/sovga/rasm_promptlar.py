@@ -10,8 +10,10 @@ IMG = {
  4: [("s04", "✅ tasdiqlandi")],
  5: [("s05_v1", "v1: Diyorning qo'llari qari — tahrir")],
  6: [("s06", "✅ tasdiqlandi")],
+ 7: [("s07", "✅ tasdiqlandi")],
 }
 NOTE = {
+ 7: "Tepada Tulki kalitni buraydi (bir qo'lida sovg'a), derazalar qizil; pastda Ona qizil telefonga qarab, sumkasidan karta oladi. Ona namunadek (xavotirdan biroz kattaroq ko'rinadi). Kartada yozuv yo'q.",
  4: "Usta chiroqni ko'taradi, yuzi namunadek. Kichik farq: Diyor telefonni qo'lida ushlab turibdi (3 va 5-sahnada telefon stolda) — 3–4 soniyalik kadrda sezilmaydi, qoldi.",
  5: "Yuz, kalit, telefon to'g'ri. Xato: Diyorning ikkala qo'li qari odamnikidek (bo'g'imlarda ajin, tomirlar), u esa ~20 yosh. Tahrir prompti chatda.",
  6: "Diyor kalitni qulfga tutadi, Usta chiroqni ko'taradi. Derazalar moviy emas, iliq sariq chiqdi (ichida ona va oila soyalari) — 7 va 9-sahna promptlari shunga moslandi.",
