@@ -6,8 +6,10 @@ import html, os
 IMG = {
  1: [("s01", "✅ tasdiqlandi (940×1672)")],
  2: [("s02_v1", "v1: tahrir kerak")],
+ 3: [("s03", "✅ tasdiqlandi (941×1672)")],
 }
 NOTE = {
+ 3: "Tulki telefondan chiqadi, bir qo'lida sovg'a, ikkinchisini cho'zgan; Diyor qo'lini cho'zadi. Telefon bitta, stolda. Namunaga mos.",
  2: "v1: Diyorning qo'lida telefon, stolda yana bitta telefon (ikkita telefon). Sovg'a stoldagi telefondan chiqyapti, qum soatning tagidan qum to'kilyapti. Tahrir: qo'lidagi telefon olib tashlanadi, Diyor ikki qo'lini iyagi tagida qovushtirib stoldagi telefonga qaraydi (1 va 3-sahnada ham telefon stolda); qum faqat soat ichida.",
  1: "Chiroq stolda, Usta o'ng qo'li bilan ushlaydi, chap qo'li stolda; Diyorning ikkinchi qo'li cho'ntagida. Usta namunadan biroz kattaroq ko'rinadi, qoldi.",
 }
