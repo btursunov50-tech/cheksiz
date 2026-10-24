@@ -7,7 +7,7 @@ IMG = {
  1: [("s01a", "A: yuzlar bilan (hook uchun kuchli)"), ("s01b", "B: faqat qo'llar, kalit va telefon")],
 }
 NOTE = {
- 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Xato: Ustaning qo'llari qari (ajin, bo'rtgan tomirlar), u esa ~30 yosh — tahrir prompti chatda. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab oling.",
+ 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Xato (egasi topdi): Usta bitta qo'li bilan ham chiroqni ushlagan, ham bolaning qo'lini — anatomiya xato; qo'llari ham qari (ajin, tomirlar). 1-sahna yangi prompt bilan qayta chiziladi: chiroq stolda turadi, Usta o'ng qo'li bilan ushlaydi. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab oling.",
 }
 
 ATT = ("Attach the character sheet image. Keep every character who appears exactly as in the character sheet: "
@@ -26,7 +26,10 @@ ROOM = "a dark old workshop room lit only by Usta's lantern and the phone screen
 
 S = [
  (1, "0–5 s", "Usta: To'xta! «Siz yutdingiz» degan notanishga SMS kodni hech qachon o'qib berma.",
-  f"Close-up of hands in {ROOM}. The strong hand of {U} firmly grabs the thin wrist of {D}. Diyor's fingers hold a small glowing "
+  f"Close-up of hands in {ROOM}. {U} has put his lit amber lantern down on the wooden table beside the phone, so it stands on the table "
+  f"and neither of his hands holds it. With his right hand he firmly grabs the thin wrist of {D}; his left hand rests on the table. "
+  f"Usta has exactly two arms and two hands, Diyor has exactly two arms and two hands, every hand clearly belongs to its own arm and "
+  f"shoulder, no hand does two things at once. Diyor's fingers hold a small glowing "
   f"golden key, about to drop it onto a smartphone lying on the wooden table; from the dark phone screen two glowing red fox eyes "
   f"stare up, waiting. Amber lantern light from the side, cyan glow on Diyor's sleeve."),
  (2, "6–11 s", "Diyor: Voy! iPhone yutibman! Faqat besh daqiqa vaqt bor ekan.",
