@@ -25,7 +25,7 @@ O'zgarishlar (asl matnga nisbatan):
 | 9 | 60–68 s | Diyor qo'ng'iroqni o'chiradi, sozlamalarda bulutli parolni yoqadi | **Usta:** «Go'shakni qo'y. Bankka o'zing rasmiy raqamdan qo'ng'iroq qil. Telegram'da bulutli parolni yoq: kodni bilib olishsa ham, kira olmaydi.» |
 | 10 | 68–72 s | Taymer 0:00 ga yetadi. Hech narsa bo'lmaydi. Diyor jilmayadi | **Diyor:** «Besh daqiqa tugadi. Men esa hech narsa yo'qotmadim.» |
 | 11 | 72–75 s | Usta kameraga qaraydi | **Usta:** «Haqiqiy sovg'a senga hech qachon kod so'ratmaydi.» |
-| 12 | 75–81 s | Usta telefonni ko'rsatadi: shubhali xabar skrinshoti botga yuboriladi, bot javob beradi. Ekranda katta yozuv **@sahiychishopbot** | **Usta:** «Shubhali xabar keldimi? Skrinshotini botimizga yuboring: @sahiychishopbot. Firibgarlikmi yo'qmi — tushuntiradi, bulutli parolni qanday yoqishni bosqichma-bosqich o'rgatadi.» |
+| 12 | 75–84 s | Usta telefonni ko'rsatadi: shubhali xabar skrinshoti botga yuboriladi, bot javob beradi. Ekranda katta yozuv **@sahiychishopbot** | **Usta:** «Shubhali xabar keldimi? Skrinshotini botimizga yuboring: @sahiychishopbot. Firibgarlikmi yo'qmi — tushuntiradi, bulutli parolni qanday yoqishni bosqichma-bosqich o'rgatadi.» |
 | — | +3 s | Avatar, plashka: «Sizga ham shunaqa xabar kelganmi? Izohga yozing!» | — |
 | — | +4 s | Yakuniy karta (OBUNA BO'LING, bot, sayt, @Boxo_xxxx) | — |
 
@@ -44,4 +44,4 @@ Sekinlashuv (qoida: 1–2 marta): 5-sahnada barmoq «Yuborish» ustida to'xtagan
 - Telegram'da bulutli parol bor: Sozlamalar → Maxfiylik va xavfsizlik → Ikki bosqichli tekshiruv. Yoqilgan bo'lsa, faqat SMS kod bilan akkauntga kirib bo'lmaydi.
 - Banklar SMS kodni telefonda so'ramaydi: umumiy xavfsizlik qoidasi, raqam aytilmaydi.
 
-Holat: 📝 ssenariy egasiga berildi. Ovoz bloki va rasm promptlari egasi so'raganda.
+Holat: 🎙 ovoz bloki berildi (2026-10-24): `video/sovga/OVOZ.md`. Rasm promptlari egasi so'raganda.
