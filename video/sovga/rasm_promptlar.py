@@ -5,12 +5,18 @@ import html, os
 # Egasi yuborgan sahna rasmlari: web/sNN<harf>.webp (a, b … variantlar) va izoh.
 IMG = {
  1: [("s01", "✅ tasdiqlandi (940×1672)")],
- 2: [("s02_v1", "v1: tahrir kerak")],
+ 2: [("s02", "✅ tasdiqlandi (tahrirdan keyin)")],
  3: [("s03", "✅ tasdiqlandi (941×1672)")],
+ 4: [("s04", "✅ tasdiqlandi")],
+ 5: [("s05_v1", "v1: Diyorning qo'llari qari — tahrir")],
+ 6: [("s06", "✅ tasdiqlandi")],
 }
 NOTE = {
+ 4: "Usta chiroqni ko'taradi, yuzi namunadek. Kichik farq: Diyor telefonni qo'lida ushlab turibdi (3 va 5-sahnada telefon stolda) — 3–4 soniyalik kadrda sezilmaydi, qoldi.",
+ 5: "Yuz, kalit, telefon to'g'ri. Xato: Diyorning ikkala qo'li qari odamnikidek (bo'g'imlarda ajin, tomirlar), u esa ~20 yosh. Tahrir prompti chatda.",
+ 6: "Diyor kalitni qulfga tutadi, Usta chiroqni ko'taradi. Derazalar moviy emas, iliq sariq chiqdi (ichida ona va oila soyalari) — 7 va 9-sahna promptlari shunga moslandi.",
  3: "Tulki telefondan chiqadi, bir qo'lida sovg'a, ikkinchisini cho'zgan; Diyor qo'lini cho'zadi. Telefon bitta, stolda. Namunaga mos.",
- 2: "v1: Diyorning qo'lida telefon, stolda yana bitta telefon (ikkita telefon). Sovg'a stoldagi telefondan chiqyapti, qum soatning tagidan qum to'kilyapti. Tahrir: qo'lidagi telefon olib tashlanadi, Diyor ikki qo'lini iyagi tagida qovushtirib stoldagi telefonga qaraydi (1 va 3-sahnada ham telefon stolda); qum faqat soat ichida.",
+ 2: "Tahrirdan keyin: telefon bitta (stolda), Diyor qo'llarini iyagi tagida qovushtirgan, qum faqat soat ichida.",
  1: "Chiroq stolda, Usta o'ng qo'li bilan ushlaydi, chap qo'li stolda; Diyorning ikkinchi qo'li cho'ntagida. Usta namunadan biroz kattaroq ko'rinadi, qoldi.",
 }
 
@@ -65,7 +71,7 @@ S = [
   f"in Diyor's hand and the keyhole shine with the same gold light, they fit together."),
  (7, "43–49 s", "Usta: Ular sovg'a bermaydi. Sening nomingdan yaqinlaringdan pul so'rashadi.",
   f"Vertical split composition, cold and dark. Upper half: {F} turns the golden key in the door of the small house; red light spills "
-  f"out of the door and the windows turn from blue to red. Lower half: inside a dim kitchen, {O} sits at the table looking worried at "
+  f"out of the door and the warm amber windows turn red. Lower half: inside a dim kitchen, {O} sits at the table looking worried at "
   f"her smartphone glowing red, one hand reaching into her purse for a bank card."),
  (8, "50–61 s", "Usta: Uchta belgi. Tanlovda qatnashmagansan. Shoshiltirishyapti. Kod so'rashyapti…",
   f"Three objects float in a row in the darkness, each glowing red like a warning: an opened gift box that is completely empty inside, "
@@ -73,7 +79,7 @@ S = [
   f"revealing the three tricks."),
  (9, "62–71 s", "Usta: Go'shakni qo'y… Telegram'da bulutli parolni yoq…",
   f"{D} presses the phone screen off with a determined face. The fox on the screen shrinks and is sucked back into the black glass, "
-  f"his red eyes fading. In the background the small house with cyan-blue windows: a big soft glowing cyan-blue cloud shaped like a "
+  f"his red eyes fading. In the background the small house with warm amber windows and family silhouettes: a big soft glowing cyan-blue cloud shaped like a "
   f"padlock settles over its roof and closes around it."),
  (10, "72–77 s", "Diyor: Besh daqiqa tugadi. Men esa hech narsa yo'qotmadim.",
   f"Close-up of the old brass sand hourglass: the very last grain of sand falls through the neck, caught in mid-air. Behind it, "
