@@ -1,7 +1,14 @@
 # «Sovg'a yutdingiz!» — 12 sahna rasm promptlari sahifasi (ChatGPT, 9:16).
 # Har promptga qahramonlar varag'i (img/ref_qahramonlar.webp) biriktiriladi; sahifada uning rasmi prompt yonida turadi.
 # Ishlatish: python3 video/sovga/rasm_promptlar.py → video/sovga/rasmlar.html (+ web/ref_qahramonlar.webp)
-import html
+import html, os
+# Egasi yuborgan sahna rasmlari: web/sNN<harf>.webp (a, b … variantlar) va izoh.
+IMG = {
+ 1: [("s01a", "A: yuzlar bilan (hook uchun kuchli)"), ("s01b", "B: faqat qo'llar, kalit va telefon")],
+}
+NOTE = {
+ 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab olib yuboring.",
+}
 
 ATT = ("Attach the character sheet image. Keep every character who appears exactly as in the character sheet: "
        "the same face, age, hair, clothes, colours and props.")
@@ -69,7 +76,9 @@ e = html.escape
 cards = []
 for n, t, voice, scene in S:
     p = f"{ATT} Scene {n}, vertical 9:16. {scene} {STY}"
-    cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span></header>
+    imgs = "".join(f'<figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna, {e(c)}"><figcaption>{e(c)}</figcaption></figure>' for f, c in IMG.get(n, []))
+    got = (f'<div class="scenes">{imgs}</div>' + (f'<p class="note">{e(NOTE[n])}</p>' if n in NOTE else "")) if imgs else ""
+    cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span></header>{got}
 <div class="row"><figure class="ref"><img src="web/ref_qahramonlar.webp" alt="Qahramonlar varag'i: Usta, Diyor, Tulki, Ona"><figcaption>Biriktiring: qahramonlar varag'i</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p><span class="lbl">Rasm prompti (ChatGPT)</span>
 <pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></div></div></article>""")
@@ -97,6 +106,9 @@ h2{{font-family:var(--display);font-weight:700;font-size:26px;margin:0}}
 @media (max-width:560px){{.row{{grid-template-columns:minmax(0,1fr)}}}}
 .ref{{margin:0;display:grid;gap:6px}} .ref img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}}
 .ref figcaption{{font-size:12px;color:var(--muted)}}
+.scenes{{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}}
+.sc{{margin:0;display:grid;gap:6px}} .sc img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}}
+.sc figcaption{{font-size:12px;color:var(--muted)}} .note{{margin:0;font-size:13px;color:var(--amber)}}
 .txt{{min-width:0;display:flex;flex-direction:column;gap:8px}}
 .lbl{{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}}
 .voice{{margin:0;font-style:italic}}
