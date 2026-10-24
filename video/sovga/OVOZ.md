@@ -55,7 +55,7 @@ Talaffuz: "SMS" = "es-em-es"; "iPhone" = "Ayfon"; "Telegram'ingning" = "Telegram
 Oddiy TTS saytlari (Narakeet, Fliki, SpeechGen) sozlama yozuvlarini ham o'qib yuboradi, shuning uchun ularga faqat toza matn beriladi. Talaffuz so'zning o'zida yozilgan (Ayfon, es-em-es, sahiychi shop bot).
 O'zbekcha erkak ovozi bepul saytlarda bitta: **Sardor** (Microsoft). Uchta qahramon uchun 3 ta faylni bir xil Sardor bilan yasaymiz, farqni montajda qilaman: Usta pastroq va sekinroq, Telefon biroz balandroq + telefon effekti, Diyor o'zgarmaydi.
 
-Fayllar: `usta.wav` (8 qator), `diyor.wav` (4 qator), `telefon.wav` (1 qator). Qatorlar orasida bo'sh qator = pauza.
+Fayllar: `usta.wav` (8 qator), `diyor.wav` (4 qator), `telefon.wav` (1 qator). Qatorlar orasiga chatda bo'sh qator qo'yilgan (pauza uchun).
 
 USTA (1, 5, 7, 8, 9, 10, 12, 13):
 To'xta! "Siz yutdingiz" degan notanishga es-em-es kodni hech qachon o'qib berma.
