@@ -4,15 +4,23 @@
 import html, os
 # Egasi yuborgan sahna rasmlari: web/sNN<harf>.webp (a, b … variantlar) va izoh.
 IMG = {
- 1: [("s01a", "A: yuzlar bilan (hook uchun kuchli)"), ("s01b", "B: faqat qo'llar, kalit va telefon")],
+ 1: [("s01", "✅ tasdiqlandi (940×1672)")],
 }
 NOTE = {
- 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Xato (egasi topdi): Usta bitta qo'li bilan ham chiroqni ushlagan, ham bolaning qo'lini — anatomiya xato; qo'llari ham qari (ajin, tomirlar). 1-sahna yangi prompt bilan qayta chiziladi: chiroq stolda turadi, Usta o'ng qo'li bilan ushlaydi. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab oling.",
+ 1: "Chiroq stolda, Usta o'ng qo'li bilan ushlaydi, chap qo'li stolda; Diyorning ikkinchi qo'li cho'ntagida. Usta namunadan biroz kattaroq ko'rinadi, qoldi.",
 }
 
-ATT = ("Attach the character sheet image. Keep every character who appears exactly as in the character sheet: "
-       "the same face, age, hair, clothes, colours and props.")
-STY = ("Style: dark hand-drawn illustration exactly like the character sheet, rough ink and charcoal lines, aged paper texture, "
+# Egasi (2026-10-24): 16:9 varaqni Veo/GPT yaxshi tushunmaydi — har promptga faqat kerakli qahramonlarning alohida 9:16 rasmi.
+REFN = {"usta": "Usta", "diyor": "Diyor", "tulki": "the fox", "ona": "Diyor's mother", "kalit": "the golden key"}
+NEED = {1: ["usta", "diyor", "kalit"], 2: ["diyor"], 3: ["tulki", "diyor"], 4: ["usta", "diyor"], 5: ["diyor", "kalit"],
+        6: ["usta", "diyor", "kalit"], 7: ["tulki", "ona", "kalit"], 8: ["usta", "tulki"], 9: ["diyor", "tulki"], 10: ["diyor"],
+        11: ["usta"], 12: ["usta", "diyor"]}
+def att(n):
+    names = [REFN[k] for k in NEED[n]]
+    lst = ", ".join(names[:-1]) + " and " + names[-1] if len(names) > 1 else names[0]
+    return (f"Attach the reference image{'s' if len(names) > 1 else ''} of {lst}. Keep every character exactly as in "
+            f"{'their reference images' if len(names) > 1 else 'the reference image'}: the same face, age, hair, clothes, colours and props.")
+STY = ("Style: dark hand-drawn illustration exactly like the reference images, rough ink and charcoal lines, aged paper texture, "
        "deep black-brown shadows, almost no colour; the only bright colours are the cyan-blue glow around Diyor, the warm amber "
        "lantern light of Usta, the red eyes of the fox and the gold of the key. Moody fable atmosphere, like an old illustrated "
        "parable. Vertical 9:16. No text, no letters, no numbers, no logos, no watermark, no subtitles.")
@@ -76,13 +84,14 @@ S = [
 ]
 
 e = html.escape
+UZ = {"usta": "Usta", "diyor": "Diyor", "tulki": "Tulki", "ona": "Ona", "kalit": "Oltin kalit"}
 cards = []
 for n, t, voice, scene in S:
-    p = f"{ATT} Scene {n}, vertical 9:16. {scene} {STY}"
+    p = f"{att(n)} Scene {n}, vertical 9:16. {scene} {STY}"
     imgs = "".join(f'<figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna, {e(c)}"><figcaption>{e(c)}</figcaption></figure>' for f, c in IMG.get(n, []))
     got = (f'<div class="scenes">{imgs}</div>' + (f'<p class="note">{e(NOTE[n])}</p>' if n in NOTE else "")) if imgs else ""
     cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span></header>{got}
-<div class="row"><figure class="ref"><img src="web/ref_qahramonlar.webp" alt="Qahramonlar varag'i: Usta, Diyor, Tulki, Ona"><figcaption>Biriktiring: qahramonlar varag'i</figcaption></figure>
+<div class="row"><div class="refs">{"".join(f'<figure class="ref"><img src="web/ref_{k}.webp" alt="Namuna: {e(REFN[k])}"><figcaption>{e(UZ[k])}</figcaption></figure>' for k in NEED[n])}<p class="rh">Shularni biriktiring</p></div>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p><span class="lbl">Rasm prompti (ChatGPT)</span>
 <pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></div></div></article>""")
 
@@ -107,7 +116,8 @@ h2{{font-family:var(--display);font-weight:700;font-size:26px;margin:0}}
 .dur{{font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}}
 .row{{display:grid;grid-template-columns:180px minmax(0,1fr);gap:16px;align-items:start}}
 @media (max-width:560px){{.row{{grid-template-columns:minmax(0,1fr)}}}}
-.ref{{margin:0;display:grid;gap:6px}} .ref img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}}
+.refs{{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;align-content:start}} .rh{{grid-column:1/-1;margin:0;font-size:12px;color:var(--muted)}}
+.ref{{margin:0;display:grid;gap:4px}} .ref img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}}
 .ref figcaption{{font-size:12px;color:var(--muted)}}
 .scenes{{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}}
 .sc{{margin:0;display:grid;gap:6px}} .sc img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}}
@@ -121,7 +131,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Sovg'a yutdingiz!» <em>sahnalari</em></h1>
-<p class="intro">12 ta sahna rasmi, har biri 9:16 (tik). ChatGPT'da har promptga chapdagi qahramonlar varag'ini biriktiring, o'lchamni 9:16 qiling va «Nusxa olish» bilan promptni qo'ying. Yozuvlarni (bot nomi, belgilar) montajda o'zimiz qo'shamiz.</p>
+<p class="intro">12 ta sahna rasmi, har biri 9:16 (tik). ChatGPT'da har promptga uning yonidagi namuna rasmlarni (faqat kerakli qahramonlar, alohida) biriktiring, o'lchamni 9:16 qiling va «Nusxa olish» bilan promptni qo'ying. Yozuvlarni (bot nomi, belgilar) montajda o'zimiz qo'shamiz.</p>
 <p class="legend"><span><b class="c">Moviy</b> — Diyor</span><span><b class="a">Sariq chiroq</b> — Usta</span><span><b class="r">Qizil ko'z</b> — Tulki (firibgar)</span><span><b class="a">Oltin kalit</b> — SMS kod</span></p>
 {''.join(cards)}
 </div>
