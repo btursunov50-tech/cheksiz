@@ -18,6 +18,8 @@ IMG = {
  12: [("s12", "✅ tasdiqlandi")],
 }
 NOTE = {
+ # klip izohlari (Veo)
+
  10: "Qum soat oldinda, orqada Diyor yuzini kaftlariga qo'yib quvonadi (2 qo'l). Tepada hali qum bor — videoda oxirgi qum tushib bitadi (Veo prompti).",
  9: "Diyor ekranni bosadi, Tulki qizil girdob bilan telefonga tortiladi, uy ustida moviy qulf-gumbaz; kalit stolda qoldi. Kichik farq: uy 6-sahnadagidan boshqacha (panjara, boshqa tom) — fonda, qoldi.",
  11: "Usta chiroqni ko'tarib kameraga qaraydi, yuzi namunadek, ikkinchi qo'li pastda.",
@@ -114,9 +116,12 @@ V = {
  1: ("fast snap zoom-in (crash zoom) from the two faces down to the golden key above the phone, ending in a close-up of the key and the red eyes",
      "Usta's hand tightens on Diyor's wrist and stops it; Diyor's fingers tremble and the golden key swings slightly above the phone; the red fox eyes on the screen narrow and glow brighter; the lantern flame flickers."),
  2: ("slow tilt up from the glowing gift box above the phone to Diyor's joyful face and then to the hourglass above him, ending on Diyor and the hourglass",
-     "the glowing gift box slowly turns in the air and sparkles; Diyor bounces on his toes with joy, hands clasped under his chin; the sand in the hourglass runs fast inside the glass; dust glitters in the lantern light."),
+     "the glowing gift box stays floating right above the phone on the table the whole clip and only turns slowly in place, it never flies away and never lands on the table; Diyor bounces on his toes with joy, hands clasped under his chin; "
+     "the sand in the hourglass only falls down from the top bulb into the bottom bulb, the top bulb slowly empties and the bottom bulb slowly fills, never the other way; "
+     "no smoke, no lightning, no electric sparks; dust glitters softly in the lantern light."),
  3: ("slow push-in toward the fox leaning out of the phone screen, ending in a medium close-up of the fox and Diyor's reaching hand",
-     "the fox slides further out of the glowing screen with a sweet fake smile, offering the gift box and stretching his open paw toward Diyor; Diyor's hand slowly reaches toward the paw; red light pulses from the screen."),
+     "the fox slides only a little further out of the glowing screen with a thin sly fake smile, offering the gift box and stretching his open paw toward Diyor; Diyor's hand slowly reaches toward the paw; red light pulses softly from the screen. "
+     "The fox keeps the same sly face as in the image for the whole clip: narrow cunning eyes glowing bright red with no visible pupils, never round cartoon eyes, never orange eyes, never a friendly or cute face, the mouth stays closed in a thin smile; no fire, no flames."),
  4: ("low-angle shot, the camera slowly cranes up with the lantern as Usta raises it, ending on Usta's calm face lit by the lantern",
      "Usta slowly raises the lantern higher and its warm light spreads and pushes the shadows back across the workshop; Diyor freezes and looks up at him; the cyan glow around Diyor flickers softly."),
  5: ("macro close-up, slow rack focus from Diyor's finger above the phone to the golden key in his palm",
