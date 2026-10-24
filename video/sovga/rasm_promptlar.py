@@ -7,7 +7,7 @@ IMG = {
  1: [("s01a", "A: yuzlar bilan (hook uchun kuchli)"), ("s01b", "B: faqat qo'llar, kalit va telefon")],
 }
 NOTE = {
- 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab olib yuboring.",
+ 1: "Ikkalasi ham ishlatiladi: avval A (To'xta!), keyin B yaqin plan. Xato (egasi topdi): Usta bitta qo'li bilan ham chiroqni ushlagan, ham bolaning qo'lini — anatomiya xato; qo'llari ham qari (ajin, tomirlar). 1-sahna yangi prompt bilan qayta chiziladi: chiroq stolda turadi, Usta o'ng qo'li bilan ushlaydi. Ikkalasi 286×512, juda kichik: asl o'lchamini yuklab oling.",
 }
 
 ATT = ("Attach the character sheet image. Keep every character who appears exactly as in the character sheet: "
@@ -17,7 +17,7 @@ STY = ("Style: dark hand-drawn illustration exactly like the character sheet, ro
        "lantern light of Usta, the red eyes of the fox and the gold of the key. Moody fable atmosphere, like an old illustrated "
        "parable. Vertical 9:16. No text, no letters, no numbers, no logos, no watermark, no subtitles.")
 U = ("USTA (the calm craftsman about 30 years old with a short jet-black beard, black-and-white Uzbek doppi, dark embroidered "
-     "chapan robe with a red sash, holding his warm amber oil lantern)")
+     "chapan robe with a red sash; his amber oil lantern is described in each scene; his hands are the young strong hands of a 30-year-old man, smooth skin, no wrinkles, no swollen veins, not old hands)")
 D = ("DIYOR (the naive guy about 20 years old with messy black hair, big innocent eyes, dark blue hoodie, jeans and sneakers, "
      "outlined with a soft cyan-blue glow)")
 F = ("THE FOX (the tall fox standing like a man in a dark three-piece suit with a red tie, big bushy tail, glowing red eyes)")
@@ -26,7 +26,10 @@ ROOM = "a dark old workshop room lit only by Usta's lantern and the phone screen
 
 S = [
  (1, "0–5 s", "Usta: To'xta! «Siz yutdingiz» degan notanishga SMS kodni hech qachon o'qib berma.",
-  f"Close-up of hands in {ROOM}. The strong hand of {U} firmly grabs the thin wrist of {D}. Diyor's fingers hold a small glowing "
+  f"Close-up of hands in {ROOM}. {U} has put his lit amber lantern down on the wooden table beside the phone, so it stands on the table "
+  f"and neither of his hands holds it. With his right hand he firmly grabs the thin wrist of {D}; his left hand rests on the table. "
+  f"Usta has exactly two arms and two hands, Diyor has exactly two arms and two hands, every hand clearly belongs to its own arm and "
+  f"shoulder, no hand does two things at once. Diyor's fingers hold a small glowing "
   f"golden key, about to drop it onto a smartphone lying on the wooden table; from the dark phone screen two glowing red fox eyes "
   f"stare up, waiting. Amber lantern light from the side, cyan glow on Diyor's sleeve."),
  (2, "6–11 s", "Diyor: Voy! iPhone yutibman! Faqat besh daqiqa vaqt bor ekan.",
@@ -67,7 +70,7 @@ S = [
   f"Portrait of {U} looking straight into the camera, the amber lantern raised near his face, a calm wise slight smile. Dark "
   f"background of {ROOM}, warm light on his face and the embroidery of his chapan."),
  (12, "84–95 s", "Usta: Shubhali xabar keldimi? Skrinshotini botimizga yuboring: @sahiychishopbot…",
-  f"{U} holds a smartphone out toward the camera, the screen showing a simple chat with a few glowing message bubbles and no readable "
+  f"{U} holds a smartphone out toward the camera with his right hand, his amber lantern hangs on a hook on the wall behind him, his left hand rests on Diyor's shoulder, the screen showing a simple chat with a few glowing message bubbles and no readable "
   f"text. Next to him {D} smiles and nods, cyan glow around him. Lantern light, dark workshop behind them. Leave empty dark space in "
   f"the top third of the frame for a title added later."),
 ]
