@@ -49,3 +49,29 @@ Talaffuz: "SMS" = "es-em-es"; "iPhone" = "Ayfon"; "Telegram'ingning" = "Telegram
 | 12 | 75–84 s | 13 (Usta) | Skrinshot botga, katta **@sahiychishopbot** |
 | — | +3 s | — | Avatar: «Sizga ham shunaqa xabar kelganmi? Izohga yozing!» |
 | — | +4 s | — | Yakuniy karta |
+
+## Bepul variant (Manus krediti tugaganda, 2026-10-24)
+
+Oddiy TTS saytlari (Narakeet, Fliki, SpeechGen) sozlama yozuvlarini ham o'qib yuboradi, shuning uchun ularga faqat toza matn beriladi. Talaffuz so'zning o'zida yozilgan (Ayfon, es-em-es, sahiychi shop bot).
+O'zbekcha erkak ovozi bepul saytlarda bitta: **Sardor** (Microsoft). Uchta qahramon uchun 3 ta faylni bir xil Sardor bilan yasaymiz, farqni montajda qilaman: Usta pastroq va sekinroq, Telefon biroz balandroq + telefon effekti, Diyor o'zgarmaydi.
+
+Fayllar: `usta.wav` (8 qator), `diyor.wav` (4 qator), `telefon.wav` (1 qator). Qatorlar orasida bo'sh qator = pauza.
+
+USTA (1, 5, 7, 8, 9, 10, 12, 13):
+To'xta! "Siz yutdingiz" degan notanishga es-em-es kodni hech qachon o'qib berma.
+Kodni aytishdan oldin, es-em-esni menga ovoz chiqarib o'qi.
+Bu sovg'a kodi emas. Bu sening Telegramingning kaliti. Kalitni bersang, eshikni o'zing ochib berasan.
+Ular sovg'a bermaydi. Sening nomingdan yaqinlaringdan pul so'rashadi.
+Uchta belgi. Tanlovda qatnashmagansan. Shoshiltirishyapti. Kod so'rashyapti. Uchalasi bo'lsa, bu tuzoq.
+Go'shakni qo'y. Bankka o'zing rasmiy raqamdan qo'ng'iroq qil. Telegramda bulutli parolni yoq: kodni bilib olishsa ham, kira olmaydi.
+Haqiqiy sovg'a senga hech qachon kod so'ratmaydi.
+Shubhali xabar keldimi? Skrinshotini botimizga yuboring: sahiychi shop bot. Firibgarlikmi yo'qmi, tushuntiradi, bulutli parolni qanday yoqishni bosqichma-bosqich o'rgatadi.
+
+DIYOR (2, 4, 6, 11):
+Voy! Ayfon yutibman! Faqat besh daqiqa vaqt bor ekan.
+Hozir, hozir...
+Telegram kodi... "Bu kodni hech kimga bermang"...
+Besh daqiqa tugadi. Men esa hech narsa yo'qotmadim.
+
+TELEFON (3):
+Assalomu alaykum, bankdan bezovta qilyapman. Sizga kod keldi. Shuni ayting, sovg'angizni rasmiylashtiramiz.
