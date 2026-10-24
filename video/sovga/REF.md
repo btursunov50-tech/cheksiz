@@ -50,3 +50,10 @@ Edit the attached image, horizontal 16:9. Change ONLY the second character from 
 ```
 Edit the attached image, horizontal 16:9. Change ONLY the first character from the left (the craftsman with the lantern): make him a young master about 30 years old. Keep everything else exactly the same: the naive young guy with the cyan-blue glow, the fox in the suit, the woman in the headscarf, the golden key, the background, the style, the lighting and the composition. New look for the craftsman: a fictional Uzbek man about 30 years old, confident upright posture, strong calm face with no wrinkles, short neat jet-black beard and moustache with no grey at all, short black hair, sharp calm wise eyes, a faint confident smile; he must look clearly older and more serious than the naive guy next to him, but young. Keep his clothes and props exactly the same: the black-and-white Uzbek doppi skullcap, the dark embroidered chapan robe with the red sash, the shirt, and the warm amber oil lantern in his raised hand. Same dark hand-drawn illustration style as the rest of the image. No text, no letters, no labels, no logos, no watermark.
 ```
+
+## ✅ Tasdiqlangan namuna: `img/ref_qahramonlar.webp` (v3, 2026-10-24)
+- Usta ~30 yosh: qora soqol (oqi yo'q), qora-oq do'ppi, naqshli to'q chopon, qizil belbog', sariq chiroq. Diyordan aniq ajraladi.
+- Diyor: sodda, katta ko'zlar, ochiq tabassum, to'zg'igan qora soch, to'q ko'k xudi, jinsi, kedlar, moviy nur, orqasida sumka tasmasi.
+- Tulki: qizil ko'zlar, to'q uch qismli kostyum, qizil galstuk, sovg'a qutisi (qizil lenta), cho'zilgan panja, katta dum.
+- Ona: krem gulli ro'mol, to'qilgan jilet, gulli ko'ylak, telefon ko'kragida.
+- Oltin kalit. Har sahna rasmida shu varaq biriktiriladi. Sahna promptlari: `rasm_promptlar.py` → `rasmlar.html`.
