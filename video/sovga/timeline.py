@@ -17,3 +17,11 @@ LINES = [
     (13, "USTA", 84.04, 94.38),
 ]
 VOICE_END = 95.68  # keyin avatar 3 s + yakuniy karta 4 s
+
+# Kliplarning ishlatiladigan qismi (klip ichidagi soniyalar): xato chiqqan joydan oldin kesiladi.
+CLIP_USE = {
+    2: (0.0, 3.0),   # v2: 3 s dan keyin qum soatda qum tepaga to'planadi (teskari), sovg'a qimirlab ketadi → ~1.8x sekinlashadi
+    4: (0.0, 6.0),   # Diyor 5 s dan keyin kadrdan chiqadi, oxiri Ustada
+    5: (0.0, 3.6),   # 1.6 s da barmoq ekranga tegadi (kichik), ~4 s dan oltin chaqnash, chaqmoq, ekran qorayib qizil ko'zlar yo'qoladi → ~1.8x
+    6: (0.0, 8.0),
+}
