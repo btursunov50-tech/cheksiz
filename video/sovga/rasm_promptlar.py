@@ -17,7 +17,7 @@ STY = ("Style: dark hand-drawn illustration exactly like the character sheet, ro
        "lantern light of Usta, the red eyes of the fox and the gold of the key. Moody fable atmosphere, like an old illustrated "
        "parable. Vertical 9:16. No text, no letters, no numbers, no logos, no watermark, no subtitles.")
 U = ("USTA (the calm craftsman about 30 years old with a short jet-black beard, black-and-white Uzbek doppi, dark embroidered "
-     "chapan robe with a red sash, holding his warm amber oil lantern; his hands are the young strong hands of a 30-year-old man, smooth skin, no wrinkles, no swollen veins, not old hands)")
+     "chapan robe with a red sash; his amber oil lantern is described in each scene; his hands are the young strong hands of a 30-year-old man, smooth skin, no wrinkles, no swollen veins, not old hands)")
 D = ("DIYOR (the naive guy about 20 years old with messy black hair, big innocent eyes, dark blue hoodie, jeans and sneakers, "
      "outlined with a soft cyan-blue glow)")
 F = ("THE FOX (the tall fox standing like a man in a dark three-piece suit with a red tie, big bushy tail, glowing red eyes)")
@@ -70,7 +70,7 @@ S = [
   f"Portrait of {U} looking straight into the camera, the amber lantern raised near his face, a calm wise slight smile. Dark "
   f"background of {ROOM}, warm light on his face and the embroidery of his chapan."),
  (12, "84–95 s", "Usta: Shubhali xabar keldimi? Skrinshotini botimizga yuboring: @sahiychishopbot…",
-  f"{U} holds a smartphone out toward the camera, the screen showing a simple chat with a few glowing message bubbles and no readable "
+  f"{U} holds a smartphone out toward the camera with his right hand, his amber lantern hangs on a hook on the wall behind him, his left hand rests on Diyor's shoulder, the screen showing a simple chat with a few glowing message bubbles and no readable "
   f"text. Next to him {D} smiles and nods, cyan glow around him. Lantern light, dark workshop behind them. Leave empty dark space in "
   f"the top third of the frame for a title added later."),
 ]
