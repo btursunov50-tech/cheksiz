@@ -53,6 +53,11 @@ const REDIS_URL =
 const REDIS_TOKEN =
   process.env.KV_REST_API_TOKEN || envBySuffix("_REST_API_TOKEN") || process.env.UPSTASH_REDIS_REST_TOKEN || "";
 const HISTORY_TTL_SECONDS = 30 * 24 * 3600;
+// Each customer gets at most this many Claude answers (owner's rule, 2026-10-24);
+// after that the bot sends the manager's link instead. /start, demo and the owner don't count.
+const MAX_ANSWERS = Number(process.env.BOT_MAX_ANSWERS) || 2;
+const MANAGER = OWNER_USERNAME || "@Boxo_xxxx";
+const MANAGER_URL = `https://t.me/${MANAGER.replace(/^@/, "")}`;
 const MAX_VOICE_SECONDS = 300;
 const MAX_PROSPECTS = 15;
 // Claude accepts images up to 5 MB; Telegram photos are far smaller.
@@ -184,6 +189,32 @@ const tongButton = (on) => ({
 });
 const TONG_ON_TEXT = "☀️ Siz har kungi ertalabki tabrikka obuna bo'ldingiz. Har kuni ertalab gulli video va kun maslahati keladi.\nTo'xtatish: /tong_off";
 const TONG_OFF_TEXT = "🔕 Ertalabki tabrik to'xtatildi. Qayta yoqish: /tong_on";
+
+// Counts Claude answers per chat (Redis when configured, 30 days), so a /start
+// or a new function instance doesn't reset the limit.
+const answerCounts = new Map();
+async function countAnswer(chatId) {
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      const key = `iam:answers:${chatId}`;
+      const n = Number(await redis("INCR", key));
+      if (n === 1) await redis("EXPIRE", key, HISTORY_TTL_SECONDS);
+      return n;
+    } catch (err) {
+      console.error("Answer count failed:", err.message);
+    }
+  }
+  const n = (answerCounts.get(chatId) || 0) + 1;
+  answerCounts.set(chatId, n);
+  return n;
+}
+
+function managerText(lang) {
+  const l = (lang || "").slice(0, 2);
+  if (l === "ru") return `Я ответил на ваши вопросы 🙏 Остальное вы решите с нашим менеджером, напишите менеджеру: ${MANAGER_URL}`;
+  if (l === "en") return `I have answered your questions 🙏 You will settle the rest with our manager, write to the manager here: ${MANAGER_URL}`;
+  return `Savollaringizga javob berdim 🙏 Qolgan ishni menejerimiz bilan hal qilasiz, unga yozing: ${MANAGER_URL}`;
+}
 
 // Demo mode ("Demo Kafe", bot/demo.js): kept per chat for a week.
 const demoChats = new Set();
@@ -497,10 +528,26 @@ async function handleMessage(msg) {
     return;
   }
 
+  const demo = !text.startsWith("/start") && (await isDemo(chatId));
+  if (!text.startsWith("/start") && !demo && String(chatId) !== OWNER_CHAT_ID) {
+    const n = await countAnswer(chatId);
+    if (n > MAX_ANSWERS) {
+      await sendText(chatId, managerText(from.language_code), {
+        reply_markup: { inline_keyboard: [[{ text: `💬 ${MANAGER}`, url: MANAGER_URL }]] },
+      });
+      return;
+    }
+    if (n === MAX_ANSWERS) {
+      const note = `\n[This is your last answer in this chat. Answer clearly and briefly, then say that they will settle the rest with our manager and give this link to write to the manager: ${MANAGER_URL}]`;
+      if (Array.isArray(userText)) userText[userText.length - 1].text += note;
+      else userText += note;
+    }
+  }
+
   await tg("sendChatAction", { chat_id: chatId, action: "typing" });
   let reply;
   try {
-    reply = await askClaude(chatId, userText, from, !text.startsWith("/start") && (await isDemo(chatId)));
+    reply = await askClaude(chatId, userText, from, demo);
   } catch (err) {
     console.error("Claude error:", err && err.status, err && err.message);
     await clearHistory(chatId); // a half-finished exchange would break the next request
