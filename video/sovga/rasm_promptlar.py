@@ -148,11 +148,9 @@ for n, t, voice, scene in S:
     imgs = "".join(f'<figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna, {e(c)}"><figcaption>{e(c)}</figcaption></figure>' for f, c in IMG.get(n, []))
     got = (f'<div class="scenes">{imgs}</div>' + (f'<p class="note">{e(NOTE[n])}</p>' if n in NOTE else "")) if imgs else ""
     cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span></header>{got}
-<div class="row"><div class="refs">{"".join(f'<figure class="ref"><img src="web/ref_{k}.webp" alt="Namuna: {e(REFN[k])}"><figcaption>{e(UZ[k])}</figcaption></figure>' for k in NEED[n])}<p class="rh">Shularni biriktiring</p></div>
-<div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p><span class="lbl">Rasm prompti (ChatGPT)</span>
-<pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button>
-<span class="lbl">Video prompti (Veo, 8 s) — boshlang'ich kadr: shu sahnaning tasdiqlangan rasmi</span>
-<pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></div></article>""")
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
+<span class="lbl">Veo prompti (9:16, 8 s) — Veo'ga yuqoridagi rasmni yuklang</span>
+<pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></article>""")
 
 page = f"""<title>Sovg'a yutdingiz sahnalari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -190,7 +188,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Sovg'a yutdingiz!» <em>sahnalari</em></h1>
-<p class="intro">12 ta sahna rasmi, har biri 9:16 (tik). ChatGPT'da har promptga uning yonidagi namuna rasmlarni (faqat kerakli qahramonlar, alohida) biriktiring, o'lchamni 9:16 qiling va «Nusxa olish» bilan promptni qo'ying. Yozuvlarni (bot nomi, belgilar) montajda o'zimiz qo'shamiz. Rasmlar tayyor bo'lgach: har kartadagi Video promptini Veo'ga shu sahna rasmi bilan qo'ying (9:16, 8 s); ovozni o'zimiz qo'yamiz.</p>
+<p class="intro">12 ta sahna rasmi tayyor. Endi har sahna uchun bitta ish: Veo'da shu kartadagi rasmni yuklang, o'lchamni 9:16 qiling va «Nusxa olish» bilan Veo promptini qo'ying (8 s). Rasm promptlari (ChatGPT) endi kerak emas, sahifadan olib tashlandi; ular repoda (rasm_promptlar.py) saqlanadi. Yozuvlarni (bot nomi, belgilar) montajda o'zimiz qo'shamiz.</p>
 <p class="legend"><span><b class="c">Moviy</b> — Diyor</span><span><b class="a">Sariq chiroq</b> — Usta</span><span><b class="r">Qizil ko'z</b> — Tulki (firibgar)</span><span><b class="a">Oltin kalit</b> — SMS kod</span></p>
 {''.join(cards)}
 </div>
