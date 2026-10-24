@@ -13,10 +13,12 @@ IMG = {
  7: [("s07", "✅ tasdiqlandi")],
  8: [("s08", "✅ tasdiqlandi")],
  9: [("s09", "✅ tasdiqlandi")],
+ 10: [("s10", "✅ tasdiqlandi")],
  11: [("s11", "✅ tasdiqlandi")],
  12: [("s12", "✅ tasdiqlandi")],
 }
 NOTE = {
+ 10: "Qum soat oldinda, orqada Diyor yuzini kaftlariga qo'yib quvonadi (2 qo'l). Tepada hali qum bor — videoda oxirgi qum tushib bitadi (Veo prompti).",
  9: "Diyor ekranni bosadi, Tulki qizil girdob bilan telefonga tortiladi, uy ustida moviy qulf-gumbaz; kalit stolda qoldi. Kichik farq: uy 6-sahnadagidan boshqacha (panjara, boshqa tom) — fonda, qoldi.",
  11: "Usta chiroqni ko'tarib kameraga qaraydi, yuzi namunadek, ikkinchi qo'li pastda.",
  12: "Usta o'ng qo'lida telefon, chap qo'li Diyorning yelkasida, chiroq devordagi ilgakda; Diyor bosh barmog'ini ko'taradi. Ekran tepasida mayda ma'nosiz yozuv bor — montajda ekran ustiga bot suhbatini (@sahiychishopbot) qo'yamiz. Tepada sarlavha uchun bo'sh joy bor.",
@@ -103,6 +105,41 @@ S = [
   f"the top third of the frame for a title added later."),
 ]
 
+# Veo (rasm → video) promptlari: boshlang'ich kadr = tasdiqlangan sahna rasmi. Har birida bitta kamera harakati, qo'shni sahnalarda takrorlanmaydi.
+KEEP = ("Keep every character exactly as in the image for the whole clip: the same face, age, hair, clothes, colours and props, "
+        "the same number of arms and hands. Keep the background and the dark hand-drawn illustration style exactly as in the image. "
+        "No new people, no extra objects, no text, no letters, no captions, no subtitles, no watermark. No dialogue and no lip-sync: "
+        "mouths stay closed or move only slightly; only quiet ambient sound.")
+V = {
+ 1: ("fast snap zoom-in (crash zoom) from the two faces down to the golden key above the phone, ending in a close-up of the key and the red eyes",
+     "Usta's hand tightens on Diyor's wrist and stops it; Diyor's fingers tremble and the golden key swings slightly above the phone; the red fox eyes on the screen narrow and glow brighter; the lantern flame flickers."),
+ 2: ("slow tilt up from the glowing gift box above the phone to Diyor's joyful face and then to the hourglass above him, ending on Diyor and the hourglass",
+     "the glowing gift box slowly turns in the air and sparkles; Diyor bounces on his toes with joy, hands clasped under his chin; the sand in the hourglass runs fast inside the glass; dust glitters in the lantern light."),
+ 3: ("slow push-in toward the fox leaning out of the phone screen, ending in a medium close-up of the fox and Diyor's reaching hand",
+     "the fox slides further out of the glowing screen with a sweet fake smile, offering the gift box and stretching his open paw toward Diyor; Diyor's hand slowly reaches toward the paw; red light pulses from the screen."),
+ 4: ("low-angle shot, the camera slowly cranes up with the lantern as Usta raises it, ending on Usta's calm face lit by the lantern",
+     "Usta slowly raises the lantern higher and its warm light spreads and pushes the shadows back across the workshop; Diyor freezes and looks up at him; the cyan glow around Diyor flickers softly."),
+ 5: ("macro close-up, slow rack focus from Diyor's finger above the phone to the golden key in his palm",
+     "speed ramp: glowing light lines rise from the phone into his palm and melt into the golden key; as his finger moves toward the screen, time slows into extreme slow motion and the finger stops just above the glass, trembling; then normal speed resumes as the key glows brighter."),
+ 6: ("smooth lateral dolly (truck) right along the house wall, from Diyor and Usta to the glowing keyhole, ending on the key in front of the keyhole",
+     "Usta holds the lantern near the door; Diyor slowly brings the golden key toward the keyhole; a thin line of gold light connects the key and the keyhole; inside the warm windows the family silhouettes move gently."),
+ 7: ("high-angle shot, slow pull-back that reveals both halves of the frame, ending wide on the fox at the door above and the mother below",
+     "the fox turns the golden key and the door opens with a red glow; the warm windows slowly turn red one by one; below, the worried mother stares at her red glowing phone and slowly pulls a bank card out of her purse."),
+ 8: ("slow tilt down from the empty gift box to the hourglass and then to the fox's open paw, ending on the paw and the fox's red eyes",
+     "the three tricks glow red one after another as the camera passes them: the empty gift box opens wider, the sand runs in the hourglass, the fox's paw beckons; Usta's lantern light moves over them from the left."),
+ 9: ("slow dolly out and crane up from Diyor's finger on the phone to the house behind him, ending wide on the glowing blue padlock dome over the house",
+     "Diyor presses the screen and it goes dark; the fox is sucked back into the black glass in a red swirl and disappears; the soft cyan-blue padlock dome slowly closes over the roof of the house and its glow settles."),
+ 10: ("locked-off static camera on the hourglass, then a slow rack focus to Diyor's face at the end",
+     "speed ramp: the last sand runs out of the top bulb; the very last grain falls in extreme slow motion through the neck and lands on the pile with a tiny golden sparkle and a soft click; normal speed resumes; the focus moves to Diyor, who laughs with relief, his cyan glow growing brighter."),
+ 11: ("slow push-in toward Usta's face, ending in a close-up of his eyes and the lantern",
+     "Usta looks straight into the camera with a calm wise smile, holding the lantern near his face; the flame flickers softly and warm light moves over the embroidery of his chapan."),
+ 12: ("slow dolly out, ending in a medium shot of both of them with dark empty space above for a title",
+     "Usta holds the phone toward the camera and the chat bubbles on the screen glow softly; his other hand stays on Diyor's shoulder; Diyor smiles and gives a thumbs up; the hanging lantern sways slightly."),
+}
+def vp(n):
+    cam, act = V[n]
+    return (f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} {KEEP}")
+
 e = html.escape
 UZ = {"usta": "Usta", "diyor": "Diyor", "tulki": "Tulki", "ona": "Ona", "kalit": "Oltin kalit"}
 cards = []
@@ -113,7 +150,9 @@ for n, t, voice, scene in S:
     cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span></header>{got}
 <div class="row"><div class="refs">{"".join(f'<figure class="ref"><img src="web/ref_{k}.webp" alt="Namuna: {e(REFN[k])}"><figcaption>{e(UZ[k])}</figcaption></figure>' for k in NEED[n])}<p class="rh">Shularni biriktiring</p></div>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p><span class="lbl">Rasm prompti (ChatGPT)</span>
-<pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></div></div></article>""")
+<pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button>
+<span class="lbl">Video prompti (Veo, 8 s) — boshlang'ich kadr: shu sahnaning tasdiqlangan rasmi</span>
+<pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></div></article>""")
 
 page = f"""<title>Sovg'a yutdingiz sahnalari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -151,7 +190,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Sovg'a yutdingiz!» <em>sahnalari</em></h1>
-<p class="intro">12 ta sahna rasmi, har biri 9:16 (tik). ChatGPT'da har promptga uning yonidagi namuna rasmlarni (faqat kerakli qahramonlar, alohida) biriktiring, o'lchamni 9:16 qiling va «Nusxa olish» bilan promptni qo'ying. Yozuvlarni (bot nomi, belgilar) montajda o'zimiz qo'shamiz.</p>
+<p class="intro">12 ta sahna rasmi, har biri 9:16 (tik). ChatGPT'da har promptga uning yonidagi namuna rasmlarni (faqat kerakli qahramonlar, alohida) biriktiring, o'lchamni 9:16 qiling va «Nusxa olish» bilan promptni qo'ying. Yozuvlarni (bot nomi, belgilar) montajda o'zimiz qo'shamiz. Rasmlar tayyor bo'lgach: har kartadagi Video promptini Veo'ga shu sahna rasmi bilan qo'ying (9:16, 8 s); ovozni o'zimiz qo'yamiz.</p>
 <p class="legend"><span><b class="c">Moviy</b> — Diyor</span><span><b class="a">Sariq chiroq</b> — Usta</span><span><b class="r">Qizil ko'z</b> — Tulki (firibgar)</span><span><b class="a">Oltin kalit</b> — SMS kod</span></p>
 {''.join(cards)}
 </div>
