@@ -26,4 +26,5 @@ CLIP_USE = {
     4: (0.0, 6.0),   # Diyor 5 s dan keyin kadrdan chiqadi, oxiri Ustada
     5: (0.0, 3.6),   # 1.6 s da barmoq ekranga tegadi (kichik), ~4 s dan oltin chaqnash, chaqmoq, ekran qorayib qizil ko'zlar yo'qoladi → ~1.8x
     6: (0.0, 8.0),
+    12: (0.0, 8.0),  # sekin dolly out, tepada sarlavha uchun bo'sh joy; ekranga bot suhbati qo'yiladi → ~1.4x
 }
