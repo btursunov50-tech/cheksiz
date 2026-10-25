@@ -44,4 +44,4 @@ Sekinlashuv (qoida: 1–2 marta): 5-sahnada barmoq «Yuborish» ustida to'xtagan
 - Telegram'da bulutli parol bor: Sozlamalar → Maxfiylik va xavfsizlik → Ikki bosqichli tekshiruv. Yoqilgan bo'lsa, faqat SMS kod bilan akkauntga kirib bo'lmaydi.
 - Banklar SMS kodni telefonda so'ramaydi: umumiy xavfsizlik qoidasi, raqam aytilmaydi.
 
-Holat: 🎙 ovoz bloki berildi (2026-10-24): `video/sovga/OVOZ.md`. Rasm promptlari egasi so'raganda.
+Holat: ✅ video tayyor (2026-10-25): `video/final/sovga/`, matnlar `video/sovga/POSTS.md`.
