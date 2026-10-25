@@ -15,4 +15,5 @@
 - 18-sahna: ✅ `clips/s18.mp4` (Veo, sekin yaqinlashish, robot o'zgarmaydi: do'ppi, ∞, quloq halqalari; ko'zlar rasmdagidek tekis chiziq; bug' chiqadi; sahna 11.3 s → ~1.4x).
 - Yakun (egasi, 2026-10-25): «Izohga LAVASH AI» kesildi (`dialog_v2.flac`), botga chaqiriq ekranda (`timeline.py` → `TEXT`). Yig'ishda `--voice dialog_v2.flac`.
 - 22-sahna: ✅ `clips/s22.mp4` (Veo, sekin yaqinlashish, robot kameraga ochiq kaftini cho'zadi, ko'zlari «tabassum» yoylari; yigit orqada choy ichadi, yuzi namunaga yaqin; tepa va past yozuv uchun bo'sh; sahna 5 s, 0–5 s olinadi).
-- Hali qilinmagan: 19–21 kliplari, musiqa, avatar (3 s) + yakuniy karta, en/ru subtitr, post matnlari.
+- 21-sahna: ⚠️ qisman `clips/s21.mp4` — 0–4.8 s yaxshi (kamera uzoqlashadi, yigit kulib choy quyadi, robot ∞ bilan); 5 s dan robot ko'kragidagi ∞ yo'qoladi (Veo) → 0–4.8 s olinadi, sahna 6.7 s → ~1.4x. Yig'ishda `START`/kesim: s21 0–4.8.
+- Hali qilinmagan: 19–20 kliplari, musiqa, avatar (3 s) + yakuniy karta, en/ru subtitr, post matnlari.
