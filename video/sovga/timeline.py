@@ -66,3 +66,4 @@ TEXT = [
  (56.93, 62.0, "3. KOD SO'RASH", 70, "FF4A3A", (540, 620)),
  (85.48, 95.6, "@sahiychishopbot", 96, "FFC23A", (540, 300)),
 ]
+MUSIC_FADE = 5  # musiqa avatar va yakuniy karta ustida davom etib, 5 s da so'nadi
