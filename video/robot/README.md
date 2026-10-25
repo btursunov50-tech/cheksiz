@@ -12,4 +12,6 @@
 - Vaqtlar: `timeline.py` — har bir ovoz qatori va sahna kesimi. Egasi 0:19, 0:56, 1:01 ni tasdiqlagan.
 - Yig'ish: `python3 video/robot/preview.py <papka> [sahnalar soni]` — kliplar vaqtga moslanadi (ko'pi bilan ×1.48 minterpolate), cine + sfx, ovoz + musiqa (hozircha Dutar's Whisper 3:17 dan; egasi boshqasini beradi), uz subtitr, 9-sahnada qizil STOP.
 - Musiqa (egasi, 2026-10-18): Curious Unease boshi yaxshi; Kafeda 1:10 dan mos kelmadi. Yakuniy musiqa hamma video tayyor bo'lib, matn o'zgargach tanlanadi.
-- Hali qilinmagan: 14–22 kliplari, musiqa, avatar (3 s) + yakuniy karta, en/ru subtitr, post matnlari.
+- 18-sahna: ✅ `clips/s18.mp4` (Veo, sekin yaqinlashish, robot o'zgarmaydi: do'ppi, ∞, quloq halqalari; ko'zlar rasmdagidek tekis chiziq; bug' chiqadi; sahna 11.3 s → ~1.4x).
+- Yakun (egasi, 2026-10-25): «Izohga LAVASH AI» kesildi (`dialog_v2.flac`), botga chaqiriq ekranda (`timeline.py` → `TEXT`). Yig'ishda `--voice dialog_v2.flac`.
+- Hali qilinmagan: 19–22 kliplari, musiqa, avatar (3 s) + yakuniy karta, en/ru subtitr, post matnlari.
