@@ -50,7 +50,7 @@ Three signs of the trap:
 2. They rush you
 3. They ask for a code
 
-What to do: hang up, call your bank yourself on its official number, and turn on Telegram's cloud password (Settings > Privacy and Security > Two-Step Verification).
+What to do: hang up, call your bank yourself on its official number, and turn on Telegram's cloud password (Settings → Privacy and Security → Two-Step Verification).
 
 Got a suspicious message? Send a screenshot to our Telegram bot, it tells you if it's a scam: https://t.me/sahiychishopbot
 
