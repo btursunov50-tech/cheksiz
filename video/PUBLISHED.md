@@ -35,7 +35,7 @@ Har bir yangi video joylangach, havolalarni shu jadvalga qo'shing.
 
 - «Birlik» musiqiy klipi (15-video): tayyor 2026-10-23, 2026-10-24 da joylanadi. Egasining Suno qo'shig'i (143.5 BPM), tarixiy qahramonlar qir tepasida (ChatGPT rasm → Veo, whip pan zanjiri), Bahodir Jalolov va boshqa haqiqiy kadrlar (DAZN, armiya, karate, kurash, treyler — har birida «Manba»), naqorat so'zlari uz/ru/en, avatar + yakuniy karta. Content ID xavfi yuqori. Matnlar `video/qahramon/POSTS.md`, fayllar `video/final/birlik/`.
 
-- «Sovg'a yutdingiz!» (16-video): tayyor 2026-10-25. SMS kod firibgarligi masali (Kalamushqir uslubi): Usta, sodda Diyor, Tulki-«bank xodimi», Ona; ChatGPT rasm → Veo, 3 ta AI ovoz, botga chaqiriq (bot skrinshotni tushuntiradi). Musiqa: Nocturnal Pressure (egasi, Suno). YouTube sarlavhasi hook 84.2. Matnlar `video/sovga/POSTS.md`, fayllar `video/final/sovga/`. Telegram: https://t.me/infinite_ai_and_me/33 (2026-10-25).
+- «Sovg'a yutdingiz!» (16-video): tayyor 2026-10-25. SMS kod firibgarligi masali (Kalamushqir uslubi): Usta, sodda Diyor, Tulki-«bank xodimi», Ona; ChatGPT rasm → Veo, 3 ta AI ovoz, botga chaqiriq (bot skrinshotni tushuntiradi). Musiqa: Nocturnal Pressure (egasi, Suno). YouTube sarlavhasi hook 84.2. Matnlar `video/sovga/POSTS.md`, fayllar `video/final/sovga/`. Telegram: https://t.me/infinite_ai_and_me/33, YouTube: https://youtube.com/shorts/pxMW8WuncHc (2026-10-25).
 
 ## Natijalar
 - 1-video: 1 soatda 434 ko'rish, 1 kunda ~1400 ko'rish (YouTube). Trend mavzusi + o'sha kuni chiqarilgan.
