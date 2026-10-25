@@ -29,5 +29,7 @@ CLIP_USE = {
     7: [(0.0, 2.6), (5.0, 8.0)],   # 2.8–4.8 s eshikdan olov chiqib Tulkini qoplaydi (olov xato) → 2 bo'lak, ~1.3x
     8: [(0.0, 2.7), (3.7, 8.0)],   # 2.8–3.6 s sovg'a qutisi qum soatga «erib» o'tadi (ikki narsa ustma-ust) → 2 bo'lak, ~1.7x
     9: (0.0, 5.4),   # 5.4 s dan Diyor hovliga «sakrab» kichrayib qoladi; 3 s dan stolda ikkinchi kalit (kichik) → ~1.85x
+    10: (0.0, 4.6),  # v2: Diyor xotirjam jilmayadi; 4.7 s dan o'ng tepada ingichka chaqmoq → ~1.15x
+    11: (0.0, 8.0),  # sekin yaqinlashish, Usta va chiroq o'zgarmaydi; sahna ~5.5 s, kerakli qismi olinadi
     12: (0.0, 8.0),  # sekin dolly out, tepada sarlavha uchun bo'sh joy; ekranga bot suhbati qo'yiladi → ~1.4x
 }
