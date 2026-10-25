@@ -28,5 +28,6 @@ CLIP_USE = {
     6: (0.0, 8.0),
     7: [(0.0, 2.6), (5.0, 8.0)],   # 2.8–4.8 s eshikdan olov chiqib Tulkini qoplaydi (olov xato) → 2 bo'lak, ~1.3x
     8: [(0.0, 2.7), (3.7, 8.0)],   # 2.8–3.6 s sovg'a qutisi qum soatga «erib» o'tadi (ikki narsa ustma-ust) → 2 bo'lak, ~1.7x
+    9: (0.0, 5.4),   # 5.4 s dan Diyor hovliga «sakrab» kichrayib qoladi; 3 s dan stolda ikkinchi kalit (kichik) → ~1.85x
     12: (0.0, 8.0),  # sekin dolly out, tepada sarlavha uchun bo'sh joy; ekranga bot suhbati qo'yiladi → ~1.4x
 }

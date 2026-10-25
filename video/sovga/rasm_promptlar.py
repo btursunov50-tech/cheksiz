@@ -135,7 +135,8 @@ V = {
  9: ("slow dolly out and crane up from Diyor's finger on the phone to the house behind him, ending wide on the glowing blue padlock dome over the house",
      "Diyor presses the screen and it goes dark; the fox is sucked back into the black glass in a red swirl and disappears; the soft cyan-blue padlock dome slowly closes over the roof of the house and its glow settles."),
  10: ("locked-off static camera on the hourglass, then a slow rack focus to Diyor's face at the end",
-     "speed ramp: the last sand runs out of the top bulb; the very last grain falls in extreme slow motion through the neck and lands on the pile with a tiny golden sparkle and a soft click; normal speed resumes; the focus moves to Diyor, who laughs with relief, his cyan glow growing brighter."),
+     "speed ramp: the last sand runs out of the top bulb; the very last grain falls in extreme slow motion through the neck and lands on the pile with a tiny golden sparkle; normal speed resumes; the focus moves to Diyor, who smiles calmly with relief and lets out a quiet breath, his cheeks still resting on his hands, his soft cyan-blue glow becomes a little brighter and stays smooth. "
+     "Diyor never screams, never opens his mouth wide, never looks shocked; his glow never turns into lightning, sparks or electric bolts."),
  11: ("slow push-in toward Usta's face, ending in a close-up of his eyes and the lantern",
      "Usta looks straight into the camera with a calm wise smile, holding the lantern near his face; the flame flickers softly and warm light moves over the embroidery of his chapan."),
  12: ("slow dolly out, ending in a medium shot of both of them with dark empty space above for a title",
