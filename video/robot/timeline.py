@@ -49,8 +49,9 @@ TEXT = [
 # Yakuniy musiqa butun video tayyor bo'lib, matn o'zgarishlari tugagach tanlanadi.)
 # (egasining Suno treklari, bepul tarif: tijoratsiz, «Music: made with Suno»).
 # (fayl, trekdagi boshlanish s, videodagi boshlanish s, videodagi oxiri s) — qismlar orasida 2 s o'tish.
-MUSIC = [
+MUSIC_OLD = [
  ("curious_unease.mp3", 0.0, 0.0, 72.3),            # sir, xavotir: pul oqib ketyapti, lavash xatosi
  ("kafeda_inson_va_robot.mp3", 8.0, 70.3, 147.8),   # tinch suhbat: shifokor, yurist, tekshiruv
  ("doira_and_the_robot.mp3", 41.0, 145.8, 175.0),   # quvnoq doira: kulgu, chaqiriq, avatar, yakuniy karta
 ]
+MUSIC_FADE = 5  # egasi (2026-10-25): Dutar's Whisper 10 s dan, avatar + yakuniy karta ustida 5 s da so'nadi
