@@ -1,4 +1,6 @@
-# «Robot bilan bir piyola choy» — yakuniy gap qayta yoziladi (2026-10-25)
+# «Robot bilan bir piyola choy» — yakuniy gap (2026-10-25)
+
+**Qaror (egasi): yangi ovoz yozilmaydi.** «Izohga LAVASH AI deb yozing» kesib olindi (`dialog_v2.flac`, 155.3 s dan jim, 158.5 s gacha), botga chaqiriq ekranda yozuv bilan (`timeline.py` → `TEXT`). Pastdagi ovoz bloki zaxira.
 
 Egasi: oxirgi «Izohga «LAVASH AI» deb yozing» o'rniga botga chaqiriq (CLAUDE.md, 2026-10-24 qoidasi).
 `dialog.flac` dagi 153.85–155.1 s «Sizda ham do'kon bormi?» qoladi; 155.3–157.4 s «Izohga «LAVASH AI» deb yozing.» o'rniga yangi fayl qo'yiladi.

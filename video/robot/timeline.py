@@ -30,14 +30,21 @@ SUB = [
  (141.1, 143.65, "R", "Men parol so'ramayman."), (144.3, 145.55, "R", "Parolingni so'ragan «AI»dan qoch."), (145.85, 146.55, "R", "U AI emas, firibgar."),
  (147.0, 148.55, "O", "Unda oshpazni bo'shatamanmi?"),
  (149.05, 149.8, "R", "Yo'q."), (150.05, 153.3, "R", "Men lavash o'ray olmayman. Oshpaz qo'l, men ko'z."),
- (153.85, 155.1, "R", "Sizda ham do'kon bormi?"), (155.3, 157.4, "R", "Izohga «LAVASH AI» deb yozing."),
+ (153.85, 155.1, "R", "Sizda ham do'kon bormi?"),
 ]
 # Sahna kesimlari (s): sahna i = CUT[i-1]..CUT[i]
 CUT = [0, 8.0, 13.3, 19.5, 27.8, 37.3, 44.5, 48.1, 56.2, 59.5, 71.3,
-       79.6, 86.6, 96.7, 99.1, 109.55, 120.2, 122.35, 133.7, 140.7, 146.8, 153.5, 157.5]
+       79.6, 86.6, 96.7, 99.1, 109.55, 120.2, 122.35, 133.7, 140.7, 146.8, 153.5, 158.5]
 CLIP = [f"s{i:02}" for i in range(1, 23)]
 START = {9: 1.4}   # klipning qayeridan boshlanadi (sahna raqami: soniya)
 STOP = (56.45, 59.4)  # 9-sahnada qizil STOP
+# Egasi (2026-10-25): «Izohga LAVASH AI deb yozing» olib tashlandi (dialog_v2.flac, 155.3 s dan jim);
+# o'rniga ekranda botga chaqiriq (yangi ovoz yozilmaydi). --voice dialog_v2.flac
+TEXT = [
+ (154.0, 158.5, "Botdan so'rang:", 70, "FFFFFF", (540, 330)),
+ (154.0, 158.5, "@sahiychishopbot", 96, "FFC23A", (540, 430)),
+ (155.3, 158.5, "Do'koningizga AI qanday yordam beradi?", 54, "FFFFFF", (540, 1250)),
+]
 # Musiqa VAQTINCHA (egasi 2026-10-18: boshi — Curious Unease — yaxshi; 1:10 dan Kafeda o'xshamadi, aralash bo'lib ketdi.
 # Yakuniy musiqa butun video tayyor bo'lib, matn o'zgarishlari tugagach tanlanadi.)
 # (egasining Suno treklari, bepul tarif: tijoratsiz, «Music: made with Suno»).
