@@ -125,7 +125,9 @@ V = {
      "at the end his eyebrows shoot up, his eyes go very wide and his jaw drops slowly in surprise; he freezes with his fingers in the air."),
  5: ("Low-angle shot, slow crane up along the tall golden coin column, ending on Usta's face above it",
      "speed ramp: Usta lets the glowing red coin go; it falls onto the top of the column in extreme slow motion, turning and catching the light, "
-     "and lands with a crisp clink and a few tiny red sparks; normal speed resumes; the column wobbles slightly; Usta looks into the camera and raises his eyebrows meaningfully, a small knowing smile."),
+     "and lands on top of the other red coin with a crisp clink and only two or three tiny red sparks; normal speed resumes; Usta looks into the camera and raises his eyebrows meaningfully, a small knowing smile. "
+     "The tall golden coin column stays exactly the same height and in the same place for the whole clip with both red coins on its top; it never shrinks, never falls, never disappears; "
+     "no explosion, no burst of sparks, no coins scattering on the table. Usta's face stays exactly as in the image, never a wide toothy grin, eyes stay open."),
  6: ("Smooth lateral dolly (truck) left from the smiling seller behind the counter to Diyor in the foreground, ending in a medium close-up of Diyor",
      "the seller grins widely and wiggles the big golden card toward Diyor; Diyor scratches the back of his head, his smile fades into an awkward embarrassed smile, "
      "he lowers his eyes to the floor, his cheeks blush and his cyan glow dims; he shrugs one shoulder."),
