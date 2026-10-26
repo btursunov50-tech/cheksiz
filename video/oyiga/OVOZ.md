@@ -45,3 +45,21 @@ Talaffuz: "100 000" = "yuz ming"; "1 200 000" = "bir million ikki yuz ming"; "@s
 | 11 | 55–67 s | 11 (Usta) | Narx yorlig'i botga, katta **@sahiychishopbot** |
 | — | +3 s | — | Avatar: «Siz nasiyaga nima olgansiz? Izohga yozing!» |
 | — | +4 s | — | Yakuniy karta |
+
+## Ovoz keldi (2026-10-26): `dialog.wav` (Manus, 76.4 s, 24 kHz mono)
+
+Qatorlar pauzalar bo'yicha (silencedetect −40 dB, ≥1.2 s pauza = qator chegarasi), egasi eshitib tasdiqlashi kerak:
+
+| Qator | Kim | Vaqt (s) |
+|---|---|---|
+| 1 | Usta | 0.00–6.12 |
+| 2 | Diyor | 7.70–11.84 |
+| 3 | Usta | 13.41–15.66 |
+| 4 | Diyor | 17.23–24.06 |
+| 5 | Usta | 25.53–29.36 |
+| 6 | Diyor | 30.98–36.43 |
+| 7 | Usta | 38.19–43.44 |
+| 8 | Usta | 45.26–53.59 |
+| 9 | Diyor | 54.86–57.60 |
+| 10 | Usta | 59.12–64.69 |
+| 11 | Usta | 66.04–76.36 |
