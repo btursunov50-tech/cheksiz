@@ -8,6 +8,7 @@ import html
 IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tasdiqlandi · Apple belgilari tozalandi (img/s01.png)")],
  2: [("s02", "✅ tasdiqlandi · Apple belgilari tozalandi (img/s02.png)")],
+ 7: [("s07", "✅ tasdiqlandi (img/s07.png)")],
  6: [("s06", "✅ tasdiqlandi · Apple belgilari tozalandi (img/s06.png)")],
  5: [("s05", "⚠️ qo'llar qariroq · tahrir tavsiya")],
  4: [("s04", "✅ tasdiqlandi (img/s04.png)")],
@@ -16,6 +17,7 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
 NOTE = {
  1: "Usta yuzi namunadek (do'ppi, qora soqol, chopon, qizil belbog'), qo'llari yosh, ikki qo'l: biri ko'rsatadi, biri pastda. Sariq yorliq va qizil yorliq bo'sh. Orqada Toshkent teleminorasi. Ranglar: sariq, ko'k, qizil. ChatGPT tahriri belgilarni olib tashlamadi; Claude ularni o'zi tozaladi (OpenCV inpaint). Veo'ga img/s01.png beriladi.",
  3: "Kiyim, do'ppi, lupa, qizil yorliq, ranglar (to'q sariq, qizil) to'g'ri. Xato: ikkala qo'li qari (ajin, bo'rtgan tomirlar, chuqur bo'g'im chiziqlari), yuzida peshona ajinlari va ko'z atrofida chiziqlar — ~40 yoshdek. Tahrirdan keyin: ikkala qo'l yosh (silliq teri, tomir yo'q), yuz namunaga yaqin (qoshini ko'targani uchun peshonada yengil chiziq). 2 ta Apple belgisini Claude tozaladi. Veo'ga img/s03.png beriladi.",
+ 7: "Usta yuzi namunadek. Tarozi: chap pallada kichik oltin ustun (naqd narx), o'ng pallada katta oltin+qizil uyum, o'ng palla pastroq. O'ng qo'li taroziga ishora qiladi, chap qo'li pastda; qo'llar yosh (barmoq bukilganda bo'g'imda oddiy burmalar). Ranglar: sariq, qizil, ko'k. Orqadagi telefonlarda belgi ko'rinmaydi.",
  6: "Diyor yuzi namunadek, bir qo'li boshida, biri telefonda; nuri xira. Ifodasi «uyalib jilmayish» (to'liq uyalgan emas) — Veo promptida uyalib pastga qarashi yoziladi. Sotuvchi: yumaloq yuz, qalin mo'ylov, yashil jilet, yuzi Usta va Diyornikidan butunlay boshqa; yorliqni ikki qo'llab ushlagan, yorliq bo'sh. Ranglar: sariq, ko'k. Pastki javondagi 11 ta Apple belgisi va mayda yozuvni Claude tozaladi.",
  5: "Yuz namunaga yaqin, do'ppi, chopon, belbog' to'g'ri. 2 ta qizil tanga ustun tepasida, ustun telefon qutisidan baland. Ranglar: sariq, qizil. Qutidagi telefonda belgi yo'q. Kamchilik: tangani ushlagan o'ng qo'l va peshtaxtadagi chap qo'lda bo'g'imlar chuqur burishgan, 30 yoshdan qariroq — tahrir prompti berildi.",
  4: "Diyor yuzi namunadek (to'zg'igan soch, katta ko'zlar, xudi, sumka, moviy nur). Qo'llar yosh: o'ng qo'lda 5 barmoq ochiq, chap qo'l ko'rsatkich barmog'i bilan sanaydi. Ranglar: ko'k, sariq. Tangalar 12 emas, 11 ta (boshi orqasida bo'shliq) — tomoshabin sanamaydi; Veo'da tangalar birma-bir yonadi, shu yashiradi. Telefon, belgi, yozuv yo'q.",
