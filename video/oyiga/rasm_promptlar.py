@@ -8,11 +8,11 @@ import html
 IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tasdiqlandi · Apple belgilari tozalandi (img/s01.png)")],
  2: [("s02", "✅ tasdiqlandi · Apple belgilari tozalandi (img/s02.png)")],
- 3: [("s03", "❌ qo'llar qari, yuz kattaroq · tahrir kerak")],
+ 3: [("s03", "✅ tasdiqlandi (tahrirdan keyin) · Apple belgilari tozalandi (img/s03.png)")],
 }
 NOTE = {
  1: "Usta yuzi namunadek (do'ppi, qora soqol, chopon, qizil belbog'), qo'llari yosh, ikki qo'l: biri ko'rsatadi, biri pastda. Sariq yorliq va qizil yorliq bo'sh. Orqada Toshkent teleminorasi. Ranglar: sariq, ko'k, qizil. ChatGPT tahriri belgilarni olib tashlamadi; Claude ularni o'zi tozaladi (OpenCV inpaint). Veo'ga img/s01.png beriladi.",
- 3: "Kiyim, do'ppi, lupa, qizil yorliq, ranglar (to'q sariq, qizil) to'g'ri. Xato: ikkala qo'li qari (ajin, bo'rtgan tomirlar, chuqur bo'g'im chiziqlari), yuzida peshona ajinlari va ko'z atrofida chiziqlar — ~40 yoshdek. Tahrir: qo'llar va yuz 30 yoshga, Apple belgisini olib tashlash.",
+ 3: "Kiyim, do'ppi, lupa, qizil yorliq, ranglar (to'q sariq, qizil) to'g'ri. Xato: ikkala qo'li qari (ajin, bo'rtgan tomirlar, chuqur bo'g'im chiziqlari), yuzida peshona ajinlari va ko'z atrofida chiziqlar — ~40 yoshdek. Tahrirdan keyin: ikkala qo'l yosh (silliq teri, tomir yo'q), yuz namunaga yaqin (qoshini ko'targani uchun peshonada yengil chiziq). 2 ta Apple belgisini Claude tozaladi. Veo'ga img/s03.png beriladi.",
  2: "Diyor yuzi namunadek (to'zg'igan soch, katta ko'zlar, xudi, moviy nur, sumka tasmasi), telefon ikki qo'lida. Ranglar: sariq, moviy. ChatGPT tahriri belgilarni olib tashlamadi; Claude vitrinadagi belgilarni o'zi tozaladi (OpenCV inpaint), qo'lidagi telefonda belgi yo'q. Veo'ga img/s02.png beriladi.",
 }
 
