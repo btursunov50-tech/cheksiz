@@ -5,8 +5,14 @@
 # Rang (egasi, 2026-10-26): Kalamushqir'dan faqat ranglar — sariq, ko'k, qizil va ko'zni tortadigan ranglar; bitta kadrda 2–3 ta rang.
 import html
 
-IMG = {}   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
-NOTE = {}
+IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
+ 1: [("s01", "✅ yuz, qo'llar, ranglar to'g'ri · ⚠️ telefonlarda Apple belgisi")],
+ 2: [("s02", "✅ yuz, qo'llar, ranglar to'g'ri · ⚠️ telefonlarda Apple belgisi")],
+}
+NOTE = {
+ 1: "Usta yuzi namunadek (do'ppi, qora soqol, chopon, qizil belbog'), qo'llari yosh, ikki qo'l: biri ko'rsatadi, biri pastda. Sariq yorliq va qizil yorliq bo'sh. Orqada Toshkent teleminorasi. Ranglar: sariq, ko'k, qizil. Kamchilik: vitrinadagi 2 ta oq telefonda Apple belgisi bor — tahrir prompti bilan olib tashlanadi.",
+ 2: "Diyor yuzi namunadek (to'zg'igan soch, katta ko'zlar, xudi, moviy nur, sumka tasmasi), telefon ikki qo'lida. Ranglar: sariq, moviy. Kamchilik: vitrinadagi va qo'lidagi telefonlarda Apple belgisi ko'rinadi — tahrir prompti bilan olib tashlanadi.",
+}
 
 REFN = {"usta": "Usta", "diyor": "Diyor"}
 NEED = {1: ["usta"], 2: ["diyor"], 3: ["usta"], 4: ["diyor"], 5: ["usta"], 6: ["diyor"],
