@@ -16,3 +16,8 @@ Ssenariy `ideas/oyiga-atigi.md`, ovoz `dialog.wav` (qatorlar vaqti `OVOZ.md`), r
 | 9 | `clips/s09.mp4` | ✅ | 0–4.4 s | Diyor telefonni javonga qo'yadi va qo'yib yuboradi, kameraga o'girilib ayyorona jilmayadi, daftarni ko'kragida ushlaydi. Yuz namunadek, telefonlarda belgi yo'q. Kamera kam yuradi (5.3) — montajda yon tomonga suzish/yaqinlashish |
 | 10 | `clips/s10.mp4` | ✅ | 0.5–7.5 s | Yaqin plan: Usta jilmayadi, boshini qiyshaytiradi, ko'zlari kuladi, oxirida qoshini ko'tarib «savol» beradi. Yuz va do'ppi butun klip davomida namunadek. Kamera sekin yaqinlashadi (10.8) |
 | 11 | `clips/s11.mp4` | ✅ | 0–8 s (~1.4x sekin, qator ~11 s) | Usta telefonni ko'rsatadi, 1–2.5 s da ekrandan bo'sh moviy xabar pufakchalari uchib chiqadi (yozuvsiz), Diyor bosh barmog'ini ko'taradi, Usta qo'li Diyor yelkasida. Ikkala yuz namunadek. Kamera uzoqlashib ko'tariladi: 3 s dan keyin kadr tepasida qora tasma o'sadi (7.8 s da ~410 px) — u yerga katta @sahiychishopbot yoziladi, tasma cheti montajda gradient bilan yumshatiladi |
+
+## Yig'ish (2026-10-26)
+- Musiqa: «Doira and the Robot» (`video/robot/music/doira_and_the_robot.mp3`, 41 s dan, egasi tanladi, ovozi 0.4 — egasi «ozgina pasaytir»), Suno → «Music: made with Suno», monetizatsiyasiz.
+- Buyruq: `python3 video/oyiga/prep_clips.py` keyin `yig.py --dir video/oyiga --voice dialog_fx.wav --avq "Siz-chi?|Nasiyaga nima olgansiz?|Izohga yozing!" --music video/robot/music/doira_and_the_robot.mp3:41 --music-vol 0.4 --send`.
+- Natija: `video/final/oyiga/1-telegram-oyiga-uz.mp4` (83.4 s; qotgan/qora kadr, ovozsiz joy yo'q).
