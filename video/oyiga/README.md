@@ -21,3 +21,4 @@ Ssenariy `ideas/oyiga-atigi.md`, ovoz `dialog.wav` (qatorlar vaqti `OVOZ.md`), r
 - Musiqa: «Doira and the Robot» (`video/robot/music/doira_and_the_robot.mp3`, 41 s dan, egasi tanladi, ovozi 0.4 — egasi «ozgina pasaytir»), Suno → «Music: made with Suno», monetizatsiyasiz.
 - Buyruq: `python3 video/oyiga/prep_clips.py` keyin `yig.py --dir video/oyiga --voice dialog_fx.wav --avq "Siz-chi?|Nasiyaga nima olgansiz?|Izohga yozing!" --music video/robot/music/doira_and_the_robot.mp3:41 --music-vol 0.4 --send`.
 - Natija: `video/final/oyiga/1-telegram-oyiga-uz.mp4` (83.4 s; qotgan/qora kadr, ovozsiz joy yo'q).
+- en/ru: `python3 video/oyiga/tarjima.py` (timeline_en/ru.py + 3 ta .srt), keyin `yig.py ... --reuse --tl en --lang en` (avatar: «And you?|What did you buy on installments?|Write in the comments!») va `--tl ru --lang ru` («А вы?|Что брали в рассрочку?|Пишите в комментариях!»). Post matnlari: `POSTS.md`.

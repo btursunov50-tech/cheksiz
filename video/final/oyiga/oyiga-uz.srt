@@ -1,0 +1,108 @@
+1
+00:00:00,100 --> 00:00:01,950
+Oyiga atigi yuz ming.
+
+2
+00:00:02,660 --> 00:00:06,120
+Lekin jami qanchaligini hech kim aytmadi.
+
+3
+00:00:07,700 --> 00:00:10,300
+Usta, oyiga atigi yuz ming ekan!
+
+4
+00:00:10,300 --> 00:00:11,840
+Bemalol olaman.
+
+5
+00:00:13,410 --> 00:00:14,210
+Necha oyga?
+
+6
+00:00:14,540 --> 00:00:15,660
+Jami qancha to'laysan?
+
+7
+00:00:17,230 --> 00:00:18,450
+Yuz ming...
+
+8
+00:00:19,230 --> 00:00:20,670
+o'n ikki oy...
+
+9
+00:00:21,670 --> 00:00:24,060
+bir million ikki yuz ming.
+
+10
+00:00:25,530 --> 00:00:27,630
+Bunga boshlang'ich to'lov,
+
+11
+00:00:27,970 --> 00:00:29,360
+xizmat haqi qo'shilsa-chi?
+
+12
+00:00:30,980 --> 00:00:33,660
+Sotuvchi faqat oylik to'lovni aytdi.
+
+13
+00:00:34,910 --> 00:00:36,430
+Naqd narxini so'ramabman.
+
+14
+00:00:38,190 --> 00:00:41,030
+Kichik bo'lingan narx katta summani yashiradi.
+
+15
+00:00:41,710 --> 00:00:43,440
+Ikkalasini yonma-yon qo'y.
+
+16
+00:00:45,260 --> 00:00:46,310
+Uchta savol ber.
+
+17
+00:00:47,150 --> 00:00:48,680
+Naqd narxi qancha?
+
+18
+00:00:49,650 --> 00:00:51,240
+Jami qancha to'layman?
+
+19
+00:00:52,110 --> 00:00:53,590
+Kechiksam nima bo'ladi?
+
+20
+00:00:54,860 --> 00:00:55,900
+Shoshilmayman.
+
+21
+00:00:55,900 --> 00:00:57,600
+Avval hisoblab ko'raman.
+
+22
+00:00:59,120 --> 00:01:02,220
+«Oyiga atigi» degandan keyin bitta savol qoladi:
+
+23
+00:01:02,840 --> 00:01:04,690
+oxirida jami qancha?
+
+24
+00:01:06,040 --> 00:01:09,800
+Narx yorlig'i yoki shartnoma suratini botimizga yuboring:
+
+25
+00:01:09,800 --> 00:01:10,800
+@sahiychishopbot
+
+26
+00:01:10,800 --> 00:01:13,000
+Jami qancha to'lashingizni hisoblab,
+
+27
+00:01:13,000 --> 00:01:16,060
+sotuvchiga qaysi savollarni berishni aytib beradi.
+
