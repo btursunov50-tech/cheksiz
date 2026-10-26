@@ -8,5 +8,7 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 | `vaqt/` | «VAQT»: Buxoro savdogari, VAQT hisobni ko'rsatadi, oltin xotiralar; «bugun va hozir» (fayllar: `1-telegram-vaqt-uz.mp4`, `2-youtube-linkedin-vaqt-en.mp4`, `3-instagram-facebook-vaqt-ru.mp4`, `vaqt-uz/en/ru.srt`; matnlar `video/vaqt/POSTS.md`; musiqa: Nocturnal Tension, Suno) | navbatda |
 | `robot/` | «Robot bilan bir piyola choy» (2:45): robot va lavash do'koni egasi choyxonada; kamera, AI-shifokor, yurist, parol so'ragan «AI» — firibgar; botga chaqiriq ekranda (fayllar: `1-telegram-robot-uz.mp4`, `2-youtube-linkedin-robot-en.mp4`, `3-instagram-facebook-robot-ru.mp4`, `robot-uz/en/ru.srt`; matnlar `video/robot/POSTS.md`; musiqa: Dutar's Whisper) | navbatda |
 
+| `oyiga/` | «Oyiga atigi…»: Diyor va Usta, nasiya — oylik to'lov katta, jami summa yashirin; 3 savol; bot narx yorlig'idan jamini hisoblaydi (fayllar: `1-telegram-oyiga-uz.mp4`; en/ru keyin; musiqa: Doira and the Robot, Suno) | egasi tekshiryapti |
+
 Fayllar: `1-telegram-*-uz.mp4` (Telegram), `2-youtube-linkedin-*-en.mp4` (YouTube + LinkedIn), `3-instagram-facebook-*-ru.mp4` (Instagram + Facebook), `*-uz.srt`, `*-ru.srt`, `*-en.srt` (YouTube subtitrlari).
 GitHub'dan yuklab olish: fayl ustiga bosing → «Download raw file».
