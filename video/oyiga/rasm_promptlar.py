@@ -104,53 +104,57 @@ S = [
 
 # Veo (rasm → video) promptlari, egasi (2026-10-26): har birining boshida kamera harakati; hayajon va mimika joylarida
 # yaqin plan + yuz ifodasi aniq yoziladi; qahramonlar aniq harakat qiladi. Qo'shni sahnalarda harakat takrorlanmaydi.
-KEEP = ("Keep every character exactly as in the image for the whole clip: the same face, age, hair, beard, clothes, colours and props, "
-        "the same number of arms and hands, young smooth hands. Keep the background, the colours and the painted illustration style exactly as in the image. "
-        "Facial expressions are clear and alive (eyes, eyebrows, cheeks, head movement) but there is no dialogue and no lip-sync: mouths move only slightly. "
-        "No new people, no extra objects, no brand logos on phones or boxes, no text, no letters, no numbers, no captions, no subtitles, no watermark. Only quiet ambient sound.")
+KEEP = ("Keep every character exactly as in the image for the whole clip, also when the camera comes closer: the same face shape, eyes, eyebrows, beard, age, hair, "
+        "clothes, colours and props; Usta's doppi keeps its white arch embroidery; Diyor's hoodie stays dark navy blue and his cyan-blue glow stays only a thin outline around him, it never colours his body or clothes. "
+        "The same number of arms and hands, exactly five fingers on each hand, young smooth hands; objects stay where they are unless the action moves them, nothing shrinks, melts or disappears. "
+        "Keep the background, the colours and the painted illustration style exactly as in the image. "
+        "Facial expressions are clear and alive (eyes, eyebrows, cheeks, head movement) but there is no dialogue and no lip-sync: mouths move only slightly, no wide toothy grins. "
+        "No new people, no extra objects, no brand logos on phones or boxes, no text, no letters, no numbers, no symbols on cards, screens or paper, no captions, no subtitles, no watermark. Only quiet ambient sound.")
+# Egasi (2026-10-26): «rasm bilan solishtir, Veo xato qilmasin». Har prompt o'z rasmidagi kadrdan boshlanadi; birinchi kliplardagi xatolar
+# (yaqin planda yuz o'zgarishi, nur butun tanani bo'yashi, yorliqda soxta yozuv, narsa yo'qolishi) KEEP va har sahnada taqiqlangan.
 V = {
- 1: ("Slow push-in from a medium shot toward Usta, ending in a medium close-up of his face with the tiny red card beside him",
-     "Usta points at the tiny red card, then slowly turns his head to the camera; his eyes narrow knowingly, one eyebrow lifts and a sly half-smile spreads across his face. "
+ 1: ("Slow push-in from the medium shot in the image toward Usta, ending in a medium shot from the knees up (not a close-up), the tiny red card still beside him",
+     "Usta points at the tiny red card, then slowly turns his head to the camera; his eyes narrow knowingly, one eyebrow lifts and a calm sly half-smile appears. "
      "Rain drops glitter in the golden window light; the big yellow card glows softly. "
-     "Both price cards stay blank for the whole clip, with nothing written on them, no letters, no symbols; the small red card stays hanging in the window, Usta never takes it in his hand. "
-     "Usta's face stays exactly as in the image, a calm half-smile, never a wide toothy grin."),
- 2: ("Handheld camera with a light natural bounce, slowly circling a little to the right around Diyor, keeping his face in frame",
-     "Diyor bounces on his toes with joy, hugs the phone to his chest, then lifts it close to his face; his eyes go wide and shining, eyebrows jump up, "
-     "a huge open grin, his cheeks round with happiness; his cyan-blue glow flickers brighter."),
- 3: ("Macro close-up with a slow rack focus: from the glowing red card seen through the magnifying glass to Usta's face behind it",
-     "Usta slowly moves the magnifying glass closer to the red card; the red card grows larger in the lens; he squints one eye, raises one eyebrow high "
-     "and gives a slow, suspicious little nod; warm orange street-lamp light flickers on his face."),
- 4: ("Slow 90-degree orbit around Diyor from his left side to the front, ending on a close-up of his face and fingers",
-     "Diyor taps his fingers one by one, counting; with every tap one more golden coin around his head lights up brighter; his lips count silently; "
-     "at the end his eyebrows shoot up, his eyes go very wide and his jaw drops slowly in surprise; he freezes with his fingers in the air."),
- 5: ("Low-angle shot, slow crane up along the tall golden coin column, then a gentle pull-back at the end so both columns fit in the frame with Usta's face above them",
-     "speed ramp: Usta lets the glowing red coin go; it falls onto the top of the column in extreme slow motion, turning and catching the light, and lands with a crisp clink; "
-     "normal speed resumes; a short bright burst of golden and red sparks flies up from the top of the column, and right next to it on the counter a SECOND column of golden coins "
+     "Both price cards stay blank for the whole clip, with nothing written on them; the small red card stays hanging in the window, Usta never takes it in his hand."),
+ 2: ("Handheld camera with a light natural bounce, slowly circling a little to the right around Diyor, keeping his whole upper body in frame",
+     "Diyor bounces on his toes with joy and hugs the phone to his chest with both hands, then lifts it in front of his chest and looks at it; his eyes go wide and shining, eyebrows jump up, "
+     "a big happy smile, his cheeks round with happiness; he never puts the phone to his ear; his cyan-blue outline flickers a little brighter."),
+ 3: ("Slow rack focus: from the glowing red card seen through the magnifying glass to Usta's face behind it",
+     "Usta slowly moves the magnifying glass closer to the red card; the red card grows larger in the lens and stays blank; he squints one eye, raises one eyebrow high "
+     "and gives a slow, suspicious little nod; warm orange street-lamp light flickers on his face; his other hand stays on the window frame."),
+ 4: ("Slow 90-degree orbit around Diyor from his left side to the front, ending in a medium close-up of his face and both hands",
+     "Diyor taps his fingers one by one, counting; with every tap one more golden coin in the circle around his head lights up brighter; the coins stay in their circle, they never fall; his lips count silently; "
+     "at the end his eyebrows shoot up, his eyes go very wide and his mouth opens slowly in surprise; he freezes with his fingers in the air."),
+ 5: ("Slow pull-back (dolly out) from the medium shot in the image, ending wide enough that two coin columns fit in the frame with Usta's face above them",
+     "speed ramp: Usta lets the glowing red coin go; it falls onto the top of the column in extreme slow motion, turning and catching the light, and lands on the other red coin with a crisp clink; "
+     "normal speed resumes; a short burst of golden and red sparks flies up from the top of the column, and on the counter just to the LEFT of the first column (away from the phone box) a SECOND column of golden coins "
      "with red coins on top quickly grows up out of the sparks, coin by coin, until it is as tall as the first one; now two tall columns stand side by side, the total has doubled. "
-     "The first column stays exactly the same height and in the same place for the whole clip, it never shrinks, never falls, never disappears; no coins scatter on the table; the sparks fade quickly. "
-     "Usta watches the second column grow, then looks into the camera and raises his eyebrows meaningfully with a small knowing smile; his face stays exactly as in the image, never a wide toothy grin, eyes stay open."),
- 6: ("Smooth lateral dolly (truck) left from the smiling seller behind the counter to Diyor in the foreground, ending in a medium close-up of Diyor",
-     "the seller grins widely and wiggles the big golden card toward Diyor; Diyor scratches the back of his head, his smile fades into an awkward embarrassed smile, "
-     "he lowers his eyes to the floor, his cheeks blush and his cyan glow dims; he shrugs one shoulder."),
- 7: ("Slow pull-back from a close-up of the heavy right pan to a medium shot showing the whole scale and Usta",
-     "the right pan with the big golden and red pile sinks a little lower with a heavy clunk while the left pan with the small stack rises; "
-     "Usta points from the small stack to the big pile, turns to the camera and nods slowly, eyebrows raised, a calm serious look."),
- 8: ("Slow arc (orbit) of about 30 degrees to the right around Usta, ending in a medium close-up with the three symbols above his hand",
-     "Usta raises his hand with three fingers; the golden coin, the blue receipt and the red hourglass pulse brightly one after another, left to right, "
-     "and with each pulse Usta gives a small firm nod and his eyebrows lift; at the end he looks straight into the camera with a confident, caring look."),
- 9: ("Smooth lateral dolly (truck) right following Diyor's hand as he puts the phone back on the shelf, then a slight push-in to his face",
-     "Diyor calmly puts the phone back on the glowing shelf and lets it go; he turns to the camera with a relaxed, clever smile and a confident little nod, "
-     "taps the pencil on his notebook and writes a line; his cyan-blue glow becomes bright and steady."),
- 10: ("Very slow push-in from a close-up to an extreme close-up of Usta's eyes",
-      "Usta looks straight into the camera, tilts his head slightly, his eyes soften and crinkle into a warm wise smile, then his eyebrows rise slowly as if asking a question; "
-      "the orange street-lamp light flickers gently on one side of his face, deep blue on the other."),
+     "The first column stays exactly the same height and in the same place for the whole clip, it never shrinks, never falls, never disappears; the phone box stays where it is; no coins scatter on the table; the sparks fade quickly. "
+     "Usta watches the second column grow, then looks into the camera and raises his eyebrows meaningfully with a small knowing smile, eyes open; his left hand stays on the counter."),
+ 6: ("Smooth lateral dolly (truck) left from the smiling seller behind the counter to Diyor in the foreground, ending in a medium shot of Diyor",
+     "the seller grins and wiggles the big blank golden card toward Diyor; Diyor keeps scratching the back of his head with one hand and holds the phone in the other; his smile fades into an awkward embarrassed smile, "
+     "he lowers his eyes to the floor, his cheeks blush pink and he shrugs one shoulder. All colours stay exactly as in the image: no green or teal tint on Diyor, his hoodie stays dark navy blue, "
+     "his thin cyan outline only becomes a little fainter."),
+ 7: ("Slow tilt down from Usta's face to the scale, ending on both pans of the scale with Usta's pointing hand still in frame",
+     "the right pan with the big golden and red pile sinks a little lower with a heavy clunk while the left pan with the small stack rises a little; the coins stay on their pans; "
+     "Usta moves his pointing finger from the small stack to the big pile and nods slowly with raised eyebrows, a calm serious look; his other hand stays at his side."),
+ 8: ("Slow arc (orbit) of about 30 degrees to the right around Usta, ending in a medium shot with his raised hand and the three symbols above it",
+     "Usta keeps exactly three fingers raised for the whole clip; the golden coin, the blue receipt and the red hourglass pulse brightly one after another, left to right, and stay floating in their places; "
+     "the receipt stays blank with only faint lines, no letters; with each pulse Usta gives a small firm nod and his eyebrows lift; at the end he looks straight into the camera with a confident, caring look."),
+ 9: ("Smooth lateral dolly (truck) right along the shop window, ending in a medium shot of Diyor next to the shelf",
+     "Diyor calmly pushes the phone back into its place on the glowing shelf and lets it go, then lowers that hand; he turns his head to the camera with a relaxed, clever smile and a confident little nod, "
+     "holding the notebook and pencil in his other hand close to his chest; the phones on the shelf stay plain with no logos; his thin cyan-blue outline becomes bright and steady."),
+ 10: ("Very slow push-in on Usta's face, ending in a slightly closer head-and-shoulders close-up (never closer than the whole face)",
+      "Usta looks straight into the camera, tilts his head slightly, his eyes soften into a warm wise smile, then his eyebrows rise slowly as if asking a question; "
+      "the orange street-lamp light flickers gently on one side of his face, deep blue on the other; his face shape, beard and doppi stay exactly as in the image."),
  11: ("Slow dolly out and crane up, ending in a medium wide shot with empty dark space in the top third of the frame",
-      "Usta pushes the glowing teal phone toward the camera and the chat bubbles on the screen pulse softly; with his other hand he gives Diyor's shoulder a friendly squeeze; "
-      "Diyor grins, bounces once and pumps his thumb up; both look into the camera with happy, confident faces."),
+      "Usta pushes the glowing teal phone a little toward the camera; the screen keeps only the gold card picture and the empty chat bubbles, which pulse softly, no letters appear; "
+      "with his other hand he gives Diyor's shoulder a friendly squeeze; Diyor smiles, bounces once and pumps his thumb up; both look into the camera with happy, confident faces."),
 }
 DUR = {8: "ovoz 10 s: klip 8 s, montajda ~1.25x sekinlashtiraman", 11: "ovoz 11 s: klip 8 s, montajda ~1.4x sekinlashtiraman"}
-CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish", 3: "fokus ko'chishi (lupa → yuz)", 4: "90° aylanish", 5: "pastdan ko'tarilish + sekinlashuv, oxirida biroz uzoqlashish (2 ta ustun)",
-         6: "yon tomonga suzish", 7: "uzoqlashish", 8: "30° yoy", 9: "yon tomonga + yaqinlashish", 10: "juda sekin yaqinlashish (ko'zlar)", 11: "uzoqlashib ko'tarilish"}
+CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish", 3: "fokus ko'chishi (lupa → yuz)", 4: "90° aylanish", 5: "sekin uzoqlashish + tanga sekinlashuvi (2 ta ustun)",
+         6: "yon tomonga suzish", 7: "yuzdan taroziga pastga burilish", 8: "30° yoy", 9: "vitrina bo'ylab yon tomonga suzish", 10: "juda sekin yaqinlashish (yuz to'liq qoladi)", 11: "uzoqlashib ko'tarilish"}
 def vp(n):
     cam, act = V[n]
     return f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} {KEEP}"
