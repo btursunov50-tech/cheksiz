@@ -8,9 +8,11 @@ import html
 IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ yuz, qo'llar, ranglar to'g'ri · ⚠️ telefonlarda Apple belgisi")],
  2: [("s02", "✅ yuz, qo'llar, ranglar to'g'ri · ⚠️ telefonlarda Apple belgisi")],
+ 3: [("s03", "❌ qo'llar qari, yuz kattaroq · tahrir kerak")],
 }
 NOTE = {
  1: "Usta yuzi namunadek (do'ppi, qora soqol, chopon, qizil belbog'), qo'llari yosh, ikki qo'l: biri ko'rsatadi, biri pastda. Sariq yorliq va qizil yorliq bo'sh. Orqada Toshkent teleminorasi. Ranglar: sariq, ko'k, qizil. Kamchilik: vitrinadagi 2 ta oq telefonda Apple belgisi bor — tahrir prompti bilan olib tashlanadi.",
+ 3: "Kiyim, do'ppi, lupa, qizil yorliq, ranglar (to'q sariq, qizil) to'g'ri. Xato: ikkala qo'li qari (ajin, bo'rtgan tomirlar, chuqur bo'g'im chiziqlari), yuzida peshona ajinlari va ko'z atrofida chiziqlar — ~40 yoshdek. Tahrir: qo'llar va yuz 30 yoshga, Apple belgisini olib tashlash.",
  2: "Diyor yuzi namunadek (to'zg'igan soch, katta ko'zlar, xudi, moviy nur, sumka tasmasi), telefon ikki qo'lida. Ranglar: sariq, moviy. Kamchilik: vitrinadagi va qo'lidagi telefonlarda Apple belgisi ko'rinadi — tahrir prompti bilan olib tashlanadi.",
 }
 
