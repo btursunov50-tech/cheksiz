@@ -123,11 +123,12 @@ V = {
  4: ("Slow 90-degree orbit around Diyor from his left side to the front, ending on a close-up of his face and fingers",
      "Diyor taps his fingers one by one, counting; with every tap one more golden coin around his head lights up brighter; his lips count silently; "
      "at the end his eyebrows shoot up, his eyes go very wide and his jaw drops slowly in surprise; he freezes with his fingers in the air."),
- 5: ("Low-angle shot, slow crane up along the tall golden coin column, ending on Usta's face above it",
-     "speed ramp: Usta lets the glowing red coin go; it falls onto the top of the column in extreme slow motion, turning and catching the light, "
-     "and lands on top of the other red coin with a crisp clink and only two or three tiny red sparks; normal speed resumes; Usta looks into the camera and raises his eyebrows meaningfully, a small knowing smile. "
-     "The tall golden coin column stays exactly the same height and in the same place for the whole clip with both red coins on its top; it never shrinks, never falls, never disappears; "
-     "no explosion, no burst of sparks, no coins scattering on the table. Usta's face stays exactly as in the image, never a wide toothy grin, eyes stay open."),
+ 5: ("Low-angle shot, slow crane up along the tall golden coin column, then a gentle pull-back at the end so both columns fit in the frame with Usta's face above them",
+     "speed ramp: Usta lets the glowing red coin go; it falls onto the top of the column in extreme slow motion, turning and catching the light, and lands with a crisp clink; "
+     "normal speed resumes; a short bright burst of golden and red sparks flies up from the top of the column, and right next to it on the counter a SECOND column of golden coins "
+     "with red coins on top quickly grows up out of the sparks, coin by coin, until it is as tall as the first one; now two tall columns stand side by side, the total has doubled. "
+     "The first column stays exactly the same height and in the same place for the whole clip, it never shrinks, never falls, never disappears; no coins scatter on the table; the sparks fade quickly. "
+     "Usta watches the second column grow, then looks into the camera and raises his eyebrows meaningfully with a small knowing smile; his face stays exactly as in the image, never a wide toothy grin, eyes stay open."),
  6: ("Smooth lateral dolly (truck) left from the smiling seller behind the counter to Diyor in the foreground, ending in a medium close-up of Diyor",
      "the seller grins widely and wiggles the big golden card toward Diyor; Diyor scratches the back of his head, his smile fades into an awkward embarrassed smile, "
      "he lowers his eyes to the floor, his cheeks blush and his cyan glow dims; he shrugs one shoulder."),
@@ -148,7 +149,7 @@ V = {
       "Diyor grins, bounces once and pumps his thumb up; both look into the camera with happy, confident faces."),
 }
 DUR = {8: "ovoz 10 s: klip 8 s, montajda ~1.25x sekinlashtiraman", 11: "ovoz 11 s: klip 8 s, montajda ~1.4x sekinlashtiraman"}
-CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish", 3: "fokus ko'chishi (lupa → yuz)", 4: "90° aylanish", 5: "pastdan ko'tarilish + sekinlashuv",
+CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish", 3: "fokus ko'chishi (lupa → yuz)", 4: "90° aylanish", 5: "pastdan ko'tarilish + sekinlashuv, oxirida biroz uzoqlashish (2 ta ustun)",
          6: "yon tomonga suzish", 7: "uzoqlashish", 8: "30° yoy", 9: "yon tomonga + yaqinlashish", 10: "juda sekin yaqinlashish (ko'zlar)", 11: "uzoqlashib ko'tarilish"}
 def vp(n):
     cam, act = V[n]
