@@ -99,6 +99,54 @@ S = [
   f"Warm golden shop light behind them, deep blue shadows. Leave empty dark space in the top third of the frame for a title. {HANDS}"),
 ]
 
+# Veo (rasm → video) promptlari, egasi (2026-10-26): har birining boshida kamera harakati; hayajon va mimika joylarida
+# yaqin plan + yuz ifodasi aniq yoziladi; qahramonlar aniq harakat qiladi. Qo'shni sahnalarda harakat takrorlanmaydi.
+KEEP = ("Keep every character exactly as in the image for the whole clip: the same face, age, hair, beard, clothes, colours and props, "
+        "the same number of arms and hands, young smooth hands. Keep the background, the colours and the painted illustration style exactly as in the image. "
+        "Facial expressions are clear and alive (eyes, eyebrows, cheeks, head movement) but there is no dialogue and no lip-sync: mouths move only slightly. "
+        "No new people, no extra objects, no brand logos on phones or boxes, no text, no letters, no numbers, no captions, no subtitles, no watermark. Only quiet ambient sound.")
+V = {
+ 1: ("Slow push-in from a medium shot toward Usta, ending in a medium close-up of his face with the tiny red card beside him",
+     "Usta points at the tiny red card, then slowly turns his head to the camera; his eyes narrow knowingly, one eyebrow lifts and a sly half-smile spreads across his face. "
+     "Rain drops glitter in the golden window light; the big yellow card glows softly."),
+ 2: ("Handheld camera with a light natural bounce, slowly circling a little to the right around Diyor, keeping his face in frame",
+     "Diyor bounces on his toes with joy, hugs the phone to his chest, then lifts it close to his face; his eyes go wide and shining, eyebrows jump up, "
+     "a huge open grin, his cheeks round with happiness; his cyan-blue glow flickers brighter."),
+ 3: ("Macro close-up with a slow rack focus: from the glowing red card seen through the magnifying glass to Usta's face behind it",
+     "Usta slowly moves the magnifying glass closer to the red card; the red card grows larger in the lens; he squints one eye, raises one eyebrow high "
+     "and gives a slow, suspicious little nod; warm orange street-lamp light flickers on his face."),
+ 4: ("Slow 90-degree orbit around Diyor from his left side to the front, ending on a close-up of his face and fingers",
+     "Diyor taps his fingers one by one, counting; with every tap one more golden coin around his head lights up brighter; his lips count silently; "
+     "at the end his eyebrows shoot up, his eyes go very wide and his jaw drops slowly in surprise; he freezes with his fingers in the air."),
+ 5: ("Low-angle shot, slow crane up along the tall golden coin column, ending on Usta's face above it",
+     "speed ramp: Usta lets the glowing red coin go; it falls onto the top of the column in extreme slow motion, turning and catching the light, "
+     "and lands with a crisp clink and a few tiny red sparks; normal speed resumes; the column wobbles slightly; Usta looks into the camera and raises his eyebrows meaningfully, a small knowing smile."),
+ 6: ("Smooth lateral dolly (truck) left from the smiling seller behind the counter to Diyor in the foreground, ending in a medium close-up of Diyor",
+     "the seller grins widely and wiggles the big golden card toward Diyor; Diyor scratches the back of his head, his smile fades into an awkward embarrassed smile, "
+     "he lowers his eyes to the floor, his cheeks blush and his cyan glow dims; he shrugs one shoulder."),
+ 7: ("Slow pull-back from a close-up of the heavy right pan to a medium shot showing the whole scale and Usta",
+     "the right pan with the big golden and red pile sinks a little lower with a heavy clunk while the left pan with the small stack rises; "
+     "Usta points from the small stack to the big pile, turns to the camera and nods slowly, eyebrows raised, a calm serious look."),
+ 8: ("Slow arc (orbit) of about 30 degrees to the right around Usta, ending in a medium close-up with the three symbols above his hand",
+     "Usta raises his hand with three fingers; the golden coin, the blue receipt and the red hourglass pulse brightly one after another, left to right, "
+     "and with each pulse Usta gives a small firm nod and his eyebrows lift; at the end he looks straight into the camera with a confident, caring look."),
+ 9: ("Smooth lateral dolly (truck) right following Diyor's hand as he puts the phone back on the shelf, then a slight push-in to his face",
+     "Diyor calmly puts the phone back on the glowing shelf and lets it go; he turns to the camera with a relaxed, clever smile and a confident little nod, "
+     "taps the pencil on his notebook and writes a line; his cyan-blue glow becomes bright and steady."),
+ 10: ("Very slow push-in from a close-up to an extreme close-up of Usta's eyes",
+      "Usta looks straight into the camera, tilts his head slightly, his eyes soften and crinkle into a warm wise smile, then his eyebrows rise slowly as if asking a question; "
+      "the orange street-lamp light flickers gently on one side of his face, deep blue on the other."),
+ 11: ("Slow dolly out and crane up, ending in a medium wide shot with empty dark space in the top third of the frame",
+      "Usta pushes the glowing teal phone toward the camera and the chat bubbles on the screen pulse softly; with his other hand he gives Diyor's shoulder a friendly squeeze; "
+      "Diyor grins, bounces once and pumps his thumb up; both look into the camera with happy, confident faces."),
+}
+DUR = {8: "ovoz 10 s: klip 8 s, montajda ~1.25x sekinlashtiraman", 11: "ovoz 11 s: klip 8 s, montajda ~1.4x sekinlashtiraman"}
+CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish", 3: "fokus ko'chishi (lupa → yuz)", 4: "90° aylanish", 5: "pastdan ko'tarilish + sekinlashuv",
+         6: "yon tomonga suzish", 7: "uzoqlashish", 8: "30° yoy", 9: "yon tomonga + yaqinlashish", 10: "juda sekin yaqinlashish (ko'zlar)", 11: "uzoqlashib ko'tarilish"}
+def vp(n):
+    cam, act = V[n]
+    return f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} {KEEP}"
+
 e = html.escape
 cards = []
 for n, t, voice, cols, scene in S:
@@ -108,10 +156,10 @@ for n, t, voice, cols, scene in S:
     imgs = "".join(f'<figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna, {e(c)}"><figcaption>{e(c)}</figcaption></figure>' for f, c in IMG.get(n, []))
     got = (f'<div class="scenes">{imgs}</div>' + (f'<p class="note">{e(NOTE[n])}</p>' if n in NOTE else "")) if imgs else ""
     cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span><span class="sws">{sw}</span></header>{got}
-<div class="row"><div class="refs"><p class="rh">Shu rasmni biriktiring:</p>{refs}</div>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
-<span class="lbl">Rasm prompti (ChatGPT, 9:16)</span>
-<pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></div></div></article>""")
+<span class="lbl">Kamera: {e(CAMUZ[n])}</span>
+<span class="lbl">Veo prompti (9:16, 8 s) — Veo'ga yuqoridagi rasmni yuklang{(" · " + e(DUR[n])) if n in DUR else ""}</span>
+<pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></article>""")
 
 page = f"""<title>Oyiga atigi sahnalari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -151,7 +199,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Oyiga atigi…» <em>sahnalari</em></h1>
-<p class="intro">11 ta sahna. Har biri uchun: ChatGPT'da yangi chat oching, chapdagi namuna rasmni biriktiring, «Nusxa olish» bilan promptni qo'ying va o'lchamni 9:16 qiling. Har kadrda faqat 2–3 ta rang bor, ular sarlavha yonida ko'rsatilgan. Narx va raqamlarni montajda o'zimiz yozamiz, shuning uchun rasmda yorliqlar bo'sh bo'ladi. Veo promptlari rasmlar tasdiqlangach shu sahifaga qo'shiladi.</p>
+<p class="intro">Rasmlar tayyor. Endi har sahna uchun: Veo'da «Frames to video» ni oching, shu kartadagi rasmni yuklang (belgilari tozalangan .png fayl), o'lchamni 9:16 qiling va «Nusxa olish» bilan promptni qo'ying (8 s). Har promptning boshida kamera harakati bor, hayajonli joylarda yuz ifodasi yozilgan. Rasm promptlari repoda saqlanadi (rasm_promptlar.py). Narx va raqamlarni montajda o'zimiz yozamiz.</p>
 {''.join(cards)}
 </div>
 <script>
