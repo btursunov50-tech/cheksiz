@@ -19,6 +19,7 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  3: [("s03", "✅ tasdiqlandi (tahrirdan keyin) · Apple belgilari tozalandi (img/s03.png)")],
 }
 NOTE = {
+ # klip izohlari (Veo, 2026-10-26)
  1: "Usta yuzi namunadek (do'ppi, qora soqol, chopon, qizil belbog'), qo'llari yosh, ikki qo'l: biri ko'rsatadi, biri pastda. Sariq yorliq va qizil yorliq bo'sh. Orqada Toshkent teleminorasi. Ranglar: sariq, ko'k, qizil. ChatGPT tahriri belgilarni olib tashlamadi; Claude ularni o'zi tozaladi (OpenCV inpaint). Veo'ga img/s01.png beriladi.",
  3: "Kiyim, do'ppi, lupa, qizil yorliq, ranglar (to'q sariq, qizil) to'g'ri. Xato: ikkala qo'li qari (ajin, bo'rtgan tomirlar, chuqur bo'g'im chiziqlari), yuzida peshona ajinlari va ko'z atrofida chiziqlar — ~40 yoshdek. Tahrirdan keyin: ikkala qo'l yosh (silliq teri, tomir yo'q), yuz namunaga yaqin (qoshini ko'targani uchun peshonada yengil chiziq). 2 ta Apple belgisini Claude tozaladi. Veo'ga img/s03.png beriladi.",
  9: "Diyor yuzi namunadek, xotirjam ayyorona tabassum. Bir qo'li telefonni javonga qo'yadi, biri daftar va qalam ushlagan; nuri yorqin. Ranglar: sariq, ko'k. Vitrinadagi 11 ta Apple belgisi va mayda yozuvni Claude tozaladi.",
@@ -110,7 +111,9 @@ KEEP = ("Keep every character exactly as in the image for the whole clip: the sa
 V = {
  1: ("Slow push-in from a medium shot toward Usta, ending in a medium close-up of his face with the tiny red card beside him",
      "Usta points at the tiny red card, then slowly turns his head to the camera; his eyes narrow knowingly, one eyebrow lifts and a sly half-smile spreads across his face. "
-     "Rain drops glitter in the golden window light; the big yellow card glows softly."),
+     "Rain drops glitter in the golden window light; the big yellow card glows softly. "
+     "Both price cards stay blank for the whole clip, with nothing written on them, no letters, no symbols; the small red card stays hanging in the window, Usta never takes it in his hand. "
+     "Usta's face stays exactly as in the image, a calm half-smile, never a wide toothy grin."),
  2: ("Handheld camera with a light natural bounce, slowly circling a little to the right around Diyor, keeping his face in frame",
      "Diyor bounces on his toes with joy, hugs the phone to his chest, then lifts it close to his face; his eyes go wide and shining, eyebrows jump up, "
      "a huge open grin, his cheeks round with happiness; his cyan-blue glow flickers brighter."),
