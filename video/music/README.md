@@ -5,7 +5,7 @@ Boshqa loyihalardagi treklar: `video/robot/music/`, `video/korish/music/`, `vide
 
 | Fayl | Nomi | Uzunligi | Manba / litsenziya | Ishlatilgan |
 |---|---|---|---|---|
-| `catch_a_vibe_bow_bow_bow.m4a` | «Sometimes you just have to catch a vibe anywhere. Bow Bow Bow out Now!!!!🤠» (fayldagi nom; ijrochi yozilmagan) | 18.5 s | Noma'lum: ijtimoiy tarmoqdagi qo'shiq parchasiga o'xshaydi (egasi 2026-10-26 yubordi). Birovning qo'shig'i bo'lsa, Content ID da'vosi mumkin; ishlatishdan oldin manbani aniqlash kerak | — |
+| `catch_a_vibe_bow_bow_bow.m4a` | «Sometimes you just have to catch a vibe anywhere. Bow Bow Bow out Now!!!!🤠» (fayldagi nom; ijrochi yozilmagan) | 18.5 s | Egasi YouTube Shorts'dan olgan: https://youtube.com/shorts/mp0B-iNZy-c (egasi 2026-10-26 yubordi; bu yerdan ochib bo'lmadi). Birovning qo'shig'i: videoga qo'ysak Content ID da'vosi bo'lishi mumkin. Faqat Instagram/TikTok'ning o'z musiqa kutubxonasidan shu qo'shiq topilsa, o'sha yerda qo'shiladi | — |
 | `../robot/music/dutor_55.mp3` | dutor_55 | 4:00 | egasining treki | — |
 | `../robot/music/dutars_whisper.mp3` | Dutar's Whisper | 8:00 | egasining treki (AI) | Robot bilan bir piyola choy |
 | `../robot/music/the_silk_road.mp3` | The Silk Road | 3:55 | egasining treki | — |
