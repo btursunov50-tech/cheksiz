@@ -121,7 +121,8 @@ S = [
 KEEP = ("Continue exactly from the attached image: same place, same light, same characters in the same positions; every movement continues "
         "forward in the direction it already has in the image and never reverses, nobody walks back or re-enters the frame. "
         "Keep every character exactly as in the image for the whole clip, also when the camera comes closer: the same face, eyes, eyebrows, beard, age, hair, clothes and colours; "
-        "Usta's doppi keeps its white arch embroidery; Diyor's hoodie stays dark navy blue and his cyan-blue glow stays only a thin outline, it never colours his body. "
+        "Usta's doppi keeps its white arch embroidery; Diyor's hoodie stays dark navy blue and his cyan-blue glow stays only a thin outline, it never colours his body; "
+        "Diyor keeps his round boyish face, big eyes and messy straight jet-black hair, never curly and never brown; Usta keeps his fuller face and short neat full black beard and never looks older or thinner. "
         "Exactly two arms, two hands and five fingers on each hand per person, young smooth hands; objects stay where they are unless the action moves them, nothing shrinks, melts or disappears. "
         "Background passers-by stay small, blurred and faceless and keep walking steadily in their own direction the whole clip; light drizzle and reflections on the wet pavement. "
         "Keep the painted illustration style, the cloudy light and the colours exactly as in the image. "
@@ -177,9 +178,20 @@ CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish + yaqinlashish",
          5: "pastdan tepaga ko'tarilish + yorliq sekin tushadi", 6: "60° aylanish", 7: "fokus ko'chishi: taymerdan Ustaga", 8: "30° yoy",
          9: "orqaga yurib kuzatish (Diyor kameraga qarab yuradi)", 10: "qotib turadi, qiz chiqib ketgach ikkalasiga yaqinlashish", 11: "yuzga juda sekin yaqinlashish",
          12: "uzoqlashib ko'tarilish (tepada osmon)"}
-DUR = {5: "ovoz ~7 s", 8: "ovoz ~9 s: montajda ~1.15x sekinlashadi", 10: "✅ klip bor, faqat 0–2.5 s olinadi (qiz o'tib ketadi); gaplar 10b va 10c da", 12: "ovoz ~9 s: ~1.15x"}
+DUR = {5: "ovoz ~7 s", 8: "ovoz ~9 s: montajda ~1.15x sekinlashadi", 10: "qayta yasang: oldingi klipda Veo Diyor sochini jingalak qildi; faqat qiz o'tib ketadigan 0–2.5 s olinadi, gaplar 10b va 10c da", 12: "ovoz ~9 s: ~1.15x"}
 # 10-klipda (2026-10-27) Veo qizni orqaga qaytardi — 2.5 s dan keyingisi ishlatilmaydi. Hazil gaplari ikkita yangi klipga bo'lindi;
 # boshlang'ich rasm: 10-klipning 2.2-soniyasi (qiz chiqib ketgan, Usta qo'li Diyor yelkasida) → img/s10b.png
+# 10b/10c ning birinchi rasmi (10-klip kadri) xato chiqdi: Veo 10-klipda Diyor sochini jingalak, Usta yuzini ozg'in va qari qilgan edi.
+# Yangi boshlang'ich rasm tasdiqlangan s10.png dan ChatGPT tahriri bilan olinadi (qiz olib tashlanadi).
+EDIT10B = ("Edit the attached image of scene 10, vertical 9:16, medium shot. Keep everything exactly the same: the same street, the same cloudy evening light, the same coral pink and mint shop windows, "
+  "the same camera framing and the same painted illustration style. Only one change: the girl in the atlas dress has already walked away. Remove her completely and fill her place with the "
+  "continuing wet street, the trees and a few small, blurred, faceless passers-by walking away. "
+  f"{U} stays exactly as in the image and as in the attached Usta reference image: the same fuller face, short neat full black beard, age about 30; his hand rests on Diyor's shoulder, "
+  "a sly laughing smile, eyes crinkled. "
+  f"{D} stays exactly as in the image and as in the attached Diyor reference image: round boyish face, big innocent eyes, messy straight jet-black hair (not curly, not brown), "
+  "phone in his hand; he still gazes dreamily to the right where the girl went, with a love-struck goofy smile and slightly pink cheeks. "
+  "Only three main colours: coral pink, mint green and night blue. "
+  f"{HANDS} Exactly five fingers on each hand. Clothes plain with no print. No text, no letters, no numbers, no logos, no watermark.")
 EXTRA = {10: [
  ("10b", "s10b", "ovoz ~6.5 s", "Usta: Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin? — Diyor: Yo'q, usta... men... hisoblayapman!",
   "ikkalasiga sekin yaqinlashish (beldan yuqori)",
@@ -237,11 +249,19 @@ for n, t, voice, cols, scene in S:
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
 <span class="lbl">Kamera: {e(CAMUZ[n])}{(" · " + e(DUR[n])) if n in DUR else ""}</span>
 <pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></div></article>""")
+    if n == 10:
+        cards.append(f"""<article class="card"><header><span class="num">10b</span><h2>10b rasmi — ChatGPT tahriri, 9:16 (tik)</h2><span class="dur">avval shu</span></header>
+<div class="row"><div class="refs"><p class="rh">Uchala rasmni ChatGPT'ga biriktiring (yangi chat):</p>
+<figure class="ref"><img src="web/s10.webp" alt="10-sahna rasmi"><figcaption>s10.png (tahrir qilinadi)</figcaption></figure>
+<figure class="ref"><img src="web/ref_usta.webp" alt="Usta namunasi"><figcaption>ref_usta.png</figcaption></figure>
+<figure class="ref"><img src="web/ref_diyor.webp" alt="Diyor namunasi"><figcaption>ref_diyor.png</figcaption></figure></div>
+<div class="txt"><span class="lbl">Nima uchun</span><p class="voice">Veo 10-klipda Diyor sochini jingalak, Ustani ozg'in va qariroq qilib qo'ydi; 10b/10c shu klipdan boshlangani uchun xato ularga ham o'tdi. Yangi rasm tasdiqlangan 10-sahna rasmidan olinadi: qiz olib tashlanadi, qolgani o'zgarmaydi.</p>
+<pre id="e10b">{e(EDIT10B)}</pre><button class="copy" data-t="e10b">Nusxa olish</button></div></div></article>""")
     for k, f2, d2, voice2, camuz2, cam2, act2, say2 in EXTRA.get(n, []):
         dl = " ".join(f'{w} says in Uzbek, in {globals()[v]}: "{t2}"' for w, v, t2 in say2)
         pr = f"Vertical 9:16, 8 seconds. Start from the attached image. Camera: {cam2}. Action: {act2} Dialogue: {dl} {KEEP}"
         cards.append(f"""<article class="card"><header><span class="num">{k}</span><h2>{k}-sahna — 9:16 (tik), 8 s</h2><span class="dur">yangi</span></header>
-<div class="row"><figure class="sc"><img src="web/{f2}.webp" alt="{k}-sahna rasmi"><figcaption>Veo'ga: {f2}.png (10-klipning 2.2-soniyasi)</figcaption></figure>
+<div class="row"><figure class="sc"><img src="web/s10.webp" alt="{k}-sahna rasmi"><figcaption>Veo'ga: yangi 10b rasmi (tepadagi tahrirdan) — kelgach shu yerga qo'yiladi</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice2)}</p>
 <span class="lbl">Kamera: {e(camuz2)} · {e(d2)}</span>
 <pre id="v{k}">{e(pr)}</pre><button class="copy" data-t="v{k}">Nusxa olish</button></div></div></article>""")
