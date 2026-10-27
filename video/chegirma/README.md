@@ -22,3 +22,9 @@ Ssenariy `ideas/chegirma.md`, ovoz bloki `OVOZ.md` (15 qator), rasm va Veo promp
 
 **Yuz tekshiruvi (2026-10-27, egasi so'radi):** 10, 10b, 10c kliplarida Diyor sochi jingalak va jigarrang (namunada tekis, qora, to'zg'in), yuzi ozg'in va realistik; Usta ozg'in, qariroq, soqoli siyrak. Xato 10-klipda Veo'dan boshlangan, 10b/10c shu klip kadridan boshlangani uchun xato ularga ham o'tdi (Claude tekshirmay olgan). Yangi 10b rasmi tasdiqlangan s10.png dan ChatGPT tahriri bilan olinadi, keyin 10, 10b, 10c qayta yasaladi. Promptlarga soch va yosh qulfi qo'shildi.
 Yangi `img/s10b.png` (2026-10-27): s10.png dan qiz olib tashlangan; Usta va Diyor yuzlari s10.png va namunalar bilan solishtirildi — bir xil (Diyor sochi tekis, qora). 10b va 10c shu rasmdan qayta yasaladi.
+
+## Yig'ish (2026-10-27)
+- Ovoz: Manus, 15 ta alohida fayl (`voice/`). `build_tl.py` → `dialog.wav` + `timeline.py`, `prep_clips.py` → `clips/use/`.
+- Musiqa: **dutor_55** (egasining treki, 0:20 dan, vol 0.4) — egasi tanladi («1 qolsin»).
+- Buyruq: `python3 video/chegirma/build_tl.py && python3 video/chegirma/prep_clips.py && python3 .claude/skills/video-yig/yig.py --dir video/chegirma --work <tmp> --voice dialog.wav --avq "Siz-chi?|Eng katta chegirmangiz qancha edi?|Izohga yozing!" --music video/robot/music/dutor_55.mp3:20 --music-vol 0.4 --send`
+- Natija: `video/final/chegirma/1-telegram-chegirma-uz.mp4` (89.5 s, qora/qotgan kadr va ovozsiz joy yo'q). en/ru versiyalari egasi uz versiyani tasdiqlagach.
