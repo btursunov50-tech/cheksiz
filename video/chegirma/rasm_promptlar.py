@@ -8,6 +8,8 @@ import html
 IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tanlandi (C, bulutli, img/s01.png)")],
  2: [("s02", "✅ tasdiqlandi (B, img/s02.png)")],
+ 9: [("s09", "✅ tasdiqlandi (img/s09.png)")],
+ 10: [("s10", "✅ tasdiqlandi (img/s10.png)")],
  8: [("s08", "✅ tasdiqlandi (img/s08.png)")],
  7: [("s07", "✅ tasdiqlandi (img/s07.png)")],
  6: [("s06", "✅ tasdiqlandi (tahrirdan keyin, img/s06.png)")],
@@ -17,6 +19,8 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
 }
 NOTE = {
  2: "A variantda Diyorning nuri pushti bo'lib qolgan edi (rad). B: moviy nur joyida, yuz namunadek, bir qo'li bannerni ko'rsatadi, ikkinchisida hamyon o'rniga telefon — 4-sahnadagi hamyon bilan kichik farq, sezilmaydi. Krossovkada juda xira belgi.",
+ 9: "Diyor yuzi namunadek, xotirjam ayyorona tabassum; moviy nur joyida. Do'kondan ko'chaga chiqyapti: bir qo'li hamyonni cho'ntakka qaytaradi, biri telefonda kalkulyator (ekranida raqam yo'q). Orqada bulutli ko'cha, yuzsiz odamlar. Ranglar: yalpiz yashil, bulutli ko'k. Javondagi krossovkalarda kichik Nike chiziqlari bor — orqa fonda, Veo'dan oldin ko'rib chiqiladi.",
+ 10: "Usta yaqin planda kameraga qaraydi, iliq tabassum; do'ppi, soqol namunadek. Ko'z atrofida yengil chiziqlar — boshqa sahnalardan biroz realistikroq/kattaroq ko'rinadi, lekin o'sha odam. Qo'llar kadrda yo'q. Bir tomonda sariq vitrina nuri, orqada bulutli ko'cha.",
  8: "Usta yuzi namunadek. O'ng qo'lda aniq 3 barmoq (bosh barmoq jimjiloqni ushlagan), chap qo'l pastda; ikkalasi yosh. Tepada 3 belgi: sariq lupa, ko'k o'lchov lentasi, pushti savol belgisi — yozuvsiz. Orqada eshikdan bulutli ko'cha, yuzsiz odamlar. Ranglar: sariq, ko'k, pushti. Lentada o'qilmaydigan mayda chiziqlar — normal.",
  7: "Usta yuzi namunadek; kaftini kameraga ochib «shoshilma» deydi — 5 barmoq, yosh qo'l. Oldinda kassada pushti neon taymer, ekrani bo'sh (montajda «faqat bugun 00:59:59»). Ranglar: pushti, binafsha. Chapdagi krossovkalar juda xira, belgi ko'rinmaydi.",
  6: "Diyor yuzi namunadek: hayron, bir qoshi ko'tarilgan, lablari qisilgan. Qo'llar: chap qo'lda 5 barmoq ochiq, o'ng qo'l ko'rsatkich barmog'i bilan sanaydi — to'g'ri. Binafsha neon oyna, sariq javonlar. Kamchilik: Diyorning nuri moviy emas, binafsharang tusga kirgan (atrofdagi binafsha nurdan) — 2-sahnadagi pushtichalik emas; Tahrirdan keyin (B) nur moviy, qolgan hamma narsa o'zgarmagan. Orqadagi krossovkalar juda xira, belgi ko'rinmaydi.",
