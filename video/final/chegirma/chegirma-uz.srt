@@ -1,0 +1,148 @@
+1
+00:00:00,150 --> 00:00:02,680
+Bu yetmish foizlik chegirma
+
+2
+00:00:03,100 --> 00:00:04,640
+yetmish foiz emas.
+
+3
+00:00:05,570 --> 00:00:07,010
+To'lashdan oldin hisoblang.
+
+4
+00:00:07,460 --> 00:00:08,760
+Usta, qarang! Uch yuz ming edi,
+
+5
+00:00:08,760 --> 00:00:09,910
+bir yuz yetmish ming bo'libdi!
+
+6
+00:00:09,910 --> 00:00:11,210
+Hozir olmasam, yutqazaman!
+
+7
+00:00:11,710 --> 00:00:14,010
+Bu narsani chegirmani ko'rishdan oldin
+
+8
+00:00:14,010 --> 00:00:15,440
+ham qidirayotgan edingmi?
+
+9
+00:00:16,190 --> 00:00:17,090
+Yo'q...
+
+10
+00:00:17,150 --> 00:00:20,220
+Chegirmani ko'rib qoldim.
+
+11
+00:00:20,620 --> 00:00:21,350
+Hisoblaylik.
+
+12
+00:00:21,860 --> 00:00:24,640
+Uch yuz mingdan bir yuz o'ttiz ming tushgan.
+
+13
+00:00:25,310 --> 00:00:26,780
+Bu yetmish emas,
+
+14
+00:00:27,250 --> 00:00:28,330
+qirq uch foiz.
+
+15
+00:00:30,220 --> 00:00:32,110
+Unda nega yetmish deb yozishgan?
+
+16
+00:00:32,560 --> 00:00:34,170
+Katta raqam ko'zni,
+
+17
+00:00:34,870 --> 00:00:36,570
+taymer qo'lni shoshiltiradi.
+
+18
+00:00:37,170 --> 00:00:40,000
+Kerakli narsa shoshilishni talab qilmaydi.
+
+19
+00:00:40,450 --> 00:00:41,200
+Uchta tekshiruv.
+
+20
+00:00:41,890 --> 00:00:43,620
+Boshqa do'kondagi narxi qancha?
+
+21
+00:00:44,350 --> 00:00:46,650
+O'lchami, sifati, kafolati bir xilmi?
+
+22
+00:00:47,150 --> 00:00:49,890
+Va shu mahsulot senga kecha ham kerakmidi?
+
+23
+00:00:50,340 --> 00:00:52,220
+Demak, avval hisoblayman,
+
+24
+00:00:52,680 --> 00:00:53,450
+keyin olaman.
+
+25
+00:00:58,450 --> 00:00:59,310
+Hoy-hoy, Diyor!
+
+26
+00:00:59,310 --> 00:01:01,880
+Sen do'konda chegirma qidiryapsanmi
+
+27
+00:01:01,880 --> 00:01:03,380
+yoki ko'chada kelin?
+
+28
+00:01:03,550 --> 00:01:06,200
+Yo'q, usta... men... hisoblayapman!
+
+29
+00:01:06,450 --> 00:01:08,220
+Ko'zing narxda bo'lsin, ukam.
+
+30
+00:01:08,780 --> 00:01:10,750
+Avval hisob, keyin kelin!
+
+31
+00:01:11,200 --> 00:01:13,110
+Xaridni foiz emas,
+
+32
+00:01:13,530 --> 00:01:14,790
+ehtiyoj hal qilsin.
+
+33
+00:01:15,240 --> 00:01:17,690
+Chegirma yorlig'ini suratga olib
+
+34
+00:01:17,950 --> 00:01:18,960
+botimizga yuboring:
+
+35
+00:01:18,960 --> 00:01:19,680
+@sahiychishopbot
+
+36
+00:01:19,680 --> 00:01:20,970
+Haqiqiy foizni hisoblab,
+
+37
+00:01:20,970 --> 00:01:22,700
+nimani tekshirishni aytib beradi.
+
