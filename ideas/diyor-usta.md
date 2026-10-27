@@ -7,7 +7,7 @@ Format: kundalik odat savolga olinadi → Diyor va Usta dialogi → ortidagi psi
 |---|---|---|---|
 | 6 | «Sovg'a yutdingiz!» — SMS kodni ayting | Firibgarlik: tasdiqlash kodi | ✅ joylandi (2026-10-25) |
 | 1 | «Yetkazib berish bepul» | Bepul yetkazish chegarasi | ⏸ saqlandi |
-| 2 | «70 foiz chegirma» | Chizilgan eski narx, «faqat bugun» | ⏸ saqlandi |
+| 2 | «70 foiz chegirma» | Chizilgan eski narx, «faqat bugun» | ▶️ kuchaytirildi: `ideas/chegirma.md` (2026-10-27) |
 | 3 | «Oyiga atigi…» | Bo'lib to'lash, jami narx | ▶️ kuchaytirildi: `ideas/oyiga-atigi.md` (2026-10-26) |
 | 4 | To'y kim uchun qilinadi? | «Odamlar nima deydi» xarajati | ⏸ saqlandi |
 | 5 | Bloger tavsiya qildi | Pulli reklama va ishonch | ⏸ saqlandi |
