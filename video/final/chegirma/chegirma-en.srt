@@ -1,0 +1,148 @@
+1
+00:00:00,150 --> 00:00:02,680
+This 70% discount
+
+2
+00:00:03,100 --> 00:00:04,640
+is not 70%.
+
+3
+00:00:05,570 --> 00:00:07,010
+Do the math before you pay.
+
+4
+00:00:07,460 --> 00:00:08,760
+Master, look! It was three hundred thousand,
+
+5
+00:00:08,760 --> 00:00:09,910
+now it's one hundred seventy thousand!
+
+6
+00:00:09,910 --> 00:00:11,210
+If I don't buy it now, I lose!
+
+7
+00:00:11,710 --> 00:00:14,010
+Were you looking for this
+
+8
+00:00:14,010 --> 00:00:15,440
+before you saw the discount?
+
+9
+00:00:16,190 --> 00:00:17,090
+No...
+
+10
+00:00:17,150 --> 00:00:20,220
+I just saw the discount.
+
+11
+00:00:20,620 --> 00:00:21,350
+Let's do the math.
+
+12
+00:00:21,860 --> 00:00:24,640
+From three hundred thousand, one hundred thirty thousand is off.
+
+13
+00:00:25,310 --> 00:00:26,780
+That's not seventy,
+
+14
+00:00:27,250 --> 00:00:28,330
+it's forty-three percent.
+
+15
+00:00:30,220 --> 00:00:32,110
+Then why did they write seventy?
+
+16
+00:00:32,560 --> 00:00:34,170
+A big number rushes your eyes,
+
+17
+00:00:34,870 --> 00:00:36,570
+a timer rushes your hands.
+
+18
+00:00:37,170 --> 00:00:40,000
+What you really need never needs a rush.
+
+19
+00:00:40,450 --> 00:00:41,200
+Three checks.
+
+20
+00:00:41,890 --> 00:00:43,620
+What's the price in another shop?
+
+21
+00:00:44,350 --> 00:00:46,650
+Same size, quality and warranty?
+
+22
+00:00:47,150 --> 00:00:49,890
+And did you need it yesterday too?
+
+23
+00:00:50,340 --> 00:00:52,220
+So I count first,
+
+24
+00:00:52,680 --> 00:00:53,450
+then I buy.
+
+25
+00:00:58,450 --> 00:00:59,310
+Hey-hey, Diyor!
+
+26
+00:00:59,310 --> 00:01:01,880
+Are you hunting for discounts in the shop
+
+27
+00:01:01,880 --> 00:01:03,380
+or for a bride on the street?
+
+28
+00:01:03,550 --> 00:01:06,200
+No, master... I'm... I'm counting!
+
+29
+00:01:06,450 --> 00:01:08,220
+Keep your eyes on the price, bro.
+
+30
+00:01:08,780 --> 00:01:10,750
+Math first, bride later!
+
+31
+00:01:11,200 --> 00:01:13,110
+Let the need decide,
+
+32
+00:01:13,530 --> 00:01:14,790
+not the percent.
+
+33
+00:01:15,240 --> 00:01:17,690
+Take a photo of the price tag
+
+34
+00:01:17,950 --> 00:01:18,960
+and send it to our bot:
+
+35
+00:01:18,960 --> 00:01:19,680
+@sahiychishopbot
+
+36
+00:01:19,680 --> 00:01:20,970
+It works out the real percent
+
+37
+00:01:20,970 --> 00:01:22,700
+and tells you what to check.
+
