@@ -58,7 +58,7 @@ for lang, tr in (("uz", None), ("en", EN), ("ru", RU)):
     sub = tl["SUB"] if tr is None else [(s, e, w, t) for (s, e, w, _), t in zip(tl["SUB"], tr)]
     if tr is not None:
         # uzun yozuvlar sig'ishi uchun o'lcham kichraytiriladi (1080 px kenglik)
-        text = [(a, b, t, min(sz, int(1900 / max(len(t), 1))), c, p) for (a, b, _, sz, c, p), t in zip(tl["TEXT"], TEXT[lang])]
+        text = [(a, b, t, min(sz, int((1400 if lang == "ru" else 1900) / max(len(t), 1))), c, p) for (a, b, _, sz, c, p), t in zip(tl["TEXT"], TEXT[lang])]
         with open(os.path.join(D, f"timeline_{lang}.py"), "w") as f:
             f.write(f"# «70 foiz chegirma» {lang}: timeline.py SUB/TEXT vaqtlari, tarjima (tarjima.py yasaydi); yig.py --tl {lang}\n")
             f.write("SUB = [\n" + "".join(f" {x!r},\n" for x in sub) + "]\n")
