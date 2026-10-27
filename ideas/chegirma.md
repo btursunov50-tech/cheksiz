@@ -20,7 +20,7 @@ O'zgarishlar (asl matnga nisbatan):
 | 5 | Usta «-70%» yorliqni ko'taradi, ostidan «-43%» chiqadi (sekinlashuv) | **Usta:** «Hisoblaylik. Uch yuz mingdan bir yuz o'ttiz ming tushgan. Bu yetmish emas, qirq uch foiz.» |
 | 6 | Diyor barmog'ida sanaydi, hayron | **Diyor:** «Unda nega yetmish deb yozishgan?» |
 | 7 | Yorliq ustida qizil taymer «faqat bugun 00:59:59» yonadi | **Usta:** «Katta raqam ko'zni, taymer qo'lni shoshiltiradi. Kerakli narsa shoshilishni talab qilmaydi.» |
-| 8 | Ekranda 3 ta tekshiruv birma-bir: 🔎 boshqa do'kon narxi · 📏 o'lcham, sifat, kafolat · ❓ kecha kerakmidi? | **Usta:** «Uchta tekshiruv: boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va kecha ham kerakmidi?» |
+| 8 | Ekranda 3 ta tekshiruv birma-bir: 🔎 boshqa do'kon narxi · 📏 o'lcham, sifat, kafolat · ❓ shu mahsulot senga kecha ham kerakmidi? | **Usta:** «Uchta tekshiruv: boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?» |
 | 9 | Diyor sumkasini yopib, jilmayadi | **Diyor:** «Demak, avval hisoblayman, keyin olaman.» |
 | 10 | Usta kameraga | **Usta:** «Xaridni foiz emas, ehtiyoj hal qilsin.» |
 | 11 | Usta telefonda: yorliq surati botga ketadi, bot «haqiqiy chegirma: 43%» deb javob beradi. Katta yozuv **@sahiychishopbot** | **Usta:** «Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.» |
