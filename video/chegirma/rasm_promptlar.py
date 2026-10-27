@@ -7,8 +7,12 @@ import html
 
 IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tanlandi (C, bulutli, img/s01.png)")],
+ 2: [("s02", "✅ tasdiqlandi (B, img/s02.png)")],
+ 3: [("s03", "✅ tasdiqlandi (img/s03.png)")],
 }
 NOTE = {
+ 2: "A variantda Diyorning nuri pushti bo'lib qolgan edi (rad). B: moviy nur joyida, yuz namunadek, bir qo'li bannerni ko'rsatadi, ikkinchisida hamyon o'rniga telefon — 4-sahnadagi hamyon bilan kichik farq, sezilmaydi. Krossovkada juda xira belgi.",
+ 3: "Usta yuzi namunadek, qo'llari qovushtirilgan (ikkala qo'l), do'kon ichi: yalpiz yashil va sariq javonlar, oynadan bulutli ko'cha va yuzsiz odamlar. Diyor faqat orqasidan, moviy nur sochida. Ranglar: yashil, sariq.",
  1: "4 variant solishtirildi (A, B — quyoshli; C, D — bulutli). C tanlandi: yuz namunaga eng yaqin, orqadagi odamlar soyabon bilan, orqasidan, yuzsiz; yo'lak nam, osmon bulutli. Qo'llar yosh, ikkita. Krossovkadagi xira belgi montajdan oldin tozalanadi.",
 }
 
