@@ -20,12 +20,12 @@ def att(n):
 # Rang palitrasi: har sahnada faqat 2–3 tasi.
 COL = {"yellow": "warm golden yellow", "blue": "deep night blue", "red": "rich red", "cyan": "bright cyan-blue",
        "orange": "glowing orange", "teal": "emerald teal"}
-COL.update({"sky": "clear sky blue", "coral": "hot coral pink", "mint": "fresh mint green", "sun": "bright lemon-sun yellow", "violet": "soft violet"})
-UZC = {"sky": "osmon ko'k", "coral": "pushti-marjon", "mint": "yalpiz yashil", "sun": "limon sariq", "violet": "binafsha", "yellow": "sariq", "blue": "to'q ko'k", "red": "qizil", "cyan": "moviy", "orange": "to'q sariq", "teal": "zumrad"}
+COL.update({"sky": "cool cloudy grey-blue", "coral": "hot coral pink", "mint": "fresh mint green", "sun": "bright lemon-sun yellow", "violet": "soft violet"})
+UZC = {"sky": "bulutli ko'k", "coral": "pushti-marjon", "mint": "yalpiz yashil", "sun": "limon sariq", "violet": "binafsha", "yellow": "sariq", "blue": "to'q ko'k", "red": "qizil", "cyan": "moviy", "orange": "to'q sariq", "teal": "zumrad"}
 def sty(cols):
     c = ", ".join(COL[k] for k in cols[:-1]) + " and " + COL[cols[-1]]
     return (f"Style: the same hand-painted illustration style as the reference images (painterly ink and paint, visible brush texture, "
-            f"cinematic daylight), bright, colourful and eye-catching. Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; "
+            f"cinematic soft daylight under a cloudy sky), a little darker and moodier, but still colourful and eye-catching: the coloured signs and shop lights glow against the grey day. Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; "
             f"everything else is soft dark neutral shadow. Strong, saturated, glowing colour light, no rainbow, no other bright colours. "
             f"Vertical 9:16. No text, no letters, no numbers, no logos, no watermark, no subtitles.")
 
@@ -34,11 +34,12 @@ U = ("USTA (the calm man about 30 years old with a short jet-black beard, black-
 D = ("DIYOR (the naive guy about 20 years old with messy black hair, big innocent eyes, dark blue hoodie, jeans and sneakers, "
      "outlined with a soft cyan-blue glow)")
 HANDS = ("Every person has exactly two arms and two hands, every hand clearly belongs to its own arm and shoulder, no hand does two things at once.")
+# v3 (egasi): «juda yorug', ozgina qorong'iroq, bulutli bo'lsin».
 # v2 (egasi, 2026-10-27): «oldingi videoga o'xshab qoldi» — kunduz, odamlar yuradigan ko'cha, do'konning tashqarisi va ichi, boshqa ranglar.
-STREET = ("a busy modern shopping street in Tashkent on a sunny late afternoon: wide sidewalk, trees, a few passers-by walking past in the background "
+STREET = ("a busy modern shopping street in Tashkent on a cloudy late afternoon, overcast sky with heavy grey clouds, soft diffused light, the whole scene a little darker and moodier, wet-looking pavement: wide sidewalk, trees, a few passers-by walking past in the background "
           "(small, softly out of focus, seen from the side or back, no clear faces), shop fronts with big glass doors")
 SHOP_IN = ("inside a bright modern clothes and sneaker shop: white walls, light wooden shelves with sneakers, racks of jackets and hoodies, "
-           "a glass entrance door with the sunny street and passers-by visible through it, a few shoppers far in the background, softly out of focus, no clear faces")
+           "a glass entrance door with the cloudy street and passers-by visible through it, a few shoppers far in the background, softly out of focus, no clear faces")
 SIGN = "a huge blank hot coral pink sale banner with nothing written on it (we add «-70%» later)"
 OLD = "a small blank white card with a thin coral line crossed through it (the old price, written later)"
 NEW = "a big blank lemon-yellow price card (the new price, written later)"
@@ -48,16 +49,16 @@ S = [
  (1, "0–6 s", "Usta: Bu 70 foizlik chegirma 70 foiz emas. To'lashdan oldin hisoblang.", ["coral", "sky", "sun"],
   f"Wide shot, slightly low angle, OUTSIDE the shop. {STREET}. Over the shop entrance hangs {SIGN}; next to the door, on a stand, {OLD} and {NEW} above a pair of white sneakers. "
   f"{U} stands on the sidewalk next to the entrance, turned to the camera with a calm, knowing half-smile, the index finger of his right hand pointing up at the coral banner, his left hand relaxed. "
-  f"Clear sky blue sky, warm sunlight. {PEOPLE} {HANDS}"),
+  f"Cloudy grey-blue sky, soft dim daylight, no direct sun. {PEOPLE} {HANDS}"),
  (2, "6–12 s", "Diyor: Usta, qarang! Uch yuz ming edi, bir yuz yetmish ming bo'libdi! Hozir olmasam, yutqazaman!", ["coral", "sun"],
-  f"Close-up, eye level, OUTSIDE on the sunny sidewalk. {D} rushes toward the shop door, overjoyed: eyes wide and shining, eyebrows high, a huge open grin; one hand points at the coral sale banner, "
-  f"the other pulls a wallet out of his hoodie pocket. Coral banner light and lemon sunlight on his face; the street with blurred passers-by behind him. {PEOPLE} {HANDS}"),
+  f"Close-up, eye level, OUTSIDE on the cloudy sidewalk. {D} rushes toward the shop door, overjoyed: eyes wide and shining, eyebrows high, a huge open grin; one hand points at the coral sale banner, "
+  f"the other pulls a wallet out of his hoodie pocket. Coral banner light and the warm lemon glow of the shop window on his face; the street with blurred passers-by behind him. {PEOPLE} {HANDS}"),
  (3, "12–17 s", "Usta: Bu narsani chegirmani ko'rishdan oldin ham qidirayotgan edingmi?", ["mint", "sun"],
   f"Over-the-shoulder shot INSIDE the shop, just past the entrance: from behind {D} (we see only his messy hair, shoulder and cyan glow, no face) toward {U}, who stands calm with folded arms "
   f"between racks of hoodies, one eyebrow slightly raised, asking quietly. {SHOP_IN}. Fresh mint green shelves and lemon-yellow light. {PEOPLE} {HANDS}"),
  (4, "17–21 s", "Diyor: Yo'q… Chegirmani ko'rib qoldim.", ["mint", "sky"],
   f"Close-up INSIDE the shop. {D} frozen next to a wall of sneakers, the wallet half out of his pocket, his smile gone, mouth slightly open, eyes looking up and to the side as he thinks, "
-  f"a little embarrassed. Mint green shelves, sky blue light from the street door behind him. {PEOPLE} {HANDS}"),
+  f"a little embarrassed. Mint green shelves, cool grey-blue daylight from the street door behind him. {PEOPLE} {HANDS}"),
  (5, "21–29 s", "Usta: Hisoblaylik. Uch yuz mingdan bir yuz o'ttiz ming tushgan. Bu yetmish emas, qirq uch foiz.", ["coral", "sun"],
   f"Medium close-up INSIDE the shop at the sneaker stand. {U} lifts a big blank coral pink sale tag up with both hands like a lid; underneath it on the stand a smaller blank lemon-yellow card is revealed, glowing "
   f"(we write «-43%» on it later). Usta looks at the camera over the tag with a calm, slightly amused face. {SHOP_IN}. {PEOPLE} {HANDS}"),
@@ -68,18 +69,18 @@ S = [
   f"Close-up INSIDE the shop: a glowing coral pink digital countdown timer on the cash desk, its display blank with no digits (we write «faqat bugun 00:59:59» later); "
   f"behind it, slightly out of focus, {U} raises a calm open palm, saying «slow down». Coral and soft violet light only. {PEOPLE} {HANDS}"),
  (8, "38–48 s", "Usta: Uchta tekshiruv: boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?", ["sky", "sun", "coral"],
-  f"Medium shot INSIDE the shop by the glass door; the sunny street with blurred passers-by is visible behind him. {U} faces the camera and holds up three fingers of his right hand; his left hand at his side. "
+  f"Medium shot INSIDE the shop by the glass door; the cloudy street with blurred passers-by is visible behind him. {U} faces the camera and holds up three fingers of his right hand; his left hand at his side. "
   f"Above his hand float three glowing symbols in a row with no writing: a lemon-yellow magnifying glass, a sky blue measuring tape, a coral question mark. {PEOPLE} {HANDS}"),
  (9, "48–53 s", "Diyor: Demak, avval hisoblayman, keyin olaman.", ["mint", "sky"],
-  f"Medium shot, Diyor walking OUT of the shop through the glass door onto the sunny street. {D} puts his wallet back into his hoodie pocket with one hand and smiles a relaxed, clever smile, a small confident nod; "
-  f"his other hand holds his phone showing a plain calculator screen with no digits. Mint green shop sign light and clear sky blue sky; passers-by blurred on the street. {PEOPLE} {HANDS}"),
+  f"Medium shot, Diyor walking OUT of the shop through the glass door onto the cloudy street. {D} puts his wallet back into his hoodie pocket with one hand and smiles a relaxed, clever smile, a small confident nod; "
+  f"his other hand holds his phone showing a plain calculator screen with no digits. Mint green shop sign light and a cloudy grey-blue sky; passers-by blurred on the street. {PEOPLE} {HANDS}"),
  (10, "53–58 s", "Usta: Xaridni foiz emas, ehtiyoj hal qilsin.", ["sun", "sky"],
-  f"Close-up portrait OUTSIDE on the street, eye level. {U} looks straight into the camera with a warm, wise smile; warm low sun on one side of his face, clear sky blue behind him, "
+  f"Close-up portrait OUTSIDE on the street, eye level. {U} looks straight into the camera with a warm, wise smile; warm lemon light from a shop window on one side of his face, cool cloudy grey-blue daylight on the other, "
   f"the busy street softly blurred. His hands are not in the frame. {PEOPLE}"),
  (11, "58–68 s", "Usta: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.", ["sky", "sun", "mint"],
   f"Medium shot OUTSIDE on the sidewalk in front of the shop. {U} holds a smartphone toward the camera with his right hand; the screen glows mint green with a chat: a photo of a blank coral sale tag and a few empty message bubbles, "
-  f"no readable text. His left hand rests on the shoulder of {D}, who stands beside him and gives a thumbs up with one hand. Clear sky blue sky, warm sunlight, blurred passers-by. "
-  f"Leave empty sky in the top third of the frame for a title. {PEOPLE} {HANDS}"),
+  f"no readable text. His left hand rests on the shoulder of {D}, who stands beside him and gives a thumbs up with one hand. Cloudy grey-blue sky, soft dim daylight, blurred passers-by. "
+  f"Leave empty cloudy sky in the top third of the frame for a title. {PEOPLE} {HANDS}"),
 ]
 
 e = html.escape
