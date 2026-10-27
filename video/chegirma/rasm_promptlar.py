@@ -127,7 +127,7 @@ KEEP = ("Continue exactly from the attached image: same place, same light, same 
         "Keep the painted illustration style, the cloudy light and the colours exactly as in the image. "
         "The character who speaks in this scene talks naturally for the whole clip: lips and jaw move as in real speech, with matching small head and hand gestures; "
         "everyone else keeps the mouth closed. The dialogue is spoken in Uzbek exactly as written below, in a natural Tashkent accent; no subtitles and no on-screen text. "
-        "No new people in focus, no extra objects, no brand logos on shoes, phones or bags, no text, no letters, no numbers on signs, cards, screens or timers, no watermark. Only quiet street or shop ambience.")
+        "Clothes stay plain with no print or writing. No new people in focus, no extra objects, no brand logos on shoes, phones or bags, no text, no letters, no numbers on signs, cards, screens or timers, no watermark. Only quiet street or shop ambience.")
 V = {
  1: ("Slow push-in from the wide shot in the image to a medium shot of Usta from the knees up, the pink banner still above him",
      "USTA SPEAKS to the camera with a calm, knowing half-smile, his raised index finger taps twice toward the pink banner, then he turns his eyes to the viewer and lifts one eyebrow. "
@@ -177,7 +177,26 @@ CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish + yaqinlashish",
          5: "pastdan tepaga ko'tarilish + yorliq sekin tushadi", 6: "60° aylanish", 7: "fokus ko'chishi: taymerdan Ustaga", 8: "30° yoy",
          9: "orqaga yurib kuzatish (Diyor kameraga qarab yuradi)", 10: "qotib turadi, qiz chiqib ketgach ikkalasiga yaqinlashish", 11: "yuzga juda sekin yaqinlashish",
          12: "uzoqlashib ko'tarilish (tepada osmon)"}
-DUR = {5: "ovoz ~7 s", 8: "ovoz ~9 s: montajda ~1.15x sekinlashadi", 10: "3 ta qator, ~12 s: montajda ~1.5x sekinlashadi", 12: "ovoz ~9 s: ~1.15x"}
+DUR = {5: "ovoz ~7 s", 8: "ovoz ~9 s: montajda ~1.15x sekinlashadi", 10: "✅ klip bor, faqat 0–2.5 s olinadi (qiz o'tib ketadi); gaplar 10b va 10c da", 12: "ovoz ~9 s: ~1.15x"}
+# 10-klipda (2026-10-27) Veo qizni orqaga qaytardi — 2.5 s dan keyingisi ishlatilmaydi. Hazil gaplari ikkita yangi klipga bo'lindi;
+# boshlang'ich rasm: 10-klipning 2.2-soniyasi (qiz chiqib ketgan, Usta qo'li Diyor yelkasida) → img/s10b.png
+EXTRA = {10: [
+ ("10b", "s10b", "ovoz ~6.5 s", "Usta: Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin? — Diyor: Yo'q, usta... men... hisoblayapman!",
+  "ikkalasiga sekin yaqinlashish (beldan yuqori)",
+  "Slow push-in from the two-shot in the image to a medium shot of Usta and Diyor from the waist up",
+  "The girl has already left the frame on the right and never comes back; nobody new enters the frame. Diyor keeps gazing dreamily to the right with a goofy love-struck smile. "
+  "USTA SPEAKS with a laugh: he leans toward Diyor, his hand on Diyor's shoulder gives two friendly pats, his eyes crinkle, eyebrows raised playfully, a wide teasing grin. "
+  "Then Diyor startles, his head turns quickly from the right to Usta, eyes wide, cheeks blushing pink, and DIYOR SPEAKS fast and flustered, stammering, "
+  "shaking his head and waving the phone in his hand; Usta keeps grinning with his mouth closed while Diyor talks. Passers-by keep walking in the background.",
+  [("Usta", "USTA_V", "Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin?"), ("Diyor", "DIYOR_V", "Yo'q, usta... men... hisoblayapman!")]),
+ ("10c", "s10b", "ovoz ~4 s", "Usta: Ko'zing narxda bo'lsin, ukam. Avval hisob, keyin kelin!",
+  "chapga yoy bo'ylab Usta yuziga yaqinlashish (kulgan yuz)",
+  "Slow arc to the left, ending in a medium close-up of Usta's laughing face, with Diyor's embarrassed face at the edge of the frame",
+  "In the first second Diyor turns his head from the right to Usta, then looks down shyly. USTA SPEAKS, laughing warmly: eyes crinkled, cheeks lifted, a broad kind smile; "
+  "he wags his index finger at Diyor in a friendly scolding way, then taps his own temple twice as if saying «think first». Diyor scratches the back of his head with an embarrassed grin, "
+  "mouth closed, cheeks pink, eyes down. The girl never comes back. Passers-by keep walking in the background.",
+  [("Usta", "USTA_V", "Ko'zing narxda bo'lsin, ukam. Avval hisob, keyin kelin!")]),
+]}
 FILE = {5: "s05.png (Nike belgisi tozalangan)"}
 def vp(n):
     cam, act = V[n]
@@ -218,6 +237,14 @@ for n, t, voice, cols, scene in S:
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
 <span class="lbl">Kamera: {e(CAMUZ[n])}{(" · " + e(DUR[n])) if n in DUR else ""}</span>
 <pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></div></article>""")
+    for k, f2, d2, voice2, camuz2, cam2, act2, say2 in EXTRA.get(n, []):
+        dl = " ".join(f'{w} says in Uzbek, in {globals()[v]}: "{t2}"' for w, v, t2 in say2)
+        pr = f"Vertical 9:16, 8 seconds. Start from the attached image. Camera: {cam2}. Action: {act2} Dialogue: {dl} {KEEP}"
+        cards.append(f"""<article class="card"><header><span class="num">{k}</span><h2>{k}-sahna — 9:16 (tik), 8 s</h2><span class="dur">yangi</span></header>
+<div class="row"><figure class="sc"><img src="web/{f2}.webp" alt="{k}-sahna rasmi"><figcaption>Veo'ga: {f2}.png (10-klipning 2.2-soniyasi)</figcaption></figure>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice2)}</p>
+<span class="lbl">Kamera: {e(camuz2)} · {e(d2)}</span>
+<pre id="v{k}">{e(pr)}</pre><button class="copy" data-t="v{k}">Nusxa olish</button></div></div></article>""")
 
 page = f"""<title>70 foiz chegirma sahnalari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
