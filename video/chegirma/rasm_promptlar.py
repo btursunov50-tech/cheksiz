@@ -20,11 +20,12 @@ def att(n):
 # Rang palitrasi: har sahnada faqat 2–3 tasi.
 COL = {"yellow": "warm golden yellow", "blue": "deep night blue", "red": "rich red", "cyan": "bright cyan-blue",
        "orange": "glowing orange", "teal": "emerald teal"}
-UZC = {"yellow": "sariq", "blue": "to'q ko'k", "red": "qizil", "cyan": "moviy", "orange": "to'q sariq", "teal": "zumrad"}
+COL.update({"sky": "clear sky blue", "coral": "hot coral pink", "mint": "fresh mint green", "sun": "bright lemon-sun yellow", "violet": "soft violet"})
+UZC = {"sky": "osmon ko'k", "coral": "pushti-marjon", "mint": "yalpiz yashil", "sun": "limon sariq", "violet": "binafsha", "yellow": "sariq", "blue": "to'q ko'k", "red": "qizil", "cyan": "moviy", "orange": "to'q sariq", "teal": "zumrad"}
 def sty(cols):
     c = ", ".join(COL[k] for k in cols[:-1]) + " and " + COL[cols[-1]]
     return (f"Style: the same hand-painted illustration style as the reference images (painterly ink and paint, visible brush texture, "
-            f"cinematic light), but colourful and eye-catching. Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; "
+            f"cinematic daylight), bright, colourful and eye-catching. Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; "
             f"everything else is soft dark neutral shadow. Strong, saturated, glowing colour light, no rainbow, no other bright colours. "
             f"Vertical 9:16. No text, no letters, no numbers, no logos, no watermark, no subtitles.")
 
@@ -33,47 +34,52 @@ U = ("USTA (the calm man about 30 years old with a short jet-black beard, black-
 D = ("DIYOR (the naive guy about 20 years old with messy black hair, big innocent eyes, dark blue hoodie, jeans and sneakers, "
      "outlined with a soft cyan-blue glow)")
 HANDS = ("Every person has exactly two arms and two hands, every hand clearly belongs to its own arm and shoulder, no hand does two things at once.")
-SHOP = "a small clothes and shoe shop on an evening street in Tashkent, a big glass shop window with jackets and sneakers on shelves"
-SIGN = "a huge blank red sale sign with nothing written on it (we add «-70%» later)"
-OLD = "a small blank white card with a thin red line crossed through it (the old price, written later)"
-NEW = "a big blank golden yellow price card (the new price, written later)"
+# v2 (egasi, 2026-10-27): «oldingi videoga o'xshab qoldi» — kunduz, odamlar yuradigan ko'cha, do'konning tashqarisi va ichi, boshqa ranglar.
+STREET = ("a busy modern shopping street in Tashkent on a sunny late afternoon: wide sidewalk, trees, a few passers-by walking past in the background "
+          "(small, softly out of focus, seen from the side or back, no clear faces), shop fronts with big glass doors")
+SHOP_IN = ("inside a bright modern clothes and sneaker shop: white walls, light wooden shelves with sneakers, racks of jackets and hoodies, "
+           "a glass entrance door with the sunny street and passers-by visible through it, a few shoppers far in the background, softly out of focus, no clear faces")
+SIGN = "a huge blank hot coral pink sale banner with nothing written on it (we add «-70%» later)"
+OLD = "a small blank white card with a thin coral line crossed through it (the old price, written later)"
+NEW = "a big blank lemon-yellow price card (the new price, written later)"
+PEOPLE = "Background passers-by are small, blurred and faceless; only Usta and Diyor are in focus."
 
 S = [
- (1, "0–6 s", "Usta: Bu 70 foizlik chegirma 70 foiz emas. To'lashdan oldin hisoblang.", ["red", "yellow", "blue"],
-  f"Medium shot, slightly low angle. {SHOP}. In the window hangs {SIGN}, glowing red; under it {OLD} and next to it {NEW}, the same blank black sneakers on a stand below. "
-  f"{U} stands in front of the window, turned to the camera with a calm, knowing half-smile, the index finger of his right hand resting on the red sign, his left hand relaxed at his side. "
-  f"Deep night blue street, wet pavement reflecting the red and gold light. {HANDS}"),
- (2, "6–12 s", "Diyor: Usta, qarang! Uch yuz ming edi, bir yuz yetmish ming bo'libdi! Hozir olmasam, yutqazaman!", ["red", "cyan"],
-  f"Close-up, eye level. {D} in front of the glowing red sale window, overjoyed and in a hurry: eyes wide and shining, eyebrows high, a huge open grin, one hand pointing at the window, "
-  f"the other hand already pulling a wallet out of his hoodie pocket. Red sale light on his face; his own cyan-blue outline glow. {HANDS}"),
- (3, "12–16 s", "Usta: Bu narsani chegirmani ko'rishdan oldin ham qidirayotgan edingmi?", ["yellow", "blue"],
-  f"Over-the-shoulder shot from behind {D} (we see only his messy hair, shoulder and cyan glow, no face) toward {U}, who stands calm with folded arms, one eyebrow slightly raised, "
-  f"asking quietly. Warm golden window light on Usta's face, deep night blue around. Only these two people. {HANDS}"),
- (4, "16–20 s", "Diyor: Yo'q… Chegirmani ko'rib qoldim.", ["blue", "cyan"],
-  f"Close-up of {D} frozen with the wallet half out of his pocket, his smile gone, mouth slightly open, eyes looking up and to the side as he thinks, "
-  f"a little embarrassed. Deep night blue background, his cyan-blue glow dimmer. {HANDS}"),
- (5, "20–28 s", "Usta: Hisoblaylik. Uch yuz mingdan bir yuz o'ttiz ming tushgan. Bu yetmish emas, qirq uch foiz.", ["red", "yellow"],
-  f"Medium close-up. {U} lifts the huge blank red sale sign up with both hands like a lid; underneath it, on the window, a smaller blank golden yellow card is revealed, glowing "
-  f"(we write «-43%» on it later). Usta looks at the camera over the sign with a calm, slightly amused face. Red and gold light only, dark background. {HANDS}"),
- (6, "28–32 s", "Diyor: Unda nega yetmish deb yozishgan?", ["blue", "yellow"],
-  f"Medium shot. {D} counts on his fingers, confused: one eyebrow up, head tilted, lips pressed; behind him the shop window with the small golden card glowing. "
-  f"Deep night blue around. {HANDS}"),
- (7, "32–38 s", "Usta: Katta raqam ko'zni, taymer qo'lni shoshiltiradi. Kerakli narsa shoshilishni talab qilmaydi.", ["red", "blue"],
-  f"Close-up of a glowing red digital countdown timer stuck on the shop window glass, its display blank with no digits (we write «faqat bugun 00:59:59» later); "
-  f"reflected in the glass behind it, {U} raises a calm open palm, saying «slow down». Red timer light and deep night blue only. {HANDS}"),
- (8, "38–48 s", "Usta: Uchta tekshiruv: boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?", ["yellow", "blue", "red"],
-  f"Medium shot. {U} faces the camera and holds up three fingers of his right hand; his left hand at his side. Above his hand float three glowing symbols in a row with no writing: "
-  f"a golden magnifying glass, a blue measuring tape, a red question mark. Deep night blue background. {HANDS}"),
- (9, "48–52 s", "Diyor: Demak, avval hisoblayman, keyin olaman.", ["cyan", "yellow"],
-  f"Medium shot. {D} puts his wallet back into his hoodie pocket with one hand and smiles a relaxed, clever smile, giving a small confident nod; his other hand holds his phone showing a "
-  f"plain calculator screen with no digits. Warm golden window light; his cyan-blue glow bright and steady. {HANDS}"),
- (10, "52–56 s", "Usta: Xaridni foiz emas, ehtiyoj hal qilsin.", ["orange", "blue"],
-  f"Close-up portrait, eye level. {U} looks straight into the camera with a warm, wise smile. Warm orange street-lamp light on one side of his face, deep night blue on the other. "
-  f"His hands are not in the frame."),
- (11, "56–66 s", "Usta: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.", ["blue", "yellow", "teal"],
-  f"Medium shot. {U} holds a smartphone toward the camera with his right hand; the screen glows emerald teal with a chat: a photo of a blank red sale tag and a few empty message bubbles, "
-  f"no readable text. His left hand rests on the shoulder of {D}, who stands beside him and gives a thumbs up with one hand. Warm golden shop light behind them, deep blue shadows. "
-  f"Leave empty dark space in the top third of the frame for a title. {HANDS}"),
+ (1, "0–6 s", "Usta: Bu 70 foizlik chegirma 70 foiz emas. To'lashdan oldin hisoblang.", ["coral", "sky", "sun"],
+  f"Wide shot, slightly low angle, OUTSIDE the shop. {STREET}. Over the shop entrance hangs {SIGN}; next to the door, on a stand, {OLD} and {NEW} above a pair of white sneakers. "
+  f"{U} stands on the sidewalk next to the entrance, turned to the camera with a calm, knowing half-smile, the index finger of his right hand pointing up at the coral banner, his left hand relaxed. "
+  f"Clear sky blue sky, warm sunlight. {PEOPLE} {HANDS}"),
+ (2, "6–12 s", "Diyor: Usta, qarang! Uch yuz ming edi, bir yuz yetmish ming bo'libdi! Hozir olmasam, yutqazaman!", ["coral", "sun"],
+  f"Close-up, eye level, OUTSIDE on the sunny sidewalk. {D} rushes toward the shop door, overjoyed: eyes wide and shining, eyebrows high, a huge open grin; one hand points at the coral sale banner, "
+  f"the other pulls a wallet out of his hoodie pocket. Coral banner light and lemon sunlight on his face; the street with blurred passers-by behind him. {PEOPLE} {HANDS}"),
+ (3, "12–17 s", "Usta: Bu narsani chegirmani ko'rishdan oldin ham qidirayotgan edingmi?", ["mint", "sun"],
+  f"Over-the-shoulder shot INSIDE the shop, just past the entrance: from behind {D} (we see only his messy hair, shoulder and cyan glow, no face) toward {U}, who stands calm with folded arms "
+  f"between racks of hoodies, one eyebrow slightly raised, asking quietly. {SHOP_IN}. Fresh mint green shelves and lemon-yellow light. {PEOPLE} {HANDS}"),
+ (4, "17–21 s", "Diyor: Yo'q… Chegirmani ko'rib qoldim.", ["mint", "sky"],
+  f"Close-up INSIDE the shop. {D} frozen next to a wall of sneakers, the wallet half out of his pocket, his smile gone, mouth slightly open, eyes looking up and to the side as he thinks, "
+  f"a little embarrassed. Mint green shelves, sky blue light from the street door behind him. {PEOPLE} {HANDS}"),
+ (5, "21–29 s", "Usta: Hisoblaylik. Uch yuz mingdan bir yuz o'ttiz ming tushgan. Bu yetmish emas, qirq uch foiz.", ["coral", "sun"],
+  f"Medium close-up INSIDE the shop at the sneaker stand. {U} lifts a big blank coral pink sale tag up with both hands like a lid; underneath it on the stand a smaller blank lemon-yellow card is revealed, glowing "
+  f"(we write «-43%» on it later). Usta looks at the camera over the tag with a calm, slightly amused face. {SHOP_IN}. {PEOPLE} {HANDS}"),
+ (6, "29–32 s", "Diyor: Unda nega yetmish deb yozishgan?", ["violet", "sun"],
+  f"Medium shot INSIDE the shop near a full-length mirror. {D} counts on his fingers, confused: one eyebrow up, head tilted, lips pressed; soft violet light from a neon strip on the shop wall, "
+  f"lemon-yellow card glowing behind him. {PEOPLE} {HANDS}"),
+ (7, "32–38 s", "Usta: Katta raqam ko'zni, taymer qo'lni shoshiltiradi. Kerakli narsa shoshilishni talab qilmaydi.", ["coral", "violet"],
+  f"Close-up INSIDE the shop: a glowing coral pink digital countdown timer on the cash desk, its display blank with no digits (we write «faqat bugun 00:59:59» later); "
+  f"behind it, slightly out of focus, {U} raises a calm open palm, saying «slow down». Coral and soft violet light only. {PEOPLE} {HANDS}"),
+ (8, "38–48 s", "Usta: Uchta tekshiruv: boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?", ["sky", "sun", "coral"],
+  f"Medium shot INSIDE the shop by the glass door; the sunny street with blurred passers-by is visible behind him. {U} faces the camera and holds up three fingers of his right hand; his left hand at his side. "
+  f"Above his hand float three glowing symbols in a row with no writing: a lemon-yellow magnifying glass, a sky blue measuring tape, a coral question mark. {PEOPLE} {HANDS}"),
+ (9, "48–53 s", "Diyor: Demak, avval hisoblayman, keyin olaman.", ["mint", "sky"],
+  f"Medium shot, Diyor walking OUT of the shop through the glass door onto the sunny street. {D} puts his wallet back into his hoodie pocket with one hand and smiles a relaxed, clever smile, a small confident nod; "
+  f"his other hand holds his phone showing a plain calculator screen with no digits. Mint green shop sign light and clear sky blue sky; passers-by blurred on the street. {PEOPLE} {HANDS}"),
+ (10, "53–58 s", "Usta: Xaridni foiz emas, ehtiyoj hal qilsin.", ["sun", "sky"],
+  f"Close-up portrait OUTSIDE on the street, eye level. {U} looks straight into the camera with a warm, wise smile; warm low sun on one side of his face, clear sky blue behind him, "
+  f"the busy street softly blurred. His hands are not in the frame. {PEOPLE}"),
+ (11, "58–68 s", "Usta: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.", ["sky", "sun", "mint"],
+  f"Medium shot OUTSIDE on the sidewalk in front of the shop. {U} holds a smartphone toward the camera with his right hand; the screen glows mint green with a chat: a photo of a blank coral sale tag and a few empty message bubbles, "
+  f"no readable text. His left hand rests on the shoulder of {D}, who stands beside him and gives a thumbs up with one hand. Clear sky blue sky, warm sunlight, blurred passers-by. "
+  f"Leave empty sky in the top third of the frame for a title. {PEOPLE} {HANDS}"),
 ]
 
 e = html.escape
@@ -110,6 +116,7 @@ h2{{font-family:var(--display);font-weight:700;font-size:26px;margin:0}}
 .sws{{display:flex;gap:6px;flex-wrap:wrap}}
 .sw{{font-size:12px;padding:2px 9px;border-radius:99px;color:var(--bg);font-weight:600}}
 .sw-yellow{{background:var(--gold)}} .sw-blue{{background:var(--blue);color:var(--fg)}} .sw-red{{background:var(--red);color:var(--fg)}}
+.sw-sky{{background:#5ab8f0}} .sw-coral{{background:#ff5e7e;color:var(--fg)}} .sw-mint{{background:#4fd6a0}} .sw-sun{{background:#ffe14d}} .sw-violet{{background:#9b7bff;color:var(--fg)}}
 .sw-cyan{{background:var(--cyan)}} .sw-orange{{background:var(--orange)}} .sw-teal{{background:var(--teal)}}
 .row{{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}}
 @media (max-width:560px){{.row{{grid-template-columns:minmax(0,1fr)}} .refs{{grid-template-columns:repeat(2,minmax(0,120px))}}}}
