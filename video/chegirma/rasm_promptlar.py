@@ -263,7 +263,7 @@ GIRL_ADD = ("Edit the attached street scene image, vertical 9:16. Keep everythin
   "Only three main colours: coral pink, mint green and night blue. Exactly two arms and five fingers on each hand per person. No text, no letters, no logos, no watermark.")
 GIRL_VEO = ("Vertical 9:16, 8 seconds. Use the first attached image as the first frame and the second attached image as the last frame. "
   "Camera: static medium-wide shot with a very slight slow pan to the right following the girl, then settling back to the framing of the last frame. "
-  "Action: the girl in the atlas dress keeps walking slowly and calmly to the right along the sidewalk; she never stops, never turns around and never comes back; "
+  "Action: the girl in the atlas dress, who stands facing the viewer at the start, gives a small shy smile, turns to her left side and walks slowly and calmly to the right along the sidewalk, seen in profile; she never stops again, never turns around and never comes back; "
   "her braid swings gently; at about 5 seconds she walks out of the frame on the right. Diyor's head slowly turns to follow her: soft wide eyes, raised eyebrows, "
   "a goofy love-struck smile, cheeks turning pink, the phone forgotten in his hand. Usta glances from Diyor to the girl and back with a slow sly smile; his hand stays on Diyor's shoulder. "
   "Nobody speaks: all mouths stay closed, no dialogue. Keep every character exactly as in the images for the whole clip: the same faces, age, hair and clothes; "
