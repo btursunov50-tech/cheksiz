@@ -1,5 +1,5 @@
 # «70 foiz chegirma» — build_tl.py yasaydi (qo'lda o'zgartirmang, build_tl.py ni o'zgartiring).
-CUT = [0.0, 7.31, 11.56, 16.04, 20.47, 30.07, 32.41, 40.3, 50.19, 53.7, 56.1, 64.1, 68.85, 72.89, 80.8]
+CUT = [0.0, 7.31, 11.56, 16.04, 20.47, 30.07, 32.41, 40.3, 50.19, 53.7, 58.3, 66.3, 71.05, 75.09, 83.0]
 CLIP = ['use/s01', 'use/s02', 'use/s03', 'use/s04', 'use/s05', 'use/s06', 'use/s07', 'use/s08', 'use/s09', 'use/s10', 'use/s10b', 'use/s10c', 'use/s11', 'use/s12']
 SUB = [
  (0.15, 2.68, 'R', 'Bu yetmish foizlik chegirma'),
@@ -26,19 +26,19 @@ SUB = [
  (47.15, 49.89, 'R', 'Va shu mahsulot senga kecha ham kerakmidi?'),
  (50.34, 52.22, 'O', 'Demak, avval hisoblayman,'),
  (52.68, 53.45, 'O', 'keyin olaman.'),
- (56.25, 57.11, 'R', 'Hoy-hoy, Diyor!'),
- (57.11, 59.68, 'R', "Sen do'konda chegirma qidiryapsanmi"),
- (59.68, 61.18, 'R', "yoki ko'chada kelin?"),
- (61.35, 64.0, 'O', "Yo'q, usta... men... hisoblayapman!"),
- (64.25, 66.02, 'R', "Ko'zing narxda bo'lsin, ukam."),
- (66.58, 68.55, 'R', 'Avval hisob, keyin kelin!'),
- (69.0, 70.91, 'R', 'Xaridni foiz emas,'),
- (71.33, 72.59, 'R', 'ehtiyoj hal qilsin.'),
- (73.04, 75.49, 'R', "Chegirma yorlig'ini suratga olib"),
- (75.75, 76.76, 'R', 'botimizga yuboring:'),
- (76.76, 77.48, 'R', '@sahiychishopbot'),
- (77.48, 78.77, 'R', 'Haqiqiy foizni hisoblab,'),
- (78.77, 80.5, 'R', 'nimani tekshirishni aytib beradi.'),
+ (58.45, 59.31, 'R', 'Hoy-hoy, Diyor!'),
+ (59.31, 61.88, 'R', "Sen do'konda chegirma qidiryapsanmi"),
+ (61.88, 63.38, 'R', "yoki ko'chada kelin?"),
+ (63.55, 66.2, 'O', "Yo'q, usta... men... hisoblayapman!"),
+ (66.45, 68.22, 'R', "Ko'zing narxda bo'lsin, ukam."),
+ (68.78, 70.75, 'R', 'Avval hisob, keyin kelin!'),
+ (71.2, 73.11, 'R', 'Xaridni foiz emas,'),
+ (73.53, 74.79, 'R', 'ehtiyoj hal qilsin.'),
+ (75.24, 77.69, 'R', "Chegirma yorlig'ini suratga olib"),
+ (77.95, 78.96, 'R', 'botimizga yuboring:'),
+ (78.96, 79.68, 'R', '@sahiychishopbot'),
+ (79.68, 80.97, 'R', 'Haqiqiy foizni hisoblab,'),
+ (80.97, 82.7, 'R', 'nimani tekshirishni aytib beradi.'),
 ]
 TEXT = [
  (7.86, 11.46, '300 000 → 170 000', 84, 'FFC23A', (540, 300)),
@@ -50,11 +50,11 @@ TEXT = [
  (44.35, 50.14, "2. O'LCHAM · SIFAT · KAFOLAT", 56, 'FFC23A', (540, 1280)),
  (47.15, 50.14, '3. KECHA HAM KERAKMIDI?', 60, 'FF4A3A', (540, 1380)),
  (50.54, 53.65, 'AVVAL HISOB, KEYIN XARID', 70, 'FFC23A', (540, 300)),
- (66.58, 68.8, 'AVVAL HISOB, KEYIN KELIN!', 70, 'FFC23A', (540, 300)),
- (69.2, 72.84, 'FOIZ EMAS, EHTIYOJ', 80, 'FFC23A', (540, 170)),
- (75.75, 80.8, '@sahiychishopbot', 96, 'FFC23A', (540, 260)),
- (77.48, 80.8, 'HAQIQIY FOIZNI HISOBLAYDI', 58, 'FFFFFF', (540, 370)),
+ (68.78, 71.0, 'AVVAL HISOB, KEYIN KELIN!', 70, 'FFC23A', (540, 300)),
+ (71.4, 75.04, 'FOIZ EMAS, EHTIYOJ', 80, 'FFC23A', (540, 170)),
+ (77.95, 83.0, '@sahiychishopbot', 96, 'FFC23A', (540, 260)),
+ (79.68, 83.0, 'HAQIQIY FOIZNI HISOBLAYDI', 58, 'FFFFFF', (540, 370)),
 ]
 BOOM = [28.37]
-AV_LINE = (81.3, 85.15)
+AV_LINE = (83.5, 87.35)
 MUSIC_FADE = 5
