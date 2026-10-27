@@ -249,19 +249,27 @@ GIRL_IMG = ("Vertical 9:16 character reference image, full body from head to sho
   "a small white leather shoulder bag and simple flat shoes. The same painted illustration style as the attached scene image: semi-realistic cartoon painting, soft even light. "
   "Her face must look clearly different from the two men in the attached image. Exactly two arms and two hands, five fingers on each hand. "
   "Modest and family-friendly. No text, no letters, no logos, no watermark.")
-GIRL_VEO = ("Vertical 9:16, 8 seconds. Use the three attached reference images: the GIRL in the atlas dress, USTA and DIYOR. "
-  "Keep each of them exactly as in their own reference image for the whole clip: the same face, age, hair, clothes and colours; the girl's face stays clearly different from the men. "
-  "Scene: a busy modern shopping street in Tashkent on a cloudy rainy evening, wet pavement with pink and mint reflections, bright coral pink and mint green shop windows on the left, "
-  "small blurred faceless passers-by walking in the background, light drizzle. Painted semi-realistic cartoon illustration style; only three main colours: coral pink, mint green and night blue. "
-  "Camera: starts on a medium-wide shot, then a slow pan to the right following the girl, and ends on a medium shot of Usta and Diyor. "
-  "Action: Usta and Diyor stand side by side in front of the shop window on the left, Usta's hand resting on Diyor's shoulder, Diyor holds his phone. "
-  "The girl enters from the left edge and walks slowly and calmly to the right along the sidewalk in front of them, seen in profile, her long braid swinging gently; "
-  "she looks ahead, never looks at the men, never stops and never turns back; at about 5 seconds she walks out of the frame on the right and never comes back. "
-  "Diyor's head slowly turns to follow her: his eyes go soft and wide, eyebrows raised, a goofy love-struck smile, cheeks turning pink, he forgets the phone in his hand. "
-  "Usta notices, his eyes move from Diyor to the girl and back, and he gives a slow sly smile. Nobody speaks: all mouths stay closed, no dialogue. "
-  "Diyor's hair stays messy straight jet-black, never curly or brown, with only a thin cyan-blue glow outline; Usta keeps his fuller face and short neat full black beard and never looks older or thinner; "
-  "Usta's doppi keeps its white arch embroidery. Exactly two arms and five fingers on each hand per person. Clothes plain with no print or writing. "
-  "No text, no letters, no logos, no subtitles, no watermark. Only quiet rainy street ambience.")
+# Veo «Ingredients» (2026-10-27) xato chiqdi: qiz ko'ylagi oddiy pushti bo'lib qoldi, sumka yo'qoldi, qiz kameraga qarab yurdi,
+# Usta oq to'n kiydi, vitrinada yozuv chiqdi → clips/s10_ingr_xato.mp4. Endi: ChatGPT'da qizni s10b.png ga qo'shamiz (birinchi kadr),
+# Veo «Frames to video» birinchi kadr = shu rasm, oxirgi kadr = s10b.png (10b shu kadrdan boshlanadi, davomiylik buzilmaydi).
+GIRL_ADD = ("Edit the attached street scene image, vertical 9:16. Keep everything exactly as it is: the same street, the same rainy evening light, "
+  "the same pink and mint shop windows, the same camera framing and the same painted semi-realistic cartoon style, and USTA and DIYOR exactly as they are: "
+  "the same faces, age, hair, clothes and poses; Usta keeps his dark embroidered chapan with the red sash and his hand stays on Diyor's shoulder. "
+  "Only add one person: the young woman from the attached character reference image, with the same face, the long black braid, the coral pink and mint green atlas dress "
+  "with the zigzag pattern, the white shoulder bag and the flat shoes. Place her on the wet sidewalk in the right half of the frame, a little in front of the men, "
+  "full body visible, walking calmly to the right in profile with her face turned slightly toward the viewer, one foot forward mid-step, her braid swinging behind her. "
+  "Her head is at about the same height as Diyor's head; she stands clearly apart from the men and does not overlap them. "
+  "Diyor looks at her with soft wide eyes and a goofy love-struck smile; Usta watches Diyor with a sly smile. "
+  "Only three main colours: coral pink, mint green and night blue. Exactly two arms and five fingers on each hand per person. No text, no letters, no logos, no watermark.")
+GIRL_VEO = ("Vertical 9:16, 8 seconds. Use the first attached image as the first frame and the second attached image as the last frame. "
+  "Camera: static medium-wide shot with a very slight slow pan to the right following the girl, then settling back to the framing of the last frame. "
+  "Action: the girl in the atlas dress keeps walking slowly and calmly to the right along the sidewalk; she never stops, never turns around and never comes back; "
+  "her braid swings gently; at about 5 seconds she walks out of the frame on the right. Diyor's head slowly turns to follow her: soft wide eyes, raised eyebrows, "
+  "a goofy love-struck smile, cheeks turning pink, the phone forgotten in his hand. Usta glances from Diyor to the girl and back with a slow sly smile; his hand stays on Diyor's shoulder. "
+  "Nobody speaks: all mouths stay closed, no dialogue. Keep every character exactly as in the images for the whole clip: the same faces, age, hair and clothes; "
+  "the girl's dress keeps its coral pink and mint green atlas zigzag pattern and her white bag; Usta keeps his dark embroidered chapan with the red sash, no white robe; "
+  "Diyor's hair stays messy straight jet-black with only a thin cyan-blue glow outline. Background passers-by stay small, blurred and faceless and keep walking. "
+  "No text, no letters and no logos on signs or windows, no subtitles, no watermark. Only quiet rainy street ambience.")
 def ref(src, cap): return f'<figure class="ref"><img src="web/{src}.webp" alt="{e(cap)}"><figcaption>{e(cap)}</figcaption></figure>'
 
 e = html.escape
@@ -269,14 +277,14 @@ cards = []
 for n, t, voice, cols, scene in S:
     f = IMG[n][0][0]
     if n == 10:  # yangi 10-sahna: 1) qiz rasmi (ChatGPT), 2) Veo «Ingredients to video»
-        cards.append(f"""<article class="card"><header><span class="num">10</span><h2>10-sahna, 1-qadam — qizning rasmi (ChatGPT), 9:16 (tik)</h2><span class="dur">yangi</span></header>
-<div class="row"><div class="refs"><p class="rh">ChatGPT'ga biriktiring (yangi chat):</p>{ref("s10", "s10.png (ko'ylak va uslub uchun)")}</div>
-<div class="txt"><span class="lbl">Nima uchun</span><p class="voice">Eski klipda qiz 1 soniyada chiqib ketadi, deyarli ko'rinmaydi. Avval qizning alohida rasmi yasaladi, keyin Veo'da uchala namuna bilan yangi klip.</p>
-<pre id="g10">{e(GIRL_IMG)}</pre><button class="copy" data-t="g10">Nusxa olish</button></div></div></article>""")
-        cards.append(f"""<article class="card"><header><span class="num">10</span><h2>10-sahna, 2-qadam — Veo «Ingredients to video», 9:16 (tik), 8 s</h2><span class="dur">2.4 s → ~6 s</span></header>
-<div class="row"><div class="refs"><p class="rh">Veo'ga 3 ta rasm biriktiring:</p><p class="rh">1) 1-qadamdagi qiz rasmi</p>{ref("ref_usta", "ref_usta.png")}{ref("ref_diyor", "ref_diyor.png")}</div>
-<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Gap yo'q: qiz o'tib ketadi, Diyor qarab qoladi, Usta sezib jilmayadi. Keyin 10b sahnasi davom etadi.</p>
-<span class="lbl">Kamera: o'ngga sekin burilib qizni kuzatish, oxiri Usta va Diyorda</span>
+        cards.append(f"""<article class="card"><header><span class="num">10</span><h2>10-sahna, 1-qadam — qizni rasmga qo'shish (ChatGPT tahriri), 9:16 (tik)</h2><span class="dur">yangi</span></header>
+<div class="row"><div class="refs"><p class="rh">ChatGPT'ga 2 ta rasm biriktiring (yangi chat):</p>{ref("s10b", "s10b.png (Usta va Diyor)")}{ref("ref_qiz", "ref_qiz.png (qiz ✅)")}</div>
+<div class="txt"><span class="lbl">Nima uchun</span><p class="voice">Veo «Ingredients» qizning ko'ylagini oddiy pushti qildi, sumkasini yo'qotdi, Ustaga oq to'n kiygizdi. Shuning uchun qizni avval rasmning o'ziga qo'shamiz, keyin Veo shu rasmdan boshlaydi.</p>
+<pre id="g10">{e(GIRL_ADD)}</pre><button class="copy" data-t="g10">Nusxa olish</button></div></div></article>""")
+        cards.append(f"""<article class="card"><header><span class="num">10</span><h2>10-sahna, 2-qadam — Veo «Frames to video» (birinchi + oxirgi kadr), 9:16 (tik), 8 s</h2><span class="dur">~6 s olinadi</span></header>
+<div class="row"><div class="refs"><p class="rh">Birinchi kadr: 1-qadamdagi yangi rasm (qiz bilan)</p><p class="rh">Oxirgi kadr:</p>{ref("s10b", "s10b.png (qizsiz)")}</div>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Gap yo'q: qiz o'tib ketadi, Diyor qarab qoladi, Usta sezib jilmayadi. Klip s10b kadrida tugaydi, 10b shu kadrdan davom etadi.</p>
+<span class="lbl">Kamera: qotib turadi, qiz ortidan o'ngga sal burilib, oxirgi kadrga qaytadi</span>
 <pre id="v10">{e(GIRL_VEO)}</pre><button class="copy" data-t="v10">Nusxa olish</button></div></div></article>""")
         for k, f2, d2, voice2, camuz2, cam2, act2, say2 in EXTRA.get(n, []):
             dl = " ".join(f'{w} says in Uzbek, in {globals()[v]}: "{t2}"' for w, v, t2 in say2)
