@@ -115,19 +115,83 @@ S = [
   f"Leave empty cloudy sky in the top third of the frame for a title. {PEOPLE} {HANDS}"),
 ]
 
+# Veo (rasm → video) promptlari (egasi, 2026-10-27): har biri o'z rasmidagi kadrdan DAVOM etadi (orqaga qaytmaydi, harakat
+# yo'nalishi saqlanadi), gapiradigan qahramon gapiradi (lab + jag'), tinglovchi og'zi yopiq, orqa fonda odamlar yurishda davom etadi,
+# har birida bitta kamera harakati (qo'shnilarda takrorlanmaydi), hayajonli joylarda mimika batafsil.
+KEEP = ("Continue exactly from the attached image: same place, same light, same characters in the same positions; every movement continues "
+        "forward in the direction it already has in the image and never reverses, nobody walks back or re-enters the frame. "
+        "Keep every character exactly as in the image for the whole clip, also when the camera comes closer: the same face, eyes, eyebrows, beard, age, hair, clothes and colours; "
+        "Usta's doppi keeps its white arch embroidery; Diyor's hoodie stays dark navy blue and his cyan-blue glow stays only a thin outline, it never colours his body. "
+        "Exactly two arms, two hands and five fingers on each hand per person, young smooth hands; objects stay where they are unless the action moves them, nothing shrinks, melts or disappears. "
+        "Background passers-by stay small, blurred and faceless and keep walking steadily in their own direction the whole clip; light drizzle and reflections on the wet pavement. "
+        "Keep the painted illustration style, the cloudy light and the colours exactly as in the image. "
+        "The character who speaks in this scene talks naturally for the whole clip: lips and jaw move as in real speech, with matching small head and hand gestures; "
+        "everyone else keeps the mouth closed. Speaking with no subtitles and no on-screen text. "
+        "No new people in focus, no extra objects, no brand logos on shoes, phones or bags, no text, no letters, no numbers on signs, cards, screens or timers, no watermark. Only quiet street or shop ambience.")
+V = {
+ 1: ("Slow push-in from the wide shot in the image to a medium shot of Usta from the knees up, the pink banner still above him",
+     "USTA SPEAKS to the camera with a calm, knowing half-smile, his raised index finger taps twice toward the pink banner, then he turns his eyes to the viewer and lifts one eyebrow. "
+     "Behind him on the left the passers-by with umbrellas keep walking away down the street. The banner, the yellow card and the white card stay blank."),
+ 2: ("Handheld camera with a light natural bounce, slow push-in to a medium close-up of Diyor, keeping his whole upper body in frame",
+     "DIYOR SPEAKS fast and excited: eyes wide and shining, eyebrows jumping up, a huge open grin, cheeks round; he jabs his pointing finger toward the pink banner twice, "
+     "bounces once on his toes and shakes the phone in his other hand with joy. He stays in place in front of the window and does not walk away. People in the background keep walking."),
+ 3: ("Slow rack focus: starts on the back of Diyor's messy hair in the foreground, focus moves to Usta behind him and stays on Usta",
+     "USTA SPEAKS quietly, arms still folded, he tilts his head a little, raises one eyebrow and gives a small knowing smile, as if asking a simple but sharp question. "
+     "Diyor in the foreground stays still and silent, only his hair moves slightly. Through the glass door behind Usta the passers-by keep walking on the cloudy street."),
+ 4: ("Slow push-in on Diyor's face, ending in a close-up of his face with Usta still visible behind him",
+     "DIYOR SPEAKS slowly and a little embarrassed: his smile is gone, his eyes look up and to the side, he swallows, his eyebrows draw together; "
+     "he finishes pushing the phone into his jeans pocket and grips his backpack strap. Behind him Usta keeps his arms folded, mouth closed, and gives a slow small nod. "
+     "Outside the window people keep walking."),
+ 5: ("Low-angle shot, slow crane up from the sneakers on the table to Usta's face above the pink tag",
+     "USTA SPEAKS slowly, stressing each number with small nods: he lifts the blank pink tag a little higher with both hands like a lid, so the blank yellow card under it glows brighter; "
+     "at the end, with a slightly amused smile, speed ramp: he lets the pink tag go and it falls flat onto the table in slow motion, landing with a soft slap, then normal speed resumes. "
+     "Both cards stay blank. Shoppers in the background keep moving slowly."),
+ 6: ("Slow 60-degree orbit around Diyor from the left to the front, the violet mirror passing behind him",
+     "DIYOR SPEAKS, confused and a little indignant: he taps each finger of his open hand with his other index finger, counting, then stops, tilts his head, "
+     "raises one eyebrow high and opens his hands slightly as if asking «why?». His reflection in the mirror moves with him exactly. Shoppers in the background walk slowly."),
+ 7: ("Rack focus from the glowing pink timer on the counter in the foreground to Usta behind it, then a very slight push-in on Usta",
+     "USTA SPEAKS calmly and warmly: he keeps his open palm toward the camera like «slow down», then slowly lowers the hand while still talking, with a soft reassuring smile. "
+     "The timer only pulses with a soft pink glow, its screen stays blank with no digits. Blurred shoppers keep walking behind him."),
+ 8: ("Slow 30-degree arc to the right around Usta, ending in a medium shot with his raised hand and the three symbols above it",
+     "USTA SPEAKS clearly, a short pause between three questions: he keeps exactly three fingers up; the yellow magnifying glass, the blue measuring tape and the pink question mark "
+     "pulse brightly one after another, left to right, and with each pulse he gives a small firm nod; at the end he looks straight into the camera with a caring look. "
+     "The symbols stay in place and have no letters. Through the glass door behind him people keep walking on the wet street."),
+ 9: ("Smooth tracking shot moving backward in front of Diyor as he walks out of the shop toward the camera, keeping him in a medium shot",
+     "DIYOR SPEAKS, relaxed and pleased with himself: he keeps walking forward out of the door onto the wet sidewalk, never turning back to the shop; "
+     "he finishes sliding the wallet into his hoodie pocket and lifts the phone with the plain calculator a little, with a clever smile and a confident small nod. "
+     "The calculator screen shows no digits. Passers-by on the right keep walking."),
+ 10: ("Starts static, then a slow push-in on Usta and Diyor after the girl has walked out of the frame on the right",
+      "The girl keeps walking forward to the right with calm steps and walks out of the frame on the right; she never turns around, never comes back and never looks at the men. "
+      "Diyor's head slowly follows her, he stares dreamily with a love-struck goofy smile and soft wide eyes, forgetting the phone in his hand. "
+      "Then USTA SPEAKS with a laugh and taps Diyor on the shoulder; Diyor startles, turns to Usta, his cheeks blush, and DIYOR SPEAKS fast and flustered, waving the phone; "
+      "then USTA SPEAKS again, laughing, wagging his index finger at Diyor in a friendly scolding way, and Diyor scratches the back of his head with an embarrassed grin. "
+      "Other passers-by keep walking in the background."),
+ 11: ("Very slow push-in on Usta's face, ending in a head-and-shoulders close-up (never closer than the whole face)",
+      "USTA SPEAKS warmly to the camera: a calm wise smile, his eyes soften, he gives one slow nod on the last word. The yellow shop window light flickers gently on one side of his face; "
+      "behind him the street lights glow and passers-by keep walking in the blur."),
+ 12: ("Slow dolly out and crane up, ending in a medium wide shot with the large cloudy sky filling the top third of the frame",
+      "USTA SPEAKS to the viewer in a friendly inviting way, pushing the glowing phone a little toward the camera; the chat bubbles on the screen pulse softly and stay empty with no letters; "
+      "his other hand gives Diyor's shoulder a friendly squeeze. Diyor smiles with his mouth closed, nods twice and pumps his thumb up. People keep walking in the background."),
+}
+CAMUZ = {1: "sekin yaqinlashish", 2: "qo'lda, yengil chayqalish + yaqinlashish", 3: "fokus ko'chishi: Diyor sochidan Ustaga", 4: "yuzga sekin yaqinlashish",
+         5: "pastdan tepaga ko'tarilish + yorliq sekin tushadi", 6: "60° aylanish", 7: "fokus ko'chishi: taymerdan Ustaga", 8: "30° yoy",
+         9: "orqaga yurib kuzatish (Diyor kameraga qarab yuradi)", 10: "qotib turadi, qiz chiqib ketgach ikkalasiga yaqinlashish", 11: "yuzga juda sekin yaqinlashish",
+         12: "uzoqlashib ko'tarilish (tepada osmon)"}
+DUR = {5: "ovoz ~7 s", 8: "ovoz ~9 s: montajda ~1.15x sekinlashadi", 10: "3 ta qator, ~12 s: montajda ~1.5x sekinlashadi", 12: "ovoz ~9 s: ~1.15x"}
+FILE = {5: "s05.png (Nike belgisi tozalangan)"}
+def vp(n):
+    cam, act = V[n]
+    return f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} {KEEP}"
+
 e = html.escape
 cards = []
 for n, t, voice, cols, scene in S:
-    p = f"{att(n)} Scene {n}, vertical 9:16. {scene} {sty(cols)}"
-    refs = "".join(f'<figure class="ref"><img src="web/ref_{k}.webp" alt="{REFN[k]} namunasi"><figcaption>ref_{k}.png</figcaption></figure>' for k in NEED[n])
-    sw = "".join(f'<span class="sw sw-{k}">{UZC[k]}</span>' for k in cols)
-    imgs = "".join(f'<figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna, {e(c)}"><figcaption>{e(c)}</figcaption></figure>' for f, c in IMG.get(n, []))
-    got = (f'<div class="scenes">{imgs}</div>' + (f'<p class="note">{e(NOTE[n])}</p>' if n in NOTE else "")) if imgs else ""
-    cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik)</h2><span class="dur">{t}</span><span class="sws">{sw}</span></header>{got}
-<div class="row"><div class="refs"><p class="rh">Shu rasmni biriktiring:</p>{refs}</div>
+    f = IMG[n][0][0]
+    cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik), 8 s</h2><span class="dur">{t}</span></header>
+<div class="row"><figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna rasmi"><figcaption>Veo'ga: {e(FILE.get(n, f + ".png"))}</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
-<span class="lbl">Rasm prompti (ChatGPT, 9:16)</span>
-<pre id="p{n}">{e(p)}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></div></div></article>""")
+<span class="lbl">Kamera: {e(CAMUZ[n])}{(" · " + e(DUR[n])) if n in DUR else ""}</span>
+<pre id="v{n}">{e(vp(n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div></div></article>""")
 
 page = f"""<title>70 foiz chegirma sahnalari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -151,7 +215,7 @@ h2{{font-family:var(--display);font-weight:700;font-size:26px;margin:0}}
 .sw-yellow{{background:var(--gold)}} .sw-blue{{background:var(--blue);color:var(--fg)}} .sw-red{{background:var(--red);color:var(--fg)}}
 .sw-sky{{background:#5ab8f0}} .sw-coral{{background:#ff5e7e;color:var(--fg)}} .sw-mint{{background:#4fd6a0}} .sw-sun{{background:#ffe14d}} .sw-violet{{background:#9b7bff;color:var(--fg)}}
 .sw-cyan{{background:var(--cyan)}} .sw-orange{{background:var(--orange)}} .sw-teal{{background:var(--teal)}}
-.row{{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}}
+.row{{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;align-items:start}}
 @media (max-width:560px){{.row{{grid-template-columns:minmax(0,1fr)}} .refs{{grid-template-columns:repeat(2,minmax(0,120px))}}}}
 .refs{{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;align-content:start}} .rh{{grid-column:1/-1;margin:0;font-size:12px;color:var(--muted)}}
 .ref{{margin:0;display:grid;gap:4px}} .ref img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}}
@@ -168,7 +232,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«70 foiz chegirma» <em>sahnalari</em></h1>
-<p class="intro">11 ta sahna. Har biri uchun: ChatGPT'da yangi chat oching, chapdagi namuna rasmni biriktiring, «Nusxa olish» bilan promptni qo'ying va o'lchamni 9:16 qiling. Har kadrda faqat 2–3 ta rang bor, ular sarlavha yonida ko'rsatilgan. Narx va raqamlarni montajda o'zimiz yozamiz, shuning uchun rasmda yorliqlar bo'sh bo'ladi. Veo promptlari rasmlar tasdiqlangach shu sahifaga qo'shiladi.</p>
+<p class="intro">12 ta rasm tayyor. Har sahna uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, o'lchamni 9:16 va 8 s qiling, «Nusxa olish» bilan promptni qo'ying. Har prompt rasmdan davom etadi: harakat orqaga qaytmaydi, gapirayotgan qahramonning labi qimirlaydi, orqadagi odamlar yurishda davom etadi. Raqam va yozuvlarni montajda o'zimiz qo'yamiz.</p>
 {''.join(cards)}
 </div>
 <script>
