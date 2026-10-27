@@ -6,7 +6,7 @@ Ikki xil yozuv bor:
 
 | Sahna | Narsada (`yuza.py`) | Ekranda (`TEXT`) |
 |---|---|---|
-| 1 | Pushti banner «-70%», oq karta «~~300 000~~», sariq karta «170 000» (1-klip qayta yasalgach) | — (hook subtitrda) |
+| 1 | ✅ Pushti banner «-70%», oq kartada «300 000» (ustidan klipdagi pushti chiziq o'tadi), sariq karta «170 000» | — (hook subtitrda) |
 | 2 | — | «300 000 → 170 000» (sariq) |
 | 3–4 | — | — |
 | 5 | ✅ Pushti yorliq «-70%» (tushayotganda ham), sariq karta «~~300 000~~ 170 000» → yorliq tushganda «-43%» | «300 000 − 170 000 = 130 000», keyin «130 000 ÷ 300 000 = 43%» |

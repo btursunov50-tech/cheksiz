@@ -9,6 +9,11 @@ FONT = "/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf"
 # yuza: hsv quyi/yuqori chegara, 1-kadrdagi taxminiy joy (x, y, w, h), yozuvlar [(boshi, oxiri, qatorlar, rang)]
 # qator: matn; "~" bilan boshlansa — kichik va ustidan chizilgan (eski narx)
 JOBS = {
+    "s01": [
+        dict(lo=(160, 100, 120), hi=(179, 255, 255), box=(288, 0, 408, 404), texts=[(0, 99, ["-70%"], (255, 250, 210))]),
+        dict(lo=(20, 120, 180), hi=(38, 255, 255), box=(496, 602, 207, 179), texts=[(0, 99, ["170 000"], (200, 20, 60))]),
+        dict(lo=(0, 0, 215), hi=(179, 40, 255), box=(462, 776, 183, 141), texts=[(0, 99, ["300 000"], (90, 90, 100))]),
+    ],
     "s05": [
         dict(lo=(20, 120, 180), hi=(38, 255, 255), box=(326, 701, 328, 160), texts=[
             (0, 5.5, ["~300 000", "170 000"], (200, 20, 60)),
