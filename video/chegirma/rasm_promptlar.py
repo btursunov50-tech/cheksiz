@@ -8,11 +8,13 @@ import html
 IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tanlandi (C, bulutli, img/s01.png)")],
  2: [("s02", "✅ tasdiqlandi (B, img/s02.png)")],
+ 5: [("s05", "✅ tasdiqlandi · Nike belgisi tozalandi (img/s05.png)")],
  4: [("s04", "✅ tasdiqlandi (img/s04.png)")],
  3: [("s03", "✅ tasdiqlandi (img/s03.png)")],
 }
 NOTE = {
  2: "A variantda Diyorning nuri pushti bo'lib qolgan edi (rad). B: moviy nur joyida, yuz namunadek, bir qo'li bannerni ko'rsatadi, ikkinchisida hamyon o'rniga telefon — 4-sahnadagi hamyon bilan kichik farq, sezilmaydi. Krossovkada juda xira belgi.",
+ 5: "Usta yuzi namunadek, ayyorona tabassum, kameraga qaraydi. Ikki qo'li pushti yorliqni qopqoqdek ko'tarib turibdi, ostidan sariq yorliq ochilgan (bo'sh — montajda «-43%»). Oq krossovkalarda aniq Nike belgisi (yon tomonida va tilida) bor edi — Claude tozaladi. Ranglar: pushti, sariq.",
  4: "Diyor yuzi namunadek: o'ylanib, biroz uyalib yuqoriga qaraydi, og'zi yarim ochiq; moviy nur joyida. Telefonni jinsi cho'ntagiga qaytaradi (2-sahnadagi telefon bilan mos), ikkinchi qo'li sumka tasmasida. Promptda yo'q bo'lsa ham orqada Usta turibdi: qo'llari qovushtirilgan, shubha bilan yon qaraydi, yuzi namunaga mos — 3-sahna bilan uzviy. Ranglar: yalpiz yashil, bulutli ko'k.",
  3: "Usta yuzi namunadek, qo'llari qovushtirilgan (ikkala qo'l), do'kon ichi: yalpiz yashil va sariq javonlar, oynadan bulutli ko'cha va yuzsiz odamlar. Diyor faqat orqasidan, moviy nur sochida. Ranglar: yashil, sariq.",
  1: "4 variant solishtirildi (A, B — quyoshli; C, D — bulutli). C tanlandi: yuz namunaga eng yaqin, orqadagi odamlar soyabon bilan, orqasidan, yuzsiz; yo'lak nam, osmon bulutli. Qo'llar yosh, ikkita. Krossovkadagi xira belgi montajdan oldin tozalanadi.",
