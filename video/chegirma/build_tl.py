@@ -15,7 +15,7 @@ SC = [
     ("use/s02", L[2] + 0.5, [(2, 0.15)]),
     ("use/s03", L[3] + 0.45, [(3, 0.15)]),
     ("use/s04", L[4] + 0.4, [(4, 0.15)]),
-    ("use/s05", 9.6, [(5, 0.15)]),             # 5.3–6.6 s sekinlashuv (yorliq tushadi) → klip 9.3 s; tushish ~8.05 s da
+    ("use/s05", 9.6, [(5, 0.15)]),             # 5.3–6.6 s sekinlashuv (yorliq tushadi) → klip 9.3 s; tushish ~7.9 s da
     ("use/s06", L[6] + 0.45, [(6, 0.15)]),
     ("use/s07", L[7] + 0.45, [(7, 0.15)]),
     ("use/s08", L[8] + 0.45, [(8, 0.15)]),
@@ -80,7 +80,7 @@ TEXT = [
     (AT[14] + 4.44, T, "HAQIQIY FOIZNI HISOBLAYDI", 58, "FFFFFF", (540, 370)),
 ]
 TEXT = [(round(a, 2), round(b, 2), x, s, col, p) for a, b, x, s, col, p in TEXT]
-BOOM = [round(c(5) + 8.05, 2)]   # 5-sahna: pushti yorliq stolga tushadi (sekinlashuvdan keyin)
+BOOM = [round(c(5) + 7.90, 2)]   # 5-sahna: pushti yorliq stolga tushadi (sekinlashuvdan keyin)
 
 with open(os.path.join(D, "timeline.py"), "w") as f:
     f.write("# «70 foiz chegirma» — build_tl.py yasaydi (qo'lda o'zgartirmang, build_tl.py ni o'zgartiring).\n")

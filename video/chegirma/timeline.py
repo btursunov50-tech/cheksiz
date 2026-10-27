@@ -55,6 +55,6 @@ TEXT = [
  (75.75, 80.8, '@sahiychishopbot', 96, 'FFC23A', (540, 260)),
  (77.48, 80.8, 'HAQIQIY FOIZNI HISOBLAYDI', 58, 'FFFFFF', (540, 370)),
 ]
-BOOM = [28.52]
+BOOM = [28.37]
 AV_LINE = (81.3, 85.15)
 MUSIC_FADE = 5
