@@ -22,6 +22,7 @@ O'zgarishlar (asl matnga nisbatan):
 | 7 | Yorliq ustida qizil taymer «faqat bugun 00:59:59» yonadi | **Usta:** «Katta raqam ko'zni, taymer qo'lni shoshiltiradi. Kerakli narsa shoshilishni talab qilmaydi.» |
 | 8 | Ekranda 3 ta tekshiruv birma-bir: 🔎 boshqa do'kon narxi · 📏 o'lcham, sifat, kafolat · ❓ shu mahsulot senga kecha ham kerakmidi? | **Usta:** «Uchta tekshiruv: boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?» |
 | 9 | Diyor sumkasini yopib, jilmayadi | **Diyor:** «Demak, avval hisoblayman, keyin olaman.» |
+| 9b | Ko'chada uzun sochli, o'zbekcha atlas ko'ylakdagi qiz o'tib ketadi; Diyor to'xtab, unga uzoq qarab qoladi. Usta orqadan engashib yelkasiga turtadi (egasi qo'shgan hazil, 2026-10-27) | **Usta:** «Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin?» — **Diyor:** «Yo'q, usta... men... hisoblayapman!» — **Usta:** «Ko'zing narxda bo'lsin, ukam. Avval hisob, keyin kelin!» |
 | 10 | Usta kameraga | **Usta:** «Xaridni foiz emas, ehtiyoj hal qilsin.» |
 | 11 | Usta telefonda: yorliq surati botga ketadi, bot «haqiqiy chegirma: 43%» deb javob beradi. Katta yozuv **@sahiychishopbot** | **Usta:** «Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.» |
 | 12 | Avatar (egasining avatari), plashka bilan | **Usta (ovoz):** «Siz-chi? Eng katta chegirmangiz qancha edi? Izohga yozing!» |
