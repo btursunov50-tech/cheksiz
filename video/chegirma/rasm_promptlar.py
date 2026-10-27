@@ -126,7 +126,7 @@ KEEP = ("Continue exactly from the attached image: same place, same light, same 
         "Background passers-by stay small, blurred and faceless and keep walking steadily in their own direction the whole clip; light drizzle and reflections on the wet pavement. "
         "Keep the painted illustration style, the cloudy light and the colours exactly as in the image. "
         "The character who speaks in this scene talks naturally for the whole clip: lips and jaw move as in real speech, with matching small head and hand gestures; "
-        "everyone else keeps the mouth closed. Speaking with no subtitles and no on-screen text. "
+        "everyone else keeps the mouth closed. The dialogue is spoken in Uzbek exactly as written below, in a natural Tashkent accent; no subtitles and no on-screen text. "
         "No new people in focus, no extra objects, no brand logos on shoes, phones or bags, no text, no letters, no numbers on signs, cards, screens or timers, no watermark. Only quiet street or shop ambience.")
 V = {
  1: ("Slow push-in from the wide shot in the image to a medium shot of Usta from the knees up, the pink banner still above him",
@@ -182,6 +182,32 @@ FILE = {5: "s05.png (Nike belgisi tozalangan)"}
 def vp(n):
     cam, act = V[n]
     return f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} {KEEP}"
+
+# Egasi (2026-10-27): «matnni o'zbekcha ber Veo'ga» — Veo labni aynan shu so'zlarga moslashi uchun gap promptga o'zbekcha yoziladi.
+# Ovozni baribir Manus'dagi dialog.wav dan qo'yamiz (seriyada ovozlar bir xil qolishi uchun); Veo ovozi faqat lab harakati uchun.
+USTA_V = "a calm deep warm male voice of about 30-35"
+DIYOR_V = "a lighter young male voice of about 22"
+SAY = {
+ 1: [("Usta", USTA_V, "Bu yetmish foizlik chegirma yetmish foiz emas. To'lashdan oldin hisoblang.")],
+ 2: [("Diyor", DIYOR_V, "Usta, qarang! Uch yuz ming edi, bir yuz yetmish ming bo'libdi! Hozir olmasam, yutqazaman!")],
+ 3: [("Usta", USTA_V, "Bu narsani chegirmani ko'rishdan oldin ham qidirayotgan edingmi?")],
+ 4: [("Diyor", DIYOR_V, "Yo'q... Chegirmani ko'rib qoldim.")],
+ 5: [("Usta", USTA_V, "Hisoblaylik. Uch yuz mingdan bir yuz o'ttiz ming tushgan. Bu yetmish emas, qirq uch foiz.")],
+ 6: [("Diyor", DIYOR_V, "Unda nega yetmish deb yozishgan?")],
+ 7: [("Usta", USTA_V, "Katta raqam ko'zni, taymer qo'lni shoshiltiradi. Kerakli narsa shoshilishni talab qilmaydi.")],
+ 8: [("Usta", USTA_V, "Uchta tekshiruv. Boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?")],
+ 9: [("Diyor", DIYOR_V, "Demak, avval hisoblayman, keyin olaman.")],
+ 10: [("Usta", USTA_V, "Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin?"),
+      ("Diyor", DIYOR_V, "Yo'q, usta... men... hisoblayapman!"),
+      ("Usta", USTA_V, "Ko'zing narxda bo'lsin, ukam. Avval hisob, keyin kelin!")],
+ 11: [("Usta", USTA_V, "Xaridni foiz emas, ehtiyoj hal qilsin.")],
+ 12: [("Usta", USTA_V, "Chegirma yorlig'ini suratga olib botimizga yuboring: sahiychi shop bot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.")],
+}
+def dial(n):
+    return " ".join(f'{w} says in Uzbek, in {v}: "{t}"' for w, v, t in SAY[n])
+def vp(n):
+    cam, act = V[n]
+    return f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} Dialogue: {dial(n)} {KEEP}"
 
 e = html.escape
 cards = []
