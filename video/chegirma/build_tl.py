@@ -75,7 +75,7 @@ TEXT = [
     (AT[8] + 6.70, c(9) - 0.05, "3. KECHA HAM KERAKMIDI?", 60, "FF4A3A", (540, 1380)),
     (AT[9] + 0.2, c(10) - 0.05, "AVVAL HISOB, KEYIN XARID", 70, "FFC23A", (540, 300)),
     (AT[12] + 2.33, c(13) - 0.05, "AVVAL HISOB, KEYIN KELIN!", 70, "FFC23A", (540, 300)),
-    (AT[13] + 0.2, c(14) - 0.05, "FOIZ EMAS, EHTIYOJ", 80, "FFC23A", (540, 300)),
+    (AT[13] + 0.2, c(14) - 0.05, "FOIZ EMAS, EHTIYOJ", 80, "FFC23A", (540, 170)),
     (AT[14] + 2.71, T, "@sahiychishopbot", 96, "FFC23A", (540, 260)),
     (AT[14] + 4.44, T, "HAQIQIY FOIZNI HISOBLAYDI", 58, "FFFFFF", (540, 370)),
 ]
