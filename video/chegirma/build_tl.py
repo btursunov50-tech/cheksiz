@@ -20,7 +20,7 @@ SC = [
     ("use/s07", L[7] + 0.45, [(7, 0.15)]),
     ("use/s08", L[8] + 0.45, [(8, 0.15)]),
     ("use/s09", L[9] + 0.4, [(9, 0.15)]),
-    ("use/s10", 2.4, []),                      # qiz o'tib ketadi, gap yo'q
+    ("use/s10", 4.6, []),                      # qiz Usta va Diyor yonidan o'tib ketadi (3-variant, 1.2–5.8 s), gap yo'q
     ("use/s10b", 8.0, [(10, 0.15), (11, 5.25)]),  # Diyor ~5 s da cho'chiydi
     ("use/s10c", L[12] + 0.45, [(12, 0.15)]),
     ("use/s11", L[13] + 0.45, [(13, 0.15)]),
