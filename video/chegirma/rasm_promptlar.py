@@ -240,10 +240,53 @@ def vp(n):
     cam, act = V[n]
     return f"Vertical 9:16, 8 seconds. Start from the attached image of scene {n}. Camera: {cam}. Action: {act} Dialogue: {dial(n)} {KEEP}"
 
+# 10-sahna qayta (egasi, 2026-10-27: «qiz ko'rinmay qolgan»): eski klipda qiz 1 s da chiqib ketadi. Endi qizning alohida rasmi (ChatGPT)
+# va Veo «Ingredients to video» (3 ta namuna: qiz, Usta, Diyor) bilan qiz ~5 s ko'rinadigan yangi klip.
+GIRL_IMG = ("Vertical 9:16 character reference image, full body from head to shoes, standing, three-quarter view toward the viewer, "
+  "on a plain soft light-grey studio background with nothing else in the image. A fictional young Uzbek woman of about 20-22 (an invented character, not a real person): "
+  "long thick black hair in one long braid falling over her shoulder, a gentle oval face, warm brown eyes, a soft natural smile, light natural make-up. "
+  "She wears a long modest Uzbek atlas (ikat) dress with long sleeves, the coral pink and mint green zigzag pattern exactly like the girl's dress in the attached scene image, "
+  "a small white leather shoulder bag and simple flat shoes. The same painted illustration style as the attached scene image: semi-realistic cartoon painting, soft even light. "
+  "Her face must look clearly different from the two men in the attached image. Exactly two arms and two hands, five fingers on each hand. "
+  "Modest and family-friendly. No text, no letters, no logos, no watermark.")
+GIRL_VEO = ("Vertical 9:16, 8 seconds. Use the three attached reference images: the GIRL in the atlas dress, USTA and DIYOR. "
+  "Keep each of them exactly as in their own reference image for the whole clip: the same face, age, hair, clothes and colours; the girl's face stays clearly different from the men. "
+  "Scene: a busy modern shopping street in Tashkent on a cloudy rainy evening, wet pavement with pink and mint reflections, bright coral pink and mint green shop windows on the left, "
+  "small blurred faceless passers-by walking in the background, light drizzle. Painted semi-realistic cartoon illustration style; only three main colours: coral pink, mint green and night blue. "
+  "Camera: starts on a medium-wide shot, then a slow pan to the right following the girl, and ends on a medium shot of Usta and Diyor. "
+  "Action: Usta and Diyor stand side by side in front of the shop window on the left, Usta's hand resting on Diyor's shoulder, Diyor holds his phone. "
+  "The girl enters from the left edge and walks slowly and calmly to the right along the sidewalk in front of them, seen in profile, her long braid swinging gently; "
+  "she looks ahead, never looks at the men, never stops and never turns back; at about 5 seconds she walks out of the frame on the right and never comes back. "
+  "Diyor's head slowly turns to follow her: his eyes go soft and wide, eyebrows raised, a goofy love-struck smile, cheeks turning pink, he forgets the phone in his hand. "
+  "Usta notices, his eyes move from Diyor to the girl and back, and he gives a slow sly smile. Nobody speaks: all mouths stay closed, no dialogue. "
+  "Diyor's hair stays messy straight jet-black, never curly or brown, with only a thin cyan-blue glow outline; Usta keeps his fuller face and short neat full black beard and never looks older or thinner; "
+  "Usta's doppi keeps its white arch embroidery. Exactly two arms and five fingers on each hand per person. Clothes plain with no print or writing. "
+  "No text, no letters, no logos, no subtitles, no watermark. Only quiet rainy street ambience.")
+def ref(src, cap): return f'<figure class="ref"><img src="web/{src}.webp" alt="{e(cap)}"><figcaption>{e(cap)}</figcaption></figure>'
+
 e = html.escape
 cards = []
 for n, t, voice, cols, scene in S:
     f = IMG[n][0][0]
+    if n == 10:  # yangi 10-sahna: 1) qiz rasmi (ChatGPT), 2) Veo «Ingredients to video»
+        cards.append(f"""<article class="card"><header><span class="num">10</span><h2>10-sahna, 1-qadam — qizning rasmi (ChatGPT), 9:16 (tik)</h2><span class="dur">yangi</span></header>
+<div class="row"><div class="refs"><p class="rh">ChatGPT'ga biriktiring (yangi chat):</p>{ref("s10", "s10.png (ko'ylak va uslub uchun)")}</div>
+<div class="txt"><span class="lbl">Nima uchun</span><p class="voice">Eski klipda qiz 1 soniyada chiqib ketadi, deyarli ko'rinmaydi. Avval qizning alohida rasmi yasaladi, keyin Veo'da uchala namuna bilan yangi klip.</p>
+<pre id="g10">{e(GIRL_IMG)}</pre><button class="copy" data-t="g10">Nusxa olish</button></div></div></article>""")
+        cards.append(f"""<article class="card"><header><span class="num">10</span><h2>10-sahna, 2-qadam — Veo «Ingredients to video», 9:16 (tik), 8 s</h2><span class="dur">2.4 s → ~6 s</span></header>
+<div class="row"><div class="refs"><p class="rh">Veo'ga 3 ta rasm biriktiring:</p><p class="rh">1) 1-qadamdagi qiz rasmi</p>{ref("ref_usta", "ref_usta.png")}{ref("ref_diyor", "ref_diyor.png")}</div>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Gap yo'q: qiz o'tib ketadi, Diyor qarab qoladi, Usta sezib jilmayadi. Keyin 10b sahnasi davom etadi.</p>
+<span class="lbl">Kamera: o'ngga sekin burilib qizni kuzatish, oxiri Usta va Diyorda</span>
+<pre id="v10">{e(GIRL_VEO)}</pre><button class="copy" data-t="v10">Nusxa olish</button></div></div></article>""")
+        for k, f2, d2, voice2, camuz2, cam2, act2, say2 in EXTRA.get(n, []):
+            dl = " ".join(f'{w} says in Uzbek, in {globals()[v]}: "{t2}"' for w, v, t2 in say2)
+            pr = f"Vertical 9:16, 8 seconds. Start from the attached image. Camera: {cam2}. Action: {act2} Dialogue: {dl} {KEEP}"
+            cards.append(f"""<article class="card"><header><span class="num">{k}</span><h2>{k}-sahna — 9:16 (tik), 8 s</h2><span class="dur">✅ klip bor</span></header>
+<div class="row"><figure class="sc"><img src="web/{f2}.webp" alt="{k}-sahna rasmi"><figcaption>Veo'ga: s10b.png</figcaption></figure>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice2)}</p>
+<span class="lbl">Kamera: {e(camuz2)} · {e(d2)}</span>
+<pre id="v{k}">{e(pr)}</pre><button class="copy" data-t="v{k}">Nusxa olish</button></div></div></article>""")
+        continue
     cards.append(f"""<article class="card"><header><span class="num">{n:02d}</span><h2>{n}-sahna — 9:16 (tik), 8 s</h2><span class="dur">{t}</span></header>
 <div class="row"><figure class="sc"><img src="web/{f}.webp" alt="{n}-sahna rasmi"><figcaption>Veo'ga: {e(FILE.get(n, f + ".png"))}</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
