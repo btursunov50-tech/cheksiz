@@ -9,6 +9,7 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tanlandi (C, bulutli, img/s01.png)")],
  2: [("s02", "✅ tasdiqlandi (B, img/s02.png)")],
  9: [("s09", "✅ tasdiqlandi (img/s09.png)")],
+ 10: [("s10", "✅ tasdiqlandi (img/s10.png)")],
  11: [("s11", "✅ tasdiqlandi (img/s11.png)")],
  12: [("s12", "✅ tasdiqlandi (img/s12.png)")],
  8: [("s08", "✅ tasdiqlandi (img/s08.png)")],
@@ -21,6 +22,7 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
 NOTE = {
  2: "A variantda Diyorning nuri pushti bo'lib qolgan edi (rad). B: moviy nur joyida, yuz namunadek, bir qo'li bannerni ko'rsatadi, ikkinchisida hamyon o'rniga telefon — 4-sahnadagi hamyon bilan kichik farq, sezilmaydi. Krossovkada juda xira belgi.",
  9: "Diyor yuzi namunadek, xotirjam ayyorona tabassum; moviy nur joyida. Do'kondan ko'chaga chiqyapti: bir qo'li hamyonni cho'ntakka qaytaradi, biri telefonda kalkulyator (ekranida raqam yo'q). Orqada bulutli ko'cha, yuzsiz odamlar. Ranglar: yalpiz yashil, bulutli ko'k. Javondagi krossovkalarda kichik Nike chiziqlari bor — orqa fonda, Veo'dan oldin ko'rib chiqiladi.",
+ 10: "Qiz (o'ylab topilgan): uzun qora o'rim soch, pushti-yalpiz atlas ko'ylak, oq sumka; yonidan ko'rinadi, yuzi qisman, Usta va Diyornikidan butunlay boshqa. Diyor yuzi namunadek, boshini qizga burib «sevib qolgan» qiyofada jilmayadi, qo'lida telefon, moviy nur joyida. Usta yuzi namunadek, ayyorona kulib, o'ng qo'lini Diyorning yelkasiga turtishga ko'targan, chap qo'li belbog'ida. Bulutli ko'cha, nam yo'lak, pushti va yashil vitrinalar.",
  12: "Usta o'ng qo'lida telefon (ekranda pushti yorliq surati va bo'sh pufakchalar), chap qo'li Diyorning yelkasida; Diyor bosh barmog'ini ko'taradi, ikkinchi qo'li cho'ntakda. Ikkala yuz namunadek. Moviy nur sochida, xudida xira. Tepada katta bulutli osmon — @sahiychishopbot uchun joy. Ekran tepasida mayda o'qilmaydigan yozuv — montajda bot suhbati ustiga qo'yiladi.",
  11: "Usta yaqin planda kameraga qaraydi, iliq tabassum; do'ppi, soqol namunadek. Ko'z atrofida yengil chiziqlar — boshqa sahnalardan biroz realistikroq/kattaroq ko'rinadi, lekin o'sha odam. Qo'llar kadrda yo'q. Bir tomonda sariq vitrina nuri, orqada bulutli ko'cha.",
  8: "Usta yuzi namunadek. O'ng qo'lda aniq 3 barmoq (bosh barmoq jimjiloqni ushlagan), chap qo'l pastda; ikkalasi yosh. Tepada 3 belgi: sariq lupa, ko'k o'lchov lentasi, pushti savol belgisi — yozuvsiz. Orqada eshikdan bulutli ko'cha, yuzsiz odamlar. Ranglar: sariq, ko'k, pushti. Lentada o'qilmaydigan mayda chiziqlar — normal.",
