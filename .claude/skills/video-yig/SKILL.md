@@ -18,6 +18,7 @@ python3 .claude/skills/video-yig/yig.py --dir video/robot --work <scratchpad>/ro
 - `--n 13` — faqat birinchi 13 sahna (oraliq ko'rib chiqish).
 - `--music fayl.mp3:197` — musiqa (trekdagi boshlanish soniyasi). Egasi qoidasi: musiqa butun video va matn tayyor bo'lgandan keyin tanlanadi, bir nechta trekni yamoq qilmang.
 - `--no-norm` — ovoz balandligini o'zgartirmaydi (loudnorm o'rniga limiter); musiqani oldindan kerakli dB ga tushiring va `--music-vol 1` bering.
+- `AV_LINE = (boshi, oxiri)` timeline.py da — ovoz faylidagi avatar savoli (Usta ovozi, egasi 2026-10-27): avatar ustida aytiladi, avatar shu qatorga cho'ziladi (≥3 s). Har ovoz blokining oxirgi qatori shu savol bo'lsin.
 - `--reuse` — faqat ovoz/subtitr/musiqa o'zgarsa, tayyor `cine.mp4` qayta ishlatiladi (tez).
 - Bitta sahna klipi 1.8 martadan ko'p sekinlashsa skript ogohlantiradi: egasidan yangi klip so'rang, harakatsiz rasm qo'ymang.
 

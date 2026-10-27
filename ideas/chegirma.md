@@ -24,7 +24,7 @@ O'zgarishlar (asl matnga nisbatan):
 | 9 | Diyor sumkasini yopib, jilmayadi | **Diyor:** «Demak, avval hisoblayman, keyin olaman.» |
 | 10 | Usta kameraga | **Usta:** «Xaridni foiz emas, ehtiyoj hal qilsin.» |
 | 11 | Usta telefonda: yorliq surati botga ketadi, bot «haqiqiy chegirma: 43%» deb javob beradi. Katta yozuv **@sahiychishopbot** | **Usta:** «Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.» |
-| — | Avatar: «Siz-chi? Eng katta chegirmangiz qancha edi? Izohga yozing!» | — |
+| 12 | Avatar (egasining avatari), plashka bilan | **Usta (ovoz):** «Siz-chi? Eng katta chegirmangiz qancha edi? Izohga yozing!» |
 | — | Yakuniy karta | — |
 
 Sekinlashuv (1 marta): 5-sahnada «-70%» yorliq ko'tarilib, ostidan «-43%» chiqqanda; yorliq yerga tushsa — zarba ovozi.
