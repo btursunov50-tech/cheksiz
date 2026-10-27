@@ -4,7 +4,7 @@
 python3 .claude/skills/video-yig/yig.py --dir video/robot --work <scratchpad>/robot_build [--n 13] \
     [--music fayl.mp3:boshlanish_s] [--avq "Siz-chi?|Savol matni|Izohga yozing!"] [--lang uz] [--tl en] [--send]
 
-Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP, TEXT — ekrandagi katta yozuvlar, BOOM — qo'shimcha zarba soniyalari, MUSIC_END — musiqa to'xtaydigan soniya, MUSIC_FADE — musiqa avatar/karta ustida davom etib shuncha soniyada so'nadi), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
+Loyiha papkasida: timeline.py (SUB, CUT, CLIP, START, ixtiyoriy STOP, TEXT — ekrandagi katta yozuvlar, BOOM — qo'shimcha zarba soniyalari, MUSIC_END — musiqa to'xtaydigan soniya, MUSIC_FADE — musiqa avatar/karta ustida davom etib shuncha soniyada so'nadi, AV_LINE — (boshi, oxiri) ovoz faylidagi avatar savoli: avatar ustida Usta ovozi bilan aytiladi, avatar shu qatorga cho'ziladi), clips/<CLIP>.mp4, ovoz (--voice, standart dialog.flac).
 Natija: <work>/final_<lang>.mp4 (+ --send bo'lsa 30 MB dan kichik nusxa) va tekshiruv jadvali.
 """
 import argparse, importlib.util, os, re, subprocess, sys
@@ -86,14 +86,23 @@ def main():
         run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{B}/list.txt", "-c", "copy", f"{B}/raw.mp4"])
         run(["bash", f"{ROOT}/video/cine.sh", f"{B}/raw.mp4", f"{B}/cine.mp4", cuts])
 
-    run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(a.dir, a.voice), "-af",
-         f"atrim=0:{T},afade=t=out:st={T-0.4}:d=0.4,aresample=48000", "-ac", "2", f"{B}/voice.wav"])
+    # AV_LINE (egasi, 2026-10-27: «avatarda ham gapirsin»): ovoz faylidagi avatar savoli avatar ustida aytiladi
+    avl = getattr(tl, "AV_LINE", None) if a.avq else None
+    AD = max(3.0, round(avl[1] - avl[0] + 0.8, 2)) if avl else 3.0
+    if avl:
+        run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(a.dir, a.voice), "-filter_complex",
+             f"[0:a]atrim=0:{T},afade=t=out:st={T-0.4}:d=0.4,aresample=48000[m];"
+             f"[0:a]atrim={avl[0]}:{avl[1]},asetpts=PTS-STARTPTS,aresample=48000,adelay={int((T + 0.3) * 1000)}:all=1[q];"
+             "[m][q]amix=inputs=2:normalize=0:duration=longest[o]", "-map", "[o]", "-ac", "2", f"{B}/voice.wav"])
+    else:
+        run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(a.dir, a.voice), "-af",
+             f"atrim=0:{T},afade=t=out:st={T-0.4}:d=0.4,aresample=48000", "-ac", "2", f"{B}/voice.wav"])
     boom = " ".join(str(x) for x in getattr(tl, "BOOM", []) if x < T)
     run(["bash", f"{ROOT}/video/sfx.sh", f"{B}/voice.wav", f"{B}/voice_sfx.wav", (cuts + " " + boom).strip()])
     if a.music:
         mf, ms = a.music.rsplit(":", 1); ME = min(T, getattr(tl, "MUSIC_END", T)); fo = 0.3 if ME < T else 2
         TT = T  # MUSIC_FADE: musiqa avatar va yakuniy karta ustida davom etib, oxirgi shuncha soniyada sekin so'nadi
-        if ME == T and getattr(tl, "MUSIC_FADE", 0) and a.avq: TT = T + 7; ME = TT; fo = tl.MUSIC_FADE
+        if ME == T and getattr(tl, "MUSIC_FADE", 0) and a.avq: TT = T + AD + 4; ME = TT; fo = tl.MUSIC_FADE
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{B}/voice_sfx.wav", "-ss", ms, "-i", mf, "-filter_complex",
              f"[1:a]atrim=0:{ME},asetpts=PTS-STARTPTS,afade=t=in:d=1.5,afade=t=out:st={ME-fo}:d={fo},apad=whole_dur={TT},volume={a.music_vol},aresample=48000,aformat=channel_layouts=stereo[m];"
              f"[0:a]apad=whole_dur={TT},asplit[v][sc];[m][sc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];"
@@ -119,9 +128,10 @@ def main():
     if a.avq:
         avq_plate(a.avq, f"{B}/avq.png")
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{ROOT}/video/avatar.mp4", "-i", f"{B}/avq.png", "-filter_complex",
-             "[0:v]trim=0:3,setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,fps=30,setsar=1[a];[a][1:v]overlay=0:1200:enable='gte(t,0.3)',format=yuv420p[v]",
+             f"[0:v]setpts={max(1.0, AD / 5.0):.4f}*(PTS-STARTPTS),trim=0:{AD},setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,fps=30,setsar=1[a];"
+             "[a][1:v]overlay=0:1200:enable='gte(t,0.3)',format=yuv420p[v]",
              "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-r", "30", f"{B}/av.mp4"])
-        seq.append(f"{B}/av.mp4"); tail += 3
+        seq.append(f"{B}/av.mp4"); tail += AD
         seq.append(f"{ROOT}/video/end/end_{a.lang}.mp4"); tail += 4
     open(f"{B}/seq.txt", "w").write("".join(f"file '{x}'\n" for x in seq))
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{B}/seq.txt", "-c", "copy", f"{B}/allv.mp4"])
