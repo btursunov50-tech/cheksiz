@@ -1,4 +1,4 @@
-# «70 foiz chegirma» — 11 sahna rasm promptlari sahifasi (ChatGPT, 9:16).
+# «70 foiz chegirma» — 12 sahna rasm promptlari sahifasi (ChatGPT, 9:16).
 # Har promptga kerakli qahramonlarning alohida 9:16 namuna rasmi biriktiriladi (img/ref_usta.png, img/ref_diyor.png); sahifada prompt yonida turadi.
 # Ishlatish: python3 video/chegirma/rasm_promptlar.py → video/chegirma/rasmlar.html (+ web/ref_*.webp)
 # Rang (egasi, 2026-10-26): Kalamushqir'dan faqat ranglar, bitta kadrda 2–3 ta. Hayajonli joylarda plan + mimika yoziladi (2026-10-26).
@@ -9,7 +9,8 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
  1: [("s01", "✅ tanlandi (C, bulutli, img/s01.png)")],
  2: [("s02", "✅ tasdiqlandi (B, img/s02.png)")],
  9: [("s09", "✅ tasdiqlandi (img/s09.png)")],
- 10: [("s10", "✅ tasdiqlandi (img/s10.png)")],
+ 11: [("s11", "✅ tasdiqlandi (img/s11.png)")],
+ 12: [("s12", "✅ tasdiqlandi (img/s12.png)")],
  8: [("s08", "✅ tasdiqlandi (img/s08.png)")],
  7: [("s07", "✅ tasdiqlandi (img/s07.png)")],
  6: [("s06", "✅ tasdiqlandi (tahrirdan keyin, img/s06.png)")],
@@ -20,7 +21,8 @@ IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
 NOTE = {
  2: "A variantda Diyorning nuri pushti bo'lib qolgan edi (rad). B: moviy nur joyida, yuz namunadek, bir qo'li bannerni ko'rsatadi, ikkinchisida hamyon o'rniga telefon — 4-sahnadagi hamyon bilan kichik farq, sezilmaydi. Krossovkada juda xira belgi.",
  9: "Diyor yuzi namunadek, xotirjam ayyorona tabassum; moviy nur joyida. Do'kondan ko'chaga chiqyapti: bir qo'li hamyonni cho'ntakka qaytaradi, biri telefonda kalkulyator (ekranida raqam yo'q). Orqada bulutli ko'cha, yuzsiz odamlar. Ranglar: yalpiz yashil, bulutli ko'k. Javondagi krossovkalarda kichik Nike chiziqlari bor — orqa fonda, Veo'dan oldin ko'rib chiqiladi.",
- 10: "Usta yaqin planda kameraga qaraydi, iliq tabassum; do'ppi, soqol namunadek. Ko'z atrofida yengil chiziqlar — boshqa sahnalardan biroz realistikroq/kattaroq ko'rinadi, lekin o'sha odam. Qo'llar kadrda yo'q. Bir tomonda sariq vitrina nuri, orqada bulutli ko'cha.",
+ 12: "Usta o'ng qo'lida telefon (ekranda pushti yorliq surati va bo'sh pufakchalar), chap qo'li Diyorning yelkasida; Diyor bosh barmog'ini ko'taradi, ikkinchi qo'li cho'ntakda. Ikkala yuz namunadek. Moviy nur sochida, xudida xira. Tepada katta bulutli osmon — @sahiychishopbot uchun joy. Ekran tepasida mayda o'qilmaydigan yozuv — montajda bot suhbati ustiga qo'yiladi.",
+ 11: "Usta yaqin planda kameraga qaraydi, iliq tabassum; do'ppi, soqol namunadek. Ko'z atrofida yengil chiziqlar — boshqa sahnalardan biroz realistikroq/kattaroq ko'rinadi, lekin o'sha odam. Qo'llar kadrda yo'q. Bir tomonda sariq vitrina nuri, orqada bulutli ko'cha.",
  8: "Usta yuzi namunadek. O'ng qo'lda aniq 3 barmoq (bosh barmoq jimjiloqni ushlagan), chap qo'l pastda; ikkalasi yosh. Tepada 3 belgi: sariq lupa, ko'k o'lchov lentasi, pushti savol belgisi — yozuvsiz. Orqada eshikdan bulutli ko'cha, yuzsiz odamlar. Ranglar: sariq, ko'k, pushti. Lentada o'qilmaydigan mayda chiziqlar — normal.",
  7: "Usta yuzi namunadek; kaftini kameraga ochib «shoshilma» deydi — 5 barmoq, yosh qo'l. Oldinda kassada pushti neon taymer, ekrani bo'sh (montajda «faqat bugun 00:59:59»). Ranglar: pushti, binafsha. Chapdagi krossovkalar juda xira, belgi ko'rinmaydi.",
  6: "Diyor yuzi namunadek: hayron, bir qoshi ko'tarilgan, lablari qisilgan. Qo'llar: chap qo'lda 5 barmoq ochiq, o'ng qo'l ko'rsatkich barmog'i bilan sanaydi — to'g'ri. Binafsha neon oyna, sariq javonlar. Kamchilik: Diyorning nuri moviy emas, binafsharang tusga kirgan (atrofdagi binafsha nurdan) — 2-sahnadagi pushtichalik emas; Tahrirdan keyin (B) nur moviy, qolgan hamma narsa o'zgarmagan. Orqadagi krossovkalar juda xira, belgi ko'rinmaydi.",
@@ -32,7 +34,7 @@ NOTE = {
 
 REFN = {"usta": "Usta", "diyor": "Diyor"}
 NEED = {1: ["usta"], 2: ["diyor"], 3: ["usta", "diyor"], 4: ["diyor"], 5: ["usta"], 6: ["diyor"],
-        7: ["usta"], 8: ["usta"], 9: ["diyor"], 10: ["usta"], 11: ["usta", "diyor"]}
+        7: ["usta"], 8: ["usta"], 9: ["diyor"], 10: ["usta", "diyor"], 11: ["usta"], 12: ["usta", "diyor"]}
 def att(n):
     names = [REFN[k] for k in NEED[n]]
     lst = " and ".join(names)
@@ -96,10 +98,16 @@ S = [
  (9, "48–53 s", "Diyor: Demak, avval hisoblayman, keyin olaman.", ["mint", "sky"],
   f"Medium shot, Diyor walking OUT of the shop through the glass door onto the cloudy street. {D} puts his wallet back into his hoodie pocket with one hand and smiles a relaxed, clever smile, a small confident nod; "
   f"his other hand holds his phone showing a plain calculator screen with no digits. Mint green shop sign light and a cloudy grey-blue sky; passers-by blurred on the street. {PEOPLE} {HANDS}"),
- (10, "53–58 s", "Usta: Xaridni foiz emas, ehtiyoj hal qilsin.", ["sun", "sky"],
+ (10, "53–66 s", "Diyor qizga qarab qoladi. Usta: Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin? — Diyor: Yo'q, usta... men... hisoblayapman! — Usta: Ko'zing narxda bo'lsin, ukam. Avval hisob, keyin kelin!", ["coral", "mint", "sky"],
+  f"Medium-wide shot OUTSIDE on the cloudy sidewalk in front of the shop. In the foreground on the right a fictional young Uzbek woman about 22 years old walks past to the right, seen from the side and three-quarter back, "
+  f"her face only partly visible: very long glossy black hair in one long braid down her back, an elegant modest long-sleeved Uzbek atlas (ikat) dress with a coral and mint pattern, a small handbag; she looks ahead and does not notice anyone. "
+  f"In the middle {D} has stopped dead with his phone in one hand, his head turned after her, staring with a dreamy, love-struck face: eyebrows raised, eyes soft and wide, mouth slightly open, a goofy smile; his other hand hangs loose. "
+  f"Right behind him {U} leans in with an amused, mock-strict face, one eyebrow high, a knowing smile, his right hand raised about to tap Diyor on the shoulder, his left hand on his own sash. "
+  f"Cloudy grey-blue sky, wet pavement, the coral shop banner glowing. Other passers-by are small, blurred and faceless. {HANDS}"),
+ (11, "66–71 s", "Usta: Xaridni foiz emas, ehtiyoj hal qilsin.", ["sun", "sky"],
   f"Close-up portrait OUTSIDE on the street, eye level. {U} looks straight into the camera with a warm, wise smile; warm lemon light from a shop window on one side of his face, cool cloudy grey-blue daylight on the other, "
   f"the busy street softly blurred. His hands are not in the frame. {PEOPLE}"),
- (11, "58–68 s", "Usta: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.", ["sky", "sun", "mint"],
+ (12, "71–81 s", "Usta: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.", ["sky", "sun", "mint"],
   f"Medium shot OUTSIDE on the sidewalk in front of the shop. {U} holds a smartphone toward the camera with his right hand; the screen glows mint green with a chat: a photo of a blank coral sale tag and a few empty message bubbles, "
   f"no readable text. His left hand rests on the shoulder of {D}, who stands beside him and gives a thumbs up with one hand. Cloudy grey-blue sky, soft dim daylight, blurred passers-by. "
   f"Leave empty cloudy sky in the top third of the frame for a title. {PEOPLE} {HANDS}"),

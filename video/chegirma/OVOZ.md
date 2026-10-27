@@ -1,6 +1,6 @@
 # «70 foiz chegirma» — ovoz bloki (2026-10-27)
 
-Ssenariy: `ideas/chegirma.md`. Hook (1-qator) EN balli 100.0. Ovozlar «Sovg'a yutdingiz!» va «Oyiga atigi…» dagi bilan bir xil (seriya). 12-qator — avatar savoli (egasi 2026-10-27: «avatarda ham gapirsin»), `timeline.AV_LINE`.
+Ssenariy: `ideas/chegirma.md`. Hook (1-qator) EN balli 100.0. Ovozlar «Sovg'a yutdingiz!» va «Oyiga atigi…» dagi bilan bir xil (seriya). 15-qator — avatar savoli (2026-10-27: 10–12-qatorlar — egasi qo'shgan hazil sahna: o'tib ketayotgan qiz) (egasi 2026-10-27: «avatarda ham gapirsin»), `timeline.AV_LINE`.
 
 ```
 VAZIFA
@@ -8,7 +8,7 @@ O'zbekcha mini-drama uchun ovoz yozuvini yasab ber. Ikki qahramon suhbatlashadi:
 
 NATIJA (ikkalasi ham kerak)
 1. Bitta umumiy WAV fayl: hamma qatorlar tartib bilan, har qatordan keyin 1 soniya pauza. Nomi: chegirma_dialog.wav
-2. Har bir qator alohida WAV fayl: 01_usta.wav, 02_diyor.wav, 03_usta.wav ... 12_usta.wav (raqam qator raqami bilan bir xil).
+2. Har bir qator alohida WAV fayl: 01_usta.wav, 02_diyor.wav, 03_usta.wav ... 15_usta.wav (raqam qator raqami bilan bir xil).
 Musiqa yo'q, effekt yo'q, shovqin yo'q.
 
 TIL VA TEZLIK
@@ -46,9 +46,12 @@ QATORLAR
 7. USTA [yumshoq, tushuntiruvchi; ~6 s]: Katta raqam ko'zni, taymer qo'lni shoshiltiradi. Kerakli narsa shoshilishni talab qilmaydi.
 8. USTA [aniq, har savoldan keyin qisqa pauza; ~9 s]: Uchta tekshiruv. Boshqa do'kondagi narxi qancha? O'lchami, sifati, kafolati bir xilmi? Va shu mahsulot senga kecha ham kerakmidi?
 9. DIYOR [xotirjam, jilmayib; ~3 s]: Demak, avval hisoblayman, keyin olaman.
-10. USTA [iliq, kameraga qarab; ~3.5 s]: Xaridni foiz emas, ehtiyoj hal qilsin.
-11. USTA [do'stona, tomoshabinga murojaat; ~9 s]: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.
-12. USTA [iliq, savol beruvchi, tomoshabinga; ~4 s]: Siz-chi? Eng katta chegirmangiz qancha edi? Izohga yozing!
+10. USTA [hazil, kulgi aralash, do'stona tanbeh; ~4 s]: Hoy-hoy, Diyor! Sen do'konda chegirma qidiryapsanmi yoki ko'chada kelin?
+11. DIYOR [cho'chib, shoshib, uyalib, so'zlari chalkashib; ~2.5 s]: Yo'q, usta... men... hisoblayapman!
+12. USTA [kulib, mehribon tanbeh; ~4 s]: Ko'zing narxda bo'lsin, ukam. Avval hisob, keyin kelin!
+13. USTA [iliq, kameraga qarab; ~3.5 s]: Xaridni foiz emas, ehtiyoj hal qilsin.
+14. USTA [do'stona, tomoshabinga murojaat; ~9 s]: Chegirma yorlig'ini suratga olib botimizga yuboring: @sahiychishopbot. Haqiqiy foizni hisoblab, nimani tekshirishni aytib beradi.
+15. USTA [iliq, savol beruvchi, tomoshabinga; ~4 s]: Siz-chi? Eng katta chegirmangiz qancha edi? Izohga yozing!
 ```
 
 ## Video vaqtlari (taxminiy; ovoz kelgach aniqlanadi)
