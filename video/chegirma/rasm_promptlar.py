@@ -5,8 +5,12 @@
 # Yorliq, taymer, raqamlar rasmda bo'sh — «-70%», «300 000», «-43%» va h.k. montajda yoziladi.
 import html
 
-IMG = {}   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
-NOTE = {}
+IMG = {   # egasi yuborgan sahna rasmlari: n → [("s01", "izoh"), ...]
+ 1: [("s01", "✅ tanlandi (C, bulutli, img/s01.png)")],
+}
+NOTE = {
+ 1: "4 variant solishtirildi (A, B — quyoshli; C, D — bulutli). C tanlandi: yuz namunaga eng yaqin, orqadagi odamlar soyabon bilan, orqasidan, yuzsiz; yo'lak nam, osmon bulutli. Qo'llar yosh, ikkita. Krossovkadagi xira belgi montajdan oldin tozalanadi.",
+}
 
 REFN = {"usta": "Usta", "diyor": "Diyor"}
 NEED = {1: ["usta"], 2: ["diyor"], 3: ["usta", "diyor"], 4: ["diyor"], 5: ["usta"], 6: ["diyor"],
