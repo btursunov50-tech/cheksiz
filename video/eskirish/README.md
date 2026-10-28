@@ -3,7 +3,7 @@
 - Ssenariy: `ideas/eskirish.md`. Ovoz bloki: `OVOZ.md` (bitta fayl, qatorlar orasida 1000 Hz BIP).
 - Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`, Artifact: https://claude.ai/artifact/WY4CroEsDWcynVsh9pgSox (16 ta rasm, 9:16). Namunalar `img/ref_usta.png`, `img/ref_diyor.png` («70 foiz chegirma» dagi).
 - Veo promptlari: `veo_promptlar.py` → `sahnalar.html`, o'sha Artifact: https://claude.ai/artifact/WY4CroEsDWcynVsh9pgSox (kamera gapi boshida va oxirida, «joyida qolsin» yo'q, o'zbekcha gaplar).
-- Holat: ✅ 16 ta rasm tayyor (2026-10-28); Veo kliplari va ovoz (Manus) kutilmoqda.
+- Holat: ✅ 16 ta rasm va 16 ta klip tayyor (2026-10-28); ovoz (Manus, BIP bilan) kutilmoqda.
 
 ## Rasmlar
 | # | Fayl | Holat | Izoh |
@@ -43,3 +43,6 @@
 | 10 | `clips/s10.mp4` (Hailuo) | ✅ | 0–6 s (ovoz ~7 s → ~1.2x) | Pastdan yaqinlashadi, bolg'a zarba beradi, uchqunlar (3 s da), pullar yozuvsiz, yorilgan ekranda qizil batareya. 7 s dan batareya to'lib ketadi — kesiladi. Belgi kesildi |
 | 11 | `clips/s11.mp4` (Hailuo) | ✅ qisman | 0–5.5 s (ovoz ~6 s) | Diyor telefoniga quvonib qaraydi, Usta orqada jilmayadi; yuzlar mos. **Farq:** teleminora 1.5–4.5 s da ko'k neonga aylanadi (boshqa sahnalarda oltin). 6 s dan kadr juda yaqin, Diyor yuzi kesiladi |
 | 12 | `clips/s12.mp4` (Hailuo) | ✅ | 0–8 s (ovoz ~5 s) | Hazil: Diyor telefonni quchoqlab ko'zini yumib kuladi, Usta kulib barmog'i bilan ko'rsatadi; yuzlar namunaga mos, teleminora oltin. Kamera uzoqlashadi (20.9) |
+| 13 | `clips/s13.mp4` (Hailuo) | ✅ | 0–8 s (ovoz ~8 s) | Pastdan ko'tarilib yaqinlashadi (14.8). Usta 3 barmoq (barcha kadrda 3 ta), 3 neon belgi yozuvsiz; 4.5 s dan batareya belgisi yashil-to'la bo'ladi (tekshirildi — ma'noga mos). Yuz namunaga mos, teleminora oltin. Belgi kesildi |
+| 14 | `clips/s14.mp4` (Hailuo) | ✅ | 0–8 s (ovoz ~6 s) | Yuzga juda sekin yaqinlashadi (13.7), Usta kameraga iliq gapiradi, yuz namunaga mos, teleminora va ko'k fonuslar orqada. Belgi kesildi |
+| 15 | `clips/s15.mp4` (Hailuo) | ✅ | 0–8 s (ovoz ~9 s → ~1.15x) | Uzoqlashib ko'tariladi (19.4), tepada osmon va teleminora — @sahiychishopbot shu yerga. Usta telefonni ko'rsatadi (yozuvsiz chat pufakchalari), Diyor bosh barmog'ini ko'taradi; yuzlar mos. Belgi kesildi |
