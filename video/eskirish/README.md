@@ -14,3 +14,4 @@
 | 5 | `img/s05.png` (asl: `s05_a.png`) | ✅ | 1924 zal, 7 ta erkak, yuzlar shlyapa soyasida; egasi so'rovi bilan stoldagi 7 ta lampochka kodda ko'k neonga bo'yaldi (qandil va devor chiroqlari sariq qoldi) |
 | 6 | `img/s06.png` (asl: `s06_a.png`) | ✅ | Laboratoriya, qatorda lampochkalar, bittasi o'chgan (o'rtada); texnik orqasidan, yuzi yo'q; yozuv yo'q. Egasi so'rovi bilan kodda: soat raqamlari va strelkalari ko'k neon (siferblat qorong'ilatildi), shiftdagi lampalar ko'k neon |
 | 6b | `img/s06b.png` | ✅ | Diyor yaqin planda hayratda (ko'zlar katta, og'iz ochiq, qo'l iyagida); yuz namunaga mos, soch tekis qora, ingichka moviy nur; telefon orqasida logotip yo'q (kamera bo'rtig'i bor); barmoqlar to'g'ri |
+| 7 | `img/s07.png` | ✅ | Kanal bo'yi, orqada teleminora namunadek (3 qiya oyoq, 2 disk, shpil, oltin chiroqlar). Usta telefonni ushlab qaraydi, yuzi namunaga mos; Diyor engashib qiziqib qaraydi, soch tekis qora. Qo'llar to'g'ri, telefonda logotip yo'q, yozuv yo'q |
