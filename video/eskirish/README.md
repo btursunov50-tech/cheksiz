@@ -24,3 +24,4 @@
 | 15 | `img/s15.png` | ✅ | Usta telefonni ko'rsatadi: bo'sh chat pufakchalari + yashil batareya (tekshirilgandan keyin — mos); qo'li Diyor yelkasida; Diyor bosh barmog'ini ko'taradi, jilmayadi. Diyor sochi to'lqinliroq, moviy nuri yo'q (kichik farq). Yozuv yo'q. Tepada osmon — @sahiychishopbot shu yerga |
 | 12 | `img/s12.png` | ✅ | Hazil: Diyor telefonni ko'kragiga bosib, ko'zlarini yumib jilmayadi; Usta kulib barmog'i bilan ko'rsatadi. Yuzlar namunaga mos, Diyor sochi qora, ingichka moviy nur bor; qo'llar to'g'ri; teleminora namunadek; yozuv yo'q |
 | 14 | `img/s14.png` | ✅ | Usta yaqin plan, kameraga dono va iliq qaraydi; yuz 13-rasm va namunaga mos; orqada teleminora va kanal; yozuv yo'q |
+- Fonuslar (egasi, 2026-10-28): ko'cha fonuslari kodda ko'k neonga bo'yalgan (`fonus.py`, `fonus_hammasi.sh`; asl rasmlar `img/asl/`). Veo va rasm promptlarida ham «street lamps glow cool neon blue».
