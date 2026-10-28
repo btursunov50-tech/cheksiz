@@ -31,7 +31,7 @@ V = hsv[..., 2].astype(np.float32) / 255
 if a.lamp and not a.roi: cand = []
 for i, q in enumerate(a.lamp):                       # qo'lda berilganlar: tartib bo'yicha 0, 2, 4 ... bo'yaladi
     cx, cy, r = map(int, q.split(","))
-    use = i % 2 == 0
+    use = True   # egasi (2026-10-28, 3): katta fonuslar hammasi ko'k, navbatma-navbat faqat zich qatorlarda
     cv2.circle(sheet, (cx, cy), r, (0, 255, 0) if use else (0, 0, 255), 2)
     if use:
         c = np.zeros((H, W), np.float32); cv2.circle(c, (cx, cy), int(r * 0.8), 1, -1)
