@@ -7,11 +7,13 @@ dur = lambda f: float(subprocess.run(["ffprobe", "-v", "error", "-show_entries",
 F = {int(n[:2]): os.path.join(V, n) for n in os.listdir(V) if n.endswith(".wav")}
 L0 = {n: dur(f) for n, f in F.items()}          # asl (Manus) uzunliklar — PARTS vaqtlari shularda
 TEMPO = float(os.environ.get("TEMPO", "1"))     # ovoz tezligi: 0.9 = 10% sekinroq (atempo, ohang o'zgarmaydi)
-if TEMPO != 1:
+TP = {n: TEMPO for n in F}                       # qator bo'yicha tezlik: TEMPO_N="20:0.7,21:0.7"
+for kv in filter(None, os.environ.get("TEMPO_N", "").split(",")): k, v = kv.split(":"); TP[int(k)] = float(v)
+if any(v != 1 for v in TP.values()):
     VT = os.path.join(D, "voice_t"); os.makedirs(VT, exist_ok=True)
     for n, f in F.items():
         o = os.path.join(VT, os.path.basename(f))
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-af", f"atempo={TEMPO}", o], check=True); F[n] = o
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-af", f"atempo={TP[n]}", o], check=True); F[n] = o
 L = {n: dur(f) for n, f in F.items()}
 GAP = 0.3
 def sc(clip, lines):          # bir sahnada bir yoki ikki qator ketma-ket
@@ -55,27 +57,27 @@ PARTS = {
     19: [(0, 3.37, "Ular senga telefon emas, «eskirding» degan tuyg'uni sotadi."), (3.85, L0[19], "Har gal so'ra: bundan kim foyda ko'radi?")],
     20: [(0, 2.6, "Telefoningiz qotyaptimi? Botimizga modelini yozing:"), (2.6, 3.9, "@sahiychishopbot"), (3.9, 6.4, "Batareya holatini qayerdan ko'rishni"), (6.4, L0[20], "va yangisini olishdan oldin nimani tekshirishni o'rgatadi.")],
 }
-PARTS = {n: [(x / TEMPO, y / TEMPO, t) for x, y, t in v] for n, v in PARTS.items()}
+PARTS = {n: [(x / TP[n], y / TP[n], t) for x, y, t in v] for n, v in PARTS.items()}
 WHO = {n: (O if n in (2, 4, 8, 10, 14, 16) else U) for n in PARTS}
 SUB = [(round(AT[n] + a, 2), round(AT[n] + b, 2), WHO[n], t) for n in sorted(PARTS) for a, b, t in PARTS[n]]
 c = lambda k: CUT[k - 1]      # k-sahna boshi (SC tartibida, 1 dan)
 TEXT = [
-    (AT[5] + 2.66 / TEMPO, c(5) - 0.1, "JENEVA · 1924", 96, "F2B544", (540, 300)),
+    (AT[5] + 2.66 / TP[5], c(5) - 0.1, "JENEVA · 1924", 96, "F2B544", (540, 300)),
     (c(5) + 0.3, c(6) - 0.1, "LAMPOCHKA: 1000 SOATDAN KO'P EMAS", 52, "F2B544", (540, 300)),
-    (c(6) + 0.2, AT[7] + 2.8 / TEMPO, "AVVAL: 2500 SOAT", 70, "F2B544", (540, 300)),
-    (AT[7] + 2.8 / TEMPO, c(7) - 0.1, "UZOQ YONSA — JARIMA", 66, "FF4A3A", (540, 300)),
-    (AT[9], AT[9] + 2.6 / TEMPO, "2017", 120, "F2B544", (540, 300)),
+    (c(6) + 0.2, AT[7] + 2.8 / TP[7], "AVVAL: 2500 SOAT", 70, "F2B544", (540, 300)),
+    (AT[7] + 2.8 / TP[7], c(7) - 0.1, "UZOQ YONSA — JARIMA", 66, "FF4A3A", (540, 300)),
+    (AT[9], AT[9] + 2.6 / TP[9], "2017", 120, "F2B544", (540, 300)),
     (c(9) + 0.2, c(10) - 0.1, "ESKI BATAREYA → SEKIN TELEFON", 54, "FF4A3A", (540, 300)),
-    (c(10) + 0.2, AT[12] + 3.0 / TEMPO, "«ESKIRDI!» → YANGI TELEFON", 56, "F2B544", (540, 300)),
-    (AT[12] + 3.6 / TEMPO, c(11) - 0.1, "KO'PINCHA BATAREYA YETARDI", 56, "5FD3A6", (540, 300)),
-    (AT[13] + 0.5 / TEMPO, c(12) - 0.1, "AQSh: $500 000 000 GACHA", 62, "F2B544", (540, 250)),
-    (AT[13] + 4.64 / TEMPO, c(12) - 0.1, "FRANSIYA: €25 000 000", 62, "FF4A3A", (540, 340)),
-    (AT[18] + 2.53 / TEMPO, c(15) - 0.05, "1. BATAREYA HOLATI?", 62, "F2B544", (540, 1050)),
-    (AT[18] + 4.58 / TEMPO, c(15) - 0.05, "2. XOTIRA TO'LMAGANMI?", 62, "5FD3A6", (540, 1150)),
-    (AT[18] + 6.37 / TEMPO, c(15) - 0.05, "3. ALMASHTIRISH NARXI?", 62, "F2B544", (540, 1650)),
-    (AT[19] + 3.85 / TEMPO, c(16) - 0.05, "BUNDAN KIM FOYDA KO'RADI?", 64, "F2B544", (540, 300)),
-    (AT[20] + 2.6 / TEMPO, T, "@sahiychishopbot", 96, "F2B544", (540, 250)),
-    (AT[20] + 3.9 / TEMPO, T, "BATAREYANI TEKSHIRISHNI O'RGATADI", 50, "FFFFFF", (540, 360)),
+    (c(10) + 0.2, AT[12] + 3.0 / TP[12], "«ESKIRDI!» → YANGI TELEFON", 56, "F2B544", (540, 300)),
+    (AT[12] + 3.6 / TP[12], c(11) - 0.1, "KO'PINCHA BATAREYA YETARDI", 56, "5FD3A6", (540, 300)),
+    (AT[13] + 0.5 / TP[13], c(12) - 0.1, "AQSh: $500 000 000 GACHA", 62, "F2B544", (540, 250)),
+    (AT[13] + 4.64 / TP[13], c(12) - 0.1, "FRANSIYA: €25 000 000", 62, "FF4A3A", (540, 340)),
+    (AT[18] + 2.53 / TP[18], c(15) - 0.05, "1. BATAREYA HOLATI?", 62, "F2B544", (540, 1050)),
+    (AT[18] + 4.58 / TP[18], c(15) - 0.05, "2. XOTIRA TO'LMAGANMI?", 62, "5FD3A6", (540, 1150)),
+    (AT[18] + 6.37 / TP[18], c(15) - 0.05, "3. ALMASHTIRISH NARXI?", 62, "F2B544", (540, 1250)),
+    (AT[19] + 3.85 / TP[19], c(16) - 0.05, "BUNDAN KIM FOYDA KO'RADI?", 64, "F2B544", (540, 300)),
+    (AT[20] + 2.6 / TP[20], T, "@sahiychishopbot", 96, "F2B544", (540, 250)),
+    (AT[20] + 3.9 / TP[20], T, "BATAREYANI TEKSHIRISHNI O'RGATADI", 50, "FFFFFF", (540, 360)),
 ]
 TEXT = [(round(a, 2), round(b, 2), x, s, col, p) for a, b, x, s, col, p in TEXT]
 BOOM = [round(c(12) + 3.0 * (CUT[12] - CUT[11]) / 6.0, 2)]   # 10-sahna: bolg'a zarbasi (klip 3 s da, sekinlashuvga moslab)

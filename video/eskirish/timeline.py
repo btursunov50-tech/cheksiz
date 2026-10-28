@@ -1,5 +1,5 @@
 # «Telefoning eskirmagan» — build_tl.py yasaydi (qo'lda o'zgartirmang).
-CUT = [0.0, 5.428, 13.276, 19.896, 28.551, 37.572, 44.893, 47.139, 57.603, 66.82, 74.757, 83.978, 91.806, 99.752, 110.21, 118.174, 129.787]
+CUT = [0.0, 5.428, 13.276, 19.896, 28.551, 37.572, 44.893, 47.139, 57.603, 66.82, 74.757, 83.978, 91.806, 99.752, 110.21, 118.174, 131.359]
 CLIP = ['use/s01', 'use/s02', 'use/s03', 'use/s04', 'use/s05', 'use/s06', 'use/s06b', 'use/s07', 'use/s08', 'use/s09', 'use/s10', 'use/s11', 'use/s12', 'use/s13', 'use/s14', 'use/s15']
 SUB = [
  (0.15, 2.65, 'R', 'Telefoning eskirmagan.'),
@@ -37,10 +37,10 @@ SUB = [
  (107.86, 109.88, 'R', 'Batareya almashtirish qancha turadi?'),
  (110.36, 114.57, 'R', "Ular senga telefon emas, «eskirding» degan tuyg'uni sotadi."),
  (115.17, 117.85, 'R', "Har gal so'ra: bundan kim foyda ko'radi?"),
- (118.32, 121.57, 'R', 'Telefoningiz qotyaptimi? Botimizga modelini yozing:'),
- (121.57, 123.2, 'R', '@sahiychishopbot'),
- (123.2, 126.32, 'R', "Batareya holatini qayerdan ko'rishni"),
- (126.32, 129.45, 'R', "va yangisini olishdan oldin nimani tekshirishni o'rgatadi."),
+ (118.32, 122.04, 'R', 'Telefoningiz qotyaptimi? Botimizga modelini yozing:'),
+ (122.04, 123.9, 'R', '@sahiychishopbot'),
+ (123.9, 127.47, 'R', "Batareya holatini qayerdan ko'rishni"),
+ (127.47, 131.04, 'R', "va yangisini olishdan oldin nimani tekshirishni o'rgatadi."),
 ]
 TEXT = [
  (23.37, 28.45, 'JENEVA · 1924', 96, 'F2B544', (540, 300)),
@@ -55,11 +55,11 @@ TEXT = [
  (80.71, 83.88, 'FRANSIYA: €25 000 000', 62, 'FF4A3A', (540, 340)),
  (103.06, 110.16, '1. BATAREYA HOLATI?', 62, 'F2B544', (540, 1050)),
  (105.63, 110.16, "2. XOTIRA TO'LMAGANMI?", 62, '5FD3A6', (540, 1150)),
- (107.86, 110.16, '3. ALMASHTIRISH NARXI?', 62, 'F2B544', (540, 1650)),
+ (107.86, 110.16, '3. ALMASHTIRISH NARXI?', 62, 'F2B544', (540, 1250)),
  (115.17, 118.12, "BUNDAN KIM FOYDA KO'RADI?", 64, 'F2B544', (540, 300)),
- (121.57, 129.79, '@sahiychishopbot', 96, 'F2B544', (540, 250)),
- (123.2, 129.79, "BATAREYANI TEKSHIRISHNI O'RGATADI", 50, 'FFFFFF', (540, 360)),
+ (122.04, 131.36, '@sahiychishopbot', 96, 'F2B544', (540, 250)),
+ (123.9, 131.36, "BATAREYANI TEKSHIRISHNI O'RGATADI", 50, 'FFFFFF', (540, 360)),
 ]
 BOOM = [87.89]
-AV_LINE = (130.287, 135.201)
+AV_LINE = (131.859, 137.467)
 MUSIC_FADE = 5
