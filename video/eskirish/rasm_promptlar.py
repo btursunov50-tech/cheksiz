@@ -14,11 +14,12 @@ STREET = ("a quiet tree-lined street in Tashkent on an autumn evening at golden 
           "a wide sidewalk with fallen leaves, a park bench, a few passers-by far away, small, softly out of focus, seen from the side or back, no clear faces")
 COL = {"amber": "warm amber gold", "teal": "deep teal", "navy": "night navy blue", "sepia": "old sepia brown", "red": "signal red",
        "white": "clean soft white", "mint": "fresh mint green"}
-def sty(cols, old=False):
+def sty(cols, old=False, refs=True):
     c = ", ".join(COL[k] for k in cols[:-1]) + " and " + COL[cols[-1]]
     look = ("an old 1920s photograph come to life: sepia tones, soft film grain, warm glowing light bulbs as the only bright accents" if old else
             "cinematic warm golden-hour light, colourful and eye-catching")
-    return (f"Style: the same hand-painted semi-realistic cartoon illustration style as the attached reference images (painterly, visible brush texture), {look}. "
+    src = "the same hand-painted semi-realistic cartoon illustration style as the attached reference images" if refs else "a hand-painted semi-realistic cartoon illustration style"
+    return (f"Style: {src} (painterly, visible brush texture), {look}. "
             f"Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; everything else is soft dark neutral shadow. "
             "Vertical 9:16. No text, no letters, no numbers, no logos, no brand names, no watermark, no subtitles.")
 REF = {"u": ("Usta", "ref_usta"), "d": ("Diyor", "ref_diyor")}
@@ -81,7 +82,8 @@ S = [
 ]
 e = html.escape
 def prompt(n, shot, cols, refs, old, scene):
-    return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {HANDS} {sty(cols, old)}"
+    hands = "" if n == "8" else HANDS + " "
+    return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{sty(cols, old, bool(refs))}"
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
     p = prompt(n, shot, cols, refs, old, scene)
