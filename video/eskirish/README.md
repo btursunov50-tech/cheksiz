@@ -25,3 +25,10 @@
 | 12 | `img/s12.png` | ✅ | Hazil: Diyor telefonni ko'kragiga bosib, ko'zlarini yumib jilmayadi; Usta kulib barmog'i bilan ko'rsatadi. Yuzlar namunaga mos, Diyor sochi qora, ingichka moviy nur bor; qo'llar to'g'ri; teleminora namunadek; yozuv yo'q |
 | 14 | `img/s14.png` | ✅ | Usta yaqin plan, kameraga dono va iliq qaraydi; yuz 13-rasm va namunaga mos; orqada teleminora va kanal; yozuv yo'q |
 - Fonuslar (egasi, 2026-10-28): ko'cha fonuslari kodda ko'k neonga bo'yalgan (`fonus.py`, `fonus_hammasi.sh`; asl rasmlar `img/asl/`). Veo va rasm promptlarida ham «street lamps glow cool neon blue».
+
+## Kliplar
+| # | Fayl | Holat | Olinadigan qism | Izoh |
+|---|---|---|---|---|
+| 5 | `clips/s05.mp4` | ✅ | 0–8 s | Kamera yuqoridan stolga tushadi, qo'l siqishadi, qog'oz uzatiladi; ko'k lampochkalar ko'k qoldi; yuzlar shlyapa soyasida (6–8 s da yarim ko'rinadi, umumiy, haqiqiy odam emas); sepiya saqlangan |
+| 6 | `clips/s06.mp4` | ⚠️ qisman | 0–4.5 s (ovoz ~7 s → ~1.6x sekinlashadi) | Kamera lampochkalar bo'ylab suzadi, soat va shift lampalari ko'k qoldi, o'chgan lampochka bor. **Xato (Veo):** 4.6 s dan bitta lampochkadan olov chiqadi |
+| 8 | `clips/s08.mp4` → `s08_y.mp4` | ✅ (tuzatildi) | 0–8 s | Shilliqqurt sekin o'rmalaydi, orqada ko'k tutun. **Xato (Veo):** batareya 1 s dan to'lib, 4 s da to'liq qizil bo'lib qoldi (ma'noga zid). `batareya.py` 0-kadrdagi deyarli bo'sh batareyani har kadrga telefon harakatiga moslab qayta yopishtirdi va 2 marta miltillatdi. Kamera kam harakat (4.3) |
