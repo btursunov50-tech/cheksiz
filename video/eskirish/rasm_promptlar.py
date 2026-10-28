@@ -13,9 +13,7 @@ HANDS = "Every person has exactly two arms and two hands, five fingers on each h
 STREET = ("a quiet tree-lined street in Tashkent on an autumn evening at golden hour: tall plane trees with yellow leaves, low warm sun, long soft shadows, "
           "a wide sidewalk with fallen leaves, a park bench, a few passers-by far away, small, softly out of focus, seen from the side or back, no clear faces")
 # Egasi (2026-10-28): 7-sahnadan boshlab joy boshqa — orqada Toshkent teleminorasi.
-STREET2 = ("a wide pedestrian embankment along a calm canal in Tashkent on an autumn evening at golden hour, with the tall Tashkent TV tower clearly visible in the background: "
-           "a very tall slender steel lattice tower on three legs with a round observation pod high up and a long spire, its small lights starting to glow against the evening sky; "
-           "neat lamp posts along the embankment, a few young trees with yellow leaves, low warm sun, a few passers-by far away, small, softly out of focus, seen from the side or back, no clear faces")
+STREET2 = ("a wide pedestrian embankment along a calm canal in Tashkent on an autumn evening at golden hour, with the Tashkent TV tower clearly visible in the background, drawn exactly like the attached TV tower reference photo: three long straight slanted concrete legs that lean inward like a tripod and meet a narrow steel lattice shaft, a large round disc-shaped observation pod about a third of the way up, a slimmer lattice section above it with short side antenna arms, a second smaller round pod higher up, and a thin spire on top; the whole tower glows with warm golden-orange lights against the evening sky; neat lamp posts along the embankment, a few young trees with yellow leaves, low warm sun, a few passers-by far away, small, softly out of focus, seen from the side or back, no clear faces")
 COL = {"amber": "warm amber gold", "teal": "deep teal", "navy": "night navy blue", "sepia": "old sepia brown", "red": "signal red",
        "white": "clean soft white", "mint": "fresh mint green"}
 def sty(cols, old=False, refs=True):
@@ -26,12 +24,16 @@ def sty(cols, old=False, refs=True):
     return (f"Style: {src} (painterly, visible brush texture), {look}. "
             f"Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; everything else is soft dark neutral shadow. "
             "Vertical 9:16. No text, no letters, no numbers, no logos, no brand names, no watermark, no subtitles.")
-REF = {"u": ("Usta", "ref_usta"), "d": ("Diyor", "ref_diyor")}
+REF = {"u": ("Usta", "ref_usta"), "d": ("Diyor", "ref_diyor"), "t": ("the Tashkent TV tower", "ref_teleminora")}
 def att(r):
     if not r: return "No reference images are needed for this image; it shows no main characters. "
+    if r == "t": return "Attach the reference photo of the Tashkent TV tower. "
+    tv = "t" in r; r = r.replace("t", "")
+    if tv and not r: return "Attach the reference photo of the Tashkent TV tower. "
     n = " and ".join(REF[k][0] for k in r)
     return (f"Attach the reference image{'s' if len(r) > 1 else ''} of {n}. Keep {'each character' if len(r) > 1 else 'the character'} exactly as in "
-            f"{'their reference images' if len(r) > 1 else 'the reference image'}: the same face, age, hair, beard, clothes and colours. ")
+            f"{'their reference images' if len(r) > 1 else 'the reference image'}: the same face, age, hair, beard, clothes and colours. "
+            + ("Also attach the reference photo of the Tashkent TV tower and draw the tower in the background exactly in that shape (only its shape; keep the painted style and the scene's colours). " if tv else ""))
 # (raqam, ovoz qatori, plan, ranglar, namunalar, eski uslubmi, sahna)
 S = [
  ("1", "Usta: «Telefoning eskirmagan. Balki faqat batareyasi charchagandir.»", "Medium shot at eye level", ["amber", "teal", "navy"], "ud", False,
@@ -56,7 +58,7 @@ S = [
  ("6b", "Diyor: «Ataylab-a?!»", "Extreme close-up, push-in framing on the face", ["amber", "navy"], "d", False,
   f"{STREET}, blurred golden background. {Dy} in total shock: eyes very wide, eyebrows shot up high, mouth open, one hand frozen halfway to his mouth, "
   "the golden light on one side of his face."),
- ("7", "Usta: «2017-yil. Eng mashhur telefon kompaniyalaridan biri bir sirni tan oldi.» — Diyor: «Qanaqa sir?»", "Medium two-shot at eye level", ["amber", "teal", "navy"], "ud", False,
+ ("7", "Usta: «2017-yil. Eng mashhur telefon kompaniyalaridan biri bir sirni tan oldi.» — Diyor: «Qanaqa sir?»", "Medium two-shot at eye level", ["amber", "teal", "navy"], "udt", False,
   f"{STREET2}. {U} gently takes the smartphone from Diyor's hand and holds it up between them, looking at it seriously. {Dy} leans in, curious, eyebrows raised. "
   "The phone screen is dark and blank, with no logo on the back of the phone."),
  ("8", "Usta: «Batareyasi eskirgan telefonlarni o'zi sekinlashtirib qo'ygan…»", "Close-up of an object, simple and clear like an explainer picture", ["teal", "red", "navy"], "", False,
@@ -68,19 +70,19 @@ S = [
  ("10", "Usta: «…yarim milliard dollargacha to'lashga rozi bo'ldi. Fransiyada 25 million yevro jarima.»", "Low-angle close-up", ["amber", "sepia", "navy"], "", False,
   "A wooden judge's gavel striking a sound block on a dark wooden desk, frozen at the moment of impact, small dust in warm light; beside it neat stacks of banknotes "
   "and a closed old smartphone with a cracked battery icon on its dark screen. No readable text on the money (blurred), no flags."),
- ("11", "Diyor: «Demak, mening telefonim ham eskirmagan…?» — Usta: «Bo'lishi mumkin.»", "Medium close-up", ["amber", "teal"], "ud", False,
+ ("11", "Diyor: «Demak, mening telefonim ham eskirmagan…?» — Usta: «Bo'lishi mumkin.»", "Medium close-up", ["amber", "teal"], "udt", False,
   f"{STREET2}. {Dy} holds his smartphone in both hands and looks down at it with slowly growing hope: soft eyes, a small hopeful smile, head tilted. "
   f"{U} stands just behind his shoulder, slightly out of focus, smiling warmly with his mouth closed."),
- ("12", "Diyor: «Kechir, eski do'stim… sen aybsiz ekansan!» — Usta: «Quchoqlama, batareyasini tekshir!»", "Medium two-shot", ["amber", "teal", "navy"], "ud", False,
+ ("12", "Diyor: «Kechir, eski do'stim… sen aybsiz ekansan!» — Usta: «Quchoqlama, batareyasini tekshir!»", "Medium two-shot", ["amber", "teal", "navy"], "udt", False,
   f"{STREET2}. Comedy moment: {Dy} hugs his smartphone tightly to his chest with both hands, eyes closed, a guilty loving smile. {U} next to him laughs, "
   "eyes crinkled, pointing at the phone with one finger in a friendly scolding way."),
- ("13", "Usta: «Uchta tekshiruv: batareya holati? Xotira to'lmaganmi? Batareya almashtirish qancha?»", "Slightly low-angle medium shot", ["amber", "teal", "mint"], "u", False,
+ ("13", "Usta: «Uchta tekshiruv: batareya holati? Xotira to'lmaganmi? Batareya almashtirish qancha?»", "Slightly low-angle medium shot", ["amber", "teal", "mint"], "ut", False,
   f"{STREET2}. {U} raises exactly three fingers. Above his hand float three glowing neon symbols in a row: a battery (amber), a memory chip (teal), "
   "a wrench (mint green). The symbols have no letters or numbers. Calm confident look into the camera."),
- ("14", "Usta: «Ular senga telefon emas, ‘eskirding’ degan tuyg'uni sotadi…»", "Close-up, head and shoulders", ["amber", "navy"], "u", False,
+ ("14", "Usta: «Ular senga telefon emas, ‘eskirding’ degan tuyg'uni sotadi…»", "Close-up, head and shoulders", ["amber", "navy"], "ut", False,
   f"{STREET2}, the golden sun and yellow leaves softly blurred behind. {U} looks straight into the camera with a wise, warm, slightly serious face, "
   "eyes soft, a calm small smile; the low sun lights one side of his face."),
- ("15", "Usta: «Botimizga modelini yozing: @sahiychishopbot…»", "Medium-wide shot with the sky in the top third", ["amber", "teal", "navy"], "ud", False,
+ ("15", "Usta: «Botimizga modelini yozing: @sahiychishopbot…»", "Medium-wide shot with the sky in the top third", ["amber", "teal", "navy"], "udt", False,
   f"{STREET2}, the evening sky at the top. {U} holds a smartphone toward the viewer: its screen shows a simple chat with empty grey and teal speech bubbles (no letters) "
   f"and a small battery symbol. His other hand rests on Diyor's shoulder. {Dy} stands next to him smiling with his mouth closed and gives a thumbs up."),
 ]
