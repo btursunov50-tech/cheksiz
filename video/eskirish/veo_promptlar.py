@@ -9,7 +9,7 @@ USTA_V = "a calm deep warm male voice of about 30-35"
 DIYOR_V = "a lighter young male voice of about 22"
 LOCK = ("Keep every character exactly as in the image for the whole clip: Usta about 30 with a fuller face, short full black beard, black doppi with white arch pattern, "
         "dark embroidered chapan with a red sash; Diyor about 20 with a round boyish face, messy straight jet-black hair, navy hoodie, thin cyan-blue glow outline. "
-        "Same faces, same age, five fingers on each hand. ")
+        "Same faces, same age, five fingers on each hand. The street lamps glow cool neon blue, exactly as in the image, and stay blue. ")
 END = "No text, no subtitles, no logos, no watermark. The camera keeps moving as described for the whole 8 seconds and is never static."
 
 def say(lines):
