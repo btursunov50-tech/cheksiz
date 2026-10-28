@@ -4,7 +4,6 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 
 | Papka | Video | Joylash kuni |
 |---|---|---|
-| `korish/` | «Ko'rish bor. Pul yo'q.»: 100 000 ko'rish, 0 buyurtma; KO'RSAT / AYT / ISBOTLA (fayllar: `korish_uz.mp4` Telegram, `korish_en.mp4` YouTube + LinkedIn, `korish_ru.mp4` Instagram + Facebook; matnlar `video/korish/POSTS.md`; musiqa: Nocturnal Tension, Suno) | navbatda |
 | `vaqt/` | «VAQT»: Buxoro savdogari, VAQT hisobni ko'rsatadi, oltin xotiralar; «bugun va hozir» (fayllar: `1-telegram-vaqt-uz.mp4`, `2-youtube-linkedin-vaqt-en.mp4`, `3-instagram-facebook-vaqt-ru.mp4`, `vaqt-uz/en/ru.srt`; matnlar `video/vaqt/POSTS.md`; musiqa: Nocturnal Tension, Suno) | navbatda |
 | `robot/` | «Robot bilan bir piyola choy» (2:45): robot va lavash do'koni egasi choyxonada; kamera, AI-shifokor, yurist, parol so'ragan «AI» — firibgar; botga chaqiriq ekranda (fayllar: `1-telegram-robot-uz.mp4`, `2-youtube-linkedin-robot-en.mp4`, `3-instagram-facebook-robot-ru.mp4`, `robot-uz/en/ru.srt`; matnlar `video/robot/POSTS.md`; musiqa: Dutar's Whisper) | navbatda |
 
