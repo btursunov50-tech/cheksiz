@@ -19,3 +19,5 @@
 | 9 | `img/s09.png` | ✅ | Telefon do'koni: odamlar orqasidan (yuzsiz), oq qutilar, savatda eski telefonlar. Qutilarda o'qilmaydigan mayda kulrang belgilar bor, logotip emas; savatdagi ba'zi telefonlar kamerasi mashhur brendga o'xshaydi, lekin belgi yo'q |
 | 10 | `img/s10.png` | ✅ | Sud bolg'asi, tarozi, dollarga o'xshash pul (yozuvi xira), yorilgan ekranda qizil batareya. O'qiladigan yozuv yo'q |
 | 11 | `img/s11.png` | ✅ | Teleminora namunadek; Diyor telefoniga quvonib qaraydi (umidli emas, hayajonli — mos), soch qora tekis, moviy nur juda kuchsiz; Usta orqada jilmayadi, yuzi namunaga mos; qo'llar to'g'ri |
+| 13 | `img/s13.png` | ✅ | Usta 3 barmoq (to'g'ri), tepada 3 neon belgi: batareya (sariq), chip (ko'k), kalit (yashil), yozuvsiz; yuz namunaga mos; teleminora namunadek |
+| 15 | `img/s15.png` | ✅ | Usta telefonni ko'rsatadi: bo'sh chat pufakchalari + yashil batareya (tekshirilgandan keyin — mos); qo'li Diyor yelkasida; Diyor bosh barmog'ini ko'taradi, jilmayadi. Diyor sochi to'lqinliroq, moviy nuri yo'q (kichik farq). Yozuv yo'q. Tepada osmon — @sahiychishopbot shu yerga |
