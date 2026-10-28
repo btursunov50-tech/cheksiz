@@ -24,24 +24,27 @@ for k in range(1, n):
     if not (a.amin <= ar <= a.amax): continue
     if ar / (w * h) < 0.3 or not (0.3 < h / max(w, 1) < 4): continue
     cand.append(k)
+# Egasi (2026-10-28, 2-urinish): «bittasini qil, bittasini qilma, faqat fonus ichi bo'lsin, shuvab tashlama»:
+# fonuslar navbatma-navbat (1-si bo'yaladi, 2-si yo'q ...), faqat fonus ichidagi yorug' shisha, atrofga nur yoyilmaydi.
 keep = np.zeros((H, W), np.float32); sheet = img.copy()
-if a.lamp:
-    cand = cand if a.roi else []
-    V = hsv[..., 2].astype(np.float32) / 255
-    for q in a.lamp:
-        cx, cy, r = map(int, q.split(","))
-        c = np.zeros((H, W), np.float32); cv2.circle(c, (cx, cy), r, 1, -1)
-        keep = np.maximum(keep, c * np.clip((V - 0.55) / 0.3, 0, 1))
-        cv2.circle(sheet, (cx, cy), r, (0, 255, 0), 2)
+V = hsv[..., 2].astype(np.float32) / 255
+if a.lamp and not a.roi: cand = []
+for i, q in enumerate(a.lamp):                       # qo'lda berilganlar: tartib bo'yicha 0, 2, 4 ... bo'yaladi
+    cx, cy, r = map(int, q.split(","))
+    use = i % 2 == 0
+    cv2.circle(sheet, (cx, cy), r, (0, 255, 0) if use else (0, 0, 255), 2)
+    if use:
+        c = np.zeros((H, W), np.float32); cv2.circle(c, (cx, cy), int(r * 0.8), 1, -1)
+        keep = np.maximum(keep, c * np.clip((V - 0.62) / 0.25, 0, 1))
+cand = sorted(cand, key=lambda k: (st[k][0], st[k][1]))   # uzoqdagilar chapdan o'ngga, navbatma-navbat
 for i, k in enumerate(cand, 1):
     x, y, w, h, ar = st[k]
-    use = (i in only) if only else (i not in skip)
+    use = (i in only) if only else (i not in skip and i % 2 == 1)
     cv2.rectangle(sheet, (x - 3, y - 3), (x + w + 3, y + h + 3), (0, 255, 0) if use else (0, 0, 255), 2)
-    cv2.putText(sheet, str(i), (x + w + 4, y + 12), 0, 0.5, (0, 255, 255), 2)
-    if use: keep[lab == k] = 1
-core = cv2.GaussianBlur(cv2.dilate(keep, np.ones((5, 5), np.uint8)), (7, 7), 0)
-halo = cv2.GaussianBlur(keep, (0, 0), 10); halo = np.clip(halo / max(halo.max(), 1e-6) * 1.8, 0, 1) * 0.55
-w = np.maximum(core, halo)[..., None]
+    if use: keep[lab == k] = np.clip((V[lab == k] - 0.62) / 0.25, 0, 1)
+core = cv2.GaussianBlur(keep, (3, 3), 0)
+halo = cv2.GaussianBlur(keep, (0, 0), 3) * 0.25
+w = np.clip(np.maximum(core, halo), 0, 1)[..., None]
 L = f.mean(2, keepdims=True) / 255
 tint = np.clip(np.array([255., 200., 70.]) * np.power(L, 0.6) * 1.35, 0, 255)
 white = np.clip((L - 0.9) / 0.1, 0, 1) * core[..., None]
