@@ -21,3 +21,4 @@
 | 11 | `img/s11.png` | ✅ | Teleminora namunadek; Diyor telefoniga quvonib qaraydi (umidli emas, hayajonli — mos), soch qora tekis, moviy nur juda kuchsiz; Usta orqada jilmayadi, yuzi namunaga mos; qo'llar to'g'ri |
 | 13 | `img/s13.png` | ✅ | Usta 3 barmoq (to'g'ri), tepada 3 neon belgi: batareya (sariq), chip (ko'k), kalit (yashil), yozuvsiz; yuz namunaga mos; teleminora namunadek |
 | 15 | `img/s15.png` | ✅ | Usta telefonni ko'rsatadi: bo'sh chat pufakchalari + yashil batareya (tekshirilgandan keyin — mos); qo'li Diyor yelkasida; Diyor bosh barmog'ini ko'taradi, jilmayadi. Diyor sochi to'lqinliroq, moviy nuri yo'q (kichik farq). Yozuv yo'q. Tepada osmon — @sahiychishopbot shu yerga |
+| 12 | `img/s12.png` | ✅ | Hazil: Diyor telefonni ko'kragiga bosib, ko'zlarini yumib jilmayadi; Usta kulib barmog'i bilan ko'rsatadi. Yuzlar namunaga mos, Diyor sochi qora, ingichka moviy nur bor; qo'llar to'g'ri; teleminora namunadek; yozuv yo'q |
