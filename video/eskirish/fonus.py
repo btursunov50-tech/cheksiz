@@ -4,7 +4,7 @@
 import argparse, cv2, numpy as np
 p = argparse.ArgumentParser(); p.add_argument("inp"); p.add_argument("out"); p.add_argument("--show")
 p.add_argument("--skip", default=""); p.add_argument("--only", default=""); p.add_argument("--vmin", type=int, default=215)
-p.add_argument("--roi", action="append", default=[]); p.add_argument("--lamp", action="append", default=[], help="cx,cy,r: shu doira ichidagi yorug' joy bo'yaladi (avtomatik qidiruv o'chadi)"); p.add_argument("--amin", type=int, default=25); p.add_argument("--amax", type=int, default=9000)
+p.add_argument("--roi", action="append", default=[]); p.add_argument("--glass", action="append", default=[], help="cx,cy,hw,hh: fonus shishasi (ellips), aniq o'lchangan"); p.add_argument("--lamp", action="append", default=[], help="cx,cy,r: shu doira ichidagi yorug' joy bo'yaladi (avtomatik qidiruv o'chadi)"); p.add_argument("--amin", type=int, default=25); p.add_argument("--amax", type=int, default=9000)
 a = p.parse_args()
 img = cv2.imread(a.inp); H, W = img.shape[:2]; f = img.astype(np.float32)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -22,20 +22,39 @@ cand = []
 for k in range(1, n):
     x, y, w, h, ar = st[k]
     if not (a.amin <= ar <= a.amax): continue
-    if ar / (w * h) < 0.3 or not (0.3 < h / max(w, 1) < 4): continue
+    if ar / (w * h) < 0.5 or not (0.5 < h / max(w, 1) < 2.2) or ar > 500: continue   # faqat ixcham mayda chiroq nuqtalari (dog' emas)
     cand.append(k)
 # Egasi (2026-10-28, 2-urinish): «bittasini qil, bittasini qilma, faqat fonus ichi bo'lsin, shuvab tashlama»:
 # fonuslar navbatma-navbat (1-si bo'yaladi, 2-si yo'q ...), faqat fonus ichidagi yorug' shisha, atrofga nur yoyilmaydi.
 keep = np.zeros((H, W), np.float32); sheet = img.copy()
 V = hsv[..., 2].astype(np.float32) / 255
-if a.lamp and not a.roi: cand = []
-for i, q in enumerate(a.lamp):                       # qo'lda berilganlar: tartib bo'yicha 0, 2, 4 ... bo'yaladi
+if (a.lamp or a.glass) and not a.roi: cand = []
+for i, q in enumerate(a.lamp):                       # qo'lda berilgan taxminiy joy atrofida aniq shisha qidiriladi
     cx, cy, r = map(int, q.split(","))
-    use = True   # egasi (2026-10-28, 3): katta fonuslar hammasi ko'k, navbatma-navbat faqat zich qatorlarda
-    cv2.circle(sheet, (cx, cy), r, (0, 255, 0) if use else (0, 0, 255), 2)
-    if use:
-        c = np.zeros((H, W), np.float32); cv2.circle(c, (cx, cy), int(r * 0.8), 1, -1)
-        keep = np.maximum(keep, c * np.clip((V - 0.62) / 0.25, 0, 1))
+    R = int(r * 1.8); x0, y0, x1, y1 = max(0, cx - R), max(0, cy - R), min(W, cx + R), min(H, cy + R)
+    win = hsv[y0:y1, x0:x1]
+    best, bd = None, 1e9
+    for thr in (235, 220, 205, 190):                   # eng yorqin, ixcham, issiq bo'lak — fonus shishasi
+        bm = ((win[..., 2] >= thr) & (win[..., 0] < 40)).astype(np.uint8)
+        nn, ll, ss, cc = cv2.connectedComponentsWithStats(bm)
+        for k in range(1, nn):
+            bx, by, bw, bh, ba = ss[k]
+            if ba < 0.04 * r * r or bw > 2.2 * r or bh > 2.6 * r or ba / (bw * bh) < 0.35: continue
+            d = np.hypot(cc[k][0] + x0 - cx, cc[k][1] + y0 - cy) - 0.02 * ba
+            if d < bd: bd, best = d, (ll == k)
+        if best is not None: break
+    if best is None:
+        cv2.circle(sheet, (cx, cy), r, (0, 0, 255), 2); continue
+    m1 = np.zeros((H, W), np.uint8); m1[y0:y1, x0:x1] = best.astype(np.uint8)
+    cs, _ = cv2.findContours(m1, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE); cv2.drawContours(m1, cs, -1, 1, -1)   # teshiklarni to'ldirish
+    keep = np.maximum(keep, m1.astype(np.float32) * np.clip((V - 0.45) / 0.3, 0.35, 1))
+    cv2.drawContours(sheet, cs, -1, (0, 255, 0), 2)
+for q in a.glass:                                    # aniq o'lchangan shisha: faqat ellips ichidagi yorug' joy
+    cx, cy, hw, hh = map(int, q.split(","))
+    e1 = np.zeros((H, W), np.float32); cv2.ellipse(e1, (cx, cy), (hw, hh), 0, 0, 360, 1, -1)
+    e1 = cv2.GaussianBlur(e1, (5, 5), 0)
+    keep = np.maximum(keep, e1 * np.clip((V - 0.4) / 0.3, 0.3, 1))
+    cv2.ellipse(sheet, (cx, cy), (hw, hh), 0, 0, 360, (0, 255, 0), 2)
 cand = sorted(cand, key=lambda k: (st[k][0], st[k][1]))   # uzoqdagilar chapdan o'ngga, navbatma-navbat
 for i, k in enumerate(cand, 1):
     x, y, w, h, ar = st[k]
