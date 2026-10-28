@@ -2,7 +2,8 @@
 
 - Ssenariy: `ideas/eskirish.md`. Ovoz bloki: `OVOZ.md` (bitta fayl, qatorlar orasida 1000 Hz BIP).
 - Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`, Artifact: https://claude.ai/artifact/WY4CroEsDWcynVsh9pgSox (16 ta rasm, 9:16). Namunalar `img/ref_usta.png`, `img/ref_diyor.png` («70 foiz chegirma» dagi).
-- Holat: ✅ 16 ta rasm tayyor (2026-10-28); keyingisi ovoz (Manus) va Veo promptlari.
+- Veo promptlari: `veo_promptlar.py` → `sahnalar.html`, o'sha Artifact: https://claude.ai/artifact/WY4CroEsDWcynVsh9pgSox (kamera gapi boshida va oxirida, «joyida qolsin» yo'q, o'zbekcha gaplar).
+- Holat: ✅ 16 ta rasm tayyor (2026-10-28); Veo kliplari va ovoz (Manus) kutilmoqda.
 
 ## Rasmlar
 | # | Fayl | Holat | Izoh |
