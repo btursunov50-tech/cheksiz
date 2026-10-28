@@ -100,9 +100,12 @@ def vp(cam, act, lines, chars):
     return (f"Vertical 9:16, 8 seconds. Start from the attached image. Camera: {cam}. Action: {act}{dial} "
             f"{LOCK if chars else ''}{END}")
 
+# Tayyor kliplar (2026-10-28): sahifada faqat qolganlari ko'rsatiladi, navbat bilan.
+DONE = {"1": "Veo", "3": "Seedance", "4": "Seedance", "5": "Veo", "6": "Veo (0–4.5 s)", "8": "Veo (batareya tuzatilgan)"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
+    if n in DONE: continue
     p = vp(cam, act, lines, chars)
     cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), 8 s</h2></header>
 <div class="row"><figure class="sc"><img src="web/{img}.webp" alt="{n}-sahna rasmi"><figcaption>Veo'ga: {img}.png</figcaption></figure>
@@ -135,7 +138,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Telefoning eskirmagan» <em>sahnalari</em></h1>
-<p class="intro">16 ta rasm tayyor. Har sahna uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, 9:16 va 8 s qiling, «Nusxa olish» bilan promptni qo'ying. Kamera gapi promptning boshida va oxirida; qahramon gapirsa — gapi o'zbekcha promptda. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi: Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor kliplar:</b> {', '.join(f'{k} ({v})' for k, v in DONE.items())}. Quyida faqat <b>qolgan {len(S) - len(DONE)} ta sahna</b>, tartib bilan — yuqoridan boshlang. 16 ta rasm tayyor. Har sahna uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, 9:16 va 8 s qiling, «Nusxa olish» bilan promptni qo'ying. Kamera gapi promptning boshida va oxirida; qahramon gapirsa — gapi o'zbekcha promptda. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi: Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
