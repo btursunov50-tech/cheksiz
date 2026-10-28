@@ -101,7 +101,7 @@ def vp(cam, act, lines, chars):
             f"{LOCK if chars else ''}{END}")
 
 # Tayyor kliplar (2026-10-28): sahifada faqat qolganlari ko'rsatiladi, navbat bilan.
-DONE = {"1": "Veo", "2": "Hailuo", "3": "Seedance", "4": "Seedance", "5": "Veo", "6": "Veo (0–4.5 s)", "8": "Veo (batareya tuzatilgan)"}
+DONE = {"1": "Veo", "2": "Hailuo", "6b": "Hailuo", "3": "Seedance", "4": "Seedance", "5": "Veo", "6": "Veo (0–4.5 s)", "8": "Veo (batareya tuzatilgan)"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
