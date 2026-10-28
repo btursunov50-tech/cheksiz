@@ -29,6 +29,7 @@
 ## Kliplar
 | # | Fayl | Holat | Olinadigan qism | Izoh |
 |---|---|---|---|---|
+| 1 | `clips/s01.mp4` | ✅ | 0–5.5 s (ovoz ~4 s) | Kamera sekin yaqinlashadi (harakat 19.8 — Veo kamerani qimirlatdi). Usta gapiradi, qo'lini telefonga uzatadi; Diyor telefonga jahl bilan qaraydi, sochi tekis qora, ingichka moviy nur. Ko'k fonus o'ngda ko'rinadi. Yuzlar namunaga mos. 6 s dan quyosh nuri kuchli, Usta ko'zini yumadi, kadr ikkalasining boshini kesadi — ishlatilmaydi |
 | 5 | `clips/s05.mp4` | ✅ | 0–8 s | Kamera yuqoridan stolga tushadi, qo'l siqishadi, qog'oz uzatiladi; ko'k lampochkalar ko'k qoldi; yuzlar shlyapa soyasida (6–8 s da yarim ko'rinadi, umumiy, haqiqiy odam emas); sepiya saqlangan |
 | 6 | `clips/s06.mp4` | ⚠️ qisman | 0–4.5 s (ovoz ~7 s → ~1.6x sekinlashadi) | Kamera lampochkalar bo'ylab suzadi, soat va shift lampalari ko'k qoldi, o'chgan lampochka bor. **Xato (Veo):** 4.6 s dan bitta lampochkadan olov chiqadi |
 | 8 | `clips/s08.mp4` → `s08_y.mp4` | ✅ (tuzatildi) | 0–8 s | Shilliqqurt sekin o'rmalaydi, orqada ko'k tutun. **Xato (Veo):** batareya 1 s dan to'lib, 4 s da to'liq qizil bo'lib qoldi (ma'noga zid). `batareya.py` 0-kadrdagi deyarli bo'sh batareyani har kadrga telefon harakatiga moslab qayta yopishtirdi va 2 marta miltillatdi. Kamera kam harakat (4.3) |
