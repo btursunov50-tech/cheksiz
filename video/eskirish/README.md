@@ -10,3 +10,5 @@
 | 1 | `img/s01.png` (tahrirdan keyin; eski `s01_a.png`) | ✅ | Usta yuzi silliqroq, soqoli qalinroq, ajinlar kamaydi: namunaga yaqinlashdi (yuzi hali biroz cho'ziqroq, Veo klipida kuzatiladi). Qolgani o'zgarmagan |
 | 2 | `img/s02.png` | ✅ | Diyor telefonni silkitadi, jahli chiqqan; soch tekis, qora, ryukzak, ingichka moviy nur; qo'llar 5 barmoqli; yozuv yo'q |
 | 3 | `img/s03.png` | ✅ | Usta yuzi namunaga yaqin (~30 yosh, qalin qisqa soqol, do'ppida oq naqsh), qo'llari qovushtirilgan, bir qoshi ko'tarilgan; Diyor orqadan xira (soch qora, ryukzak). Yozuv yo'q |
+| 4 | — (fayl sifatida kelmadi) | ✅ | Usta kaftini ko'rsatadi, yuzi 3-rasmdagidek; o'ngda sepiya Jeneva (ko'l, tog', tramvay). Fayl keyin yuboriladi |
+| 5 | `img/s05.png` (asl: `s05_a.png`) | ✅ | 1924 zal, 7 ta erkak, yuzlar shlyapa soyasida; egasi so'rovi bilan stoldagi 7 ta lampochka kodda ko'k neonga bo'yaldi (qandil va devor chiroqlari sariq qoldi) |
