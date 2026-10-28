@@ -1,5 +1,6 @@
 # «Telefoning eskirmagan» — Manus ovoz bloki (2026-10-28)
 
+Egasi (2026-10-28): faqat bitta fayl, qatorlar orasida Claude taniydigan belgi — 1000 Hz «BIP» signali (montajda shu bo'yicha ajratiladi).
 Ssenariy: `ideas/eskirish.md` (8–9-sahnalar 2026-10-28 soddalashtirilgan). Hook EN 81.4. Ovozlar seriyadagidek: Manus'ga namuna `video/chegirma/dialog.wav` biriktiriladi. 21-qator — avatar savoli (Usta ovozida, `timeline.AV_LINE`).
 
 ```
@@ -9,10 +10,15 @@ O'zbekcha qisqa video (mini-drama, 9:16, YouTube Shorts / Instagram Reels) uchun
 NAMUNA OVOZ (juda muhim)
 Biriktirilgan "dialog.wav" — oldingi qism ("70 foiz chegirma"). Unda USTA (past, chuqur ovoz) va DIYOR (yosh, balandroq ovoz) gaplashadi. Ikkala ovozni AYNAN shu namunadagidek qil: o'sha tembr, o'sha yosh, o'sha gapirish tezligi. Tomoshabin "bular o'sha Usta va Diyor-ku" deb tanishi kerak. Yangi ovoz o'ylab topma.
 
-NATIJA (ikkalasi ham kerak)
-1. Bitta umumiy WAV fayl: 21 ta qator tartib bilan, har qatordan keyin aniq 1 soniya jimlik. Nomi: eskirish_dialog.wav
-2. Har bir qator alohida WAV fayl: 01_usta.wav, 02_diyor.wav, 03_usta.wav, 04_diyor.wav, 05_usta.wav, 06_usta.wav, 07_usta.wav, 08_diyor.wav, 09_usta.wav, 10_diyor.wav, 11_usta.wav, 12_usta.wav, 13_usta.wav, 14_diyor.wav, 15_usta.wav, 16_diyor.wav, 17_usta.wav, 18_usta.wav, 19_usta.wav, 20_usta.wav, 21_usta.wav
-Format: WAV, 44.1 kHz yoki 48 kHz, mono. Musiqa yo'q, ovoz effekti yo'q, fon shovqini yo'q, aks-sado (reverb) yo'q — toza studiya ovozi. Har qator boshida va oxirida ortiqcha jimlik bo'lmasin.
+NATIJA: FAQAT BITTA FAYL
+- Bitta umumiy WAV fayl, nomi: eskirish_dialog.wav. Alohida fayllar KERAK EMAS.
+- 21 ta qator tartib bilan, bitta faylda.
+- HAR QATOR TUGAGANDA, keyingi qatordan oldin, aynan shu belgi qo'yilsin (montajchi qatorlarni shu belgi bo'yicha ajratadi):
+  0.5 soniya jimlik → 0.3 soniya "BIP" signali → 0.5 soniya jimlik.
+  "BIP" signali: toza sinus tovushi, chastotasi 1000 Hz, davomiyligi 0.3 soniya, balandligi o'rtacha (ovozdan past), boshqa hech qanday tovush aralashmasin.
+- Signal ovozda yasalmasin (odam "bip" demasin) — bu sun'iy ton, kod bilan qo'shilsin (masalan ffmpeg: sine=frequency=1000:duration=0.3).
+- Jami 20 ta signal bo'lsin (21 ta qator orasida). Oxirgi 21-qatordan keyin signal yo'q.
+- Format: WAV, 44.1 kHz yoki 48 kHz, mono. Musiqa yo'q, ovoz effekti yo'q, fon shovqini yo'q, aks-sado (reverb) yo'q — toza studiya ovozi.
 
 TIL VA O'QISH QOIDALARI
 - Til: o'zbek tili (lotin yozuvi), tabiiy toshkentcha talaffuz. Rus yoki turk talaffuzi emas.
@@ -70,7 +76,7 @@ QATORLAR (rejissyor ko'rsatmasi + matn)
 OXIRIDA TEKSHIR
 - 21 ta qator bor, hammasi aynan matndagidek, qavsdagi ko'rsatmalar o'qilmagan.
 - Usta va Diyor ovozlari namunadagidek va bir-biridan aniq farq qiladi.
-- Umumiy faylda har qatordan keyin 1 soniya jimlik, musiqa va shovqin yo'q.
+- Faqat bitta fayl; qatorlar orasida jami 20 ta 1000 Hz "BIP" signali (0.5 s jimlik + 0.3 s signal + 0.5 s jimlik); musiqa va shovqin yo'q.
 ```
 
 ## Video vaqtlari (taxminiy; ovoz kelgach aniqlanadi)
