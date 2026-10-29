@@ -53,9 +53,10 @@ S = [
   "top-down slow push-in with a slight clockwise rotation toward France",
   "The green arrows over the other countries pulse and grow a little taller. Over France the grey arrow stays flat and the coin stays still. The lamp flame flickers. The map does not change shape.",
   [], False),
- ("9", "s09", "Usta (kadr ortidan): «Narxni nolga tushirishgan zahoti, u yerda ham sotuv o'sib ketdi.»", "Fransiyadan orqaga va yuqoriga ko'tarilish",
-  "slow pull-back and crane up from France to show the whole map",
-  "The big green arrow over France shoots higher with a burst of green sparks and glows brighter than all others; the small arrows pulse. The lamp flame flickers. The map does not change shape.",
+ ("9", "s09", "Usta (kadr ortidan): «Narxni nolga tushirishgan zahoti, u yerda ham sotuv o'sib ketdi.»", "Fransiyadan sekin orqaga chekinish",
+  "slow pull-back from France to show the whole map, the camera stays above the table",
+  "The big green arrow standing on France grows a little taller and glows brighter, with a few soft green sparks around its base; it stays standing on France and never flies away. "
+  "The small green arrows on the other countries pulse gently and stay in place. The lamp flame flickers. The map stays exactly as in the image: no country names, no labels, no letters on the map.",
   [], False),
  ("10", "s10", "Usta (kadr ortidan): «Olimlar sinab ko'rgan: qimmat shokoladni ko'pchilik tanlagan. Arzonini bepul qilishgan zahoti — hamma bepuliga o'tgan.»", "stol balandligida konfetga qarab yaqinlashish",
   "low push-in at table height toward the small red candy",
@@ -91,7 +92,7 @@ def vp(n, cam, act, lines, chars):
     return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
             f"{LOCK if chars else ''}{END}")
 
-DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)"}
+DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
@@ -128,7 +129,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro"><b>Tayyor:</b> 1–7. Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor:</b> 1–8, 10. <b>9 — yangi prompt</b> (birinchi klipda xaritaga «FRANCE» deb yozilgan, strelka uchib ketgan). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
