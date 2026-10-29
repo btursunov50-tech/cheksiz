@@ -1,6 +1,7 @@
 # Veo qo'shgan yozuvlarni tozalaydi: clips/sNN.mp4 → clips/sNN_y.mp4
 #  s01: 2.6–3.7 s da pastda chiqqan subtitr harflari — o'rniga 2.45 s dagi toza kadr (kamera harakatiga moslab siljitilgan).
 #  s02: telefondagi ko'k tugmaga yozilgan «Usta» — tugma har kadrda rangi bo'yicha topiladi va bir tekis ko'kka bo'yaladi.
+#  s10: 5 s dan konfet o'ramlarida chiqqan oq harflar — qizil bilan to'ldiriladi.
 # Ishlatish: python3 video/yetkazish/tozala.py [s01 s02]
 import os, subprocess, sys, cv2, numpy as np
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "clips")
@@ -40,7 +41,18 @@ def s02(f, t):
     a = cv2.GaussianBlur(fill.astype(np.float32), (5, 5), 0)[..., None]
     return (f * (1 - a) + col * a).astype(np.uint8)
 
-JOBS = {"s01": s01, "s02": s02}
+def s10(f, t):
+    # 5 s dan konfet o'ramlarida oq harflar paydo bo'ladi — qizil o'ram ustidagi oq piksellar qizil bilan to'ldiriladi
+    if t < 4.8: return f
+    y0 = 560; roi = f[y0:]; h = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+    red = cv2.inRange(h, (0, 120, 80), (12, 255, 255)) | cv2.inRange(h, (170, 120, 80), (179, 255, 255))
+    near = cv2.dilate(red, np.ones((15, 15), np.uint8)) > 0
+    m = (((h[..., 2] > 120) & (h[..., 1] < 150)) & near).astype(np.uint8) * 255
+    m = cv2.dilate(m, np.ones((5, 5), np.uint8))
+    f[y0:] = cv2.inpaint(roi, m, 4, cv2.INPAINT_TELEA)
+    return f
+
+JOBS = {"s01": s01, "s02": s02, "s10": s10}
 for name in (sys.argv[1:] or JOBS):
     src = os.path.join(D, name + ".mp4"); tmp = os.path.join(D, name + "_tmp.mp4")
     c = cv2.VideoCapture(src); fps = c.get(cv2.CAP_PROP_FPS); W, H = int(c.get(3)), int(c.get(4))
