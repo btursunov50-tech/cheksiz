@@ -98,7 +98,7 @@ def vp(n, cam, act, lines, chars):
 
 # Egasi (2026-10-29): 14 da Veo ikki marta boshlang'ich rasmni olmay, boshqa kadr chizdi → Hailuo'da (u 1-kadrni aniq ushlaydi).
 TOOL = {"14": "Hailuo'da qiling: Veo 2 marta boshlang'ich rasmni olmadi"}
-DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo (0-2.4 s)", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)", "13": "Veo"}
+DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo (0-2.4 s)", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)", "11": "Veo (3-urinish)", "13": "Veo"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
@@ -135,7 +135,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro"><b>Tayyor:</b> 1–10, 13. <b>11, 14, 15 — yangi prompt</b> (yuzlar o'zgarib ketgan edi; endi kamera yengil, «yuzlar boshidan oxirigacha rasmdagidek»). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor:</b> 1–11, 13. <b>14, 15 — yangi prompt</b> (yuzlar o'zgarib ketgan edi; endi kamera yengil, «yuzlar boshidan oxirigacha rasmdagidek»). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
