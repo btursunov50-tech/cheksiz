@@ -3,7 +3,10 @@
 - Ssenariy: `ideas/eskirish.md`. Ovoz bloki: `OVOZ.md` (bitta fayl, qatorlar orasida 1000 Hz BIP).
 - Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`, Artifact: https://claude.ai/artifact/WY4CroEsDWcynVsh9pgSox (16 ta rasm, 9:16). Namunalar `img/ref_usta.png`, `img/ref_diyor.png` («70 foiz chegirma» dagi).
 - Veo promptlari: `veo_promptlar.py` → `sahnalar.html`, o'sha Artifact: https://claude.ai/artifact/WY4CroEsDWcynVsh9pgSox (kamera gapi boshida va oxirida, «joyida qolsin» yo'q, o'zbekcha gaplar).
-- Holat: ✅ 16 ta rasm va 16 ta klip tayyor (2026-10-28); ovoz (Manus, BIP bilan) kutilmoqda.
+- Holat: ✅ tayyor (2026-10-29, egasi «yoqdi»): `video/final/eskirish/` (uz/en/ru + 3 .srt), matnlar `POSTS.md`.
+- Ovoz: Manus `eskirish_dialog.wav` (bitta fayl, BIP) → `ajrat.py` → `voice/`; egasi «tez» dedi → 0.8x, oxirgi 2 gap (bot + avatar) 0.7x.
+- Buyruq: `TEMPO=0.8 TEMPO_N="20:0.7,21:0.7" python3 video/eskirish/build_tl.py && python3 video/eskirish/prep_clips.py && python3 .claude/skills/video-yig/yig.py --dir video/eskirish --work <tmp> --voice dialog.wav --avq "Siz-chi?|Telefoningizni necha yilda almashtirasiz?|Izohga yozing!" --music video/robot/music/doira_and_the_robot.mp3:41 --music-vol 0.4 --send` (10 daqiqadan ko'p ishlaydi). en/ru: `tarjima.py` → `yig.py ... --reuse --tl en --lang en` («And you?|How often do you change your phone?|Write in the comments!») va `--tl ru --lang ru` («А вы?|Как часто вы меняете телефон?|Пишите в комментариях!»).
+- 3- va 4-sahna kliplari 1.9x va 2.0x sekinlashdi (chegara 1.8x); egasi videoni ko'rib ma'qulladi.
 
 ## Rasmlar
 | # | Fayl | Holat | Izoh |
