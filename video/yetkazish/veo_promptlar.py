@@ -90,19 +90,21 @@ S = [
 ]
 
 # Egasi (2026-10-29, «gap uzun joyga 8 soniya qil»): gapi ~6 s dan uzun sahnalar 8 s.
-DUR = {"2": 8, "5": 8, "6": 8, "8": 8, "10": 8, "13": 8, "14": 8, "15": 8}
+DUR = {"2": 8, "5": 8, "6": 8, "8": 8, "10": 8, "13": 8, "15": 8}
 def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
             f"{(LOCK if 'Diyor' in act or any(w == 'Diyor' for w, _, _ in lines) else LOCK_U) if chars else ''}{END}")
 
+# Egasi (2026-10-29): 14 da Veo ikki marta boshlang'ich rasmni olmay, boshqa kadr chizdi → Hailuo'da (u 1-kadrni aniq ushlaydi).
+TOOL = {"14": "Hailuo'da qiling: Veo 2 marta boshlang'ich rasmni olmadi"}
 DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo (0-2.4 s)", "3": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)", "13": "Veo"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
     if n in DONE: continue
     p = vp(n, cam, act, lines, chars)
-    cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR.get(n, 6)} s</h2></header>
+    cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR.get(n, 6)} s</h2>{f'<span class="tool">{TOOL[n]}</span>' if n in TOOL else ''}</header>
 <div class="row"><figure class="sc"><img src="web/{img}.webp" alt="{n}-sahna rasmi"><figcaption>Veo'ga: {img}.png</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
 <span class="lbl">Kamera: {e(camuz)}</span>
@@ -129,7 +131,7 @@ h2{{font-family:var(--display);font-weight:700;font-size:26px;margin:0}}
 .voice{{margin:0;font-style:italic}}
 pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:12.5px;line-height:1.6;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;user-select:all}}
 .copy{{align-self:flex-start;font:600 15px var(--body);color:#111;background:var(--gold);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}}
-.copy.done{{background:var(--mint)}} .copy:focus-visible{{outline:2px solid var(--fg);outline-offset:2px}}
+.tool{{font-size:13px;font-weight:600;color:#111;background:var(--gold);border-radius:99px;padding:2px 10px}} .copy.done{{background:var(--mint)}} .copy:focus-visible{{outline:2px solid var(--fg);outline-offset:2px}}
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
