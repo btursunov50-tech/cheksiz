@@ -5,7 +5,8 @@
 # Ishlatish: python3 video/yetkazish/rasm_promptlar.py
 import html, os
 D = os.path.dirname(os.path.abspath(__file__))
-U = ("USTA (the calm man about 30 years old with a fuller face and a short neat full jet-black beard, a black Uzbek doppi skullcap with white arch embroidery, "
+U = ("USTA (the calm man about 30 years old, NOT older: a fuller, rounder face with full cheeks, smooth young skin with NO wrinkles on the forehead and NO lines around the eyes, "
+     "a short neat FULL jet-black beard that evenly covers the cheeks, jaw and chin (not a thin goatee), a neat moustache, a black Uzbek doppi skullcap with white arch embroidery, "
      "a dark embroidered chapan robe with a red sash; young strong hands of a 30-year-old man, smooth skin)")
 Dy = ("DIYOR (the naive guy about 20 years old with a round boyish face, big innocent eyes, messy straight jet-black hair (never curly, never brown), "
       "a dark navy blue hoodie, a black backpack, jeans and sneakers, outlined only by a thin soft cyan-blue glow)")
