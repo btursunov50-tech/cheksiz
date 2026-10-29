@@ -2,6 +2,7 @@
 #  s01: 2.6–3.7 s da pastda chiqqan subtitr harflari — o'rniga 2.45 s dagi toza kadr (kamera harakatiga moslab siljitilgan).
 #  s02: telefondagi ko'k tugmaga yozilgan «Usta» — tugma har kadrda rangi bo'yicha topiladi va bir tekis ko'kka bo'yaladi.
 #  s10: 5 s dan konfet o'ramlarida chiqqan oq harflar — qizil bilan to'ldiriladi.
+#  s15: 4.5 s dan osmonda chiqqan ikkinchi oy o'chiriladi.
 # Ishlatish: python3 video/yetkazish/tozala.py [s01 s02]
 import os, subprocess, sys, cv2, numpy as np
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "clips")
@@ -52,7 +53,26 @@ def s10(f, t):
     f[y0:] = cv2.inpaint(roi, m, 4, cv2.INPAINT_TELEA)
     return f
 
-JOBS = {"s01": s01, "s02": s02, "s10": s10}
+MOON = {}
+def s15(f, t):
+    # 4.5 s dan osmonda ikkinchi oy paydo bo'ladi — 1-kadrdagi oy kuzatiladi, undan uzoqdagi boshqa oy osmon rangi bilan to'ldiriladi
+    y1 = 760; roi = f[:y1]; h = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+    m = ((h[..., 2] > 190) & (h[..., 1] < 70)).astype(np.uint8)
+    n, lab, st, cen = cv2.connectedComponentsWithStats(m)
+    moons = [k for k in range(1, n) if 40 < st[k][4] < 3000 and st[k][2] < 90 and st[k][3] < 90]
+    if not moons: return f
+    if "p" not in MOON: MOON["p"] = cen[max(moons, key=lambda k: st[k][4])]
+    main = min(moons, key=lambda k: np.hypot(*(cen[k] - MOON["p"])))   # asl oy: oldingi kadrdagi joyiga eng yaqini
+    MOON["p"] = cen[main]
+    kill = np.zeros(m.shape, np.uint8)
+    for k in moons:
+        if np.hypot(*(cen[k] - cen[main])) > 70: kill[lab == k] = 255
+    if kill.any():
+        kill = cv2.dilate(kill, np.ones((41, 41), np.uint8))
+        f[:y1] = cv2.inpaint(roi, kill, 9, cv2.INPAINT_TELEA)
+    return f
+
+JOBS = {"s01": s01, "s02": s02, "s10": s10, "s15": s15}
 for name in (sys.argv[1:] or JOBS):
     src = os.path.join(D, name + ".mp4"); tmp = os.path.join(D, name + "_tmp.mp4")
     c = cv2.VideoCapture(src); fps = c.get(cv2.CAP_PROP_FPS); W, H = int(c.get(3)), int(c.get(4))

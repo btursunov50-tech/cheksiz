@@ -8,9 +8,11 @@ D = os.path.dirname(os.path.abspath(__file__))
 U_V = "a calm deep warm male voice of about 30-35"
 D_V = "a lighter young male voice of about 22"
 LOCK = ("Keep both characters exactly as in the image: Usta about 30, smooth young skin, short full black beard, black doppi with a white arch pattern, "
-        "dark embroidered chapan with a red sash; Diyor about 20, round boyish face, messy jet-black hair, navy hoodie. Same faces, five fingers on each hand. ")
+        "dark embroidered chapan with a red sash; Diyor about 20, round boyish face, messy jet-black hair, navy hoodie. Same faces, five fingers on each hand. "
+        "One continuous shot, no cuts. Faces stay exactly as in the image from the first to the last frame. ")
 LOCK_U = ("Keep Usta exactly as in the image: about 30, smooth young skin, short full black beard, black doppi with a white arch pattern, "
-          "dark embroidered chapan with a red sash. Same face, five fingers on each hand. Only Usta is in this shot; no other people appear. ")
+          "dark embroidered chapan with a red sash. Same face, five fingers on each hand. Only Usta is in this shot; no other people appear. "
+          "One continuous shot, no cuts. Faces stay exactly as in the image from the first to the last frame. ")
 END = "Keep the hand-painted cartoon style of the image for the whole clip, never photorealistic. No text, no subtitles, no captions, no logos. The camera never stops moving."
 
 def say(lines):
@@ -34,10 +36,9 @@ S = [
   "Then Diyor in the blurred foreground shrugs and tilts his head as he answers (his face stays turned away); Usta listens, mouth closed, and takes a sip from the small piyola cup, never from the teapot. "
   "The same courtyard with red cushions, string lights and grapevine stays behind him.",
   [("Usta", U_V, "O'sha qirq minglik narsa senga kerakmi?"), ("Diyor", D_V, "Unchalik emas... lekin bepul-ku!")], True),
- ("4", "s04", "Usta: «Jim, Diyor. Qara. 2002-yil, Amerika.»", "kaftga qarab sekin yaqinlashish, keyin ofis tomonga yengil burilish",
-  "slow push-in toward Usta's raised palm, then a gentle pan to the left toward the painted office",
-  "Usta speaks quietly, palm held up like «quiet, watch», then turns his head toward the office on the left. "
-  "The background stays as in the image: the painted early-2000s office on the left and the courtyard on the right; office workers in the office keep typing, seen from behind. The lantern flame flickers.",
+ ("4", "s04", "Usta: «Jim, Diyor. Qara. 2002-yil, Amerika.»", "Ustaga sekin, yengil yaqinlashish (burilishsiz)",
+  "slow gentle push-in toward Usta, no pan, no turn",
+  "Usta speaks quietly, his palm held up like «quiet, watch»; on the last words he slowly lowers the hand and glances toward the office on the left. The painted office stays behind him; office workers keep typing, seen from behind. The lantern flame flickers.",
   [("Usta", U_V, "Jim, Diyor. Qara. Ikki ming ikkinchi yil, Amerika.")], True),
  ("5", "s05", "Usta (kadr ortidan): «Dunyodagi eng katta onlayn do'kon bepul yetkazishni 99 dollardan 49 dollarga, ikki oydan keyin 25 dollarga tushirdi.»", "yuqoridan pastga, doskaga qarab kran",
   "slow crane down and forward over the desks toward the whiteboard",
@@ -64,9 +65,9 @@ S = [
   "low push-in at table height toward the small red candy",
   "All the hands reach eagerly toward the small red candy; the nearest hand grabs it first, the others hurry closer. Nobody touches the truffle on the gold dish. The lantern flame flickers. Only hands and sleeves, no faces.",
   [], False),
- ("11", "s11", "Diyor: «Demak, ‘bepul’ so'zi miyani aldaydi?» — Usta: «Aldamaydi. Shoshiltiradi.»", "ikkalasi atrofida o'ngga sekin yoy",
-  "slow arc to the right around both men",
-  "Diyor lifts his eyes from the phone to Usta and asks, puzzled, finger on his chin. Usta taps his temple twice and answers calmly with a small smile; Diyor listens, mouth closed, and slowly nods.",
+ ("11", "s11", "Diyor: «Demak, ‘bepul’ so'zi miyani aldaydi?» — Usta: «Aldamaydi. Shoshiltiradi.»", "ikkalasiga sekin, yengil yaqinlashish",
+  "slow gentle push-in toward both men, no arc, no cut",
+  "Diyor lifts his eyes from the phone to Usta and asks, puzzled, finger on his chin, and keeps holding the phone in his other hand for the whole clip. Usta taps his temple twice and answers calmly with a small smile; Diyor listens, mouth closed, and slowly nods.",
   [("Diyor", D_V, "Demak, bepul so'zi miyani aldaydi?"), ("Usta", U_V, "Aldamaydi. Shoshiltiradi.")], True),
  ("12", "s12", "Usta: «Hisobla: yigirma ming tejading, qirq ming sarflading.»", "telefondan Diyor yuziga fokus o'tishi + yengil yaqinlashish",
   "rack focus from the phone screen to Diyor's face with a gentle push-in",
@@ -82,9 +83,9 @@ S = [
   "Usta looks into the lens and speaks slowly and warmly; small natural head movements, on the question his eyebrows lift a little and he gives a small knowing smile. "
   "His face, beard, doppi and chapan stay exactly as in the image from the first to the last frame. The same courtyard background stays behind him, softly blurred; only the string lights twinkle.",
   [("Usta", U_V, "Ular senga yetkazishni emas, tekin degan tuyg'uni sotadi. Har gal so'ra: bundan kim foyda ko'radi?")], True),
- ("15", "s15", "Usta: «Savatingizdagi narsalarni va yetkazish shartini botimizga yozing: @sahiychishopbot. Bepul yetkazish uchun ortiqcha qancha to'layotganingizni hisoblab, nimani olib tashlash mumkinligini aytadi.»", "orqaga va yuqoriga ko'tarilish, osmon ochiladi",
-  "slow pull-back and crane up, revealing more of the night sky and the moon",
-  "Usta holds the phone toward the viewer and speaks with a friendly smile; Diyor nods twice and keeps his thumb up, smiling, mouth closed. The phone screen stays exactly as in the image: the chat bubbles and the cart icon. The lanterns glow, the stars twinkle.",
+ ("15", "s15", "Usta: «Savatingizdagi narsalarni va yetkazish shartini botimizga yozing: @sahiychishopbot. Bepul yetkazish uchun ortiqcha qancha to'layotganingizni hisoblab, nimani olib tashlash mumkinligini aytadi.»", "sekin orqaga chekinish, ikkalasi kadrda qoladi",
+  "slow gentle pull-back, both men stay in the frame, no crane up",
+  "Usta holds the phone toward the viewer and speaks with a friendly smile; Diyor nods twice and keeps his thumb up, smiling, mouth closed. The phone screen stays exactly as in the image: the chat bubbles and the cart icon. The lanterns glow; the sky keeps only one crescent moon, as in the image.",
   [("Usta", U_V, "Savatingizdagi narsalarni va yetkazish shartini botimizga yozing: sahiychi shop bot.")], True),
 ]
 
@@ -93,9 +94,9 @@ DUR = {"2": 8, "5": 8, "6": 8, "8": 8, "10": 8, "13": 8, "14": 8, "15": 8}
 def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
-            f"{(LOCK if 'Diyor' in act + str(lines) else LOCK_U) if chars else ''}{END}")
+            f"{(LOCK if 'Diyor' in act or any(w == 'Diyor' for w, _, _ in lines) else LOCK_U) if chars else ''}{END}")
 
-DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)", "11": "Veo (0-4.5 s)", "13": "Veo"}
+DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo (0-2.4 s)", "3": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)", "13": "Veo"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
@@ -132,7 +133,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro"><b>Tayyor:</b> 1–11, 13. <b>14 — yangi prompt</b> (Veo yuz va joyni o'zgartirib yuborgan edi). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor:</b> 1–3, 5–10, 13. <b>4, 11, 14, 15 — yangi prompt</b> (yuzlar o'zgarib ketgan edi; endi kamera yengil, «yuzlar boshidan oxirigacha rasmdagidek»). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>

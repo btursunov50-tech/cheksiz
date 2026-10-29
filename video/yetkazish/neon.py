@@ -34,7 +34,10 @@ def seg(f, hm, sure, roi):
     mk[cv2.erode(hb & (1 - roi), k) > 0] = 3
     mk[(cv2.erode(sure, k) > 0) & (hb > 0)] = 2
     cv2.watershed(f, mk)
+    SEG["other"] = ((mk == 3) | ((hb > 0) & (roi == 0))).astype(np.uint8)   # boshqa odam: unga chiziq tushmasin
     return ((mk == 2) & (hb > 0) & (roi > 0)).astype(np.uint8)
+
+SEG = {}
 
 def warp(prev, prev_g, g):
     flow = cv2.calcOpticalFlowFarneback(g, prev_g, None, 0.5, 3, 25, 3, 5, 1.2, 0)
@@ -51,8 +54,9 @@ def glow(f, m, hm=None, roi=None):
     if hm is not None:   # boshqa odam yoki Diyor hududi chegarasiga tegadigan joyda chiziq yo'q (Usta ustida, gilamda to'g'ri chiziq bo'lmasin)
         far = ((hm > 0.5) & (cv2.dilate(m, np.ones((25, 25), np.uint8)) == 0)).astype(np.uint8)   # boshqa odam (Diyordan uzoqdagi odam piksellari)
         far = cv2.morphologyEx(far, cv2.MORPH_OPEN, np.ones((15, 15), np.uint8))
-        other = cv2.dilate(far, np.ones((31, 31), np.uint8))
+        other = cv2.dilate(far | SEG.get("other", np.zeros_like(far)), np.ones((31, 31), np.uint8))
         edge *= 1 - cv2.GaussianBlur(other.astype(np.float32), (15, 15), 0)
+        edge *= 1 - cv2.dilate(SEG.get("other", np.zeros_like(far)), np.ones((7, 7), np.uint8)).astype(np.float32)   # Usta ustida umuman yo'q
     if roi is not None:
         edge *= cv2.GaussianBlur(cv2.erode(roi, np.ones((41, 41), np.uint8)).astype(np.float32), (21, 21), 0)
     a = ((core * 1.6 + halo * 0.55) * edge)[..., None]
