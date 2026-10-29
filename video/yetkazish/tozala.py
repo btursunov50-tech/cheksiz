@@ -3,6 +3,7 @@
 #  s02: telefondagi ko'k tugmaga yozilgan «Usta» — tugma har kadrda rangi bo'yicha topiladi va bir tekis ko'kka bo'yaladi.
 #  s10: 5 s dan konfet o'ramlarida chiqqan oq harflar — qizil bilan to'ldiriladi.
 #  s15: 4.5 s dan osmonda chiqqan ikkinchi oy o'chiriladi.
+#  s12: telefondagi ko'k tugmaga yozilgan «Ustar» — s02 dagidek bo'yaladi.
 # Ishlatish: python3 video/yetkazish/tozala.py [s01 s02]
 import os, subprocess, sys, cv2, numpy as np
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "clips")
@@ -28,9 +29,9 @@ def s01(f, t):
     f[y0:y1, x0:x1] = (f[y0:y1, x0:x1] * (1 - a) + w[y0:y1, x0:x1] * a).astype(np.uint8)
     return f
 
-def s02(f, t):
+def s02(f, t, xmax=520):
     h = cv2.cvtColor(f, cv2.COLOR_BGR2HSV)
-    m = cv2.inRange(h, (100, 120, 120), (125, 255, 255)); m[:, 520:] = 0; m[:250] = 0
+    m = cv2.inRange(h, (100, 120, 120), (125, 255, 255)); m[:, xmax:] = 0; m[:250] = 0
     n, lab, st, _ = cv2.connectedComponentsWithStats(m)
     best = [k for k in range(1, n) if st[k][4] > 800 and 1.8 < st[k][2] / max(st[k][3], 1) < 8]
     if not best: return f
@@ -72,7 +73,32 @@ def s15(f, t):
         f[:y1] = cv2.inpaint(roi, kill, 9, cv2.INPAINT_TELEA)
     return f
 
-JOBS = {"s01": s01, "s02": s02, "s10": s10, "s15": s15}
+def s12(f, t):
+    # ekran va tugma bitta ko'k bo'lak; tugmadagi oq harflar = ekranning pastki qismidagi mayda oq bo'laklar → ko'k bilan to'ldiriladi
+    h = cv2.cvtColor(f, cv2.COLOR_BGR2HSV)
+    m = cv2.inRange(h, (100, 120, 120), (125, 255, 255)); m[:, 680:] = 0; m[:250] = 0
+    n, lab, st, _ = cv2.connectedComponentsWithStats(m)
+    big = [k for k in range(1, n) if st[k][4] > 5000]
+    if not big: return f
+    k = max(big, key=lambda k: st[k][4]); x, y, w, hh = st[k][:4]
+    scr = np.zeros(m.shape, np.uint8)
+    cv2.fillPoly(scr, [cv2.convexHull(max(cv2.findContours((lab == k).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0], key=cv2.contourArea))], 1)
+    # kartalar: ekran ichidagi katta oq bo'laklar; tugma = eng pastki kartadan pastdagi ekran qismi
+    wb = ((h[..., 1] < 60) & (h[..., 2] > 170) & (scr > 0)).astype(np.uint8)
+    n2, l2, s2, _ = cv2.connectedComponentsWithStats(wb)
+    cards = [j for j in range(1, n2) if s2[j][4] > 1500]
+    if not cards: return f
+    yb = max(s2[j][1] + s2[j][3] for j in cards) + 4
+    reg = scr.copy(); reg[:yb] = 0
+    skin = (h[..., 0] < 30) & (h[..., 1] > 50) & (h[..., 2] > 60)        # barmoq ustiga bo'yalmasin
+    paint = (reg > 0) & ~cv2.dilate(skin.astype(np.uint8), np.ones((5, 5), np.uint8)).astype(bool)
+    paint = cv2.erode(paint.astype(np.uint8), np.ones((5, 5), np.uint8))   # telefon ramkasiga tegmasin
+    if paint.sum() < 50: return f
+    col = np.median(f[(paint > 0) & (lab == k)], axis=0) if ((paint > 0) & (lab == k)).sum() > 20 else np.median(f[lab == k], axis=0)
+    a = cv2.GaussianBlur(paint.astype(np.float32), (5, 5), 0)[..., None]
+    return (f * (1 - a) + col * a).astype(np.uint8)
+
+JOBS = {"s01": s01, "s02": s02, "s10": s10, "s15": s15, "s12": s12}
 for name in (sys.argv[1:] or JOBS):
     src = os.path.join(D, name + ".mp4"); tmp = os.path.join(D, name + "_tmp.mp4")
     c = cv2.VideoCapture(src); fps = c.get(cv2.CAP_PROP_FPS); W, H = int(c.get(3)), int(c.get(4))
