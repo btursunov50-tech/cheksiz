@@ -72,7 +72,7 @@ S = [
  ("13", "s13", "Usta: «Uchta qoida. Faqat kerakli narsani ol. Yaqinda baribir oladigan narsalarni bitta buyurtmaga yig'. Va so'ra: yetkazish pullik bo'lmaganida ham shuni olarmidim?»", "pastdan yuqoriga belgilar tomon ko'tarilish",
   "low-angle slow crane up toward the three glowing symbols",
   "Usta keeps exactly three fingers raised and speaks with confidence; the symbols light up one by one as he talks: the cart, then the calendar, then the question mark, each with a small pulse of sparks. The lantern flame flickers.",
-  [("Usta", U_V, "Uchta qoida. Faqat kerakli narsani ol.")], True),
+  [("Usta", U_V, "Uchta qoida. Faqat kerakli narsani ol. Yaqinda baribir oladigan narsalarni bitta buyurtmaga yig'.")], True),
  ("14", "s14", "Usta: «Ular senga yetkazishni emas, ‘tekin’ degan tuyg'uni sotadi. Har gal so'ra: bundan kim foyda ko'radi?»", "juda sekin yaqinlashish ko'zlarga",
   "very slow push-in to an extreme close-up of Usta's eyes",
   "Usta looks straight into the lens and speaks slowly and warmly; on the question his eyebrows lift, his head tilts a little and he gives a small knowing smile. The string lights twinkle in the blurred background.",
@@ -80,12 +80,14 @@ S = [
  ("15", "s15", "Usta: «Savatingizdagi narsalarni va yetkazish shartini botimizga yozing: @sahiychishopbot. Bepul yetkazish uchun ortiqcha qancha to'layotganingizni hisoblab, nimani olib tashlash mumkinligini aytadi.»", "orqaga va yuqoriga ko'tarilish, osmon ochiladi",
   "slow pull-back and crane up, revealing more of the night sky and the moon",
   "Usta holds the phone toward the viewer and speaks with a friendly smile; Diyor nods twice and keeps his thumb up, smiling, mouth closed. The phone screen stays exactly as in the image: the chat bubbles and the cart icon. The lanterns glow, the stars twinkle.",
-  [("Usta", U_V, "Savatingizdagi narsalarni va yetkazish shartini botimizga yozing.")], True),
+  [("Usta", U_V, "Savatingizdagi narsalarni va yetkazish shartini botimizga yozing: sahiychi shop bot.")], True),
 ]
 
-def vp(cam, act, lines, chars):
+# Egasi (2026-10-29, «gap uzun joyga 8 soniya qil»): gapi ~6 s dan uzun sahnalar 8 s.
+DUR = {"2": 8, "5": 8, "6": 8, "8": 8, "10": 8, "13": 8, "14": 8, "15": 8}
+def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
-    return (f"Vertical 9:16, 6 seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
+    return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
             f"{LOCK if chars else ''}{END}")
 
 DONE = {}
@@ -93,8 +95,8 @@ e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
     if n in DONE: continue
-    p = vp(cam, act, lines, chars)
-    cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), 6 s</h2></header>
+    p = vp(n, cam, act, lines, chars)
+    cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR.get(n, 6)} s</h2></header>
 <div class="row"><figure class="sc"><img src="web/{img}.webp" alt="{n}-sahna rasmi"><figcaption>Veo'ga: {img}.png</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
 <span class="lbl">Kamera: {e(camuz)}</span>
@@ -125,7 +127,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16 va 6 s</b> qiling, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. 13 va 15-sahnada gap uzun: promptda faqat boshlanishi, qolganini montajda klipni sekinlashtirib sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
@@ -138,4 +140,4 @@ document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{{
 </script>
 """
 open(os.path.join(D, "sahnalar.html"), "w").write(page)
-print(len(S), "sahna; eng uzun prompt:", max(len(vp(c, a, l, ch).split()) for _, _, _, _, c, a, l, ch in S), "so'z")
+print(len(S), "sahna; eng uzun prompt:", max(len(vp(n, c, a, l, ch).split()) for n, _, _, _, c, a, l, ch in S), "so'z")
