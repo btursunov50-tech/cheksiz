@@ -92,7 +92,7 @@ def vp(n, cam, act, lines, chars):
     return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
             f"{LOCK if chars else ''}{END}")
 
-DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)"}
+DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
@@ -129,7 +129,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro"><b>Tayyor:</b> 1–8, 10. <b>9 — yangi prompt</b> (birinchi klipda xaritaga «FRANCE» deb yozilgan, strelka uchib ketgan). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor:</b> 1–10. Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
