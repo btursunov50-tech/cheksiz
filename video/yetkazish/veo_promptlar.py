@@ -9,6 +9,8 @@ U_V = "a calm deep warm male voice of about 30-35"
 D_V = "a lighter young male voice of about 22"
 LOCK = ("Keep both characters exactly as in the image: Usta about 30, smooth young skin, short full black beard, black doppi with a white arch pattern, "
         "dark embroidered chapan with a red sash; Diyor about 20, round boyish face, messy jet-black hair, navy hoodie. Same faces, five fingers on each hand. ")
+LOCK_U = ("Keep Usta exactly as in the image: about 30, smooth young skin, short full black beard, black doppi with a white arch pattern, "
+          "dark embroidered chapan with a red sash. Same face, five fingers on each hand. Only Usta is in this shot; no other people appear. ")
 END = "Keep the hand-painted cartoon style of the image for the whole clip, never photorealistic. No text, no subtitles, no captions, no logos. The camera never stops moving."
 
 def say(lines):
@@ -75,9 +77,10 @@ S = [
   "low-angle slow crane up toward the three glowing symbols",
   "Usta keeps exactly three fingers raised and speaks with confidence; the symbols light up one by one as he talks: the cart, then the calendar, then the question mark, each with a small pulse of sparks. The lantern flame flickers.",
   [("Usta", U_V, "Uchta qoida. Faqat kerakli narsani ol. Yaqinda baribir oladigan narsalarni bitta buyurtmaga yig'.")], True),
- ("14", "s14", "Usta: «Ular senga yetkazishni emas, ‘tekin’ degan tuyg'uni sotadi. Har gal so'ra: bundan kim foyda ko'radi?»", "juda sekin yaqinlashish ko'zlarga",
-  "very slow push-in to an extreme close-up of Usta's eyes",
-  "Usta looks straight into the lens and speaks slowly and warmly; on the question his eyebrows lift, his head tilts a little and he gives a small knowing smile. The string lights twinkle in the blurred background.",
+ ("14", "s14", "Usta: «Ular senga yetkazishni emas, ‘tekin’ degan tuyg'uni sotadi. Har gal so'ra: bundan kim foyda ko'radi?»", "juda sekin, ozgina yaqinlashish (kadr o'zgarmaydi)",
+  "one continuous shot: a very slow, very small push-in, the framing stays a head-and-shoulders close-up as in the image, no cuts, no new angles",
+  "Usta looks into the lens and speaks slowly and warmly; small natural head movements, on the question his eyebrows lift a little and he gives a small knowing smile. "
+  "His face, beard, doppi and chapan stay exactly as in the image from the first to the last frame. The same courtyard background stays behind him, softly blurred; only the string lights twinkle.",
   [("Usta", U_V, "Ular senga yetkazishni emas, tekin degan tuyg'uni sotadi. Har gal so'ra: bundan kim foyda ko'radi?")], True),
  ("15", "s15", "Usta: «Savatingizdagi narsalarni va yetkazish shartini botimizga yozing: @sahiychishopbot. Bepul yetkazish uchun ortiqcha qancha to'layotganingizni hisoblab, nimani olib tashlash mumkinligini aytadi.»", "orqaga va yuqoriga ko'tarilish, osmon ochiladi",
   "slow pull-back and crane up, revealing more of the night sky and the moon",
@@ -90,9 +93,9 @@ DUR = {"2": 8, "5": 8, "6": 8, "8": 8, "10": 8, "13": 8, "14": 8, "15": 8}
 def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
-            f"{LOCK if chars else ''}{END}")
+            f"{(LOCK if 'Diyor' in act + str(lines) else LOCK_U) if chars else ''}{END}")
 
-DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)"}
+DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)", "5": "Veo", "6": "Veo", "7": "Veo", "3": "Veo (2-urinish)", "4": "Veo (2-urinish)", "8": "Veo (0-5 s)", "10": "Veo (yozuvlar tozalandi)", "9": "Veo (2-urinish)", "11": "Veo (0-4.5 s)", "13": "Veo"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
@@ -129,7 +132,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro"><b>Tayyor:</b> 1–10. Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor:</b> 1–11, 13. <b>14 — yangi prompt</b> (Veo yuz va joyni o'zgartirib yuborgan edi). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
