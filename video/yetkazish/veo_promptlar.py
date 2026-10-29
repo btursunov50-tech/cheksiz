@@ -9,7 +9,7 @@ U_V = "a calm deep warm male voice of about 30-35"
 D_V = "a lighter young male voice of about 22"
 LOCK = ("Keep both characters exactly as in the image: Usta about 30, smooth young skin, short full black beard, black doppi with a white arch pattern, "
         "dark embroidered chapan with a red sash; Diyor about 20, round boyish face, messy jet-black hair, navy hoodie. Same faces, five fingers on each hand. ")
-END = "No text, no subtitles, no logos. The camera never stops moving."
+END = "Keep the hand-painted cartoon style of the image for the whole clip, never photorealistic. No text, no subtitles, no captions, no logos. The camera never stops moving."
 
 def say(lines):
     return " ".join(f'{w} says in Uzbek, in {v}: "{t}"' for w, v, t in lines)
@@ -26,15 +26,16 @@ S = [
   "Diyor talks fast and excited, pushes the phone toward the lens and taps the bottom card twice with his index finger, bouncing a little; "
   "eyes wide, big grin. The phone screen stays exactly as in the image: a shampoo bottle card, a box card, an empty blue button.",
   [("Diyor", D_V, "Usta, shampun oldim, yetkazish yigirma ming ekan. Yana qirq minglik narsa qo'shsam, bepul bo'larkan!")], True),
- ("3", "s03", "Usta: «O'sha qirq minglik narsa senga kerakmi?» — Diyor: «Unchalik emas… lekin bepul-ku!»", "Usta atrofida chapga sekin yoy",
-  "slow arc to the left around Usta over Diyor's blurred shoulder",
-  "Usta finishes pouring, sets the teapot down and lifts the piyola, one eyebrow raised, an amused smile, and asks. "
-  "Then Diyor in the blurred foreground answers with a shrug and a small head tilt (his face stays turned away); Usta listens, mouth closed, and sips the tea. Steam rises from the piyola.",
+ ("3", "s03", "Usta: «O'sha qirq minglik narsa senga kerakmi?» — Diyor: «Unchalik emas… lekin bepul-ku!»", "Diyor yelkasi ustidan Usta tomon sekin yaqinlashish",
+  "slow push-in toward Usta over Diyor's blurred shoulder; Diyor's shoulder stays at the left edge and never covers Usta",
+  "Usta finishes pouring, puts the teapot down on the table, holds the small piyola, raises one eyebrow with an amused smile and asks. "
+  "Then Diyor in the blurred foreground shrugs and tilts his head as he answers (his face stays turned away); Usta listens, mouth closed, and takes a sip from the small piyola cup, never from the teapot. "
+  "The same courtyard with red cushions, string lights and grapevine stays behind him.",
   [("Usta", U_V, "O'sha qirq minglik narsa senga kerakmi?"), ("Diyor", D_V, "Unchalik emas... lekin bepul-ku!")], True),
- ("4", "s04", "Usta: «Jim, Diyor. Qara. 2002-yil, Amerika.»", "kaft yonidan o'tib, ofisga qarab oldinga suzish",
-  "slow dolly forward and to the left, past Usta's raised palm, into the old office",
-  "Usta speaks quietly, palm held up like «quiet, watch», then turns his head toward the office. "
-  "The office part keeps spreading over the courtyard from left to right; office workers type, a man carries a box between the desks. Light dust drifts in the beam of the lamps.",
+ ("4", "s04", "Usta: «Jim, Diyor. Qara. 2002-yil, Amerika.»", "kaftga qarab sekin yaqinlashish, keyin ofis tomonga yengil burilish",
+  "slow push-in toward Usta's raised palm, then a gentle pan to the left toward the painted office",
+  "Usta speaks quietly, palm held up like «quiet, watch», then turns his head toward the office on the left. "
+  "The background stays as in the image: the painted early-2000s office on the left and the courtyard on the right; office workers in the office keep typing, seen from behind. The lantern flame flickers.",
   [("Usta", U_V, "Jim, Diyor. Qara. Ikki ming ikkinchi yil, Amerika.")], True),
  ("5", "s05", "Usta (kadr ortidan): «Dunyodagi eng katta onlayn do'kon bepul yetkazishni 99 dollardan 49 dollarga, ikki oydan keyin 25 dollarga tushirdi.»", "yuqoridan pastga, doskaga qarab kran",
   "slow crane down and forward over the desks toward the whiteboard",
@@ -90,7 +91,7 @@ def vp(n, cam, act, lines, chars):
     return (f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} "
             f"{LOCK if chars else ''}{END}")
 
-DONE = {}
+DONE = {"1": "Veo (yozuv tozalandi)", "2": "Veo (tugma tozalandi)"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
@@ -127,7 +128,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Bepul yetkazish» <em>sahnalari</em></h1>
-<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro"><b>Tayyor:</b> 1, 2. <b>3 va 4 — yangi prompt</b> (birinchi kliplarda uslub haqiqiy suratga o'tib ketgan edi). Qolgan sahnalar tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, chapdagi rasmni yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (<b>6 s</b> yoki <b>8 s</b>) qo'ying, «Nusxa olish» bilan promptni qo'ying. Gapiradigan sahnada qahramonning o'zbekcha gapi promptda. Gapi uzun sahnalar (2, 5, 6, 8, 10, 13, 14, 15) — 8 s. 13 va 15-sahnada gap 8 s dan ham uzun: promptda asosiy qismi, qolganini montajda sig'diraman. 5, 6, 8, 9, 10-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
