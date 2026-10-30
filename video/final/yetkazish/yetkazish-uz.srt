@@ -1,0 +1,144 @@
+1
+00:00:00,150 --> 00:00:03,170
+Bepul yetkazish bepul emas.
+
+2
+00:00:03,170 --> 00:00:06,850
+Uning pulini baribir to'laysan.
+
+3
+00:00:07,350 --> 00:00:09,890
+Usta, shampun oldim, yetkazish yigirma ming ekan.
+
+4
+00:00:09,890 --> 00:00:12,250
+Yana qirq minglik narsa qo'shsam, bepul bo'larkan!
+
+5
+00:00:12,750 --> 00:00:15,550
+O'sha qirq minglik narsa senga kerakmi?
+
+6
+00:00:15,850 --> 00:00:17,220
+Unchalik emas...
+
+7
+00:00:17,220 --> 00:00:18,590
+lekin bepul-ku!
+
+8
+00:00:19,090 --> 00:00:20,800
+Jim, Diyor.
+
+9
+00:00:20,800 --> 00:00:21,940
+Qara.
+
+10
+00:00:21,940 --> 00:00:24,790
+2002-yil, Amerika.
+
+11
+00:00:25,290 --> 00:00:38,830
+Dunyodagi eng katta onlayn do'kon bepul yetkazishni 99 dollardan 49 dollarga, ikki oydan keyin 25 dollarga tushirdi.
+
+12
+00:00:39,330 --> 00:00:43,550
+Odamlar chegaraga yetish uchun savatga yana narsa qo'shdi.
+
+13
+00:00:43,550 --> 00:00:46,720
+Do'kon buni «ijobiy natija» deb e'lon qildi.
+
+14
+00:00:47,220 --> 00:00:49,300
+Bizni sanashgan ekan-da?!
+
+15
+00:00:49,800 --> 00:00:56,190
+Faqat Fransiyada yetkazish uchun bir frank, ya'ni yigirma sent olishgan.
+
+16
+00:00:56,190 --> 00:00:59,380
+U yerda sotuv deyarli o'smagan.
+
+17
+00:00:59,880 --> 00:01:04,340
+Narxni nolga tushirishgan zahoti, u yerda ham sotuv o'sib ketdi.
+
+18
+00:01:04,840 --> 00:01:06,340
+Olimlar sinab ko'rgan:
+
+19
+00:01:06,340 --> 00:01:08,900
+qimmat shokoladni ko'pchilik tanlagan.
+
+20
+00:01:08,900 --> 00:01:13,170
+Arzonini «bepul» qilishgan zahoti, hamma bepuliga o'tgan.
+
+21
+00:01:13,670 --> 00:01:18,040
+Demak, «bepul» so'zi miyani aldaydi?
+
+22
+00:01:18,340 --> 00:01:19,400
+Aldamaydi.
+
+23
+00:01:19,400 --> 00:01:20,710
+Shoshiltiradi.
+
+24
+00:01:21,210 --> 00:01:22,210
+Hisobla:
+
+25
+00:01:22,210 --> 00:01:26,210
+yigirma ming tejading, qirq ming sarflading.
+
+26
+00:01:26,710 --> 00:01:27,730
+Uchta qoida.
+
+27
+00:01:27,730 --> 00:01:29,550
+Faqat kerakli narsani ol.
+
+28
+00:01:29,550 --> 00:01:34,020
+Yaqinda baribir oladigan narsalarni bitta buyurtmaga yig'.
+
+29
+00:01:34,020 --> 00:01:34,630
+Va so'ra:
+
+30
+00:01:34,630 --> 00:01:38,080
+yetkazish pullik bo'lmaganida ham shuni olarmidim?
+
+31
+00:01:38,580 --> 00:01:45,220
+Ular senga yetkazishni emas, «tekin» degan tuyg'uni sotadi.
+
+32
+00:01:45,220 --> 00:01:46,480
+Har gal so'ra:
+
+33
+00:01:46,480 --> 00:01:49,010
+bundan kim foyda ko'radi?
+
+34
+00:01:49,510 --> 00:01:53,560
+Savatingizdagi narsalarni va yetkazish shartini botimizga yozing:
+
+35
+00:01:53,560 --> 00:01:54,450
+@sahiychishopbot.
+
+36
+00:01:54,450 --> 00:02:00,970
+Bepul yetkazish uchun ortiqcha qancha to'layotganingizni hisoblab, nimani olib tashlash mumkinligini aytadi.
+
