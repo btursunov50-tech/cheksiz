@@ -36,6 +36,11 @@ S = [
  ("2", "Diyor: «Usta, to'yga olmos uzuk olaman! Sevgilimga olmos uzukni berib, sevgim qanchalik kuchli ekanini isbotlayman! Lekin pulim yetmaydi, kredit olaman!»", "Medium close-up, slightly low angle", ["gold", "navy", "cyan"], "d", False,
   f"{STREET}, softly blurred behind. {Dy} stands proudly in front of the jewelry window, one hand on his chest, chin up, eyes shining with excitement and a big confident grin; "
   "his other hand holds up a smartphone toward the viewer showing a simple loan app screen: a big blue button and a progress bar, no letters or numbers."),
+ ("2b", "Diyor (davomi, xayolida): «…sevgim qanchalik kuchli ekanini isbotlayman!» — to'y orzusi", "Wide shot, slightly low angle, dreamy", ["gold", "cream", "cyan"], "d", False,
+  "Diyor's daydream of his wedding: a grand Uzbek wedding hall glowing with golden chandeliers, white flowers and gold-embroidered suzani drapes, guests far away and blurred. "
+  f"{Dy}, now in a dark suit with a white shirt (same face, same messy hair, same cyan neon outline), kneels proudly on one knee in the centre and holds up a small open ring box with a HUGE sparkling diamond ring that glows like a star. "
+  "In front of him stands his bride in a white Uzbek wedding dress with a long veil and a gold-embroidered cape, seen from the side and slightly from behind, her face mostly hidden by the veil; she is a fictional person. "
+  "The whole picture has a soft dreamy glow and sparkles at the edges, like a dream."),
  ("3", "Usta: «Diyor, kim aytdi sevgi olmosda deb?» — Diyor: «Hamma biladi-ku! Kinoda ham, reklamada ham.»", "Over-the-shoulder medium close-up: Diyor's shoulder and messy hair blurred in the foreground, focus on Usta", ["gold", "cream"], "ud", False,
   f"{STREET}. {U} stands by the jewelry window with his arms folded, one eyebrow raised high, a small amused smile, head tilted a little, asking a simple sharp question. "
   f"{Dy} is seen from behind in the foreground, only his shoulder, hood and the back of his head, out of focus."),
@@ -58,6 +63,10 @@ S = [
   f"{Dy} leans in from the side, eyebrows raised, slowly realising, mouth slightly open."),
  ("10", "Diyor: «Demak, sevgilim olmosni emas, meni xohlaydi?» — Usta: «Inshaalloh.»", "Medium two-shot at eye level", ["gold", "navy", "cyan"], "ud", False,
   f"{STREET}. {Dy} turns away from the jewelry window toward Usta with a shy hopeful smile, one hand scratching the back of his head. {U} smiles warmly with his mouth closed and puts a hand on Diyor's shoulder."),
+ ("10b", "Usta: «Inshaalloh.» — haqiqiy to'y (kreditsiz, sodda uzuk)", "Medium-wide shot at eye level, warm and joyful", ["gold", "cream", "red"], "d", False,
+  "A warm, joyful real Uzbek wedding evening in a cosy family courtyard: a long table with plov, bread and fruit, string lights and flowers, relatives far away clapping, blurred and seen from the side. "
+  f"{Dy} in a dark suit (same face, same messy hair, same cyan neon outline) stands next to his bride and smiles shyly and happily; he gently holds her hand, and on her finger there is a simple thin gold ring with a tiny stone, not a huge diamond. "
+  "The bride wears a white Uzbek wedding dress with a veil and a gold-embroidered cape, she smiles softly, her face partly hidden by the veil; she is a fictional person. Real happiness, no luxury."),
  ("11", "Usta: «Uchta savol. Bu uzukni kreditsiz ola olasanmi? To'ydan keyin necha oy to'laysan? Sevgiling bilan birga gaplashdingmi?»", "Slightly low-angle medium shot", ["gold", "cream", "cyan"], "u", False,
   f"{STREET}. {U} raises exactly three fingers. Above his hand float three glowing symbols in a row: a ring, a calculator and two hands in a handshake, "
   "in soft golden and cyan light. The symbols have no letters or numbers. Calm confident look into the camera."),
@@ -73,6 +82,7 @@ def prompt(n, shot, cols, refs, old, scene):
     return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{sty(cols, old, bool(refs))}"
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
+    if n in ("2", "3", "4"): continue
     p = prompt(n, shot, cols, refs, old, scene)
     th = '<figure class="ref"><img src="web/s01_namuna.webp" alt="uslub namunasi"><figcaption>s01_namuna.png (uslub)</figcaption></figure>' + "".join(f'<figure class="ref"><img src="web/{REF[k][1]}.webp" alt="{REF[k][0]} namunasi"><figcaption>{REF[k][1]}.png</figcaption></figure>' for k in refs)
     sw = "".join(f'<span class="sw sw-{c}">{c}</span>' for c in cols)
@@ -109,11 +119,8 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Olmos uzuk» <em>rasmlari</em></h1>
-<p class="intro">1-sahna tayyor (uslub namunasi, oynadagi yuzni olib tashlash tahriri pastda). Qolgan 12 ta rasm, hammasi 9:16. Har biri uchun ChatGPT'da yangi chat oching, chapdagi <b>uchala</b> namunani biriktiring (uslub + qahramonlar), «Nusxa olish» bilan promptni qo'ying. 5, 6, 8-sahnalarda qahramonlar yo'q — faqat uslub namunasi. Raqam va yozuvlarni (1938, 1947, «OLMOS — ABADIY», @sahiychishopbot) montajda qo'yamiz.</p>
-<article class="card"><header><span class="num">1</span><h2>1-sahna — tahrir, 9:16 (tik)</h2><span class="dur">tayyor rasm</span></header>
-<div class="row"><div class="refs"><p class="rh">Rasm chiqqan chatda:</p><figure class="ref"><img src="web/s01_namuna.webp" alt="1-sahna"><figcaption>s01_namuna.png</figcaption></figure></div>
-<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Usta: «Olmos noyob emas. Senga shunday deb aytishgan.»</p>
-<pre id="p1">Edit this image: keep everything exactly the same (Usta, Diyor, their faces, hands, clothes, the street, the TV tower, the light, the jewelry, style, vertical 9:16). Remove only the face reflected in the shop window glass on the right above the ring; the glass there shows only blurred golden jewelry lights. No other people in the reflection.</pre><button class="copy" data-t="p1">Nusxa olish</button></div></div></article>
+<p class="intro"><b>Tayyor: 1, 2, 3, 4.</b> Yangi: <b>2b</b> (Diyorning to'y orzusi — katta olmos) va <b>10b</b> (haqiqiy to'y — sodda uzuk, «Inshaalloh»). Qolgan rasmlar, hammasi 9:16. Har biri uchun ChatGPT'da yangi chat oching, chapdagi <b>uchala</b> namunani biriktiring (uslub + qahramonlar), «Nusxa olish» bilan promptni qo'ying. 5, 6, 8-sahnalarda qahramonlar yo'q — faqat uslub namunasi. Raqam va yozuvlarni (1938, 1947, «OLMOS — ABADIY», @sahiychishopbot) montajda qo'yamiz.</p>
+
 {''.join(cards)}
 </div>
 <script>
