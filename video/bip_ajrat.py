@@ -30,6 +30,6 @@ for n, (a, b) in enumerate(segs, 1):
     v = np.where(env[a:b] > 0.004)[0]
     a2, b2 = a + max(0, v[0] - 2400), a + min(b - a, v[-1] + 4800)
     who = "diyor" if n in DY else "usta"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", SRC, "-af", f"atrim=start_sample={a2}:end_sample={b2},asetpts=PTS-STARTPTS",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", SRC, "-af", f"atrim=start={a2 / sr:.4f}:end={b2 / sr:.4f},asetpts=PTS-STARTPTS",
                     os.path.join(OUT, f"{n:02}_{who}.wav")], check=True)
     print(n, who, round((b2 - a2) / sr, 2), "s", pitch(x[a2:b2]), "Hz")
