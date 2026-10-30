@@ -82,7 +82,7 @@ def prompt(n, shot, cols, refs, old, scene):
     return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{sty(cols, old, bool(refs))}"
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
-    if n in ("2", "2b", "3", "4", "5", "7", "8"): continue
+    if n in ("2", "2b", "3", "4", "5", "7", "8", "9", "10", "10b", "11"): continue
     p = prompt(n, shot, cols, refs, old, scene)
     th = '<figure class="ref"><img src="web/s01_namuna.webp" alt="uslub namunasi"><figcaption>s01_namuna.png (uslub)</figcaption></figure>' + "".join(f'<figure class="ref"><img src="web/{REF[k][1]}.webp" alt="{REF[k][0]} namunasi"><figcaption>{REF[k][1]}.png</figcaption></figure>' for k in refs)
     sw = "".join(f'<span class="sw sw-{c}">{c}</span>' for c in cols)
@@ -119,8 +119,12 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Olmos uzuk» <em>rasmlari</em></h1>
-<p class="intro"><b>Tayyor: 1, 2, 2b, 3, 4, 5, 7, 8.</b> Qolganlari quyida (10b — haqiqiy to'y, sodda uzuk, «Inshaalloh»). Qolgan rasmlar, hammasi 9:16. Har biri uchun ChatGPT'da yangi chat oching, chapdagi <b>uchala</b> namunani biriktiring (uslub + qahramonlar), «Nusxa olish» bilan promptni qo'ying. 5, 6, 8-sahnalarda qahramonlar yo'q — faqat uslub namunasi. Raqam va yozuvlarni (1938, 1947, «OLMOS — ABADIY», @sahiychishopbot) montajda qo'yamiz.</p>
+<p class="intro"><b>Tayyor: 1, 2, 2b, 3, 4, 5, 7, 8, 9, 10, 10b.</b> 11 — tahrir (barmoqlar), qolganlari quyida. Qolgan rasmlar, hammasi 9:16. Har biri uchun ChatGPT'da yangi chat oching, chapdagi <b>uchala</b> namunani biriktiring (uslub + qahramonlar), «Nusxa olish» bilan promptni qo'ying. 5, 6, 8-sahnalarda qahramonlar yo'q — faqat uslub namunasi. Raqam va yozuvlarni (1938, 1947, «OLMOS — ABADIY», @sahiychishopbot) montajda qo'yamiz.</p>
 
+<article class="card"><header><span class="num">11</span><h2>11-sahna — tahrir, 9:16 (tik)</h2><span class="dur">barmoqlar</span></header>
+<div class="row"><div class="refs"><p class="rh">Rasm chiqqan chatda:</p></div>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Usta: «Uchta savol…»</p>
+<pre id="p11e">Edit this image: keep everything exactly the same (Usta's face, beard, doppi, chapan, the three glowing symbols, the street, the TV tower, the light, the style, vertical 9:16). Fix only his raised hand: he shows exactly THREE fingers up (index, middle and ring finger), the little finger is folded down and held by the thumb. Five fingers on the hand in total.</pre><button class="copy" data-t="p11e">Nusxa olish</button></div></div></article>
 {''.join(cards)}
 </div>
 <script>
