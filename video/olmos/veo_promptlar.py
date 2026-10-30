@@ -119,7 +119,7 @@ def vp(n, cam, act, lines, chars):
 OLD = {"5", "6", "6b", "8", "8b"}
 
 TOOL = {}
-DONE = {"1": "Veo", "2": "Veo", "2b": "Veo", "3": "Veo", "4": "Veo (0–6.5 s)", "5": "Veo", "6": "Veo", "6b": "Veo", "7": "Veo"}
+DONE = {"1": "Veo", "2": "Veo", "2b": "Veo", "3": "Veo", "4": "Veo (0–6.5 s)", "5": "Veo", "6": "Veo", "6b": "Veo", "7": "Veo", "8": "Veo (yozuvlar kodda xiralashtirildi)", "9": "Veo (0-2.8 s)", "10": "Veo", "10b": "Veo", "11": "Veo (0-7 s)"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
