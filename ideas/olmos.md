@@ -1,6 +1,6 @@
 # «Olmos uzuk» — Baron formatida Diyor & Usta (2026-10-30)
 
-Format: sodda ishonch → «Jim, Diyor. Qara.» → tasdiqlangan tarix → «kim foyda ko'radi?» → botga chaqiriq. Kompaniya va odam nomlari videoda aytilmaydi.
+Format: sodda ishonch → «Diyor, eshit.» (egasi, 2026-10-30: «jim kerak emas») → tasdiqlangan tarix → «kim foyda ko'radi?» → botga chaqiriq. Kompaniya va odam nomlari videoda aytilmaydi.
 
 ## Ssenariy (~75 s, 9:16)
 | # | Kadr | Gap |
@@ -8,7 +8,7 @@ Format: sodda ishonch → «Jim, Diyor. Qara.» → tasdiqlangan tarix → «kim
 | 1 | Usta yaqin plan, kameraga; orqada zargarlik do'koni oynasi yaltiraydi | **Usta:** «Olmos noyob emas. Senga shunday deb aytishgan.» |
 | 2 | Diyor oyna oldida, qo'lida telefon (nasiya hisob) | **Diyor:** «Usta, to'yga olmos uzuk olaman. Pulim yetmaydi, nasiyaga olaman. Sevgi — olmos-da!» |
 | 3 | Usta qoshini ko'taradi | **Usta:** «Diyor, kim aytdi sevgi olmosda deb?» — **Diyor:** «Hamma biladi-ku! Kinoda ham, reklamada ham.» |
-| 4 | Usta kaftini ko'taradi, kadr eski rangga o'tadi | **Usta:** «Jim, Diyor. Qara. 1938-yil, Amerika.» |
+| 4 | Usta kaftini ko'taradi, kadr eski rangga o'tadi | **Usta:** «Diyor, eshit. 1938-yil, Amerika.» |
 | 5 | Eski ofis, reklama agentligi; plakatlar, yuzlar ko'rinmaydi | **Usta:** «Dunyodagi eng katta olmos kompaniyasi reklama agentligini yollaydi. Vazifa: odamlar olmosni sevgi belgisi deb o'ylasin.» |
 | 6 | Kechasi yozuv mashinkasi oldida yozuvchi qo'llar (yuzsiz), qog'ozga bir qator | **Usta:** «1947-yil. Bitta shior yoziladi: "Olmos — abadiy". Keyin bu asrning eng mashhur reklama shiori deb tan olindi.» |
 | 7 | Diyorning ko'zlari katta | **Diyor:** «Shior-a?!» |
