@@ -61,6 +61,11 @@ S = [
   "The hands type steadily on the old typewriter, the keys strike, the carriage slides to the left and rings at the end of the line; the desk lamp flickers softly, "
   "the diamond in the open ring box sparkles. Only hands and sleeves, no face. The paper line stays blurred and unreadable.",
   [], ""),
+ ("6b", "s06", "Usta (kadr ortidan, davomi): «…Keyin bu asrning eng mashhur reklama shiori deb tan olindi.»", "uzuk qutisiga qarab sekin yon tomonga siljish — shior uzukka bog'lanadi",
+  "slow sideways slide to the right from the typewriter to the open ring box, ending on the sparkling ring",
+  "The typing hands stop; one hand pulls the finished sheet out of the typewriter and lays it on the desk next to the ring box (the text on it stays blurred and unreadable); "
+  "the diamond in the red velvet box catches the lamp light and sparkles brighter, steam rises from the coffee cup. Only hands and sleeves, no face.",
+  [], ""),
  ("7", "s07", "Diyor: «Yo'q, mumkin emas! Shiormi?!»", "yuzga tez «sakrab» yaqinlashish va titrash — hayrat zarbasi",
   "fast snap push-in to Diyor's face, then a tiny shake",
   "Diyor shouts in shock, eyes huge, eyebrows high, both hands pressing his cheeks; his hair bounces, the cyan outline flickers brighter for a moment. The rings in the window sparkle.",
@@ -68,6 +73,11 @@ S = [
  ("8", "s08", "Usta (kadr ortidan): «Televizorda, gazetada, kinoda — har joyda: uzuk olmosli bo'lsin, deyishdi…»", "eski narsalar ustidan chapdan o'ngga suzish — reklama hamma joyda edi",
   "slow sideways glide from left to right over the vintage objects",
   "The old TV screen flickers with the ring on the woman's hand, the film strip slides slowly, the cinema lamp in the corner glows, the diamonds on the poster, the newspaper and in the red box sparkle one after another. "
+  "No new text appears; everything written stays blurred.",
+  [], ""),
+ ("8b", "s08", "Usta (kadr ortidan, davomi): «…Keyinroq reklama aytdi: uzukka ikki oylik maoshingni sarfla.»", "qizil qutidagi uzukka sekin yaqinlashish — «ikki oylik maosh» shu toshda",
+  "slow push-in from the whole table to the red velvet ring box, ending on the sparkling diamond",
+  "The film strip stops, the old TV flickers and dims, the cinema lamp glows warmer; the diamond in the red box sparkles brighter and brighter as the camera comes closer. "
   "No new text appears; everything written stays blurred.",
   [], ""),
  ("9", "s09", "Usta: «Sen sevgi sotib olmayapsan. Kredit sotib olyapsan.»", "fokus telefondan Diyor yuziga o'tadi — raqamdan hissiyotga",
@@ -99,13 +109,13 @@ S = [
   "The phone screen stays exactly as in the image: the chat bubbles and the ring picture. Golden leaves drift, passers-by keep walking.",
   [("Usta", U_V, "To'y xarajatlaringiz ro'yxatini botimizga yozing: sahiychi shop bot.")], "ud"),
 ]
-DUR = {"2b": 8, "3": 8, "5": 8, "6": 8, "8": 8, "11": 8, "12": 8, "13": 8}
+DUR = {"6b": 8, "8b": 8, "2b": 8, "3": 8, "5": 8, "6": 8, "8": 8, "11": 8, "12": 8, "13": 8}
 def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     lock = LOCK if chars == "ud" else LOCK_D if chars == "d" else LOCK_U if chars == "u" else LOCK_0
     end = END_OLD if n in OLD else END
     return f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} {lock}{end}"
-OLD = {"5", "6", "8"}
+OLD = {"5", "6", "6b", "8", "8b"}
 
 TOOL = {}
 DONE = {}
@@ -145,7 +155,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Olmos uzuk» <em>sahnalari</em></h1>
-<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, rasmni <b>birinchi kadr</b> joyiga yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (6 yoki 8 s) qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasmlardagi yaqin fonuslar ko'k neonga bo'yalgan — yangi rasmni yuklang. 6-sahna: siz yuborgan 1-variant (gul va lampa). 11-sahna — barmoq tahriridan keyin. Diyor bor har promptda neon chizig'i, tarix sahnalarida (5, 6, 8) «eski surat, realistik ko'rinish o'zgarmasin» deb yozilgan. 5, 6, 8, 10b-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, rasmni <b>birinchi kadr</b> joyiga yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (6 yoki 8 s) qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasmlardagi yaqin fonuslar ko'k neonga bo'yalgan — yangi rasmni yuklang. 6 va 8-sahnalar ikkiga bo'lingan (6+6b, 8+8b — bitta rasmdan ikki xil kamera), Usta gapi to'liq sig'adi. 6-sahna: siz yuborgan 1-variant (gul va lampa). 11-sahna tuzatildi. Diyor bor har promptda neon chizig'i, tarix sahnalarida (5, 6, 8) «eski surat, realistik ko'rinish o'zgarmasin» deb yozilgan. 5, 6, 8, 10b-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
