@@ -71,14 +71,14 @@ S = [
   "Diyor shouts in shock, eyes huge, eyebrows high, both hands pressing his cheeks; his hair bounces, the cyan outline flickers brighter for a moment. The rings in the window sparkle.",
   [("Diyor", D_V, "Yo'q, mumkin emas! Shiormi?!")], "d"),
  ("8", "s08", "Usta (kadr ortidan): «Televizorda, gazetada, kinoda — har joyda: uzuk olmosli bo'lsin, deyishdi…»", "eski narsalar ustidan chapdan o'ngga suzish — reklama hamma joyda edi",
-  "slow sideways glide from left to right over the vintage objects",
+  "slow sideways glide from left to right over the vintage objects, staying at the same distance as the image (no zoom in)",
   "The old TV screen flickers with the ring on the woman's hand, the film strip slides slowly, the cinema lamp in the corner glows, the diamonds on the poster, the newspaper and in the red box sparkle one after another. "
-  "No new text appears; everything written stays blurred.",
+  "IMPORTANT: there are no letters anywhere: the newspapers show only big ring photos and soft grey blurred stripes instead of text, the poster has no title, no signs or labels appear; the camera never moves close enough to read anything.",
   [], ""),
  ("8b", "s08", "Usta (kadr ortidan, davomi): «…Keyinroq reklama aytdi: uzukka ikki oylik maoshingni sarfla.»", "qizil qutidagi uzukka sekin yaqinlashish — «ikki oylik maosh» shu toshda",
   "slow push-in from the whole table to the red velvet ring box, ending on the sparkling diamond",
   "The film strip stops, the old TV flickers and dims, the cinema lamp glows warmer; the diamond in the red box sparkles brighter and brighter as the camera comes closer. "
-  "No new text appears; everything written stays blurred.",
+  "IMPORTANT: there are no letters anywhere: the newspapers show only ring photos and soft grey blurred stripes instead of text, no signs or labels appear.",
   [], ""),
  ("9", "s09", "Usta: «Sen sevgi sotib olmayapsan. Kredit sotib olyapsan.»", "fokus telefondan Diyor yuziga o'tadi — raqamdan hissiyotga",
   "rack focus from the phone chart to Diyor's face with a gentle push-in",
@@ -119,7 +119,7 @@ def vp(n, cam, act, lines, chars):
 OLD = {"5", "6", "6b", "8", "8b"}
 
 TOOL = {}
-DONE = {"1": "Veo", "2": "Veo", "2b": "Veo", "3": "Veo", "4": "Veo (0–6.5 s)", "5": "Veo", "6": "Veo", "6b": "Veo"}
+DONE = {"1": "Veo", "2": "Veo", "2b": "Veo", "3": "Veo", "4": "Veo (0–6.5 s)", "5": "Veo", "6": "Veo", "6b": "Veo", "7": "Veo"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
