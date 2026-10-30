@@ -1,0 +1,144 @@
+1
+00:00:00,150 --> 00:00:03,170
+Free delivery isn't free.
+
+2
+00:00:03,170 --> 00:00:06,850
+You still pay for it.
+
+3
+00:00:07,350 --> 00:00:09,890
+Master, I got shampoo, delivery is twenty thousand.
+
+4
+00:00:09,890 --> 00:00:12,250
+If I add forty thousand more, it's free!
+
+5
+00:00:12,750 --> 00:00:15,550
+Do you really need that forty-thousand thing?
+
+6
+00:00:15,850 --> 00:00:17,220
+Not really...
+
+7
+00:00:17,220 --> 00:00:18,590
+but it's free!
+
+8
+00:00:19,090 --> 00:00:20,800
+Quiet, Diyor.
+
+9
+00:00:20,800 --> 00:00:21,940
+Look.
+
+10
+00:00:21,940 --> 00:00:24,790
+2002, America.
+
+11
+00:00:25,290 --> 00:00:38,830
+The world's biggest online store cut free delivery from 99 dollars to 49, and two months later to 25.
+
+12
+00:00:39,330 --> 00:00:43,550
+People added more to their carts to reach the limit.
+
+13
+00:00:43,550 --> 00:00:46,720
+The store called it a “positive result”.
+
+14
+00:00:47,220 --> 00:00:49,300
+So they were counting on us?!
+
+15
+00:00:49,800 --> 00:00:56,190
+Only in France they charged one franc, about twenty cents, for delivery.
+
+16
+00:00:56,190 --> 00:00:59,380
+Sales there barely grew.
+
+17
+00:00:59,880 --> 00:01:04,340
+The moment they made it zero, sales grew there too.
+
+18
+00:01:04,840 --> 00:01:06,340
+Scientists tested it:
+
+19
+00:01:06,340 --> 00:01:08,900
+most people chose the expensive chocolate.
+
+20
+00:01:08,900 --> 00:01:13,170
+When the cheap one became “free”, everyone switched to the free one.
+
+21
+00:01:13,670 --> 00:01:18,040
+So the word “free” fools the brain?
+
+22
+00:01:18,340 --> 00:01:19,400
+It doesn't fool it.
+
+23
+00:01:19,400 --> 00:01:20,710
+It rushes it.
+
+24
+00:01:21,210 --> 00:01:22,210
+Do the math:
+
+25
+00:01:22,210 --> 00:01:26,210
+you saved twenty thousand and spent forty.
+
+26
+00:01:26,710 --> 00:01:27,730
+Three rules.
+
+27
+00:01:27,730 --> 00:01:29,550
+Buy only what you need.
+
+28
+00:01:29,550 --> 00:01:34,020
+Put things you'll buy soon anyway into one order.
+
+29
+00:01:34,020 --> 00:01:34,630
+And ask:
+
+30
+00:01:34,630 --> 00:01:38,080
+would I buy this if delivery weren't paid?
+
+31
+00:01:38,580 --> 00:01:45,220
+They don't sell you delivery, they sell you the feeling of “free”.
+
+32
+00:01:45,220 --> 00:01:46,480
+Always ask:
+
+33
+00:01:46,480 --> 00:01:49,010
+who profits from this?
+
+34
+00:01:49,510 --> 00:01:53,560
+Send your cart and the delivery terms to our bot:
+
+35
+00:01:53,560 --> 00:01:54,450
+@sahiychishopbot.
+
+36
+00:01:54,450 --> 00:02:00,970
+It works out how much extra you pay for free delivery and what you can remove.
+
