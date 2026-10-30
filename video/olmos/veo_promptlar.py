@@ -114,11 +114,12 @@ def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     lock = LOCK if chars == "ud" else LOCK_D if chars == "d" else LOCK_U if chars == "u" else LOCK_0
     end = END_OLD if n in OLD else END
+    if n == "4": end = "The sepia old-city part keeps its old-photograph look; Usta and the golden street keep the cartoon style. " + end
     return f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} {lock}{end}"
 OLD = {"5", "6", "6b", "8", "8b"}
 
 TOOL = {}
-DONE = {}
+DONE = {"1": "Veo", "2": "Veo"}
 e = html.escape
 cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
