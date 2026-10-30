@@ -155,7 +155,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Olmos uzuk» <em>sahnalari</em></h1>
-<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, rasmni <b>birinchi kadr</b> joyiga yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (6 yoki 8 s) qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasmlardagi yaqin fonuslar ko'k neonga bo'yalgan — yangi rasmni yuklang. 6 va 8-sahnalar ikkiga bo'lingan (6+6b, 8+8b — bitta rasmdan ikki xil kamera), Usta gapi to'liq sig'adi. 6-sahna: siz yuborgan 1-variant (gul va lampa). 11-sahna tuzatildi. Diyor bor har promptda neon chizig'i, tarix sahnalarida (5, 6, 8) «eski surat, realistik ko'rinish o'zgarmasin» deb yozilgan. 5, 6, 8, 10b-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, rasmni <b>birinchi kadr</b> joyiga yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (6 yoki 8 s) qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasmlardagi yaqin fonuslar ko'k neonga bo'yalgan — yangi rasmni yuklang. 6 va 8-sahnalar ikkiga bo'lingan (6+6b, 8+8b — bitta rasmdan ikki xil kamera), Usta gapi to'liq sig'adi. 11-sahna tuzatildi. Diyor bor har promptda neon chizig'i, tarix sahnalarida (5, 6, 8) «eski surat, realistik ko'rinish o'zgarmasin» deb yozilgan. 5, 6, 8, 10b-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
