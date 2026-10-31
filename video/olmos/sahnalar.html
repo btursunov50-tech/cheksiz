@@ -1,0 +1,44 @@
+<title>Olmos uzuk sahnalari</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column of scene cards; golden-hour palette (single dark theme, deliberately). */
+:root{--bg:#0f1116;--card:#181b23;--line:#2c3140;--fg:#eef0f5;--muted:#a7b0c4;--gold:#f2b544;--mint:#5fd3a6;
+--display:"Cormorant Garamond",Georgia,serif;--body:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding:28px 16px 60px;display:grid;gap:22px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,6vw,44px);margin:0;line-height:1.1} h1 em{font-style:normal;color:var(--gold)}
+.intro{color:var(--muted);margin:0;max-width:64ch}
+.card{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap} .num{font-family:var(--mono);color:var(--gold);font-size:14px}
+h2{font-family:var(--display);font-weight:700;font-size:26px;margin:0}
+.row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)} .sc{max-width:240px}}
+.sc{margin:0;display:grid;gap:6px} .sc img{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}
+.sc figcaption{font-size:12px;color:var(--muted);font-family:var(--mono)}
+.txt{min-width:0;display:flex;flex-direction:column;gap:8px} .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.voice{margin:0;font-style:italic}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:12.5px;line-height:1.6;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;user-select:all}
+.copy{align-self:flex-start;font:600 15px var(--body);color:#111;background:var(--gold);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.tool{font-size:13px;font-weight:600;color:#111;background:var(--gold);border-radius:99px;padding:2px 10px} .copy.done{background:var(--mint)} .copy:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+</style>
+<div class="wrap">
+<h1>«Olmos uzuk» <em>sahnalari</em></h1>
+<p class="intro">15 ta sahna, tartib bilan. Har biri uchun: Veo'da «Frames to video» ni oching, rasmni <b>birinchi kadr</b> joyiga yuklang, <b>9:16</b> va sarlavhadagi uzunlikni (6 yoki 8 s) qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasmlardagi yaqin fonuslar ko'k neonga bo'yalgan — yangi rasmni yuklang. 6 va 8-sahnalar ikkiga bo'lingan (6+6b, 8+8b — bitta rasmdan ikki xil kamera), Usta gapi to'liq sig'adi. 11-sahna tuzatildi. Diyor bor har promptda neon chizig'i, tarix sahnalarida (5, 6, 8) «eski surat, realistik ko'rinish o'zgarmasin» deb yozilgan. 5, 6, 8, 10b-sahnalarda hech kim gapirmaydi — Usta ovozi keyin qo'yiladi.</p>
+<article class="card"><header><span class="num">8b</span><h2>8b-sahna — 9:16 (tik), 8 s</h2></header>
+<div class="row"><figure class="sc"><img src="web/s08.webp" alt="8b-sahna rasmi"><figcaption>Veo'ga: s08.png</figcaption></figure>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Usta (kadr ortidan, davomi): «…Keyinroq reklama aytdi: uzukka ikki oylik maoshingni sarfla.»</p>
+<span class="lbl">Kamera: qizil qutidagi uzukka sekin yaqinlashish — «ikki oylik maosh» shu toshda</span>
+<pre id="v8b">Vertical 9:16, 8 seconds. Start from the attached image. Camera: slow push-in from the whole table to the red velvet ring box, ending on the sparkling diamond. The film strip stops, the old TV flickers and dims, the cinema lamp glows warmer; the diamond in the red box sparkles brighter and brighter as the camera comes closer. IMPORTANT: there are no letters anywhere: the newspapers show only ring photos and soft grey blurred stripes instead of text, no signs or labels appear. Faces of people stay in shadow or turned away; nobody looks at the camera. One continuous shot, no cuts. This is a history scene: keep its realistic old-photograph look exactly as in the image (warm sepia and gold, soft film grain, natural light), do not turn it into a cartoon and do not add colours. No new text appears; anything written stays blurred and unreadable. No subtitles, no logos. The camera never stops moving.</pre><button class="copy" data-t="v8b">Nusxa olish</button></div></div></article><article class="card"><header><span class="num">13</span><h2>13-sahna — 9:16 (tik), 8 s</h2></header>
+<div class="row"><figure class="sc"><img src="web/s13.webp" alt="13-sahna rasmi"><figcaption>Veo'ga: s13.png</figcaption></figure>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Usta: «To&#x27;y xarajatlaringiz ro&#x27;yxatini botimizga yozing: @sahiychishopbot…»</p>
+<span class="lbl">Kamera: sekin orqaga chekinish — xayrlashuv, bot va ikkalasi kadrda</span>
+<pre id="v13">Vertical 9:16, 8 seconds. Start from the attached image. Camera: slow gentle pull-back, both men stay in the frame. Usta holds the phone toward the viewer and speaks with a friendly smile; Diyor nods twice and keeps his thumb up, smiling, mouth closed. The phone screen stays exactly as in the image: the chat bubbles and the ring picture. Golden leaves drift, passers-by keep walking. Usta says in Uzbek, in a calm deep warm male voice of about 30-35: &quot;To&#x27;y xarajatlaringiz ro&#x27;yxatini botimizga yozing: sahiychi shop bot.&quot; Keep both characters exactly as in the image: Usta about 30, smooth young skin, short full black beard, black doppi with a white arch pattern, dark embroidered chapan with a red sash; Diyor about 20, round boyish face, messy jet-black hair. Same faces, five fingers on each hand. Diyor has a thin bright cyan-blue neon outline along his whole silhouette with a soft glow; it moves with him in every frame and never disappears. Nobody else has it. One continuous shot, no cuts. Faces stay exactly as in the image from the first to the last frame. The street lamp glass that glows cool neon blue in the image stays neon blue. Keep the semi-realistic hand-painted cartoon style of the image for the whole clip, never photorealistic. No text, no subtitles, no captions, no logos. The camera never stops moving.</pre><button class="copy" data-t="v13">Nusxa olish</button></div></div></article>
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+ const pre=document.getElementById(b.dataset.t);const t=pre.textContent;
+ const ok=()=>{b.textContent='Nusxa olindi';b.classList.add('done');setTimeout(()=>{b.textContent='Nusxa olish';b.classList.remove('done')},1800)};
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Belgilandi, nusxa oling'};
+ try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+}));
+</script>

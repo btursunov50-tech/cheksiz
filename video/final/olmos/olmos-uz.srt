@@ -1,0 +1,148 @@
+1
+00:00:00,150 --> 00:00:02,140
+Olmos noyob emas.
+
+2
+00:00:02,140 --> 00:00:04,790
+Senga shunday deb aytishgan.
+
+3
+00:00:05,440 --> 00:00:08,080
+Usta, to'yga olmos uzuk olaman!
+
+4
+00:00:08,080 --> 00:00:14,330
+Sevgilimga olmos uzukni berib, sevgim qanchalik kuchli ekanini isbotlayman!
+
+5
+00:00:14,330 --> 00:00:17,220
+Lekin pulim yetmaydi, kredit olaman!
+
+6
+00:00:17,670 --> 00:00:21,690
+Diyor, kim aytdi sevgi olmosda deb?
+
+7
+00:00:22,140 --> 00:00:23,550
+Hamma biladi-ku!
+
+8
+00:00:23,550 --> 00:00:25,680
+Kinoda ham, reklamada ham.
+
+9
+00:00:26,330 --> 00:00:28,960
+Diyor, eshit.
+
+10
+00:00:28,960 --> 00:00:32,250
+1938-yil, Amerika.
+
+11
+00:00:32,900 --> 00:00:39,860
+Dunyodagi eng katta olmos kompaniyasi reklama agentligini yollaydi.
+
+12
+00:00:39,860 --> 00:00:40,690
+Vazifa:
+
+13
+00:00:40,690 --> 00:00:44,870
+odamlar olmosni sevgi belgisi deb o'ylasin.
+
+14
+00:00:45,520 --> 00:00:45,990
+1947-yil.
+
+15
+00:00:45,990 --> 00:00:49,710
+Bitta shior yoziladi:
+
+16
+00:00:49,710 --> 00:00:52,040
+«Olmos — abadiy».
+
+17
+00:00:52,040 --> 00:01:00,900
+Keyin bu asrning eng mashhur reklama shiori deb tan olindi.
+
+18
+00:01:01,350 --> 00:01:03,420
+Yo'q, mumkin emas!
+
+19
+00:01:03,420 --> 00:01:04,660
+Shiormi?!
+
+20
+00:01:05,310 --> 00:01:10,240
+Televizorda, gazetada, kinoda — har joyda:
+
+21
+00:01:10,240 --> 00:01:13,520
+uzuk olmosli bo'lsin, deyishdi.
+
+22
+00:01:13,520 --> 00:01:16,150
+Keyinroq reklama aytdi:
+
+23
+00:01:16,150 --> 00:01:20,420
+uzukka ikki oylik maoshingni sarfla.
+
+24
+00:01:21,070 --> 00:01:23,510
+Sen sevgi sotib olmayapsan.
+
+25
+00:01:23,510 --> 00:01:25,400
+Kredit sotib olyapsan.
+
+26
+00:01:26,050 --> 00:01:30,700
+Demak, sevgilim olmosni emas, meni xohlaydi?
+
+27
+00:01:31,360 --> 00:01:32,290
+Inshaalloh.
+
+28
+00:01:34,360 --> 00:01:35,170
+Uchta savol.
+
+29
+00:01:35,170 --> 00:01:37,820
+Bu uzukni kreditsiz ola olasanmi?
+
+30
+00:01:37,820 --> 00:01:39,860
+To'ydan keyin necha oy to'laysan?
+
+31
+00:01:39,860 --> 00:01:42,100
+Sevgiling bilan birga gaplashdingmi?
+
+32
+00:01:42,750 --> 00:01:49,730
+Ular senga tosh emas, «sevgi shu narxda» degan tuyg'uni sotadi.
+
+33
+00:01:49,730 --> 00:01:51,060
+Har gal so'ra:
+
+34
+00:01:51,060 --> 00:01:53,720
+bundan kim foyda ko'radi?
+
+35
+00:01:54,370 --> 00:01:57,620
+To'y xarajatlaringiz ro'yxatini botimizga yozing:
+
+36
+00:01:57,620 --> 00:01:58,580
+@sahiychishopbot.
+
+37
+00:01:58,580 --> 00:02:04,320
+Jamini va kreditning ortiqcha to'lovini hisoblab, qayerda tejash mumkinligini aytadi.
+
