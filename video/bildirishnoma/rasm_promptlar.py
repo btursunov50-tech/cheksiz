@@ -25,7 +25,7 @@ def sty(cols, old=False, refs=True):
             "Vertical 9:16. No text, no letters, no numbers, no logos, no brand names, no watermark, no subtitles.")
 REF = {"u": ("Usta", "ref_usta"), "d": ("Diyor", "ref_diyor")}
 def att(r):
-    s = "Attach the style reference image (s01_namuna) and copy its style, light and colours exactly. "
+    s = "Attach the style reference image (s01_namuna) and copy its style, light and colours exactly. For the Malika bazaar background also attach the bazaar reference image (s01) and keep the same bazaar look. "
     if not r: return s + "This image shows no main characters. "
     n = " and ".join(REF[k][0] for k in r)
     return (s + f"Also attach the reference image{'s' if len(r) > 1 else ''} of {n}. Keep {'each character' if len(r) > 1 else 'the character'} exactly as in "
@@ -77,7 +77,7 @@ def prompt(n, shot, cols, refs, old, scene):
     return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{sty(cols, old, bool(refs))}"
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
-    if n in ("2", "2b", "3", "4", "5", "7", "8", "9", "10", "10b", "11"): continue
+    if n == "1": continue
     p = prompt(n, shot, cols, refs, old, scene)
     th = '<figure class="ref"><img src="web/s01_namuna.webp" alt="uslub namunasi"><figcaption>s01_namuna.png (uslub)</figcaption></figure>' + "".join(f'<figure class="ref"><img src="web/{REF[k][1]}.webp" alt="{REF[k][0]} namunasi"><figcaption>{REF[k][1]}.png</figcaption></figure>' for k in refs)
     sw = "".join(f'<span class="sw sw-{c}">{c}</span>' for c in cols)
@@ -114,7 +114,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Telefon jiringlaydi» <em>rasmlari</em></h1>
-<p class="intro">13 ta rasm, hammasi 9:16. Uslub — <b>s01_namuna</b> (oltin soat; qahramonli sahnalar — Malika bozori, elektronika va telefon bozori). Qahramonlar faqat 1, 2, 3, 11, 12, 13-sahnada; 4–10-sahnalar — tasvirlar (odam yo'q, 4 va 6 — eski sepia surat). Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring (uslub + kerak bo'lsa qahramonlar), «Nusxa olish» bilan promptni qo'ying. Yozuv va raqamlarni montajda qo'yamiz.</p>
+<p class="intro"><b>1-sahna tayyor</b> (Malika bozori uslub namunasi: <b>s01.png</b>). Qolgan 12 ta rasm, hammasi 9:16. <b>Qahramonli sahnalarga s01.png ni ham biriktiring</b> (fon va uslub). Uslub — <b>s01_namuna</b> (oltin soat; qahramonli sahnalar — Malika bozori, elektronika va telefon bozori). Qahramonlar faqat 1, 2, 3, 11, 12, 13-sahnada; 4–10-sahnalar — tasvirlar (odam yo'q, 4 va 6 — eski sepia surat). Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring (uslub + kerak bo'lsa qahramonlar), «Nusxa olish» bilan promptni qo'ying. Yozuv va raqamlarni montajda qo'yamiz.</p>
 {''.join(cards)}
 </div>
 <script>
