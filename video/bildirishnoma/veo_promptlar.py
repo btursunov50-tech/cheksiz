@@ -69,6 +69,12 @@ S = [
   "The three round glowing icons (crossed-out bell, crescent moon, question mark) light up one after another from left to right: each pulses once with a bright flash and a ring of sparks, the others stay softer. "
   "Their reflections ripple on the wet floor, the blue lamps of the bazaar far behind sway, golden sparks float up.",
   [], ""),
+ ("11", "s11", "Diyor: «Telefon jim, men tinch!»", "Diyorning yuziga sekin yaqinlashish — yengil tortish, quvonch",
+  "slow push-in from the medium shot toward Diyor's face, ending on a close-up of his face",
+  "Diyor slides the phone deeper into his hoodie pocket, takes a deep calm breath, tilts his head back with closed eyes and a wide relieved smile, then opens his eyes and says the line cheerfully: "
+  "his lips and jaw move naturally for the whole line, cheeks lift, eyebrows relax. Usta stays beside him with his hand on Diyor's shoulder, smiling warmly with his mouth closed, giving a slow proud nod. "
+  "Shoppers far behind keep walking, the blue lamps sway gently.",
+  [("Diyor", D_V, "Telefon jim, men tinch!")], "ud"),
  ("12", "s12", "Usta: «Ular senga ilovani emas, “o'tkazib yuboraman” degan qo'rquvni sotadi. Har gal so'ra: bundan kim foyda ko'radi?»", "Ustaning yuziga sekin yaqinlashish — jiddiy, ishonchli xulosa",
   "slow push-in on Usta's face, ending on a tight close-up",
   "Usta looks straight into the lens and speaks with calm conviction: his lips and jaw move naturally for the whole line, a slow knowing nod on «kim foyda ko'radi?», eyebrows slightly raised, a faint half-smile at the end. "
@@ -125,7 +131,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Telefon jiringlaydi» <em>sahnalari</em></h1>
-<p class="intro">Hozircha rasmi tayyor sahnalar: 1–10, 12, 13 (11-sahna rasmi kelgach qo'shiladi). 7 va 8-sahnada yangi rasmlar. Har biri uchun: Veo'da «Frames to video», rasmni <b>birinchi kadr</b> qilib yuklang, <b>9:16</b> va sarlavhadagi uzunlikni qo'ying, «Nusxa olish» bilan promptni qo'ying. 2-sahnaga yangi rasmni (5 barmoqli, olmasiz telefon) yuklang. 4, 5, 6, 7, 8, 9-sahnalarda odam yo'q va gap yo'q — Usta/Diyor ovozi montajda qo'yiladi.</p>
+<p class="intro">Hozircha rasmi tayyor sahnalar: 1–13. 7 va 8-sahnada yangi rasmlar. Har biri uchun: Veo'da «Frames to video», rasmni <b>birinchi kadr</b> qilib yuklang, <b>9:16</b> va sarlavhadagi uzunlikni qo'ying, «Nusxa olish» bilan promptni qo'ying. 2-sahnaga yangi rasmni (5 barmoqli, olmasiz telefon) yuklang. 4, 5, 6, 7, 8, 9-sahnalarda odam yo'q va gap yo'q — Usta/Diyor ovozi montajda qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
