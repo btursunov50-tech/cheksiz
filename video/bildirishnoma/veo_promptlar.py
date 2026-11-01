@@ -64,8 +64,23 @@ S = [
   "slow pull-back from the eye to reveal the purse and hands below",
   "The coins pour in a steady stream from the eye into the purse, clinking and bouncing, the stream grows heavier and the purse fills up; the phone reflection in the iris pulses; blue lamps blur in the background.",
   [], ""),
+ ("10", "s10", "Usta: «Uchta qoida. Keraksiz bildirishnomani o'chir. Kechasi tinch rejimni yoq. Ilovani ochishdan oldin so'ra: nega ochyapman?»", "tunnel bo'ylab uchta belgi tomon sekin yaqinlashish — har biri birma-bir yonadi",
+  "slow push-in along the bazaar tunnel toward the three glowing icons, ending with them filling the frame",
+  "The three round glowing icons (crossed-out bell, crescent moon, question mark) light up one after another from left to right: each pulses once with a bright flash and a ring of sparks, the others stay softer. "
+  "Their reflections ripple on the wet floor, the blue lamps of the bazaar far behind sway, golden sparks float up.",
+  [], ""),
+ ("12", "s12", "Usta: «Ular senga ilovani emas, “o'tkazib yuboraman” degan qo'rquvni sotadi. Har gal so'ra: bundan kim foyda ko'radi?»", "Ustaning yuziga sekin yaqinlashish — jiddiy, ishonchli xulosa",
+  "slow push-in on Usta's face, ending on a tight close-up",
+  "Usta looks straight into the lens and speaks with calm conviction: his lips and jaw move naturally for the whole line, a slow knowing nod on «kim foyda ko'radi?», eyebrows slightly raised, a faint half-smile at the end. "
+  "Shoppers far behind keep walking, the blue lamps sway gently, the headphones on the shelf at the left stay still.",
+  [("Usta", U_V, "Ular senga ilovani emas, «o'tkazib yuboraman» degan qo'rquvni sotadi. Har gal so'ra: bundan kim foyda ko'radi?")], "u"),
+ ("13", "s13", "Usta: «Qaysi bildirishnomani o'chirishni bilmasangiz, ilova nomini botimizga yozing: @sahiychishopbot. Bosqichma-bosqich o'rgatadi.»", "ikkalasiga sekin orqaga chekinib, telefonga e'tibor — iliq yakun",
+  "slow pull-back from the phone to the medium shot of both, ending steady",
+  "Usta speaks warmly into the lens: his lips and jaw move naturally for the whole line, he lifts the phone a little higher toward the viewer and nods; the crossed-out bell on the phone screen pulses softly. "
+  "Diyor stands relaxed beside him with his thumb up, smiling, mouth closed, gives a small happy nod. Shoppers far behind keep walking, the blue lamps sway.",
+  [("Usta", U_V, "Qaysi bildirishnomani o'chirishni bilmasangiz, ilova nomini botimizga yozing: @sahiychishopbot. Bosqichma-bosqich o'rgatadi.")], "ud"),
 ]
-DUR = {"4": 8, "8": 8, "9": 8}
+DUR = {"4": 8, "8": 8, "9": 8, "10": 8, "12": 8, "13": 8}
 def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     lock = LOCK if chars == "ud" else LOCK_D if chars == "d" else LOCK_U if chars == "u" else LOCK_0
@@ -110,7 +125,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Telefon jiringlaydi» <em>sahnalari</em></h1>
-<p class="intro">Hozircha rasmi tayyor sahnalar: 1–9 (10–13 rasmlari kelgach qo'shiladi). Har biri uchun: Veo'da «Frames to video», rasmni <b>birinchi kadr</b> qilib yuklang, <b>9:16</b> va sarlavhadagi uzunlikni qo'ying, «Nusxa olish» bilan promptni qo'ying. 2-sahnaga yangi rasmni (5 barmoqli, olmasiz telefon) yuklang. 4, 5, 6, 7, 8, 9-sahnalarda odam yo'q va gap yo'q — Usta/Diyor ovozi montajda qo'yiladi.</p>
+<p class="intro">Hozircha rasmi tayyor sahnalar: 1–10, 12, 13 (11-sahna rasmi kelgach qo'shiladi). 7 va 8-sahnada yangi rasmlar. Har biri uchun: Veo'da «Frames to video», rasmni <b>birinchi kadr</b> qilib yuklang, <b>9:16</b> va sarlavhadagi uzunlikni qo'ying, «Nusxa olish» bilan promptni qo'ying. 2-sahnaga yangi rasmni (5 barmoqli, olmasiz telefon) yuklang. 4, 5, 6, 7, 8, 9-sahnalarda odam yo'q va gap yo'q — Usta/Diyor ovozi montajda qo'yiladi.</p>
 {''.join(cards)}
 </div>
 <script>
