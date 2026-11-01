@@ -29,6 +29,7 @@ SUB = [
  (81.27, 83.11, 'R', "Bosqichma-bosqich o'rgatadi."),
 ]
 TEXT = [
+ (0.2, 3.2, 'TELEFON SENI BOSHQARADI', 66, 'FFC23A', (540, 250)),
  (12.89, 15.3, '2006 · AQSh', 96, 'FFC23A', (540, 250)),
  (16.4, 22.65, 'CHEKSIZ AYLANTIRISH', 64, 'FFC23A', (540, 250)),
  (38.86, 43.06, 'KUNIGA ~46 TA BILDIRISHNOMA', 54, 'FFC23A', (540, 250)),

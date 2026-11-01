@@ -36,8 +36,8 @@ RU = [
  "Если не знаешь, какое уведомление отключить, напиши название приложения нашему боту:", "@sahiychishopbot.", "Он научит шаг за шагом.",
 ]
 TEXT = {
- "en": ["2006 \u00b7 USA", "INFINITE SCROLL", "~46 NOTIFICATIONS A DAY", "ATTENTION = MONEY", "1. TURN OFF USELESS ONES", "2. SILENT MODE AT NIGHT", "3. WHY AM I OPENING IT?", "WHO PROFITS FROM THIS?", "@sahiychishopbot"],
- "ru": ["2006 \u00b7 США", "БЕСКОНЕЧНАЯ ЛЕНТА", "~46 УВЕДОМЛЕНИЙ В ДЕНЬ", "ВНИМАНИЕ = ДЕНЬГИ", "1. ОТКЛЮЧИ НЕНУЖНОЕ", "2. НОЧЬЮ ТИХИЙ РЕЖИМ", "3. ЗАЧЕМ Я ОТКРЫВАЮ?", "КОМУ ЭТО ВЫГОДНО?", "@sahiychishopbot"],
+ "en": ["THE PHONE CONTROLS YOU", "2006 \u00b7 USA", "INFINITE SCROLL", "~46 NOTIFICATIONS A DAY", "ATTENTION = MONEY", "1. TURN OFF USELESS ONES", "2. SILENT MODE AT NIGHT", "3. WHY AM I OPENING IT?", "WHO PROFITS FROM THIS?", "@sahiychishopbot"],
+ "ru": ["ТЕЛЕФОН УПРАВЛЯЕТ ТОБОЙ", "2006 \u00b7 США", "БЕСКОНЕЧНАЯ ЛЕНТА", "~46 УВЕДОМЛЕНИЙ В ДЕНЬ", "ВНИМАНИЕ = ДЕНЬГИ", "1. ОТКЛЮЧИ НЕНУЖНОЕ", "2. НОЧЬЮ ТИХИЙ РЕЖИМ", "3. ЗАЧЕМ Я ОТКРЫВАЮ?", "КОМУ ЭТО ВЫГОДНО?", "@sahiychishopbot"],
 }
 assert len(EN) == len(RU) == len(tl["SUB"]), (len(EN), len(RU), len(tl["SUB"]))
 assert all(len(v) == len(tl["TEXT"]) for v in TEXT.values())

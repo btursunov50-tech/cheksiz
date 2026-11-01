@@ -29,6 +29,7 @@ for i in range(1, 14):
 T = CUT[-1]; c = lambda k: CUT[k - 1]
 AT[14] = round(T + 0.5, 3)
 TEXT = [
+    (0.2, 3.2, "TELEFON SENI BOSHQARADI", 66, "FFC23A", (540, 250)),   # 1-kadrdan hook yozuvi (OpenMontage short-form qoidasi)
     (c(3) + 3.0, c(4) - 0.1, "2006 · AQSh", 96, "FFC23A", (540, 250)),
     (c(4) + 1.0, c(5) - 0.1, "CHEKSIZ AYLANTIRISH", 64, "FFC23A", (540, 250)),
     (c(8) + 1.5, c(9) - 0.1, "KUNIGA ~46 TA BILDIRISHNOMA", 54, "FFC23A", (540, 250)),

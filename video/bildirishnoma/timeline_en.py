@@ -27,6 +27,7 @@ SUB = [
  (81.27, 83.11, 'R', 'It teaches you step by step.'),
 ]
 TEXT = [
+ (0.2, 3.2, 'THE PHONE CONTROLS YOU', 66, 'FFC23A', (540, 250)),
  (12.89, 15.3, '2006 · USA', 96, 'FFC23A', (540, 250)),
  (16.4, 22.65, 'INFINITE SCROLL', 64, 'FFC23A', (540, 250)),
  (38.86, 43.06, '~46 NOTIFICATIONS A DAY', 54, 'FFC23A', (540, 250)),
