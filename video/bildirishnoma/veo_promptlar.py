@@ -66,7 +66,7 @@ S = [
   [], ""),
  ("10", "s10", "Usta: «Uchta qoida. Keraksiz bildirishnomani o'chir. Kechasi tinch rejimni yoq. Ilovani ochishdan oldin so'ra: nega ochyapman?»", "tunnel bo'ylab uchta belgi tomon sekin yaqinlashish — har biri birma-bir yonadi",
   "slow push-in along the bazaar tunnel toward the three glowing icons, ending with them filling the frame",
-  "The three round glowing icons (crossed-out bell, crescent moon, question mark) light up one after another from left to right: each pulses once with a bright flash and a ring of sparks, the others stay softer. "
+  "The three round glowing icons (a bell with a diagonal slash through it, a crescent moon, a question mark) light up one after another from left to right: each glows brighter once with a soft ring of light and a few small sparks, the others stay softer. IMPORTANT: the bell ALWAYS keeps its diagonal slash line across it in every single frame and never turns into a plain bell; the moon stays a crescent and the question mark stays a question mark, none of the icons changes shape; no explosions, no fire. "
   "Their reflections ripple on the wet floor, the blue lamps of the bazaar far behind sway, golden sparks float up.",
   [], ""),
  ("11", "s11", "Diyor: «Telefon jim, men tinch!»", "Diyorning yuziga sekin yaqinlashish — yengil tortish, quvonch",
