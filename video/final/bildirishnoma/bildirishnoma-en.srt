@@ -1,0 +1,100 @@
+1
+00:00:00,150 --> 00:00:06,570
+When your phone rings, you don't control the phone. The phone controls you.
+
+2
+00:00:07,070 --> 00:00:09,540
+Master, one minute, a message came!
+
+3
+00:00:10,040 --> 00:00:12,260
+Diyor, listen.
+
+4
+00:00:12,260 --> 00:00:15,050
+2006, America.
+
+5
+00:00:15,550 --> 00:00:19,090
+An engineer invented infinite scrolling:
+
+6
+00:00:19,090 --> 00:00:22,400
+the page never ends, you just keep scrolling down.
+
+7
+00:00:22,900 --> 00:00:26,150
+When a page ends, you stop.
+
+8
+00:00:26,150 --> 00:00:29,050
+When it doesn't, you don't.
+
+9
+00:00:29,550 --> 00:00:33,840
+Later he openly said he regretted his invention.
+
+10
+00:00:34,340 --> 00:00:37,010
+Do apps keep us hooked on purpose?!
+
+11
+00:00:37,510 --> 00:00:42,810
+According to one study, the average user gets close to forty-six notifications a day.
+
+12
+00:00:43,310 --> 00:00:47,060
+Apps make money from your attention:
+
+13
+00:00:47,060 --> 00:00:51,290
+the longer you look, the more ads they show.
+
+14
+00:00:51,790 --> 00:00:52,950
+Three rules.
+
+15
+00:00:52,950 --> 00:00:55,500
+Turn off useless notifications.
+
+16
+00:00:55,500 --> 00:00:57,360
+Turn on silent mode at night.
+
+17
+00:00:57,360 --> 00:00:59,910
+Before opening an app, ask:
+
+18
+00:00:59,910 --> 00:01:01,070
+why am I opening it?
+
+19
+00:01:01,570 --> 00:01:03,940
+Phone silent, me calm!
+
+20
+00:01:04,440 --> 00:01:10,930
+They don't sell you the app, they sell you the fear of “missing out”.
+
+21
+00:01:10,930 --> 00:01:11,970
+Every time, ask:
+
+22
+00:01:11,970 --> 00:01:14,050
+who profits from this?
+
+23
+00:01:14,550 --> 00:01:20,250
+If you don't know which notification to turn off, write the app's name to our bot:
+
+24
+00:01:20,250 --> 00:01:21,270
+@sahiychishopbot.
+
+25
+00:01:21,270 --> 00:01:23,110
+It teaches you step by step.
+

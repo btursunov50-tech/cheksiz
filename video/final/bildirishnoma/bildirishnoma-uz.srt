@@ -1,0 +1,100 @@
+1
+00:00:00,150 --> 00:00:06,570
+Telefoning jiringlaganda sen telefonni emas, telefon seni boshqaradi.
+
+2
+00:00:07,070 --> 00:00:09,540
+Usta, bir daqiqa, xabar keldi!
+
+3
+00:00:10,040 --> 00:00:12,260
+Diyor, eshit.
+
+4
+00:00:12,260 --> 00:00:15,050
+2006-yil, Amerika.
+
+5
+00:00:15,550 --> 00:00:19,090
+Bir muhandis cheksiz aylantirishni o'ylab topdi:
+
+6
+00:00:19,090 --> 00:00:22,400
+sahifa tugamaydi, pastga tushaverasan.
+
+7
+00:00:22,900 --> 00:00:26,150
+Sahifa tugasa, to'xtaysan.
+
+8
+00:00:26,150 --> 00:00:29,050
+Tugamasa, to'xtamaysan.
+
+9
+00:00:29,550 --> 00:00:33,840
+Keyinchalik u shu ixtirosidan afsuslanishini ochiq aytdi.
+
+10
+00:00:34,340 --> 00:00:37,010
+Ilovalar bizni ataylab ushlab turadimi?!
+
+11
+00:00:37,510 --> 00:00:42,810
+Bir tadqiqotga ko'ra, o'rtacha foydalanuvchi kuniga qirq oltitaga yaqin bildirishnoma oladi.
+
+12
+00:00:43,310 --> 00:00:47,060
+Ilovalar sening e'tiboring bilan pul topadi:
+
+13
+00:00:47,060 --> 00:00:51,290
+qancha uzoq qarasang, shuncha ko'p reklama ko'rsatiladi.
+
+14
+00:00:51,790 --> 00:00:52,950
+Uchta qoida.
+
+15
+00:00:52,950 --> 00:00:55,500
+Keraksiz bildirishnomani o'chir.
+
+16
+00:00:55,500 --> 00:00:57,360
+Kechasi tinch rejimni yoq.
+
+17
+00:00:57,360 --> 00:00:59,910
+Ilovani ochishdan oldin so'ra:
+
+18
+00:00:59,910 --> 00:01:01,070
+nega ochyapman?
+
+19
+00:01:01,570 --> 00:01:03,940
+Telefon jim, men tinch!
+
+20
+00:01:04,440 --> 00:01:10,930
+Ular senga ilovani emas, «o'tkazib yuboraman» degan qo'rquvni sotadi.
+
+21
+00:01:10,930 --> 00:01:11,970
+Har gal so'ra:
+
+22
+00:01:11,970 --> 00:01:14,050
+bundan kim foyda ko'radi?
+
+23
+00:01:14,550 --> 00:01:20,250
+Qaysi bildirishnomani o'chirishni bilmasangiz, ilova nomini botimizga yozing:
+
+24
+00:01:20,250 --> 00:01:21,270
+@sahiychishopbot.
+
+25
+00:01:21,270 --> 00:01:23,110
+Bosqichma-bosqich o'rgatadi.
+
