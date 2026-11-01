@@ -11,8 +11,8 @@ U = ("USTA (the calm man about 30 years old, NOT older: a fuller, rounder face w
 Dy = ("DIYOR (the naive guy about 20 years old with a round boyish face, big innocent eyes, messy straight jet-black hair (never curly, never brown), "
       "a dark navy blue hoodie, a black backpack, jeans and sneakers, outlined only by a thin bright cyan-blue neon glow along his whole silhouette)")
 HANDS = "Every person has exactly two arms and two hands, five fingers on each hand, every hand clearly belongs to its own arm."
-STREET = ("a sunny Tashkent street at golden hour: wide paved sidewalk with fallen golden leaves, autumn plane trees, old street lamps whose glass glows cool neon blue, "
-          "the Tashkent TV tower in the far background against a clear sky, a few passers-by far away, small, softly out of focus, seen from the side or back, no clear faces")
+STREET = ("the busy Malika bazaar in Tashkent, the big electronics and phone market, in warm golden-hour light: long lanes of small kiosks and counters with phones, cases, chargers, headphones and laptops on shelves "
+          "(no readable signs, no brand logos), colourful awnings, bundles of hanging cables, a few cool neon-blue hanging lamps, shoppers and sellers far away, small, softly out of focus, seen from the side or back, no clear faces")
 COL = {"gold": "warm golden sunlight", "cream": "soft cream white", "navy": "deep navy blue", "cyan": "bright cyan-blue neon", "sepia": "old sepia brown", "red": "deep red"}
 def sty(cols, old=False, refs=True):
     c = ", ".join(COL[k] for k in cols[:-1]) + " and " + COL[cols[-1]]
@@ -39,7 +39,7 @@ S = [
   f"{STREET}, softly blurred behind. {Dy} reaches one hand eagerly toward the viewer as if grabbing the phone, eyes wide and bright, eyebrows raised, a guilty excited smile; "
   "in his other hand a smartphone glows with a few floating round bubbles (no letters)."),
  ("3", "Usta: «Diyor, eshit. 2006-yil, Amerika.»", "Medium shot", ["gold", "sepia", "navy"], "u", False,
-  f"{U} on the sunny Tashkent street raises his open palm calmly like «listen». Behind him the golden street dissolves from right to left into an old sepia picture: "
+  f"{U} in the Malika bazaar raises his open palm calmly like «listen». Behind him the golden bazaar dissolves from right to left into an old sepia picture: "
   "a 2006 open-plan office with bulky CRT monitors, cluttered desks and cables, soft grain like an old photograph."),
  ("4", "Usta (kadr ortidan): «Bir muhandis cheksiz aylantirishni o'ylab topdi: sahifa tugamaydi, pastga tushaverasan.»", "Close-up over the desk, shallow depth of field", ["sepia", "gold"], "", True,
   "A 2006 office desk late in the evening: an engineer's hands (only hands and sleeves, no face) type on a clunky keyboard in front of a bulky CRT monitor that shows a long web page of simple coloured blocks (no letters); "
@@ -66,9 +66,9 @@ S = [
   f"{STREET}. {Dy} slides his smartphone into his hoodie pocket with a relieved, peaceful smile, shoulders relaxed, eyes closed for a second. "
   f"{U} stands beside him smiling warmly with his mouth closed and puts a hand on Diyor's shoulder."),
  ("12", "Usta: «Ular senga ilovani emas, ‘o'tkazib yuboraman’ degan qo'rquvni sotadi. Har gal so'ra: bundan kim foyda ko'radi?»", "Close-up, head and shoulders", ["gold", "navy"], "u", False,
-  f"{STREET}, the golden sun and the street lamps softly blurred behind. {U} looks straight into the camera with a wise, warm, slightly serious face, eyes soft, a calm small smile; the low sun lights one side of his face."),
- ("13", "Usta: «Qaysi bildirishnomani o'chirishni bilmasangiz, ilova nomini botimizga yozing: @sahiychishopbot…»", "Medium-wide shot with the sky and the TV tower in the top third", ["gold", "cream", "cyan"], "ud", False,
-  f"{STREET}, the TV tower and clear sky at the top. {U} holds a smartphone toward the viewer: its screen shows a simple chat with empty grey and blue speech bubbles and a small bell-with-slash icon (no letters). "
+  f"{STREET}, the warm light and the hanging blue lamps softly blurred behind. {U} looks straight into the camera with a wise, warm, slightly serious face, eyes soft, a calm small smile; the low sun lights one side of his face."),
+ ("13", "Usta: «Qaysi bildirishnomani o'chirishni bilmasangiz, ilova nomini botimizga yozing: @sahiychishopbot…»", "Medium-wide shot with the sky and the market roof and sky in the top third", ["gold", "cream", "cyan"], "ud", False,
+  f"{STREET}, the market roof and the warm evening sky at the top. {U} holds a smartphone toward the viewer: its screen shows a simple chat with empty grey and blue speech bubbles and a small bell-with-slash icon (no letters). "
   f"His other hand rests on Diyor's shoulder. {Dy} stands next to him smiling with his mouth closed and gives a thumbs up."),
 ]
 e = html.escape
@@ -114,7 +114,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Telefon jiringlaydi» <em>rasmlari</em></h1>
-<p class="intro">13 ta rasm, hammasi 9:16. Uslub — <b>s01_namuna</b> (oltin soat, Toshkent ko'chasi). Qahramonlar faqat 1, 2, 3, 11, 12, 13-sahnada; 4–10-sahnalar — tasvirlar (odam yo'q, 4 va 6 — eski sepia surat). Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring (uslub + kerak bo'lsa qahramonlar), «Nusxa olish» bilan promptni qo'ying. Yozuv va raqamlarni montajda qo'yamiz.</p>
+<p class="intro">13 ta rasm, hammasi 9:16. Uslub — <b>s01_namuna</b> (oltin soat; qahramonli sahnalar — Malika bozori, elektronika va telefon bozori). Qahramonlar faqat 1, 2, 3, 11, 12, 13-sahnada; 4–10-sahnalar — tasvirlar (odam yo'q, 4 va 6 — eski sepia surat). Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring (uslub + kerak bo'lsa qahramonlar), «Nusxa olish» bilan promptni qo'ying. Yozuv va raqamlarni montajda qo'yamiz.</p>
 {''.join(cards)}
 </div>
 <script>
