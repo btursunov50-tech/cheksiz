@@ -14,8 +14,8 @@ LOCK_U = ("Keep Usta exactly as in the image: about 30, smooth young skin, short
           "Same face, five fingers on each hand. One continuous shot, no cuts. His face stays exactly as in the image from the first to the last frame. ")
 LOCK_0 = "Nobody appears; no faces anywhere. One continuous shot, no cuts. "
 END = ("The blue lamps of the bazaar stay neon blue. Keep the semi-realistic hand-painted cartoon style of the image for the whole clip, never photorealistic. "
-       "No readable text, no letters, no subtitles, no captions, no logos. The camera never stops moving.")
-END_NC = ("Keep the exact look and style of the image for the whole clip. No readable text, no letters, no numbers, no subtitles, no logos, no brand marks. The camera never stops moving.")
+       "No readable text, no letters, no subtitles, no captions, no logos. The camera never stops moving. Negative: no text, no letters, no numbers, no subtitles, no captions, no logos, no brand marks, no watermarks.")
+END_NC = ("Keep the exact look and style of the image for the whole clip. No readable text, no letters, no numbers, no subtitles, no logos, no brand marks. The camera never stops moving. Negative: no text, no letters, no numbers, no subtitles, no captions, no logos, no brand marks, no watermarks.")
 END_OLD = ("This is a history scene: keep its look exactly as in the image (warm sepia and gold, soft film grain, natural light), do not turn it into a cartoon and do not add colours. "
            "No readable text appears; anything written stays blurred. No subtitles, no logos. The camera never stops moving.")
 
