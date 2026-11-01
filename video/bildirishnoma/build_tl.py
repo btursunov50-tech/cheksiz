@@ -49,7 +49,8 @@ for q, txt in TXT.items():
         SUB.append((round(t0, 2), round(t0 + d, 2), "O" if q in DIYOR else "R", p)); t0 += d
 ins, fc = [], ""
 for k, f in enumerate(VF):
-    q = int(f[:2]); ins += ["-i", os.path.join(V, f)]; fc += f"[{k}:a]aresample=48000,adelay={int(AT[q] * 1000)}:all=1[a{k}];"
+    q = int(f[:2]); ins += ["-i", os.path.join(V, f)]; g = "volume=10.5dB,alimiter=limit=0.95," if q in DIYOR else ""   # Diyor fayli Ustadan ~11 dB past (-28 va -17 LUFS)
+    fc += f"[{k}:a]aresample=48000,{g}adelay={int(AT[q] * 1000)}:all=1[a{k}];"
 fc += "".join(f"[a{k}]" for k in range(len(VF))) + f"amix=inputs={len(VF)}:normalize=0,apad=whole_dur={AT[14] + L[14] + 0.5}[o]"
 subprocess.run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", fc, "-map", "[o]", "-ac", "1", os.path.join(D, "dialog.wav")], check=True)
 with open(os.path.join(D, "timeline.py"), "w") as f:
