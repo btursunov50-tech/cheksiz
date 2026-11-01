@@ -91,7 +91,7 @@ def vp(n, cam, act, lines, chars):
     dial = f" {say(lines)}" if lines else ""
     lock = LOCK if chars == "ud" else LOCK_D if chars == "d" else LOCK_U if chars == "u" else LOCK_0
     end = END_OLD if n == "4" else END if chars else END_NC
-    return f"Vertical 9:16, {DUR.get(n, 6)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} {lock}{end}"
+    return f"Vertical 9:16, {DUR.get(n, 8)} seconds. Start from the attached image. Camera: {cam}. {act}{dial} {lock}{end}"
 
 TOOL = {}
 DONE = {}
@@ -100,7 +100,7 @@ cards = []
 for n, img, voice, camuz, cam, act, lines, chars in S:
     if n in DONE: continue
     p = vp(n, cam, act, lines, chars)
-    cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR.get(n, 6)} s</h2>{f'<span class="tool">{TOOL[n]}</span>' if n in TOOL else ''}</header>
+    cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR.get(n, 8)} s</h2>{f'<span class="tool">{TOOL[n]}</span>' if n in TOOL else ''}</header>
 <div class="row"><figure class="sc"><img src="web/{img}.webp" alt="{n}-sahna rasmi"><figcaption>Veo'ga: {img}.png</figcaption></figure>
 <div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p>
 <span class="lbl">Kamera: {e(camuz)}</span>
