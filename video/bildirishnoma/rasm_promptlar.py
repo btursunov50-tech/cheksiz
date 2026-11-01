@@ -77,7 +77,7 @@ def prompt(n, shot, cols, refs, old, scene):
     return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{sty(cols, old, bool(refs))}"
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
-    if n == "1": continue
+    if n in ("1", "2", "3", "4", "5"): continue
     p = prompt(n, shot, cols, refs, old, scene)
     th = '<figure class="ref"><img src="web/s01_namuna.webp" alt="uslub namunasi"><figcaption>s01_namuna.png (uslub)</figcaption></figure>' + "".join(f'<figure class="ref"><img src="web/{REF[k][1]}.webp" alt="{REF[k][0]} namunasi"><figcaption>{REF[k][1]}.png</figcaption></figure>' for k in refs)
     sw = "".join(f'<span class="sw sw-{c}">{c}</span>' for c in cols)
@@ -114,7 +114,11 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Telefon jiringlaydi» <em>rasmlari</em></h1>
-<p class="intro"><b>1-sahna tayyor</b> (Malika bozori uslub namunasi: <b>s01.png</b>). Qolgan 12 ta rasm, hammasi 9:16. <b>Qahramonli sahnalarga s01.png ni ham biriktiring</b> (fon va uslub). Uslub — <b>s01_namuna</b> (oltin soat; qahramonli sahnalar — Malika bozori, elektronika va telefon bozori). Qahramonlar faqat 1, 2, 3, 11, 12, 13-sahnada; 4–10-sahnalar — tasvirlar (odam yo'q, 4 va 6 — eski sepia surat). Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring (uslub + kerak bo'lsa qahramonlar), «Nusxa olish» bilan promptni qo'ying. Yozuv va raqamlarni montajda qo'yamiz.</p>
+<p class="intro"><b>Tayyor: 1, 3, 4, 5. 2-sahna — tahrir (pastda).</b> Malika bozori namunasi: <b>s01.png</b>. Qolgan rasmlar, hammasi 9:16. <b>Qahramonli sahnalarga s01.png ni ham biriktiring</b> (fon va uslub). Uslub — <b>s01_namuna</b> (oltin soat; qahramonli sahnalar — Malika bozori, elektronika va telefon bozori). Qahramonlar faqat 1, 2, 3, 11, 12, 13-sahnada; 4–10-sahnalar — tasvirlar (odam yo'q, 4 va 6 — eski sepia surat). Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring (uslub + kerak bo'lsa qahramonlar), «Nusxa olish» bilan promptni qo'ying. Yozuv va raqamlarni montajda qo'yamiz.</p>
+<article class="card"><header><span class="num">2</span><h2>2-sahna — tahrir, 9:16 (tik)</h2><span class="dur">qo'l va telefon</span></header>
+<div class="row"><div class="refs"><p class="rh">Rasm chiqqan chatda:</p></div>
+<div class="txt"><span class="lbl">Ovoz</span><p class="voice">Diyor: «Usta, bir daqiqa, xabar keldi!»</p>
+<pre id="p2e">Edit this image: keep everything exactly the same (Diyor's face, hair, hoodie, backpack, neon outline, the bazaar, the light, the bubbles, style, vertical 9:16). Fix only two things: (1) the hand stretched toward the viewer must have exactly five fingers: thumb, index, middle, ring and little finger, all clearly visible and natural; (2) the smartphone in his other hand must have a completely plain black back with ONE small camera lens and NO logo, NO apple symbol and no brand mark of any kind.</pre><button class="copy" data-t="p2e">Nusxa olish</button></div></div></article>
 {''.join(cards)}
 </div>
 <script>
