@@ -1,0 +1,132 @@
+1
+00:00:00,150 --> 00:00:04,550
+One date on the can says “safe”, another says “tasty”.
+
+2
+00:00:04,550 --> 00:00:06,110
+They are not the same.
+
+3
+00:00:06,610 --> 00:00:07,590
+Imagine:
+
+4
+00:00:07,590 --> 00:00:10,550
+you walk into a store and pick up a can of food.
+
+5
+00:00:10,550 --> 00:00:13,110
+You see the date and relax.
+
+6
+00:00:13,610 --> 00:00:16,020
+But what does this date actually mean?
+
+7
+00:00:16,520 --> 00:00:20,100
+First, learn the difference between the labels.
+
+8
+00:00:20,100 --> 00:00:25,580
+Production date shows when the product was made.
+
+9
+00:00:25,580 --> 00:00:29,640
+Expiry date: the product is safe until this date.
+
+10
+00:00:29,640 --> 00:00:32,740
+“Best before” is a quality date.
+
+11
+00:00:33,240 --> 00:00:36,590
+Do not eat an expired product.
+
+12
+00:00:37,090 --> 00:00:40,520
+Second, don't blindly trust dry goods.
+
+13
+00:00:40,520 --> 00:00:49,320
+Rice, pasta and flour last long if stored properly, but moisture and insects can spoil them early.
+
+14
+00:00:49,820 --> 00:00:51,860
+Third, look at the can.
+
+15
+00:00:51,860 --> 00:00:57,290
+If it is swollen, leaking, badly rusted or its seams are damaged, do not eat it.
+
+16
+00:00:57,790 --> 00:00:59,040
+The most dangerous thing is botulism:
+
+17
+00:00:59,040 --> 00:01:02,070
+a disease that can cause severe poisoning.
+
+18
+00:01:02,070 --> 00:01:04,750
+A dangerous can sometimes looks fine from outside.
+
+19
+00:01:04,750 --> 00:01:07,970
+So never taste a suspicious can to check it.
+
+20
+00:01:08,470 --> 00:01:11,690
+Fourth, dairy products.
+
+21
+00:01:11,690 --> 00:01:16,520
+If the smell or look has changed, do not drink it.
+
+22
+00:01:16,520 --> 00:01:22,640
+Even if the smell is normal, it doesn't fully guarantee safety.
+
+23
+00:01:23,140 --> 00:01:25,300
+In the store, do three things.
+
+24
+00:01:25,300 --> 00:01:26,600
+Check the date.
+
+25
+00:01:26,600 --> 00:01:29,400
+Make sure the package is intact.
+
+26
+00:01:29,400 --> 00:01:31,560
+Follow the storage conditions.
+
+27
+00:01:32,060 --> 00:01:35,220
+Don't buy a suspicious product just because it's cheap.
+
+28
+00:01:35,220 --> 00:01:39,750
+You can save money, but it's not worth risking your health.
+
+29
+00:01:40,250 --> 00:01:43,680
+Send a photo of the product label to our bot:
+
+30
+00:01:43,680 --> 00:01:44,590
+@sahiychishopbot.
+
+31
+00:01:44,590 --> 00:01:49,650
+It explains what the label means and teaches you how to check, step by step.
+
+32
+00:01:50,150 --> 00:01:52,980
+Send this video to your loved ones too:
+
+33
+00:01:52,980 --> 00:01:55,810
+it may save someone from a serious mistake.
+
