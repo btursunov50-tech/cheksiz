@@ -43,7 +43,7 @@ S = [
  ("8", "Eng xavflisi botulizm: og'ir zaharlanishga olib keladigan kasallik. Xavfli konserva ba'zan tashqaridan bilinmaydi. Shuning uchun shubhali konservani tatib ko'rib tekshirmang.",
   "bankaga yaqinlashib, devor ichiga «kirib», yana chiqish",
   "slow push-in that passes through the can wall like a cutaway, then a slow pull-out",
-  "A plain silver tin can with NO label and no writing of any kind stands alone on a dark wooden table; the background is only soft blurred warm golden lights, no street, no shop, no signs, no people. The can looks perfectly normal from outside. The camera passes through its wall like a cutaway: inside it is dark and a faint sickly green glow shows tiny stylised spores floating and multiplying. The camera then pulls back out and the can looks completely normal again. Red accent, dark moody lighting."),
+  "The plain silver tin can from the image, with no label and no writing, looks perfectly normal from outside. The camera passes through its wall like a cutaway: inside it is dark and a faint sickly green glow shows tiny stylised spores floating and multiplying. The camera then pulls back out and the can looks completely normal again. Red accent, dark moody lighting."),
  ("9", "To'rtinchidan, sut mahsulotlari. Hidi yoki ko'rinishi o'zgargan bo'lsa, ichmang. Hid normal bo'lsa ham, bu to'liq xavfsizlikni kafolatlamaydi.",
   "tepadan sekin pastga tushish",
   "slow crane-down from above toward the glass bottle",
@@ -70,12 +70,20 @@ S = [
   "From the phone glowing cyan-blue paper-plane shapes fly out and arc toward the distant windows of a Tashkent neighbourhood at golden hour. One by one warm golden lights switch on in the windows. The TV tower stands in the evening sky. The mood is warm and hopeful."),
 ]
 DUR = 8
-def vp(cam, scene):
-    return f"Vertical 9:16, {DUR} seconds. Camera: {cam}. {scene} {STYLE} {NEG}"
+REDO = ["1", "4", "4b", "5", "8", "9b", "12"]   # qayta yaratiladigan yoki hali yaratilmagan sahnalar
+IMG = {"4": "s04", "5": "s05", "8": "s08", "9b": "s09b"}   # birinchi kadr sifatida biriktiriladigan toza rasm (boshlangich.py)
+KEEP = ("Start from the attached image and keep its place, background, objects and colours exactly as in the image for the whole clip. "
+        "Do not add any shop, street, sign, text, label or person.")
+def vp(cam, scene, n=None):
+    pre = KEEP + " " if n in IMG else ""
+    return f"Vertical 9:16, {DUR} seconds. {pre}Camera: {cam}. {scene} {STYLE} {NEG}"
 e = html.escape
-cards = "".join(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR} s</h2></header>
-<span class="lbl">Ovoz</span><p class="voice">{e(v)}</p><span class="lbl">Kamera: {e(cu)}</span>
-<pre id="v{n}">{e(vp(ce, sc))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></article>""" for n, v, cu, ce, sc in S)
+def card(n, v, cu, ce, sc):
+    fig = f'<figure class="sc"><img src="web/{IMG[n]}.webp" alt="{n}-sahna boshlang\'ich rasmi"><figcaption>Veo\'ga birinchi kadr: {IMG[n]}.png</figcaption></figure>' if n in IMG else ""
+    body = f"""<div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(v)}</p><span class="lbl">Kamera: {e(cu)}</span>
+<pre id="v{n}">{e(vp(ce, sc, n))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div>"""
+    return f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), {DUR} s</h2></header><div class="row">{fig}{body}</div></article>"""
+cards = "".join(card(n, v, cu, ce, sc) for n, v, cu, ce, sc in S if n in REDO)
 page = f"""<title>Konserva sahnalari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
@@ -87,6 +95,10 @@ body{{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15p
 .wrap{{max-width:780px;margin:0 auto;padding-block:28px 60px;display:grid;gap:22px}}
 h1{{font-family:var(--display);font-weight:700;font-size:clamp(30px,6vw,44px);margin:0;line-height:1.1;text-wrap:balance}} h1 em{{font-style:normal;color:var(--gold)}}
 .intro{{color:var(--muted);margin:0;max-width:64ch}}
+.row{{display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px;align-items:start}} .row:not(:has(.sc)){{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){{.row{{grid-template-columns:minmax(0,1fr)}} .sc{{max-width:240px}}}}
+.sc{{margin:0;display:grid;gap:6px}} .sc img{{width:100%;border-radius:4px;display:block;border:1px solid var(--line)}} .sc figcaption{{font-size:12px;color:var(--muted);font-family:var(--mono)}}
+.txt{{min-width:0;display:flex;flex-direction:column;gap:8px}}
 .card{{display:grid;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}}
 header{{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}} .num{{font-family:var(--mono);color:var(--gold);font-size:14px}}
 h2{{font-family:var(--display);font-weight:700;font-size:26px;margin:0}}
@@ -97,7 +109,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Konserva» <em>sahnalari</em></h1>
-<p class="intro">Rasm kerak emas: Veo'da «Text to video» tanlang, <b>9:16</b> va <b>8 soniya</b> qo'ying, «Nusxa olish» bilan promptni qo'ying. Hamma sahnada odam, yuz va qo'l yo'q, yozuv va raqam yo'q (belgilar faqat rasm). Har prompt to'liq, uslub matni har birida takrorlangan. Ovoz Manus'dan keldi, ba'zi qatorlar uzun chiqdi: 4 va 9-sahna ikkitadan klip (4+4b va 9+9b, jami 16 s). 6, 8 va 12-sahna bitta klip, montajda 1,3–1,6 marta sekinlashtiriladi. Klip kelgach tekshiraman.</p>
+<p class="intro">Faqat qayta yaratiladigan yoki hali yaratilmagan sahnalar qoldi (qolganlari tayyor). <b>4, 5, 8 va 9b</b> sahnada rasm biriktirilgan: Veo'da «Frames to video» tanlang va rasmni <b>birinchi kadr</b> qilib yuklang, shunda Veo boshqa joy chizmaydi. 1, 4b va 12-sahnada rasm yo'q (Text to video). Hammasida <b>9:16</b> va <b>8 soniya</b> qo'ying, «Nusxa olish» bilan promptni qo'ying. Odam, yuz, qo'l va yozuv yo'q.</p>
 {cards}
 </div>
 <script>
