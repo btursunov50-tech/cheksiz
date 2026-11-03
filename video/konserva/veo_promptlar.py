@@ -31,7 +31,7 @@ S = [
  ("5", "Muddati o'tgan mahsulotni yemang.",
   "tez yaqinlashib, qotib turish",
   "snap push-in, then hold",
-  "A dull, old, slightly dented tin can in the centre of the frame. A big glowing red circle with a diagonal slash across it (a plain symbol, nothing drawn inside the circle, no flame, no writing) pulses over it, red light flashes on the walls. Hard dramatic contrast, dark background."),
+  "A dull, old, slightly dented tin can in the centre of the frame. A big glowing red round sign floats above it: a solid red disc with one thick white horizontal bar across its middle and nothing else on it, no letters, no words, no flame. It pulses and red light flashes on the walls. Hard dramatic contrast, dark background."),
  ("6", "Ikkinchidan, quruq mahsulotga ham ishonavermang. Guruch, makaron va un to'g'ri saqlansa uzoq turadi, lekin namlik va hasharotlar ularni muddatidan oldin buzishi mumkin.",
   "yog'och javon bo'ylab o'ngga sekin surilish",
   "slow pan right across a wooden kitchen shelf",
@@ -70,7 +70,7 @@ S = [
   "From the phone glowing cyan-blue paper-plane shapes fly out and arc toward the distant windows of a Tashkent neighbourhood at golden hour. One by one warm golden lights switch on in the windows. The TV tower stands in the evening sky. The mood is warm and hopeful."),
 ]
 DUR = 8
-REDO = ["1", "4", "4b", "5", "8", "9b", "12"]   # qayta yaratiladigan yoki hali yaratilmagan sahnalar
+REDO = ["5", "8", "9b", "12"]   # qayta yaratiladigan yoki hali yaratilmagan sahnalar
 IMG = {"1": "s01", "4": "s04", "4b": "s04b", "5": "s05", "8": "s08", "9b": "s09b"}   # birinchi kadr sifatida biriktiriladigan toza rasm (boshlangich.py)
 KEEP = ("Start from the attached image and keep its place, background, objects and colours exactly as in the image for the whole clip. "
         "Do not add any shop, street, sign, text, label or person.")
