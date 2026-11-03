@@ -2,7 +2,7 @@
 # Ishlatish: python3 video/konserva/veo_promptlar.py
 import html, os
 D = os.path.dirname(os.path.abspath(__file__))
-STYLE = ("Semi-realistic hand-painted cartoon illustration style, rich and detailed, warm golden-hour glow of a Tashkent bazaar with cyan-blue neon lamps. "
+STYLE = ("Semi-realistic hand-painted cartoon illustration style, rich and detailed, warm golden glow with cyan-blue neon lamps; the background is only softly blurred bokeh lights and plain surfaces, never a readable street, shop, sign or building front. "
          "Only 2-3 main colours in the frame: golden yellow, cyan blue and one accent (red for danger). Nobody appears: no people, no faces, no hands, no human figures, no silhouettes of people. "
          "One continuous shot, no cuts. The camera never stops moving.")
 NEG = "Negative: no people, no faces, no hands, no human silhouettes, no text, no letters, no numbers, no Arabic or any other script, no signs, no shop signs, no storefronts, no subtitles, no captions, no logos, no brand marks, no watermarks."
@@ -19,7 +19,7 @@ S = [
  ("3", "Lekin bu sana aslida nimani bildiradi?",
   "bankaning qopqog'iga tez, lekin silliq yaqinlashish",
   "fast but smooth push-in to an extreme close-up of a tin can's lid",
-  "An extreme close-up of the round metal lid of a tin can. A glowing cyan-blue clock dial with only tick marks and no numerals appears above it and its hand turns slowly, then stops as the golden light flickers. A sense of mystery and a question, dark background with soft golden bokeh."),
+  "An extreme close-up of the round metal lid of a tin can. A glowing cyan-blue clock dial with only tick marks, no numerals and NO words or labels on it appears above it and its hand turns slowly, then stops as the golden light flickers. A sense of mystery and a question, dark background with soft golden bokeh."),
  ("4", "Birinchidan, yozuvlarning farqini bilib oling. Tayyorlangan sana — mahsulot qachon ishlab chiqarilganini ko'rsatadi. Yaroqlilik muddati — shu sanagacha mahsulot xavfsiz. «Eng yaxshi sifatgacha» — bu sifat sanasi.",
   "bankaning atrofida chapga sekin aylanish",
   "slow orbit to the left around the tin can",
@@ -31,7 +31,7 @@ S = [
  ("5", "Muddati o'tgan mahsulotni yemang.",
   "tez yaqinlashib, qotib turish",
   "snap push-in, then hold",
-  "A dull, old, slightly dented tin can in the centre of the frame. A big glowing red circle with a diagonal slash across it (the universal forbidden sign, no writing) pulses over it, red light flashes on the walls. Hard dramatic contrast, dark background."),
+  "A dull, old, slightly dented tin can in the centre of the frame. A big glowing red circle with a diagonal slash across it (the universal forbidden sign, nothing drawn inside the circle, no flame, no writing) pulses over it, red light flashes on the walls. Hard dramatic contrast, dark background."),
  ("6", "Ikkinchidan, quruq mahsulotga ham ishonavermang. Guruch, makaron va un to'g'ri saqlansa uzoq turadi, lekin namlik va hasharotlar ularni muddatidan oldin buzishi mumkin.",
   "yog'och javon bo'ylab o'ngga sekin surilish",
   "slow pan right across a wooden kitchen shelf",
