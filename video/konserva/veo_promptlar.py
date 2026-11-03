@@ -11,7 +11,7 @@ S = [
  ("1", "Bankadagi bir sana «xavfsiz» deydi, boshqasi «mazali». Ular bir xil emas.",
   "bankaga sekin yaqinlashib, o'ngga biroz aylanish",
   "slow push-in from a medium shot to a close-up with a gentle 15-degree orbit to the right",
-  "A single shiny tin can stands in the centre of a dark wet counter. On its paper label two small round glowing stamps float: a cyan-blue glowing shield on the left and a golden glowing star on the right, no writing on them. They pulse one after the other, tiny blue and golden sparks rise, the blurred bazaar lamps glow behind."),
+  "The tin can from the image stays in the centre of the frame. Above its label two small round glowing stamps float: a cyan-blue glowing shield on the left and a golden glowing star on the right, no writing on them. They pulse one after the other, tiny blue and golden sparks rise."),
  ("2", "Tasavvur qiling: do'konga kirdingiz, bir banka konserva oldingiz. Sanani ko'rdingiz va xotirjam bo'ldingiz.",
   "javon bo'ylab oldinga silliq siljish, bitta bankada to'xtash",
   "smooth forward dolly along a store aisle at shelf height, settling on one tin",
@@ -27,7 +27,7 @@ S = [
  ("4b", "(4-sahnaning davomi: «Yaroqlilik muddati — shu sanagacha mahsulot xavfsiz. «Eng yaxshi sifatgacha» — bu sifat sanasi.»)",
   "ikki belgiga sekin yaqinlashish va to'xtash",
   "slow push-in toward two large glowing symbols, then hold",
-  "Two large glowing round symbols hang side by side above a wet counter in a dark bazaar: a steady cyan-blue shield on the left and a golden star on the right. The shield stays calm and solid, the star flickers softly like a candle, and a thin line of light connects them and splits in two. Their reflections ripple on the counter, tiny blue and golden sparks rise. The symbols carry no writing."),
+  "Above the can from the image two large glowing round symbols rise and hang side by side: a steady cyan-blue shield on the left and a golden star on the right. The shield stays calm and solid, the star flickers softly like a candle, and a thin line of light connects them and splits in two. Their reflections ripple on the counter, tiny blue and golden sparks rise. The symbols carry no writing."),
  ("5", "Muddati o'tgan mahsulotni yemang.",
   "tez yaqinlashib, qotib turish",
   "snap push-in, then hold",
@@ -71,7 +71,7 @@ S = [
 ]
 DUR = 8
 REDO = ["1", "4", "4b", "5", "8", "9b", "12"]   # qayta yaratiladigan yoki hali yaratilmagan sahnalar
-IMG = {"4": "s04", "5": "s05", "8": "s08", "9b": "s09b"}   # birinchi kadr sifatida biriktiriladigan toza rasm (boshlangich.py)
+IMG = {"1": "s01", "4": "s04", "4b": "s04b", "5": "s05", "8": "s08", "9b": "s09b"}   # birinchi kadr sifatida biriktiriladigan toza rasm (boshlangich.py)
 KEEP = ("Start from the attached image and keep its place, background, objects and colours exactly as in the image for the whole clip. "
         "Do not add any shop, street, sign, text, label or person.")
 def vp(cam, scene, n=None):
@@ -109,7 +109,7 @@ pre{{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono)
 </style>
 <div class="wrap">
 <h1>«Konserva» <em>sahnalari</em></h1>
-<p class="intro">Faqat qayta yaratiladigan yoki hali yaratilmagan sahnalar qoldi (qolganlari tayyor). <b>4, 5, 8 va 9b</b> sahnada rasm biriktirilgan: Veo'da «Frames to video» tanlang va rasmni <b>birinchi kadr</b> qilib yuklang, shunda Veo boshqa joy chizmaydi. 1, 4b va 12-sahnada rasm yo'q (Text to video). Hammasida <b>9:16</b> va <b>8 soniya</b> qo'ying, «Nusxa olish» bilan promptni qo'ying. Odam, yuz, qo'l va yozuv yo'q.</p>
+<p class="intro">Faqat qayta yaratiladigan yoki hali yaratilmagan sahnalar qoldi (qolganlari tayyor). <b>1, 4, 4b, 5, 8 va 9b</b> sahnada rasm biriktirilgan: Veo'da «Frames to video» tanlang va rasmni <b>birinchi kadr</b> qilib yuklang, shunda Veo boshqa joy chizmaydi. 12-sahnada rasm yo'q (Text to video). Hammasida <b>9:16</b> va <b>8 soniya</b> qo'ying, «Nusxa olish» bilan promptni qo'ying. Odam, yuz, qo'l va yozuv yo'q.</p>
 {cards}
 </div>
 <script>
