@@ -5,14 +5,14 @@ Asos: egasi yuborgan @OPER_UZ posti (`ideas/IDEAS.md` 26-qator). Format: bitta h
 ## Ssenariy (~85 s, 9:16)
 | # | Tasvir | Hikoyachi |
 |---|---|---|
-| 1 | Telefonda kanal posti (xira), «490» katta oltin | **Oyiga to'rt yuz to'qson million so'm. Tajriba shart emas. Ariza topshirasizmi?** |
+| 1 | **Realistik, 2 kadr x 6 s:** Toshkent ko'chalarida avtobus, kamera ichkariga kiradi, qiz telefonga qaraydi, kamera telefon ichiga kiradi (post, «490» oltin) | **Oyiga to'rt yuz to'qson million so'm. Tajriba shart emas. Ariza topshirasizmi?** |
 | 2 | Postning asosiy gaplari birin-ketin yonadi | Post shunday deydi: Claude odamlarni masofaviy ishga taklif qilmoqda, ariza 22-noyabrgacha, vazifa — sun'iy intellektni aylanib o'tish. |
 | 3 | Lupa postni kattalashtiradi | Men, Claude, o'zim tekshirdim. Bunday vakansiya topilmadi. |
-| 4 | Haqiqiy dastur: qalqon, qulf, kalit | Lekin asosi haqiqiy: Anthropic'da xavfsizlik uchun «bug bounty» dasturi bor. Tadqiqotchilar himoyani aylanib o'tish yo'lini topadi. |
+| 4 | Haqiqiy dastur: qalqon, qulf, kalit | Lekin asosi haqiqiy: Anthropic'da xavfsizlik dasturi bor. Tadqiqotchilar Claude'ning himoyasidagi zaif joyni topib, kompaniyaga yashirin xabar beradi va mukofot oladi. |
 | 5 | Tangalar bir martalik tushadi, oy taqvimi bo'sh | Bu oylik maosh emas. Bu topilgan har bir zaiflik uchun mukofot, eng ko'pi taxminan o'ttiz besh ming dollar. |
 | 6 | Qulf ochilmaydi, qiyin sxema | Va «tajribasiz» ham emas: yangi zaiflikni topish uchun chuqur bilim kerak. Postning o'zi ham muhandislar va olimlarni afzal ko'radi. |
-| 7 | Uchta qizil bayroq ketma-ket | Qizil bayroqlar: manba yo'q, havola yo'q, «shoshiling» muddati, va «kimga yuborishni bilasiz» degan klik tuzog'i. |
-| 8 | Soxta ariza shakli: pasport, karta belgisi | Firibgarlar aynan shunday e'lon bilan pasport, karta va tasdiq kodini so'raydi, yoki oldindan pul oladi. |
+| 7 | Avtobusda yo'lovchilar telefonlari bir-biriga ulanadi, post yoyilmoqda, ustida uchta qizil bayroq | Qizil bayroqlar: manba yo'q, havola yo'q, «shoshiling» muddati, va «kimga yuborishni bilasiz» degan klik tuzog'i. |
+| 8 | Telefon ekrani qorong'u ko'lmak: ilgakdagi tanga, pasport va karta baliqdek tuzoqqa yaqinlashadi («phishing» = baliq tutish) | Firibgarlar aynan shunday e'lon bilan pasport, karta va tasdiq kodini so'raydi, yoki oldindan pul oladi. |
 | 9 | Uchta belgi birin-ketin yonadi | Uchta qoida. Vakansiyani faqat kompaniyaning rasmiy saytidan tekshiring. Ish beruvchi oldindan pul, karta yoki kod so'ramaydi. Shoshiltirsa, to'xtang. |
 | 10 | Pul oqib ketayotgan kanal, yirtqich chuqur | Har gal so'rang: bundan kim foyda ko'radi? |
 | 11 | Telefon, katta **@sahiychishopbot** | Shubhali post yoki vakansiya matnini botimizga yuboring: @sahiychishopbot. Qizil bayroqlarni topib, qanday tekshirishni bosqichma-bosqich o'rgatadi. |
