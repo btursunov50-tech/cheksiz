@@ -40,7 +40,7 @@ S = [
 ]
 e = html.escape
 def p(sc, st): return f"{FMT} {sc} {LAMPS} {STYLE_R if st == 'R' else STYLE}"
-READY = {"1a", "1c", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"}   # tayyor rasmlar (img/s02-s04.png), sahifada ko'rsatilmaydi
+READY = {"1a", "1b", "1c", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"}   # tayyor rasmlar (img/s02-s04.png), sahifada ko'rsatilmaydi
 cards = "".join(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), rasm</h2></header>
 <span class="lbl">Ovoz</span><p class="voice">{e(v)}</p><span class="lbl">Kadr: {e(k)}</span>
 <pre id="p{n}">{e(p(sc, st))}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></article>""" for n, v, k, st, sc in S if n not in READY)

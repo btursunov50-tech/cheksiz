@@ -10,7 +10,7 @@ DIG = "One continuous shot, no cuts, rich detail. Light stays mainly warm gold o
 S = [
  ("1", "s1a", "1-qator (boshi): Oyiga to'rt yuz to'qson million so'm. Tajriba shart emas...", "avtobusga ergashib, keyin oldingi oynadan ichkariga kirish", "tracking shot alongside the bus, then a smooth push-in through the front windows into the bright interior",
   "The bus keeps driving steadily along the boulevard, trees sway, cars flow past with blurred light. The camera follows the bus, then glides forward and passes through the front window into the warm lit interior, ending among the passengers with the blue ceiling lamps glowing. Passengers move slightly, faces stay small and soft.", REAL),
- ("2", None, "1-qatorning davomi (YANGI 1b rasm kelgach shu yerga qo'shiladi): qiz telefonga qaraydi", "qizning yuziga sekin yaqinlashish, ko'k nur butun kadrni to'ldiradi", "slow push-in on her face while the blue screen glow grows until it fills the whole frame",
+ ("2", "s1b", "1-qatorning davomi: qiz telefonga qaraydi", "qizning yuziga sekin yaqinlashish, ko'k nur butun kadrni to'ldiradi", "slow push-in on her face while the blue screen glow grows until it fills the whole frame",
   "The young woman looks down at the phone she holds and smiles slightly, her eyes move over the screen, her thumb taps once, her hair shifts a little with the bus movement. The soft blue glow on her face slowly brightens. The camera pushes in toward her face and the blue light grows and washes over the frame until the whole frame is filled with glowing blue-white light.", REAL),
  ("3", "s1c", "2-qator (boshi): Post shunday deydi: Claude odamlarni masofaviy ishga taklif qilmoqda...", "ekran ichiga kirish, tanga tomon yaqinlashish", "smooth push-in toward the coin inside the screen",
   "The golden coin rotates slowly in the middle of the post, golden sparks swirl around it and rise, the soft blue lines of the layout drift upward as if the post is scrolling. The camera pushes in toward the coin until it nearly fills the frame.", DIG),
@@ -40,7 +40,7 @@ def vp(n, img, cam, act, style):
     start = KEEP if img else ""
     return f"Vertical 9:16, 8 seconds. {start}Camera: {cam}. {act} {style}{NEG}"
 def card(n, img, voice, camuz, cam, act, style):
-    fig = f'<figure class="sc"><img src="web/{img}.webp" alt="{n}-kadr rasmi"><figcaption>Veo\'ga birinchi kadr: {img}.png</figcaption></figure>' if img else '<figure class="sc"><figcaption>Rasm: yangi 1b (hali kelmagan)</figcaption></figure>'
+    fig = f'<figure class="sc"><img src="web/{img}.webp" alt="{n}-kadr rasmi"><figcaption>Veo\'ga birinchi kadr: {img}.png</figcaption></figure>' if img else ''
     body = f"""<div class="txt"><span class="lbl">Ovoz</span><p class="voice">{e(voice)}</p><span class="lbl">Kamera: {e(camuz)}</span>
 <pre id="v{n}">{e(vp(n, img, cam, act, style))}</pre><button class="copy" data-t="v{n}">Nusxa olish</button></div>"""
     return f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-klip — 9:16 (tik), 8 s</h2></header><div class="row">{fig}{body}</div></article>"""
@@ -53,7 +53,7 @@ page = f"""<title>490 million sahnalari</title>
 {css}
 <div class="wrap">
 <h1>«Oyiga 490 million» <em>sahnalari</em></h1>
-<p class="intro">13 ta klip uchun Veo promptlari. Hammasida: Veo'da «Frames to video» tanlang, rasmni <b>birinchi kadr</b> qilib yuklang, <b>9:16</b> va <b>8 soniya</b> qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasm biriktirilgani uchun Veo boshqa joy chizmaydi va yozuv qo'shmaydi. 1-klipda avtobus, 2-klipda qiz telefonda (1b rasm kelgach), 3-klip telefon ichi. Montajda bu uchtasidan 4–5 soniyadan olinadi, shuning uchun 1-qator ovozga mos tushadi. Odam yuzi faqat 2-klipda (qiz), qolganlarida yo'q yoki orqadan.</p>
+<p class="intro">13 ta klip uchun Veo promptlari. Hammasida: Veo'da «Frames to video» tanlang, rasmni <b>birinchi kadr</b> qilib yuklang, <b>9:16</b> va <b>8 soniya</b> qo'ying, «Nusxa olish» bilan promptni qo'ying. Rasm biriktirilgani uchun Veo boshqa joy chizmaydi va yozuv qo'shmaydi. 1-klipda avtobus, 2-klipda qiz telefonda, 3-klip telefon ichi. Montajda bu uchtasidan 4–5 soniyadan olinadi, shuning uchun 1-qator ovozga mos tushadi. Odam yuzi faqat 2-klipda (qiz), qolganlarida yo'q yoki orqadan.</p>
 {cards}
 </div>
 <script>
