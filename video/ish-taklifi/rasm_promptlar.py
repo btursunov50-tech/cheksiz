@@ -7,6 +7,7 @@ STYLE = ("Semi-realistic hand-painted cartoon illustration, rich detail, warm go
          "Nobody appears: no people, no faces, no hands, no human silhouettes. No text, no letters, no numbers, no words in any language, no logos, no brand marks, no watermarks.")
 STYLE_R = ("Photorealistic cinematic photograph, natural light, shot on a 35mm lens, shallow depth of field, rich warm golden-hour tones with cyan-blue accents, high detail, no cartoon look. "
            "All people are fictional (no real person, no celebrity). No text, no letters, no numbers, no words in any language, no route numbers, no signs, no shop signs, no logos, no brand marks, no watermarks. Phones and screens show only abstract glowing shapes, never readable writing.")
+LAMPS = ("Every lamp, light bulb and artificial light source visible in the image (street lamps, bus ceiling lights, headlights, lanterns, background bokeh lights) glows NEON CYAN-BLUE, never white or yellow bulbs; warm golden light comes only from the sunset sky and the coins.")
 FMT = "Vertical 9:16 image (1080x1920)."
 # (raqam, ovoz, kadr (uz), sahna)
 S = [
@@ -38,7 +39,7 @@ S = [
   "Medium shot. A smartphone stands upright on a dark glossy shelf with its screen facing the camera. On the screen a glowing cyan-blue scanning frame sits around a blurred empty document and a golden check mark symbol glows beside it, no writing. The lower third of the image stays calm and empty. Soft golden bokeh behind."),
 ]
 e = html.escape
-def p(sc, st): return f"{FMT} {sc} {STYLE_R if st == 'R' else STYLE}"
+def p(sc, st): return f"{FMT} {sc} {LAMPS} {STYLE_R if st == 'R' else STYLE}"
 cards = "".join(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), rasm</h2></header>
 <span class="lbl">Ovoz</span><p class="voice">{e(v)}</p><span class="lbl">Kadr: {e(k)}</span>
 <pre id="p{n}">{e(p(sc, st))}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></article>""" for n, v, k, st, sc in S)
@@ -49,7 +50,7 @@ page = f"""<title>490 million rasmlari</title>
 {css}
 <div class="wrap">
 <h1>«Oyiga 490 million» <em>rasmlari</em></h1>
-<p class="intro">Rasm promptlari (ChatGPT yoki boshqa rasm yaratuvchi, <b>9:16</b>). <b>REALISTIK</b> sahnalar (1a, 1b, 7): Toshkent avtobusi va fotorealistik qiz. <b>RAQAMLI</b> sahnalar (1c, 8 va qolganlari): telefon ichidagi dunyo, yorqin neon uslubi. Bu aralashma ataylab: tashqi dunyo realistik, telefon ichi raqamli. Qiz va yo'lovchilar to'qima (haqiqiy odam emas). Hamma sahnada yozuv va raqam yo'q: «490», qoidalar va bot nomi montajda kod bilan qo'yiladi. Orqa fon faqat xira yorug'lik: bu rasmlarni keyin Veo'ga birinchi kadr qilib beramiz, shunda Veo boshqa joy chizmaydi. Har prompt to'liq, uslub matni har birida takrorlangan. Rasmlar kelgach yuz, yozuv va ortiqcha narsa bormi tekshiraman.</p>
+<p class="intro">Rasm promptlari (ChatGPT yoki boshqa rasm yaratuvchi, <b>9:16</b>). <b>REALISTIK</b> sahnalar (1a, 1b, 7): Toshkent avtobusi va fotorealistik qiz. <b>RAQAMLI</b> sahnalar (1c, 8 va qolganlari): telefon ichidagi dunyo, yorqin neon uslubi. Bu aralashma ataylab: tashqi dunyo realistik, telefon ichi raqamli. Qiz va yo'lovchilar to'qima (haqiqiy odam emas). Hamma sahnada yozuv va raqam yo'q: «490», qoidalar va bot nomi montajda kod bilan qo'yiladi. Orqa fon faqat xira yorug'lik: bu rasmlarni keyin Veo'ga birinchi kadr qilib beramiz, shunda Veo boshqa joy chizmaydi. Har prompt to'liq, uslub matni har birida takrorlangan. Hamma chiroq, lampochka va yorug'lik manbai neon ko'k rangda (promptda yozilgan). Rasmlar kelgach yuz, yozuv va ortiqcha narsa bormi tekshiraman.</p>
 {cards}
 </div>
 <script>
