@@ -1,13 +1,14 @@
-# «Konserva» — post matnlari
+# «Ikki sana» (konserva videosi) — post matnlari
 
-Fayllar (`video/final/konserva/`): `1-telegram-konserva-uz.mp4` (Telegram), `2-youtube-linkedin-konserva-en.mp4` (YouTube + LinkedIn), `3-instagram-facebook-konserva-ru.mp4` (Instagram; Facebook'ga Instagram'dan ulashiladi), `konserva-uz.srt`, `konserva-ru.srt`, `konserva-en.srt` (YouTube subtitrlari).
+Video nomi: **«Ikki sana»** (inglizcha «Two Dates», ruscha «Две даты»). Muqova (Instagram Reels va Telegram uchun): `muqova-ikki-sana.png`.
+Fayllar (`video/final/ikki-sana/`): `1-telegram-ikki-sana-uz.mp4` (Telegram), `2-youtube-linkedin-ikki-sana-en.mp4` (YouTube + LinkedIn), `3-instagram-facebook-ikki-sana-ru.mp4` (Instagram; Facebook'ga Instagram'dan ulashiladi), `ikki-sana-uz.srt`, `ikki-sana-ru.srt`, `ikki-sana-en.srt` (YouTube subtitrlari).
 Har postda AI belgisini yoqing (YouTube «Altered or synthetic content» = Yes; Instagram «AI info»). Musiqa: «Doira and the Robot» (egasi Suno'da yasagan, bepul tarif) → «Music: made with Suno», monetizatsiya yoqilmaydi. Hamma kadr AI (Veo), odam va begona kadr yo'q, hikoyachi formati. Ovoz: Manus.
 YouTube sarlavhasi hook bahosi: 50 (OK), `hookscore.py`.
 Faktlar: sana turlari, quruq mahsulot, shishgan/oqayotgan/zanglagan banka, botulizm, sut mahsulotlari — umumiy oziq-ovqat xavfsizligi qoidalari. Video «sanadan keyin yeyavering» demaydi: O'zbekistonda «yaroqlilik muddati» qonuniy muddat.
 
-## Telegram (uz) — 1-telegram-konserva-uz.mp4
+## Telegram (uz) — 1-telegram-ikki-sana-uz.mp4
 ```
-Bankadagi bir sana «xavfsiz» deydi, boshqasi «mazali». Ular bir xil emas 🥫
+«Ikki sana» 🥫 Bankadagi bir sana «xavfsiz» deydi, boshqasi «mazali». Ular bir xil emas.
 
 Do'konda banka oldingiz, sanani ko'rdingiz va xotirjam bo'ldingiz. Lekin bu sana aslida nimani bildiradi?
 
@@ -31,7 +32,7 @@ Videoni yaqinlaringizga ham yuboring: balki kimnidir jiddiy xatodan asrab qolar.
 Video sun'iy intellekt yordamida yaratilgan. Qahramonlar o'ylab topilgan, haqiqiy shaxslarga o'xshashlik tasodifiy.
 ```
 
-## YouTube (en) — 2-youtube-linkedin-konserva-en.mp4 + konserva-uz.srt, konserva-ru.srt
+## YouTube (en) — 2-youtube-linkedin-ikki-sana-en.mp4 + ikki-sana-uz.srt, ikki-sana-ru.srt
 Title:
 ```
 One date on the can says safe. Another says tasty. Not the same. #shorts
@@ -61,7 +62,7 @@ Made with AI. The characters are fictional; any resemblance to real people is co
 #shorts #foodsafety #expirydate #canned #consumerrights #uzbekistan #ai
 ```
 
-## Instagram (ru) — 3-instagram-facebook-konserva-ru.mp4 (Facebook: «Поделиться в Facebook» в Instagram)
+## Instagram (ru) — 3-instagram-facebook-ikki-sana-ru.mp4 (Facebook: «Поделиться в Facebook» в Instagram)
 ```
 Одна дата на банке говорит «безопасно», другая — «вкусно». Это не одно и то же 🥫
 
@@ -87,7 +88,7 @@ Made with AI. The characters are fictional; any resemblance to real people is co
 #безопасностьпродуктов #срокгодности #консервы #лайфхак #узбекистан #ташкент #ии
 ```
 
-## LinkedIn (en) — 2-youtube-linkedin-konserva-en.mp4
+## LinkedIn (en) — 2-youtube-linkedin-ikki-sana-en.mp4
 ```
 One date on the can says "safe". Another says "tasty". They are not the same.
 

@@ -44,7 +44,7 @@ def ts(x):
     ms = int(round(x * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
     return f"{h:02}:{m:02}:{s:02},{ms:03}"
 
-out = os.path.join(D, "..", "final", "konserva"); os.makedirs(out, exist_ok=True)
+out = os.path.join(D, "..", "final", "ikki-sana"); os.makedirs(out, exist_ok=True)
 for lang, tr in (("uz", None), ("en", EN), ("ru", RU)):
     sub = tl["SUB"] if tr is None else [(s, e, w, t) for (s, e, w, _), t in zip(tl["SUB"], tr)]
     if tr is not None:
@@ -54,7 +54,7 @@ for lang, tr in (("uz", None), ("en", EN), ("ru", RU)):
             f.write(f"# «Konserva» {lang}: timeline.py SUB/TEXT vaqtlari, tarjima (tarjima.py yasaydi); yig.py --tl {lang}\n")
             f.write("SUB = [\n" + "".join(f" {x!r},\n" for x in sub) + "]\n")
             f.write("TEXT = [\n" + "".join(f" {x!r},\n" for x in text) + "]\n")
-    with open(os.path.join(out, f"konserva-{lang}.srt"), "w") as f:
+    with open(os.path.join(out, f"ikki-sana-{lang}.srt"), "w") as f:
         for i, (s, e, _, t) in enumerate(sub, 1):
             f.write(f"{i}\n{ts(s)} --> {ts(e)}\n{t}\n\n")
 print("ok")
