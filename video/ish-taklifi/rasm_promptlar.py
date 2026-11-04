@@ -40,7 +40,7 @@ S = [
 ]
 e = html.escape
 def p(sc, st): return f"{FMT} {sc} {LAMPS} {STYLE_R if st == 'R' else STYLE}"
-READY = {"1a", "1c", "2", "3", "4", "5", "6"}   # tayyor rasmlar (img/s02-s04.png), sahifada ko'rsatilmaydi
+READY = {"1a", "1c", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"}   # tayyor rasmlar (img/s02-s04.png), sahifada ko'rsatilmaydi
 cards = "".join(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), rasm</h2></header>
 <span class="lbl">Ovoz</span><p class="voice">{e(v)}</p><span class="lbl">Kadr: {e(k)}</span>
 <pre id="p{n}">{e(p(sc, st))}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></article>""" for n, v, k, st, sc in S if n not in READY)
@@ -51,7 +51,7 @@ page = f"""<title>490 million rasmlari</title>
 {css}
 <div class="wrap">
 <h1>«Oyiga 490 million» <em>rasmlari</em></h1>
-<p class="intro">Faqat yaratilishi kerak bo'lgan sahnalar qoldi. <b>Tayyor (kerak emas): 1a, 1c, 2, 3, 4, 5, 6.</b> 1b ni qayta yaratish kerak (telefon ekrani kameraga qaragan bo'lsin). Hamma rasm <b>9:16</b>. <b>Realistik</b> sahnalar (1a, 1b, 7): Toshkent avtobusi, neon faqat chiroqlarda va telefon ekranida. <b>Raqamli</b> sahnalar (8, 9, 10, 11): asosan iliq oltin yorug'lik, ko'k neon juda oz va faqat orqa fonda. Yozuv va raqam yo'q (montajda kod bilan qo'yiladi). Qiz va yo'lovchilar to'qima.</p>
+<p class="intro">Faqat yaratilishi kerak bo'lgan sahnalar qoldi. <b>Faqat 1b qoldi</b> (qiz telefonda, telefon ekrani kameraga qaragan bo'lsin). Qolgan hamma rasm tayyor. Hamma rasm <b>9:16</b>. <b>Realistik</b> sahnalar (1a, 1b, 7): Toshkent avtobusi, neon faqat chiroqlarda va telefon ekranida. <b>Raqamli</b> sahnalar (8, 9, 10, 11): asosan iliq oltin yorug'lik, ko'k neon juda oz va faqat orqa fonda. Yozuv va raqam yo'q (montajda kod bilan qo'yiladi). Qiz va yo'lovchilar to'qima.</p>
 {cards}
 </div>
 <script>
