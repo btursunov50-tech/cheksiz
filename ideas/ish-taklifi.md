@@ -7,7 +7,7 @@ Asos: egasi yuborgan @OPER_UZ posti (`ideas/IDEAS.md` 26-qator). Format: bitta h
 |---|---|---|
 | 1 | Telefonda kanal posti (xira), «490» katta oltin | **Oyiga to'rt yuz to'qson million so'm. Tajriba shart emas. Ariza topshirasizmi?** |
 | 2 | Postning asosiy gaplari birin-ketin yonadi | Post shunday deydi: Claude odamlarni masofaviy ishga taklif qilmoqda, ariza 22-noyabrgacha, vazifa — sun'iy intellektni aylanib o'tish. |
-| 3 | Lupa postni kattalashtiradi | Men tekshirdim. Bunday vakansiya topilmadi. |
+| 3 | Lupa postni kattalashtiradi | Men, Claude, o'zim tekshirdim. Bunday vakansiya topilmadi. |
 | 4 | Haqiqiy dastur: qalqon, qulf, kalit | Lekin asosi haqiqiy: Anthropic'da xavfsizlik uchun «bug bounty» dasturi bor. Tadqiqotchilar himoyani aylanib o'tish yo'lini topadi. |
 | 5 | Tangalar bir martalik tushadi, oy taqvimi bo'sh | Bu oylik maosh emas. Bu topilgan har bir zaiflik uchun mukofot, eng ko'pi taxminan o'ttiz besh ming dollar. |
 | 6 | Qulf ochilmaydi, qiyin sxema | Va «tajribasiz» ham emas: yangi zaiflikni topish uchun chuqur bilim kerak. Postning o'zi ham muhandislar va olimlarni afzal ko'radi. |
