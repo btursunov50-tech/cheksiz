@@ -34,15 +34,16 @@ S = [
  ("9", "Uchta qoida. Vakansiyani faqat kompaniyaning rasmiy saytidan tekshiring. Ish beruvchi oldindan pul, karta yoki kod so'ramaydi. Shoshiltirsa, to'xtang.", "uchta belgi, o'rtacha plan", "S",
   "Medium shot. Three glowing round icons float side by side: a globe with a golden check mark, a wallet with a red slanted slash across it, and a stopwatch with its hand paused. Cyan-blue outlines, golden inner glow, red only on the slash. No numerals on the stopwatch, only tick marks."),
  ("10", "Har gal so'rang: bundan kim foyda ko'radi?", "tangalar chuqurga oqib tushadi, yuqoridan pastga", "S",
-  "High-angle shot looking down. A stream of golden coins pours from a glowing pipe into a dark circular pit in the middle of a plain dark floor. A faint red glow rises from the pit. Cyan-blue soft rim light on the pipe, golden sparks."),
+  "High-angle shot looking down. A stream of golden coins pours from a glowing pipe into a dark circular pit in the middle of a plain dark floor. A faint red glow rises from the pit. The pipe is plain dark steel with no glowing edge, the light comes from the golden coins and sparks."),
  ("11", "Shubhali post yoki vakansiya matnini botimizga yuboring. Qizil bayroqlarni topib, qanday tekshirishni bosqichma-bosqich o'rgatadi.", "telefon, o'rtacha plan, pastki uchdan bir qism bo'sh", "S",
-  "Medium shot. A smartphone stands upright on a dark glossy shelf with its screen facing the camera. On the screen a glowing cyan-blue scanning frame sits around a blurred empty document and a golden check mark symbol glows beside it, no writing. The lower third of the image stays calm and empty. Soft golden bokeh behind."),
+  "Medium shot. A smartphone stands upright on a dark glossy shelf with its screen facing the camera. The phone is plain dark glass with no glowing edge. On the screen four thin golden-white corner marks frame a blurred empty document and a golden check mark symbol glows beside it, no writing; the screen is mostly dark. The lower third of the image stays calm and empty. Soft golden bokeh behind."),
 ]
 e = html.escape
 def p(sc, st): return f"{FMT} {sc} {LAMPS} {STYLE_R if st == 'R' else STYLE}"
+READY = {"2", "3", "4"}   # tayyor rasmlar (img/s02-s04.png), sahifada ko'rsatilmaydi
 cards = "".join(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — 9:16 (tik), rasm</h2></header>
 <span class="lbl">Ovoz</span><p class="voice">{e(v)}</p><span class="lbl">Kadr: {e(k)}</span>
-<pre id="p{n}">{e(p(sc, st))}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></article>""" for n, v, k, st, sc in S)
+<pre id="p{n}">{e(p(sc, st))}</pre><button class="copy" data-t="p{n}">Nusxa olish</button></article>""" for n, v, k, st, sc in S if n not in READY)
 css = open('/tmp/css_block.txt').read().replace("<style>", "<style>\n/* Layout: one column of prompt cards; single dark look with gold accents, same family as the other scene pages. */")
 page = f"""<title>490 million rasmlari</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -50,7 +51,7 @@ page = f"""<title>490 million rasmlari</title>
 {css}
 <div class="wrap">
 <h1>«Oyiga 490 million» <em>rasmlari</em></h1>
-<p class="intro">Rasm promptlari (ChatGPT yoki boshqa rasm yaratuvchi, <b>9:16</b>). <b>REALISTIK</b> sahnalar (1a, 1b, 7): Toshkent avtobusi va fotorealistik qiz, neon faqat chiroqlarda (faralar, ko'cha chiroqlari, avtobus ichidagi chiroqlar) va telefon ekranida. <b>RAQAMLI</b> sahnalar (1c, 8 va qolganlari): telefon ichidagi dunyo, asosan iliq oltin yorug'lik, ko'k neon juda oz (faqat orqa fonda xira chiroqlar). Bu aralashma ataylab: tashqi dunyo realistik, telefon ichi raqamli. Qiz va yo'lovchilar to'qima (haqiqiy odam emas). Hamma sahnada yozuv va raqam yo'q: «490», qoidalar va bot nomi montajda kod bilan qo'yiladi. Orqa fon faqat xira yorug'lik: bu rasmlarni keyin Veo'ga birinchi kadr qilib beramiz, shunda Veo boshqa joy chizmaydi. Har prompt to'liq, uslub matni har birida takrorlangan. Hamma chiroq, lampochka va yorug'lik manbai neon ko'k rangda (promptda yozilgan). Rasmlar kelgach yuz, yozuv va ortiqcha narsa bormi tekshiraman.</p>
+<p class="intro">Faqat yaratilishi kerak bo'lgan sahnalar qoldi. <b>Tayyor (kerak emas): 2, 3, 4.</b> Hamma rasm <b>9:16</b>. <b>Realistik</b> sahnalar (1a, 1b, 7): Toshkent avtobusi, neon faqat chiroqlarda va telefon ekranida. <b>Raqamli</b> sahnalar (1c, 5, 6, 8, 9, 10, 11): asosan iliq oltin yorug'lik, ko'k neon juda oz va faqat orqa fonda. Yozuv va raqam yo'q (montajda kod bilan qo'yiladi). Qiz va yo'lovchilar to'qima.</p>
 {cards}
 </div>
 <script>
