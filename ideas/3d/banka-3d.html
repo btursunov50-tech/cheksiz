@@ -1,0 +1,90 @@
+<title>Banka 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Manrope:wght@400;600&display=swap">
+<style>
+/* Layout: full-width 3D stage with a parts list and an explode slider underneath; one dark look with gold accents (same family as the video pages). */
+:root{--bg:#0f1116;--panel:#181b23;--line:#2c3140;--fg:#eef0f5;--muted:#a7b0c4;--gold:#f2b544;--display:"Cormorant Garamond",Georgia,serif;--body:"Manrope",system-ui,sans-serif;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:20px 40px;display:grid;gap:14px}
+h1{font-family:var(--display);font-size:clamp(28px,6vw,40px);margin:0;line-height:1.1;text-wrap:balance} h1 em{font-style:normal;color:var(--gold)}
+.intro{color:var(--muted);margin:0;max-width:62ch}
+#stage{position:relative;width:100%;aspect-ratio:3/4;max-height:70vh;background:radial-gradient(circle at 50% 35%,#222735,#0b0d12 70%);border:1px solid var(--line);border-radius:8px;overflow:hidden;touch-action:none}
+#stage canvas{display:block;width:100%;height:100%}
+.row{display:grid;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.parts{display:flex;flex-wrap:wrap;gap:8px}
+.parts button{font:600 14px var(--body);color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:99px;padding:8px 14px;cursor:pointer}
+.parts button.on{background:var(--gold);color:#111;border-color:var(--gold)}
+.parts button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+#info{margin:0;min-height:3em}
+.err{color:#ff8a7a}
+</style>
+<div class="wrap">
+<h1>Konserva banka <em>ichidan</em></h1>
+<p class="intro">Bankani sichqoncha yoki barmoq bilan aylantiring. «Ajrat» chizig'ini suring: banka bo'laklarga ajraladi. Bo'lak tugmasini bossangiz, u yonib turadi va nima ekani yoziladi. (Bu 3D modelni Claude kod bilan yaratdi, hech qanday pullik dastur ishlatilmagan.)</p>
+<div id="stage"></div>
+<div class="row">
+<label for="ex">Ajrat</label><input id="ex" type="range" min="0" max="100" value="55">
+<div class="parts" id="parts"></div>
+<p id="info">Bo'lak tanlang.</p>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+const stage=document.getElementById('stage');
+if(!window.THREE){stage.innerHTML='<p class="intro err" style="padding:16px">3D kutubxona yuklanmadi. Sahifani qayta oching.</p>';return;}
+const scene=new THREE.Scene();
+const cam=new THREE.PerspectiveCamera(38,1,0.1,100);cam.position.set(5.2,3.4,6.2);
+const rd=new THREE.WebGLRenderer({antialias:true,alpha:true});rd.setPixelRatio(Math.min(devicePixelRatio,2));stage.appendChild(rd.domElement);
+const ctl=new THREE.OrbitControls(cam,rd.domElement);ctl.enableDamping=true;ctl.target.set(0,1.2,0);ctl.minDistance=4;ctl.maxDistance=14;ctl.autoRotate=true;ctl.autoRotateSpeed=1.2;
+scene.add(new THREE.HemisphereLight(0xcfe8ff,0x3a2a10,0.9));
+const key=new THREE.DirectionalLight(0xffd9a0,1.3);key.position.set(4,7,5);scene.add(key);
+const rim=new THREE.PointLight(0x2fd6ff,0.9,20);rim.position.set(-5,3,-4);scene.add(rim);
+const gold=new THREE.MeshStandardMaterial({color:0xf2b544,metalness:0.9,roughness:0.28});
+const steel=new THREE.MeshStandardMaterial({color:0x9fb0c0,metalness:0.85,roughness:0.35});
+const red=new THREE.MeshStandardMaterial({color:0xc0392b,metalness:0.1,roughness:0.6});
+const food=new THREE.MeshStandardMaterial({color:0x7a3b1d,metalness:0,roughness:0.9});
+const R=1.5,H=2.4;
+const parts=[];
+function add(name,info,y,mesh,off){mesh.position.y=y;scene.add(mesh);parts.push({name,info,mesh,y0:y,off,mats:[].concat(mesh.material||[])});return mesh;}
+// qopqoq: disk + halqa + tortma halqa
+const lid=new THREE.Group();
+const disk=new THREE.Mesh(new THREE.CylinderGeometry(R,R,0.1,48),steel);lid.add(disk);
+const rimT=new THREE.Mesh(new THREE.TorusGeometry(R,0.07,12,48),steel);rimT.rotation.x=Math.PI/2;rimT.position.y=0.05;lid.add(rimT);
+const pull=new THREE.Mesh(new THREE.TorusGeometry(0.34,0.05,10,28),gold);pull.rotation.x=Math.PI/2;pull.position.set(0.6,0.12,0);lid.add(pull);
+lid.material=steel;
+add('Qopqoq',"Metall qopqoq banka ichini havo va mikroblardan yopib turadi. Chekkasidagi halqa bankani ochishga yordam beradi.",H+0.1,lid,2.6);
+// oziq
+const fd=new THREE.Mesh(new THREE.CylinderGeometry(R-0.12,R-0.12,H-0.35,40),food);
+add('Ovqat',"Ichidagi mahsulot qaynatib, havosi chiqarib yopilgan. Sana ko'rsatadigan vaqtgacha shunday saqlanadi.",H/2,fd,1.15);
+// tana qobig'i (yarim shaffof) + gofrlar
+const bodyM=new THREE.MeshStandardMaterial({color:0xb9c6d2,metalness:0.8,roughness:0.4,transparent:true,opacity:0.35});
+const shell=new THREE.Group();
+const sh=new THREE.Mesh(new THREE.CylinderGeometry(R,R,H,48,1,true),bodyM);shell.add(sh);
+for(let i=0;i<5;i++){const t=new THREE.Mesh(new THREE.TorusGeometry(R,0.035,8,48),steel);t.rotation.x=Math.PI/2;t.position.y=-H/2+0.3+i*0.45;shell.add(t);}
+shell.material=bodyM;
+add('Metall tana',"Po'lat tana bosimga chidaydi. Shishgan, zanglagan yoki chokida yirtiq tana xavfli: bunday bankani yemang.",H/2,shell,0);
+// yorliq
+const lab=new THREE.Mesh(new THREE.CylinderGeometry(R+0.02,R+0.02,1.1,48,1,true,0,Math.PI*1.6),red);lab.material.side=THREE.DoubleSide;
+add('Yorliq',"Yorliqda tayyorlangan sana, yaroqlilik muddati va «eng yaxshi sifatgacha» yozuvlari bo'ladi. Ularni farqlang.",H/2,lab,-1.7);
+// tag
+const bot=new THREE.Mesh(new THREE.CylinderGeometry(R,R,0.12,48),steel);
+add('Tag',"Pastki disk bankani yopadi. Tashqarisiga bosilgan belgilar ishlab chiqarish partiyasini bildiradi.",0.0,bot,-2.3);
+parts.forEach(p=>p.mesh.traverse(o=>{if(o.material&&o.material.clone)o.material=o.material.clone();}));
+const fl=new THREE.Mesh(new THREE.CircleGeometry(4,48),new THREE.MeshBasicMaterial({color:0x151925}));fl.rotation.x=-Math.PI/2;fl.position.y=-0.06;scene.add(fl);
+const box=document.getElementById('parts'),info=document.getElementById('info'),ex=document.getElementById('ex');let sel=-1;
+parts.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p.name;b.addEventListener('click',()=>{sel=sel===i?-1:i;[...box.children].forEach((c,k)=>c.classList.toggle('on',k===sel));info.textContent=sel<0?'Bo\'lak tanlang.':p.name+': '+p.info;if(sel>=0&&+ex.value<35)ex.value=60;});box.appendChild(b);});
+function size(){const w=stage.clientWidth,h=stage.clientHeight;rd.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+addEventListener('resize',size);size();
+const t0=performance.now();
+function frame(){const e=+ex.value/100;
+parts.forEach((p,i)=>{p.mesh.position.y+= (p.y0+p.off*e-p.mesh.position.y)*0.12;
+ const on=i===sel;p.mesh.traverse(o=>{if(o.material&&o.material.emissive!==undefined){o.material.emissive.setHex(on?0x553300:0x000000);}});});
+ctl.autoRotate=sel<0&&e<0.05?true:ctl.autoRotate;ctl.update();rd.render(scene,cam);requestAnimationFrame(frame);}
+rd.domElement.addEventListener('pointerdown',()=>{ctl.autoRotate=false;});
+frame();
+})();
+</script>
