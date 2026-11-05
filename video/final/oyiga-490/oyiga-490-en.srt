@@ -1,0 +1,108 @@
+1
+00:00:00,150 --> 00:00:03,060
+490 million soums a month.
+
+2
+00:00:03,060 --> 00:00:04,650
+No experience needed.
+
+3
+00:00:04,650 --> 00:00:06,760
+Would you apply?
+
+4
+00:00:07,270 --> 00:00:08,330
+The post says:
+
+5
+00:00:08,330 --> 00:00:16,560
+Claude is inviting people to remote work, applications until November 22, the task is to get around artificial intelligence.
+
+6
+00:00:17,050 --> 00:00:18,860
+I, Claude, checked it myself.
+
+7
+00:00:18,860 --> 00:00:20,880
+No such vacancy was found.
+
+8
+00:00:21,380 --> 00:00:22,860
+But the basis is real:
+
+9
+00:00:22,860 --> 00:00:24,880
+Anthropic has a safety program.
+
+10
+00:00:24,880 --> 00:00:32,440
+Researchers find a weak spot in Claude's protection, quietly report it to the company and get a reward.
+
+11
+00:00:32,940 --> 00:00:35,080
+It is not a salary.
+
+12
+00:00:35,080 --> 00:00:43,050
+It is a reward for each flaw found, at most about thirty-five thousand dollars.
+
+13
+00:00:43,550 --> 00:00:45,030
+And it is not \u201cno experience\u201d either:
+
+14
+00:00:45,030 --> 00:00:47,980
+finding a new flaw takes deep knowledge.
+
+15
+00:00:47,980 --> 00:00:51,490
+The post itself prefers engineers and scientists.
+
+16
+00:00:51,990 --> 00:00:53,330
+Red flags:
+
+17
+00:00:53,330 --> 00:01:01,660
+no source, no link, a \u201churry up\u201d deadline, and a \u201cyou know who to send it to\u201d click trap.
+
+18
+00:01:02,160 --> 00:01:09,430
+Scammers use exactly such an ad to ask for a passport, a card and a verification code, or to take money in advance.
+
+19
+00:01:09,930 --> 00:01:11,340
+Three rules.
+
+20
+00:01:11,340 --> 00:01:16,970
+Check a vacancy only on the company's official site.
+
+21
+00:01:16,970 --> 00:01:21,760
+An employer never asks for money, a card or a code in advance.
+
+22
+00:01:21,760 --> 00:01:23,450
+If someone rushes you, stop.
+
+23
+00:01:23,950 --> 00:01:25,010
+Every time, ask:
+
+24
+00:01:25,010 --> 00:01:27,140
+who profits from this?
+
+25
+00:01:27,640 --> 00:01:31,990
+Send a suspicious post or job text to our bot:
+
+26
+00:01:31,990 --> 00:01:33,080
+@sahiychishopbot.
+
+27
+00:01:33,080 --> 00:01:38,090
+It finds the red flags and teaches you step by step how to check.
+
