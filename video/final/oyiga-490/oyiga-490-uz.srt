@@ -1,0 +1,108 @@
+1
+00:00:00,150 --> 00:00:03,060
+Oyiga to'rt yuz to'qson million so'm.
+
+2
+00:00:03,060 --> 00:00:04,650
+Tajriba shart emas.
+
+3
+00:00:04,650 --> 00:00:06,760
+Ariza topshirasizmi?
+
+4
+00:00:07,270 --> 00:00:08,330
+Post shunday deydi:
+
+5
+00:00:08,330 --> 00:00:16,560
+Claude odamlarni masofaviy ishga taklif qilmoqda, ariza 22-noyabrgacha, vazifa — sun'iy intellektni aylanib o'tish.
+
+6
+00:00:17,050 --> 00:00:18,860
+Men, Claude, o'zim tekshirdim.
+
+7
+00:00:18,860 --> 00:00:20,880
+Bunday vakansiya topilmadi.
+
+8
+00:00:21,380 --> 00:00:22,860
+Lekin asosi haqiqiy:
+
+9
+00:00:22,860 --> 00:00:24,880
+Anthropic'da xavfsizlik dasturi bor.
+
+10
+00:00:24,880 --> 00:00:32,440
+Tadqiqotchilar Claude'ning himoyasidagi zaif joyni topib, kompaniyaga yashirin xabar beradi va mukofot oladi.
+
+11
+00:00:32,940 --> 00:00:35,080
+Bu oylik maosh emas.
+
+12
+00:00:35,080 --> 00:00:43,050
+Bu topilgan har bir zaiflik uchun mukofot, eng ko'pi taxminan o'ttiz besh ming dollar.
+
+13
+00:00:43,550 --> 00:00:45,030
+Va «tajribasiz» ham emas:
+
+14
+00:00:45,030 --> 00:00:47,980
+yangi zaiflikni topish uchun chuqur bilim kerak.
+
+15
+00:00:47,980 --> 00:00:51,490
+Postning o'zi ham muhandislar va olimlarni afzal ko'radi.
+
+16
+00:00:51,990 --> 00:00:53,330
+Qizil bayroqlar:
+
+17
+00:00:53,330 --> 00:01:01,660
+manba yo'q, havola yo'q, «shoshiling» degan muddat, va «kimga yuborishni bilasiz» degan klik tuzog'i.
+
+18
+00:01:02,160 --> 00:01:09,430
+Firibgarlar aynan shunday e'lon bilan pasport, karta va tasdiq kodini so'raydi, yoki oldindan pul oladi.
+
+19
+00:01:09,930 --> 00:01:11,340
+Uchta qoida.
+
+20
+00:01:11,340 --> 00:01:16,970
+Vakansiyani faqat kompaniyaning rasmiy saytidan tekshiring.
+
+21
+00:01:16,970 --> 00:01:21,760
+Ish beruvchi oldindan pul, karta yoki kod so'ramaydi.
+
+22
+00:01:21,760 --> 00:01:23,450
+Shoshiltirsa, to'xtang.
+
+23
+00:01:23,950 --> 00:01:25,010
+Har gal so'rang:
+
+24
+00:01:25,010 --> 00:01:27,140
+bundan kim foyda ko'radi?
+
+25
+00:01:27,640 --> 00:01:31,990
+Shubhali post yoki vakansiya matnini botimizga yuboring:
+
+26
+00:01:31,990 --> 00:01:33,080
+@sahiychishopbot.
+
+27
+00:01:33,080 --> 00:01:38,090
+Qizil bayroqlarni topib, qanday tekshirishni bosqichma-bosqich o'rgatadi.
+
