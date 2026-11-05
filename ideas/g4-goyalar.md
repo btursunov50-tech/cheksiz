@@ -50,20 +50,21 @@ Hozirgi zamon: tog' qishlog'i o'rniga Toshkent viloyati mahallasi va ariq (suv h
 10. **YANGI (yaxshilik):** «Bugun bitta narsani baham ko'r: ortiqcha nonni, vaqtni yoki ma'lumotni.» Kadr: odam qo'shnisiga sovg'a qo'yadi.
 11. Bot (ixtiyoriy) va avatar savoli.
 
-## 4. G'azabda sukut (hikoyachi)
-Asl so'zlar saqlanadi, sahna zamonaviy: Toshkent avtobusi, metro, ijtimoiy tarmoq izohlari. Diyor ekranda jim, ichki hikoya.
-1. «G'azabda sukut — buyuklik.» (avtobusda janjal, Diyor jim)
-2. «Hasadga javoban tabassum — ishonch.» (kimdir izohda hasad qiladi)
-3. «Provokatsiyaga javob bermaslik — kuch.» (chatda haqorat, Diyor yozmaydi)
-4. «Tartibsizlikdan o'z vaqtida chiqib ketish — onglilik.» (guruhdan chiqadi)
-5. «Bosim ostida xotirjamlik — o'zini boshqarish.» (imtihon/rahbar)
-6. «Qo'zg'atilganda ham olijanoblikni saqlash — donolik.»
-7. «Ruh pokligi — xazina.» (qo'lga suv)
-8. Yakun: asl video Injildan «Masallar 19:11» ni keltiradi. Bizda o'rniga: Qur'on 3:134 («g'azabini ichiga yutuvchilar, odamlarni afv etuvchilar») va hadis («Kuchli odam kurashda yengadigan emas, g'azabda o'zini tutadigan odamdir»): egasi tasdiqlasin.
-9. **YANGI (yaxshilik):** «Bugun bitta odamni kechir: yozma xabar yoki bitta qo'ng'iroq.»
-10. Avatar savoli.
+## 4. G'azabda sukut (hikoyachi) — Qur'on oyatlari bilan (egasi 2026-11-05: «Qur'on oyatlaridan foydalan, ma'no ssenariy qolsin»)
+Hikmat ketma-ketligi va ma'nosi o'zgarmadi. Asl Injil iqtibosi o'rniga Qur'on oyatlari. Sahna zamonaviy: Toshkent avtobusi, metro, izohlar; Diyor ekranda jim.
+| # | Hikmat (asl) | Oyat (havola, ma'nosi) | Sahna |
+|---|---|---|---|
+| 1 | G'azabda sukut — buyuklik | 3:134 — g'azabini yutuvchilar, odamlarni afv etuvchilar | Avtobusda janjal, Diyor jim |
+| 2 | Hasadga javoban tabassum — ishonch | 41:34 — yomonlikni yaxshilik bilan qaytar | Izohda hasad, Diyor tabassum |
+| 3 | Provokatsiyaga javob bermaslik — kuch | 25:63 — johillar gapirsa, «salom» deydilar | Chatda haqorat, Diyor yozmaydi |
+| 4 | Tartibsizlikdan o'z vaqtida chiqish — onglilik | 28:55 — befoyda gapdan yuz o'giradilar | Guruhdan chiqadi |
+| 5 | Bosim ostida xotirjamlik — o'zini boshqarish | 2:153 — sabr va namoz bilan yordam so'rang (Alloh sabrlilar bilan) | Imtihon/rahbar |
+| 6 | Qo'zg'atilganda olijanoblik — donolik | 7:199 — afvni qabul qil, yaxshilikka buyur, johillardan yuz o'gir | Haqorat qilinganda ham ochiq qo'l |
+| 7 | Ruh pokligi — xazina | 91:9 — nafsini poklagan najot topdi | Qo'lga suv |
+| 8 | **YANGI (yaxshilik)** | 41:34 (qaytariladi) | «Bugun bitta odamni kechir» |
+Qoidalar: oyat ekranda faqat «sura raqami + qisqa ma'no» ko'rinishida (masalan «Oli Imron 134»), Arabcha matn ovozda o'qilmaydi (AI ovozi Qur'on o'qimaydi), tarjima so'zma-so'z ko'chirilganda Alouddin Mansur tarjimasidan olinadi (egasi tekshiradi). Payg'ambar yoki sahobalar yuzi chizilmaydi. Hadis ixtiyoriy: «kuchli odam g'azabda o'zini tutadigan» (Buxoriy va Muslim, raqamlar manbalarda farq qiladi: hadis bazasidan tekshirish kerak).
 
 ## Qaror kerak
 - 1-videoda «tuz va doktor xatlari» qismi: asl matn/ovozni (ruscha matn) yuborsangiz, aniq o'zbekchalayman.
-- 4-videoda Injil iqtibosi o'rniga Qur'on/hadis ishlatamizmi?
+- 4-video: Qur'on oyatlari bilan qaror qilindi (yuqorida). Oyat tarjimasini egasi tekshiradi.
 - 2-videoda Uzbekistan Airways qoidasi (2023): sayt bilan tekshirib, aniq raqamlarni qo'yamiz.
