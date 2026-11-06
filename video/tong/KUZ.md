@@ -24,4 +24,4 @@ Egasi yuborgan 3 ta internet rasmi (park, teleminora surati) ishlatilmaydi: mual
 ## Holat (2026-11-06)
 - 5 ta rasm keldi (chat orqali 414×414, kattalashtirilgan): registon, poikalon, xiva, hazratiimom, teleminora. Asl fayllar GIF: chat ularni harakatsiz kichik rasmga aylantiradi, shuning uchun asli GitHub orqali `video/tong/kuz/` ga yuklanadi.
 - Egasi: tushayotgan barglar orasida jigarrang barglar bo'lsin; 3 tasida yomg'ir (seshanba, payshanba, shanba; `all_kuz.sh` 6-ustun = 1).
-- Juma (Shahrisabz) va yakshanba (Qo'qon) rasmlari chatda ko'rindi, lekin faylga tushmadi. Qo'qon rasmi enli (720×237), 1:1 qilib qayta yaratish kerak.
+- 7 ta rasm hammasi keldi. Qo'qon enli (720×237): o'rtada tiniq, tepasi osmon rangi bilan to'ldirildi; 1:1 qayta yaratilsa almashtiriladi. Videolar `infinite/media/tong/` ga qo'yildi (2026-11-06).

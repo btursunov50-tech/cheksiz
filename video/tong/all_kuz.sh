@@ -9,7 +9,7 @@ r dushanba   registon  "Dushanba"   "Yangi%20hafta%20muborak!"                  
 r seshanba   poikalon  "Seshanba"   "Kuningiz%20barakali%20o'tsin!"                  "Buxoro,%20Poi%20Kalon" 1 &
 r chorshanba xiva      "Chorshanba" "Ishlaringizga%20omad!"                          "Xiva,%20Ichan%20Qal'a" &
 r payshanba  hazratiimom "Payshanba" "Niyatlaringiz%20ijobat%20bo'lsin!"             "Toshkent,%20Hazrati%20Imom" 1 &
-r juma       shahrisabz "Juma"       "Juma%20muborak!"                                "Shahrisabz,%20Oqsaroy" &
+r juma       shahrisabz "Juma%20muborak!" ""                                          "Shahrisabz,%20Oqsaroy" &
 r shanba     teleminora "Shanba"    "Kuningiz%20hamisha%20Alloh%20panohida%20o'tsin!" "Toshkent%20teleminorasi" 1 &
 r yakshanba  qoqon     "Yakshanba"  "Oilangiz%20bilan%20xayrli%20dam%20oling!"       "Qo'qon,%20Xudoyorxon%20o'rdasi" &
 wait; ls -la $OUT

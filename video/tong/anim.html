@@ -7,7 +7,7 @@ const c=document.getElementById('c');let x=c.getContext('2d');
 const P=new URLSearchParams(location.search);
 const MODE=P.get('mode')||'sat';           // sat = shior o'rtada, day = shior pastda
 const DAY=P.get('day')||'Shanba, 10-oktyabr';
-const WISH=P.get('wish')||'Yakshanba muborak!';
+const WISH=P.get('wish')??'Yakshanba muborak!';
 const mark=new Image();mark.src='../mark.png';
 // Rasm fon (kuzgi O'zbekiston obidalari): ?bg=kuz/registon.jpg — gullar o'rniga rasm, sekin yaqinlashadi
 const BGF=P.get('bg');const bimg=BGF?new Image():null;if(bimg)bimg.src=BGF;
@@ -275,9 +275,11 @@ function drawPhoto(t){
   if(RAIN)rain(t);
   fallPetals(t);
   goldText('XAYRLI TONG',540,95,100,'bold Spx "DejaVu Serif"',t,.5,1);
-  x.font='bold 40px "DejaVu Serif"';const one=DAY+' · '+WISH,long=x.measureText(one).width>1000;
+  x.font='bold 40px "DejaVu Serif"';
+  if(!WISH){plainText(DAY+' · '+PLACE,540,185,'bold 40px "DejaVu Serif"','#0b5d2a');}else{
+  const one=DAY+' · '+WISH,long=x.measureText(one).width>1000;
   if(!long){plainText(one,540,185,'bold 40px "DejaVu Serif"','#0b5d2a');if(PLACE)plainText(PLACE,540,240,'bold italic 34px "Liberation Serif"','#8a1c3c');}
-  else{plainText(DAY+' · '+PLACE,540,178,'bold 38px "DejaVu Serif"','#0b5d2a');plainText(WISH,540,232,'bold 38px "DejaVu Serif"','#8a1c3c');}
+  else{plainText(DAY+' · '+PLACE,540,178,'bold 38px "DejaVu Serif"','#0b5d2a');plainText(WISH,540,232,'bold 38px "DejaVu Serif"','#8a1c3c');}}
   goldText("Hasbunallohu va ni'mal vakil",540,830,62,'bold Spx "DejaVu Serif"',t,0);
   goldText("Bizga Allohning O'zi yetarlidir...",540,905,44,'bold italic Spx "Liberation Serif"',t,.2,1);
   brand();}
