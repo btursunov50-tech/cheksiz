@@ -19,11 +19,12 @@ def sty(cols, old=False, refs=True):
     return (f"Style: {src} (painterly, visible brush texture), cinematic night lighting, strong contrast, glowing neon light, dark and mysterious but colourful and eye-catching. "
             f"Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; everything else is soft dark neutral shadow. "
             "Vertical 9:16. No text, no letters, no numbers, no logos, no brand names, no watermark, no subtitles.")
-REF = {"d": ("Diyor", "ref_diyor"), "1": ("1-sahna rasmi", "s01")}
+REF = {"d": ("Diyor", "ref_diyor"), "1": ("1-sahna rasmi", "s01"), "4": ("4-sahna rasmi", "s04")}
 def att(r):
     if not r: return "No reference images are needed for this image; it shows no main characters. "
     t = "Attach the reference image of Diyor"
-    if "1" in r: t += " and the approved scene 1 image (the same Diyor with the same face and look)"
+    if "1" in r and "4" in r: t += ", the approved scene 1 image and the approved scene 4 image (the same Diyor with the same round boyish young face and look; he is NOT an adult man, keep the face young and round even with a strong expression)"
+    elif "1" in r: t += " and the approved scene 1 image (the same Diyor with the same face and look)"
     return (t + ". Keep the character exactly as in the reference image: the same face, age, hair, clothes, colours and the thin cyan-blue neon outline. ")
 # (raqam, nima bo'ladi (ovoz yo'q), plan, ranglar, namunalar, -, sahna)
 S = [
@@ -44,13 +45,13 @@ S = [
   f"A small dark kitchen at night. The tall fridge is closed; {SQ} is taped on the fridge door with two strips of tape. {Dy} stands next to the fridge; his right arm is still half inside the black square on the fridge door, "
   "and he is pulling it back out holding a frosty ice cream cone, cold mist and tiny frost crystals floating around it (clearly straight from the cold freezer, nothing hot, no steam). "
   "Cheeky grin, one eyebrow raised, eyes glancing at the camera like he got away with something."),
- ("6", "Kuzgi ko'cha, kecha: kapyushonini tortib, varaqni bankomatga yopishtiradi, pul chiqaradi. Tovush: shamol, barglar", "Medium shot from a slight distance, low angle", ["dark", "cyan", "red"], "d", False,
+ ("6", "Kuzgi ko'cha, kecha: kapyushonini tortib, varaqni bankomatga yopishtiradi, pul chiqaradi. Tovush: shamol, barglar", "Medium shot from a slight distance, low angle", ["dark", "cyan", "red"], "d14", False,
   f"An empty autumn street at night with fallen red leaves on the wet pavement and one street lamp. {Dy} with his hood pulled up over his head stands at a plain grey cash machine built into a wall "
   f"(no logos, its small screen glows red). {SQ[0].upper()+SQ[1:]} is taped on the front of the machine; his arm reaches into the black square and pulls out a thick stack of banknotes (plain, no readable print). "
-  "He glances nervously over his shoulder, eyes narrowed."),
- ("7", "Yana va yana oladi. Yaqin kadr: ochko'z tabassum. Tovush: yurak urishi", "Close-up, low angle, slow push-in framing", ["dark", "cyan", "red"], "d", False,
+  "He glances nervously over his shoulder with his round young face: eyes wide and watchful, eyebrows slightly raised, lips pressed together."),
+ ("7", "Yana va yana oladi. Yaqin kadr: ochko'z tabassum. Tovush: yurak urishi", "Close-up, low angle, slow push-in framing", ["dark", "cyan", "red"], "d14", False,
   f"The same night street, softly blurred behind with the street lamp and falling red leaves. {Dy} hugs a big pile of banknote stacks to his chest, more notes sticking out of his hoodie pockets; "
-  "red light from below lights his face. Greedy expression: eyes glittering and slightly too wide, eyebrows raised, a wide tight-lipped grin pulling up one corner more than the other, cheeks tense."),
+  "red light from below lights his face. Greedy expression on his same round boyish young face (not an adult, not a long thin face): eyes glittering and slightly too wide, eyebrows raised, a wide tight-lipped grin pulling up one corner more than the other, cheeks tense."),
  ("8", "Bank orqasi: varaqni seyf xonasi devoriga yopishtirib, butun tanasi bilan ichiga sudralib kiradi. Musiqa tezlashadi", "Wide shot, low angle at ground level", ["dark", "cyan", "red"], "d", False,
   "The back wall of a massive bank building at night: thick smooth grey concrete, a heavy round steel vault door seen at the far end, a few fallen red leaves blowing on the ground. "
   f"{SQ[0].upper()+SQ[1:]} is taped low on the wall. {Dy} is crawling head-first into the black square: his head, shoulders and arms are already inside and gone, only his legs and sneakers stick out of the paper, "
