@@ -23,7 +23,7 @@ REF = {"d": ("Diyor", "ref_diyor"), "1": ("1-sahna rasmi", "s01")}
 def att(r):
     if not r: return "No reference images are needed for this image; it shows no main characters. "
     t = "Attach the reference image of Diyor"
-    if "1" in r: t += " and the approved scene 1 image (the same room and the same Diyor)"
+    if "1" in r: t += " and the approved scene 1 image (the same Diyor with the same face and look)"
     return (t + ". Keep the character exactly as in the reference image: the same face, age, hair, clothes, colours and the thin cyan-blue neon outline. ")
 # (raqam, nima bo'ladi (ovoz yo'q), plan, ranglar, namunalar, -, sahna)
 S = [
@@ -34,15 +34,16 @@ S = [
  ("2", "Rasmni printerdan chiqaradi, varaqni ko'tarib qaraydi: kvadrat ichida nimadir to'lqinlanadi. Tovush: printer", "Medium shot, slightly low angle", ["dark", "cyan", "red"], "d1", False,
   f"{ROOM}, the small printer on the desk still has a faint glow. {Dy} holds {SQ} up in front of him with both hands at eye level and studies it, head tilted to one side, "
   "curious and amazed: eyebrows slightly raised (not frowning, not angry), eyes wide, lips slightly parted. The black square seems to ripple like dark water, and a faint red glow from inside it lights his face from below."),
- ("3", "Barmog'ini tegizadi, barmoq kvadrat ichiga kirib ketadi. Tovush: past «vuuu»", "Extreme close-up insert at desk level, shallow depth of field", ["dark", "cyan", "red"], "d", False,
+ ("3", "Barmog'ini tegizadi, barmoq kvadrat ichiga kirib ketadi. Tovush: past «vuuu»", "Extreme close-up insert at desk level, shallow depth of field", ["dark", "cyan", "red"], "d1", False,
   f"{SQ} lies flat on the desk. Diyor's index finger (his hand with the cyan neon outline) has sunk into the black square up to the second knuckle and simply disappears inside, "
-  "with soft red light rippling around the finger like rings on water; the desk under the paper is solid and empty. Behind, softly out of focus, Diyor's face: eyes huge, mouth open in surprise."),
+  "with soft red light rippling around the finger like rings on water; the desk under the paper is solid and empty. Behind, strongly blurred and out of focus (shallow depth of field), Diyor's face with the same round boyish young face as in scene 1: eyes huge, mouth open in surprise."),
  ("4", "Qo'lini tirsagigacha tiqadi, stol ostidan chiqmaydi. Kuladi. Tovush: sirli ovoz", "Medium wide shot showing the desk top and the empty space under the desk", ["dark", "cyan", "red"], "d", False,
   f"{ROOM}. {Dy} has pushed his whole forearm up to the elbow into the black square of {SQ}, which lies on the desk; under the desk there is clearly nothing, no hand comes out. "
   "Red light glows around his arm where it enters the paper. He laughs with delight: eyes sparkling, wide open-mouth grin, head thrown back a little."),
- ("5", "Oshxona: varaqni muzlatkichga yopishtiradi, eshikni ochmay somsa oladi. Tovush: «chik»", "Medium shot, eye level", ["dark", "cyan", "red"], "d", False,
-  f"A small dark kitchen at night. The tall fridge is closed; {SQ} is taped on the fridge door with two strips of tape. {Dy} pulls his arm back out of the black square holding a golden-brown samsa pastry, "
-  "a cheeky grin, one eyebrow raised, eyes glancing at the camera like he got away with something."),
+ ("5", "Oshxona: varaqni muzlatkichga yopishtiradi, eshikni ochmay qo'lini kiritib muzqaymoq oladi (egasi: muzlatkichda issiq somsa bo'lmaydi). Tovush: «chik»", "Medium shot, eye level", ["dark", "cyan", "red"], "d1", False,
+  f"A small dark kitchen at night. The tall fridge is closed; {SQ} is taped on the fridge door with two strips of tape. {Dy} stands next to the fridge; his right arm is still half inside the black square on the fridge door, "
+  "and he is pulling it back out holding a frosty ice cream cone, cold mist and tiny frost crystals floating around it (clearly straight from the cold freezer, nothing hot, no steam). "
+  "Cheeky grin, one eyebrow raised, eyes glancing at the camera like he got away with something."),
  ("6", "Kuzgi ko'cha, kecha: kapyushonini tortib, varaqni bankomatga yopishtiradi, pul chiqaradi. Tovush: shamol, barglar", "Medium shot from a slight distance, low angle", ["dark", "cyan", "red"], "d", False,
   f"An empty autumn street at night with fallen red leaves on the wet pavement and one street lamp. {Dy} with his hood pulled up over his head stands at a plain grey cash machine built into a wall "
   f"(no logos, its small screen glows red). {SQ[0].upper()+SQ[1:]} is taped on the front of the machine; his arm reaches into the black square and pulls out a thick stack of banknotes (plain, no readable print). "

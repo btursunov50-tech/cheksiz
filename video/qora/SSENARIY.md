@@ -10,7 +10,7 @@ Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hoo
 | 2 | Xona | Rasmni ramkasi bilan printerdan chiqaradi. Varaqni ko'tarib qaraydi. Qora kvadrat ichida nimadir to'lqinlanayotgandek | Printer shovqini |
 | 3 | Xona | Varaqni stolga qo'yadi, o'ylaydi. Barmog'ini tegizadi, barmoq kvadrat ichiga kirib ketadi. Sakrab orqaga tortadi, qo'liga qaraydi: butun | Past «vuuu» ovozi |
 | 4 | Xona | Qo'lini sekin kvadratga tirsagigacha tiqadi, stol ostidan chiqmaydi. Kuladi | Sirli ovoz |
-| 5 | Oshxona, kecha | Varaqni muzlatkich eshigiga yopishtiradi, eshikni ochmasdan qo'lini kiritib somsa oladi. Quvnoq tabassum | «Chik» |
+| 5 | Oshxona, kecha | Varaqni muzlatkich eshigiga yopishtiradi, eshikni ochmasdan qo'lini kiritib muzqaymoq oladi (egasi: muzlatkichda issiq somsa bo'lmaydi). Quvnoq tabassum | «Chik» |
 | 6 | Kuzgi ko'cha, kecha, chiroqlar, sariq barglar | Kapyushonini tortib, bankomat oldida atrofga qaraydi. Varaqni bankomatga yopishtiradi, qo'lini kiritib bir dasta pul chiqaradi | Shamol, barglar shitirlashi |
 | 7 | Ko'cha | Pulni cho'ntagiga solib, yana va yana oladi. Yuzida ochko'z tabassum (yaqin kadr) | Yurak urishi tezlashadi |
 | 8 | Bank binosi orqasi, temir eshikli xona devori | «Bu oz»: varaqni bank seyfi xonasining devoriga yopishtiradi va butun tanasi bilan ichiga sudralib kiradi | Tezlashgan musiqa |
