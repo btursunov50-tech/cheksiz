@@ -74,7 +74,9 @@ def prompt(n, shot, cols, refs, old, scene):
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
     p = prompt(n, shot, cols, refs, old, scene)
-    th = "".join(f'<figure class="ref"><img src="web/{REF[k][1]}.webp" alt="{REF[k][0]} namunasi"><figcaption>{REF[k][1]}.png</figcaption></figure>' for k in refs) or '<p class="rh">Namuna kerak emas</p>'
+    ok = os.path.exists(os.path.join(D, "web", f"s{int(''.join(ch for ch in n if ch.isdigit())):02d}{''.join(ch for ch in n if ch.isalpha())}.webp"))
+    okf = f"s{int(''.join(ch for ch in n if ch.isdigit())):02d}{''.join(ch for ch in n if ch.isalpha())}"
+    th = (f'<figure class="ref"><img src="web/{okf}.webp" alt="{n}-sahna tasdiqlangan rasm"><figcaption>Tasdiqlandi: img/{okf}.png</figcaption></figure>' if ok else "") + "".join(f'<figure class="ref"><img src="web/{REF[k][1]}.webp" alt="{REF[k][0]} namunasi"><figcaption>{REF[k][1]}.png</figcaption></figure>' for k in refs) or '<p class="rh">Namuna kerak emas</p>'
     sw = "".join(f'<span class="sw sw-{c}">{c}</span>' for c in cols)
     cards.append(f"""<article class="card"><header><span class="num">{n}</span><h2>{n}-sahna — rasm, 9:16 (tik)</h2><span class="dur">{e(shot.split(',')[0])}</span></header>
 <div class="row"><div class="refs"><p class="rh">ChatGPT'ga biriktiring:</p>{th}</div>
