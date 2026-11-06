@@ -33,7 +33,7 @@ S = [
   "Diyor leans toward the screen: eyes wide open, eyebrows raised high, lips slightly parted in a fascinated half-smile, one hand on the mouse."),
  ("2", "Rasmni printerdan chiqaradi, varaqni ko'tarib qaraydi: kvadrat ichida nimadir to'lqinlanadi. Tovush: printer", "Medium shot, slightly low angle", ["dark", "cyan", "red"], "d1", False,
   f"{ROOM}, the small printer on the desk still has a faint glow. {Dy} holds {SQ} up in front of him with both hands at eye level and studies it, head tilted to one side, "
-  "eyebrows knitted in curiosity. The black square seems to ripple like dark water, and a faint red glow from inside it lights his face from below."),
+  "curious and amazed: eyebrows slightly raised (not frowning, not angry), eyes wide, lips slightly parted. The black square seems to ripple like dark water, and a faint red glow from inside it lights his face from below."),
  ("3", "Barmog'ini tegizadi, barmoq kvadrat ichiga kirib ketadi. Tovush: past «vuuu»", "Extreme close-up insert at desk level, shallow depth of field", ["dark", "cyan", "red"], "d", False,
   f"{SQ} lies flat on the desk. Diyor's index finger (his hand with the cyan neon outline) has sunk into the black square up to the second knuckle and simply disappears inside, "
   "with soft red light rippling around the finger like rings on water; the desk under the paper is solid and empty. Behind, softly out of focus, Diyor's face: eyes huge, mouth open in surprise."),
