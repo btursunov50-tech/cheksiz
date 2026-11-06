@@ -14,7 +14,7 @@ Ish tartibi:
 | Seshanba | kuz/poikalon.jpg | Buxoro, Poi Kalon (Minorai Kalon) |
 | Chorshanba | kuz/xiva.jpg | Xiva, Ichan Qal'a (Kalta Minor) |
 | Payshanba | kuz/hazratiimom.jpg | Toshkent, Hazrati Imom |
-| Juma | kuz/bibixonim.jpg | Samarqand, Bibixonim masjidi |
+| Juma | kuz/shahrisabz.jpg | Shahrisabz: Amir Temur haykali va Oqsaroy (egasi tanladi, 2026-11-06) |
 | Shanba | kuz/teleminora.jpg | Toshkent teleminorasi va bog' |
 | Yakshanba | kuz/qoqon.jpg | Qo'qon, Xudoyorxon o'rdasi |
 
