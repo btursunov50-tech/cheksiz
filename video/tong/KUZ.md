@@ -16,7 +16,7 @@ Ish tartibi:
 | Payshanba | kuz/hazratiimom.jpg | Toshkent, Hazrati Imom |
 | Juma | kuz/shahrisabz.jpg | Shahrisabz: Amir Temur haykali va Oqsaroy (egasi tanladi, 2026-11-06) |
 | Shanba | kuz/teleminora.jpg | Toshkent teleminorasi va bog' |
-| Yakshanba | kuz/qoqon.jpg | Qo'qon, Xudoyorxon o'rdasi |
+| Yakshanba | kuz/qoqon.jpg | Qo'qon, Jome masjidi (2026-11-06: Xudoyorxon o'rdasi o'rniga, xonning nomi zolim sifatida qolgan) |
 
 Kompozitsiya: obida markazda, tepa chorak bo'sh osmon (sarlavha), pastki beshdan bir barg bilan qoplangan yo'lak (shior). Ranglar: oltin-sariq barglar, feruza koshin, och krem osmon.
 Egasi yuborgan 3 ta internet rasmi (park, teleminora surati) ishlatilmaydi: muallifi noma'lum.
