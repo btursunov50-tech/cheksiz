@@ -12,7 +12,7 @@ const DAYS = [
   { file: "seshanba", name: "seshanba", wish: "Kuningiz barakali o'tsin!" },
   { file: "chorshanba", name: "chorshanba", wish: "Ishlaringizga omad!" },
   { file: "payshanba", name: "payshanba", wish: "Niyatlaringiz ijobat bo'lsin!" },
-  { file: "juma", name: "juma", wish: "Juma muborak!" },
+  { file: "juma", name: "juma", wish: "Ayyomingiz muborak bo'lsin!" },
   { file: "shanba", name: "shanba", wish: "Kuningiz hamisha Alloh panohida o'tsin!" },
 ];
 
@@ -72,20 +72,22 @@ function buildPost(now = new Date()) {
   const tip = TIPS[((n % TIPS.length) + TIPS.length) % TIPS.length];
   const file = SPECIAL.includes(t.iso) ? t.iso : day.file;
   const born = BIRTHDAYS[t.iso.slice(5)] || [];
+  // HTML caption (parse_mode HTML): escape every text, then bold the greeting and the date (owner, 2026-11-06).
+  const esc = (x) => String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const make = (people) =>
     [
-      "🌸 Assalomu alaykum, Alloh suygan bandalar!",
+      "🌸 <b>Assalomu alaykum, Alloh suygan bandalar!</b>",
       "",
       "🤲 Hasbunallohu va ni'mal vakil",
       "Bizga Allohning O'zi yetarlidir...",
       "",
       "☀️ Xayrli tong, aziz obunachilar!",
-      `📅 Bugun ${day.name}, ${t.day}-${MONTHS[t.month]}. ${day.wish}`,
+      `📅 Bugun <b>${day.name}, ${t.day}-${MONTHS[t.month]}</b>. ${esc(day.wish)}`,
       "",
       ...(people.length
-        ? ["🎂 Bugun tug'ilgan mashhurlar:", ...people.map((p) => `• ${p.flag} ${p.name} (${p.years}) — ${p.who}`), ""]
+        ? ["🎂 Bugun tug'ilgan mashhurlar:", ...people.map((p) => `• ${p.flag} ${esc(p.name)} (${esc(p.years)}) — ${esc(p.who)}`), ""]
         : []),
-      `💡 Kun maslahati: ${tip}`,
+      `💡 Kun maslahati: ${esc(tip)}`,
       "",
       "📤 Do'stlaringizga ulashing: t.me/infinite_ai_and_me",
       "🤖 Bot: @sahiychishopbot",
@@ -94,8 +96,10 @@ function buildPost(now = new Date()) {
   // Drop names from the end until the caption fits.
   let people = born;
   let caption = make(people);
-  while (caption.length > CAPTION_LIMIT && people.length) caption = make((people = people.slice(0, -1)));
-  return { date: t.iso, video: `${MEDIA_URL}${file}.mp4`, caption };
+  // Telegram counts the limit without the HTML tags.
+  const len = (c) => c.replace(/<\/?b>/g, "").replace(/&(amp|lt|gt);/g, "x").length;
+  while (len(caption) > CAPTION_LIMIT && people.length) caption = make((people = people.slice(0, -1)));
+  return { date: t.iso, video: `${MEDIA_URL}${file}.mp4`, caption, html: true };
 }
 
 // Redis set of private chats that get the post too (joined with /start, left with /tong_off).

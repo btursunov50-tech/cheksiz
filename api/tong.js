@@ -59,6 +59,7 @@ const STOP_BUTTON = { inline_keyboard: [[{ text: "🔕 To'xtatish", callback_dat
 // post = { kind: "animation" | "video" | "text", media, caption }. If Telegram cannot fetch the
 // media, the text still goes out.
 async function send(chatId, post, extra = {}) {
+  if (post.html) extra = { parse_mode: "HTML", ...extra };
   if (post.kind === "text") return tg("sendMessage", { chat_id: chatId, text: post.caption, ...extra });
   const field = post.kind === "video" ? "video" : "animation";
   const method = post.kind === "video" ? "sendVideo" : "sendAnimation";
@@ -134,7 +135,7 @@ module.exports = async function handler(req, res) {
   const q = req.query || {};
   const byOwner = SECRET && q.key === SECRET;
   const daily = buildPost();
-  const post = { kind: "animation", media: daily.video, caption: daily.caption };
+  const post = { kind: "animation", media: daily.video, caption: daily.caption, html: daily.html };
 
   if (byOwner && q.show) {
     const subscribers = hasRedis() ? await redis("SCARD", SUBS_KEY).catch(() => null) : null;
