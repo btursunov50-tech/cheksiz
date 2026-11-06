@@ -12,7 +12,7 @@ const DAYS = [
   { file: "seshanba", name: "seshanba", wish: "Kuningiz barakali o'tsin!" },
   { file: "chorshanba", name: "chorshanba", wish: "Ishlaringizga omad!" },
   { file: "payshanba", name: "payshanba", wish: "Niyatlaringiz ijobat bo'lsin!" },
-  { file: "juma", name: "juma", wish: "Juma muborak!" },
+  { file: "juma", name: "juma", wish: "Juma ayyomingiz muborak bo'lsin!" },
   { file: "shanba", name: "shanba", wish: "Kuningiz hamisha Alloh panohida o'tsin!" },
 ];
 
