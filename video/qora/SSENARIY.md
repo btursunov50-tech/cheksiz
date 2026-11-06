@@ -2,7 +2,7 @@
 
 Egasi: «bergan videomni o'zimizga to'g'irlaymiz»: format «The Black Hole» (2008) qisqa filmidan (so'zsiz, sehrli qog'oz, ochko'zlik, kutilmagan oxir), hikoya va joylar bizniki.
 Qahramon: Diyor (`video/yetkazish/img/ref_diyor.png`: to'q ko'k kapyushon, ingichka moviy neon chiziq). Ofis emas: Diyorning xonasi (kecha), oshxona, kuzgi ko'cha, bank.
-Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hook, oyat, bot. 9:16, har sahna ~8 s.
+Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hook, oyat, bot. Yagona gap: oxiridagi avatar savoli. 9:16, har sahna ~8 s.
 
 | # | Joy | Nima bo'ladi | Tovush |
 |---|---|---|---|
@@ -17,8 +17,8 @@ Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hoo
 | 9 | Seyf ichida | Pul dastalari, oltin. Diyor quchog'ini to'ldiradi, quvonchdan aylanadi | Tanga jaranglashi |
 | 10 | Tashqarida, devor | Kuzgi shamol. Varaqning bir burchagi ko'chadi... ikkinchisi... Varaq uchib ketadi, barglar bilan ko'chada aylanib, ko'lmakka tushadi. Qora rang suvda eriydi (sekin kadr) | Shamol, keyin jimlik |
 | 11 | Seyf ichida, qorong'i | Diyor teshikka qaytadi: tekis temir devor. Qorong'ida faqat uning neon chizig'i yonadi. Pul quchog'idan tushib ketadi. Devorni urib qoladi | Bo'g'iq zarba, aks-sado |
-| 12 | Qora ekran | Oyat: «Takosur surasi 1–2: ko'paytirish bilan mashg'ullik sizni chalg'itdi» (tarjimani egasi tekshiradi) | Jimlik |
+| 12 | Qora ekran | Oyat: «Ko'paytirish sizlarni chalg'itdi, to qabrlarni ziyorat qilguningizcha. (Takosur surasi, 1–2)» (aniq matn Alouddin Mansur tarjimasidan, egasi yuboradi) | Jimlik |
 | 13 | Bot | Ekranda: «"Pulingizni ikki barobar qilamiz" degan xabar keldimi? Skrinshotini @sahiychishopbot'ga yuboring: aldovni ko'rsatadi» | Yumshoq musiqa |
-| 14 | Avatar + yakuniy karta | Savol plashkasi: «Siz-chi? Qora kvadrat topsangiz, nima qilardingiz? Izohga yozing!» (so'zsiz rolik, avatar gapirmaydi: egasi tasdiqlashi kerak) | Musiqa |
+| 14 | Avatar + yakuniy karta | Avatar **gapiradi** (Usta ovozi, egasi 2026-11-06): «Inson nafsining quliga aylansa, qorong'i seyf ichida unga kim yordam beradi? Siz-chi? Qora kvadrat topsangiz, nima qilardingiz? Izohga yozing!» Plashkada oxirgi savol | Ovoz + past musiqa |
 
 Eslatma: qora kvadrat kartina Malevichning 1915-yilgi asariga ishora; narx yozilmaydi (aniq bo'lmagan raqam o'ylab topilmaydi). Rasm promptlari egasi so'raganda beriladi.
