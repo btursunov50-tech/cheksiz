@@ -3,7 +3,7 @@
 # Diyor: video/yetkazish/img/ref_diyor.png (bu yerda img/ref_diyor.png). Ishlatish: python3 video/qora/rasm_promptlar.py
 import html, os
 D = os.path.dirname(os.path.abspath(__file__))
-Dy = ("DIYOR (the naive guy about 20 years old with a round boyish face, big expressive eyes, messy straight jet-black hair (never curly, never brown), "
+Dy = ("DIYOR (the naive guy about 20 years old with a round boyish face, big expressive eyes, messy straight jet-black hair (never curly, never brown), smooth clear skin without freckles, a soft young face (not older, no sharp jaw), "
       "a dark navy blue hoodie, jeans and sneakers; a thin bright cyan-blue neon line runs exactly along his whole outer silhouette (hair, face, hoodie, arms, legs) with a soft blue glow; "
       "nothing else in the frame has this outline)")
 HANDS = "Diyor has exactly two arms and two hands, five fingers on each hand, every hand clearly belongs to its own arm."
@@ -19,19 +19,21 @@ def sty(cols, old=False, refs=True):
     return (f"Style: {src} (painterly, visible brush texture), cinematic night lighting, strong contrast, glowing neon light, dark and mysterious but colourful and eye-catching. "
             f"Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; everything else is soft dark neutral shadow. "
             "Vertical 9:16. No text, no letters, no numbers, no logos, no brand names, no watermark, no subtitles.")
-REF = {"d": ("Diyor", "ref_diyor")}
+REF = {"d": ("Diyor", "ref_diyor"), "1": ("1-sahna rasmi", "s01")}
 def att(r):
     if not r: return "No reference images are needed for this image; it shows no main characters. "
-    return ("Attach the reference image of Diyor. Keep the character exactly as in the reference image: the same face, age, hair, clothes, colours and the thin cyan-blue neon outline. ")
+    t = "Attach the reference image of Diyor"
+    if "1" in r: t += " and the approved scene 1 image (the same room and the same Diyor)"
+    return (t + ". Keep the character exactly as in the reference image: the same face, age, hair, clothes, colours and the thin cyan-blue neon outline. ")
 # (raqam, nima bo'ladi (ovoz yo'q), plan, ranglar, namunalar, -, sahna)
 S = [
  ("1", "Xona, kecha: Diyor Google'da rasm qidiradi, oltin ramkadagi qora kvadrat kartinani ko'rib qoladi. Tovush: klaviatura", "Medium close-up from beside the monitor, face and screen both visible", ["dark", "cyan", "red"], "d", False,
   f"{ROOM}. {Dy} sits at the desk, his face lit by the monitor. The screen (seen at an angle) shows an image search results page: a search bar at the top, a grid of small picture thumbnails, and on the right a large preview of " + BSQ + ", "
   "with an empty white rectangular label strip under the preview (left blank on purpose, the price is added later in editing); no logos, no readable words. "
   "Diyor leans toward the screen: eyes wide open, eyebrows raised high, lips slightly parted in a fascinated half-smile, one hand on the mouse."),
- ("2", "Rasmni printerdan chiqaradi, varaqni ko'tarib qaraydi: kvadrat ichida nimadir to'lqinlanadi. Tovush: printer", "Medium shot, slightly low angle", ["dark", "cyan", "red"], "d", False,
+ ("2", "Rasmni printerdan chiqaradi, varaqni ko'tarib qaraydi: kvadrat ichida nimadir to'lqinlanadi. Tovush: printer", "Medium shot, slightly low angle", ["dark", "cyan", "red"], "d1", False,
   f"{ROOM}, the small printer on the desk still has a faint glow. {Dy} holds {SQ} up in front of him with both hands at eye level and studies it, head tilted to one side, "
-  "eyebrows knitted in curiosity. The black square seems to ripple like dark water, and a faint red glow from inside it lights his face from below."),
+  "curious and amazed: eyebrows slightly raised (not frowning, not angry), eyes wide, lips slightly parted. The black square seems to ripple like dark water, and a faint red glow from inside it lights his face from below."),
  ("3", "Barmog'ini tegizadi, barmoq kvadrat ichiga kirib ketadi. Tovush: past «vuuu»", "Extreme close-up insert at desk level, shallow depth of field", ["dark", "cyan", "red"], "d", False,
   f"{SQ} lies flat on the desk. Diyor's index finger (his hand with the cyan neon outline) has sunk into the black square up to the second knuckle and simply disappears inside, "
   "with soft red light rippling around the finger like rings on water; the desk under the paper is solid and empty. Behind, softly out of focus, Diyor's face: eyes huge, mouth open in surprise."),
