@@ -20,3 +20,8 @@ Ish tartibi:
 
 Kompozitsiya: obida markazda, tepa chorak bo'sh osmon (sarlavha), pastki beshdan bir barg bilan qoplangan yo'lak (shior). Ranglar: oltin-sariq barglar, feruza koshin, och krem osmon.
 Egasi yuborgan 3 ta internet rasmi (park, teleminora surati) ishlatilmaydi: muallifi noma'lum.
+
+## Holat (2026-11-06)
+- 5 ta rasm keldi (chat orqali 414×414, kattalashtirilgan): registon, poikalon, xiva, hazratiimom, teleminora. Asl fayllar GIF: chat ularni harakatsiz kichik rasmga aylantiradi, shuning uchun asli GitHub orqali `video/tong/kuz/` ga yuklanadi.
+- Egasi: tushayotgan barglar orasida jigarrang barglar bo'lsin; 3 tasida yomg'ir (seshanba, payshanba, shanba; `all_kuz.sh` 6-ustun = 1).
+- Juma (Shahrisabz) va yakshanba (Qo'qon) rasmlari chatda ko'rindi, lekin faylga tushmadi. Qo'qon rasmi enli (720×237), 1:1 qilib qayta yaratish kerak.
