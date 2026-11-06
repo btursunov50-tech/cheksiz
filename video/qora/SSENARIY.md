@@ -13,6 +13,7 @@ Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hoo
 | 5 | Oshxona, kecha | Varaqni muzlatkich eshigiga yopishtiradi, eshikni ochmasdan qo'lini kiritib muzqaymoq oladi (egasi: muzlatkichda issiq somsa bo'lmaydi). Quvnoq tabassum | «Chik» |
 | 6 | Kuzgi ko'cha, kecha, chiroqlar, sariq barglar | Kapyushonini tortib, bankomat oldida atrofga qaraydi. Varaqni bankomatga yopishtiradi, qo'lini kiritib bir dasta pul chiqaradi | Shamol, barglar shitirlashi |
 | 7 | Ko'cha | Pulni cho'ntagiga solib, yana va yana oladi. Yuzida ochko'z tabassum (yaqin kadr) | Yurak urishi tezlashadi |
+| 7b | Bank oldi (YANGI, egasi 2026-11-06) | Diyor katta bank binosi oldiga keladi, tepada oltin rangli **BANK** yozuvi. Yozuvga qarab, bino burchagidagi tor yo'lakdan orqaga o'tadi | Shamol, qadam tovushi |
 | 8 | Bank binosi orqasi, temir eshikli xona devori | «Bu oz»: varaqni bank seyfi xonasining devoriga yopishtiradi va butun tanasi bilan ichiga sudralib kiradi | Tezlashgan musiqa |
 | 9 | Seyf ichida | Pul dastalari, oltin. Diyor quchog'ini to'ldiradi, quvonchdan aylanadi | Tanga jaranglashi |
 | 10 | Tashqarida, devor | Kuzgi shamol. Varaqning bir burchagi ko'chadi... ikkinchisi... Varaq uchib ketadi, barglar bilan ko'chada aylanib, ko'lmakka tushadi. Qora rang suvda eriydi (sekin kadr) | Shamol, keyin jimlik |
@@ -25,4 +26,4 @@ Kartina: Kazimir Malevich «Qora kvadrat» (1915, Tretyakov galereyasi; jami 4 n
 
 Ranglar (egasi, 2026-11-06): qorong'ilik + ko'k neon + yonib turgan qizil (Kalamushqirdan faqat ranglar). Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`.
 
-Tasdiqlangan rasmlar (2026-11-06): s01 (narx bilan: s01_narx), s02, s03 (yuz montajda xiralashtirildi), s04, s05 (muzqaymoq), s06, s08, s09, s10, s10b. Qayta: 7 (yuz katta odamga o'xshaydi; zaxira img/s07_v2.png). Qoldi: 11.
+Tasdiqlangan rasmlar (2026-11-06): s01 (narx bilan: s01_narx), s02, s03 (yuz montajda xiralashtirildi), s04, s05 (muzqaymoq), s06, s08, s09, s10, s10b. s07, s11 ham tasdiqlandi (zaxira: s07_v2, s07_v3, s11_v2). Qoldi: 7b (bank oldi).
