@@ -7,8 +7,8 @@ Dy = ("DIYOR (the naive guy about 20 years old with a round boyish face, big exp
       "a dark navy blue hoodie, jeans and sneakers; a thin bright cyan-blue neon line runs exactly along his whole outer silhouette (hair, face, hoodie, arms, legs) with a soft blue glow; "
       "nothing else in the frame has this outline)")
 HANDS = "Diyor has exactly two arms and two hands, five fingers on each hand, every hand clearly belongs to its own arm."
-SQ = ("the printed sheet: a plain white A4 paper with a printed picture of a black square in a gold frame; the black square on the paper is a real bottomless hole of absolute black depth "
-      "with a faint glowing red light far inside")
+SQ = ("the printed sheet (a plain white A4 paper with a printed picture of a black square in a gold frame; the black square on the paper is a real bottomless hole of absolute black depth "
+      "with a faint glowing red light far inside)")
 ROOM = "Diyor's small bedroom at night: a desk with a computer monitor and a small home printer, posters-free dark walls, the only light comes from the screen"
 COL = {"dark": "deep night darkness (near-black navy)", "cyan": "electric cyan-blue neon", "red": "glowing neon red", "gold": "warm gold"}
 def sty(cols, old=False, refs=True):
@@ -41,21 +41,21 @@ S = [
   "a cheeky grin, one eyebrow raised, eyes glancing at the camera like he got away with something."),
  ("6", "Kuzgi ko'cha, kecha: kapyushonini tortib, varaqni bankomatga yopishtiradi, pul chiqaradi. Tovush: shamol, barglar", "Medium shot from a slight distance, low angle", ["dark", "cyan", "red"], "d", False,
   f"An empty autumn street at night with fallen red leaves on the wet pavement and one street lamp. {Dy} with his hood pulled up over his head stands at a plain grey cash machine built into a wall "
-  f"(no logos, its small screen glows red). {SQ} is taped on the front of the machine; his arm reaches into the black square and pulls out a thick stack of banknotes (plain, no readable print). "
+  f"(no logos, its small screen glows red). {SQ[0].upper()+SQ[1:]} is taped on the front of the machine; his arm reaches into the black square and pulls out a thick stack of banknotes (plain, no readable print). "
   "He glances nervously over his shoulder, eyes narrowed."),
  ("7", "Yana va yana oladi. Yaqin kadr: ochko'z tabassum. Tovush: yurak urishi", "Close-up, low angle, slow push-in framing", ["dark", "cyan", "red"], "d", False,
   f"The same night street, softly blurred behind with the street lamp and falling red leaves. {Dy} hugs a big pile of banknote stacks to his chest, more notes sticking out of his hoodie pockets; "
   "red light from below lights his face. Greedy expression: eyes glittering and slightly too wide, eyebrows raised, a wide tight-lipped grin pulling up one corner more than the other, cheeks tense."),
  ("8", "Bank orqasi: varaqni seyf xonasi devoriga yopishtirib, butun tanasi bilan ichiga sudralib kiradi. Musiqa tezlashadi", "Wide shot, low angle at ground level", ["dark", "cyan", "red"], "d", False,
   "The back wall of a massive bank building at night: thick smooth grey concrete, a heavy round steel vault door seen at the far end, a few fallen red leaves blowing on the ground. "
-  f"{SQ} is taped low on the wall. {Dy} is crawling head-first into the black square: his head, shoulders and arms are already inside and gone, only his legs and sneakers stick out of the paper, "
+  f"{SQ[0].upper()+SQ[1:]} is taped low on the wall. {Dy} is crawling head-first into the black square: his head, shoulders and arms are already inside and gone, only his legs and sneakers stick out of the paper, "
   "red light glowing around the edges of the square."),
  ("9", "Seyf ichida: pul dastalari, oltin. Quchog'ini to'ldirib, quvonchdan aylanadi. Tovush: tanga jaranglashi", "Wide shot inside the vault, slightly high angle", ["dark", "cyan", "gold"], "d", False,
   f"Inside a closed steel bank vault: tall metal shelves full of banknote bundles and stacked gold bars. On one steel wall a square opening (the hole of the paper seen from inside) shows the dark street outside. "
   f"{Dy} spins around in the middle with his arms overflowing with money and gold bars, notes flying around him, eyes closed in pure joy, a huge open-mouthed laugh. His cyan neon outline lights the gold."),
  ("10", "Tashqarida kuzgi shamol: varaqning burchaklari ko'chadi, varaq uchib ketadi. Tovush: shamol", "Close-up on the wall, wind blowing from the left", ["dark", "red", "cyan"], "", False,
   "The same back wall of the bank at night, thick grey concrete. A strong autumn wind blows red fallen leaves across the frame. "
-  f"The taped paper with the black square ({SQ.split(': ',1)[1]}) is peeling off the wall: the tape has come loose, two corners lift and flap in the wind, the paper is about to fly away. "
+  f"The taped paper with the black square ({SQ.split('(',1)[1]} is peeling off the wall: the tape has come loose, two corners lift and flap in the wind, the paper is about to fly away. "
   "A cold blue street light from the side, nobody in the frame."),
  ("10b", "Varaq barglar bilan uchib, ko'lmakka tushadi, qora rang suvda eriydi (sekin kadr)", "Top-down close-up of a puddle", ["dark", "red", "cyan"], "", False,
   "A dark rain puddle on the night pavement with a few red fallen leaves floating in it, reflecting a cold blue street light. "
