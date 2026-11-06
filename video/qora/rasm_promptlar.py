@@ -7,7 +7,9 @@ Dy = ("DIYOR (the naive guy about 20 years old with a round boyish face, big exp
       "a dark navy blue hoodie, jeans and sneakers; a thin bright cyan-blue neon line runs exactly along his whole outer silhouette (hair, face, hoodie, arms, legs) with a soft blue glow; "
       "nothing else in the frame has this outline)")
 HANDS = "Diyor has exactly two arms and two hands, five fingers on each hand, every hand clearly belongs to its own arm."
-SQ = ("the printed sheet (a plain white A4 paper with a printed picture of a black square in a gold frame; the black square on the paper is a real bottomless hole of absolute black depth "
+BSQ = ("Kazimir Malevich's famous painting «Black Square» (1915): a large, slightly uneven black square on a white canvas border, "
+       "the black paint covered with a fine web of cracks (craquelure), in a simple thin wooden museum frame")
+SQ = ("the printed sheet (a plain white A4 paper with a printed copy of " + BSQ + "; the black square on the paper is a real bottomless hole of absolute black depth "
       "with a faint glowing red light far inside)")
 ROOM = "Diyor's small bedroom at night: a desk with a computer monitor and a small home printer, posters-free dark walls, the only light comes from the screen"
 COL = {"dark": "deep night darkness (near-black navy)", "cyan": "electric cyan-blue neon", "red": "glowing neon red", "gold": "warm gold"}
@@ -24,8 +26,8 @@ def att(r):
 # (raqam, nima bo'ladi (ovoz yo'q), plan, ranglar, namunalar, -, sahna)
 S = [
  ("1", "Xona, kecha: Diyor Google'da rasm qidiradi, oltin ramkadagi qora kvadrat kartinani ko'rib qoladi. Tovush: klaviatura", "Medium close-up from beside the monitor, face and screen both visible", ["dark", "cyan", "red"], "d", False,
-  f"{ROOM}. {Dy} sits at the desk, his face lit by the monitor. The screen (seen at an angle) shows a grid of small image thumbnails without any text, and one large picture in the middle: "
-  "a museum painting of a perfectly flat black square on an off-white canvas in an ornate gold frame, with a small red glowing dot like an auction marker next to it. "
+  f"{ROOM}. {Dy} sits at the desk, his face lit by the monitor. The screen (seen at an angle) shows an image search results page: a search bar at the top, a grid of small picture thumbnails, and on the right a large preview of " + BSQ + ", "
+  "with an empty white rectangular label strip under the preview (left blank on purpose, the price is added later in editing); no logos, no readable words. "
   "Diyor leans toward the screen: eyes wide open, eyebrows raised high, lips slightly parted in a fascinated half-smile, one hand on the mouse."),
  ("2", "Rasmni printerdan chiqaradi, varaqni ko'tarib qaraydi: kvadrat ichida nimadir to'lqinlanadi. Tovush: printer", "Medium shot, slightly low angle", ["dark", "cyan", "red"], "d", False,
   f"{ROOM}, the small printer on the desk still has a faint glow. {Dy} holds {SQ} up in front of him with both hands at eye level and studies it, head tilted to one side, "
@@ -59,7 +61,7 @@ S = [
   "A cold blue street light from the side, nobody in the frame."),
  ("10b", "Varaq barglar bilan uchib, ko'lmakka tushadi, qora rang suvda eriydi (sekin kadr)", "Top-down close-up of a puddle", ["dark", "red", "cyan"], "", False,
   "A dark rain puddle on the night pavement with a few red fallen leaves floating in it, reflecting a cold blue street light. "
-  "A white sheet of paper lies soaked in the puddle; its printed black square is dissolving into the water in slow black and red swirls of ink, the gold frame print is blurring. Nobody in the frame."),
+  "A white sheet of paper lies soaked in the puddle; its printed black square is dissolving into the water in slow black and red swirls of ink, the printed frame and the cracks are blurring. Nobody in the frame."),
  ("11", "Seyf ichida qorong'i: teshik yo'q, tekis temir devor. Faqat neon chizig'i yonadi. Pul tushib ketadi, devorni uradi", "Close-up, eye level, very dark", ["dark", "cyan", "red"], "d", False,
   f"Inside the closed steel bank vault in near-total darkness. The square opening is gone: the steel wall is completely smooth and closed. {Dy} presses both palms flat against the cold wall; "
   "banknotes slip from under his arms and fall to the floor. The only light in the frame is his own thin cyan-blue neon outline, and a tiny red emergency light far behind. "
