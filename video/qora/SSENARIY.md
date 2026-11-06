@@ -25,4 +25,4 @@ Kartina: Kazimir Malevich «Qora kvadrat» (1915, Tretyakov galereyasi; jami 4 n
 
 Ranglar (egasi, 2026-11-06): qorong'ilik + ko'k neon + yonib turgan qizil (Kalamushqirdan faqat ranglar). Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`.
 
-Tasdiqlangan rasmlar (2026-11-06): s01 (narx bilan: s01_narx), s02, s03 (yuz montajda xiralashtirildi, chuqurlik effekti), s04, s05 (muzqaymoq), s08. Qayta: 6, 7 (yuz katta odamga aylangan).
+Tasdiqlangan rasmlar (2026-11-06): s01 (narx bilan: s01_narx), s02, s03 (yuz montajda xiralashtirildi), s04, s05 (muzqaymoq), s06, s08, s09, s10, s10b. Qayta: 7 (yuz katta odamga o'xshaydi; zaxira img/s07_v2.png). Qoldi: 11.

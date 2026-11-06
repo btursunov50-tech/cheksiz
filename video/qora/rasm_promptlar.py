@@ -49,9 +49,11 @@ S = [
   f"An empty autumn street at night with fallen red leaves on the wet pavement and one street lamp. {Dy} with his hood pulled up over his head stands at a plain grey cash machine built into a wall "
   f"(no logos, its small screen glows red). {SQ[0].upper()+SQ[1:]} is taped on the front of the machine; his arm reaches into the black square and pulls out a thick stack of banknotes (plain, no readable print). "
   "He glances nervously over his shoulder with his round young face: eyes wide and watchful, eyebrows slightly raised, lips pressed together."),
- ("7", "Yana va yana oladi. Yaqin kadr: ochko'z tabassum. Tovush: yurak urishi", "Close-up, low angle, slow push-in framing", ["dark", "cyan", "red"], "d14", False,
+ ("7", "Yana va yana oladi. Yaqin kadr: ochko'z tabassum (yuz 4-sahnadagidek yosh qolishi kerak). Tovush: yurak urishi", "Medium close-up at eye level (not from below), slow push-in framing", ["dark", "cyan", "red"], "d14", False,
   f"The same night street, softly blurred behind with the street lamp and falling red leaves. {Dy} hugs a big pile of banknote stacks to his chest, more notes sticking out of his hoodie pockets; "
-  "red light from below lights his face. Greedy expression on his same round boyish young face (not an adult, not a long thin face): eyes glittering and slightly too wide, eyebrows raised, a wide tight-lipped grin pulling up one corner more than the other, cheeks tense."),
+  "a soft red glow comes from the money and from the side, his face stays evenly lit (no harsh light from below). "
+  "His face is exactly the round boyish young face of the attached scene 4 image, only the expression changes: a greedy look, eyes glittering and a little too wide, "
+  "a wide closed-mouth grin pulling up one corner more than the other. He looks like a cheeky 20-year-old, not an adult man: no wrinkles, no long face, no heavy jaw."),
  ("8", "Bank orqasi: varaqni seyf xonasi devoriga yopishtirib, butun tanasi bilan ichiga sudralib kiradi. Musiqa tezlashadi", "Wide shot, low angle at ground level", ["dark", "cyan", "red"], "d", False,
   "The back wall of a massive bank building at night: thick smooth grey concrete, a heavy round steel vault door seen at the far end, a few fallen red leaves blowing on the ground. "
   f"{SQ[0].upper()+SQ[1:]} is taped low on the wall. {Dy} is crawling head-first into the black square: his head, shoulders and arms are already inside and gone, only his legs and sneakers stick out of the paper, "
@@ -66,10 +68,10 @@ S = [
  ("10b", "Varaq barglar bilan uchib, ko'lmakka tushadi, qora rang suvda eriydi (sekin kadr)", "Top-down close-up of a puddle", ["dark", "red", "cyan"], "", False,
   "A dark rain puddle on the night pavement with a few red fallen leaves floating in it, reflecting a cold blue street light. "
   "A white sheet of paper lies soaked in the puddle; its printed black square is dissolving into the water in slow black and red swirls of ink, the printed frame and the cracks are blurring. Nobody in the frame."),
- ("11", "Seyf ichida qorong'i: teshik yo'q, tekis temir devor. Faqat neon chizig'i yonadi. Pul tushib ketadi, devorni uradi", "Close-up, eye level, very dark", ["dark", "cyan", "red"], "d", False,
+ ("11", "Seyf ichida qorong'i: teshik yo'q, tekis temir devor. Faqat neon chizig'i yonadi. Pul tushib ketadi, devorni uradi", "Close-up, eye level, very dark", ["dark", "cyan", "red"], "d14", False,
   f"Inside the closed steel bank vault in near-total darkness. The square opening is gone: the steel wall is completely smooth and closed. {Dy} presses both palms flat against the cold wall; "
   "banknotes slip from under his arms and fall to the floor. The only light in the frame is his own thin cyan-blue neon outline, and a tiny red emergency light far behind. "
-  "His face is full of fear: eyes wide and wet, eyebrows pulled up and together, mouth open, breath fogging in the cold air."),
+  "His same round boyish young face (as in the attached scene 4 image, not an adult) is full of fear: eyes wide and wet, eyebrows pulled up and together, mouth open, breath fogging in the cold air."),
 ]
 e = html.escape
 def prompt(n, shot, cols, refs, old, scene):
