@@ -54,6 +54,10 @@ S = [
   "a soft red glow comes from the money and from the side, his face stays evenly lit (no harsh light from below). "
   "His face is exactly the round boyish young face of the attached scene 4 image, only the expression changes: a greedy look, eyes glittering and a little too wide, "
   "a wide closed-mouth grin pulling up one corner more than the other. He looks like a cheeky 20-year-old, not an adult man: no wrinkles, no long face, no heavy jaw."),
+ ("7b", "YANGI (egasi): Diyor bank binosi oldiga keladi, tepada oltin rangli katta BANK yozuvi. U yozuvga qarab qoladi, keyin bino burchagidan orqa tomonga o'tadi. Tovush: shamol, qadam", "Wide shot, low angle from the street", ["dark", "cyan", "gold"], "d14", False,
+  "A grand bank building at night on an autumn street: tall stone columns, heavy closed doors, wet pavement with fallen red leaves. Above the entrance the word BANK in big glowing gold 3D letters (exactly these four letters, B-A-N-K, spelled correctly). "
+  f"{Dy} with his hood pulled up, banknotes sticking out of his hoodie pockets, stands in front of the building seen from behind at three-quarters, looking up at the gold BANK letters, "
+  "his head tilted, one hand already pointing toward a dark narrow side alley at the corner of the building that leads to the back."),
  ("8", "Bank orqasi: varaqni seyf xonasi devoriga yopishtirib, butun tanasi bilan ichiga sudralib kiradi. Musiqa tezlashadi", "Wide shot, low angle at ground level", ["dark", "cyan", "red"], "d", False,
   "The back wall of a massive bank building at night: thick smooth grey concrete, a heavy round steel vault door seen at the far end, a few fallen red leaves blowing on the ground. "
   f"{SQ[0].upper()+SQ[1:]} is taped low on the wall. {Dy} is crawling head-first into the black square: his head, shoulders and arms are already inside and gone, only his legs and sneakers stick out of the paper, "
@@ -76,7 +80,9 @@ S = [
 e = html.escape
 def prompt(n, shot, cols, refs, old, scene):
     hands = HANDS + " " if refs else ""
-    return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{sty(cols, old, bool(refs))}"
+    st = sty(cols, old, bool(refs))
+    if n == "7b": st = st.replace("No text, no letters, no numbers,", "No other text or letters anywhere except the gold word BANK, no numbers,")
+    return f"Vertical 9:16 image, {shot}. {att(refs)}Scene: {scene} {hands}{st}"
 cards = []
 for n, voice, shot, cols, refs, old, scene in S:
     p = prompt(n, shot, cols, refs, old, scene)
