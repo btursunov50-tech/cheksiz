@@ -21,6 +21,6 @@ Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hoo
 | 13 | Bot | Ekranda: «"Pulingizni ikki barobar qilamiz" degan xabar keldimi? Skrinshotini @sahiychishopbot'ga yuboring: aldovni ko'rsatadi» | Yumshoq musiqa |
 | 14 | Avatar + yakuniy karta | Avatar **gapiradi** (Usta ovozi, egasi 2026-11-06): «Inson nafsining quliga aylansa, qorong'i seyf ichida unga kim yordam beradi? Siz-chi? Qora kvadrat topsangiz, nima qilardingiz? Izohga yozing!» Plashkada oxirgi savol | Ovoz + past musiqa |
 
-Eslatma: qora kvadrat kartina Malevichning 1915-yilgi asariga ishora; narx yozilmaydi (aniq bo'lmagan raqam o'ylab topilmaydi). Rasm promptlari egasi so'raganda beriladi.
+Kartina: Kazimir Malevich «Qora kvadrat» (1915, Tretyakov galereyasi; jami 4 nusxa). Narx (tekshirildi, 2026-11-06): to'rtinchi nusxasini Vladimir Potanin 2002-yilda ~1 mln $ ga sotib olib, Ermitajga sovg'a qilgan (The Art Newspaper, The Moscow Times). Malevichning eng qimmat asari boshqa: «Suprematik kompozitsiya» (1916), Christie's 2018, 85,8 mln $. 1-sahnada qidiruv sahifasidagi narx yozuvi montajda: «Kazimir Malevich, «Qora kvadrat» — 1 000 000 $ (2002)». Rasm promptlari egasi so'raganda beriladi.
 
 Ranglar (egasi, 2026-11-06): qorong'ilik + ko'k neon + yonib turgan qizil (Kalamushqirdan faqat ranglar). Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`.
