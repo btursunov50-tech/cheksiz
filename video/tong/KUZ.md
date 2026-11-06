@@ -25,3 +25,6 @@ Egasi yuborgan 3 ta internet rasmi (park, teleminora surati) ishlatilmaydi: mual
 - 5 ta rasm keldi (chat orqali 414×414, kattalashtirilgan): registon, poikalon, xiva, hazratiimom, teleminora. Asl fayllar GIF: chat ularni harakatsiz kichik rasmga aylantiradi, shuning uchun asli GitHub orqali `video/tong/kuz/` ga yuklanadi.
 - Egasi: tushayotgan barglar orasida jigarrang barglar bo'lsin; 3 tasida yomg'ir (seshanba, payshanba, shanba; `all_kuz.sh` 6-ustun = 1).
 - 7 ta rasm hammasi keldi. Qo'qon enli (720×237): o'rtada tiniq, tepasi osmon rangi bilan to'ldirildi; 1:1 qayta yaratilsa almashtiriladi. Videolar `infinite/media/tong/` ga qo'yildi (2026-11-06).
+
+## Ovoz (2026-11-06)
+Egasi yuborgan «Tabsirah» nashidi, 1:26.4–1:33.35 (6.95 s), past ovoz (−24 LUFS). Rus subtitri bo'yicha misralar: «Мы несём лучший путь жизни» → «И мы пришли, чтобы осветить каждую тьму» (eng yaxshi hayot yo'lini olib kelamiz / har bir zulmatni yoritish uchun keldik). Azon ishlatilmadi (bomdoddan oldin chalg'itishi mumkin). Ovoz bo'lgani uchun post endi `sendVideo` bilan ketadi (GIF ovozsiz).

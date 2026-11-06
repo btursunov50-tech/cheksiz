@@ -135,7 +135,7 @@ module.exports = async function handler(req, res) {
   const q = req.query || {};
   const byOwner = SECRET && q.key === SECRET;
   const daily = buildPost();
-  const post = { kind: "animation", media: daily.video, caption: daily.caption, html: daily.html };
+  const post = { kind: "video", media: daily.video, caption: daily.caption, html: daily.html }; // video, not GIF: Telegram mutes animations (nashid, 2026-11-06)
 
   if (byOwner && q.show) {
     const subscribers = hasRedis() ? await redis("SCARD", SUBS_KEY).catch(() => null) : null;
