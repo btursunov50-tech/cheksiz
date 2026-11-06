@@ -24,6 +24,6 @@ Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hoo
 
 Kartina: Kazimir Malevich «Qora kvadrat» (1915, Tretyakov galereyasi; jami 4 nusxa). Narx (tekshirildi, 2026-11-06): to'rtinchi nusxasini Vladimir Potanin 2002-yilda ~1 mln $ ga sotib olib, Ermitajga sovg'a qilgan (The Art Newspaper, The Moscow Times). Malevichning eng qimmat asari boshqa: «Suprematik kompozitsiya» (1916), Christie's 2018, 85,8 mln $. 1-sahnada qidiruv sahifasidagi narx yozuvi montajda: «Kazimir Malevich, «Qora kvadrat» — 1 000 000 $ (2002)». Rasm promptlari egasi so'raganda beriladi.
 
-Ranglar (egasi, 2026-11-06): qorong'ilik + ko'k neon + yonib turgan qizil (Kalamushqirdan faqat ranglar). Rasm promptlari: `rasm_promptlar.py` → `rasmlar.html`.
+Ranglar (egasi, 2026-11-06): qorong'ilik + ko'k neon + yonib turgan qizil (Kalamushqirdan faqat ranglar). Rasm promptlari: `rasm_promptlar.py` → `rasm_sahifa.html` (arxiv). Video (Veo) promptlari: `video_promptlar.py` → `rasmlar.html` (https://claude.ai/artifact/5UPcyuiKMi48cR7AGMxMgS).
 
 Tasdiqlangan rasmlar (2026-11-06): s01 (narx bilan: s01_narx), s02, s03 (yuz montajda xiralashtirildi), s04, s05 (muzqaymoq), s06, s08, s09, s10, s10b. s07, s11 ham tasdiqlandi (zaxira: s07_v2, s07_v3, s11_v2). Qoldi: 7b (bank oldi).

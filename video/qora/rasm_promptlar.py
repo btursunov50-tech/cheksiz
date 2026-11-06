@@ -135,6 +135,6 @@ document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{{
 }}));
 </script>
 """
-open(os.path.join(D, "rasmlar.html"), "w").write(page)
+open(os.path.join(D, "rasm_sahifa.html"), "w").write(page)  # rasm bosqichi (arxiv); rasmlar.html = video sahifasi
 open(os.path.join(D, "rasm_promptlar.txt"), "w").write("\n\n".join(f"### {n}\n" + prompt(n, sh, c, r, o, sc) for n, v, sh, c, r, o, sc in S))
 print(len(S), "rasm")
