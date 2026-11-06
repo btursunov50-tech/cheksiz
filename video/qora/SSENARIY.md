@@ -17,7 +17,7 @@ Ovoz: so'z yo'q, faqat musiqa + tovush effektlari. Ekranda faqat 3 ta yozuv: hoo
 | 9 | Seyf ichida | Pul dastalari, oltin. Diyor quchog'ini to'ldiradi, quvonchdan aylanadi | Tanga jaranglashi |
 | 10 | Tashqarida, devor | Kuzgi shamol. Varaqning bir burchagi ko'chadi... ikkinchisi... Varaq uchib ketadi, barglar bilan ko'chada aylanib, ko'lmakka tushadi. Qora rang suvda eriydi (sekin kadr) | Shamol, keyin jimlik |
 | 11 | Seyf ichida, qorong'i | Diyor teshikka qaytadi: tekis temir devor. Qorong'ida faqat uning neon chizig'i yonadi. Pul quchog'idan tushib ketadi. Devorni urib qoladi | Bo'g'iq zarba, aks-sado |
-| 12 | Qora ekran | Oyat: «Ko'paytirish sizlarni chalg'itdi, to qabrlarni ziyorat qilguningizcha. (Takosur surasi, 1–2)» (aniq matn Alouddin Mansur tarjimasidan, egasi yuboradi) | Jimlik |
+| 12 | Qora ekran (6 s, matn uzun) | Oyat (egasi bergan tarjima, 2026-11-06): «Ko'paytirish (mol-dunyo, bola-chaqa yoki obro'da bir-biringizdan o'zishga intilish) sizlarni g'aflatda qoldirdi, hattoki qabrlarni ziyorat qildingiz (o'lib, qabrga kirdingiz).» (Takosur surasi, 1–2). Arabcha o'qilmaydi; o'qilishi: «Alhākumut-takāsur. Hattā zurtumul-maqābir.» | Jimlik |
 | 13 | Bot | Ekranda: «"Pulingizni ikki barobar qilamiz" degan xabar keldimi? Skrinshotini @sahiychishopbot'ga yuboring: aldovni ko'rsatadi» | Yumshoq musiqa |
 | 14 | Avatar + yakuniy karta | Avatar **gapiradi** (Usta ovozi, egasi 2026-11-06): «Inson nafsining quliga aylansa, qorong'i seyf ichida unga kim yordam beradi? Siz-chi? Qora kvadrat topsangiz, nima qilardingiz? Izohga yozing!» Plashkada oxirgi savol | Ovoz + past musiqa |
 
