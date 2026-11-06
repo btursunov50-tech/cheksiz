@@ -36,19 +36,22 @@ Egasi 4 ta videoni yubordi (Baron / baronques formati va 2 ta hikmat videosi). M
 9. Bot: «Chipta shartini yuboring, kechikishda nima to'g'ri kelishini tushuntiraman.»
 10. Avatar savoli.
 
-## 3. Ochko'zlik masali (hikoyachi)
-Hozirgi zamon: tog' qishlog'i o'rniga Toshkent viloyati mahallasi va ariq (suv hammaniki).
-1. Hikoyachi: «Qadim emas, hozir ham shunday: mahallamiz orasidan ariq oqadi. Suv hech kimniki emas.»
-2. Ayol suv oladi, dehqon ekin sug'oradi, bolalar o'ynaydi.
-3. Bir kuni bir kishi ariq tubidan oltin donasi topadi.
-4. «Yana ko'proq xohlaydi»: ariq tubini qazib, oltin to'playdi.
-5. Suvni to'sib, hamma oltinni olishi uchun bog'laydi (to'g'on, zatvor).
-6. Qishloqda suv qolmaydi, ekin qurib qoladi; odamlar zatvorni ochishni iltimos qiladi.
-7. U oltinga qaraydi, oltinni yeb bo'lmasligini tushunadi (?, asl oxirini tasdiqlash kerak).
-8. Oltinni suvga tashlaydi, zatvorni ochadi (?).
-9. Hikoyachi: «Ko'proq olaman deb, hamma narsani yo'qotish mumkin.»
-10. **YANGI (yaxshilik):** «Bugun bitta narsani baham ko'r: ortiqcha nonni, vaqtni yoki ma'lumotni.» Kadr: odam qo'shnisiga sovg'a qo'yadi.
-11. Bot (ixtiyoriy) va avatar savoli.
+## 3. Ochko'zlik masali: «Oltin ariq» (hikoyachi, Usta ovozi) — to'liq ssenariy (2026-11-06)
+Hook matni (0.2 s, tepada): «Yana ko'proq...»
+| # | Hikoyachi | Kadr |
+|---|---|---|
+| 1 | Mahallamiz orasidan ariq oqadi. Bu suv hech kimniki emas, hammaniki. | Ayol suv oladi, dehqon ekin sug'oradi, bolalar o'ynaydi |
+| 2 | Bir kuni bir kishi ariq tubida oltin donasini topdi. | Close-up: yaltiragan don, ko'zlari kattalashadi |
+| 3 | Bittasi yetmadi. U yana qazidi... yana... yana. | Tez montaj: qazish, oltin to'plash |
+| 4 | Keyin o'yladi: «Suvni to'xtatsam, oltinning hammasi meniki bo'ladi.» | Zatvorni yopadi |
+| 5 | Ariq qurib qoldi. Ekinlar so'lidi, bolalar suvsiz qoldi. | Yorilgan yer, bo'sh chelak |
+| 6 | Qo'shnilar eshigini qoqdi: «Suvni oching!» U javob bermadi, oltin sanayotgan edi. | Eshik oldida odamlar; ichkarida u |
+| 7 | Kun o'tdi. U chanqadi. Oltin to'la xonada bir qultum suv yo'q edi. | Close-up: quruq lablar, oltinga qaraydi |
+| 8 | Shunda tushundi: oltinni ichib bo'lmaydi. | Zatvorni ochadi, suv oqadi, oltin suv bilan ketadi (sekinlashuv + jaranglash) |
+| 9 | Ekranda oyat: «Takosur 1–2» (ko'paytirish bilan mashg'ullik sizni chalg'itdi). Tarjimani egasi tekshiradi | Bolalar yana suvda o'ynaydi |
+| 10 | YAXSHILIK: Ortig'ini baham ko'ring: non, vaqt, bilim. | Qo'shniga non beradi |
+| 11 | BOT: Bugun ham «oltin ariq»lar bor: «pulingizni bir haftada ikki barobar qilamiz» degan xabarlar. Shunday xabar kelsa, skrinshotini @sahiychishopbot'ga yuboring: aldov bo'lsa aytadi va qanday himoyalanishni o'rgatadi. | @sahiychishopbot katta |
+| 12 | AVATAR: Siz-chi? Ko'proq olaman deb nimanidir yo'qotganmisiz? Izohga yozing! | Avatar |
 
 ## 4. G'azabda sukut (hikoyachi) — Qur'on oyatlari bilan (egasi 2026-11-05: «Qur'on oyatlaridan foydalan, ma'no ssenariy qolsin»)
 Hikmat ketma-ketligi va ma'nosi o'zgarmadi. Asl Injil iqtibosi o'rniga Qur'on oyatlari. Sahna zamonaviy: Toshkent avtobusi, metro, izohlar; Diyor ekranda jim.
