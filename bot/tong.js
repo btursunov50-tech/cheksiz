@@ -4,6 +4,8 @@
 
 const MEDIA_URL = "https://cheksiz-one.vercel.app/infinite/media/tong/";
 const CHANNEL = "@infinite_ai_and_me";
+// Bump when the videos change: Telegram caches a file by its URL, so a new query string makes it fetch the new video.
+const MEDIA_VER = "kuz2026";
 
 // Index = JS getUTCDay() of the Tashkent date (0 = Sunday).
 const DAYS = [
@@ -99,7 +101,7 @@ function buildPost(now = new Date()) {
   // Telegram counts the limit without the HTML tags.
   const len = (c) => c.replace(/<\/?b>/g, "").replace(/&(amp|lt|gt);/g, "x").length;
   while (len(caption) > CAPTION_LIMIT && people.length) caption = make((people = people.slice(0, -1)));
-  return { date: t.iso, video: `${MEDIA_URL}${file}.mp4`, caption, html: true };
+  return { date: t.iso, video: `${MEDIA_URL}${file}.mp4?v=${MEDIA_VER}`, caption, html: true };
 }
 
 // Redis set of private chats that get the post too (joined with /start, left with /tong_off).
