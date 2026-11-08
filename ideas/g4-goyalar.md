@@ -100,3 +100,5 @@ Telefon ekranlari bo'sh chiziladi, yozuvlar montajda; rasm = harakat boshi; bitt
 | 6 | Rahbar stol ortida qog'oz ko'rsatib turibdi | Rahbar baqiradi, Diyor xotirjam bosh irg'aydi | Baqara 153 |
 | 7 | Avtobusdagi o'sha odam, ro'para | Diyor qo'l uzatadi, u ikkilanib qisadi | A'rof 199 |
 | 8 | Uy, kechqurun, Diyor telefonni qo'yyapti | Onasiga choy quyadi | — |
+
+> Egasi (2026-11-08): «G'azabda sukut»da oyat raqami va sura nomi yozilmaydi — faqat ma'nosi va «Qur'oni Karimdan».
