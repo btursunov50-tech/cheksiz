@@ -17,7 +17,10 @@ F = lambda s, f=B: ImageFont.truetype(f, s)
 # (klip, boshi, davomiyligi)
 SC = [("s01", 0, 5.5), ("s02_v2", 0, 5.0), ("s03_v2", 0, 5.0), ("s04", 3.5, 4.4), ("s05_v2", 0, 4.5), ("s06", 0, 5.0),
       ("s07", 0, 5.0), ("s07b_cut", 0, 2.5), ("s08_cut", 0, 3.9), ("s09", 0, 5.0), ("s10", 0.5, 6.0), ("s10b", 0, 5.0), ("s11", 0, 7.9)]
-OYAT, BOT, AV, END = 7.0, 5.0, 5.0, 4.0
+OYAT, BOT, END = 7.0, 5.0, 4.0
+V = f"{Q}/voice"; dur = lambda f: float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",f],capture_output=True,text=True).stdout)
+VL1, VL2, VL3 = dur(f"{V}/l1.wav"), dur(f"{V}/l2.wav"), dur(f"{V}/l3.wav")
+AV = round(0.3 + VL2 + 0.5 + VL3 + 0.6, 2)  # avatar oxirida 2 va 3-qatorni aytadi
 # 1) kliplar
 segs = []
 for i, (c, s, d) in enumerate(SC):
@@ -84,16 +87,16 @@ def txtpng(path, lines, size, col, box=True):
         if box: d.rounded_rectangle([(1080 - w_) / 2 - 28, y - 10, (1080 + w_) / 2 + 28, y + size + 22], radius=20, fill=(0, 0, 0, 170))
         d.text(((1080 - w_) / 2, y), l, font=f, fill=col); y += size + 40
     im.save(path)
-txtpng(f"{W}/hook.png", ["QORA KVADRAT"], 92, (255, 60, 60))
+txtpng(f"{W}/hook.png", ["BU RASMNI", "CHOP ETMANG!"], 88, (255, 60, 60))
 txtpng(f"{W}/narx.png", ["Kazimir Malevich «Qora kvadrat»", "1 000 000 $ (2002)"], 50, (255, 230, 150))
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/cine.mp4", "-i", f"{W}/hook.png", "-i", f"{W}/narx.png", "-filter_complex",
-     "[0:v][1:v]overlay=0:150:enable='between(t,0.2,2.6)'[a];[a][2:v]overlay=0:1250:enable='between(t,2.8,5.4)',format=yuv420p[v]",
+     "[0:v][1:v]overlay=0:150:enable='between(t,0.2,3.6)'[a];[a][2:v]overlay=0:1250:enable='between(t,3.0,5.4)',format=yuv420p[v]",
      "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-r", "30", f"{W}/main_v.mp4"])
 # 6) avatar (savol plashkasi; ovoz hali yo'q) + yakuniy karta
 sys.path.insert(0, f"{R}/.claude/skills/video-yig"); from yig import avq_plate
 avq_plate("Siz-chi?|Qora kvadrat topsangiz, nima qilardingiz?|Izohga yozing!", f"{W}/avq.png")
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{R}/video/avatar.mp4", "-i", f"{W}/avq.png", "-filter_complex",
-     f"[0:v]trim=0:{AV},setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,fps=30,setsar=1[a];[a][1:v]overlay=0:1200:enable='gte(t,0.3)',format=yuv420p[v]",
+     f"[0:v]split[p][q];[q]reverse[r];[p][r]concat=n=2:v=1,trim=0:{AV},setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,fps=30,setsar=1[a];[a][1:v]overlay=0:1200:enable='gte(t,0.3)',format=yuv420p[v]",
      "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-r", "30", f"{W}/av.mp4"])
 open(f"{W}/seq2.txt", "w").write("".join(f"file '{s}'\n" for s in [f"{W}/main_v.mp4", f"{W}/av.mp4", f"{R}/video/end/end_uz.mp4"]))
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq2.txt", "-c", "copy", f"{W}/allv.mp4"])
@@ -111,7 +114,12 @@ run(["ffmpeg", "-v", "error", "-y",
      f"[m1][m2][w]amix=inputs=3:normalize=0,apad=whole_dur={TOT},atrim=0:{TOT}[a]",
      "-map", "[a]", "-ar", "48000", "-ac", "2", f"{W}/mus.wav"])
 run(["bash", f"{R}/video/sfx.sh", f"{W}/mus.wav", f"{W}/mix0.wav", " ".join(str(c) for c in cuts)])
-run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/mix0.wav", "-af", "loudnorm=I=-15:TP=-1.5:LRA=11", "-ar", "48000", f"{W}/mix.wav"])
+a2 = STORY + 0.3; a3 = a2 + VL2 + 0.5
+run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/mix0.wav", "-i", f"{V}/l1.wav", "-i", f"{V}/l2.wav", "-i", f"{V}/l3.wav", "-filter_complex",
+     f"[1:a]aresample=48000,aformat=channel_layouts=stereo,adelay=300|300[v1];[2:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a2*1000)}|{int(a2*1000)}[v2];"
+     f"[3:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a3*1000)}|{int(a3*1000)}[v3];[v1][v2][v3]amix=inputs=3:normalize=0,volume=1.6,apad=whole_dur={TOT}[vo];"
+     "[vo]asplit[vk][vm];[0:a][vk]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];[md][vm]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[o]",
+     "-map", "[o]", "-ar", "48000", f"{W}/mix.wav"])
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/allv.mp4", "-i", f"{W}/mix.wav", "-map", "0:v", "-map", "1:a", "-c:v", "copy",
      "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", f"{W}/qora_uz.mp4"])
 print("cuts", cuts, "story", round(STORY, 1), "total", round(TOT, 1))
