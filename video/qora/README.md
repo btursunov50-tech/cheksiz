@@ -45,3 +45,8 @@ Hamma 13 sahna klipi tayyor → keyingi qadam: avatar ovozi (WAV), so'ng /video-
 
 ## Ovoz (2026-11-08)
 `narration.wav` (Manus) → `voice/l1.wav` (boshlanish gapi, 3.4 s; BIP bo'lmagani uchun pauza bo'yicha ajratildi), `voice/l2.wav` (avatar 1-qator), `voice/l3.wav` (avatar 2-qator). Egasi: avatar faqat oxirida qoladi; boshlanish gapi hikoyachi ovozi bilan 1-sahna ustida. Yangi boshlanish gapi so'raldi: «To'xtang! Bu qora kvadrat bir million dollarga sotilgan. Uni hech qachon chop etmang!» (hook 92.6).
+
+## Yangilanish (2026-11-08, kechqurun)
+- Ovoz: `narration_v3.wav` (3 qator, 2 BIP ✓) → `voice/l1.wav` (8.96 s, «To'xtang!» dan keyingi pauza 0.9→0.35 s), `voice/l2.wav` (11.8 s, «aylansa…» pauzasi 2.0→1.5 s; 11-sahna boshidan), `voice/l3.wav` (4.9 s, avatar). Eski fayllar `voice/eski/`.
+- 7b: `clips/s07b_v2.mp4` (Gemini/Veo, 10 s, belgisiz) — yuz o'zgarmaydi, BANK butun klipda, statik kamera; 0–5 s ishlatiladi. Diyor yo'lakka emas, bino tomon uzoqlashadi (8-sahna bilan ziddiyat yo'q).
+- Oyat 9 s.

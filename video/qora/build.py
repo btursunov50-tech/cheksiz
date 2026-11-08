@@ -16,7 +16,7 @@ if not os.path.exists(BL): BL = B
 F = lambda s, f=B: ImageFont.truetype(f, s)
 # (klip, boshi, davomiyligi)
 SC = [("s01", 0, 5.5), ("s02_v2", 0, 5.0), ("s03_v2", 0, 5.0), ("s04", 3.5, 4.4), ("s05_v2", 0, 4.5), ("s06", 0, 5.0),
-      ("s07", 0, 5.0), ("s07b_cut", 0, 2.5), ("s08_cut", 0, 3.9), ("s09", 0, 5.0), ("s10", 0.5, 6.0), ("s10b", 0, 5.0), ("s11", 0, 7.9)]
+      ("s07", 0, 5.0), ("s07b_v2", 0, 5.0), ("s08_cut", 0, 3.9), ("s09", 0, 5.0), ("s10", 0.5, 6.0), ("s10b", 0, 5.0), ("s11", 0, 7.9)]
 OYAT, BOT, END = 9.0, 5.0, 4.0  # egasi: oyatga +2 s
 V = f"{Q}/voice"; dur = lambda f: float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",f],capture_output=True,text=True).stdout)
 VL1, VL2, VL3 = dur(f"{V}/l1.wav"), dur(f"{V}/l2.wav"), dur(f"{V}/l3.wav")
