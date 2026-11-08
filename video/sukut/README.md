@@ -17,3 +17,15 @@ Eslatmalar: 7-sahnada fondagi avtobus tablosi xira, o'qilmaydi; 5-sahnada Diyor 
 Hamma 8 sahna klipi tayyor (2026-11-08). Keyingi: hikoyachi ovozi.
 
 Oyatlar (egasi 2026-11-08): ekranda sura nomi va oyat raqami YOZILMAYDI; faqat ma'nosi va ostida «Qur'oni Karimdan». Post matnlarida ham shunday.
+
+## Ekrandagi oyat ma'nolari (raqamsiz, ostida «Qur'oni Karimdan») — egasi tekshiradi
+| Sahna | Matn (manba faqat ichki eslatma) |
+|---|---|
+| 2 | «...g'azabini ichiga yutuvchi va odamlarni afv etuvchilar. Alloh yaxshilik qiluvchilarni sevadi.» (Oli Imron 134) |
+| 3 | «Yomonlikni eng go'zal yo'l bilan qaytaring: shunda sen bilan adovatli kimsa go'yo qadrdon do'stdek bo'lib qoladi.» (Fussilat 34) |
+| 4 | «Johillar ularga xitob qilsa, «Salom» deydilar.» (Furqon 63) |
+| 5 | «Behuda so'zni eshitsalar, undan yuz o'giradilar.» (Qasas 55) |
+| 6 | «Sabr va namoz bilan yordam so'rang. Albatta, Alloh sabr qiluvchilar bilandir.» (Baqara 153) |
+| 7 | «Afv yo'lini tuting, yaxshilikka buyuring va johillardan yuz o'giring.» (A'rof 199) |
+| 8 | «Afv etsinlar va kechirsinlar. Alloh sizni mag'firat qilishini istamaysizmi?» (Nur 22) |
+Bot kartasidan oldin ovozsiz karta: «Bu so'zlar Qur'oni Karimdan olingan».
