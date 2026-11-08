@@ -73,6 +73,6 @@ for n, title, shot, cols, refs, scene, note in S:
     cards.append(dict(num=n, title=title, shot=shot, shotcap="Tasdiqlandi", refs=r, whatlbl="Gap / izoh", what=note, prompt=prompt(n, shot, cols, refs, scene)))
 page("G'azabda sukut sahnalari", "«G'azabda sukut» <em>rasmlari</em>",
      "Avval 0 (avtobusdagi odam namunasi), keyin 1–8. Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring, «Nusxa olish» bilan promptni qo'ying. Telefon ekranlari bo'sh chiziladi: yozuvlarni montajda o'zim qo'yaman. Har rasm — harakatning boshi.",
-     cards, os.path.join(D, "sahnalar.html"))
+     cards, os.path.join(D, "rasm_sahifa.html"))  # rasm bosqichi (arxiv); sahnalar.html = video sahifasi
 open(os.path.join(D, "rasm_promptlar.txt"), "w").write("\n\n".join(f"### {n}\n" + prompt(n, sh, c, r, sc) for n, t, sh, c, r, sc, no in S))
 print(len(S), "prompt")
