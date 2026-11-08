@@ -71,3 +71,19 @@ Qoidalar: oyat ekranda faqat «sura raqami + qisqa ma'no» ko'rinishida (masalan
 - 1-videoda «tuz va doktor xatlari» qismi: asl matn/ovozni (ruscha matn) yuborsangiz, aniq o'zbekchalayman.
 - 4-video: Qur'on oyatlari bilan qaror qilindi (yuqorida). Oyat tarjimasini egasi tekshiradi.
 - 2-videoda Uzbekistan Airways qoidasi (2023): sayt bilan tekshirib, aniq raqamlarni qo'yamiz.
+
+## 4. «G'azabda sukut» — to'liq ssenariy (2026-11-08, egasi tanladi)
+Hikoyachi (Usta ovozi), Diyor ekranda jim. Hook: «To'xtang! Shu izohga javob yozishdan oldin buni ko'ring.» (en hook 87.0).
+| # | Hikoyachi | Kadr | Oyat (ekranda) |
+|---|---|---|---|
+| 1 | To'xtang! Shu izohga javob yozishdan oldin buni ko'ring. | Diyor telefonda haqoratli izohni o'qiydi, barmog'i javob tugmasida | — |
+| 2 | G'azab kelganda jim turish — kuchsizlik emas, kuch. | Avtobusda kimdir Diyorga baqiradi, u jim, nafas oladi | Oli Imron 134: g'azabini yutuvchilar |
+| 3 | Hasadga tabassum bilan javob bering. | Ishxonada hamkasbi kinoya qiladi, Diyor jilmayadi | Fussilat 34: yomonlikni yaxshilik bilan qaytar |
+| 4 | Qo'zg'atuvchiga javob bermaslik — aql. | Chatda haqorat, Diyor yozishni to'xtatadi | Furqon 63: johillar gapirsa, «salom» deydilar |
+| 5 | Befoyda bahsdan o'z vaqtida chiqing. | Diyor janjal guruhidan chiqadi | Qasas 55: befoyda gapdan yuz o'giradilar |
+| 6 | Bosim ostida xotirjam bo'ling. | Imtihon/rahbar oldida, sabr | Baqara 153: sabr va namoz bilan yordam so'rang |
+| 7 | Kechira olgan odam — g'olib. | Haqoratlagan odamga Diyor qo'l uzatadi | A'rof 199: afvni qabul qil |
+| 8 | Bugun bitta odamni kechiring. | Diyor telefonni qo'yib, onasiga choy quyadi | Fussilat 34 |
+| 9 | BOT: Jahlingiz chiqqan xabarni @sahiychishopbot'ga yuboring: xotirjam va hurmatli javob yozishga yordam beradi. | @sahiychishopbot katta | — |
+| 10 | AVATAR: Siz-chi? Oxirgi marta qachon jim turib, yutdingiz? Izohga yozing! | Avatar | — |
+Oyat tarjimalarini egasi tekshiradi (Alouddin Mansur). Bot mavzusi (xotirjam javob yozish) `bot/knowledge.js` ga qo'shiladi.
