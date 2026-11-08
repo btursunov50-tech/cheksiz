@@ -11,3 +11,7 @@ Eslatmalar: 7-sahnada fondagi avtobus tablosi xira, o'qilmaydi; 5-sahnada Diyor 
 | 3 | ✅ | Hamkasbi kinoyadan ko'ra do'stona jilmayadi (kichik), Diyor jilmayib ishlaydi; push-in |
 | 4 | ✅ | Telefonni skameykaga qo'yadi, daraxtlarga qaraydi |
 | 5 | ❌ qayta | Diyor chetga o'tmaydi, ikki kishi bahslashmaydi, kamera juda uzoqlashadi, 4 s dan buta paydo bo'ladi (Veo). Prompt: statik, qizg'in bahs, Diyor o'ngga o'giriladi. Zaxira: 0–3 s |
+| 6 | ✅ | Rahbar qog'ozni stolga qo'yib baqiradi, Diyor xotirjam (yon tomondan) |
+| 7 | ✅ | Odam namunaga mos; ikkilanib, keyin qo'l qisadi, Diyor jilmayadi |
+| 8 | ✅ | Kiradi, onasini quchoqlab yuzidan o'padi, o'tirib to'la piyoladan ichadi; yuz yosh, namunaga mos. Zaxira s08_v2 (onasi ham choy ichadi) |
+Qoldi: 5-sahna (qayta).
