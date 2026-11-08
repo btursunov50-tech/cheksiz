@@ -42,3 +42,6 @@ Qolgan: 7 (qayta, yangi prompt).
 ## 7-sahna — egasining qarori (2026-11-08)
 Egasi: «menimcha oldingisi yaxshi». ASOSIY: clips/s07.mp4 to'liq (0–7.9 s) — ochko'zlikdan yuz «buziladi» (ataylab effekt sifatida). Zaxira: clips/s07_v2.mp4 (statik, yuz o'zgarmaydi, ifoda kuchsiz). Taqqos: s07_taqqos2.jpg.
 Hamma 13 sahna klipi tayyor → keyingi qadam: avatar ovozi (WAV), so'ng /video-yig.
+
+## Ovoz (2026-11-08)
+`narration.wav` (Manus) → `voice/l1.wav` (boshlanish gapi, 3.4 s; BIP bo'lmagani uchun pauza bo'yicha ajratildi), `voice/l2.wav` (avatar 1-qator), `voice/l3.wav` (avatar 2-qator). Egasi: avatar faqat oxirida qoladi; boshlanish gapi hikoyachi ovozi bilan 1-sahna ustida. Yangi boshlanish gapi so'raldi: «To'xtang! Bu qora kvadrat bir million dollarga sotilgan. Uni hech qachon chop etmang!» (hook 92.6).
