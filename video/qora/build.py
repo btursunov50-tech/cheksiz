@@ -103,7 +103,8 @@ run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/se
 TOT = STORY + AV + END
 # 7) ovoz: musiqa 2 qism + shamol + sfx
 s10 = sum(d_ for _, _, d_ in SC[:10]); s10b = s10 + SC[10][2]
-M1 = f"{R}/video/korish/music/Nocturnal_Pressure.mp3"  # egasi: boshidagi musiqa almashtirilsin (Curious Unease o'rniga); M2 = f"{R}/video/korish/music/Nocturnal_Tension.mp3"
+M1 = f"{R}/video/korish/music/Nocturnal_Pressure.mp3"  # egasi: boshidagi musiqa almashtirildi
+M2 = f"{R}/video/korish/music/Nocturnal_Tension.mp3"
 run(["ffmpeg", "-v", "error", "-y",
      "-i", M1, "-i", M2,
      "-f", "lavfi", "-t", str(SC[10][2] + 2), "-i", "anoisesrc=c=brown:a=0.6,lowpass=f=900,highpass=f=120,tremolo=f=0.4:d=0.6",
