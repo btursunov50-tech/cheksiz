@@ -30,8 +30,8 @@ S = [
   "Diyor qo'lini uzatib turadi; odam boshini ko'taradi, ikkilanadi, keyin qo'lini qisadi, ikkalasi jilmayadi",
   "Slow truck to the left at eye level, ending on both of them. Diyor keeps his right hand held out with a kind smile; the man slowly lifts his head, looks at Diyor's hand, hesitates for a moment, then takes it and they shake hands firmly; the man's embarrassed face softens into a small grateful smile. Rain glistens on the pavement, autumn leaves drift down, the bus in the background stays blurred.", ", and the man's face, grey-black beard, black flat cap and brown leather jacket exactly as in the image"),
  ("8", "s08", "Sekin pull-back: iliq xona ko'rinadi",
-  "Telefon tokchada qoladi; Diyor dasturxonga kelib o'tiradi va choynakdan onasining piyolasiga choy quyadi, onasi jilmayadi",
-  "Slow pull-back revealing the warm room. Diyor leaves his phone face down on the shelf and walks to the table, sits down beside his mother, lifts the blue-and-white teapot and pours tea into her piyola with a warm smile; his mother smiles and gently pats his hand. The phone stays on the shelf and nobody touches it again.", ", and the mother's face and headscarf exactly as in the image"),
+  "Telefon tokchada qoladi; Diyor onasining oldiga kelib, uni bag'riga bosib quchoqlaydi, keyin yoniga o'tirib, piyoladagi choyni ichadi (piyolalar rasmda allaqachon to'la)",
+  "Slow pull-back revealing the warm room. Diyor leaves his phone face down on the shelf, walks to his mother, bends down and hugs her warmly, holding her close to his chest for a moment; she closes her eyes with a happy smile and pats his back. Then he sits down at the table beside her, picks up one of the piyola cups that are already full of tea and takes a sip, smiling at her. Nobody pours tea; the cups are already full, the teapot stays on the table. The phone stays on the shelf and nobody touches it again.", ", and the mother's face and headscarf exactly as in the image"),
 ]
 def prompt(n, img, cam, what, p, x):
     return f"Vertical 9:16 video, 8 seconds, from the attached image. {p} {neon()} {SIL} {KEEP.format(x=x)} No music.\n{VEO_NEG}"
