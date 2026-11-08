@@ -16,7 +16,8 @@ Namuna loyiha: `video/qora/` (`rasm_promptlar.py`, `video_promptlar.py`). Sahifa
 6. **Plan**: hissiy joyda close-up / push-in va yuz ifodasi batafsil (ko'z, qosh, og'iz); kuchli ifodada «not an adult, round young face», kamera ko'z darajasida.
 7. **Matn yo'q**: «No text, no letters, no numbers, no logos, no watermark». Kerakli yozuv (narx, BANK) — rasmda bo'sh joy, keyin kodda yoziladi; qisqa so'z bo'lsa harfma-harf (B-A-N-K).
 8. **Veo qo'shimcha**: kamera harakati bilan boshlanadi (qo'shni sahnalarda takrorlanmaydi; statik = nol harakat); rasmdagi harakatni davom ettiradi (yo'nalish qaytmaydi); qahramonlar aniq harakat qiladi; gapiruvchi personaj `X says in Uzbek: "..."` (so'zsiz rolikda: «silent film, does not speak»); muhim tushishda sekinlashuv (speed ramp); joy nomlari (bazaar, bank vault) yozuv chaqirishi mumkin — kerak bo'lmasa sirtlarni tasvirlang; alohida oxirgi qator `VEO_NEG`.
-9. **Mantiq**: sahna haqiqatga mos (muzlatkichdan issiq somsa chiqmaydi, varaq g'oyib bo'lmaydi, og'izdan tutun yo'q).
+9. **Boshlang'ich kadr** (egasi, 2026-11-08, «Qora kvadrat» 8): rasm — harakatning BOSHI (devor oldida turibdi), hech qachon o'rtasi yoki oxiri emas (yarmi devorga kirib bo'lgan). Video promptda yo'nalish aniq va teskarisi taqiqlangan («kiradi va yo'qoladi, hech qachon qaytib chiqmaydi»). Ssenariy qatori → rasm prompti → video prompt bitta zanjir: bir xil harakat, yo'nalish, buyumlar; qo'shni sahnalar ulanadi.
+10. **Mantiq**: sahna haqiqatga mos (muzlatkichdan issiq somsa chiqmaydi, varaq g'oyib bo'lmaydi, og'izdan tutun yo'q).
 
 ## Ish tartibi
 1. Loyihada `rasm_promptlar.py` / `video_promptlar.py` yozing (ro'yxat `S`, `prompt()` funksiyasi) — `sahifa.page()` bilan HTML, `.txt` bilan matn.
