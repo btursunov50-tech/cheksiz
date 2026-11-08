@@ -87,3 +87,16 @@ Hikoyachi (Usta ovozi), Diyor ekranda jim. Hook: «To'xtang! Shu izohga javob yo
 | 9 | BOT: Jahlingiz chiqqan xabarni @sahiychishopbot'ga yuboring: xotirjam va hurmatli javob yozishga yordam beradi. | @sahiychishopbot katta | — |
 | 10 | AVATAR: Siz-chi? Oxirgi marta qachon jim turib, yutdingiz? Izohga yozing! | Avatar | — |
 Oyat tarjimalarini egasi tekshiradi (Alouddin Mansur). Bot mavzusi (xotirjam javob yozish) `bot/knowledge.js` ga qo'shiladi.
+
+### «G'azabda sukut» — Veo uchun sahna rejasi (egasi tasdiqladi, 2026-11-08)
+Telefon ekranlari bo'sh chiziladi, yozuvlar montajda; rasm = harakat boshi; bitta klipda bitta harakat; Diyor gapirmaydi; kamera sekin yoki statik. Avtobusdagi odam (2 va 7) uchun namuna rasm (ref) kerak.
+| # | Rasm (boshi) | Veo | Montajda |
+|---|---|---|---|
+| 1 | Diyor telefonga engashgan, qovoq solgan, barmog'i «Yuborish» dan 1 sm tepada | Barmoq tushadi va tegmasdan to'xtaydi, push-in | Izoh va jahldor javob yozuvi; «To'xtang!» da kadr qotadi, kulrang, soat tiqillashi |
+| 2 | Avtobusda odam Diyorga baqirmoqchi | Odam qo'l siltaydi, Diyor ko'zini yumib nafas oladi | Oli Imron 134 |
+| 3 | Ishxona, hamkasbi kinoya bilan qaraydi | Hamkasbi bosh chayqaydi, Diyor jilmayadi | Fussilat 34 |
+| 4 | Diyor chatga yozyapti (ekran bo'sh) | Yozishni to'xtatib, telefonni ag'darib qo'yadi | Chatdagi haqorat |
+| 5 | CHOYXONA (egasi tanladi): so'rida ikki kishi futbol haqida qizishib bahslashadi, biri Diyorni chaqiradi | Diyor jilmayib qo'lini ko'ksiga qo'yadi, piyolasini olib boshqa so'riga o'tadi | Qasas 55 |
+| 6 | Rahbar stol ortida qog'oz ko'rsatib turibdi | Rahbar baqiradi, Diyor xotirjam bosh irg'aydi | Baqara 153 |
+| 7 | Avtobusdagi o'sha odam, ro'para | Diyor qo'l uzatadi, u ikkilanib qisadi | A'rof 199 |
+| 8 | Uy, kechqurun, Diyor telefonni qo'yyapti | Onasiga choy quyadi | — |
