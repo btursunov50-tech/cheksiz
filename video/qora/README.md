@@ -28,3 +28,13 @@ Ssenariy: `SSENARIY.md`. Rasm promptlari: `rasm_promptlar.py` (arxiv sahifa `ras
 | 7b | clips/s07b.mp4 | ✅ | 0–4.0 s | BANK to'g'ri; 4 s dan kamera chapga ketib yozuv kesiladi, Diyor yo'lakka emas bino bo'ylab yuradi |
 | 9 | clips/s09.mp4 | ✅ | 0–7.9 s | Yuz yosh, oltin va pul, neon joyida |
 5-sahna: egasi yuborgan «1c04b60e» fayli s05_v2 bilan bir xil (md5 75613f84).
+
+## 8, 10, 10b, 11-sahna kliplari (2026-11-08)
+| Sahna | Fayl | Holat | Qism | Izoh |
+|---|---|---|---|---|
+| 7b | clips/s07b_cut.mp4 | ✅ (egasi: ozgina) | 0–2.5 s | BANK yozuvi va yo'lakni ko'rsatishi |
+| 8 | clips/s08_cut.mp4 | ✅ kesildi (egasi) | 0–2.4 s TESKARI + 4.9–6.4 s (3.9 s) | Asl klipda Diyor kvadratdan chiqib ketadi (Veo teskari qilgan); teskari aylantirildi → kiradi, keyin qizil chaqnash va bo'sh kvadrat. Teskari qismda barglar yuqoriga uchadi (sezilmaydi) |
+| 10 | clips/s10.mp4 | ✅ | 0–6.5 s | Skotch ko'chadi, varaq uchadi, devor qoladi |
+| 10b | clips/s10b.mp4 | ✅ | 0–7.9 s | Qora rang qizil bo'lib eriydi |
+| 11 | clips/s11.mp4 | ✅ | 0–7.9 s | Yuz yosh, ko'z yoshi, bug', tiz cho'kadi, pullar tushadi, neon joyida |
+Qolgan: 7 (qayta, yangi prompt).
