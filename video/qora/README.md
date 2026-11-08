@@ -38,3 +38,7 @@ Ssenariy: `SSENARIY.md`. Rasm promptlari: `rasm_promptlar.py` (arxiv sahifa `ras
 | 10b | clips/s10b.mp4 | ✅ | 0–7.9 s | Qora rang qizil bo'lib eriydi |
 | 11 | clips/s11.mp4 | ✅ | 0–7.9 s | Yuz yosh, ko'z yoshi, bug', tiz cho'kadi, pullar tushadi, neon joyida |
 Qolgan: 7 (qayta, yangi prompt).
+
+## 7-sahna — egasining qarori (2026-11-08)
+Egasi: «menimcha oldingisi yaxshi». ASOSIY: clips/s07.mp4 to'liq (0–7.9 s) — ochko'zlikdan yuz «buziladi» (ataylab effekt sifatida). Zaxira: clips/s07_v2.mp4 (statik, yuz o'zgarmaydi, ifoda kuchsiz). Taqqos: s07_taqqos2.jpg.
+Hamma 13 sahna klipi tayyor → keyingi qadam: avatar ovozi (WAV), so'ng /video-yig.
