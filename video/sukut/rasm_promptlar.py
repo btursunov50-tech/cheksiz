@@ -16,7 +16,7 @@ def sty(cols):
     c = ", ".join(COL[k] for k in cols[:-1]) + " and " + COL[cols[-1]]
     return ("Style: the same hand-painted semi-realistic cartoon illustration style as the attached reference images (painterly, visible brush texture), "
             f"cinematic soft light, colourful and eye-catching. Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; everything else is soft neutral shadow. {NOTXT}")
-REFS = {"s": [("web/ref_diyor.webp", "ref_diyor.png (faqat uslub uchun)")], "d": [("web/ref_diyor.webp", "ref_diyor.png"), ("web/ref_diyor2.webp", "ref_diyor2.png")], "m": [("web/ref_man.webp", "ref_man.png (0-rasmdan keyin)")]}
+REFS = {"s": [("web/ref_diyor.webp", "ref_diyor.png (faqat uslub uchun)")], "d": [("web/ref_diyor.webp", "ref_diyor.png"), ("web/ref_diyor2.webp", "ref_diyor2.png")], "m": [("web/ref_man.webp", "ref_man.png")]}
 def att(r):
     if r == "s": return "Attach the first reference image of Diyor ONLY as a style reference (copy the painting style, do NOT draw Diyor or his neon outline). "
     if not r: return "No reference images are needed. "
@@ -69,7 +69,8 @@ def prompt(n, shot, cols, refs, scene):
 cards = []
 for n, title, shot, cols, refs, scene, note in S:
     r = sum((REFS[k] for k in refs), [])
-    cards.append(dict(num=n, title=title, shot=None, refs=r, whatlbl="Gap / izoh", what=note, prompt=prompt(n, shot, cols, refs, scene)))
+    shot = f"web/s{int(n):02}.webp" if os.path.exists(os.path.join(D, "web", f"s{int(n):02}.webp")) else ("web/ref_man.webp" if n == "0" and os.path.exists(os.path.join(D, "img", "ref_man.png")) else None)
+    cards.append(dict(num=n, title=title, shot=shot, shotcap="Tasdiqlandi", refs=r, whatlbl="Gap / izoh", what=note, prompt=prompt(n, shot, cols, refs, scene)))
 page("G'azabda sukut sahnalari", "«G'azabda sukut» <em>rasmlari</em>",
      "Avval 0 (avtobusdagi odam namunasi), keyin 1–8. Har biri uchun ChatGPT'da yangi chat oching, chapdagi namunalarni biriktiring, «Nusxa olish» bilan promptni qo'ying. Telefon ekranlari bo'sh chiziladi: yozuvlarni montajda o'zim qo'yaman. Har rasm — harakatning boshi.",
      cards, os.path.join(D, "sahnalar.html"))
