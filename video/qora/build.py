@@ -19,8 +19,8 @@ SC = [("s01", 0, 5.5), ("s02_v2", 0, 5.0), ("s03_v2", 0, 5.0), ("s04", 3.5, 4.4)
       ("s07", 0, 5.0), ("s07b_cut", 0, 2.5), ("s08_cut", 0, 3.9), ("s09", 0, 5.0), ("s10", 0.5, 6.0), ("s10b", 0, 5.0), ("s11", 0, 7.9)]
 OYAT, BOT, END = 7.0, 5.0, 4.0
 V = f"{Q}/voice"; dur = lambda f: float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",f],capture_output=True,text=True).stdout)
-L1, L2, L3 = dur(f"{V}/l1.wav"), dur(f"{V}/l2.wav"), dur(f"{V}/l3.wav")
-AV = round(0.3 + L2 + 0.5 + L3 + 0.6, 2)  # avatar oxirida 2 va 3-qatorni aytadi
+VL1, VL2, VL3 = dur(f"{V}/l1.wav"), dur(f"{V}/l2.wav"), dur(f"{V}/l3.wav")
+AV = round(0.3 + VL2 + 0.5 + VL3 + 0.6, 2)  # avatar oxirida 2 va 3-qatorni aytadi
 # 1) kliplar
 segs = []
 for i, (c, s, d) in enumerate(SC):
@@ -114,7 +114,7 @@ run(["ffmpeg", "-v", "error", "-y",
      f"[m1][m2][w]amix=inputs=3:normalize=0,apad=whole_dur={TOT},atrim=0:{TOT}[a]",
      "-map", "[a]", "-ar", "48000", "-ac", "2", f"{W}/mus.wav"])
 run(["bash", f"{R}/video/sfx.sh", f"{W}/mus.wav", f"{W}/mix0.wav", " ".join(str(c) for c in cuts)])
-a2 = STORY + 0.3; a3 = a2 + L2 + 0.5
+a2 = STORY + 0.3; a3 = a2 + VL2 + 0.5
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/mix0.wav", "-i", f"{V}/l1.wav", "-i", f"{V}/l2.wav", "-i", f"{V}/l3.wav", "-filter_complex",
      f"[1:a]aresample=48000,aformat=channel_layouts=stereo,adelay=300|300[v1];[2:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a2*1000)}|{int(a2*1000)}[v2];"
      f"[3:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a3*1000)}|{int(a3*1000)}[v3];[v1][v2][v3]amix=inputs=3:normalize=0,volume=1.6,apad=whole_dur={TOT}[vo];"
