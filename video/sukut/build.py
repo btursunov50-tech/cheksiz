@@ -101,11 +101,11 @@ for k in range(8):
 for k in range(1, 8):
     txtpng(f"{W}/ayah{k}.png", T["ayah"][k - 1], 44, (255, 240, 210), font=IT, box=(10, 8, 4, 175), small=T["src"])
     ov.append((f"ayah{k}.png", 1190, starts[k] + 1.0, starts[k + 1] - 0.15))
-args = ["ffmpeg", "-v", "error", "-y", "-i", cine]; fc = "[0:v]"; n = 0
-for (png, y, a, b) in ov:
-    args += ["-i", f"{W}/{png}"]; n += 1; fc += f"[{n}:v]overlay=0:{y}:enable='between(t,{a:.2f},{b:.2f})'"; fc += f"[o{n}];[o{n}]"
-fc = fc[: -len(f";[o{n}]")]
-run(args + ["-filter_complex", fc + ",format=yuv420p[v]", "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-r", "30", f"{W}/main_v.mp4"])
+args = ["ffmpeg", "-v", "error", "-y", "-i", cine]; parts = []; prev = "0:v"
+for n, (png, y, a, b) in enumerate(ov, 1):
+    args += ["-i", f"{W}/{png}"]; parts.append(f"[{prev}][{n}:v]overlay=0:{y}:enable='between(t,{a:.2f},{b:.2f})'[o{n}]"); prev = f"o{n}"
+fc = ";".join(parts) + f";[{prev}]format=yuv420p"
+run(args + ["-filter_complex", fc + "[v]", "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-r", "30", f"{W}/main_v.mp4"])
 sys.path.insert(0, f"{R}/.claude/skills/video-yig"); from yig import avq_plate
 avq_plate(T["avq"], f"{W}/avq.png")
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{R}/video/avatar.mp4", "-i", f"{W}/avq.png", "-filter_complex",
