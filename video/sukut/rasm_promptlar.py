@@ -47,8 +47,8 @@ S = [
   "«Qo'zg'atuvchiga javob bermaslik — aql.» — hali yozyapti (keyin to'xtatib, telefonni ag'daradi)"),
  ("5", "5-sahna — 9:16 (tik)", "Wide shot of a teahouse terrace, slightly high angle", ["amber", "red", "teal"], "d",
   "An open-air Uzbek teahouse terrace in autumn: two wooden topchans (raised platforms) covered with red carpets and cushions, low tables with blue-and-white teapots and piyola cups, a grapevine pergola with yellow leaves, warm lantern light. "
-  "On the near topchan two middle-aged men in sweaters argue heatedly, one waving his hands in the air, the other pointing his finger at him; one of them turns toward Diyor and gestures at him as if saying «you tell him!». "
-  f"{Dy} sits cross-legged at the edge of the same topchan holding a piyola of tea, looking at them, just about to smile and put his right hand on his chest. The second topchan in the background is empty.",
+  "On the near topchan two middle-aged men in sweaters, sitting in their socks (their shoes on the ground below), argue heatedly, one waving his hands in the air, the other pointing his finger at him; one of them turns toward Diyor and gestures at him as if saying «you tell him!». "
+  f"{Dy} sits cross-legged at the edge of the same topchan in his socks (his sneakers are left on the ground below the topchan, as is the custom; nobody wears shoes on the carpet) holding a piyola of tea, looking at them, just about to smile and put his right hand on his chest. The second topchan in the background is empty.",
   "«Befoyda bahsdan o'z vaqtida chiqing.» — uni bahsga chaqirishdi, hali o'rnidan turmagan"),
  ("6", "6-sahna — 9:16 (tik)", "Medium shot, slightly low angle toward the boss", ["grey", "blue", "amber"], "d",
   "A manager's office with a big desk and a window with city lights. A strict middle-aged boss in a grey suit stands behind the desk, leaning forward with both fists on the desk, shouting, a sheet of paper in one fist; "
