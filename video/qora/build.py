@@ -9,7 +9,26 @@ import os, subprocess, sys, math
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 Q = f"{R}/video/qora"; C = f"{Q}/clips"
-W = sys.argv[1]; os.makedirs(W, exist_ok=True)
+W0 = sys.argv[1]; LANG = sys.argv[2] if len(sys.argv) > 2 else "uz"
+W = f"{W0}/{LANG}"; os.makedirs(W, exist_ok=True); CW = f"{W0}/clips"; os.makedirs(CW, exist_ok=True)
+T = {
+ "uz": dict(hook=["BU RASMNI", "CHOP ETMANG!"], narx=["Kazimir Malevich «Qora kvadrat»", "1 000 000 $ (2002)"],
+   oyat="Ko'paytirish (mol-dunyo, bola-chaqa yoki obro'da bir-biringizdan o'zishga intilish) sizlarni g'aflatda qoldirdi!", src="Takosur surasi, 1–2",
+   b1=["«Pulingizni bir haftada", "ikki barobar qilamiz»", "degan xabar keldimi?"], b2=["Skrinshotini yuboring:", "aldovni ko'rsatadi"],
+   avq="Siz-chi?|Qora kvadrat topsangiz, nima qilardingiz?|Izohga yozing!",
+   sub=["To'xtang!", "Bu qora kvadrat bir million dollarga sotilgan.", "Uni hech qachon chop etmang!", "Inson nafsining quliga aylansa…", "qorong'i seyf ichida unga kim yordam beradi?", "Siz-chi? Qora kvadrat topsangiz, nima qilardingiz? Izohga yozing!"]),
+ "ru": dict(hook=["НЕ ПЕЧАТАЙТЕ", "ЭТУ КАРТИНУ!"], narx=["Казимир Малевич «Чёрный квадрат»", "1 000 000 $ (2002)"],
+   oyat="Страсть к приумножению (богатства, детей или славы, стремление превзойти друг друга) отвлекла вас!", src="Сура «Ат-Такасур», 1–2",
+   b1=["Пришло сообщение", "«удвоим ваши деньги", "за неделю»?"], b2=["Отправьте скриншот:", "бот покажет обман"],
+   avq="А вы?|Что бы вы сделали, найдя чёрный квадрат?|Напишите в комментариях!",
+   sub=["Стоп!", "Этот чёрный квадрат продали за миллион долларов.", "Никогда не печатайте его!", "Когда человек становится рабом своих страстей…", "кто поможет ему в тёмном сейфе?", "А вы? Что бы вы сделали, найдя чёрный квадрат? Напишите в комментариях!"]),
+ "en": dict(hook=["NEVER PRINT", "THIS PAINTING!"], narx=["Kazimir Malevich, «Black Square»", "$1,000,000 (2002)"],
+   oyat="Rivalry in increase (in wealth, children or status) has distracted you!", src="Surah At-Takathur, 1–2",
+   b1=["Got a message:", "«we'll double your money", "in a week»?"], b2=["Send a screenshot:", "the bot shows the scam"],
+   avq="And you?|What would you do if you found a black square?|Tell us in the comments!",
+   sub=["Stop!", "This black square sold for one million dollars.", "Never print it!", "When a person becomes a slave to his desires…", "who will help him in a dark vault?", "And you? What would you do if you found a black square? Tell us in the comments!"]),
+}[LANG]
+SUBT = [(0.3, 0.95), (1.26, 5.73), (6.06, 9.26), (54.3, 59.13), (59.69, 65.8)]  # voice/l1 va l2 ichidagi pauzalar bo'yicha
 def run(c): subprocess.run(c, check=True)
 B = "/usr/share/fonts/opentype/inter/Inter-Bold.otf"; BL = "/usr/share/fonts/opentype/inter/Inter-Black.otf"
 if not os.path.exists(BL): BL = B
@@ -24,8 +43,8 @@ AV = round(0.3 + VL3 + 0.8, 2)  # avatar faqat 3-qatorni aytadi (egasi 2026-11-0
 # 1) kliplar
 segs = []
 for i, (c, s, d) in enumerate(SC):
-    o = f"{W}/c{i:02}.mp4"
-    run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", str(d), "-i", f"{C}/{c}.mp4", "-vf",
+    o = f"{CW}/c{i:02}.mp4"
+    if not os.path.exists(o): run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", str(d), "-i", f"{C}/{c}.mp4", "-vf",
          "scale=1080:1920:flags=lanczos,fps=30,setsar=1,format=yuv420p", "-an", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
     segs.append(o)
 # 2) oyat kartasi: qora fon, katta qizil olovli harflar, yengil miltillash
@@ -36,14 +55,14 @@ def wrap(d, text, font, maxw):
         if d.textlength(t, font=font) <= maxw: cur = t
         else: lines.append(cur); cur = w_
     return lines + [cur]
-OY = "Ko'paytirish (mol-dunyo, bola-chaqa yoki obro'da bir-biringizdan o'zishga intilish) sizlarni g'aflatda qoldirdi!"
+OY = T["oyat"]
 fd = f"{W}/oyat"; os.makedirs(fd, exist_ok=True)
 base = Image.new("RGB", (1080, 1920), (6, 4, 6)); dd = ImageDraw.Draw(base)
 fo = F(78, BL); lines = wrap(dd, OY, fo, 940); lh = 98
 y0 = 960 - len(lines) * lh // 2 - 40
 txt = Image.new("L", (1080, 1920), 0); dt = ImageDraw.Draw(txt)
 for k, l in enumerate(lines): dt.text(((1080 - dt.textlength(l, font=fo)) / 2, y0 + k * lh), l, font=fo, fill=255)
-src = "Takosur surasi, 1–2"; fs = F(44); ys = y0 + len(lines) * lh + 50
+src = T["src"]; fs = F(44); ys = y0 + len(lines) * lh + 50
 glow1 = txt.filter(ImageFilter.GaussianBlur(18)); glow2 = txt.filter(ImageFilter.GaussianBlur(5))
 for i in range(int(OYAT * 30)):
     t = i / 30; a = min(1, t / 0.8) * (0.92 + 0.08 * math.sin(t * 9) * math.sin(t * 3.7))
@@ -59,10 +78,10 @@ run(["ffmpeg", "-v", "error", "-y", "-framerate", "30", "-i", f"{fd}/f%04d.jpg",
 segs.append(f"{W}/oyat.mp4")
 # 3) bot kartasi
 im = Image.new("RGB", (1080, 1920), (8, 12, 26)); d = ImageDraw.Draw(im)
-L1 = ["«Pulingizni bir haftada", "ikki barobar qilamiz»", "degan xabar keldimi?"]
+L1 = T["b1"]
 y = 560
 for l in L1: d.text(((1080 - d.textlength(l, font=F(64))) / 2, y), l, font=F(64), fill=(255, 255, 255)); y += 84
-L2 = ["Skrinshotini yuboring:", "aldovni ko'rsatadi"]
+L2 = T["b2"]
 y += 60
 for l in L2: d.text(((1080 - d.textlength(l, font=F(54))) / 2, y), l, font=F(54), fill=(170, 220, 255)); y += 72
 h = "@sahiychishopbot"; fh = F(76, BL); tw = d.textlength(h, font=fh)
@@ -87,18 +106,27 @@ def txtpng(path, lines, size, col, box=True):
         if box: d.rounded_rectangle([(1080 - w_) / 2 - 28, y - 10, (1080 + w_) / 2 + 28, y + size + 22], radius=20, fill=(0, 0, 0, 170))
         d.text(((1080 - w_) / 2, y), l, font=f, fill=col); y += size + 40
     im.save(path)
-txtpng(f"{W}/hook.png", ["BU RASMNI", "CHOP ETMANG!"], 88, (255, 60, 60))
-txtpng(f"{W}/narx.png", ["Kazimir Malevich «Qora kvadrat»", "1 000 000 $ (2002)"], 50, (255, 230, 150))
-run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/cine.mp4", "-i", f"{W}/hook.png", "-i", f"{W}/narx.png", "-filter_complex",
-     "[0:v][1:v]overlay=0:150:enable='between(t,0.2,3.6)'[a];[a][2:v]overlay=0:1250:enable='between(t,3.0,5.4)',format=yuv420p[v]",
+txtpng(f"{W}/hook.png", T["hook"], 88, (255, 60, 60))
+txtpng(f"{W}/narx.png", T["narx"], 50, (255, 230, 150))
+def subpng(path, text):
+    im = Image.new("RGBA", (1080, 260), (0, 0, 0, 0)); d = ImageDraw.Draw(im); f = F(52)
+    ls = wrap(d, text, f, 960); y = 10
+    for l in ls:
+        w_ = d.textlength(l, font=f)
+        d.text(((1080 - w_) / 2, y), l, font=f, fill="white", stroke_width=5, stroke_fill="black"); y += 66
+    im.save(path)
+for k, txt_ in enumerate(T["sub"][:5]): subpng(f"{W}/sub{k}.png", txt_)
+SUBF = "".join(f";[s{k}][{3+k}:v]overlay=0:1470:enable='between(t,{a},{b})'[s{k+1}]" for k, (a, b) in enumerate(SUBT))
+run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/cine.mp4", "-i", f"{W}/hook.png", "-i", f"{W}/narx.png"] + sum([["-i", f"{W}/sub{k}.png"] for k in range(5)], []) + ["-filter_complex",
+     "[0:v][1:v]overlay=0:150:enable='between(t,0.2,3.6)'[a];[a][2:v]overlay=0:1180:enable='between(t,3.0,5.4)'[s0]" + SUBF + ";[s5]format=yuv420p[v]",
      "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-r", "30", f"{W}/main_v.mp4"])
 # 6) avatar (savol plashkasi; ovoz hali yo'q) + yakuniy karta
 sys.path.insert(0, f"{R}/.claude/skills/video-yig"); from yig import avq_plate
-avq_plate("Siz-chi?|Qora kvadrat topsangiz, nima qilardingiz?|Izohga yozing!", f"{W}/avq.png")
+avq_plate(T["avq"], f"{W}/avq.png")
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{R}/video/avatar.mp4", "-i", f"{W}/avq.png", "-filter_complex",
      f"[0:v]split[p][q];[q]reverse[r];[p][r]concat=n=2:v=1,trim=0:{AV},setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,fps=30,setsar=1[a];[a][1:v]overlay=0:1200:enable='gte(t,0.3)',format=yuv420p[v]",
      "-map", "[v]", "-c:v", "libx264", "-crf", "20", "-r", "30", f"{W}/av.mp4"])
-open(f"{W}/seq2.txt", "w").write("".join(f"file '{s}'\n" for s in [f"{W}/main_v.mp4", f"{W}/av.mp4", f"{R}/video/end/end_uz.mp4"]))
+open(f"{W}/seq2.txt", "w").write("".join(f"file '{s}'\n" for s in [f"{W}/main_v.mp4", f"{W}/av.mp4", f"{R}/video/end/end_{LANG}.mp4"]))
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq2.txt", "-c", "copy", f"{W}/allv.mp4"])
 TOT = STORY + AV + END
 # 7) ovoz: musiqa 2 qism + shamol + sfx
@@ -123,5 +151,8 @@ run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/mix0.wav", "-i", f"{V}/l1.wav", 
      "[vo]asplit[vk][vm];[0:a][vk]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];[md][vm]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[o]",
      "-map", "[o]", "-ar", "48000", f"{W}/mix.wav"])
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/allv.mp4", "-i", f"{W}/mix.wav", "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-     "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", f"{W}/qora_uz.mp4"])
+     "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", f"{W}/qora_{LANG}.mp4"])
+def ts(x): return f"{int(x//3600):02}:{int(x%3600//60):02}:{int(x%60):02},{int(round(x%1*1000)):03}"
+srt = list(SUBT) + [(a3, a3 + VL3)]
+open(f"{W}/qora-{LANG}.srt", "w").write("".join(f"{i+1}\n{ts(a)} --> {ts(b)}\n{t_}\n\n" for i, ((a, b), t_) in enumerate(zip(srt, T["sub"]))))
 print("cuts", cuts, "story", round(STORY, 1), "total", round(TOT, 1))
