@@ -16,8 +16,9 @@ def sty(cols):
     c = ", ".join(COL[k] for k in cols[:-1]) + " and " + COL[cols[-1]]
     return ("Style: the same hand-painted semi-realistic cartoon illustration style as the attached reference images (painterly, visible brush texture), "
             f"cinematic soft light, colourful and eye-catching. Colour rule: the whole frame uses ONLY {len(cols)} main colours: {c}; everything else is soft neutral shadow. {NOTXT}")
-REFS = {"d": [("web/ref_diyor.webp", "ref_diyor.png"), ("web/ref_diyor2.webp", "ref_diyor2.png")], "m": [("web/ref_man.webp", "ref_man.png (0-rasmdan keyin)")]}
+REFS = {"s": [("web/ref_diyor.webp", "ref_diyor.png (faqat uslub uchun)")], "d": [("web/ref_diyor.webp", "ref_diyor.png"), ("web/ref_diyor2.webp", "ref_diyor2.png")], "m": [("web/ref_man.webp", "ref_man.png (0-rasmdan keyin)")]}
 def att(r):
+    if r == "s": return "Attach the first reference image of Diyor ONLY as a style reference (copy the painting style, do NOT draw Diyor or his neon outline). "
     if not r: return "No reference images are needed. "
     parts = []
     if "d" in r: parts.append("the two reference images of Diyor (keep his face, age, hair, hoodie and the thin cyan-blue neon outline exactly as in them)")
@@ -25,7 +26,7 @@ def att(r):
     return "Attach " + " and ".join(parts) + ". "
 # (raqam, sarlavha, plan, ranglar, namunalar, sahna, ovoz/izoh)
 S = [
- ("0", "Namuna: avtobusdagi odam — 9:16 (tik)", "Full-body character reference sheet, plain soft background", ["grey", "amber", "cream"], "",
+ ("0", "Namuna: avtobusdagi odam — 9:16 (tik)", "Full-body character reference sheet, plain soft background", ["grey", "amber", "cream"], "s",
   f"A character reference image: {MAN} standing in a neutral pose, facing the viewer, arms relaxed, a stern but ordinary face, plain light background, full body visible.",
   "2 va 7-sahnada shu odam chiqadi — avval shuni yasang, keyin 2 va 7 ga biriktiring"),
  ("1", "1-sahna — 9:16 (tik)", "Close-up over the shoulder onto the phone, Diyor's face in profile", ["blue", "red", "cream"], "d",
