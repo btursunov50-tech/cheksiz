@@ -19,3 +19,12 @@ Ssenariy: `SSENARIY.md`. Rasm promptlari: `rasm_promptlar.py` (arxiv sahifa `ras
 | 3 | clips/s03_v2.mp4 | ✅ ASOSIY | 0–7.9 s | Barmoq oxirigacha ichkarida, uchqunlar |
 | 4 | clips/s04_v2.mp4 | ❌ | — | Yana 1.3–2.8 s da bosh kadrdan chiqadi, oxirida monitor qizil yonadi; s04 (3.5–7.9) qoladi |
 | 5 | clips/s05_v2.mp4 | ✅ ASOSIY | 0–4.5 s | Varaq muzlatkichda qoladi; 4.5 s dan keyin bug' og'iz yonida — kesiladi |
+
+## 6–9-sahna kliplari (2026-11-08)
+| Sahna | Fayl | Holat | Qism | Izoh |
+|---|---|---|---|---|
+| 6 | clips/s06.mp4 | ✅ | 0–7.9 s | Yuz to'g'ri; ~1.5 s da kapyushon boshidan tushadi (kichik) |
+| 7 | clips/s07.mp4 | ❌ qayta | zaxira 0–1.5 s | 2 s dan yuz katta odamga aylanadi, ko'zlar bo'rtadi, yuzga qizil nur — Veo xatosi (rasm to'g'ri). Prompt: statik kamera, ifoda kam |
+| 7b | clips/s07b.mp4 | ✅ | 0–4.0 s | BANK to'g'ri; 4 s dan kamera chapga ketib yozuv kesiladi, Diyor yo'lakka emas bino bo'ylab yuradi |
+| 9 | clips/s09.mp4 | ✅ | 0–7.9 s | Yuz yosh, oltin va pul, neon joyida |
+5-sahna: egasi yuborgan «1c04b60e» fayli s05_v2 bilan bir xil (md5 75613f84).
