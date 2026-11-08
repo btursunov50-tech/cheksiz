@@ -50,3 +50,4 @@ Hamma 13 sahna klipi tayyor → keyingi qadam: avatar ovozi (WAV), so'ng /video-
 - Ovoz: `narration_v3.wav` (3 qator, 2 BIP ✓) → `voice/l1.wav` (8.96 s, «To'xtang!» dan keyingi pauza 0.9→0.35 s), `voice/l2.wav` (11.8 s, «aylansa…» pauzasi 2.0→1.5 s; 11-sahna boshidan), `voice/l3.wav` (4.9 s, avatar). Eski fayllar `voice/eski/`.
 - 7b: `clips/s07b_v2.mp4` (Gemini/Veo, 10 s, belgisiz) — yuz o'zgarmaydi, BANK butun klipda, statik kamera; 0–5 s ishlatiladi. Diyor yo'lakka emas, bino tomon uzoqlashadi (8-sahna bilan ziddiyat yo'q).
 - Oyat 9 s.
+- 9: egasi «yuzi o'zgarib qolgan» — tasdiqlandi: 2 s dan orbit paytida yuz boshqa odamga aylanadi (Veo). Prompt: statik kamera, aylanmaydi. Yangi klip kutilmoqda.
