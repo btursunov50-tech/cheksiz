@@ -4,7 +4,6 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 
 | Papka | Video | Joylash kuni |
 |---|---|---|
-| `robot/` | «Robot bilan bir piyola choy» (2:45): robot va lavash do'koni egasi choyxonada; kamera, AI-shifokor, yurist, parol so'ragan «AI» — firibgar; botga chaqiriq ekranda (fayllar: `1-telegram-robot-uz.mp4`, `2-youtube-linkedin-robot-en.mp4`, `3-instagram-facebook-robot-ru.mp4`, `robot-uz/en/ru.srt`; matnlar `video/robot/POSTS.md`; musiqa: Dutar's Whisper) | 7-noyabr |
 
 | `chegirma/` | «70 foiz chegirma»: Diyor va Usta, «-70%» yorlig'i aslida 43%; 3 tekshiruv; hazil — o'tib ketgan qiz; bot yorliq suratidan haqiqiy foizni hisoblaydi (fayllar: `1-telegram-chegirma-uz.mp4`, `2-youtube-linkedin-chegirma-en.mp4`, `3-instagram-facebook-chegirma-ru.mp4`, `chegirma-uz/en/ru.srt`; matnlar `video/chegirma/POSTS.md`; musiqa: Doira and the Robot, Suno) | 9-noyabr |
 | `eskirish/` | «Telefoning eskirmagan» (2:22): Diyor va Usta; Phoebus karteli (1924) va 2017 telefon sekinlashtirish voqeasi; 3 tekshiruv; bot batareya holatini tekshirishni o'rgatadi (fayllar: `1-telegram-eskirish-uz.mp4`, `2-youtube-linkedin-eskirish-en.mp4`, `3-instagram-facebook-eskirish-ru.mp4`, `eskirish-uz/en/ru.srt`; matnlar `video/eskirish/POSTS.md`; musiqa: Doira and the Robot, Suno; ovoz 0.8x, oxirgi 2 gap 0.7x) | navbatda |
