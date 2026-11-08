@@ -103,7 +103,7 @@ run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/se
 TOT = STORY + AV + END
 # 7) ovoz: musiqa 2 qism + shamol + sfx
 s10 = sum(d_ for _, _, d_ in SC[:10]); s10b = s10 + SC[10][2]
-M1 = f"{R}/video/robot/music/curious_unease.mp3"; M2 = f"{R}/video/korish/music/Nocturnal_Tension.mp3"
+M1 = f"{R}/video/korish/music/Nocturnal_Pressure.mp3"  # egasi: boshidagi musiqa almashtirilsin (Curious Unease o'rniga); M2 = f"{R}/video/korish/music/Nocturnal_Tension.mp3"
 run(["ffmpeg", "-v", "error", "-y",
      "-i", M1, "-i", M2,
      "-f", "lavfi", "-t", str(SC[10][2] + 2), "-i", "anoisesrc=c=brown:a=0.6,lowpass=f=900,highpass=f=120,tremolo=f=0.4:d=0.6",
@@ -114,7 +114,7 @@ run(["ffmpeg", "-v", "error", "-y",
      f"[m1][m2][w]amix=inputs=3:normalize=0,apad=whole_dur={TOT},atrim=0:{TOT}[a]",
      "-map", "[a]", "-ar", "48000", "-ac", "2", f"{W}/mus.wav"])
 run(["bash", f"{R}/video/sfx.sh", f"{W}/mus.wav", f"{W}/mix0.wav", " ".join(str(c) for c in cuts)])
-a2 = sum(d_ for _, _, d_ in SC[:12]) + 0.3; a3 = STORY + 0.3  # 2-qator seyf sahnasi (11) boshida, 3-qator avatarda
+a2 = 54.0;  # egasi: 2-gap 0:54 dan a3 = STORY + 0.3  # 2-qator seyf sahnasi (11) boshida, 3-qator avatarda
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/mix0.wav", "-i", f"{V}/l1.wav", "-i", f"{V}/l2.wav", "-i", f"{V}/l3.wav", "-filter_complex",
      f"[1:a]aresample=48000,aformat=channel_layouts=stereo,adelay=300|300[v1];[2:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a2*1000)}|{int(a2*1000)}[v2];"
      f"[3:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a3*1000)}|{int(a3*1000)}[v3];[v1][v2][v3]amix=inputs=3:normalize=0,volume=1.6,apad=whole_dur={TOT}[vo];"
