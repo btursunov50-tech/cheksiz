@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """«G'azabda sukut» rolikni yig'adi. python3 video/sukut/build.py <work> [uz|ru|en] → <work>/<lang>/sukut_<lang>.mp4 (+ .srt)
 Tepada hikoyachi gapi (katta), pastda oyat ma'nosi + «Qur'oni Karimdan» (raqamsiz, egasi 2026-11-08).
-1-sahna: «To'xtang!» da kadr qotadi, kulrang (1.1 s). Hikoyadan keyin 7 ta oyat alohida kartalarda, sura nomi va raqami bilan (ovozsiz, musiqa ostida), keyin bot kartasi.
+1-sahna: «To'xtang!» da kadr qotadi, kulrang (1.1 s). Har sahnada: avval subtitr, gap tugagach o'sha joyda oyat + sura nomi va raqami (egasi 2026-11-09).
 Musiqa: «The Silk Road» (egasining treki) boshidan, ovoz ostida (sidechain)."""
 import os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -30,14 +30,21 @@ T = {
 }[LANG]
 # (klip, boshi, davomiyligi)
 SC = [("s01", 0, 7.6), ("s02", 0, 5.5), ("s03", 0, 4.6), ("s04", 0, 5.0), ("s05", 0, 7.0), ("s06", 0, 5.0), ("s07", 0, 6.0), ("s08", 0, 7.9)]
-AYD, BOT, END = 3.4, 7.0, 4.0  # egasi 2026-11-09: oyatlar sahnalarda emas, 0:49 dan alohida-alohida, sura va raqami bilan
-QUR = AYD * 7
+BOT, END = 7.0, 4.0
+# egasi 2026-11-09: har sahnada avval subtitr (gap tugashi bilan yo'qoladi), keyin o'sha joyda oyat + sura nomi va raqami
+VS0, GAP = 0.3, 0.15
+AYNEED = [max(3.6, len(a.split()) * 0.24) for a in T["ayah"]]
+CLIPLEN = {"s05": 7.0}
 VL = [dur(f"{V}/{i:02}_usta.wav") for i in range(1, 11)]
 AV = round(0.3 + VL[9] + 0.8, 2)
+SLOW = {}
+for i in range(1, 8):
+    c = SC[i][0]; L = CLIPLEN.get(c, 7.9); need = round(VS0 + VL[i] + GAP + AYNEED[i - 1] + 0.2, 2)
+    d = max(SC[i][2], need); f = min(1.25, max(1.0, d / L)); SLOW[i] = f; SC[i] = (c, 0, round(min(d, L * f), 2))
 FREEZE = (1.9, 1.1)   # 1-sahna: klipning 1.9 s da kadr qotadi, 1.1 s
 segs = []
 for i, (c, s, d) in enumerate(SC):
-    o = f"{CW}/c{i}.mp4"
+    o = f"{CW}/c{i}_{d}.mp4"
     if os.path.exists(o): segs.append(o); continue
     if i == 0:
         f0, fd = FREEZE
@@ -47,8 +54,8 @@ for i, (c, s, d) in enumerate(SC):
              f"[c]trim={f0}:{d - fd},setpts=PTS-STARTPTS[p2];[p1][fr][p2]concat=n=3:v=1,format=yuv420p[v]",
              "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
     else:
-        run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-t", str(d), "-i", f"{C}/{c}.mp4", "-vf",
-             "scale=1080:1920:flags=lanczos,fps=30,setsar=1,format=yuv420p", "-an", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
+        run(["ffmpeg", "-v", "error", "-y", "-ss", str(s), "-i", f"{C}/{c}.mp4", "-vf",
+             f"setpts={SLOW.get(i, 1.0):.3f}*(PTS-STARTPTS),trim=0:{d},setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,fps=30,setsar=1,format=yuv420p", "-an", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
     segs.append(o)
 def wrap(d, text, font, maxw):
     ls, cur = [], ""
@@ -63,13 +70,6 @@ def card(path, lines_spec, bg=(10, 12, 20)):
     for txt, sz, font, col, gap in lines_spec:
         d.text(((1080 - d.textlength(txt, font=F(sz, font))) / 2, y), txt, font=F(sz, font), fill=col); y += sz + gap
     im.save(path)
-dd0 = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-ay = []
-for k in range(7):
-    lines = [(l, 58, IT, (255, 240, 210), 18) for l in wrap(dd0, T["ayah"][k], F(58, IT), 920)]
-    card(f"{W}/ayah_c{k}.png", lines + [("", 10, B, (0, 0, 0), 30), (T["refs"][k], 44, BL, (242, 200, 110), 10)], bg=(12, 10, 8))
-    run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-t", str(AYD), "-i", f"{W}/ayah_c{k}.png", "-vf", f"fade=t=in:d=0.35,fade=t=out:st={AYD - 0.35}:d=0.35,format=yuv420p,fps=30", "-c:v", "libx264", "-crf", "18", f"{W}/ayah_c{k}.mp4"])
-    ay.append(f"{W}/ayah_c{k}.mp4")
 im = Image.new("RGB", (1080, 1920), (8, 12, 26)); d = ImageDraw.Draw(im); y = 520
 for l in T["b1"]: d.text(((1080 - d.textlength(l, font=F(66))) / 2, y), l, font=F(66), fill="white"); y += 86
 y += 50
@@ -78,14 +78,13 @@ h = "@sahiychishopbot"; fh = F(76, BL); tw = d.textlength(h, font=fh); y += 70
 d.rounded_rectangle([(1080 - tw) / 2 - 40, y - 20, (1080 + tw) / 2 + 40, y + 130], radius=30, fill=(30, 160, 230)); d.text(((1080 - tw) / 2, y), h, font=fh, fill="white")
 im.save(f"{W}/bot.png")
 run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-t", str(BOT), "-i", f"{W}/bot.png", "-vf", "zoompan=z='1+0.0005*on':d=1:s=1080x1920:fps=30,fade=t=in:d=0.4,format=yuv420p", "-c:v", "libx264", "-crf", "18", f"{W}/bot.mp4"])
-segs += ay + [f"{W}/bot.mp4"]
+segs += [f"{W}/bot.mp4"]
 open(f"{W}/seq.txt", "w").write("".join(f"file '{x}'\n" for x in segs))
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq.txt", "-c", "copy", f"{W}/story.mp4"])
 starts, t = [], 0
 for _, _, d_ in SC: starts.append(round(t, 2)); t += d_
 starts.append(round(t, 2))
-for k in range(1, 7): starts.append(round(t + AYD * k, 2))
-starts.append(round(t + QUR, 2)); STORY = t + QUR + BOT
+STORY = t + BOT
 cine = f"{W0}/cine_story.mp4"
 if not os.path.exists(cine): run(["bash", f"{R}/video/cine.sh", f"{W}/story.mp4", cine, " ".join(str(c) for c in starts[1:])])
 # yozuvlar
@@ -98,7 +97,7 @@ def txtpng(path, text, size, col, maxw=940, box=(0, 0, 0, 150), font=B, small=No
     im.save(path)
 VS = []  # (ovoz qatori, boshlanish)
 VS.append((0, 0.3)); fr0 = 0.3 + 0.92  # «To'xtang!» tugashi
-for k in range(1, 8): VS.append((k, starts[k] + 0.4))
+for k in range(1, 8): VS.append((k, starts[k] + VS0))
 VS.append((8, STORY - BOT + 0.4)); a10 = STORY + 0.3; VS.append((9, a10))
 ov, fl = [], []
 txtpng(f"{W}/hook.png", T["hook"], 110, (255, 70, 70), font=BL, box=(0, 0, 0, 0)); ov.append(("hook.png", 120, 0.2, FREEZE[0] + FREEZE[1]))
@@ -106,7 +105,10 @@ for k in range(8):
     a = VS[k][1]; b = a + VL[k] + (0.4 if k else 0)
     txtpng(f"{W}/say{k}.png", T["say"][k] if k else T["say"][0].split("!", 1)[1].strip(), 54, "white")
     if k == 0: a = FREEZE[0] + FREEZE[1]
-    ov.append((f"say{k}.png", 1440, a, min(b, starts[k + 1] - 0.1)))
+    ov.append((f"say{k}.png", 1440, a, min(VS[k][1] + VL[k] + 0.05 if k else b, starts[k + 1] - 0.1)))
+for k in range(1, 8):
+    txtpng(f"{W}/ayah{k}.png", T["ayah"][k - 1], 46, (255, 240, 210), font=IT, box=(10, 8, 4, 185), small=T["refs"][k - 1])
+    ov.append((f"ayah{k}.png", 1300, VS[k][1] + VL[k] + GAP, starts[k + 1] - 0.15))
 args = ["ffmpeg", "-v", "error", "-y", "-i", cine]; parts = []; prev = "0:v"
 for n, (png, y, a, b) in enumerate(ov, 1):
     args += ["-i", f"{W}/{png}"]; parts.append(f"[{prev}][{n}:v]overlay=0:{y}:enable='between(t,{a:.2f},{b:.2f})'[o{n}]"); prev = f"o{n}"
