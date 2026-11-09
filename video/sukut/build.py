@@ -106,7 +106,7 @@ for k in range(8):
     a = VS[k][1]; b = a + VL[k] + (0.4 if k else 0)
     txtpng(f"{W}/say{k}.png", T["say"][k] if k else T["say"][0].split("!", 1)[1].strip(), 54, "white")
     if k == 0: a = FREEZE[0] + FREEZE[1]
-    ov.append((f"say{k}.png", 260, a, min(b, starts[k + 1] - 0.1)))
+    ov.append((f"say{k}.png", 1440, a, min(b, starts[k + 1] - 0.1)))
 args = ["ffmpeg", "-v", "error", "-y", "-i", cine]; parts = []; prev = "0:v"
 for n, (png, y, a, b) in enumerate(ov, 1):
     args += ["-i", f"{W}/{png}"]; parts.append(f"[{prev}][{n}:v]overlay=0:{y}:enable='between(t,{a:.2f},{b:.2f})'[o{n}]"); prev = f"o{n}"
