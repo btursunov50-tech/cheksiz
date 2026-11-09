@@ -123,8 +123,8 @@ open(f"{W}/seq2.txt", "w").write("".join(f"file '{x}'\n" for x in [f"{W}/main_v.
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq2.txt", "-c", "copy", f"{W}/allv.mp4"])
 TOT = STORY + AV + END
 # ovoz: musiqa + tiqillash (qotish payti) + sfx + hikoyachi (ducking)
-M = f"{R}/video/robot/music/the_silk_road.mp3"  # egasi 2026-11-09: musiqa almashtirildi (Dutar's Whisper o'rniga)
-run(["ffmpeg", "-v", "error", "-y", "-ss", "0", "-t", str(TOT + 1), "-i", M,
+M = os.environ.get("MUS", f"{R}/video/robot/music/the_silk_road.mp3")  # egasi 2026-11-09: musiqa almashtirildi (Dutar's Whisper o'rniga)
+run(["ffmpeg", "-v", "error", "-y", "-ss", os.environ.get("MUS_SS", "0"), "-t", str(TOT + 1), "-i", M,
      "-f", "lavfi", "-t", str(FREEZE[1]), "-i", "aevalsrc='0.6*sin(2*PI*1800*t)*exp(-60*mod(t,0.5))':s=48000",
      "-filter_complex", f"[0:a]afade=t=in:d=1.5,afade=t=out:st={TOT - 3}:d=3,volume=0.7,aresample=48000,aformat=channel_layouts=stereo[m];"
      f"[1:a]adelay={int(FREEZE[0]*1000)}|{int(FREEZE[0]*1000)},aformat=channel_layouts=stereo[k];[m][k]amix=inputs=2:normalize=0,atrim=0:{TOT}[a]",
@@ -135,7 +135,7 @@ for j, (k, a) in enumerate(VS):
     ins += ["-i", f"{V}/{k + 1:02}_usta.wav"]; fc += f"[{j + 1}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(a * 1000)}|{int(a * 1000)}[v{j}];"; labs += f"[v{j}]"
 fc += f"{labs}amix=inputs={len(VS)}:normalize=0,volume=1.6,apad=whole_dur={TOT}[vo];[vo]asplit[vk][vm];[0:a][vk]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];[md][vm]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[o]"
 run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", fc, "-map", "[o]", "-ar", "48000", f"{W}/mix.wav"])
-run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/allv.mp4", "-i", f"{W}/mix.wav", "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", f"{W}/sukut_{LANG}.mp4"])
+run(["ffmpeg", "-v", "error", "-y", "-i", f"{W}/allv.mp4", "-i", f"{W}/mix.wav", "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", f"{W}/sukut_{LANG}{os.environ.get('TAG', '')}.mp4"])
 def ts(x): return f"{int(x//3600):02}:{int(x%3600//60):02}:{int(x%60):02},{int(round(x%1*1000)):03}"
 open(f"{W}/sukut-{LANG}.srt", "w").write("".join(f"{i+1}\n{ts(a)} --> {ts(a + VL[k])}\n{T['say'][k]}\n\n" for i, (k, a) in enumerate(VS)))
 print("starts", starts, "story", round(STORY, 1), "total", round(TOT, 1))
