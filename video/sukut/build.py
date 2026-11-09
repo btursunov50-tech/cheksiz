@@ -2,7 +2,7 @@
 """«G'azabda sukut» rolikni yig'adi. python3 video/sukut/build.py <work> [uz|ru|en] → <work>/<lang>/sukut_<lang>.mp4 (+ .srt)
 Tepada hikoyachi gapi (katta), pastda oyat ma'nosi + «Qur'oni Karimdan» (raqamsiz, egasi 2026-11-08).
 1-sahna: «To'xtang!» da kadr qotadi, kulrang (1.1 s). Hikoyadan keyin 7 ta oyat alohida kartalarda, sura nomi va raqami bilan (ovozsiz, musiqa ostida), keyin bot kartasi.
-Musiqa: «Dutar's Whisper» (egasining treki) 3:17 dan, ovoz ostida (sidechain)."""
+Musiqa: «The Silk Road» (egasining treki) boshidan, ovoz ostida (sidechain)."""
 import os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -121,8 +121,8 @@ open(f"{W}/seq2.txt", "w").write("".join(f"file '{x}'\n" for x in [f"{W}/main_v.
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq2.txt", "-c", "copy", f"{W}/allv.mp4"])
 TOT = STORY + AV + END
 # ovoz: musiqa + tiqillash (qotish payti) + sfx + hikoyachi (ducking)
-M = f"{R}/video/robot/music/dutars_whisper.mp3"
-run(["ffmpeg", "-v", "error", "-y", "-ss", "197", "-t", str(TOT + 1), "-i", M,
+M = f"{R}/video/robot/music/the_silk_road.mp3"  # egasi 2026-11-09: musiqa almashtirildi (Dutar's Whisper o'rniga)
+run(["ffmpeg", "-v", "error", "-y", "-ss", "0", "-t", str(TOT + 1), "-i", M,
      "-f", "lavfi", "-t", str(FREEZE[1]), "-i", "aevalsrc='0.6*sin(2*PI*1800*t)*exp(-60*mod(t,0.5))':s=48000",
      "-filter_complex", f"[0:a]afade=t=in:d=1.5,afade=t=out:st={TOT - 3}:d=3,volume=0.7,aresample=48000,aformat=channel_layouts=stereo[m];"
      f"[1:a]adelay={int(FREEZE[0]*1000)}|{int(FREEZE[0]*1000)},aformat=channel_layouts=stereo[k];[m][k]amix=inputs=2:normalize=0,atrim=0:{TOT}[a]",
