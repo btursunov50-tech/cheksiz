@@ -123,7 +123,7 @@ open(f"{W}/seq2.txt", "w").write("".join(f"file '{x}'\n" for x in [f"{W}/main_v.
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq2.txt", "-c", "copy", f"{W}/allv.mp4"])
 TOT = STORY + AV + END
 # ovoz: musiqa + tiqillash (qotish payti) + sfx + hikoyachi (ducking)
-M = os.environ.get("MUS", f"{R}/video/robot/music/the_silk_road.mp3")  # egasi 2026-11-09: musiqa almashtirildi (Dutar's Whisper o'rniga)
+M = os.environ.get("MUS", f"{R}/video/robot/music/kafeda_inson_va_robot.mp3")  # egasi tanladi, 2026-11-09
 run(["ffmpeg", "-v", "error", "-y", "-ss", os.environ.get("MUS_SS", "0"), "-t", str(TOT + 1), "-i", M,
      "-f", "lavfi", "-t", str(FREEZE[1]), "-i", "aevalsrc='0.6*sin(2*PI*1800*t)*exp(-60*mod(t,0.5))':s=48000",
      "-filter_complex", f"[0:a]afade=t=in:d=1.5,afade=t=out:st={TOT - 3}:d=3,volume=0.7,aresample=48000,aformat=channel_layouts=stereo[m];"
