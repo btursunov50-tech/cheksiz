@@ -2,7 +2,7 @@
 """«G'azabda sukut» rolikni yig'adi. python3 video/sukut/build.py <work> [uz|ru|en] → <work>/<lang>/sukut_<lang>.mp4 (+ .srt)
 Tepada hikoyachi gapi (katta), pastda oyat ma'nosi + «Qur'oni Karimdan» (raqamsiz, egasi 2026-11-08).
 1-sahna: «To'xtang!» da kadr qotadi, kulrang (1.1 s). Har sahnada: avval subtitr, gap tugagach o'sha joyda oyat + sura nomi va raqami (egasi 2026-11-09).
-Musiqa: «The Silk Road» (egasining treki) boshidan, ovoz ostida (sidechain)."""
+Musiqa: «Kafeda inson va robot» boshidan (egasi 2026-11-09). ru/en: ovoz o'zbekcha, yozuvlar tarjima, ovoz ostida (sidechain)."""
 import os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -14,7 +14,7 @@ dur = lambda f: float(subprocess.run(["ffprobe", "-v", "error", "-show_entries",
 B = "/usr/share/fonts/opentype/inter/Inter-Bold.otf"; BL = "/usr/share/fonts/opentype/inter/Inter-Black.otf"; IT = "/usr/share/fonts/opentype/inter/Inter-SemiBoldItalic.otf"
 if not os.path.exists(IT): IT = B
 F = lambda s, f=B: ImageFont.truetype(f, s)
-T = {
+T_ALL = {
  "uz": dict(say=["To'xtang! Shu izohga javob yozishdan oldin buni ko'ring.", "G'azab kelganda jim turish — kuchsizlik emas, kuch.", "Hasadga tabassum bilan javob bering.",
    "Qo'zg'atuvchiga javob bermaslik — aql.", "Befoyda bahsdan o'z vaqtida chiqing.", "Bosim ostida xotirjam bo'ling.", "Kechira olgan odam — g'olib.", "Bugun bitta odamni kechiring.",
    "Jahlingizni chiqargan xabarni @sahiychishopbot'ga yuboring: xotirjam va hurmatli javob yozishga yordam beradi.", "Siz-chi? Oxirgi marta qachon jim turib, yutdingiz? Izohga yozing!"],
@@ -27,13 +27,38 @@ T = {
   refs=["Oli Imron surasi, 134-oyat", "Fussilat surasi, 34-oyat", "Furqon surasi, 63-oyat", "Qasas surasi, 55-oyat", "Baqara surasi, 153-oyat", "A'rof surasi, 199-oyat", "Nur surasi, 22-oyat"],
   b1=["Jahlingizni chiqargan", "xabar keldimi?"], b2=["Botga yuboring:", "xotirjam va hurmatli", "javob yozishga yordam beradi"],
   avq="Siz-chi?|Oxirgi marta qachon jim turib, yutdingiz?|Izohga yozing!"),
-}[LANG]
+ "ru": dict(say=["Стоп! Прежде чем ответить на этот комментарий, посмотрите это.", "Промолчать в гневе — не слабость, а сила.", "На зависть отвечайте улыбкой.",
+   "Не отвечать провокатору — это ум.", "Вовремя выходите из пустого спора.", "Под давлением сохраняйте спокойствие.", "Тот, кто умеет прощать, — победитель.", "Простите сегодня одного человека.",
+   "Пришло сообщение, которое вас разозлило? Отправьте его @sahiychishopbot: он поможет написать спокойный и вежливый ответ.", "А вы? Когда вы в последний раз промолчали и победили? Пишите в комментариях!"],
+  ayah=["«...сдерживают гнев и прощают людей. Аллах любит творящих добро.»",
+   "«Оттолкни зло тем, что лучше, и тогда тот, с кем у тебя вражда, станет словно близкий друг.»",
+   "«Когда невежды обращаются к ним, они говорят: \"Мир!\"»", "«Когда они слышат пустословие, они отворачиваются от него.»",
+   "«Обращайтесь за помощью к терпению и намазу. Воистину, Аллах — с терпеливыми.»", "«Будь снисходителен, побуждай к добру и отворачивайся от невежд.»",
+   "«Пусть они прощают и проявляют снисходительность. Разве вы не хотите, чтобы Аллах простил вас?»"],
+  src="Из Священного Корана", hook="СТОП!",
+  refs=["Сура Аль Имран, аят 134", "Сура Фуссылат, аят 34", "Сура Аль-Фуркан, аят 63", "Сура Аль-Касас, аят 55", "Сура Аль-Бакара, аят 153", "Сура Аль-Араф, аят 199", "Сура Ан-Нур, аят 22"],
+  b1=["Пришло сообщение,", "которое вас разозлило?"], b2=["Отправьте боту:", "он поможет написать", "спокойный и вежливый ответ"],
+  avq="А вы?|Когда вы в последний раз промолчали и победили?|Пишите в комментариях!"),
+ "en": dict(say=["Stop! Before you reply to that comment, watch this.", "Staying silent in anger is not weakness. It is strength.", "Answer envy with a smile.",
+   "Not answering a provoker is wisdom.", "Leave a pointless argument in time.", "Stay calm under pressure.", "The one who can forgive is the winner.", "Forgive one person today.",
+   "Got a message that made you angry? Send it to @sahiychishopbot: it helps you write a calm, respectful reply.", "And you? When did you last stay silent and win? Tell us in the comments!"],
+  ayah=["“...who restrain anger and pardon people. Allah loves those who do good.”",
+   "“Repel evil with what is better, and the one with whom you had enmity will become like a close friend.”",
+   "“When the ignorant address them, they say: Peace.”", "“When they hear idle talk, they turn away from it.”",
+   "“Seek help through patience and prayer. Indeed, Allah is with the patient.”", "“Show forgiveness, enjoin what is good and turn away from the ignorant.”",
+   "“Let them pardon and overlook. Would you not like Allah to forgive you?”"],
+  src="From the Holy Quran", hook="STOP!",
+  refs=["Surah Al Imran, 3:134", "Surah Fussilat, 41:34", "Surah Al-Furqan, 25:63", "Surah Al-Qasas, 28:55", "Surah Al-Baqarah, 2:153", "Surah Al-A'raf, 7:199", "Surah An-Nur, 24:22"],
+  b1=["Got a message that", "made you angry?"], b2=["Send it to the bot:", "it helps you write", "a calm, respectful reply"],
+  avq="And you?|When did you last stay silent and win?|Tell us in the comments!"),
+}
+T = T_ALL[LANG]
 # (klip, boshi, davomiyligi)
 SC = [("s01", 0, 7.6), ("s02", 0, 5.5), ("s03", 0, 4.6), ("s04", 0, 5.0), ("s05", 0, 7.0), ("s06", 0, 5.0), ("s07", 0, 6.0), ("s08", 0, 7.9)]
 BOT, END = 7.0, 4.0
 # egasi 2026-11-09: har sahnada avval subtitr (gap tugashi bilan yo'qoladi), keyin o'sha joyda oyat + sura nomi va raqami
 VS0, GAP = 0.3, 0.15
-AYNEED = [max(3.6, len(a.split()) * 0.24) for a in T["ayah"]]
+AYNEED = [max(3.6, len(a.split()) * 0.24) for a in T_ALL["uz"]["ayah"]]  # vaqtlar hamma tilda bir xil (o'zbekcha ovoz)
 CLIPLEN = {"s05": 7.0}
 VL = [dur(f"{V}/{i:02}_usta.wav") for i in range(1, 11)]
 AV = round(0.3 + VL[9] + 0.8, 2)
@@ -85,7 +110,7 @@ starts, t = [], 0
 for _, _, d_ in SC: starts.append(round(t, 2)); t += d_
 starts.append(round(t, 2))
 STORY = t + BOT
-cine = f"{W0}/cine_story.mp4"
+cine = f"{W0}/cine_story_{LANG}.mp4"  # bot kartasi tilga qarab
 if not os.path.exists(cine): run(["bash", f"{R}/video/cine.sh", f"{W}/story.mp4", cine, " ".join(str(c) for c in starts[1:])])
 # yozuvlar
 def txtpng(path, text, size, col, maxw=940, box=(0, 0, 0, 150), font=B, small=None):

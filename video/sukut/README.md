@@ -34,3 +34,6 @@ Egasi (2026-11-09): oyatlar sahnalar ostida emas (subtitr bilan ekranni yopib qo
 
 ## Musiqa
 «Kafeda inson va robot» (`video/robot/music/kafeda_inson_va_robot.mp3`, boshidan). Egasi 2026-11-09 da 3 ta namunadan B ni tanladi (Dutar's Whisper va The Silk Road yoqmadi).
+
+## Tayyor (2026-11-09)
+`python3 video/sukut/build.py <work> uz|ru|en` → uch til; ovoz o'zbekcha, yozuvlar (subtitr, oyat, bot kartasi, avatar savoli) tarjima. Fayllar `video/final/sukut/`, matnlar `POSTS.md`, joylash kuni 23-noyabr. Bot mavzusi «jahl chiqargan xabarga xotirjam javob» `bot/knowledge.js` ga qo'shildi.
