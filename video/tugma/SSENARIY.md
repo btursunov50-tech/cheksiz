@@ -15,3 +15,9 @@ Hook (en): «Stop counting with a calculator. One key does it in a second.» —
 | 8 | Ayol jilmayib noutbukni yopadi | Ish ikki soat emas, ikki daqiqa bo'ldi. |
 | 9 | @sahiychishopbot katta | Excel yoki Word'da qayerda qotib qoldingiz? Ekran rasmini @sahiychishopbot'ga yuboring: qaysi tugmani bosishni qadamma-qadam ko'rsatadi. |
 | 10 | Avatar | Siz-chi? Excel'da qaysi ish sizga eng qiyin? Izohga yozing! |
+
+## Holat (2026-11-09)
+- Rasmlar tasdiqlandi: `img/s01, s02, s06, s08, s_qoshimcha` (sariq qog'oz + siyoh uslubi, neon ko'k chiroq, qizil kalkulyator).
+- Ovoz: `narration.wav` → `voice/01–10_usta.wav` (5.6, 5.7, 6.1, 5.3, 8.4, 13.4, 5.6, 3.1, 8.7, 4.7 s).
+- Veo promptlari: `video_promptlar.py` → `sahnalar.html`, https://claude.ai/artifact/X7Nz5LrKkUFyQoEPa4WSMA
+- Kodda chiziladi: 3 (Alt+=), 4 (Ctrl+T), 5 (Ctrl+E), 6-sahnaning Word qismi, 7 (PDF), 9 (bot), 10 (avatar). Sinov: Excel jadvali shu uslubda.
