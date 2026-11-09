@@ -209,6 +209,48 @@ async function countAnswer(chatId) {
   return n;
 }
 
+// Images (owner, 2026-11-09): Claude looks at most at 2 images per chat (30 days);
+// from the 3rd image on (or once the answer limit is used up) the image goes to the owner.
+const MAX_IMAGES = Number(process.env.BOT_MAX_IMAGES) || 2;
+const imageCounts = new Map();
+async function countImage(chatId) {
+  if (REDIS_URL && REDIS_TOKEN) {
+    try {
+      const key = `iam:images:${chatId}`;
+      const n = Number(await redis("INCR", key));
+      if (n === 1) await redis("EXPIRE", key, HISTORY_TTL_SECONDS);
+      return n;
+    } catch (err) {
+      console.error("Image count failed:", err.message);
+    }
+  }
+  const n = (imageCounts.get(chatId) || 0) + 1;
+  imageCounts.set(chatId, n);
+  return n;
+}
+
+function imageSentText(lang) {
+  const l = (lang || "").slice(0, 2);
+  if (l === "ru") return `Ваше изображение отправлено нашему менеджеру, он сам ответит вам 🙏 Можно написать и напрямую: ${MANAGER_URL}`;
+  if (l === "en") return `Your image has been sent to our manager, who will answer you personally 🙏 You can also write directly: ${MANAGER_URL}`;
+  return `Rasmingiz menejerimizga yuborildi, u sizga o'zi javob beradi 🙏 To'g'ridan-to'g'ri yozish ham mumkin: ${MANAGER_URL}`;
+}
+
+async function imageToOwner(msg, from) {
+  const chatId = msg.chat.id;
+  if (OWNER_CHAT_ID) {
+    const who = [from.first_name, from.last_name].filter(Boolean).join(" ") || "Mijoz";
+    const user = from.username ? `@${from.username}` : `ID ${chatId}`;
+    await tg("sendMessage", { chat_id: OWNER_CHAT_ID, text: `🖼 ${who} (${user}) botga rasm yubordi (bot 2 tadan ortiq rasmni o'zi ko'rmaydi). Javob bering: tg://user?id=${chatId}` });
+    await tg("forwardMessage", { chat_id: OWNER_CHAT_ID, from_chat_id: chatId, message_id: msg.message_id });
+  } else {
+    console.warn("OWNER_CHAT_ID is not set; image not forwarded");
+  }
+  await sendText(chatId, imageSentText(from.language_code), {
+    reply_markup: { inline_keyboard: [[{ text: `💬 ${MANAGER}`, url: MANAGER_URL }]] },
+  });
+}
+
 function managerText(lang) {
   const l = (lang || "").slice(0, 2);
   if (l === "ru") return `Я ответил на ваши вопросы 🙏 Остальное вы решите с нашим менеджером, напишите менеджеру: ${MANAGER_URL}`;
@@ -513,6 +555,10 @@ async function handleMessage(msg) {
   } else if (msg.video_note) {
     userText = `[The customer sent a round video message, which you cannot watch.]${langHint}`;
   } else if (msg.photo || (msg.document && IMAGE_TYPES.includes(msg.document.mime_type))) {
+    if (String(chatId) !== OWNER_CHAT_ID && !(await isDemo(chatId)) && (await countImage(chatId)) > MAX_IMAGES) {
+      await imageToOwner(msg, from);
+      return;
+    }
     await tg("sendChatAction", { chat_id: chatId, action: "typing" });
     const imageId = await uploadImage(msg);
     const caption = msg.caption ? ` with caption: "${msg.caption}"` : " without a caption";
@@ -532,6 +578,10 @@ async function handleMessage(msg) {
   if (!text.startsWith("/start") && !demo && String(chatId) !== OWNER_CHAT_ID) {
     const n = await countAnswer(chatId);
     if (n > MAX_ANSWERS) {
+      if (msg.photo || (msg.document && IMAGE_TYPES.includes(msg.document.mime_type))) {
+        await imageToOwner(msg, from);
+        return;
+      }
       await sendText(chatId, managerText(from.language_code), {
         reply_markup: { inline_keyboard: [[{ text: `💬 ${MANAGER}`, url: MANAGER_URL }]] },
       });
