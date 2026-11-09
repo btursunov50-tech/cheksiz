@@ -1,0 +1,40 @@
+1
+00:00:00,300 --> 00:00:06,767
+To'xtang! Shu izohga javob yozishdan oldin buni ko'ring.
+
+2
+00:00:07,900 --> 00:00:12,386
+G'azab kelganda jim turish — kuchsizlik emas, kuch.
+
+3
+00:00:16,640 --> 00:00:19,110
+Hasadga tabassum bilan javob bering.
+
+4
+00:00:23,600 --> 00:00:27,299
+Qo'zg'atuvchiga javob bermaslik — aql.
+
+5
+00:00:31,550 --> 00:00:34,321
+Befoyda bahsdan o'z vaqtida chiqing.
+
+6
+00:00:38,570 --> 00:00:42,437
+Bosim ostida xotirjam bo'ling.
+
+7
+00:00:46,690 --> 00:00:49,605
+Kechira olgan odam — g'olib.
+
+8
+00:00:53,860 --> 00:00:57,812
+Bugun bitta odamni kechiring.
+
+9
+00:01:02,160 --> 00:01:08,296
+Jahlingizni chiqargan xabarni @sahiychishopbot'ga yuboring: xotirjam va hurmatli javob yozishga yordam beradi.
+
+10
+00:01:09,060 --> 00:01:13,820
+Siz-chi? Oxirgi marta qachon jim turib, yutdingiz? Izohga yozing!
+
