@@ -29,3 +29,5 @@ Oyatlar (egasi 2026-11-08): ekranda sura nomi va oyat raqami YOZILMAYDI; faqat m
 | 7 | «Afv yo'lini tuting, yaxshilikka buyuring va johillardan yuz o'giring.» (A'rof 199) |
 | 8 | «Afv etsinlar va kechirsinlar. Alloh sizni mag'firat qilishini istamaysizmi?» (Nur 22) |
 Bot kartasidan oldin ovozsiz karta: «Bu so'zlar Qur'oni Karimdan olingan».
+
+Egasi (2026-11-09): oyatlar sahnalar ostida emas (subtitr bilan ekranni yopib qo'ydi); hikoyadan keyin (~0:49) 7 ta oyat alohida-alohida kartada, sura nomi va oyat raqami bilan. «Qur'oni Karimdan olingan» kartasi olib tashlandi.
