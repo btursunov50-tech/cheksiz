@@ -22,3 +22,6 @@ Hook (en): «Stop. Your phone has a free helper you've never used.» — 87.0 ST
 | 14 | Do'kon: QR menyu, sayt, xarita, video | Biznesingiz bormi? Sayt, QR menyu, bot va reklama videosini ham biz qilamiz. | — |
 | 15 | Katta @sahiychishopbot | Yozing: @sahiychishopbot. Oddiy, tushunarli, o'zbek tilida. | — |
 | 16 | Avatar | Siz-chi? Botdan birinchi nima so'rardingiz? Izohga yozing! | — |
+
+## Ovoz (2026-11-10)
+`narration.wav` → `voice/01–16_usta.wav` (16 qator, BIP bo'yicha ajratildi; jami ~96 s). Video keyinroq, «O'zligim» klipidan keyin.
