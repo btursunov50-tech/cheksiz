@@ -9,7 +9,7 @@ Rasmlar sahifa yonidagi web/ papkasida bo'lishi va Artifact publish'da `files` b
 """
 import html
 e = html.escape
-VEO_NEG = "Negative: no text, no letters, no numbers, no subtitles, no captions, no logos, no brand names, no watermarks, no extra people, no extra hands"
+VEO_NEG = "Negative: no text, no letters, no numbers, no subtitles, no captions, no logos, no brand names, no watermarks, no extra people, no extra hands, no ring above any head"
 def neon(name="Diyor"):
     return (f"{name}'s thin bright cyan-blue neon line runs exactly along his whole outer silhouette (hair, face, hoodie, arms, legs) with a soft blue glow; "
             "it moves with him in every frame and never disappears; nothing else in the frame has this outline.")
