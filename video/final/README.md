@@ -12,5 +12,7 @@ Bulutli sessiya tozalansa ham yo'qolmasligi uchun shu yerda saqlanadi. Sayt depl
 | `qora/` | «Qora kvadrat» (1:31, so'zsiz): Diyor Malevich kartinasini chop etadi, kvadrat — teshik; muzqaymoq, bankomat, bank seyfi; shamol varaqni uchiradi, u seyfda qoladi; oyat Takosur 1–2; bot «pulni ikki barobar» aldovini ko'rsatadi (fayllar: `1-telegram-qora-uz.mp4`, `2-youtube-linkedin-qora-en.mp4`, `3-instagram-facebook-qora-ru.mp4`, `qora-uz/en/ru.srt`; matnlar `video/qora/POSTS.md`; musiqa: Nocturnal Pressure + Nocturnal Tension, Suno) | 21-noyabr |
 | `sukut/` | «G'azabda sukut» (1:19): hikoyachi formati; Diyor 7 holatda jahlini tiyadi (avtobus, hasad, izoh, choyxona bahsi, ish bosimi, kechirish, onasi); har sahnada avval subtitr, keyin oyat ma'nosi + sura va oyat raqami; bot jahl chiqargan xabarga xotirjam javob yozishga yordam beradi (fayllar: `1-telegram-sukut-uz.mp4`, `2-youtube-linkedin-sukut-en.mp4`, `3-instagram-facebook-sukut-ru.mp4`, `sukut-uz/en/ru.srt`; matnlar `video/sukut/POSTS.md`; musiqa: Kafdada Inson va Robot, Suno; ovoz: o'zbekcha hikoyachi, hamma versiyada) | 23-noyabr |
 
+Keyingi: «Bitta tugma» (Excel/Word) — 25-noyabr; «Bepul yordamchi» (bot nima qiladi, hamma videolarning xulosasi) — ENG OXIRIDA, qolganlarining hammasi chiqqandan keyin (egasi, 2026-11-10).
+
 Fayllar: `1-telegram-*-uz.mp4` (Telegram), `2-youtube-linkedin-*-en.mp4` (YouTube + LinkedIn), `3-instagram-facebook-*-ru.mp4` (Instagram + Facebook), `*-uz.srt`, `*-ru.srt`, `*-en.srt` (YouTube subtitrlari).
 GitHub'dan yuklab olish: fayl ustiga bosing → «Download raw file».
