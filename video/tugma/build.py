@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """«Bitta tugma» (Excel/Word) rolikni yig'adi: python3 video/tugma/build.py <work> [uz|ru|en] → <work>/<lang>/tugma_<lang>.mp4 (+ .srt)
 Sahnalar: Veo kliplari (clips/*_toza.mp4, s02.mp4) + kodda chizilgan Excel/Word ekranlari (chiz/chiz.py). Ovoz o'zbekcha (voice/01–10), yozuvlar tilga qarab.
-Musiqa: MUS (standart Kafdada Inson va Robot) va MUS_SS."""
+Musiqa: Doira and the Robot (Suno, egasi) 8 s dan; MUS / MUS_SS bilan almashtiriladi."""
 import os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -98,8 +98,8 @@ run(["ffmpeg", "-v", "error", "-y", "-i", f"{R}/video/avatar.mp4", "-i", f"{W}/a
 open(f"{W}/seq2.txt", "w").write("".join(f"file '{x}'\n" for x in [f"{W}/main_v.mp4", f"{W}/av.mp4", f"{R}/video/end/end_{LANG}.mp4"]))
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq2.txt", "-c", "copy", f"{W}/allv.mp4"])
 END = 4.0; TOT = STORY + AV + END; VS.append((9, STORY + 0.3))
-M = os.environ.get("MUS", f"{R}/video/robot/music/kafeda_inson_va_robot.mp3")
-run(["ffmpeg", "-v", "error", "-y", "-ss", os.environ.get("MUS_SS", "0"), "-t", str(TOT + 1), "-i", M, "-filter_complex",
+M = os.environ.get("MUS", f"{R}/video/robot/music/doira_and_the_robot.mp3")  # egasi tanladi (A), 2026-11-10
+run(["ffmpeg", "-v", "error", "-y", "-ss", os.environ.get("MUS_SS", "8"), "-t", str(TOT + 1), "-i", M, "-filter_complex",
      f"[0:a]afade=t=in:d=1.5,afade=t=out:st={TOT - 3}:d=3,volume=0.7,aresample=48000,aformat=channel_layouts=stereo,atrim=0:{TOT}[a]", "-map", "[a]", "-ar", "48000", f"{W}/mus.wav"])
 run(["bash", f"{R}/video/sfx.sh", f"{W}/mus.wav", f"{W}/mix0.wav", " ".join(str(c) for c in starts[1:])])
 ins = ["-i", f"{W}/mix0.wav"]; fcs = ""; labs = ""
