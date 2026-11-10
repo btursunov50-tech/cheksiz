@@ -109,7 +109,7 @@ def s03(t):  # Alt + = (6.4 s)
         a = ramp(t, 4.0, .35); fr = "=SUM(B2:B6)"
         glow(im, lambda g, c: S.put(g, 2, 7, "91 500", col=c + (int(255 * a),), bold=True, right=True, sz=52), RED, 10); d = ImageDraw.Draw(im)
     fbar(d, fr, 290)
-    keys(im, t, ["Alt", "="], 2.4, 3.0, 1230)
+    keys(im, t, ["Alt", "="], 2.4, 3.0, 1190)
     return im
 def s04(t):  # Ctrl + T (5.8 s)
     im = PAPER_IM.copy(); d = ImageDraw.Draw(im); title(d, "Excel")
@@ -248,7 +248,7 @@ def s09(t):  # bot kartasi (9.0 s)
     d.rounded_rectangle(((W - tw) / 2 - 40, y - 20, (W + tw) / 2 + 40, y + 120), 30, fill=(250, 236, 200), outline=INK, width=5); ctext(d, W / 2, y + 6, h, f)
     glow(im, lambda g, c: g.rounded_rectangle(((W - tw) / 2 - 40, y - 20, (W + tw) / 2 + 40, y + 120), 30, outline=c, width=7), BLUE, 18)
     return im
-SC = {"s03": (s03, 6.4), "s04": (s04, 5.8), "s05": (s05, 8.8), "s06w": (s06w, 8.6), "s07": (s07, 6.0), "s09": (s09, 9.0)}
+SC = {"s03": (s03, 6.9), "s04": (s04, 6.0), "s05": (s05, 6.8), "s06w": (s06w, 8.6), "s07": (s07, 6.4), "s09": (s09, 9.4)}
 if __name__ == "__main__":
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
     for name in (sys.argv[2:] or list(SC)):
