@@ -4,7 +4,7 @@ import os, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "..", ".claude", "skills", "promptlar")); from sahifa import page, VEO_NEG
 STYLE = ("The flat hand-drawn ink illustration style on warm paper stays exactly the same in every frame, like a living storybook drawing; it never turns into a photo, 3D or a different style. "
-         "Alisher keeps the soft white outline glow hugging his silhouette edges in every frame; nobody has a ring, circle or ring of light above or around the head at any moment. "
+         "Alisher keeps the soft white outline glow hugging his silhouette edges in every frame. IMPORTANT: there is never any ring, circle, disc or ellipse of light above or behind anyone's head, not even for a moment; the top of the doppi cap stays clear. "
          "The small neon accents (the cyan-blue crescent moon, the red tulip and any glowing light already in the image) stay small and contained and never spread.")
 KEEP = "Keep every person exactly as in the image for the whole clip: the same face, age, beard or no beard, embroidered doppi cap, clothes and colours{x}; faces never change into other people."
 SIL = "Silent video: no audio, no voices, no music. Nobody speaks; mouths stay closed or only smile."
