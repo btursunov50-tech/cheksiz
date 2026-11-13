@@ -4,11 +4,13 @@ sekin kamera, siyoh yonib o'tadigan o'tish. Haqiqiy harakat keyin Veo kliplarida
 python3 video/ozlik/chiz/animatik.py <out.mp4> [qo'shiq boshlanishi s] [davomiyligi s]"""
 import sys, subprocess, numpy as np
 from PIL import Image, ImageFilter
-R = "video/ozlik"; W, H = 1920, 1080; AF = 12; OF = 24
+R = "video/ozlik"; W, H = 1920, 1080; AF = int(__import__("os").environ.get("AF", "24")); OF = 24
 OUT = sys.argv[1]; SS = float(sys.argv[2]) if len(sys.argv) > 2 else 11.0; DUR = float(sys.argv[3]) if len(sys.argv) > 3 else 30.0
 # (rasm, fokus x, y (0..1), zoom boshi, oxiri)
-SC = [("s01", .67, .48, 1.00, 1.18), ("s02", .45, .35, 1.10, 1.00), ("s03", .45, .40, 1.00, 1.08), ("s04", .50, .35, 1.08, 1.00),
+import os
+SC_ALL = [("s01", .67, .48, 1.00, 1.18), ("s02", .45, .35, 1.10, 1.00), ("s03", .45, .40, 1.00, 1.08), ("s04", .50, .35, 1.08, 1.00),
       ("s05", .55, .40, 1.00, 1.08), ("s06", .45, .40, 1.08, 1.00), ("s07", .50, .40, 1.00, 1.07), ("s08", .50, .45, 1.07, 1.00)]
+SC = [x for x in SC_ALL if x[0] in os.environ.get("ONLY", "s01,s02,s03,s04,s05,s06,s07,s08").split(",")]
 IM = []
 for n, *_ in SC:
     im = Image.open(f"{R}/img/{n}.png").convert("RGB"); s = max(W * 1.2 / im.width, H * 1.2 / im.height)
@@ -25,10 +27,10 @@ def frame(k, u, j):
     im, (n, fx, fy, z0, z1) = IM[k], SC[k]; z = z0 + (z1 - z0) * ease(u)
     cw = min(im.width, im.height * W / H) / (1.04 * z); ch = cw * H / W
     cx = min(max(fx * im.width, cw / 2 + 3), im.width - cw / 2 - 3); cy = min(max(fy * im.height, ch / 2 + 3), im.height - ch / 2 - 3)
-    jx, jy = [(0, 0), (2, -1), (-1, 2)][j]  # qog'oz qaynashi: har kadr 1–2 px siljiydi
+    jx, jy = [(0, 0), (2, -1), (-1, 2)][j] if __import__("os").environ.get("BOIL") else (0, 0)  # qaynash faqat BOIL=1 bo'lsa (egasi: ko'zni charchatadi)
     box = (cx - cw / 2 + jx, cy - ch / 2 + jy, cx + cw / 2 + jx, cy + ch / 2 + jy)
     return np.asarray(im.resize((W, H), Image.LANCZOS, box=box), np.float32)
-N = len(SC); SD = DUR / N; TR = 0.5
+N = len(SC); SD = DUR / N; TR = 0.9
 p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(AF), "-i", "-",
                       "-ss", str(SS), "-t", str(DUR), "-i", f"{R}/qoshiq.mp3", "-map", "0:v", "-map", "1:a",
                       "-vf", f"fps={OF}", "-af", f"afade=t=in:d=0.5,afade=t=out:st={DUR - 1.5}:d=1.5",
@@ -42,6 +44,6 @@ for f in range(int(DUR * AF)):
         m = np.clip((a - WIPE) / .06, 0, 1)[..., None]
         edge = np.clip(1 - np.abs(a - WIPE) / .05, 0, 1)[..., None] * (0 < a < 1.15)
         A = A * (1 - m) + B * m; A = A * (1 - .75 * edge) + np.array([70, 40, 15], np.float32) * .75 * edge
-    A = A * (1 + GRAIN[j][..., None] * .06)
+    A = A * (1 + GRAIN[0][..., None] * .04)
     p.stdin.write(np.clip(A, 0, 255).astype(np.uint8).tobytes())
 p.stdin.close(); p.wait(); print(OUT)

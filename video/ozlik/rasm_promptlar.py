@@ -2,9 +2,8 @@
 import os, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "..", ".claude", "skills", "promptlar")); from sahifa import page
-STYLE = ("Style: hand-drawn ink pen sketch illustration on aged warm yellow parchment paper, sepia-brown ink lines with fine cross-hatching shadows, like an old storybook drawing or a classical Persian miniature sketch; "
-         "the main character is drawn slightly brighter than the background, almost white-cream, with a thin soft white outline glow hugging the edges of his silhouette like a paper cut-out edge; nothing floats above his head. "
-         "The background stays in brown ink lines on the yellow paper.")
+STYLE = ("Style (owner's reference, 2026-11-13): a flat, plain warm orange-ochre paper background with very little detail, like an old poster; the background is only a few faint thin light-brown ink lines (horizon, road, a simple tree shape), soft and low-contrast, no white areas, no white flowers, no white foam, no bright highlights in the background. "
+         "The main character is the only strong drawing: bold black ink lines with hatching, his clothes white-cream like paper, and a wide soft WHITE glow all around his whole silhouette like a paper cut-out lifted off the page; nothing floats above his head. Other people (if any) are drawn in thinner brown ink without the white glow.")
 END = "Horizontal 16:9. No readable text, no letters, no numbers, no logos, no signature, no watermark, no subtitles."
 HANDS = "He has exactly two arms and two hands, five fingers on each hand."
 YIGIT = ("Attach the approved image of the young man Alisher", [("web/ref_yigit.webp", "ref_yigit.png — yigit")])
