@@ -18,7 +18,7 @@ TL = [(0.0, "g27_kelish", 0, 7.93), (8.5, "g04", 0, 4.0), (13.2, "g04", 4.0, 7.9
       (94.6, "g18", 0, 7.93), (110.8, "g24_kozgu", 0, 3.6), (115.7, "g17", 0, 7.93), (127.8, "g24_kozgu", 3.0, 8.0),
       (137.3, "g16", 0, 3.5), (140.4, "g26_sham2", 0, 7.93), (149.6, "g16", 3.5, 7.93), (153.9, "g15", 0.6, 7.93),
       (158.9, "g19", 0, 6.0), (165.0, "g22_tomoshabinga", 1.2, 8.0), (171.0, "g23_oyga", 8.3, 16.0), (178.5, "g01", 3.0, 7.93),
-      (184.5, "g21", 0, 6.0), (190.5, "g25_sham", 3.5, 7.93), (195.5, "END", 0, 0)]
+      (184.5, "g25_sham", 3.5, 7.93), (192.5, "g21", 0, 7.93)]  # oxiri: qora fon o'rniga hovli, yozuv osmonda
 LY = ["Men o'zimni izladim, o'zimdan yiroqlarda,", "Seni ko'rdim, ey Haqiqat, ko'z yoshimning bog'larida.",
       "Men quyoshni osmondan, oyni tundan so'radim,", "Sen esa qalbimda ekansan, nega bunchalar yo'l yurdim?",
       "Men dengiz deb o'yladim, bir tomchiga zor ekanman,", "Men olamni angladim deb, o'zimdan bexabar ekanman.",
@@ -80,11 +80,11 @@ def neon(draw_fn, size=(W, H), col=RED, glow=14, core=.65):
     c = np.array(col, np.float32) / 255
     out = g1[..., None] * c * 1.6 + g2[..., None] * c * 1.2 + m[..., None] * (c * (1 - core) + core)
     return np.clip(out, 0, 1)
-def textlayer(txt, fs, y, col=RED, glow=16, width=6):
+def textlayer(txt, fs, y, col=RED, glow=16, width=6, core=.65):
     f = ImageFont.truetype(FB, fs)
     def fn(d):
         tw = d.textlength(txt, font=f); d.text(((W - tw) / 2, y), txt, font=f, fill=255, stroke_width=0)
-    return neon(fn, col=col, glow=glow), f
+    return neon(fn, col=col, glow=glow, core=core), f
 def flower(cx, base_y, hgt, petal, rot=0):
     def fn(d):
         top = base_y - hgt
@@ -107,10 +107,11 @@ print("effects…", flush=True)
 TITLE, _ = textlayer("O'zligim", 170, 360, col=RED, glow=20)
 SUB, _ = textlayer("she'r va qo'shiq", 52, 590, col=GOLD, glow=8)
 ANGLA, _ = textlayer("«O'zingni angla»", 120, 150, col=RED, glow=18)
-FIN, _ = textlayer("O'zingni angla", 160, 400, col=RED, glow=24)
-FIN2, _ = textlayer("Sen bu dunyo mehmonisan", 46, 620, col=GOLD, glow=6)
+FIN, _ = textlayer("O'zingni angla", 150, 150, col=RED, glow=22, core=.3)
+FIN2, _ = textlayer("Sen bu dunyo mehmonisan", 50, 345, col=GOLD, glow=6)
 def shadow(layer, r=28, k=.55): m = layer.max(2); return np.asarray(Image.fromarray((np.clip(m * 2, 0, 1) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(r)), np.float32) / 255 * k
 SH_T, SH_A, SH_S = shadow(TITLE), shadow(ANGLA), shadow(SUB, 14, .5)
+SH_F = np.clip(shadow(FIN, 34, .6) + shadow(FIN2, 16, .55), 0, .75)
 rng = random.Random(7)
 FLW = [(x, 1030, rng.randint(160, 300), rng.randint(22, 36), rng.random()) for x in (180, 420, 1500, 1740, 300, 1620)]
 FLC = [neon(flower(x, by, h, p, r), col=ROSE if i % 2 else RED, glow=12) for i, (x, by, h, p, r) in enumerate(FLW)]
@@ -169,12 +170,12 @@ def effects(t):
     if 52.2 <= t < 57.0:  # «Ey ishq, meni yondir» — yurak + uchqunlar, keyin gullar
         a = sm((t - 52.4) / 1.0) * (1 - sm((t - 56.2) / .8)) * (.85 + .15 * math.sin(t * 6))
         L += [particles(t, 52.2, 5.0, RED, EMB, "ember") * a] + grow(t, 53.4, SP_B, "B", 56.0, .3, 1.3)
-    if 171.0 <= t < 195.9:  # naqarot takrori — sekin tushayotgan qizil barglar
-        a = sm((t - 171.0) / 2) * (1 - sm((t - 194.9) / 1.0)) * .8; L += petals_fall(t, 171.0, 25, PET, a)
-    if t >= 195.8:  # OXIRI: qora fon, qizil neon «O'zingni angla», barglar
-        a = flick(t, 196.4) * (1 - sm((t - 205.2) / 1.6))
-        L += [wipe(FIN, sm((t - 196.4) / 1.5)) * a, FIN2 * sm((t - 198.2) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
-              ] + petals_fall(t, 195.6, 12, PET, sm((t - 195.8) / 1.2) * (1 - sm((t - 205.2) / 1.6)))
+    if 171.0 <= t < 194.4:  # naqarot takrori — sekin tushayotgan qizil barglar
+        a = sm((t - 171.0) / 2) * (1 - sm((t - 193.6) / .8)) * .8; L += petals_fall(t, 171.0, 25, PET, a)
+    if t >= 194.0:  # OXIRI: hovli ustida, osmonda qizil neon «O'zingni angla» + gulbarglar
+        a = flick(t, 194.6) * (1 - sm((t - 205.0) / 1.6)); sh = sm((t - 194.2) / .8) * (1 - sm((t - 205.0) / 1.6))
+        L += [("d", SH_F * sh), wipe(FIN, sm((t - 194.6) / 1.5)) * a, FIN2 * sm((t - 196.6) / 1.2) * (1 - sm((t - 205.0) / 1.6))] \
+             + petals_fall(t, 194.0, 13, PET, sm((t - 194.0) / 1.2) * (1 - sm((t - 205.2) / 1.6)) * .8)
     return L
 if os.environ.get("SKIPFX") and os.path.exists(f"{W0}/fx.mp4"): dec = None
 else: dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{W0}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
