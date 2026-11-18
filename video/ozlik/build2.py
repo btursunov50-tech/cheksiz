@@ -65,7 +65,7 @@ prev = "p0"
 for i in range(1, len(segs)):
     tr = "fadewhite" if TL[i][1] == "END" else "fade"
     fc.append(f"[{prev}][p{i}]xfade=transition={tr}:duration={X}:offset={TL[i][0]:.3f}[x{i}]"); prev = f"x{i}"
-run(args + ["-filter_complex", ";".join(fc), "-map", f"[{prev}]", "-c:v", "libx264", "-crf", "17", "-preset", "fast", f"{W0}/base.mp4"])
+if not os.path.exists(f"{W0}/base.mp4"): run(args + ["-filter_complex", ";".join(fc), "-map", f"[{prev}]", "-c:v", "libx264", "-crf", "17", "-preset", "fast", f"{W0}/base.mp4"])
 # ---------- 2) effektlar (qizil neon, gullar, uchqunlar, oxiri) ----------
 RED = (255, 40, 60); ROSE = (255, 90, 120); GOLD = (255, 200, 110)
 def neon(draw_fn, size=(W, H), col=RED, glow=14, core=.65):
@@ -151,9 +151,9 @@ def effects(t):
     if 162.5 <= t < 188.4:  # naqarot takrori — sekin tushayotgan qizil barglar
         a = sm((t - 162.5) / 2) * (1 - sm((t - 187.4) / 1.0)) * .55; L.append(particles(t, 162.5, 25, ROSE, PET, "petal") * a)
     if t >= 195.6:  # OXIRI: qora fon, qizil neon «O'zingni angla», barglar
-        a = flick(t, 196.6) * (1 - sm((t - 205.2) / 1.6))
-        L += [wipe(FIN, sm((t - 196.6) / 1.6)) * a, FIN2 * sm((t - 199.0) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
-              particles(t, 195.6, 12, ROSE, PET, "petal") * sm((t - 197) / 1.5) * (1 - sm((t - 205.2) / 1.6)) * .8]
+        a = flick(t, 196.0) * (1 - sm((t - 205.2) / 1.6))
+        L += [wipe(FIN, sm((t - 196.0) / 1.5)) * a, FIN2 * sm((t - 198.2) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
+              particles(t, 195.6, 12, ROSE, PET, "petal") * sm((t - 195.8) / 1.2) * (1 - sm((t - 205.2) / 1.6)) * .8]
     return L
 dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{W0}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
 enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
@@ -167,7 +167,9 @@ while True:
         fr = np.frombuffer(buf, np.uint8).reshape(H, W, 3).astype(np.float32) / 255
         for l in L:
             if isinstance(l, tuple): fr = fr * (1 - l[1][..., None])  # soya (qorong'ilatish)
-            else: fr = 1 - (1 - fr) * (1 - np.clip(l, 0, 1))  # screen
+            else:
+                l = np.clip(l, 0, 1); fr = fr * (1 - .7 * l.max(2, keepdims=True))  # yorug' fonda ham qizil ko'rinsin
+                fr = 1 - (1 - fr) * (1 - l)  # screen
         buf = (fr * 255).astype(np.uint8).tobytes()
     enc.stdin.write(buf); n += 1
 enc.stdin.close(); enc.wait(); dec.wait(); print("frames", n, flush=True)
