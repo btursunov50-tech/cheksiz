@@ -10,9 +10,9 @@ W, H, FPS = 1920, 1080, 24
 def run(c): subprocess.run(c, check=True)
 SONG = f"{Q}/qoshiq_final.mp3"; END = 207.0
 # (boshi qo'shiqda, manba, manbadan boshi, oxiri) — oxiri = keyingi qatorning boshi
-TL = [(0.0, "g03", 0, 7.93), (8.5, "g02", 0, 4.7), (13.2, "g04", 0, 4.0), (17.6, "g01", 0, 7.93), (22.0, "g08", 0, 7.93),
-      (26.5, "g04", 4.0, 7.93), (31.0, "g06", 2.5, 7.93), (35.3, "g05", 2.0, 7.93), (39.9, "g12", 0, 4.5), (44.2, "g14", 0, 3.8),
-      (49.0, "g13", 0, 3.6), (52.2, "g10", 0, 4.0), (56.6, "g09", 0, 7.93), (61.0, "g10", 4.0, 7.93), (65.4, "g13", 3.6, 7.93),
+TL = [(0.0, "g03", 0, 7.93), (8.5, "g04", 0, 4.0), (13.2, "g04", 4.0, 7.93), (17.6, "g01", 0, 7.93), (22.0, "g08", 0, 7.93),
+      (26.5, "g09", 0, 4.5), (31.0, "g06", 2.5, 7.93), (35.3, "g05", 2.0, 7.93), (39.9, "g12", 0, 4.5), (44.2, "g14", 0, 3.8),
+      (49.0, "g13", 0, 3.6), (52.2, "g10", 0, 4.0), (56.6, "g09", 4.5, 7.93), (61.0, "g10", 4.0, 7.93), (65.4, "g13", 3.6, 7.93),
       (70.5, "g07", 0, 2.5), (74.0, "g14", 5.4, 7.93), (77.0, "g06", 0, 2.5), (79.4, "g11", 2.3, 7.93), (88.9, "g12", 4.5, 7.93),
       (94.6, "g18", 0, 7.93), (110.8, "g24_kozgu", 0, 3.6), (115.7, "g17", 0, 7.93), (127.8, "g24_kozgu", 3.0, 8.0),
       (137.3, "g16", 0, 3.5), (140.4, "g26_sham2", 0, 7.93), (149.6, "g16", 3.5, 7.93), (153.9, "g15", 0.6, 7.93),
@@ -22,7 +22,7 @@ LY = ["Men o'zimni izladim, o'zimdan yiroqlarda,", "Seni ko'rdim, ey Haqiqat, ko
       "Men quyoshni osmondan, oyni tundan so'radim,", "Sen esa qalbimda ekansan, nega bunchalar yo'l yurdim?",
       "Men dengiz deb o'yladim, bir tomchiga zor ekanman,", "Men olamni angladim deb, o'zimdan bexabar ekanman.",
       "Mingta kitob o'qib chiqdim, bir satrni anglamadim,", "«O'zingni angla», degan so'zga umrimcha yeta olmadim.",
-      "Ey ishq, meni yondir, kulimdan gullar unsin,", "Qalbimdagi g'uborlar bir nafasda to'kilsin.",
+      "Ey ishq, meni yondir, ko'nglimdan gullar unsin,", "Qalbimdagi g'uborlar bir nafasda to'kilsin.",
       "Men Senga yetmoq istadim, yo'llarimda adashdim,", "O'zligimdan kechgan kunim, haqiqatga tutashdim.",
       "Ey qalb, sening ichingda ming bir olam yashirin,", "Sen o'zingni anglagan kun ochilar sirli eshiging.",
       "Men muhabbat deb o'yladim, nafsim ekan istagim,", "Birovdan vafo kutardim, o'zim esa bevafo.",
@@ -53,6 +53,10 @@ for k, (a, src, s0, s1) in enumerate(TL):
         L = s1 - s0; f = d / L
         vf = (f"trim={s0}:{s1},setpts={f:.4f}*(PTS-STARTPTS)," + ("minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir," if f > 1.03 else "fps=24,") +
               f"trim=0:{d},setpts=PTS-STARTPTS,scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p")
+        if src == "g05":  # egasi: kamera tomchi ichiga kiradi (oxirgi 2 s), galaktika markazi (0.5, 0.507)
+            z0 = int((d - 2.4) * FPS)
+            vf += (f",scale=3840:2160:flags=lanczos,zoompan=z='if(lt(on,{z0}),1,1+pow((on-{z0})/{int(2.4 * FPS)},2.2)*5)':"
+                   f"x='iw/2-iw/zoom/2':y='ih*0.507-ih/zoom/2':d=1:s={W}x{H}:fps={FPS},format=yuv420p")
         JOBS.append(["ffmpeg", "-v", "error", "-y", "-i", f"{G}/{src}.mp4", "-vf", vf, "-an", "-r", str(FPS), "-c:v", "libx264", "-crf", "17", "-preset", "fast", o])
         print(k, src, f"{f:.2f}x", flush=True)
     segs.append((o, d))
@@ -63,7 +67,7 @@ for i, (_, d) in enumerate(segs):  # minterpolate ~0.1 s qisqa chiqaradi: oxirgi
     fc.append(f"[{i}:v]tpad=stop_mode=clone:stop_duration=0.6,trim=0:{d},setpts=PTS-STARTPTS[p{i}]")
 prev = "p0"
 for i in range(1, len(segs)):
-    tr = "fadewhite" if TL[i][1] == "END" else "fade"
+    tr = "fadewhite" if TL[i][1] == "END" or TL[i - 1][1] == "g05" else "fade"
     fc.append(f"[{prev}][p{i}]xfade=transition={tr}:duration={X}:offset={TL[i][0]:.3f}[x{i}]"); prev = f"x{i}"
 if not os.path.exists(f"{W0}/base.mp4"): run(args + ["-filter_complex", ";".join(fc), "-map", f"[{prev}]", "-c:v", "libx264", "-crf", "17", "-preset", "fast", f"{W0}/base.mp4"])
 # ---------- 2) effektlar (qizil neon, gullar, uchqunlar, oxiri) ----------
