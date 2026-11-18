@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """«O'zligim» — GPT kliplaridan (gpt/g01…g26) qo'shiq bo'yicha 16:9 klip. python3 video/ozlik/build2.py <work> → <work>/ozlik2.mp4
-Qo'shiq: qoshiq_final.mp3 (asl qo'shiq 0:10 dan, 1.05x, bass/stereo, 3:27). Satr vaqtlari mid/side vokal energiyasidan taxminiy (LINES);
-egasi tekshirgach tuzatiladi. Kodda qo'shiladigan effektlar (qizil neon, gullar, uchqunlar, oxiri) — effects()."""
+Qo'shiq: qoshiq_final.mp3 (asl qo'shiq 0:10 dan, 1.05x, bass/stereo, 3:27). Satr vaqtlari egasi Gemini'dan olgan jadvaldan (LINES). Kodda qo'shiladigan effektlar (qizil neon, gullar, uchqunlar, oxiri) — effects()."""
 import os, sys, subprocess, math, random
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -11,15 +10,14 @@ W, H, FPS = 1920, 1080, 24
 def run(c): subprocess.run(c, check=True)
 SONG = f"{Q}/qoshiq_final.mp3"; END = 207.0
 # (boshi qo'shiqda, manba, manbadan boshi, oxiri) — oxiri = keyingi qatorning boshi
-TL = [(0.0, "g03", 0, 7.93), (8.5, "g02", 0, 7.93),
-      (16.5, "g04", 0, 4.0), (21.5, "g04", 4.0, 7.93), (26.5, "g01", 0, 7.93), (31.5, "g08", 0, 7.93),
-      (37.0, "g06", 2.5, 7.93), (41.5, "g05", 2.0, 7.93), (46.0, "g12", 0, 4.5), (50.5, "g14", 0, 3.8), (54.5, "g13", 0, 3.6),
-      (58.0, "g10", 0, 4.0), (63.5, "g09", 0, 7.93), (69.0, "g10", 4.0, 7.93), (74.0, "g13", 3.6, 7.93), (80.0, "g11", 2.3, 7.93),
-      (84.5, "g07", 0, 2.5), (88.0, "g14", 5.4, 7.93), (91.0, "g06", 0, 2.5), (94.5, "g12", 4.5, 7.93),
-      (100.0, "g18", 0, 7.93), (113.0, "g24_kozgu", 0, 3.6), (119.5, "g17", 0, 7.93), (131.0, "g24_kozgu", 3.6, 8.0),
-      (137.5, "g16", 0, 3.5), (141.0, "g26_sham2", 0, 7.93), (149.0, "g16", 3.5, 7.93), (152.5, "g20", 3.5, 7.93),
-      (156.0, "g15", 0.6, 7.93), (162.5, "g19", 0, 6.0), (168.5, "g21", 0, 6.0), (174.5, "g23_oyga", 8.3, 16.0),
-      (182.0, "g01", 3.0, 7.93), (188.0, "g22_tomoshabinga", 1.2, 8.0), (195.0, "END", 0, 0)]
+TL = [(0.0, "g03", 0, 7.93), (8.5, "g02", 0, 4.7), (13.2, "g04", 0, 4.0), (17.6, "g01", 0, 7.93), (22.0, "g08", 0, 7.93),
+      (26.5, "g04", 4.0, 7.93), (31.0, "g06", 2.5, 7.93), (35.3, "g05", 2.0, 7.93), (39.9, "g12", 0, 4.5), (44.2, "g14", 0, 3.8),
+      (49.0, "g13", 0, 3.6), (52.2, "g10", 0, 4.0), (56.6, "g09", 0, 7.93), (61.0, "g10", 4.0, 7.93), (65.4, "g13", 3.6, 7.93),
+      (70.5, "g07", 0, 2.5), (74.0, "g14", 5.4, 7.93), (77.0, "g06", 0, 2.5), (79.4, "g11", 2.3, 7.93), (88.9, "g12", 4.5, 7.93),
+      (94.6, "g18", 0, 7.93), (110.8, "g24_kozgu", 0, 3.6), (115.7, "g17", 0, 7.93), (127.8, "g24_kozgu", 3.0, 8.0),
+      (137.3, "g16", 0, 3.5), (140.4, "g26_sham2", 0, 7.93), (149.6, "g16", 3.5, 7.93), (153.9, "g15", 0.6, 7.93),
+      (158.9, "g19", 0, 6.0), (165.0, "g22_tomoshabinga", 1.2, 8.0), (171.0, "g23_oyga", 8.3, 16.0), (178.5, "g01", 3.0, 7.93),
+      (184.5, "g21", 0, 6.0), (190.5, "g25_sham", 3.5, 7.93), (195.5, "END", 0, 0)]
 LY = ["Men o'zimni izladim, o'zimdan yiroqlarda,", "Seni ko'rdim, ey Haqiqat, ko'z yoshimning bog'larida.",
       "Men quyoshni osmondan, oyni tundan so'radim,", "Sen esa qalbimda ekansan, nega bunchalar yo'l yurdim?",
       "Men dengiz deb o'yladim, bir tomchiga zor ekanman,", "Men olamni angladim deb, o'zimdan bexabar ekanman.",
@@ -33,18 +31,19 @@ LY = ["Men o'zimni izladim, o'zimdan yiroqlarda,", "Seni ko'rdim, ey Haqiqat, ko
       "Kimki o'zin yenga olmas, ming g'alaba — sarobdir,", "Nafsini yenggan inson — eng buyuk g'olibdir.",
       "Bir sham yonib so'nar ekan, nur qolur xotirada,", "Inson ketar, so'zi qolar, yaxshilikning izida.",
       "Mol-dunyoni yig'ding nega, bir kun qolur qo'llardan,", "Mehring qolsin, yaxshi noming, o'tib ketgan yo'llardan.",
-      "Kechir, inson, g'azabingni muhabbatga aylantir,", "Qalbdagi qorong'ulikni bir zarra nurga almashtir."]
-# (boshi, satr raqami) — taxminiy; 162.5–186 naqarot takrori deb olindi
-LINES = [(16.5, 0), (21.5, 1), (26.5, 2), (31.5, 3), (37.0, 4), (41.5, 5), (46.0, 6), (50.5, 7),
-         (58.0, 8), (63.5, 9), (69.0, 10), (74.0, 11), (80.0, 12), (84.5, 13),
-         (100.0, 14), (105.0, 15), (110.0, 16), (115.0, 17), (120.0, 18), (125.0, 19), (131.0, 20), (136.0, 21),
-         (141.0, 22), (146.0, 23), (151.0, 24), (156.0, 25), (162.5, 8), (168.0, 9), (174.0, 10), (180.0, 11),
-         (188.0, 26), (194.0, 27)]
-LEND = {13: 89.0, 25: 162.0, 29: 186.0, 31: 202.0}  # bo'limlar oxiri (indeks LINES ichida)
+      "Kechir, inson, g'azabingni muhabbatga aylantir,", "Qalbdagi qorong'ulikni bir zarra nurga almashtir.",
+      "Sen bu dunyo mehmonisan, mangulikka da'vo qilma,", "O'lim kelmay turib, inson, o'zingni yo'qotib qo'yma."]
+# (boshi, oxiri, satr) — egasi Gemini'dan olgan jadval (2026-11-18), qoshiq_final.mp3 vaqtida
+LINES = [(8.5, 13.2, 0), (13.2, 17.6, 1), (17.6, 22.0, 2), (22.0, 26.5, 3), (31.0, 35.3, 4), (35.3, 39.9, 5), (39.9, 44.2, 6), (44.2, 49.0, 7),
+         (52.2, 56.6, 8), (56.6, 61.0, 9), (61.0, 65.4, 10), (65.4, 70.5, 11), (79.4, 83.7, 12), (83.7, 88.9, 13),
+         (97.3, 101.8, 14), (101.8, 106.3, 15), (106.3, 110.8, 16), (110.8, 115.7, 17), (118.7, 123.1, 18), (123.1, 127.8, 19),
+         (127.8, 132.1, 20), (132.1, 137.3, 21), (140.4, 144.9, 22), (144.9, 149.6, 23), (149.6, 153.9, 24), (153.9, 158.9, 25),
+         (162.0, 166.5, 26), (166.5, 170.9, 27), (170.9, 175.3, 28), (175.3, 180.6, 29)]
 FB = "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf"
 X = 0.4
 # ---------- 1) kliplar → bo'laklar ----------
-segs = []
+from concurrent.futures import ThreadPoolExecutor
+segs = []; JOBS = []
 for k, (a, src, s0, s1) in enumerate(TL):
     b = TL[k + 1][0] if k + 1 < len(TL) else END
     d = round(b - a + (X if k < len(TL) - 1 else 0), 3); o = f"{W0}/s{k:02}.mp4"
@@ -54,9 +53,10 @@ for k, (a, src, s0, s1) in enumerate(TL):
         L = s1 - s0; f = d / L
         vf = (f"trim={s0}:{s1},setpts={f:.4f}*(PTS-STARTPTS)," + ("minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir," if f > 1.03 else "fps=24,") +
               f"trim=0:{d},setpts=PTS-STARTPTS,scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p")
-        run(["ffmpeg", "-v", "error", "-y", "-i", f"{G}/{src}.mp4", "-vf", vf, "-an", "-r", str(FPS), "-c:v", "libx264", "-crf", "17", "-preset", "fast", o])
+        JOBS.append(["ffmpeg", "-v", "error", "-y", "-i", f"{G}/{src}.mp4", "-vf", vf, "-an", "-r", str(FPS), "-c:v", "libx264", "-crf", "17", "-preset", "fast", o])
         print(k, src, f"{f:.2f}x", flush=True)
     segs.append((o, d))
+with ThreadPoolExecutor(4) as ex: list(ex.map(run, JOBS))
 args = ["ffmpeg", "-v", "error", "-y"]; fc = []; prev = "0:v"
 for o, _ in segs: args += ["-i", o]
 for i, (_, d) in enumerate(segs):  # minterpolate ~0.1 s qisqa chiqaradi: oxirgi kadr bilan to'ldirib, aniq d ga kesamiz
@@ -103,7 +103,7 @@ TITLE, _ = textlayer("O'zligim", 170, 360, col=RED, glow=20)
 SUB, _ = textlayer("she'r va qo'shiq", 52, 590, col=GOLD, glow=8)
 ANGLA, _ = textlayer("«O'zingni angla»", 120, 150, col=RED, glow=18)
 FIN, _ = textlayer("O'zingni angla", 160, 400, col=RED, glow=24)
-FIN2, _ = textlayer("Kechir, inson, g'azabingni muhabbatga aylantir", 46, 620, col=GOLD, glow=6)
+FIN2, _ = textlayer("Sen bu dunyo mehmonisan", 46, 620, col=GOLD, glow=6)
 def shadow(layer, r=28, k=.55): m = layer.max(2); return np.asarray(Image.fromarray((np.clip(m * 2, 0, 1) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(r)), np.float32) / 255 * k
 SH_T, SH_A, SH_S = shadow(TITLE), shadow(ANGLA), shadow(SUB, 14, .5)
 rng = random.Random(7)
@@ -135,24 +135,24 @@ def effects(t):
     L = []
     if 1.0 <= t < 8.3:  # sarlavha
         a = flick(t, 1.0) * (1 - sm((t - 7.3) / 1.0)); L += [("d", (SH_T + SH_S) * sm((t - 1.0) / .5) * (1 - sm((t - 7.3) / 1.0))), TITLE * a, SUB * sm((t - 2.2) / 1.0) * (1 - sm((t - 7.3) / 1.0))]
-    if 22.0 <= t < 26.9:  # «ko'z yoshimning bog'larida» — qizil neon gullar unadi
+    if 13.4 <= t < 18.0:  # «ko'z yoshimning bog'larida» — qizil neon gullar unadi
         for i, F in enumerate(FLC):
-            g = sm((t - 22.0 - i * .35) / 1.6); fo = 1 - sm((t - 26.0) / .9)
+            g = sm((t - 13.4 - i * .35) / 1.6); fo = 1 - sm((t - 17.1) / .9)
             if g > 0:
                 o = F.copy(); cut = int(H - (H - 650) * g - 50); o[:max(0, cut)] = 0; L.append(o * fo)
-    if 51.2 <= t < 54.9:  # «O'zingni angla» qizil neon yozuv
-        a = 1 - sm((t - 54.2) / .7); L += [("d", wipe(SH_A[..., None], sm((t - 51.2) / 1.4))[..., 0] * a), wipe(ANGLA, sm((t - 51.2) / 1.4)) * a]
-    if 58.0 <= t < 63.9:  # «Ey ishq, meni yondir» — yurak + uchqunlar, keyin gullar
-        a = sm((t - 58.3) / 1.0) * (1 - sm((t - 63.0) / .9)) * (.85 + .15 * math.sin(t * 6))
-        L += [HEART * a, particles(t, 58.0, 6.0, RED, EMB, "ember") * a]
+    if 45.0 <= t < 49.4:  # «O'zingni angla» qizil neon yozuv
+        a = 1 - sm((t - 48.7) / .7); L += [("d", wipe(SH_A[..., None], sm((t - 45.0) / 1.4))[..., 0] * a), wipe(ANGLA, sm((t - 45.0) / 1.4)) * a]
+    if 52.2 <= t < 57.0:  # «Ey ishq, meni yondir» — yurak + uchqunlar, keyin gullar
+        a = sm((t - 52.4) / 1.0) * (1 - sm((t - 56.2) / .8)) * (.85 + .15 * math.sin(t * 6))
+        L += [HEART * a, particles(t, 52.2, 5.0, RED, EMB, "ember") * a]
         for i, F in enumerate(FLC[:4]):
-            g = sm((t - 60.5 - i * .3) / 1.4)
+            g = sm((t - 54.2 - i * .3) / 1.2)
             if g > 0: o = F.copy(); o[:max(0, int(H - (H - 650) * g - 50))] = 0; L.append(o * a)
-    if 162.5 <= t < 188.4:  # naqarot takrori — sekin tushayotgan qizil barglar
-        a = sm((t - 162.5) / 2) * (1 - sm((t - 187.4) / 1.0)) * .55; L.append(particles(t, 162.5, 25, ROSE, PET, "petal") * a)
-    if t >= 195.6:  # OXIRI: qora fon, qizil neon «O'zingni angla», barglar
-        a = flick(t, 196.0) * (1 - sm((t - 205.2) / 1.6))
-        L += [wipe(FIN, sm((t - 196.0) / 1.5)) * a, FIN2 * sm((t - 198.2) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
+    if 171.0 <= t < 195.9:  # naqarot takrori — sekin tushayotgan qizil barglar
+        a = sm((t - 171.0) / 2) * (1 - sm((t - 194.9) / 1.0)) * .55; L.append(particles(t, 171.0, 25, ROSE, PET, "petal") * a)
+    if t >= 195.8:  # OXIRI: qora fon, qizil neon «O'zingni angla», barglar
+        a = flick(t, 196.4) * (1 - sm((t - 205.2) / 1.6))
+        L += [wipe(FIN, sm((t - 196.4) / 1.5)) * a, FIN2 * sm((t - 198.2) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
               particles(t, 195.6, 12, ROSE, PET, "petal") * sm((t - 195.8) / 1.2) * (1 - sm((t - 205.2) / 1.6)) * .8]
     return L
 dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{W0}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
@@ -188,8 +188,8 @@ Style: L,Liberation Serif,56,&H00E6F4FF,&H00FFFFFF,&H00101828,&H78000000,-1,-1,0
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
-for i, (t0, li) in enumerate(LINES):
-    t1 = LEND.get(i, LINES[i + 1][0] - 0.25 if i + 1 < len(LINES) else END - 2)
+for t0, t1, li in LINES:
+    t1 = t1 - 0.1
     ass += f"Dialogue: 0,{a_(t0 - 0.15)},{a_(t1)},L,,0,0,0,,{{\\fad(250,250)}}{LY[li]}\n"
 open(f"{W0}/lyrics_uz.ass", "w").write(ass)
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{W0}/fx.mp4", "-i", SONG, "-filter_complex",
