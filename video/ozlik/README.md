@@ -60,3 +60,6 @@ Bitta qahramon, bitta yo'l: u butun qo'shiq davomida kameraga qarab yuradi, har 
 16. «Bir sham yonib so'nar» — qari chol sham ushlab yuradi, sham o'chadi, nur izlari qoladi.
 17. «Mehring qolsin» — chol bolaga non beradi (o'zining bolaligiga o'xshash), qo'li bo'sh, lekin jilmayadi.
 18. Outro «Kechir, inson…» — chol kameraga eng yaqin keladi, nurga aylanadi, siyoh so'nadi.
+
+## GPT bilan yangi uslub (egasi 2026-11-18)
+`gpt/g01…` — egasi ChatGPT bilan yasagan kliplar (o'yma/gravyura uslubi, yashil neon yo'l, oy). Hammasi kelgach qo'shiq satrlariga qarab yig'iladi; Veo ovozi o'chiriladi, qizil neon / gul effektlari kodda qo'shiladi.
