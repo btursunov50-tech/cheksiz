@@ -20,12 +20,18 @@ S = [
  ("4", "k4", "Sekin crane up (kamera yuqoriga ko'tariladi) va oldinga",
   "Oxiri: «Kechir, inson, g'azabingni muhabbatga aylantir… bir zarra nurga almashtir» — yashil yo'l tobora yorqinlashadi, undan nur zarralari osmonga ko'tariladi, quyosh bitta yorqin nuqtaga aylanadi, butun kadr iliq nurga yutiladi.",
   "Slow crane up and forward over the courtyard toward the sunset. The glowing green path grows brighter and brighter; tiny particles of light rise from it like fireflies into the sky; leaves of the big tree drift slowly in the warm wind; the setting sun shrinks into one single brilliant point of light, and in the last two seconds the whole engraved drawing gently dissolves into soft warm golden light. No people appear."),
+ ("5", "k5", "Sekin crane up: boladan osmonga",
+  "YANGI OXIR (1-qism): bobo kulga aylanib ketgach, bola kaftidagi yashil nurga qaraydi, nur kaftidan ko'tarilib osmonga uchadi va o'sha yashil yarim oyga aylanadi — klip boshidagi oy. Ma'nosi: uni butun umr kuzatgan oy — boboning nuri edi.",
+  "Slow crane up from the boy to the sky. The grandfather's figure finishes dissolving into green sparkles and is gone for good; he never appears again. The boy looks down at the glowing green orb in his cupped hands with wonder, then gently lifts his hands; the orb floats up out of his palms and rises higher and higher into the sky above the tree, leaving a thin trail of green sparkles, and there it slowly opens and becomes a large glowing neon green crescent moon. The boy looks up at the new moon with a quiet, brave smile."),
+ ("6", "k5", "Statik, keyin juda sekin push-in bolaning yuziga",
+  "YANGI OXIR (2-qism): bola kameraga — tomoshabinga o'giriladi, nurni bizga uzatadi; nur kameraga uchib kelib butun ekranni yashil yorug'likka to'ldiradi. Shundan keyin kodda: qora fon, qizil neon «O'zingni angla».",
+  "Static camera, then a very slow push-in toward the boy's face. The grandfather's figure finishes dissolving and is gone for good. The boy slowly turns his head and looks straight into the camera, at the viewer, with a calm, warm smile. He stretches both hands toward the camera, offering the glowing green orb to the viewer. The orb floats forward toward the lens, growing bigger and brighter, until its soft green light fills the whole frame."),
 ]
 def prompt(n, img, cam, what, p):
     return f"Horizontal 16:9 video, 8 seconds, from the attached image (this image is the first frame). {p} {STYLE} {KEEP} {SIL}\n{VEO_NEG}"
 cards = [dict(num=n, title=f"{n}-davom — video, 16:9 (yotiq), 8 s", shot=f"web/{img}.webp", shotcap=f"davom/{img}.png — Veo'ga shuni yuklang",
               whatlbl="Nima bo'ladi", what=what, cam=cam, prompt=prompt(n, img, cam, what, p)) for n, img, cam, what, p in S]
 page("O'zligim davomi", "«O'zligim» <em>davomi va oxiri</em>",
-     "GPT bilan qilingan kliplarning oxirgi kadrlaridan 4 ta davom klipi. Veo'da Format 16:9, chapdagi kadrni yuklang (asl fayllar chatda), «Nusxa olish» bilan promptni qo'ying.",
+     "GPT bilan qilingan kliplarning oxirgi kadrlaridan davom klipi. 5 va 6 — yangi, qiziqroq oxir (k5 kadridan). Veo'da Format 16:9, chapdagi kadrni yuklang (asl fayllar chatda), «Nusxa olish» bilan promptni qo'ying.",
      cards, os.path.join(D, "sahnalar.html"))
 print(len(S))
