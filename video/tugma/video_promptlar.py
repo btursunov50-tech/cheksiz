@@ -4,7 +4,7 @@ import os, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "..", ".claude", "skills", "promptlar")); from sahifa import page, VEO_NEG
 STYLE = ("The hand-drawn sepia ink sketch style on warm yellow parchment paper stays exactly the same in every frame (fine brown ink lines and cross-hatching, "
-         "a soft white glow halo around the main characters); it never turns into a photo, 3D or a different style. The neon accents stay small and contained, "
+         "a thin soft white outline glow hugging the edges of the characters' silhouettes like a paper cut-out edge, never anything floating above their heads); it never turns into a photo, 3D or a different style. Nobody has a ring, circle or ring of light above or around the head at any moment. The neon accents stay small and contained, "
          "they never spread over faces, clothes or the table: the small neon cyan-blue core inside the desk lamp glass, the neon blue moon in the window, "
          "the neon red calculator buttons and the thin neon blue lines on the laptop screen.")
 KEEP = ("Keep every person exactly as in the image for the whole clip: Malika's round kind face, dark hair in a neat low bun, small earrings, knitted cardigan "
@@ -25,8 +25,8 @@ S = [
   "Malika ekranni ko'rsatib, ukasiga xotirjam tushuntiradi (lablari qimirlaydi); ukasi engashib qaraydi, ko'zlari kattalashadi, umid bilan jilmayib bosh irg'aydi",
   "Slow push-in toward both of them. Malika keeps pointing at the laptop screen and calmly explains something to her brother, her lips and jaw moving naturally as if talking, with a kind smile and small hand gestures toward the screen. Her brother leans in closer to look, still holding the empty folder with both hands; his worried face slowly changes: eyebrows relax, eyes widen with interest, and a small hopeful smile appears, he nods twice. He keeps his mouth closed. The laptop screen stays dark with only thin blank blue rectangles, no text appears.", ", and the brother's young face, short black hair and plain sweater exactly as in the image"),
  ("8", "s08", "Sekin pull-back va biroz yuqoriga (crane up)",
-  "Noutbuk qopqog'ini oxirigacha yopadi (ko'k chiziq yo'qoladi), choydan ho'plab, derazadagi tongga qarab jilmayadi",
-  "Slow pull-back with a slight crane up. Malika slowly closes the laptop lid all the way with her left hand, the last thin blue line of light disappears; the lid stays closed and she never opens it again. She lifts the cup of hot tea, takes a calm sip, steam rising softly, and looks toward the morning sun in the window with a warm, proud smile, eyes slightly narrowed with joy. The ledger and the calculator stay pushed to the edge of the counter.", ""),
+  "Qopqoq deyarli yopiq: oxirgi bir necha santimetrini bosib yopadi, qo'lini oladi (qayta ochmaydi), choydan ho'plab, derazadagi tongga qarab jilmayadi",
+  "Slow pull-back with a slight crane up. The laptop lid is already almost shut at the start; in the first second Malika's left hand gently presses it DOWN the last few centimetres until it is completely shut and the thin blue line of light disappears, then she lifts her hand away and puts it on the table. The lid only moves down, never up: she never opens or lifts the laptop lid, it stays fully closed for the rest of the clip. She lifts the cup of hot tea, takes a calm sip, steam rising softly, and looks toward the morning sun in the window with a warm, proud smile, eyes slightly narrowed with joy. The ledger and the calculator stay pushed to the edge of the counter.", ""),
 ]
 def prompt(n, img, cam, what, p, x):
     talk = "" if n == "6" else QUIET + " "
