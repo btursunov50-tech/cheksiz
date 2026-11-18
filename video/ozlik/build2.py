@@ -32,13 +32,13 @@ LY = ["Men o'zimni izladim, o'zimdan yiroqlarda,", "Seni ko'rdim, ey Haqiqat, ko
       "Bir sham yonib so'nar ekan, nur qolur xotirada,", "Inson ketar, so'zi qolar, yaxshilikning izida.",
       "Mol-dunyoni yig'ding nega, bir kun qolur qo'llardan,", "Mehring qolsin, yaxshi noming, o'tib ketgan yo'llardan.",
       "Kechir, inson, g'azabingni muhabbatga aylantir,", "Qalbdagi qorong'ulikni bir zarra nurga almashtir.",
-      "Sen bu dunyo mehmonisan, mangulikka da'vo qilma,", "O'lim kelmay turib, inson, o'zingni yo'qotib qo'yma."]
+      "Sen bu dunyo mehmonisan, mangulikka da'vo qilma,", "O'lim kelmay turib, inson, o'zingni yo'qotib qo'yma.", "Ey! Ey!"]
 # (boshi, oxiri, satr) — egasi Gemini'dan olgan jadval (2026-11-18), qoshiq_final.mp3 vaqtida
-LINES = [(8.5, 13.2, 0), (13.2, 17.6, 1), (17.6, 22.0, 2), (22.0, 26.5, 3), (31.0, 35.3, 4), (35.3, 39.9, 5), (39.9, 44.2, 6), (44.2, 49.0, 7),
-         (52.2, 56.6, 8), (56.6, 61.0, 9), (61.0, 65.4, 10), (65.4, 70.5, 11), (79.4, 83.7, 12), (83.7, 88.9, 13),
-         (97.3, 101.8, 14), (101.8, 106.3, 15), (106.3, 110.8, 16), (110.8, 115.7, 17), (118.7, 123.1, 18), (123.1, 127.8, 19),
-         (127.8, 132.1, 20), (132.1, 137.3, 21), (140.4, 144.9, 22), (144.9, 149.6, 23), (149.6, 153.9, 24), (153.9, 158.9, 25),
-         (162.0, 166.5, 26), (166.5, 170.9, 27), (170.9, 175.3, 28), (175.3, 180.6, 29)]
+LINES = [(8.5, 12.8, 0), (12.8, 17.3, 1), (17.3, 21.8, 2), (21.8, 26.5, 3), (30.7, 35.1, 4), (35.1, 39.7, 5), (39.7, 44.2, 6), (44.2, 48.8, 7),
+         (48.8, 52.1, 30), (52.1, 56.5, 8), (56.5, 60.8, 9), (60.8, 65.3, 10), (65.3, 70.5, 11), (70.5, 79.3, 30), (79.3, 83.7, 12), (83.7, 88.9, 13),
+         (97.2, 101.7, 14), (101.7, 106.2, 15), (106.2, 110.7, 16), (110.7, 115.7, 17), (118.6, 123.0, 18), (123.0, 127.7, 19),
+         (127.7, 132.1, 20), (132.1, 137.3, 21), (140.3, 144.8, 22), (144.8, 149.5, 23), (149.5, 153.8, 24), (153.8, 158.8, 25),
+         (161.9, 166.4, 26), (166.4, 170.9, 27), (170.9, 175.2, 28), (175.2, 180.6, 29)]  # egasi: Gemini 2-jadval (2026-11-18), «Ey! Ey!» nidolari bilan
 FB = "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf"
 X = 0.4
 # ---------- 1) kliplar → bo'laklar ----------
@@ -159,24 +159,26 @@ def effects(t):
         L += [wipe(FIN, sm((t - 196.4) / 1.5)) * a, FIN2 * sm((t - 198.2) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
               particles(t, 195.6, 12, ROSE, PET, "petal") * sm((t - 195.8) / 1.2) * (1 - sm((t - 205.2) / 1.6)) * .8]
     return L
-dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{W0}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
-enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-                        "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-pix_fmt", "yuv420p", f"{W0}/fx.mp4"], stdin=subprocess.PIPE)
-n = 0; FS = W * H * 3
-while True:
-    buf = dec.stdout.read(FS)
-    if len(buf) < FS: break
-    t = n / FPS; L = effects(t)
-    if L:
-        fr = np.frombuffer(buf, np.uint8).reshape(H, W, 3).astype(np.float32) / 255
-        for l in L:
-            if isinstance(l, tuple): fr = fr * (1 - l[1][..., None])  # soya (qorong'ilatish)
-            else:
-                l = np.clip(l, 0, 1); fr = fr * (1 - .7 * l.max(2, keepdims=True))  # yorug' fonda ham qizil ko'rinsin
-                fr = 1 - (1 - fr) * (1 - l)  # screen
-        buf = (fr * 255).astype(np.uint8).tobytes()
-    enc.stdin.write(buf); n += 1
-enc.stdin.close(); enc.wait(); dec.wait(); print("frames", n, flush=True)
+if os.environ.get("SKIPFX") and os.path.exists(f"{W0}/fx.mp4"): dec = None
+else: dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{W0}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+if dec:
+    enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                            "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-pix_fmt", "yuv420p", f"{W0}/fx.mp4"], stdin=subprocess.PIPE)
+    n = 0; FS = W * H * 3
+    while True:
+        buf = dec.stdout.read(FS)
+        if len(buf) < FS: break
+        t = n / FPS; L = effects(t)
+        if L:
+            fr = np.frombuffer(buf, np.uint8).reshape(H, W, 3).astype(np.float32) / 255
+            for l in L:
+                if isinstance(l, tuple): fr = fr * (1 - l[1][..., None])  # soya (qorong'ilatish)
+                else:
+                    l = np.clip(l, 0, 1); fr = fr * (1 - .7 * l.max(2, keepdims=True))  # yorug' fonda ham qizil ko'rinsin
+                    fr = 1 - (1 - fr) * (1 - l)  # screen
+            buf = (fr * 255).astype(np.uint8).tobytes()
+        enc.stdin.write(buf); n += 1
+    enc.stdin.close(); enc.wait(); dec.wait(); print("frames", n, flush=True)
 # ---------- 3) so'zlar (ASS) + qo'shiq ----------
 def a_(x): return f"0:{int(x // 60):02}:{x % 60:05.2f}"
 ass = f"""[Script Info]
