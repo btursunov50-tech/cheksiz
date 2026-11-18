@@ -8,10 +8,10 @@ YouTube sarlavhasi hook bahosi: 100 (STRONG), `hookscore.py`.
 ```
 Mingta kitob o'qidingiz… o'zingizni-chi? 📖
 
-«O'zligim» — she'rimdan qo'shiq va klip.
+«O'zligim»: she'rimdan qo'shiq va klip.
 Bola quyosh tomondan yo'lga chiqadi, ulg'ayadi, sevadi va ketadi, boylikka aldanadi, ko'zguga qaraydi, qariydi va nurni nevarasiga qoldiradi.
 
-«Nafsini yenggan inson — eng buyuk g'olibdir.»
+«Nafsini yenggan inson eng buyuk g'olibdir.»
 «Sen bu dunyo mehmonisan, mangulikka da'vo qilma.»
 
 O'z she'ringizdan qo'shiq va klip qilmoqchimisiz? She'ringizni botimizga yuboring: ma'nosini tushuntiradi va AI bilan qanday qilishni bosqichma-bosqich o'rgatadi 👉 @sahiychishopbot
@@ -62,10 +62,10 @@ YouTube Studio: «Altered or synthetic content» = **Yes**; monetizatsiya yo'q; 
 ```
 Ты прочёл тысячу книг… а себя? 📖
 
-«O'zligim» («Моё истинное я») — песня на узбекском по моему стихотворению и ИИ-клип.
+«O'zligim» («Моё истинное я»): песня на узбекском по моему стихотворению и ИИ-клип.
 Мальчик выходит на дорогу из заката, взрослеет, любит и уходит, обманывается золотом, смотрит в зеркало, стареет и передаёт свой свет внуку.
 
-«Победивший своё эго — величайший победитель.»
+«Победивший своё эго - величайший победитель.»
 «Ты гость в этом мире, не притязай на вечность.»
 
 Хотите песню и клип из своего стихотворения? Отправьте стих нашему боту: он объяснит смысл и пошагово научит, как сделать это с ИИ 👉 @sahiychishopbot (ссылка в профиле)
