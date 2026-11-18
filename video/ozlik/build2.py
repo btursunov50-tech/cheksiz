@@ -56,12 +56,15 @@ for k, (a, src, s0, s1) in enumerate(TL):
               f"trim=0:{d},setpts=PTS-STARTPTS,scale={W}:{H}:flags=lanczos,setsar=1,format=yuv420p")
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{G}/{src}.mp4", "-vf", vf, "-an", "-r", str(FPS), "-c:v", "libx264", "-crf", "17", "-preset", "fast", o])
         print(k, src, f"{f:.2f}x", flush=True)
-    segs.append(o)
+    segs.append((o, d))
 args = ["ffmpeg", "-v", "error", "-y"]; fc = []; prev = "0:v"
-for o in segs: args += ["-i", o]
+for o, _ in segs: args += ["-i", o]
+for i, (_, d) in enumerate(segs):  # minterpolate ~0.1 s qisqa chiqaradi: oxirgi kadr bilan to'ldirib, aniq d ga kesamiz
+    fc.append(f"[{i}:v]tpad=stop_mode=clone:stop_duration=0.6,trim=0:{d},setpts=PTS-STARTPTS[p{i}]")
+prev = "p0"
 for i in range(1, len(segs)):
     tr = "fadewhite" if TL[i][1] == "END" else "fade"
-    fc.append(f"[{prev}][{i}:v]xfade=transition={tr}:duration={X}:offset={TL[i][0]:.3f}[x{i}]"); prev = f"x{i}"
+    fc.append(f"[{prev}][p{i}]xfade=transition={tr}:duration={X}:offset={TL[i][0]:.3f}[x{i}]"); prev = f"x{i}"
 run(args + ["-filter_complex", ";".join(fc), "-map", f"[{prev}]", "-c:v", "libx264", "-crf", "17", "-preset", "fast", f"{W0}/base.mp4"])
 # ---------- 2) effektlar (qizil neon, gullar, uchqunlar, oxiri) ----------
 RED = (255, 40, 60); ROSE = (255, 90, 120); GOLD = (255, 200, 110)
