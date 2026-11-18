@@ -3,6 +3,7 @@
 Qo'shiq: qoshiq_final.mp3 (asl qo'shiq 0:10 dan, 1.05x, bass/stereo, 3:27). Satr vaqtlari egasi Gemini'dan olgan jadvaldan (LINES). Kodda qo'shiladigan effektlar (qizil neon, gullar, uchqunlar, oxiri) — effects()."""
 import os, sys, subprocess, math, random
 import numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import gul
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 R = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")); Q = f"{R}/video/ozlik"; G = f"{Q}/gpt"
 W0 = sys.argv[1]; os.makedirs(W0, exist_ok=True)
@@ -113,7 +114,29 @@ SH_T, SH_A, SH_S = shadow(TITLE), shadow(ANGLA), shadow(SUB, 14, .5)
 rng = random.Random(7)
 FLW = [(x, 1030, rng.randint(160, 300), rng.randint(22, 36), rng.random()) for x in (180, 420, 1500, 1740, 300, 1620)]
 FLC = [neon(flower(x, by, h, p, r), col=ROSE if i % 2 else RED, glow=12) for i, (x, by, h, p, r) in enumerate(FLW)]
-HEART = neon(heart(960, 420, 9), col=RED, glow=22)
+ROSES = {}  # (sahna, i) -> [bloom bosqichlari]
+def roses(key, spots):
+    if key not in ROSES: ROSES[key] = [[gul.rose(h, 11 + i * 7 + len(key), bl) for bl in (.25, .45, .65, .85, 1.0)] for i, (x, h) in enumerate(spots)]
+    return ROSES[key]
+SP_A = [(1120, 250), (1330, 330), (1560, 280), (1780, 380)]   # «bog'larida» — yo'l bo'yida, o'ngda
+SP_B = [(90, 300), (1700, 260), (1860, 340)]     # naqarot — pastki burchaklarda
+PETALS = [gul.petal(sz, rot) for sz in (16, 22, 28) for rot in range(0, 360, 45)]
+def grow(t, t0, spots, key, fade_t, stagger=.35, dur=1.6):
+    out = []
+    for i, (x, h) in enumerate(spots):
+        g = sm((t - t0 - i * stagger) / dur)
+        if g <= 0: continue
+        st = roses(key, spots)[i][min(4, int(g * 4.999))]; hh = st[1].shape[0]; vis = max(1, int(hh * min(1, g * 1.3)))
+        cut = [a[hh - vis:] for a in st]; sway = int(4 * math.sin(t * 1.3 + i))
+        out.append(("spr", cut, x - st[1].shape[1] // 2 + sway, H - 20 - vis, 1 - sm((t - fade_t) / .9)))
+    return out
+def petals_fall(t, t0, dur, n_items, alpha):
+    out = []; u = (t - t0) / dur
+    for k, (x, ph, sp, r, rot) in enumerate(n_items[:22]):
+        y = ((ph + u * sp * .5) % 1) * (H + 80) - 40; xx = (x + 60 * math.sin(t + ph * 7)) % W
+        p = PETALS[(k % 3) * 8 + int((t * 40 + rot * 57) / 45) % 8]
+        out.append(("spr", p, int(xx), int(y), alpha))
+    return out
 EMB = [(rng.uniform(300, 1620), rng.uniform(0, 1), rng.uniform(.6, 1.6), rng.uniform(2, 5)) for _ in range(70)]
 PET = [(rng.uniform(0, W), rng.uniform(0, 1), rng.uniform(.5, 1.2), rng.uniform(10, 20), rng.uniform(0, 6.28)) for _ in range(40)]
 def sm(x): x = min(max(x, 0), 1); return x * x * (3 - 2 * x)
@@ -140,24 +163,18 @@ def effects(t):
     if 1.0 <= t < 8.3:  # sarlavha
         a = flick(t, 1.0) * (1 - sm((t - 7.3) / 1.0)); L += [("d", (SH_T + SH_S) * sm((t - 1.0) / .5) * (1 - sm((t - 7.3) / 1.0))), TITLE * a, SUB * sm((t - 2.2) / 1.0) * (1 - sm((t - 7.3) / 1.0))]
     if 13.4 <= t < 18.0:  # «ko'z yoshimning bog'larida» — qizil neon gullar unadi
-        for i, F in enumerate(FLC):
-            g = sm((t - 13.4 - i * .35) / 1.6); fo = 1 - sm((t - 17.1) / .9)
-            if g > 0:
-                o = F.copy(); cut = int(H - (H - 650) * g - 50); o[:max(0, cut)] = 0; L.append(o * fo)
+        L += grow(t, 13.4, SP_A, "A", 16.6)
     if 45.0 <= t < 49.4:  # «O'zingni angla» qizil neon yozuv
         a = 1 - sm((t - 48.7) / .7); L += [("d", wipe(SH_A[..., None], sm((t - 45.0) / 1.4))[..., 0] * a), wipe(ANGLA, sm((t - 45.0) / 1.4)) * a]
     if 52.2 <= t < 57.0:  # «Ey ishq, meni yondir» — yurak + uchqunlar, keyin gullar
         a = sm((t - 52.4) / 1.0) * (1 - sm((t - 56.2) / .8)) * (.85 + .15 * math.sin(t * 6))
-        L += [HEART * a, particles(t, 52.2, 5.0, RED, EMB, "ember") * a]
-        for i, F in enumerate(FLC[:4]):
-            g = sm((t - 54.2 - i * .3) / 1.2)
-            if g > 0: o = F.copy(); o[:max(0, int(H - (H - 650) * g - 50))] = 0; L.append(o * a)
+        L += [particles(t, 52.2, 5.0, RED, EMB, "ember") * a] + grow(t, 53.4, SP_B, "B", 56.0, .3, 1.3)
     if 171.0 <= t < 195.9:  # naqarot takrori — sekin tushayotgan qizil barglar
-        a = sm((t - 171.0) / 2) * (1 - sm((t - 194.9) / 1.0)) * .55; L.append(particles(t, 171.0, 25, ROSE, PET, "petal") * a)
+        a = sm((t - 171.0) / 2) * (1 - sm((t - 194.9) / 1.0)) * .8; L += petals_fall(t, 171.0, 25, PET, a)
     if t >= 195.8:  # OXIRI: qora fon, qizil neon «O'zingni angla», barglar
         a = flick(t, 196.4) * (1 - sm((t - 205.2) / 1.6))
         L += [wipe(FIN, sm((t - 196.4) / 1.5)) * a, FIN2 * sm((t - 198.2) / 1.2) * (1 - sm((t - 205.2) / 1.6)),
-              particles(t, 195.6, 12, ROSE, PET, "petal") * sm((t - 195.8) / 1.2) * (1 - sm((t - 205.2) / 1.6)) * .8]
+              ] + petals_fall(t, 195.6, 12, PET, sm((t - 195.8) / 1.2) * (1 - sm((t - 205.2) / 1.6)))
     return L
 if os.environ.get("SKIPFX") and os.path.exists(f"{W0}/fx.mp4"): dec = None
 else: dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{W0}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
@@ -170,9 +187,10 @@ if dec:
         if len(buf) < FS: break
         t = n / FPS; L = effects(t)
         if L:
-            fr = np.frombuffer(buf, np.uint8).reshape(H, W, 3).astype(np.float32) / 255
+            fr = np.frombuffer(buf, np.uint8).reshape(H, W, 3).astype(np.float32) / 255; fr = fr.copy()
             for l in L:
-                if isinstance(l, tuple): fr = fr * (1 - l[1][..., None])  # soya (qorong'ilatish)
+                if isinstance(l, tuple) and l[0] == "spr": gul.put(fr, l[1], l[2], l[3], l[4])  # gravyura gul / gulbarg
+                elif isinstance(l, tuple): fr = fr * (1 - l[1][..., None])  # soya (qorong'ilatish)
                 else:
                     l = np.clip(l, 0, 1); fr = fr * (1 - .7 * l.max(2, keepdims=True))  # yorug' fonda ham qizil ko'rinsin
                     fr = 1 - (1 - fr) * (1 - l)  # screen
