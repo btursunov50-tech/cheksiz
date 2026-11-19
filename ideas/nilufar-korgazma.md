@@ -66,5 +66,5 @@ Imom Buxoriyning haqiqiy surati yo'q, yuzini chizish ko'pchilikka nojoiz ko'rina
 Promptlarga Prezidentning 1–2 ta surati va yangi majmuaning 1 ta surati biriktiriladi (egasi yuklaydi).
 - 4A (3:4) Ahmarov devoriy uslubi: Prezident majmua oldida, osmonda nurli Imom Buxoriy siymosi (yuzsiz) ochiq kitob bilan duo qiladi.
 - 4B (16:9) Ahmarov: keng panno, ziyoratchilar, talabalar, Prezident markazda, gumbazlar ustida nur va kitob.
-- 5A (3:4) Behzod miniatyurasi: ikki zamon — yuqorida IX asr, yosh Buxoriy (yuzi oq parda/nurda) kitob yozmoqda; pastda yangi majmua va Prezident.
+- 5A (3:4) Behzod miniatyurasi: ikki zamon — yuqorida IX asr, yosh Buxoriy (yuzi oq parda/nurda) kitob yozmoqda (shahar nomi yo'q); pastda Samarqanddagi yangi majmua va Prezident. Egasi 2026-11-19: Buxorodagi bino emas, faqat Samarqanddagi majmua.
 - 5B (4:3) Tansiqboyev: oltin kuz manzarasi, majmua butun ko'rinishda, Prezident kichikroq, osmonda nur kitob shaklida.
