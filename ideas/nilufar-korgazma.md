@@ -74,3 +74,7 @@ Promptlarga Prezidentning 1–2 ta surati va yangi majmuaning 1 ta surati birikt
 - Majmua namunalari: haqiqiy suratlar — yangi masjid (oq, qovurg'ali feruza bosh gumbaz, 4 kichik ko'k gumbaz, 4 oq minora uchi ko'k, oldida katta hovuz) va eski maqbara (koshinli ko'k-oq devorlar, qovurg'ali ko'k gumbaz, o'ymakor yog'och ustunli ayvon). Oq gumbazli suratlar — loyiha chizmalari (render), rangi haqiqiyga to'g'ri kelmaydi.
 - Soch: 2–3 variant (kare, uzun tekis, shol ostida tugun) — tayyor rasmga ChatGPT'da tahrir prompti bilan.
 - Mashrab Boboyev (egasi): «grafika va portret / obraz talqini: qalam, tush va grafika orqali obrazning ichki quvvati, chiziqlar keskinligi, tarixiy-adabiy qahramonlar qiyofasi». 6-g'oya: 6A Saida, 6B Prezident va majmua, tush-grafika uslubida.
+
+## Sahifa (egasi, 2026-11-19: «har bir promptga rasmni qo'y»)
+Barcha 12 prompt + 3 soch tahriri, har birining yonida biriktiriladigan suratlar: https://claude.ai/artifact/8yN4AjeTFfdXGBmRqdcLLM
+Suratlar (Prezident 1/2/3/5, Saida 2 ta qirqilgan, majmua 13 masjid + 17 maqbara) repoga qo'yilmadi (boshqalarning suratlari); sahifada va chatda.
