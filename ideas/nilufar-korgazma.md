@@ -58,3 +58,13 @@ Chatdagi kod bloklari bilan bir xil. Har prompt to'liq, alohida.
 ```
 3B — vertical 3:4. Attach 1–2 clear frontal photos of Saida Mirziyoyeva. A painting in the style of Ural Tansykbaev: bold saturated colours, expressive brushstrokes, purple and blue shadows, warm orange light, mountains and a big sky. Medium shot: an elegant woman in a long Uzbek national dress of deep red khan-atlas with a white silk shawl holds a traditional glowing lamp; her face must be exactly the face from the attached reference photos (same face shape, eyes, eyebrows, nose, lips and hairline), recognisable, calm and kind. The lamp light falls on a young mother sitting under a pomegranate tree, reading a book to her little son and daughter. Above them, in the evening sky over the mountains, the clouds softly take the shapes of the children's future: a scholar with an astrolabe, a poet with a pen, a woman doctor, a builder (silhouettes only, no real historical faces). Ripe pomegranates on the branches. Tender, hopeful mood: a wise generation begins with an educated mother. No text, no letters, no signature, no watermark.
 ```
+
+## 2-xabar (2026-11-19): Yurtboshi va Imom Buxoriy majmuasi
+Nilufar: Prezident yangi Imom Buxoriy majmuasi binosi bilan, «Al-Buxoriy mamnun bo'lib turishi kerak», orqada madrasa.
+Fakt: yangi majmua (Samarqand, Payariq, Xartang) 2026-03-19 da ochilgan, 45 ga, oq masjid, ko'k gumbazlar, 4 minora, masjid 10 000 kishilik, 9 pavilonli Innovatsion muzey (Euronews, kun.uz).
+Imom Buxoriyning haqiqiy surati yo'q, yuzini chizish ko'pchilikka nojoiz ko'rinadi: promptlarda u yuzsiz (nur ichida yoki ortdan) chiziladi. Mamnunlikni yuz emas, holat ko'rsatadi: duo qilayotgan qo'llar, ochiq kitob, nur. Nilufardan so'raladi.
+Promptlarga Prezidentning 1–2 ta surati va yangi majmuaning 1 ta surati biriktiriladi (egasi yuklaydi).
+- 4A (3:4) Ahmarov devoriy uslubi: Prezident majmua oldida, osmonda nurli Imom Buxoriy siymosi (yuzsiz) ochiq kitob bilan duo qiladi.
+- 4B (16:9) Ahmarov: keng panno, ziyoratchilar, talabalar, Prezident markazda, gumbazlar ustida nur va kitob.
+- 5A (3:4) Behzod miniatyurasi: ikki zamon — yuqorida IX asr, yosh Buxoriy (yuzi oq parda/nurda) kitob yozmoqda; pastda yangi majmua va Prezident.
+- 5B (4:3) Tansiqboyev: oltin kuz manzarasi, majmua butun ko'rinishda, Prezident kichikroq, osmonda nur kitob shaklida.
