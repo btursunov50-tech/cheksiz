@@ -68,3 +68,9 @@ Promptlarga Prezidentning 1–2 ta surati va yangi majmuaning 1 ta surati birikt
 - 4B (16:9) Ahmarov: keng panno, ziyoratchilar, talabalar, Prezident markazda, gumbazlar ustida nur va kitob.
 - 5A (3:4) Behzod miniatyurasi: ikki zamon — yuqorida IX asr, yosh Buxoriy (yuzi oq parda/nurda) kitob yozmoqda (shahar nomi yo'q); pastda Samarqanddagi yangi majmua va Prezident. Egasi 2026-11-19: Buxorodagi bino emas, faqat Samarqanddagi majmua.
 - 5B (4:3) Tansiqboyev: oltin kuz manzarasi, majmua butun ko'rinishda, Prezident kichikroq, osmonda nur kitob shaklida.
+
+## Tuzatish (egasi, 2026-11-19)
+- «Al-Buxoriy mamnun bo'lib turishi» = Samarqanddagi Imom Buxoriy MAJMUASI (bino), Imom Buxoriy siymosi EMAS. Hech qaysi promptda uning qiyofasi yo'q; 4A/4B/5A/5B qayta yozildi (5A endi ikki zamon emas, majmuaning miniatyurasi).
+- Majmua namunalari: haqiqiy suratlar — yangi masjid (oq, qovurg'ali feruza bosh gumbaz, 4 kichik ko'k gumbaz, 4 oq minora uchi ko'k, oldida katta hovuz) va eski maqbara (koshinli ko'k-oq devorlar, qovurg'ali ko'k gumbaz, o'ymakor yog'och ustunli ayvon). Oq gumbazli suratlar — loyiha chizmalari (render), rangi haqiqiyga to'g'ri kelmaydi.
+- Soch: 2–3 variant (kare, uzun tekis, shol ostida tugun) — tayyor rasmga ChatGPT'da tahrir prompti bilan.
+- Mashrab Boboyev (egasi): «grafika va portret / obraz talqini: qalam, tush va grafika orqali obrazning ichki quvvati, chiziqlar keskinligi, tarixiy-adabiy qahramonlar qiyofasi». 6-g'oya: 6A Saida, 6B Prezident va majmua, tush-grafika uslubida.
