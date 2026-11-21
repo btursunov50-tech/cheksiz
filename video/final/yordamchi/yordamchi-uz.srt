@@ -1,0 +1,104 @@
+1
+00:00:00,300 --> 00:00:04,647
+To'xtang! Telefoningizda hali ishlatmagan bepul yordamchingiz bor.
+
+2
+00:00:05,430 --> 00:00:07,792
+Biz Infinite AI & Me:
+
+3
+00:00:07,792 --> 00:00:11,572
+inson va sun'iy intellekt birga ishlaydigan kichik jamoa.
+
+4
+00:00:12,370 --> 00:00:17,247
+Botimiz @sahiychishopbot. Unga oddiy so'z bilan yozing yoki
+
+5
+00:00:17,247 --> 00:00:19,075
+ovozli xabar yuboring.
+
+6
+00:00:19,870 --> 00:00:24,883
+Shubhali xabar, «pulingizni ikki barobar qilamiz» degan taklif
+
+7
+00:00:24,883 --> 00:00:29,269
+yoki soxta ish e'loni keldimi? Suratini yuboring:
+
+8
+00:00:29,269 --> 00:00:31,776
+aldov bormi, aytib beradi.
+
+9
+00:00:32,570 --> 00:00:38,315
+Telegramingizni o'g'rilardan saqlash uchun bulutli parolni qadamma-qadam yoqishni
+
+10
+00:00:38,315 --> 00:00:39,034
+o'rgatadi.
+
+11
+00:00:39,800 --> 00:00:44,458
+«70 foiz chegirma», «oyiga atigi», «bepul yetkazish»?
+
+12
+00:00:44,458 --> 00:00:48,451
+Suratini yuboring: haqiqatda qancha to'lashingizni hisoblaydi.
+
+13
+00:00:49,230 --> 00:00:53,779
+To'y xarajatlarini ham bitta ro'yxatga yig'ib, jamini ko'rsatadi.
+
+14
+00:00:54,570 --> 00:00:59,956
+Telefoningiz qotyaptimi? Yangisini olishdan oldin batareya holatini tekshirishni
+
+15
+00:00:59,956 --> 00:01:00,629
+o'rgatadi.
+
+16
+00:01:01,400 --> 00:01:05,856
+Bildirishnomalar tinchlik bermayaptimi? Qaysilarini o'chirishni ko'rsatadi.
+
+17
+00:01:06,630 --> 00:01:10,131
+Konserva yoki sut yorlig'ini yuboring: sanalarni o'qib,
+
+18
+00:01:10,131 --> 00:01:11,632
+nimani tekshirishni aytadi.
+
+19
+00:01:12,430 --> 00:01:16,537
+Excel yoki Word'da qotib qoldingizmi? Ekran rasmini yuboring:
+
+20
+00:01:16,537 --> 00:01:18,590
+qaysi tugmani bosishni ko'rsatadi.
+
+21
+00:01:19,370 --> 00:01:24,499
+Jahlingizni chiqargan xabarga xotirjam javob yozishga yordam beradi.
+
+22
+00:01:25,270 --> 00:01:29,858
+Har tong soat beshda kanalimizda bepul maslahat chiqadi.
+
+23
+00:01:30,630 --> 00:01:33,090
+Biznesingiz bormi? Sayt, QR menyu,
+
+24
+00:01:33,090 --> 00:01:36,534
+bot va reklama videosini ham biz qilamiz.
+
+25
+00:01:37,330 --> 00:01:42,838
+Yozing: @sahiychishopbot. Oddiy, tushunarli, o'zbek tilida.
+
+26
+00:01:43,633 --> 00:01:48,142
+Siz-chi? Botdan birinchi nima so'rardingiz? Izohga yozing!
+

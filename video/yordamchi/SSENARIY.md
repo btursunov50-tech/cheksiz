@@ -25,3 +25,6 @@ Hook (en): «Stop. Your phone has a free helper you've never used.» — 87.0 ST
 
 ## Ovoz (2026-11-10)
 `narration.wav` → `voice/01–16_usta.wav` (16 qator, BIP bo'yicha ajratildi; jami ~96 s). Video keyinroq, «O'zligim» klipidan keyin.
+
+## Holat (2026-11-21)
+Video yig'ildi: `chiz.py` (15 sahna kodda, TLANG=uz/ru/en) + `build.py` → `video/final/yordamchi/` (1:53, <30 MB, −15.3 LUFS). Post matnlari `POSTS.md`. Egasi ko'rib chiqadi; yoqmasa sahnalar boyitiladi.
