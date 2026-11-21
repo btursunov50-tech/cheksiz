@@ -228,3 +228,22 @@ LIGHT: the left side of his face and shirt is lit warm gold by the desk lamp beh
 MOOD: silent, solemn, deeply thoughtful.
 MUST NOT: no symbolic objects, no scales, no globes, no medallions, no guards, no bodyguards, no crowd, no cameras, no microphones, no cars, no flags, no text, no letters, no numbers, no logos, no signature, no watermark, no extra hands, no extra fingers.
 ```
+
+## 14-g'oya (egasi, 2026-11-21): 13B uslubi yoqdi, lekin g'oya yoqmadi — «insonni o'yga qoldiruvchi»
+13A va 13B tekshirildi (yaxshi). 14 «Yerdagi non»: hech kim ko'rmaganda nonni olib o'pib baland joyga qo'yish.
+```
+14 — vertical 3:4 portrait format. Attach 2 clear photos of President Shavkat Mirziyoyev.
+STYLE: an oil painting that sees the world through the eyes of great Uzbek and European masters at once: the perfect balance and fine detail of a classical Herat miniature, the wide space, light and power of nature of a great Uzbek landscape colourist, the elegant lyrical lines of Uzbek monumental mural painting, the strong contrast and confident drawn contour of a master of ink graphics, the warm inner light and deep shadows of the Dutch Golden Age, and the humble dignity of 19th-century European painters of peasant life. Visible brushstrokes, rich but calm colours. An original artwork, not a copy of any existing painting.
+IDEA: greatness is what a person does when nobody is watching. In Uzbek tradition, bread found on the ground is never stepped over: it is picked up, kissed, touched to the forehead and placed up high. Respect for bread is respect for every grain, every hand that grew it, and the peace that let it grow.
+PLACE AND TIME: late evening, a narrow empty old street of an Uzbek mahalla, high adobe walls on both sides, a closed carved wooden gate, a small niche in the wall. The street is completely empty: nobody else, no witness.
+COMPOSITION (exact positions):
+- One single old street lamp on the wall at the upper left gives a warm golden pool of light in the middle of the dark street; everything else is in deep blue-brown shadow.
+- Centre of the picture, inside the pool of light: the President, alone, in a dark coat over a white shirt, no tie. He has just picked up a small torn piece of round Uzbek non bread from the dusty ground. He holds it with both hands close to his face, his eyes closed, touching it gently to his lips and forehead in the traditional gesture of respect. His face is seen clearly in three-quarter view from the left, calm, humble, quietly moved.
+- Right side, at shoulder height: a small niche in the adobe wall where he is about to place the bread.
+- On the ground at his feet: the dusty cobbles where the bread was lying, a few crumbs.
+- Far in the background, at the end of the street, one small lit window of a house; above the walls a deep night sky with a few stars.
+FACE: the President's face must be exactly the face from the attached reference photos (same face shape, eyes, eyebrows, nose, lips, hairline, short grey hair), clearly recognisable, painted in the same oil technique as the rest.
+LIGHT: strong warm light from the single lamp falling from above-left onto his hands, the bread and his face; deep calm darkness all around, like a Dutch Golden Age painting.
+MOOD: silent, intimate, humble, deeply moving.
+MUST NOT: no symbolic objects, no scales, no globes, no medallions, no guards, no bodyguards, no crowd, no cameras, no microphones, no cars, no flags, no text, no letters, no numbers, no logos, no signature, no watermark, no extra hands, no extra fingers.
+```
