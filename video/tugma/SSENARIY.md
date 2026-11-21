@@ -21,3 +21,7 @@ Hook (en): «Stop counting with a calculator. One key does it in a second.» —
 - Ovoz: `narration.wav` → `voice/01–10_usta.wav` (5.6, 5.7, 6.1, 5.3, 8.4, 13.4, 5.6, 3.1, 8.7, 4.7 s).
 - Veo promptlari: `video_promptlar.py` → `sahnalar.html`, https://claude.ai/artifact/X7Nz5LrKkUFyQoEPa4WSMA
 - Kodda chiziladi: 3 (Alt+=), 4 (Ctrl+T), 5 (Ctrl+E), 6-sahnaning Word qismi, 7 (PDF), 9 (bot), 10 (avatar). Sinov: Excel jadvali shu uslubda.
+
+## Holat (2026-11-21)
+- Yakuniy uz/ru/en: `video/final/tugma/` (1:21, <30 MB, H.264). Ekrandagi Excel/Word yozuvlari tilga qarab (`chiz.py` → `TLANG`, `TR` lug'ati); ru Excel'da `=СУММ`. Tekshirildi: −15.8 LUFS, TP −1.4; qora kadr faqat avatar→yakuniy karta o'tishida (0.4 s).
+- Post matnlari: `POSTS.md`. Bot: `bot/knowledge.js` ga Excel/Word mavzusi qo'shildi.

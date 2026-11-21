@@ -1,0 +1,100 @@
+1
+00:00:00,300 --> 00:00:02,640
+Stop counting with a calculator!
+
+2
+00:00:02,640 --> 00:00:05,915
+One key does it in a second.
+
+3
+00:00:06,620 --> 00:00:10,446
+Many people say Excel is only for programmers.
+
+4
+00:00:10,446 --> 00:00:12,359
+No, it's for you.
+
+5
+00:00:13,260 --> 00:00:15,975
+Click the cell under the numbers and press
+
+6
+00:00:15,975 --> 00:00:17,672
+Alt and the equals sign:
+
+7
+00:00:17,672 --> 00:00:19,369
+everything adds up by itself.
+
+8
+00:00:19,960 --> 00:00:23,470
+Press Ctrl and T: a plain list instantly
+
+9
+00:00:23,470 --> 00:00:25,226
+becomes a neat table.
+
+10
+00:00:25,960 --> 00:00:29,037
+Need to split first and last names?
+
+11
+00:00:29,037 --> 00:00:32,114
+Type one yourself, press Ctrl and E:
+
+12
+00:00:32,114 --> 00:00:34,312
+Excel fills in the rest.
+
+13
+00:00:35,160 --> 00:00:38,414
+Need a page about where you worked and
+
+14
+00:00:38,414 --> 00:00:41,668
+what you can do, to get a job?
+
+15
+00:00:41,668 --> 00:00:44,921
+Don't start from zero in Word: File, New,
+
+16
+00:00:44,921 --> 00:00:48,175
+pick a ready template and fill in your
+
+17
+00:00:48,175 --> 00:00:48,582
+details.
+
+18
+00:00:49,760 --> 00:00:51,897
+When you save, choose PDF:
+
+19
+00:00:51,897 --> 00:00:55,315
+the document opens the same on any phone.
+
+20
+00:00:56,460 --> 00:00:59,567
+The job took two minutes, not two hours.
+
+21
+00:01:02,060 --> 00:01:04,239
+Stuck in Excel or Word?
+
+22
+00:01:04,239 --> 00:01:06,419
+Send a screenshot to @sahiychishopbot:
+
+23
+00:01:06,419 --> 00:01:09,906
+it shows you step by step which key
+
+24
+00:01:09,906 --> 00:01:10,778
+to press.
+
+25
+00:01:11,460 --> 00:01:16,119
+And you? What's the hardest job for you in Excel? Tell us in the comments!
+

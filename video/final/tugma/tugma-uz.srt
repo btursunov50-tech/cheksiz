@@ -1,0 +1,84 @@
+1
+00:00:00,300 --> 00:00:05,291
+Kalkulyatorda sanashni to'xtating! Bitta tugma buni bir soniyada
+
+2
+00:00:05,291 --> 00:00:05,915
+qiladi.
+
+3
+00:00:06,620 --> 00:00:10,794
+Ko'pchilik shunday deydi: Excel faqat dasturchilar uchun. Yo'q,
+
+4
+00:00:10,794 --> 00:00:12,359
+u siz uchun.
+
+5
+00:00:13,260 --> 00:00:17,019
+Raqamlar ostidagi katakka turing va Alt bilan tenglik
+
+6
+00:00:17,019 --> 00:00:19,369
+belgisini bosing: hammasi o'zi qo'shiladi.
+
+7
+00:00:19,960 --> 00:00:22,154
+Ctrl bilan T harfini bosing:
+
+8
+00:00:22,154 --> 00:00:25,226
+oddiy ro'yxat bir zumda chiroyli jadvalga aylanadi.
+
+9
+00:00:25,960 --> 00:00:29,890
+Ism va familiyani ajratish kerakmi? Bittasini o'zingiz yozing,
+
+10
+00:00:29,890 --> 00:00:32,347
+Ctrl bilan E harfini bosing:
+
+11
+00:00:32,347 --> 00:00:34,312
+qolganini Excel o'zi to'ldiradi.
+
+12
+00:00:35,160 --> 00:00:39,634
+Ishga kirish uchun qayerda ishlaganingiz va nima qila
+
+13
+00:00:39,634 --> 00:00:44,108
+olishingiz haqida varaqa kerakmi? Word'da noldan yozmang: Fayl,
+
+14
+00:00:44,108 --> 00:00:48,582
+Yaratish, tayyor namunani tanlang va o'z ma'lumotingizni yozing.
+
+15
+00:00:49,760 --> 00:00:54,204
+Saqlayotganda PDF'ni tanlang: hujjat har qanday telefonda bir
+
+16
+00:00:54,204 --> 00:00:55,316
+xil ochiladi.
+
+17
+00:00:56,460 --> 00:00:59,567
+Ish ikki soat emas, ikki daqiqa bo'ldi.
+
+18
+00:01:02,060 --> 00:01:05,547
+Excel yoki Word'da qayerda qotib qoldingiz?
+
+19
+00:01:05,547 --> 00:01:10,197
+Ekran rasmini @sahiychishopbot'ga yuboring: qaysi tugmani bosishni qadamma-qadam
+
+20
+00:01:10,197 --> 00:01:10,778
+ko'rsatadi.
+
+21
+00:01:11,460 --> 00:01:16,119
+Siz-chi? Excel'da qaysi ish sizga eng qiyin? Izohga yozing!
+
