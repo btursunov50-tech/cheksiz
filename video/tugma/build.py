@@ -24,11 +24,35 @@ T_ALL = {"uz": dict(hook="BITTA TUGMA!", say=[
   "Excel yoki Word'da qayerda qotib qoldingiz? Ekran rasmini @sahiychishopbot'ga yuboring: qaysi tugmani bosishni qadamma-qadam ko'rsatadi.",
   "Siz-chi? Excel'da qaysi ish sizga eng qiyin? Izohga yozing!"],
   avq="Siz-chi?|Excel'da qaysi ish sizga eng qiyin?|Izohga yozing!")}
+T_ALL["ru"] = dict(hook="ОДНА КЛАВИША!", say=[
+  "Хватит считать на калькуляторе! Одна клавиша сделает это за секунду.",
+  "Многие говорят: Excel только для программистов. Нет, он для вас.",
+  "Встаньте в ячейку под числами и нажмите Alt и знак равно: всё сложится само.",
+  "Нажмите Ctrl и букву T: обычный список сразу станет красивой таблицей.",
+  "Нужно разделить имя и фамилию? Напишите одно сами, нажмите Ctrl и E: остальное Excel заполнит сам.",
+  "Нужен листок о том, где вы работали и что умеете, чтобы устроиться на работу? Не пишите в Word с нуля: Файл, Создать, выберите готовый шаблон и впишите свои данные.",
+  "При сохранении выберите PDF: документ откроется одинаково на любом телефоне.",
+  "Работа заняла не два часа, а две минуты.",
+  "Где вы застряли в Excel или Word? Отправьте скриншот @sahiychishopbot: он покажет шаг за шагом, какую клавишу нажать.",
+  "А вы? Что в Excel для вас самое трудное? Напишите в комментариях!"],
+  avq="А вы?|Что в Excel для вас самое трудное?|Напишите в комментариях!")
+T_ALL["en"] = dict(hook="ONE KEY!", say=[
+  "Stop counting with a calculator! One key does it in a second.",
+  "Many people say Excel is only for programmers. No, it's for you.",
+  "Click the cell under the numbers and press Alt and the equals sign: everything adds up by itself.",
+  "Press Ctrl and T: a plain list instantly becomes a neat table.",
+  "Need to split first and last names? Type one yourself, press Ctrl and E: Excel fills in the rest.",
+  "Need a page about where you worked and what you can do, to get a job? Don't start from zero in Word: File, New, pick a ready template and fill in your details.",
+  "When you save, choose PDF: the document opens the same on any phone.",
+  "The job took two minutes, not two hours.",
+  "Stuck in Excel or Word? Send a screenshot to @sahiychishopbot: it shows you step by step which key to press.",
+  "And you? What's the hardest job for you in Excel? Tell us in the comments!"],
+  avq="And you?|What's hardest for you in Excel?|Tell us in the comments!")
 T = T_ALL[LANG]
 VL = [dur(f"{V}/{i:02}_usta.wav") for i in range(1, 11)]
-CH = f"{W0}/chiz"
+CH = f"{W0}/chiz_{LANG}"
 if not all(os.path.exists(f"{CH}/{n}.mp4") for n in ("s03", "s04", "s05", "s06w", "s07", "s09")):
-    run(["python3", f"{Q}/chiz/chiz.py", CH])
+    subprocess.run(["python3", f"{Q}/chiz/chiz.py", CH], check=True, env=dict(os.environ, TLANG=LANG))
 # (manba, boshi, davomiyligi, sekinlashtirish) — Veo 24 fps 720x1280, chizilgan 30 fps 1080x1920
 P = 0.3
 SEG = [("v", "s01_toza", 0, round(P + VL[0] + 0.4, 2)), ("v", "s02", 0, round(P + VL[1] + 0.4, 2)),
@@ -37,7 +61,7 @@ SEG = [("v", "s01_toza", 0, round(P + VL[0] + 0.4, 2)), ("v", "s02", 0, round(P 
 segs, lens = [], []
 for k, (kind, name, ss, d) in enumerate(SEG):
     src = f"{C}/{name}.mp4" if kind == "v" else f"{CH}/{name}.mp4"; L = dur(src) - ss; d = d or L
-    o = f"{CW}/{k:02}_{name}_{d}.mp4"
+    o = f"{CW}/{k:02}_{name}_{d}" + (f"_{LANG}" if kind == "c" else "") + ".mp4"  # chizilgan sahnalar tilga qarab
     if not os.path.exists(o):
         f = max(1.0, d / L)
         vf = (f"setpts={f:.4f}*(PTS-STARTPTS)," + ("minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir," if f > 1.02 else "fps=30,") +
@@ -52,7 +76,7 @@ VS = [(0, starts[0] + P), (1, starts[1] + P), (2, starts[2] + 0.5), (3, starts[3
       (5, starts[6] + 0.3), (6, starts[8] + 0.3), (7, starts[9] + 0.6), (8, starts[10] + 0.3)]
 open(f"{W}/seq.txt", "w").write("".join(f"file '{x}'\n" for x in segs))
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq.txt", "-c", "copy", f"{W}/story.mp4"])
-cine = f"{W0}/cine_story.mp4"
+cine = f"{W0}/cine_story_{LANG}.mp4"
 if not os.path.exists(cine): run(["bash", f"{R}/video/cine.sh", f"{W}/story.mp4", cine, " ".join(str(c) for c in starts[1:])])
 def wrap(d, text, font, maxw):
     ls, cur = [], ""
