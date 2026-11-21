@@ -120,7 +120,7 @@ def y05(t):  # qulf + qadamlar
             if i < 2: ctext(d, W / 2, y + 108, "↓", F(40, True), INK2)
     if closed:
         glow(im, lambda g, c: g.rounded_rectangle((cx - 150, cy, cx + 150, cy + 230), 30, outline=c, width=8), BLUE, 18)
-        d = ImageDraw.Draw(im); ctext(d, W / 2, 1380, T("on"), F(80, True), (30, 140, 90))
+        d = ImageDraw.Draw(im); ctext(d, W / 2, 780, T("on"), fit(d, T("on"), 70, 900), (30, 140, 90))
     return im
 
 def y06(t):  # -70%, oyiga atigi, bepul yetkazish → haqiqatda qancha?
