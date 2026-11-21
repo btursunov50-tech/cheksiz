@@ -247,3 +247,21 @@ LIGHT: strong warm light from the single lamp falling from above-left onto his h
 MOOD: silent, intimate, humble, deeply moving.
 MUST NOT: no symbolic objects, no scales, no globes, no medallions, no guards, no bodyguards, no crowd, no cameras, no microphones, no cars, no flags, no text, no letters, no numbers, no logos, no signature, no watermark, no extra hands, no extra fingers.
 ```
+
+## 15-g'oya (egasi, 2026-11-21: 14 yoqmadi, «boshqa ber»): «Birinchi ustoz»
+```
+15 — horizontal 4:3 landscape format. Attach 2 clear photos of President Shavkat Mirziyoyev.
+STYLE: an oil painting that sees the world through the eyes of great Uzbek and European masters at once: the perfect balance and fine detail of a classical Herat miniature, the wide space, light and power of nature of a great Uzbek landscape colourist, the elegant lyrical lines of Uzbek monumental mural painting, the strong contrast and confident drawn contour of a master of ink graphics, the warm inner light and deep shadows of the Dutch Golden Age, and the humble dignity of 19th-century European painters of peasant life. Visible brushstrokes, rich but calm colours. An original artwork, not a copy of any existing painting.
+IDEA: behind every great person stands someone who first taught them to write a letter. No title is higher than the teacher who held your small hand. A nation that bows to its teachers will never lose its way.
+PLACE AND TIME: late afternoon, sunset; an old, very modest village school classroom in Uzbekistan, empty after the lessons: worn wooden desks in rows, chalk dust in the air, plain whitewashed walls, a clean dark blackboard with nothing written on it, a tall window on the left.
+COMPOSITION (exact positions):
+- Left: the tall window; low warm golden sunset light pours in diagonally across the room, chalk dust glowing in the beam.
+- Centre-right, in that beam of light: a very old woman teacher of about eighty-five, small and thin, in a simple dark dress and a white headscarf, round glasses, deeply wrinkled kind face, standing beside her old wooden teacher's desk with a piece of chalk and an old school register on it.
+- Facing her, slightly lower than her because he bows his head: the President in a simple dark suit without a tie. He holds both of her small old hands in his two hands, gently, and bows his head before her like a pupil. She looks up at him with a tender smile and tears in her eyes, the way a teacher looks at a pupil she remembers as a child. His face is seen clearly in three-quarter view from the left, humble, grateful, moved.
+- On the front desk in the foreground: a child's old wooden pencil case and a pencil, as if left by a pupil fifty years ago.
+- The rest of the classroom is empty and quiet; long shadows of the desks on the floor.
+FACE: the President's face must be exactly the face from the attached reference photos (same face shape, eyes, eyebrows, nose, lips, hairline, short grey hair), clearly recognisable, painted in the same oil technique as the rest.
+LIGHT: one warm golden beam from the window on the two figures and their joined hands; soft dusk shadows everywhere else.
+MOOD: silent, tender, grateful, deeply moving.
+MUST NOT: no symbolic objects, no scales, no globes, no medallions, no guards, no bodyguards, no crowd, no cameras, no microphones, no cars, no flags, no text, no letters, no numbers, no logos, no signature, no watermark, no extra hands, no extra fingers. Nothing written on the blackboard, no portraits on the walls.
+```
