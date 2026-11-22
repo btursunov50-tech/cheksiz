@@ -7,142 +7,142 @@ Stop! Your phone has a free helper you've
 never used.
 
 3
-00:00:05,430 --> 00:00:07,598
+00:00:05,450 --> 00:00:07,618
 We are Infinite AI & Me:
 
 4
-00:00:07,598 --> 00:00:10,488
+00:00:07,618 --> 00:00:10,508
 a small team where a human and artificial
 
 5
-00:00:10,488 --> 00:00:11,572
+00:00:10,508 --> 00:00:11,592
 intelligence work together.
 
 6
-00:00:12,370 --> 00:00:15,946
+00:00:12,390 --> 00:00:15,966
 Our bot is @sahiychishopbot. Write to it in
 
 7
-00:00:15,946 --> 00:00:19,075
+00:00:15,966 --> 00:00:19,095
 plain words or send a voice message.
 
 8
-00:00:19,870 --> 00:00:23,680
+00:00:19,900 --> 00:00:23,710
 Got a suspicious message, a «we'll double your
 
 9
-00:00:23,680 --> 00:00:27,013
+00:00:23,710 --> 00:00:27,043
 money» offer or a fake job post?
 
 10
-00:00:27,013 --> 00:00:30,823
+00:00:27,043 --> 00:00:30,853
 Send a picture: it tells you if it's
 
 11
-00:00:30,823 --> 00:00:31,776
+00:00:30,853 --> 00:00:31,806
 a scam.
 
 12
-00:00:32,570 --> 00:00:35,443
+00:00:32,610 --> 00:00:35,483
 It teaches you step by step to turn
 
 13
-00:00:35,443 --> 00:00:38,315
+00:00:35,483 --> 00:00:38,355
 on a cloud password, so thieves can't take
 
 14
-00:00:38,315 --> 00:00:39,034
+00:00:38,355 --> 00:00:39,074
 your Telegram.
 
 15
-00:00:39,800 --> 00:00:43,362
+00:00:39,870 --> 00:00:43,432
 «70% off», «only a month», «free delivery»?
 
 16
-00:00:43,362 --> 00:00:47,433
+00:00:43,432 --> 00:00:47,503
 Send a picture: it works out what you
 
 17
-00:00:47,433 --> 00:00:48,451
+00:00:47,503 --> 00:00:48,521
 really pay.
 
 18
-00:00:49,230 --> 00:00:52,029
+00:00:49,320 --> 00:00:52,119
 It also adds up wedding costs in one
 
 19
-00:00:52,029 --> 00:00:53,779
+00:00:52,119 --> 00:00:53,869
 list and shows the total.
 
 20
-00:00:54,570 --> 00:00:57,263
+00:00:54,670 --> 00:00:57,363
 Is your phone slow? Before you buy a
 
 21
-00:00:57,263 --> 00:00:59,956
+00:00:57,363 --> 00:01:00,056
 new one, it teaches you to check the
 
 22
-00:00:59,956 --> 00:01:00,629
+00:01:00,056 --> 00:01:00,729
 battery health.
 
 23
-00:01:01,400 --> 00:01:03,257
+00:01:01,530 --> 00:01:03,387
 Notifications won't leave you alone?
 
 24
-00:01:03,257 --> 00:01:05,856
+00:01:03,387 --> 00:01:05,986
 It shows which ones to turn off.
 
 25
-00:01:06,630 --> 00:01:08,631
+00:01:06,790 --> 00:01:08,791
 Send the label of a can or a
 
 26
-00:01:08,631 --> 00:01:10,632
+00:01:08,791 --> 00:01:10,792
 milk carton: it reads the dates and tells
 
 27
-00:01:10,632 --> 00:01:11,632
+00:01:10,792 --> 00:01:11,792
 you what to check.
 
 28
-00:01:12,430 --> 00:01:15,950
+00:01:12,590 --> 00:01:16,110
 Stuck in Excel or Word? Send a screenshot:
 
 29
-00:01:15,950 --> 00:01:18,590
+00:01:16,110 --> 00:01:18,750
 it shows which key to press.
 
 30
-00:01:19,370 --> 00:01:22,301
+00:01:19,550 --> 00:01:22,481
 It helps you write a calm reply to
 
 31
-00:01:22,301 --> 00:01:24,499
+00:01:22,481 --> 00:01:24,679
 a message that made you angry.
 
 32
-00:01:25,270 --> 00:01:28,941
+00:01:25,480 --> 00:01:29,151
 Every morning at five, our channel posts a
 
 33
-00:01:28,941 --> 00:01:29,858
+00:01:29,151 --> 00:01:30,069
 free tip.
 
 34
-00:01:30,630 --> 00:01:33,809
+00:01:30,870 --> 00:01:34,049
 Have a business? We also make websites,
 
 35
-00:01:33,809 --> 00:01:36,534
+00:01:34,049 --> 00:01:36,774
 QR menus, bots and ad videos.
 
 36
-00:01:37,330 --> 00:01:42,838
+00:01:37,570 --> 00:01:43,077
 Write to @sahiychishopbot. Simple and clear.
 
 37
-00:01:43,633 --> 00:01:48,142
+00:01:43,880 --> 00:01:48,389
 And you? What would you ask the bot first? Tell us in the comments!
 

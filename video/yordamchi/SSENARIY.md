@@ -28,3 +28,6 @@ Hook (en): «Stop. Your phone has a free helper you've never used.» — 87.0 ST
 
 ## Holat (2026-11-21)
 Video yig'ildi: `chiz.py` (15 sahna kodda, TLANG=uz/ru/en) + `build.py` → `video/final/yordamchi/` (1:53, <30 MB, −15.3 LUFS). Post matnlari `POSTS.md`. Egasi ko'rib chiqadi; yoqmasa sahnalar boyitiladi.
+
+## Yangi versiya (egasi, 2026-11-22)
+Chizilgan sahnalar o'rniga har gap o'z videosining haqiqiy kadri bilan (`build.py` → `LN`), tepada video nomi; 3 va 15-sahna chizilgan qoldi, 11-sahna «Bitta tugma» Alt + = (tilga qarab). To'y — «Olmos uzuk» s02b (to'yxona).
