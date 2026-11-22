@@ -12,32 +12,58 @@ def run(c): subprocess.run(c, check=True)
 dur = lambda f: float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], capture_output=True, text=True).stdout)
 B = "/usr/share/fonts/opentype/inter/Inter-Bold.otf"; BL = "/usr/share/fonts/opentype/inter/Inter-Black.otf"
 F = lambda s, f=B: ImageFont.truetype(f, s)
-T_ALL = {"uz": dict(hook='BEPUL YORDAMCHI', say=["To'xtang! Telefoningizda hali ishlatmagan bepul yordamchingiz bor.", "Biz Infinite AI & Me: inson va sun'iy intellekt birga ishlaydigan kichik jamoa.", "Botimiz @sahiychishopbot. Unga oddiy so'z bilan yozing yoki ovozli xabar yuboring.", "Shubhali xabar, «pulingizni ikki barobar qilamiz» degan taklif yoki soxta ish e'loni keldimi? Suratini yuboring: aldov bormi, aytib beradi.", "Telegramingizni o'g'rilardan saqlash uchun bulutli parolni qadamma-qadam yoqishni o'rgatadi.", "«70 foiz chegirma», «oyiga atigi», «bepul yetkazish»? Suratini yuboring: haqiqatda qancha to'lashingizni hisoblaydi.", "To'y xarajatlarini ham bitta ro'yxatga yig'ib, jamini ko'rsatadi.", "Telefoningiz qotyaptimi? Yangisini olishdan oldin batareya holatini tekshirishni o'rgatadi.", "Bildirishnomalar tinchlik bermayaptimi? Qaysilarini o'chirishni ko'rsatadi.", "Konserva yoki sut yorlig'ini yuboring: sanalarni o'qib, nimani tekshirishni aytadi.", "Excel yoki Word'da qotib qoldingizmi? Ekran rasmini yuboring: qaysi tugmani bosishni ko'rsatadi.", 'Jahlingizni chiqargan xabarga xotirjam javob yozishga yordam beradi.', 'Har tong soat beshda kanalimizda bepul maslahat chiqadi.', 'Biznesingiz bormi? Sayt, QR menyu, bot va reklama videosini ham biz qilamiz.', "Yozing: @sahiychishopbot. Oddiy, tushunarli, o'zbek tilida.", "Siz-chi? Botdan birinchi nima so'rardingiz? Izohga yozing!"], avq="Siz-chi?|Botdan birinchi nima so'rardingiz?|Izohga yozing!"),
- "ru": dict(hook='БЕСПЛАТНЫЙ ПОМОЩНИК', say=['Стоп! В вашем телефоне есть бесплатный помощник, которым вы ещё не пользовались.', 'Мы Infinite AI & Me: маленькая команда, где человек и искусственный интеллект работают вместе.', 'Наш бот @sahiychishopbot. Пишите ему простыми словами или отправьте голосовое сообщение.', 'Пришло подозрительное сообщение, предложение «удвоим ваши деньги» или фальшивая вакансия? Пришлите фото: бот скажет, есть ли обман.', 'Он шаг за шагом научит включить облачный пароль, чтобы защитить ваш Telegram от воров.', '«Скидка 70%», «всего в месяц», «бесплатная доставка»? Пришлите фото: бот посчитает, сколько вы заплатите на самом деле.', 'Он соберёт расходы на свадьбу в один список и покажет итог.', 'Телефон тормозит? Прежде чем покупать новый, бот научит проверить состояние батареи.', 'Уведомления не дают покоя? Бот покажет, какие отключить.', 'Пришлите этикетку консервы или молока: бот прочитает даты и скажет, что проверить.', 'Застряли в Excel или Word? Пришлите скриншот: бот покажет, какую клавишу нажать.', 'Он поможет спокойно ответить на сообщение, которое вас разозлило.', 'Каждое утро в пять часов на нашем канале выходит бесплатный совет.', 'У вас есть бизнес? Сайт, QR-меню, бота и рекламное видео тоже делаем мы.', 'Пишите: @sahiychishopbot. Просто и понятно.', 'А вы? О чём вы спросили бы бота первым делом? Напишите в комментариях!'], avq='А вы?|О чём вы спросили бы бота первым делом?|Напишите в комментариях!'),
- "en": dict(hook='A FREE HELPER', say=["Stop! Your phone has a free helper you've never used.", 'We are Infinite AI & Me: a small team where a human and artificial intelligence work together.', 'Our bot is @sahiychishopbot. Write to it in plain words or send a voice message.', "Got a suspicious message, a «we'll double your money» offer or a fake job post? Send a picture: it tells you if it's a scam.", "It teaches you step by step to turn on a cloud password, so thieves can't take your Telegram.", '«70% off», «only a month», «free delivery»? Send a picture: it works out what you really pay.', 'It also adds up wedding costs in one list and shows the total.', 'Is your phone slow? Before you buy a new one, it teaches you to check the battery health.', "Notifications won't leave you alone? It shows which ones to turn off.", 'Send the label of a can or a milk carton: it reads the dates and tells you what to check.', 'Stuck in Excel or Word? Send a screenshot: it shows which key to press.', 'It helps you write a calm reply to a message that made you angry.', 'Every morning at five, our channel posts a free tip.', 'Have a business? We also make websites, QR menus, bots and ad videos.', 'Write to @sahiychishopbot. Simple and clear.', 'And you? What would you ask the bot first? Tell us in the comments!'], avq='And you?|What would you ask the bot first?|Tell us in the comments!')}
+T_ALL = {"uz": dict(hook="TO'XTANG!", say=["To'xtang! Telefoningizda hali ishlatmagan bepul yordamchingiz bor.", "Biz Infinite AI & Me: inson va sun'iy intellekt birga ishlaydigan kichik jamoa.", "Botimiz @sahiychishopbot. Unga oddiy so'z bilan yozing yoki ovozli xabar yuboring.", "Shubhali xabar, «pulingizni ikki barobar qilamiz» degan taklif yoki soxta ish e'loni keldimi? Suratini yuboring: aldov bormi, aytib beradi.", "Telegramingizni o'g'rilardan saqlash uchun bulutli parolni qadamma-qadam yoqishni o'rgatadi.", "«70 foiz chegirma», «oyiga atigi», «bepul yetkazish»? Suratini yuboring: haqiqatda qancha to'lashingizni hisoblaydi.", "To'y xarajatlarini ham bitta ro'yxatga yig'ib, jamini ko'rsatadi.", "Telefoningiz qotyaptimi? Yangisini olishdan oldin batareya holatini tekshirishni o'rgatadi.", "Bildirishnomalar tinchlik bermayaptimi? Qaysilarini o'chirishni ko'rsatadi.", "Konserva yoki sut yorlig'ini yuboring: sanalarni o'qib, nimani tekshirishni aytadi.", "Excel yoki Word'da qotib qoldingizmi? Ekran rasmini yuboring: qaysi tugmani bosishni ko'rsatadi.", 'Jahlingizni chiqargan xabarga xotirjam javob yozishga yordam beradi.', 'Har tong soat beshda kanalimizda bepul maslahat chiqadi.', 'Biznesingiz bormi? Sayt, QR menyu, bot va reklama videosini ham biz qilamiz.', "Yozing: @sahiychishopbot. Oddiy, tushunarli, o'zbek tilida.", "Siz-chi? Botdan birinchi nima so'rardingiz? Izohga yozing!"], avq="Siz-chi?|Botdan birinchi nima so'rardingiz?|Izohga yozing!"),
+ "ru": dict(hook='СТОП!', say=['Стоп! В вашем телефоне есть бесплатный помощник, которым вы ещё не пользовались.', 'Мы Infinite AI & Me: маленькая команда, где человек и искусственный интеллект работают вместе.', 'Наш бот @sahiychishopbot. Пишите ему простыми словами или отправьте голосовое сообщение.', 'Пришло подозрительное сообщение, предложение «удвоим ваши деньги» или фальшивая вакансия? Пришлите фото: бот скажет, есть ли обман.', 'Он шаг за шагом научит включить облачный пароль, чтобы защитить ваш Telegram от воров.', '«Скидка 70%», «всего в месяц», «бесплатная доставка»? Пришлите фото: бот посчитает, сколько вы заплатите на самом деле.', 'Он соберёт расходы на свадьбу в один список и покажет итог.', 'Телефон тормозит? Прежде чем покупать новый, бот научит проверить состояние батареи.', 'Уведомления не дают покоя? Бот покажет, какие отключить.', 'Пришлите этикетку консервы или молока: бот прочитает даты и скажет, что проверить.', 'Застряли в Excel или Word? Пришлите скриншот: бот покажет, какую клавишу нажать.', 'Он поможет спокойно ответить на сообщение, которое вас разозлило.', 'Каждое утро в пять часов на нашем канале выходит бесплатный совет.', 'У вас есть бизнес? Сайт, QR-меню, бота и рекламное видео тоже делаем мы.', 'Пишите: @sahiychishopbot. Просто и понятно.', 'А вы? О чём вы спросили бы бота первым делом? Напишите в комментариях!'], avq='А вы?|О чём вы спросили бы бота первым делом?|Напишите в комментариях!'),
+ "en": dict(hook='STOP!', say=["Stop! Your phone has a free helper you've never used.", 'We are Infinite AI & Me: a small team where a human and artificial intelligence work together.', 'Our bot is @sahiychishopbot. Write to it in plain words or send a voice message.', "Got a suspicious message, a «we'll double your money» offer or a fake job post? Send a picture: it tells you if it's a scam.", "It teaches you step by step to turn on a cloud password, so thieves can't take your Telegram.", '«70% off», «only a month», «free delivery»? Send a picture: it works out what you really pay.', 'It also adds up wedding costs in one list and shows the total.', 'Is your phone slow? Before you buy a new one, it teaches you to check the battery health.', "Notifications won't leave you alone? It shows which ones to turn off.", 'Send the label of a can or a milk carton: it reads the dates and tells you what to check.', 'Stuck in Excel or Word? Send a screenshot: it shows which key to press.', 'It helps you write a calm reply to a message that made you angry.', 'Every morning at five, our channel posts a free tip.', 'Have a business? We also make websites, QR menus, bots and ad videos.', 'Write to @sahiychishopbot. Simple and clear.', 'And you? What would you ask the bot first? Tell us in the comments!'], avq='And you?|What would you ask the bot first?|Tell us in the comments!')}
 T = T_ALL[LANG]
 N = 16
 VL = [dur(f"{V}/{i:02}_usta.wav") for i in range(1, N + 1)]
 CH = f"{W0}/chiz_{LANG}"
-if not all(os.path.exists(f"{CH}/y{i:02}.mp4") for i in range(1, N)):
-    subprocess.run(["python3", f"{Q}/chiz.py", CH], check=True, env=dict(os.environ, TLANG=LANG))
+if not all(os.path.exists(f"{CH}/y{i:02}.mp4") for i in (3, 15)):
+    subprocess.run(["python3", f"{Q}/chiz.py", CH, "y03", "y15"], check=True, env=dict(os.environ, TLANG=LANG))
+if not os.path.exists(f"{CH}/s03.mp4"):  # «Bitta tugma»ning Alt + = sahnasi (tilga qarab)
+    subprocess.run(["python3", f"{R}/video/tugma/chiz/chiz.py", CH, "s03"], check=True, env=dict(os.environ, TLANG=LANG))
 P = 0.3
-SEG = [("c", f"y{i:02}", 0, None) for i in range(1, N)]
-segs, lens = [], []
-for k, (kind, name, ss, d) in enumerate(SEG):
-    src = f"{C}/{name}.mp4" if kind == "v" else f"{CH}/{name}.mp4"; L = dur(src) - ss; d = d or L
-    o = f"{CW}/{k:02}_{name}_{d}" + (f"_{LANG}" if kind == "c" else "") + ".mp4"  # chizilgan sahnalar tilga qarab
-    if not os.path.exists(o):
-        f = max(1.0, d / L)
-        vf = (f"setpts={f:.4f}*(PTS-STARTPTS)," + ("minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir," if f > 1.02 else "fps=30,") +
-              f"trim=0:{d},setpts=PTS-STARTPTS,scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p")
-        run(["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", src, "-vf", vf, "-an", "-r", "30", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
-    segs.append(o); lens.append(d)
+VD = R + "/video"
+NM = {"tugma": ("Bitta tugma", "Одна клавиша", "One key"), "robot": ("Robot bilan bir piyola choy", "Чай с роботом", "Tea with a robot"),
+      "sovga": ("Sovg'a yutdingiz!", "Вы выиграли подарок!", "You won a gift!"), "qora": ("Qora kvadrat", "Чёрный квадрат", "Black Square"),
+      "ish": ("Oyiga 490 million", "490 миллионов в месяц", "490 million a month"), "chegirma": ("70 foiz chegirma", "Скидка 70%", "70% off"),
+      "oyiga": ("Oyiga atigi…", "Всего в месяц…", "Only a month…"), "yetkazish": ("Bepul yetkazish", "Бесплатная доставка", "Free delivery"),
+      "olmos": ("Olmos uzuk", "Кольцо с бриллиантом", "The diamond ring"), "eskirish": ("Telefoning eskirmagan", "Твой телефон не устарел", "Your phone isn't old"),
+      "bildirishnoma": ("Telefon jiringlaydi", "Звонит телефон", "The phone rings"), "konserva": ("Ikki sana", "Две даты", "Two dates"),
+      "sukut": ("G'azabda sukut", "Молчание в гневе", "Silence in anger"), "tong": ("Xayrli tong", "Доброе утро", "Good morning")}
+# har ovoz qatori uchun: [(manba fayl, boshidan s, nom kaliti yoki None)] — qator vaqti teng bo'linadi
+LN = [[(f"{VD}/tugma/clips/s01_toza.mp4", 0, "tugma")], [(f"{VD}/robot/clips/s22.mp4", 0, "robot")], [(f"{CH}/y03.mp4", 0, None)],
+      [(f"{VD}/sovga/clips/s03.mp4", 0.5, "sovga"), (f"{VD}/qora/clips/s07.mp4", 0.5, "qora"), (f"{VD}/ish-taklifi/clips/s02.mp4", 0.5, "ish")],
+      [(f"{VD}/sovga/clips/s09.mp4", 0, "sovga")],
+      [(f"{VD}/chegirma/clips/s02.mp4", 0.5, "chegirma"), (f"{VD}/oyiga/clips/s02.mp4", 0.5, "oyiga"), (f"{VD}/yetkazish/clips/s07.mp4", 0.3, "yetkazish")],
+      [(f"{VD}/olmos/clips/s02b.mp4", 0, "olmos")], [(f"{VD}/eskirish/clips/s08.mp4", 0, "eskirish")], [(f"{VD}/bildirishnoma/clips/s02.mp4", 0, "bildirishnoma")],
+      [(f"{VD}/konserva/clips/s09.mp4", 0.5, "konserva"), (f"{VD}/konserva/clips/s03.mp4", 0.5, "konserva")], [(f"{CH}/s03.mp4", 0, "tugma")],
+      [(f"{VD}/sukut/clips/s07.mp4", 0, "sukut")], [(f"{R}/infinite/media/tong/shanba.mp4", 0, "tong")], [(f"{VD}/robot/clips/s06.mp4", 0, "robot")],
+      [(f"{CH}/y15.mp4", 0, None)]]
+segs, lens, labs, first = [], [], [], []
+for li, group in enumerate(LN):
+    D = round(P + VL[li] + 0.5, 2); n = len(group); first.append(len(segs))
+    for gi, (src, ss, key) in enumerate(group):
+        d = round(D / n, 2) if gi < n - 1 else round(D - round(D / n, 2) * (n - 1), 2)
+        L = dur(src) - ss; f = max(1.0, d / L)
+        tag = os.path.basename(os.path.dirname(os.path.dirname(src))) + "_" + os.path.basename(src)[:-4]
+        o = f"{CW}/{li:02}_{gi}_{tag}_{ss}_{d}" + (f"_{LANG}" if src.startswith(CH) else "") + ".mp4"
+        if not os.path.exists(o):
+            sq = "tong/" in src
+            base = (f"setpts={f:.4f}*(PTS-STARTPTS)," + ("minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:me_mode=bidir," if f > 1.02 else "fps=30,") + f"trim=0:{d},setpts=PTS-STARTPTS")
+            if sq:  # kvadrat: xira fon + o'rtada
+                vf = f"{base},split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.15[bg];[b]scale=1080:-2[fg];[bg][fg]overlay=0:(H-h)/2-120,setsar=1,format=yuv420p"
+                run(["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", src, "-filter_complex", vf, "-an", "-r", "30", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
+            else:
+                vf = f"{base},scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p"
+                run(["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", src, "-vf", vf, "-an", "-r", "30", "-c:v", "libx264", "-crf", "18", "-preset", "fast", o])
+        segs.append(o); lens.append(d); labs.append(key)
 starts, t = [], 0
 for d in lens: starts.append(round(t, 2)); t += d
 STORY = t
 # ovoz qatorlari: (qator, boshlanishi)
-VS = [(k, starts[k] + P) for k in range(N - 1)]
+VS = [(k, starts[first[k]] + P) for k in range(N - 1)]
 open(f"{W}/seq.txt", "w").write("".join(f"file '{x}'\n" for x in segs))
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{W}/seq.txt", "-c", "copy", f"{W}/story.mp4"])
 cine = f"{W0}/cine_story_{LANG}.mp4"
@@ -65,7 +91,9 @@ def chunks(text, n=8):  # uzun gapni bo'laklarga (vaqt so'z soniga qarab)
         out.append(" ".join(ws[:k])); ws = ws[k:]
     return out
 ov, srt = [], []
-txtpng(f"{W}/hook.png", T["hook"], 104, (255, 60, 70), font=BL, box=(0, 0, 0, 0)); pass  # hook: 1-sahnaning o'zida katta «TO'XTANG!» bor
+txtpng(f"{W}/hook.png", T["hook"], 104, (255, 60, 70), font=BL, box=(0, 0, 0, 0)); ov.append(("hook.png", 260, 0.2, 4.6))
+for si, key in enumerate(labs):
+    if key: txtpng(f"{W}/lab{si}.png", "«" + NM[key][("uz", "ru", "en").index(LANG)] + "»", 40, (255, 214, 120)); ov.append((f"lab{si}.png", 120, starts[si] + 0.15, starts[si] + lens[si] - 0.1))
 n = 0
 for k, a in VS:
     parts = chunks(T["say"][k]); tot = sum(len(p.split()) for p in parts); t0 = a
