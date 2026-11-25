@@ -285,3 +285,7 @@ Nilufar Gemini chizgan versiyani tanladi: `ideas/nilufar/bibixonim_tasdiqlangan_
 Avvalgi ChatGPT versiyalari (qizil libos, yonboshlab o'tirish, Registon foni) yoqmadi: yuz g'arbona chiqdi, nigoh xayolchan yoki jahldor bo'ldi.
 Tasdiqlangan rasmda: Markaziy Osiyo yuzi, bodomsimon ko'zlar, to'g'ri va sokin-o'tkir nigoh, toj + to'r ro'mol, ko'k-oltin kaftan, o'yma taxt.
 Tarixiy eslatma (Klavixo, 1404; manbalar: Wikipedia «Saray Mulk Khanum», Iranica «Clothing ix», San'at jurnali «Headdress of Bibi Khanym»): libosi qizil ipak edi, bosh kiyimi baland qizil (bo'g'toq bo'lishi mumkin), yuzi oq upa bilan oqartirilgan; orqa fondagi madrasa/minoralar Registonga o'xshaydi — Ulug'bek madrasasi 1417–1420 da qurilgan, Bibixonimdan keyin. Rassom xohlasa, fonni Bibixonim masjidi gumbazi bilan almashtiradi.
+
+## Bibixonim — yakuniy (2026-11-25, «juda ham yoqdi»)
+ChatGPT Gemini rasmini kuchaytirdi: `ideas/nilufar/bibixonim_yakuniy_gpt.webp` (1169×1280). Malika stol yonida farmon yozmoqda, orqada bog', hovuz va qorli tog'lar (Zarafshon tizmasi). Registon binolari yo'q.
+Tekshiruv: yuz Gemini versiyasiga yaqin (biroz yumaloqroq, ko'zlari kattaroq), qo'llar to'g'ri (5 barmoq). Tarixiy nozikliklar: pat qalam va metall uchi — Temuriylar qamish qalam ishlatgan; qizil mum muhr — Yevropa odati, Temuriylarda siyohli muhr bosilgan; qog'ozdagi yozuv soxta harflar — rassom haqiqiy nasta'liq satr yozishi mumkin.
