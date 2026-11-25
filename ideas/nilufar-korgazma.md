@@ -279,3 +279,9 @@ LIGHT: soft golden sunrise light from behind the mountains flooding the valley; 
 MOOD: astonishing, tender, solemn; a picture that makes the viewer stop and stay silent.
 MUST NOT: no symbolic objects, no scales, no globes, no medallions, no guards, no bodyguards, no crowd, no cameras, no microphones, no cars, no flags, no text, no letters, no numbers, no logos, no signature, no watermark, no extra hands, no extra fingers.
 ```
+
+## Bibixonim portreti — tasdiqlandi (2026-11-25)
+Nilufar Gemini chizgan versiyani tanladi: `ideas/nilufar/bibixonim_tasdiqlangan_gemini.webp` (730×698).
+Avvalgi ChatGPT versiyalari (qizil libos, yonboshlab o'tirish, Registon foni) yoqmadi: yuz g'arbona chiqdi, nigoh xayolchan yoki jahldor bo'ldi.
+Tasdiqlangan rasmda: Markaziy Osiyo yuzi, bodomsimon ko'zlar, to'g'ri va sokin-o'tkir nigoh, toj + to'r ro'mol, ko'k-oltin kaftan, o'yma taxt.
+Tarixiy eslatma (Klavixo, 1404; manbalar: Wikipedia «Saray Mulk Khanum», Iranica «Clothing ix», San'at jurnali «Headdress of Bibi Khanym»): libosi qizil ipak edi, bosh kiyimi baland qizil (bo'g'toq bo'lishi mumkin), yuzi oq upa bilan oqartirilgan; orqa fondagi madrasa/minoralar Registonga o'xshaydi — Ulug'bek madrasasi 1417–1420 da qurilgan, Bibixonimdan keyin. Rassom xohlasa, fonni Bibixonim masjidi gumbazi bilan almashtiradi.
