@@ -1,21 +1,21 @@
-# «Aks-sado» — to'y va «odamlar nima deydi» (2026-11-26, ssenariy)
+# «Ajdaho» — Overton oynasi masali (2026-11-26, ssenariy, 2-versiya)
 
-Andoza: egasi yuborgan ruscha multfilm-masal (2:30, «Окно Овертона»): tog' etagidagi qishloq, g'ordagi ajdar avval qo'y, keyin sigir, keyin qiz so'raydi; qarshi chiqqan temirchini o'z qo'shnilari bog'lab qo'yadi; qiz g'orga kiradi — ajdar qari va kuchsiz ekan; xulosa: aql bovar qilmaydigan narsa qadam-baqadam odatga aylanadi. Ekranda katta so'zma-so'z yozuv, Pixar-ga yaqin 2D/3D multfilm uslubi.
-Qoida bo'yicha (2026-10-19 «shunga o'xshash»): formatni oldik (masal, qadam-baqadam ortib boruvchi talab, qarshi chiqqanni o'zimiznikilar jazolaydi, oxirida g'orga o'zi chiqish, burilish), voqea o'zimizniki: to'y xarajatlari va «odamlar nima deydi». Burilish boshqa: g'orda dev yo'q, ovoz — qishloqning o'z aks-sadosi.
-Hikoyachi: bitta ovoz (Usta), Diyor/Usta yo'q. Bot: to'y xarajatini va kredit oylik to'lovini hisoblaydi (`bot/knowledge.js` da bor). Hook (en): «Stop. This village fed a monster for 20 years. No one ever saw it.» — 81.1 STRONG.
+Andoza: egasi yuborgan ruscha multfilm-masal (2:30, «Окно Овертона»). Egasi: «to'y emas, videodagi ma'no men uchun qiziq» — shuning uchun asl ma'no saqlandi: qo'rquv oldidagi kichik yon berishlar qadam-baqadam me'yorga aylanadi; qarshi chiqqanni o'zimiznikilar bog'laydi; ajdaho aslida qari va kuchsiz edi, hech kim borib qaramagan. Joy, ismlar va kadrlar o'zbekcha. 1-versiya (to'y, aks-sado) bekor.
+Hikoyachi: bitta ovoz (Usta). Bot: qadam-baqadam ortib boradigan talab (firibgarlar shunday ishlaydi) — xabarni tekshiradi, aldov belgilarini ko'rsatadi (`bot/knowledge.js`: scam checks). Hook (en): «Stop. This village fed a dragon for 20 years. No one saw it.» — 93.1 STRONG.
 
 | # | Ovoz (hikoyachi) | Kadr |
 |---|---|---|
-| 1 | To'xtang! Bu qishloq yigirma yil bir devni boqdi. Uni hech kim ko'rmagan. | Tog' etagidagi o'zbek qishlog'i, tepada qorong'i g'or; ekranda «TO'XTANG!» |
-| 2 | Bir kuni g'ordan ovoz keldi: «To'yingizga yuz kishi chaqiring!» Odamlar chaqirishdi. Qishloq tinch qoldi. | G'or og'zi, chang ko'tariladi; hovlida kichik, quvnoq to'y |
-| 3 | Bir yildan keyin ovoz kuchaydi: «Uch yuz kishi! Ikki qozon osh!» Odamlar qarz olib bo'lsa ham bajarishdi. | Katta qozonlar; ota qo'shnidan pul so'raydi |
-| 4 | Keyin: «Kuyovga mashina! Kelinga oltin! Ming kishilik to'yxona!» Endi buni «odat» deyishdi. | Bezatilgan mashina, oltin taqinchoq, ulkan to'yxona |
-| 5 | Har to'ydan keyin bir oila qarzga botdi. Kimdir uyini sotdi, kimdir musofirchilikka ketdi. | Bo'sh hovli, «sotiladi» belgisisiz eshik yopiladi; avtobus bekatida yigit |
-| 6 | Temirchi Sardor dedi: «Yetar! Men kichik to'y qilaman!» | Temirchi bolg'ani qo'yib, qo'shnilarga qaraydi |
-| 7 | Qo'shnilar unga yopirilishdi: «Uyalmaysanmi? Odamlar nima deydi?!» Hech kim uning to'yiga kelmadi. | Barmoq bilan ko'rsatgan olomon; bo'm-bo'sh dasturxon |
-| 8 | Navbat Zuhraning to'yiga keldi. Otasi kreditga imzo chekmoqchi edi. Zuhra esa mash'al olib, g'orga o'zi chiqdi. | Ota qog'oz ustida; qiz kechasi mash'al bilan tog' yo'lida |
-| 9 | G'or bo'm-bo'sh edi. U baqirdi: «Kimsan?!» G'or qaytardi: «Kimsan… kimsan…» | Qorong'i g'or, faqat mash'al yorug'i; qizning hayron yuzi |
-| 10 | Dev yo'q edi. Yigirma yil buyurgan ovoz — qishloqning o'z aks-sadosi edi. Har kim qo'shnisidan qo'rqib, uning gapini takrorlagan. | Pastdagi qishloqdan ovozlar to'lqini g'orga ko'tariladi |
-| 11 | Olimlar buni «Overton oynasi» deydi: aql bovar qilmaydigan narsa qadam-baqadam odatga aylanadi. Bizning devimizning ham ismi bor: «Odamlar nima deydi». | Oyna ramkasi kengayib boradi; ichida to'ylar kattalashadi |
-| 12 | To'y rejalashtiryapsizmi? Xarajatlar ro'yxatini @sahiychishopbot ga yozing: jamini va kredit bo'lsa, oylik to'lovni hisoblab beradi. | Katta @sahiychishopbot, telefon ekranida ro'yxat |
-| 13 | Siz-chi? Sizdan qaysi «odat»ni talab qilishgan? Izohga yozing! | Avatar |
+| 1 | To'xtang! Bu qishloq yigirma yil ajdahoni boqdi. Uni hech kim yaqindan ko'rmagan. | Tog' etagidagi o'zbek qishlog'i, tepada qorong'i g'or |
+| 2 | Bir kecha osmonda katta qanot soyasi o'tdi. Ertalab g'or oldida bitikli tosh turardi: «Har oy bitta qo'y keltiring». | Oy, tom ustidan o'tgan soya; g'or oldidagi tosh va qog'oz |
+| 3 | Odamlar yengil nafas olishdi: «Bir qo'y — arzimas narsa». Qo'yni olib borishdi. Bir yil tinchlik bo'ldi. | Ayol qo'yni toshga bog'laydi; qorli qish, keyin bahor |
+| 4 | Keyin tosh yangi talab yozdi: «Sigir». Bir qishloq rad etgan edi — o'sha kechasi yonib ketdi. Sigirni ham olib borishdi. | Yonayotgan qo'shni qishloq; kechasi sigirni tepaga yetaklayotgan dehqon |
+| 5 | Har yili talab biroz ortdi: un, mevalar, oltin. Endi bu «tartib» deb atalardi. | G'or ichida qoplar, ko'zalar, oltin uyumi |
+| 6 | Bir kuni tosh yozdi: «Bir qiz». Qishloq jim qoldi. Oqsoqol dedi: «Bermasak, hammamiz halok bo'lamiz». Qur'a tashlashdi. | Qog'ozdagi qiz rasmi; oqsoqolning qattiq yuzi; ko'zadagi qora va oq toshlar |
+| 7 | Temirchi Sardor qilich yasadi: «Yetar! Birgalikda chiqaylik!» Ammo unga ajdaho emas, o'z qo'shnilari tashlandi. Uni bog'lab, omborxonaga qamashdi. | Temirchi bolg'a urmoqda; olomon unga yopiriladi; arqonda bog'langan temirchi |
+| 8 | Qur'a Zuhraga tushdi. Uni tunda tepaga olib chiqishdi. Zuhra mash'alni ko'tarib, g'orga o'zi kirdi. | Mash'alli yo'l; qiz yolg'iz g'or ichiga kiradi |
+| 9 | Ichkarida ajdaho yotardi. Qari, ko'zlari xira. Og'zida olov qolmagan, qanotlari ko'tarilmasdi. | Oltin ustida yotgan qari ajdaho; mash'al yorug'i |
+| 10 | Yigirma yil bu qishloqni zaif bir maxluq ushlab turgan edi. Chunki hech kim yaqin borib qaramagan. | G'or og'zidan pastdagi qishloqqa qarash |
+| 11 | Olimlar buni «Overton oynasi» deydi: aql bovar qilmaydigan narsa kichik yon berishlar bilan me'yorga aylanadi. Avval qo'y edi, keyin bola. | Deraza ramkasi kengayadi; qo'y, sigir, qiz bir qatorda |
+| 12 | Eng og'ir zanjir esa dushman emas, «jim tur» deb bizni o'zimiznikilar bog'lagan arqon. Qo'rqqan narsangizga bir marta o'zingiz borib qarang. | Bog'langan temirchining yuzi; yolg'iz tog' yo'li |
+| 13 | Kimdir sizdan qadam-baqadam ko'proq talab qilyaptimi: pul, kod, «kichkina yordam»? Xabarni @sahiychishopbot ga yuboring: aldov belgilarini ko'rsatadi va himoyalanishni o'rgatadi. | Katta @sahiychishopbot |
+| 14 | Siz-chi? Qaysi qo'rquvingizga borib qaragansiz? Izohga yozing! | Avatar |
